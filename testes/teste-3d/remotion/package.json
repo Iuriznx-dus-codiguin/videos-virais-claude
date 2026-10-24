@@ -1,0 +1,29 @@
+{
+  "name": "teste-3d-remotion",
+  "version": "1.0.0",
+  "description": "Teste 3D (Three.js via Remotion) e legendas para as duas versões",
+  "scripts": {
+    "estudio": "remotion studio src/index.ts",
+    "previa": "remotion still src/index.ts TesteThree out/previa.png --gl=swangle --browser-executable=/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell",
+    "render:three": "remotion render src/index.ts TesteThree out/teste-three.mp4 --gl=swangle --crf=16 --browser-executable=/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell",
+    "render:blender": "remotion render src/index.ts TesteBlender out/teste-blender.mp4 --gl=swangle --crf=16 --browser-executable=/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@fontsource/montserrat": "^5.3.0",
+    "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.2",
+    "@remotion/cli": "^4.0.538",
+    "@remotion/three": "^4.0.538",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "remotion": "^4.0.538",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/three": "^0.186.0",
+    "typescript": "^7.0.2"
+  },
+  "private": true
+}

@@ -1,0 +1,7 @@
+node_modules/
+out/
+testes/teste-3d/blender/quadros/
+testes/teste-3d/remotion/public/blender.mp4
+*.log
+__pycache__/
+.venv/
