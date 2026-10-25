@@ -332,8 +332,9 @@ describe('entrega dos vídeos', () => {
 		assert.match(a.saida, /ainda não tem voz/);
 
 		mkdirSync(join(producao, 'public', 'series', 'ilha-perdida', 'vozes', 'cache'), {recursive: true});
-		writeFileSync(join(producao, 'public', 'series', 'ilha-perdida', 'vozes', 'ep01.json'), '{}');
-		writeFileSync(join(producao, 'public', 'series', 'ilha-perdida', 'vozes', 'cache', 'x.wav'), 'pesado');
+		const cache = join(producao, 'public', 'series', 'ilha-perdida', 'vozes', 'cache');
+		writeFileSync(join(producao, 'public', 'series', 'ilha-perdida', 'vozes', 'ep01.json'), JSON.stringify({f1: {audio: 'series/ilha-perdida/vozes/cache/usada.wav'}}));
+		for (const n of ['usada.wav', 'usada.json', 'velha.wav', 'velha.json', 'usada.bruto.wav']) writeFileSync(join(cache, n), 'audio');
 		const b = await rodar(producao, 'http://x', 'dados.ts', ['entregar', 'ilha-perdida', '1', '--dia=2026-10-26', '--hora=18:00'], extra);
 		assert.equal(b.codigo, 0, b.saida);
 
@@ -344,7 +345,10 @@ describe('entrega dos vídeos', () => {
 		assert.match(texto, /Postar em 26\/10\/2026 às 18:00 \(Brasília\)/);
 		assert.match(texto, /YouTube Shorts[\s\S]*Instagram Reels/);
 		assert.ok(existsSync(join(conferir, 'series', 'ilha-perdida', 'vozes', 'leo.pt')), 'a voz do personagem acompanha a série');
-		assert.ok(!existsSync(join(conferir, 'series', 'ilha-perdida', 'vozes', 'cache')), 'o cache de áudio não sobe');
+		const cacheNoRamo = join(conferir, 'series', 'ilha-perdida', 'vozes', 'cache');
+		assert.ok(existsSync(join(cacheNoRamo, 'usada.wav')) && existsSync(join(cacheNoRamo, 'usada.json')), 'o áudio do episódio recente sobe (correção regenera só o que mudou)');
+		assert.ok(!existsSync(join(cacheNoRamo, 'velha.wav')), 'áudio que nenhum episódio recente usa não sobe');
+		assert.ok(!existsSync(join(cacheNoRamo, 'usada.bruto.wav')), 'o áudio bruto não sobe');
 
 		const lista = await rodar(montarRaiz(), 'http://x', 'dados.ts', ['entregas'], extra);
 		assert.match(lista.saida, /2026-10-26 18:00 {2}ilha-perdida parte 1/);

@@ -1,4 +1,6 @@
-# Calendário e rotinas
+# Calendário e rotinas das histórias
+
+Este é o fluxo de **histórias** (séries em partes, ex.: voo-818). O Como Funciona tem o próprio calendário (`COMO-FUNCIONA.md`) e as próprias skills: os dois fluxos só compartilham o motor e as ferramentas, nunca regras, roteiros ou estado.
 
 Todos os horários são de Brasília. Uma rotina de produção por série, para cada sessão ler só o que é dela. **A publicação é manual**: o Iuri baixa o vídeo e posta no YouTube Shorts e no Instagram Reels.
 
@@ -18,11 +20,15 @@ Cada rotina produz o que o **calendário** manda para o dia, olhando `estado.jso
 Se uma parte do calendário já existe pronta (rodada repetida), não refaça: confira `npm run dados -- entregas`.
 
 ## Rotinas
-1. **Produção (3h, por série).** Prompt: "Use a skill roteirizar-episodio para a série X e produza as partes de hoje conforme motor/producao/PRODUCAO.md." O ambiente é o "Shorts" (rede liberada para huggingface.co, hf.co e download.pytorch.org).
+1. **Produção (3h, por série).** Prompt: "Use a skill roteirizar-episodio para a série X e produza as partes de hoje conforme motor/producao/PRODUCAO.md." O ambiente é o "Shorts" (rede liberada para huggingface.co, hf.co, download.pytorch.org e download-r2.pytorch.org).
 2. **Correções (sem rotina).** O Iuri responde na própria sessão de produção até as 16h. A sessão usa a skill `aplicar-correcoes`. Sem resposta, o original vale.
 3. **Publicação: manual.** O vídeo e o texto para colar (título, descrição, legenda) ficam no ramo `dados`, pasta `videos/`, e no `out/` da sessão.
 
 ## Estado
+- Regras gerais das histórias: `public/series/_historias/regras.md`; de cada série: `public/series/<serie>/regras.md`.
+- Salve sempre nomeando as pastas: `npm run dados -- salvar <serie> _historias`.
+- O ramo `dados` guarda as vozes (.pt) e o áudio das falas dos 3 episódios mais recentes, para uma correção regenerar só o que mudou.
 - `public/series/<serie>/estado.json` guarda a próxima parte e o resumo da última.
 - Tudo que muda fica no ramo `dados` (veja `ferramentas/dados.ts`). O ramo `main` só tem código.
-- Cada sessão nova precisa rodar `bash voz/instalar.sh` (a máquina não guarda nada entre sessões; leva alguns minutos).
+- Cada sessão nova precisa rodar `bash voz/instalar.sh` (a máquina não guarda nada entre sessões; ~4 min).
+- Tempos medidos (25/10, parte 1): instalar voz 4 min, criar 2 vozes 5 min (só na primeira vez), 30 falas 14,5 min, render 14 min. Sexta (3 partes) leva perto de 1h30.

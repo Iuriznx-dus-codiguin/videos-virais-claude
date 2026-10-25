@@ -113,6 +113,77 @@ export const CENARIOS: Record<string, DefCenario> = {
 		},
 		tamanhos: {manifesto: 0.9, banco_31c: 1.4},
 	},
+	mirante: {
+		descricao: 'Laje de pedra no alto da ilha, na beira de um penhasco (borda em +z), olhando o mar 35 m abaixo: enseada com areia e cais de madeira, ilhotas ao longe. Ponha farol e barco com alt: -35 (ex.: farol em [-16, 85] escala 1.3, barco em [9, 56] giro 90). Câmera boa: [1.0, 2.3, 0.8] com alvo [-3, -28, 66] (mostra farol, barco e enseada). Olhando para +z, x negativo fica à DIREITA da tela.',
+		luzPadrao: 'noite',
+		marcas: {
+			borda: [0, 3.2],
+			borda_esq: [-1.4, 2.9],
+			borda_dir: [1.4, 2.9],
+			meio: [0, 0],
+			atras: [0, -4],
+		},
+		pontos: {
+			farol: [-16, -18, 85],
+			cais: [9, -34, 56],
+			enseada: [10, -35, 38],
+			mar: [0, -33, 100],
+		},
+	},
+	ilhota_farol: {
+		descricao: 'Ilhota de pedra do farol vista de perto, à noite: ponha o objeto farol (ilhota: false) na marca farol; trilha até a porta da torre (+z) e cais de madeira com o barco (barco em [3, 17], giro 90). Mar em volta.',
+		luzPadrao: 'noite',
+		marcas: {
+			farol: [0, -4],
+			porta: [0, -2.2],
+			trilha: [0, 3],
+			cais: [3, 12],
+			beira_cais: [3, 20],
+			pedras: [-6, 2],
+			casa: [4, -2],
+		},
+		pontos: {
+			topo_farol: [0, 15, -4],
+			porta_farol: [0, 1.2, -2.6],
+			mar: [0, 0, 60],
+		},
+	},
+	sala_farol: {
+		descricao: 'Sala da lâmpada no alto do farol: redonda (raio 3,2 m), envidraçada, a lente no meio (objeto luz_farol na marca lente), painel com rádio e a alavanca vermelha do SOS, porta da escada à esquerda (-x). Para tempestade use os efeitos chuva e relampago e o ambiente chuva. Câmera boa: [0.9, 2.0, 2.6] com alvo [1.1, 1.1, -1.6] (painel; a lente fica de lado). A lente tem 1 m de largura: não ponha a câmera com ela no meio do caminho.',
+		luzPadrao: 'noite',
+		marcas: {
+			lente: [0, 0],
+			painel: [1.4, -1.4],
+			porta: [-2.6, 0.6],
+			janela: [0, 2.6],
+			janela_esq: [-2.0, -1.7],
+			meio: [-1.0, 1.2],
+		},
+		pontos: {
+			alavanca: [1.95, 1.0, -1.75],
+			radio: [1.6, 1.15, -2.1],
+			lente: [0, 1.6, 0],
+			fora: [0, 1.5, 30],
+		},
+		tamanhos: {alavanca: 0.9, radio: 1.0},
+	},
+	adega: {
+		descricao: 'Adega de pedra embaixo do farol: corredor (eixo z) entre duas paredes com os passageiros dormindo sentados (x de ±2,2 a ±3), barris e porta com escada no fundo (-z), uma lâmpada pendurada balançando. Câmera boa para mostrar os passageiros: [1.3, 2.5, 4.8] com alvo [-1.2, 0.5, -1.5].',
+		luzPadrao: 'noite',
+		marcas: {
+			porta: [0, -5.2],
+			corredor: [0, -2],
+			meio: [0, 0.5],
+			frente: [0, 4],
+			fileira_esq: [-1.6, 0],
+			fileira_dir: [1.6, 0],
+		},
+		pontos: {
+			lampada: [0, 2.0, 0.5],
+			passageiros_esq: [-2.6, 0.7, 0],
+			passageiros_dir: [2.6, 0.7, 0],
+		},
+	},
 	montanha: {
 		descricao: 'Vista noturna da montanha da ilha, com uma caverna escura no meio e copas de árvores na frente.',
 		luzPadrao: 'noite',
@@ -200,6 +271,10 @@ export const EFEITOS: Record<string, number | null> = {
 	zoom_soco: 0.45,
 	vinheta: null,
 	preto: 0.5,
+	/** chuva na tela até o fim da cena (ou até "ate"); combine com ambiente chuva */
+	chuva: null,
+	/** clarão duplo de raio; combine com o som trovao */
+	relampago: 0.6,
 };
 
 export const SONS = [
@@ -238,4 +313,32 @@ export const OBJETOS = [
 	'aviao',
 	'radio',
 	'prancheta',
+	'lanternas_mata',
+	'farol',
+	'barco',
+	'luz_farol',
+	'caixa_preta',
+	'barras_ouro',
 ] as const;
+
+/** Para que serve cada objeto e as opções que ele aceita além de em, giro e escala. */
+export const USO_OBJETOS: Record<(typeof OBJETOS)[number], string> = {
+	sos: 'SOS escrito na areia',
+	pegadas_gigantes: 'trilha de pegadas; ate: [x, z], passo',
+	fogueira: 'fogo: chamas | brasas | apagada',
+	tronco: 'tronco caído para sentar',
+	lanterna: 'lanterna no chão',
+	riscos: 'riscos de contagem na parede; quantos',
+	caixote: 'caixote de madeira',
+	destrocos: 'fuselagem aberta, cauda, asa, malas e fumaça (praia)',
+	malas: 'malas espalhadas; quantas, raio, semente',
+	aviao: 'avião caindo em chamas; de_ponto, ate_ponto [x,y,z], quando_de, quando_ate, fogo',
+	radio: 'rádio de emergência com luz; ligado (padrão true)',
+	prancheta: 'manifesto de passageiros (nomes riscados de laranja, um circulado); alt (altura, padrão 0.46), deitada',
+	lanternas_mata: 'Homens de Laranja de longe: lanternas andando com feixe varrendo para +z local; quantas (3), largura (8), vultos (corpo escuro sem rosto, padrão true). Use à noite, entre as árvores',
+	farol: 'farol de 14 m numa ilhota, para pôr longe no mar; modo: gira | sos | apagado; escala; ilhota (false no cenário ilhota_farol, onde fica na marca farol); alt (altura do mar: -35 no mirante)',
+	luz_farol: 'a lente do farol na sala_farol (marca lente); modo: acesa | sos | apagada (padrão)',
+	caixa_preta: 'caixa preta do avião (laranja); alt',
+	barras_ouro: 'caixote aberto cheio de barras de ouro (a carga)',
+	barco: 'barco de carga de 11 m (proa em +x local); luzes (padrão true, com farol de proa), caixas (padrão true); alt (-35 no mirante)',
+};
