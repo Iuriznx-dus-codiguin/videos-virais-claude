@@ -102,6 +102,8 @@ const sobreOmbro = (cab: V3, alvo: V3, lado: number, escala: number) => {
 
 /** Limite da câmera por cenário (esconderijo: precisa ficar dentro da toca). */
 const LIMITES: Record<string, (p: V3, plano: PlanoTempo) => V3> = {
+	// cabine: a parede fica a ±1,7 m do eixo; a câmera nunca passa de ±1,3 m nem do teto e do chão
+	cabine: (p) => [clamp(p[0], -1.3, 1.3), clamp(p[1], 0.25, 1.65), clamp(p[2], -12.6, 12.6)],
 	raizes: (p, plano) => {
 		if (plano.tipo === 'pov') return p;
 		const centro: V3 = [0, 1.35, 0.25];

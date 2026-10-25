@@ -90,6 +90,29 @@ export const CENARIOS: Record<string, DefCenario> = {
 		},
 		tamanhos: {parede: 2.6, parede_esq: 2.2, parede_dir: 2.2},
 	},
+	cabine: {
+		descricao: 'Dentro da fuselagem do Voo 818: corredor comprido (eixo z, de -13 a 13) com bancos azuis nos dois lados (x = ±0,62 e ±1,16), bagageiros, luzes de teto e celulares acesos nos bancos vazios. Parede a ±1,7 m: use câmera fixa (campo "camera") dentro do corredor, com x entre -0,4 e 0,4.',
+		luzPadrao: 'entardecer',
+		marcas: {
+			frente: [0, 7],
+			corredor: [0, 3],
+			meio: [0, 0],
+			corredor_31c: [0, 0.15],
+			assento_31c: [-0.62, 0.15],
+			assento_manifesto: [0.62, -2.43],
+			corredor_manifesto: [0, -2.5],
+			fundo: [0, -8],
+			saida: [0, -11],
+		},
+		pontos: {
+			corredor_fundo: [0, 1.2, -12],
+			corredor_frente: [0, 1.2, 12],
+			manifesto: [0.62, 0.5, -2.6],
+			banco_31c: [-0.62, 0.55, 0.15],
+			teto: [0, 1.6, 0],
+		},
+		tamanhos: {manifesto: 0.9, banco_31c: 1.4},
+	},
 	montanha: {
 		descricao: 'Vista noturna da montanha da ilha, com uma caverna escura no meio e copas de árvores na frente.',
 		luzPadrao: 'noite',
@@ -214,4 +237,5 @@ export const OBJETOS = [
 	'malas',
 	'aviao',
 	'radio',
+	'prancheta',
 ] as const;
