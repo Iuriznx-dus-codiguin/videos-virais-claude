@@ -297,8 +297,13 @@ describe('fila de publicação', () => {
 			// sessão de produção (3h): enfileira para as 18h de Brasília
 			const producao = montarRaiz();
 			const a = await rodar(producao, falso.base, 'dados.ts', ['enfileirar', 'ilha-perdida', '1', '--dia=2026-10-26', '--hora=18:00'], extra);
-			assert.equal(a.codigo, 0, a.saida);
-			assert.match(a.saida, /publica a partir de 2026-10-26T21:00:00.000Z/);
+			assert.equal(a.codigo, 1);
+			assert.match(a.saida, /ainda não tem voz/);
+			mkdirSync(join(producao, 'public', 'series', 'ilha-perdida', 'vozes'), {recursive: true});
+			writeFileSync(join(producao, 'public', 'series', 'ilha-perdida', 'vozes', 'ep01.json'), '{}');
+			const a2 = await rodar(producao, falso.base, 'dados.ts', ['enfileirar', 'ilha-perdida', '1', '--dia=2026-10-26', '--hora=18:00'], extra);
+			assert.equal(a2.codigo, 0, a2.saida);
+			assert.match(a2.saida, /publica a partir de 2026-10-26T21:00:00.000Z/);
 
 			// rotina de publicação numa raiz limpa, que só tem o código
 			const rotina = mkdtempSync(join(tmpdir(), 'shorts-rotina-'));

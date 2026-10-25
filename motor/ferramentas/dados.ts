@@ -116,7 +116,10 @@ export const instanteDaPublicacao = (dia: string, hora: string): string => {
 	return new Date(Date.UTC(a, mes - 1, d, h + DESLOCAMENTO_BRASILIA_H, m)).toISOString();
 };
 
-export const enfileirar = (serie: string, parte: number, dia: string, hora: string, video?: string) => {
+export const enfileirar = (serie: string, parte: number, dia: string, hora: string, video?: string, semVoz = false) => {
+	if (!semVoz && !existsSync(join(PASTA_SERIES, serie, 'vozes', `${nomeEpisodio(parte)}.json`))) {
+		throw new Error(`A parte ${parte} de ${serie} ainda não tem voz (falta public/series/${serie}/vozes/${nomeEpisodio(parte)}.json). Rode npm run vozes antes, ou use --sem-voz só para teste.`);
+	}
 	const arquivo = video ?? join(RAIZ, 'out', `${serie}-${nomeEpisodio(parte)}.mp4`);
 	if (!existsSync(arquivo)) throw new Error(`Não achei o vídeo ${arquivo}. Rode o render antes.`);
 	const pasta = abrir();
@@ -199,7 +202,7 @@ if (process.argv[1] && import.meta.filename === process.argv[1]) {
 		else if (comando === 'salvar') salvar(pos);
 		else if (comando === 'enfileirar') {
 			if (pos.length < 2 || !opc.dia || !opc.hora) throw new Error('uso: enfileirar <serie> <parte> --dia=AAAA-MM-DD --hora=HH:MM [--video=arquivo.mp4]');
-			enfileirar(pos[0], Number(pos[1]), opc.dia, opc.hora, opc.video);
+			enfileirar(pos[0], Number(pos[1]), opc.dia, opc.hora, opc.video, 'sem-voz' in opc);
 		} else if (comando === 'publicar-pendentes') publicarPendentes(opc.agora ? new Date(opc.agora) : new Date());
 		else if (comando === 'fila') mostrarFila();
 		else throw new Error('comandos: baixar | salvar | enfileirar | publicar-pendentes | fila');
