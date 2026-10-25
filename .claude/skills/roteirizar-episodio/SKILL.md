@@ -49,4 +49,15 @@ Trabalhe sempre em **uma série por sessão** (economiza uso). Fale com o Iuri e
 ## 7. Entregar
 1. Atualize `estado.json`: `proxima_parte` +1 e `resumo_ultima` (3 a 5 linhas: o que aconteceu e como terminou). Fato novo vai para `biblia.json` (`fatos`, `ganchos_abertos`).
 2. `npm run dados -- entregar <serie> <parte> --dia=AAAA-MM-DD --hora=18:00` (11:00 ou 18:00 conforme o calendário). Guarda o vídeo, o texto para postar e a série no ramo `dados`.
-3. Quando todas as partes do dia estiverem entregues, avise o Iuri: título de cada parte, resumo, o que conferiu, avisos (sem voz, cenário improvisado…), onde está o vídeo e o texto de cada plataforma (ramo `dados`, `videos/`), e que ele pode responder com correções até as 16h; sem resposta o original vale.
+
+## 8. Roteiro da próxima parte (sempre)
+O Iuri revisa a produção de hoje e o roteiro da próxima juntos, para evitar erros antes de produzir.
+1. Depois de entregar todas as partes do dia, escreva o `epNN.json` da próxima parte (`proxima_parte` do estado, já atualizado), seguindo o `roteiro-geral.md` e os passos 2 a 4. Não gere voz nem renderize: é um rascunho para revisão.
+2. `npm run validar -- <serie> <N>` sem avisos e `npm run dados -- salvar <serie> _historias`.
+3. A rotina seguinte usa esse arquivo como base (passo 3: "se já existir, use-o"), já com as correções que o Iuri mandar.
+
+## 9. Avisar o Iuri
+Uma mensagem só, quando tudo estiver entregue:
+- produção de hoje: título de cada parte, resumo, o que conferiu, avisos (sem voz, cenário improvisado…), onde está o vídeo e o texto de cada plataforma (ramo `dados`, `videos/`);
+- **roteiro da próxima parte**: cole a saída de `npm run roteiro -- <serie> <N>` (cenas, quem fala o quê e a chamada final);
+- que ele pode responder até as 16h com correções do vídeo de hoje e do roteiro da próxima; sem resposta, o original vale.
