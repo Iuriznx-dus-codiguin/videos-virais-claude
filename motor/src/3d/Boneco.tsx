@@ -145,6 +145,33 @@ const RaboDeCavalo: React.FC<{cor: string; p: Pose}> = ({cor, p}) => {
 	);
 };
 
+const CabeloCurto: React.FC<{cor: string}> = ({cor}) => (
+	<group position={[0, MEDIDAS.pescocoCabeca, 0]}>
+		<Malha g={capaCabelo()} m={toon(cor)} contorno={0.015} />
+		<Malha g={nucaCabelo()} m={toon(cor)} contorno={0.015} />
+	</group>
+);
+
+/** Quepe de capitão: copa alta, aba preta e distintivo dourado. */
+const Bone: React.FC<{cor: string}> = ({cor}) => (
+	<group position={[0, MEDIDAS.pescocoCabeca, 0]} rotation={[-0.12, 0, 0]}>
+		<Malha g={cilindro(RC * 1.05, RC * 1.12, 0.2, 28)} m={toon(cor)} position={[0, RC * 0.78, 0]} contorno={0.015} />
+		<Malha g={cilindro(RC * 1.14, RC * 1.14, 0.045, 28)} m={toon('#F4F1EA')} position={[0, RC * 0.68, 0]} contorno={0.01} />
+		<Malha g={esfera(1, 14, 8)} m={toon('#111218')} position={[0, RC * 0.62, RC * 0.82]} scale={[0.26, 0.02, 0.2]} contorno={0.01} />
+		<Malha g={esfera(1, 10, 7)} m={toon('#E8B923')} position={[0, RC * 0.8, RC * 1.1]} scale={[0.05, 0.05, 0.015]} />
+	</group>
+);
+
+/** Colete refletivo de resgate: colete colorido com duas faixas claras. */
+const Colete: React.FC<{cor: string}> = ({cor}) => (
+	<>
+		<Malha g={capsula(0.105, MEDIDAS.coluna * 0.72)} m={toon(cor)} position={[0, MEDIDAS.coluna * 0.5, 0]} contorno={0.016} />
+		{[0.38, 0.62].map((k, i) => (
+			<Malha key={i} g={cilindro(0.112, 0.112, 0.035, 16)} m={toon('#F2F4F7')} position={[0, MEDIDAS.coluna * k, 0]} />
+		))}
+	</>
+);
+
 const Lenco: React.FC<{cor: string}> = ({cor}) => (
 	<group position={[0, MEDIDAS.coluna - 0.05, 0]}>
 		<Malha g={toro(0.1, 0.045, 24, 8)} m={toon(cor)} rotation={[0.15, 0, 0]} contorno={0.012} />
@@ -171,6 +198,8 @@ const AcessoriosCabeca: React.FC<{lista: Acessorio[]; p: Pose}> = ({lista, p}) =
 			const cor = a.cor ?? '#E63946';
 			if (a.tipo === 'bandana') return <Bandana key={i} cor={cor} p={p} />;
 			if (a.tipo === 'rabo_de_cavalo') return <RaboDeCavalo key={i} cor={cor} p={p} />;
+			if (a.tipo === 'cabelo_curto') return <CabeloCurto key={i} cor={cor} />;
+			if (a.tipo === 'bone') return <Bone key={i} cor={cor} />;
 			return null;
 		})}
 	</>
@@ -182,6 +211,7 @@ const AcessoriosTronco: React.FC<{lista: Acessorio[]}> = ({lista}) => (
 			const cor = a.cor ?? '#FFC233';
 			if (a.tipo === 'mochila') return <Mochila key={i} cor={cor} />;
 			if (a.tipo === 'lenco') return <Lenco key={i} cor={cor} />;
+			if (a.tipo === 'colete') return <Colete key={i} cor={cor} />;
 			return null;
 		})}
 	</>

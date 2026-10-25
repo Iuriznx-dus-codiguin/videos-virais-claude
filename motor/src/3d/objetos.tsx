@@ -3,7 +3,8 @@
 import React from 'react';
 import {CENARIOS} from '../catalogo';
 import type {Objeto} from '../roteiro/tipos';
-import {V2, aleatorio} from '../util/mat';
+import {V2, V3, aleatorio} from '../util/mat';
+import {AviaoCaindo, Destrocos, Malas} from './aviao';
 import {Malha, brilho, caixa, cilindro, cone, decalque, disco, esfera, fumacaMat, haloMat, ico, toon, translucido} from './base';
 
 const posicaoObjeto = (o: Objeto, cenario: string): V2 =>
@@ -200,6 +201,21 @@ const Caixote: React.FC<{x: number; z: number; giro: number}> = React.memo(({x, 
 	</group>
 ));
 
+/** Rádio de emergência salvo da cabine: caixa metálica com mostrador, botões e luz que pisca. */
+const Radio: React.FC<{x: number; z: number; giro: number; t: number; ligado: boolean}> = ({x, z, giro, t, ligado}) => (
+	<group position={[x, 0, z]} rotation={[0, giro, 0]}>
+		<Malha g={caixa(0.62, 0.42, 0.34)} m={toon('#4B5563')} position={[0, 0.21, 0]} contorno={0.025} />
+		<Malha g={caixa(0.5, 0.2, 0.02)} m={toon('#1B2530')} position={[-0.03, 0.27, 0.175]} />
+		<mesh geometry={caixa(0.44, 0.12, 0.01)} material={ligado ? brilho('#7CFFB2', 1.1 + 0.2 * Math.sin(t * 40)) : toon('#26332C')} position={[-0.03, 0.27, 0.19]} />
+		{[-0.2, -0.05, 0.1].map((px, i) => (
+			<Malha key={i} g={cilindro(0.035, 0.035, 0.04, 12)} m={toon('#D9DEE5')} position={[px, 0.1, 0.175]} rotation={[Math.PI / 2, 0, 0]} contorno={0.01} />
+		))}
+		<mesh geometry={esfera(0.025, 10, 7)} material={ligado && Math.sin(t * 6) > 0 ? brilho('#FF3B30', 1.6) : toon('#5A1A16')} position={[0.23, 0.1, 0.18]} />
+		<Malha g={cilindro(0.01, 0.01, 0.9, 6)} m={toon('#9AA3AE')} position={[0.22, 0.85, -0.05]} rotation={[0.05, 0, -0.08]} sombra={false} />
+		{ligado ? <pointLight position={[0, 0.3, 0.5]} color="#7CFFB2" intensity={0.9} distance={2.2} decay={2} /> : null}
+	</group>
+);
+
 export const Objetos: React.FC<{lista: Objeto[]; cenario: string; t: number}> = ({lista, cenario, t}) => (
 	<>
 		{lista.map((o, i) => {
@@ -219,6 +235,24 @@ export const Objetos: React.FC<{lista: Objeto[]; cenario: string; t: number}> = 
 					return <Riscos key={i} x={x} z={z} quantos={(o.quantos as number) ?? 100} />;
 				case 'caixote':
 					return <Caixote key={i} x={x} z={z} giro={giro} />;
+				case 'destrocos':
+					return <Destrocos key={i} x={x} z={z} giro={giro} escala={esc} t={t} />;
+				case 'malas':
+					return <Malas key={i} x={x} z={z} quantas={(o.quantas as number) ?? 8} raio={(o.raio as number) ?? 5} semente={(o.semente as number) ?? 3} />;
+				case 'radio':
+					return <Radio key={i} x={x} z={z} giro={giro} t={t} ligado={o.ligado !== false} />;
+				case 'aviao':
+					return (
+						<AviaoCaindo
+							key={i}
+							de={(o.de_ponto as V3) ?? [-60, 70, -120]}
+							ate={(o.ate_ponto as V3) ?? [20, 2, 40]}
+							ini={(o._ini as number) ?? 0}
+							fim={(o._fim as number) ?? 4}
+							t={t}
+							fogo={o.fogo !== false}
+						/>
+					);
 				default:
 					return null;
 			}

@@ -26,6 +26,11 @@ export const CENARIOS: Record<string, DefCenario> = {
 			beira: [1.0, 10.8],
 			coqueiro: [-6.5, -4.2],
 			pedra: [6.2, 5.4],
+			// zona dos destroços do Voo 818 (a fuselagem fica em 'destroços', a cauda atrás)
+			destrocos: [-1.5, -1.5],
+			entre_malas: [1.2, 3.2],
+			radio: [3.4, 2.4],
+			fuselagem_boca: [5.2, -0.4],
 		},
 		pontos: {
 			mar: [0, 0.6, 40],
@@ -35,8 +40,11 @@ export const CENARIOS: Record<string, DefCenario> = {
 			dedos: [1.62, 0.02, 4.4],
 			trilha: [2.0, 0, 3.0],
 			mata_fundo: [2.9, 1.6, -8],
+			ceu_queda: [-4, 22, -70],
+			cauda: [-12.5, 3.2, -0.3],
+			radio_painel: [3.4, 0.28, 2.4],
 		},
-		tamanhos: {chao_pegadas: 4.6, pegada: 3.8, dedos: 2.4},
+		tamanhos: {chao_pegadas: 4.6, pegada: 3.8, dedos: 2.4, radio_painel: 1.5},
 	},
 	selva: {
 		descricao: 'Mata fechada com clareira no centro, fogueira, tronco caído, um arbusto enorme com um buraco escuro (onde o gigante se esconde) e uma árvore gigante de raízes altas.',
@@ -183,9 +191,15 @@ export const SONS = [
 	'fogo',
 	'folhas',
 	'clique',
+	'queda',
+	'chiado',
+	'alarme',
+	'bip',
+	'buzina',
+	'trovao',
 ] as const;
 
-export const AMBIENTES = ['mar', 'selva', 'noite'] as const;
+export const AMBIENTES = ['mar', 'selva', 'noite', 'chuva'] as const;
 export const MUSICAS = ['tensao', 'misterio'] as const;
 
 export const OBJETOS = [
@@ -196,4 +210,8 @@ export const OBJETOS = [
 	'lanterna',
 	'riscos',
 	'caixote',
+	'destrocos',
+	'malas',
+	'aviao',
+	'radio',
 ] as const;

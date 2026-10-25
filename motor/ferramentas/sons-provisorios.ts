@@ -24,6 +24,12 @@ const SOM: Record<(typeof SONS)[number], string> = {
 	tensao_sobe: 'aevalsrc=0.5*sin(2*PI*(70+110*t)*t)+0.25*sin(2*PI*(140+220*t)*t):d=3.2:s=44100,afade=t=in:d=1.2,afade=t=out:st=2.9:d=0.3[o]',
 	fogo: 'anoisesrc=d=4:c=brown:a=0.6,highpass=f=500,tremolo=f=13:d=0.8,volume=1.5[o]',
 	folhas: 'anoisesrc=d=1.6:c=pink:a=0.5,highpass=f=2500,tremolo=f=8:d=0.9,afade=t=in:d=0.2,afade=t=out:st=1.1:d=0.5[o]',
+	queda: 'aevalsrc=0.55*sin(2*PI*(1700-420*t)*t)*(1-exp(-t*8))*exp(-0.15*t):d=4:s=44100[a];anoisesrc=d=4:c=brown:a=0.9,highpass=f=120,afade=t=in:d=1.2,afade=t=out:st=3:d=1[b];[a][b]amix=inputs=2:normalize=0,volume=1.5[o]',
+	chiado: 'anoisesrc=d=1.8:c=white:a=0.6,bandpass=f=1400:width_type=h:w=1800,tremolo=f=9:d=0.9,afade=t=in:d=0.1,afade=t=out:st=1.4:d=0.4,volume=1.2[o]',
+	alarme: 'aevalsrc=0.4*sin(2*PI*880*t)*lt(mod(t\\,0.5)\\,0.25)+0.4*sin(2*PI*660*t)*gte(mod(t\\,0.5)\\,0.25):d=2:s=44100[o]',
+	bip: 'sine=f=1000:d=0.18,afade=t=out:st=0.1:d=0.08,volume=0.8[o]',
+	buzina: 'aevalsrc=0.5*sin(2*PI*110*t)+0.3*sin(2*PI*220*t)+0.2*sin(2*PI*330*t):d=2.4:s=44100,afade=t=in:d=0.2,afade=t=out:st=1.8:d=0.6[o]',
+	trovao: 'anoisesrc=d=3.2:c=brown:a=1,lowpass=f=240,tremolo=f=6:d=0.5,afade=t=in:d=0.08,afade=t=out:st=0.8:d=2.4,volume=3[o]',
 	clique: 'anoisesrc=d=0.09:c=white:a=0.9,highpass=f=2500,afade=t=out:st=0.005:d=0.07,volume=1.8[o]',
 };
 
@@ -38,6 +44,7 @@ const ENTRADAS: Partial<Record<(typeof SONS)[number], string[]>> = {
 const AMBIENTE: Record<(typeof AMBIENTES)[number], string> = {
 	mar: 'anoisesrc=d=16:c=pink:a=0.7,lowpass=f=900,tremolo=f=0.125:d=0.6,volume=1.3[o]',
 	selva: 'anoisesrc=d=16:c=pink:a=0.35,bandpass=f=2600:width_type=h:w=3200,tremolo=f=0.25:d=0.4,volume=1.2[o]',
+	chuva: 'anoisesrc=d=16:c=white:a=0.5,highpass=f=1800,lowpass=f=9000,tremolo=f=0.25:d=0.2,volume=1.1[o]',
 	noite: 'anoisesrc=d=16:c=brown:a=0.3,lowpass=f=300[a];sine=f=4300:d=16,tremolo=f=15:d=1,volume=0.04[b];[a][b]amix=inputs=2:normalize=0,volume=1.6[o]',
 };
 

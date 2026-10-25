@@ -307,7 +307,12 @@ export const resolverEpisodio = (ep: Episodio, biblia: Biblia, alinhamentos: Ali
 			ini,
 			fim,
 			personagens: c.personagens ?? {},
-			objetos: c.objetos ?? [],
+			// objetos animados (o avião caindo) dizem quando começam e terminam em "quando_de" e "quando_ate"
+			objetos: (c.objetos ?? []).map((o, k) => {
+				if (o.quando_de === undefined && o.quando_ate === undefined) return o;
+				ctx.onde = `cena ${c.id}, objeto ${k + 1}`;
+				return {...o, _ini: resolverAncora(o.quando_de as Ancora, ctx) ?? ini, _fim: resolverAncora(o.quando_ate as Ancora, ctx) ?? fim};
+			}),
 			acoes,
 			planos,
 			sons,
