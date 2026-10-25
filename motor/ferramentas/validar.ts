@@ -3,10 +3,11 @@
 // Uso: npm run validar -- <serie> <parte>     (sem parte: todas as partes da série)
 import {existsSync, readdirSync, readFileSync} from 'node:fs';
 import {join} from 'node:path';
+import {PASTA_SERIES} from './lib/caminhos.ts';
 import {resolverEpisodio} from '../src/roteiro/resolver.ts';
 import type {Alinhamentos, Biblia, Episodio} from '../src/roteiro/tipos.ts';
 
-export const PASTA_SERIES = join(import.meta.dirname, '..', 'public', 'series');
+export {PASTA_SERIES};
 export const nomeEpisodio = (parte: number) => `ep${String(parte).padStart(2, '0')}`;
 
 const lerJson = <T>(caminho: string): T => JSON.parse(readFileSync(caminho, 'utf8')) as T;

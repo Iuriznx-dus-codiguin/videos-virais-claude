@@ -4,9 +4,10 @@ import {bundle} from '@remotion/bundler';
 import {renderStill, selectComposition} from '@remotion/renderer';
 import {mkdirSync} from 'node:fs';
 import {join} from 'node:path';
+import {RAIZ} from './lib/caminhos.ts';
 
 export const CHROME = '/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell';
-export const RAIZ = join(import.meta.dirname, '..');
+export {RAIZ};
 
 export const empacotar = () => bundle({entryPoint: join(RAIZ, 'src', 'index.ts'), publicDir: join(RAIZ, 'public')});
 
