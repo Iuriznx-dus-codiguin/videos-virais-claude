@@ -223,7 +223,10 @@ export const resolverEpisodio = (ep: Episodio, bibliaSerie: Biblia, alinhamentos
 			continue;
 		}
 		if (!(item.quem in biblia.personagens)) avisos.push(`fala ${item.id}: personagem "${item.quem}" não está na bíblia`);
-		const al = alinhamentos[item.id];
+		// alinhamento de uma versão antiga da fala (texto mudou e a voz ainda não foi refeita): estima pelo texto
+		const bruto = alinhamentos[item.id];
+		const al = bruto && bruto.caracteres.join('').toLowerCase().includes(textoParaVoz(item.texto).toLowerCase()) ? bruto : undefined;
+		if (bruto && !al) avisos.push(`fala ${item.id}: o texto mudou depois da voz; rode npm run vozes de novo`);
 		const r = al ? falaDoAlinhamento(item, al, t) : estimarFala(item, t);
 		falas.push({
 			id: item.id,
@@ -396,8 +399,17 @@ export const resolverEpisodio = (ep: Episodio, bibliaSerie: Biblia, alinhamentos
 		};
 	});
 
-	if (duracao < 45) avisos.push(`duração total ${duracao.toFixed(1)}s: curta demais para um episódio (alvo 55 a 62s)`);
-	if (duracao > 65) avisos.push(`duração total ${duracao.toFixed(1)}s: passa de 1 minuto (alvo 55 a 62s)`);
+	if ((biblia.formato ?? 'serie') === 'avulso') {
+		// Como Funciona: alvo ~1min20 com a voz real. Sem voz, a estimativa sai ~20% mais longa que a voz do narrador.
+		const comVoz = falas.length > 0 && falas.every((f) => !f.estimada);
+		const [min, max] = comVoz ? [70, 95] : [85, 112];
+		const alvo = comVoz ? '75 a 90s com voz' : '90 a 105s estimados, que dão ~75 a 90s com voz';
+		if (duracao < min) avisos.push(`duração total ${duracao.toFixed(1)}s: curta demais (alvo ${alvo})`);
+		if (duracao > max) avisos.push(`duração total ${duracao.toFixed(1)}s: longa demais (alvo ${alvo})`);
+	} else {
+		if (duracao < 45) avisos.push(`duração total ${duracao.toFixed(1)}s: curta demais para um episódio (alvo 55 a 62s)`);
+		if (duracao > 65) avisos.push(`duração total ${duracao.toFixed(1)}s: passa de 1 minuto (alvo 55 a 62s)`);
+	}
 
 	return {
 		serie: ep.serie,

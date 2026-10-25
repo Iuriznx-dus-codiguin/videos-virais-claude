@@ -16,8 +16,12 @@ A rotina produz: seg–qui 1 vídeo; sexta 3 (sexta 18h, sábado 11h e 18h); sá
 2. **Correções:** o Iuri responde na sessão da rotina até as 16h; skill `como-funciona-corrigir` corrige o vídeo e grava a regra em `como-funciona/regras.md`. Sem resposta, o original vale.
 3. **Publicação: manual.** Vídeo e texto para colar em `videos/como-funciona-epNN.*` no ramo `dados`.
 
+## Formato
+Vídeos de ~1min20 (75 a 90 s com voz). Cada roteiro abre num estilo de narrativa (mito, E SE, dúvida comum, cadeia de MAS) e tem sempre uma virada com MAS no meio: veja `public/series/como-funciona/estilos.md`. Render de 1min20 leva ~35 min; na sexta (3 vídeos) a rotina roda por umas 2 h.
+
 ## Arquivos do formato
 - `biblia.json`: Tito (narrador fixo, capacete amarelo e óculos), `formato: "avulso"` (selo "#N", texto de publicação sem "Parte").
 - `pauta.json`: lista de temas em ordem, do chuveiro elétrico ao arranha-céu; a rotina acrescenta temas quando faltarem.
 - `regras.md`: regras do formato, alimentadas pelas correções.
+- `estilos.md`: estilos de narrativa validados pelo Iuri, com exemplos.
 - `epNN.json`: roteiro com `modelos` (maquete peça por peça), `animacoes`, `rotulos` e `cartoes`. Modelo: `ep01.json`.

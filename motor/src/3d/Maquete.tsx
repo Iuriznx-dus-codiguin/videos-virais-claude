@@ -89,6 +89,8 @@ const COR_QUENTE = new THREE.Color('#FF5A1F');
 const material = (p: Peca, calor: number, pulso: number, opacidade: number): THREE.Material => {
 	const cor = p.cor ?? '#B8C0CC';
 	if (p.brilho !== undefined && p.brilho > 0) return brilho(cor, q(p.brilho + pulso * 0.6, 0.05));
+	// acima de 1, a peça fica em brasa: brilha sozinha
+	if (calor > 1.05) return brilho('#FF4A1A', q(1 + (calor - 1) * 0.8, 0.1));
 	const c = q(clamp(calor), 0.1);
 	const pu = q(clamp(pulso), 0.1);
 	const op = q(clamp(opacidade), 0.05);

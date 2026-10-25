@@ -145,6 +145,9 @@ export const estadoPeca = (m: MaqueteNaCena, p: Peca, anims: AnimacaoTempo[], t:
 			case 'aquecer':
 				e.calor = Math.max(e.calor, k * smoothstep(a.ini, a.ini + Math.min(dur, 1.6), t));
 				break;
+			case 'esfriar':
+				e.calor *= 1 - smoothstep(a.ini, a.ini + Math.min(dur, 1.2), t);
+				break;
 			case 'pulsar':
 				if (t <= a.fim) e.pulso = Math.max(e.pulso, k * (0.55 + 0.45 * Math.sin((t - a.ini) * 9)) * smoothstep(a.ini, a.ini + 0.2, t));
 				break;

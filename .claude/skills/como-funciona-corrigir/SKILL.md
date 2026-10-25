@@ -11,6 +11,7 @@ Só mexa em `motor/public/series/como-funciona/`. Nunca grave regra em `_geral/r
 Separe cada correção em:
 - **só este vídeo** (troca de fala, peça errada, câmera cortando o Tito);
 - **regra do Como Funciona** (vale para os próximos: ritmo, jeito de explicar, cores da maquete, tamanho dos rótulos, tom do Tito, tipo de tema na pauta);
+- **estilo de narrativa** (um jeito novo de abrir ou virar a história, um exemplo que funcionou ou não): atualize `estilos.md` com o exemplo dele, sem apagar os estilos validados;
 - **pauta** (trocar, tirar ou adiantar temas): edite `pauta.json` mantendo `n` em ordem para os pendentes.
 Se for ambígua, escolha a leitura mais provável, aplique e diga qual usou.
 
