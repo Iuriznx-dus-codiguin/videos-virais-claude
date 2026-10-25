@@ -155,11 +155,13 @@
       "sons": [
         {
           "de": "inicio",
-          "som": "queda"
+          "som": "queda",
+          "volume": 0.4
         },
         {
           "de": "f2:fim-0.4",
-          "som": "impacto"
+          "som": "impacto",
+          "volume": 0.8
         }
       ],
       "efeitos": [
@@ -364,6 +366,11 @@
           "quem": "davi",
           "expressao": "serio",
           "de": "f14"
+        },
+        {
+          "quem": "davi",
+          "expressao": "medo",
+          "de": "f14"
         }
       ],
       "planos": [
@@ -389,9 +396,11 @@
         },
         {
           "de": "f14",
-          "tipo": "detalhe",
-          "alvo": "radio_painel",
-          "movimento": "aproximar"
+          "tipo": "close",
+          "alvo": "davi",
+          "lado": "frente",
+          "movimento": "aproximar",
+          "intensidade": 0.6
         }
       ],
       "sons": [
