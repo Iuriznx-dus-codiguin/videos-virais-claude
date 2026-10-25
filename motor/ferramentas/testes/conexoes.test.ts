@@ -1,7 +1,7 @@
 // Testes dos módulos de voz, publicação e conexão contra o servidor falso.
 // Uso: npm run testar
 import assert from 'node:assert/strict';
-import {execFile} from 'node:child_process';
+import {execFile, execFileSync} from 'node:child_process';
 import {cpSync, existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
@@ -278,6 +278,70 @@ describe('publicação', () => {
 			const r = await rodar(raiz, falso.base, 'publicar.ts', ['ilha-perdida', '1']);
 			assert.equal(r.codigo, 1);
 			assert.match(r.saida, /Rode o render antes/);
+		} finally {
+			await falso.fechar();
+		}
+	});
+});
+
+describe('fila de publicação', () => {
+	const git = (cwd: string, ...args: string[]) => execFileSync('git', args, {cwd, encoding: 'utf8'}).trim();
+
+	it('enfileira num ramo à parte, só publica na hora marcada e não repete', async () => {
+		const falso = await subir({processamentosAntes: 1});
+		try {
+			const remoto = mkdtempSync(join(tmpdir(), 'shorts-remoto-'));
+			git(remoto, 'init', '--quiet', '--bare', '-b', 'main');
+			const extra = {SHORTS_REMOTO: remoto};
+
+			// sessão de produção (3h): enfileira para as 18h de Brasília
+			const producao = montarRaiz();
+			const a = await rodar(producao, falso.base, 'dados.ts', ['enfileirar', 'ilha-perdida', '1', '--dia=2026-10-26', '--hora=18:00'], extra);
+			assert.equal(a.codigo, 0, a.saida);
+			assert.match(a.saida, /publica a partir de 2026-10-26T21:00:00.000Z/);
+
+			// rotina de publicação numa raiz limpa, que só tem o código
+			const rotina = mkdtempSync(join(tmpdir(), 'shorts-rotina-'));
+			const cedo = await rodar(rotina, falso.base, 'dados.ts', ['publicar-pendentes', '--agora=2026-10-26T20:59:00Z'], extra);
+			assert.equal(cedo.codigo, 0, cedo.saida);
+			assert.match(cedo.saida, /nada para publicar agora/);
+			assert.equal(falso.registro.youtubeMetadados.length, 0);
+
+			const hora = await rodar(rotina, falso.base, 'dados.ts', ['publicar-pendentes', '--agora=2026-10-26T21:00:30Z'], extra);
+			assert.equal(hora.codigo, 0, hora.saida);
+			assert.match(hora.saida, /YouTube: enviado \(public\)/);
+			assert.match(hora.saida, /Instagram: Reel publicado/);
+			assert.equal((falso.registro.youtubeMetadados[0] as {status: Record<string, unknown>}).status.privacyStatus, 'public');
+			assert.deepEqual(falso.registro.youtubeBytes, [4096]);
+
+			const de_novo = await rodar(rotina, falso.base, 'dados.ts', ['publicar-pendentes', '--agora=2026-10-26T22:00:00Z'], extra);
+			assert.match(de_novo.saida, /nada para publicar agora/);
+			assert.equal(falso.registro.instagramPublicados.length, 1);
+
+			// o vídeo sai do ramo depois de publicado, e o estado registra as duas redes
+			const conferir = mkdtempSync(join(tmpdir(), 'shorts-conferir-'));
+			git(conferir, 'clone', '--quiet', '--branch', 'dados', remoto, conferir);
+			assert.ok(!existsSync(join(conferir, 'fila', 'ilha-perdida-ep01.mp4')));
+			const estado = JSON.parse(readFileSync(join(conferir, 'series', 'ilha-perdida', 'estado.json'), 'utf8')) as {publicados: Record<string, {youtube?: unknown; instagram?: unknown}>};
+			assert.ok(estado.publicados['1'].youtube && estado.publicados['1'].instagram);
+			assert.equal((JSON.parse(readFileSync(join(conferir, 'fila', 'ilha-perdida-ep01.json'), 'utf8')) as {status: string}).status, 'publicado');
+		} finally {
+			await falso.fechar();
+		}
+	});
+
+	it('baixar e salvar levam as séries de uma sessão para a outra', async () => {
+		const falso = await subir();
+		try {
+			const remoto = mkdtempSync(join(tmpdir(), 'shorts-remoto-'));
+			git(remoto, 'init', '--quiet', '--bare', '-b', 'main');
+			const extra = {SHORTS_REMOTO: remoto};
+			const a = montarRaiz();
+			assert.equal((await rodar(a, falso.base, 'dados.ts', ['salvar', 'ilha-perdida'], extra)).codigo, 0);
+			const b = mkdtempSync(join(tmpdir(), 'shorts-b-'));
+			const r = await rodar(b, falso.base, 'dados.ts', ['baixar'], extra);
+			assert.equal(r.codigo, 0, r.saida);
+			assert.ok(existsSync(join(b, 'public', 'series', 'ilha-perdida', 'ep01.json')));
 		} finally {
 			await falso.fechar();
 		}

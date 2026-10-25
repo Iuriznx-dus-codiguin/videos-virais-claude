@@ -8,6 +8,8 @@
   "scripts": {
     "estudio": "remotion studio src/index.ts",
     "validar": "tsx ferramentas/validar.ts",
+    "catalogo": "tsx ferramentas/catalogo.ts",
+    "dados": "tsx ferramentas/dados.ts",
     "quadro": "tsx ferramentas/quadro.ts",
     "render": "tsx ferramentas/render.ts",
     "vozes": "tsx ferramentas/vozes.ts",
