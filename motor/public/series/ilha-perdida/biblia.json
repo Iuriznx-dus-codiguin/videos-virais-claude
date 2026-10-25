@@ -1,0 +1,85 @@
+{
+  "serie": "ilha-perdida",
+  "titulo": "ILHA PERDIDA",
+  "sinopse": "Léo acorda sozinho numa ilha depois de um naufrágio. Ele acha que é o único ali, até achar pegadas gigantes de três dedos e uma sobrevivente que conhece o segredo da ilha.",
+  "narrador": "leo",
+  "personagens": {
+    "leo": {
+      "nome": "Léo",
+      "papel": "protagonista e narrador em primeira pessoa",
+      "personalidade": "corajoso por teimosia, faz piada quando está com medo",
+      "voz": {
+        "descricao": "rapaz brasileiro de uns 22 anos, voz jovem e expressiva, bom para narração de suspense",
+        "instruct": "male, young adult, moderate pitch"
+      },
+      "visual": {
+        "altura": 1,
+        "corpo": "#22232A",
+        "cabeca": "#FFFFFF",
+        "olhos": "redondos",
+        "sobrancelhas": "grossas",
+        "acessorios": [
+          {
+            "tipo": "bandana",
+            "cor": "#E63946"
+          },
+          {
+            "tipo": "mochila",
+            "cor": "#FFC233"
+          }
+        ]
+      },
+      "cor_legenda": "#FFD60A"
+    },
+    "bia": {
+      "nome": "Bia",
+      "papel": "sobrevivente que está na ilha há um ano",
+      "personalidade": "durona, fala pouco e baixo, sabe se virar sozinha",
+      "voz": {
+        "descricao": "moça brasileira de uns 24 anos, voz firme e um pouco grave, fala baixo",
+        "instruct": "female, young adult, low pitch"
+      },
+      "visual": {
+        "altura": 0.94,
+        "corpo": "#2E3440",
+        "cabeca": "#FFE7D1",
+        "olhos": "ovais",
+        "sobrancelhas": "finas",
+        "cilios": true,
+        "bochechas": "#F4A7A3",
+        "acessorios": [
+          {
+            "tipo": "rabo_de_cavalo",
+            "cor": "#6B3A1F"
+          },
+          {
+            "tipo": "lenco",
+            "cor": "#6A994E"
+          }
+        ]
+      },
+      "cor_legenda": "#5CE1E6"
+    },
+    "gigante": {
+      "nome": "O Gigante",
+      "tipo": "gigante",
+      "papel": "criatura enorme que vive na ilha; nunca aparece inteira, só pés, pernas e olhos",
+      "visual": {
+        "corpo": "#34443D",
+        "cabeca": "#34443D"
+      }
+    }
+  },
+  "fatos": [
+    "Léo está sozinho na ilha há três dias depois de um naufrágio.",
+    "As pegadas gigantes têm três dedos, saem do mar e entram na floresta.",
+    "Na floresta havia uma fogueira ainda quente.",
+    "Bia está na ilha há um ano e chama a criatura de Gigante.",
+    "O Gigante só sai quando escurece.",
+    "Para sair da ilha é preciso entrar na caverna do Gigante, na montanha."
+  ],
+  "ganchos_abertos": [
+    "O que tem dentro da caverna?",
+    "O que aconteceu com o resto do barco da Bia?"
+  ]
+}

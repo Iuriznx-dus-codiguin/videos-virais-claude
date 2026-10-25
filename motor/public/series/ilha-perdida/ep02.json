@@ -1,0 +1,152 @@
+{
+  "serie": "ilha-perdida",
+  "parte": 2,
+  "titulo": "Não se mexe",
+  "musica": "tensao",
+  "falas": [
+    {"id": "f1", "quem": "leo", "off": true, "tom": "medo", "texto": "Tinha uma voz atrás de mim... e dois olhos ENORMES na minha frente."},
+    {"id": "f2", "quem": "bia", "off": true, "tom": "sussurro", "velocidade": 0.9, "texto": "Se você correr, ele te pega.", "pausa_depois": 0.35},
+    {"id": "f3", "quem": "leo", "off": true, "tom": "medo", "texto": "Eu não corri. Eu nem respirei."},
+    {"id": "f4", "quem": "leo", "off": true, "tom": "tenso", "texto": "Aí o chão começou a tremer.", "pausa_depois": 0.9},
+    {"id": "f5", "quem": "bia", "tom": "grito", "texto": "Agora! Vem!", "pausa_depois": 0.5},
+    {"id": "f6", "quem": "leo", "off": true, "texto": "Uma garota me puxou pra debaixo de umas raízes gigantes."},
+    {"id": "f7", "quem": "leo", "off": true, "tom": "sussurro", "texto": "Do lado de fora, ele passou. Devagar."},
+    {"id": "s1", "silencio": 1.0},
+    {"id": "f8", "quem": "leo", "tom": "sussurro", "texto": "O que... era aquilo?"},
+    {"id": "f9", "quem": "bia", "tom": "serio", "texto": "Eu chamo de Gigante. Ele só sai quando escurece."},
+    {"id": "f10", "quem": "leo", "tom": "sussurro", "texto": "Você mora aqui?"},
+    {"id": "f11", "quem": "bia", "tom": "triste", "texto": "Faz um ano. Os outros do meu barco... não tiveram tanta sorte.", "pausa_depois": 0.4},
+    {"id": "f12", "quem": "leo", "off": true, "texto": "Foi aí que ela acendeu a lanterna... e eu vi as paredes."},
+    {"id": "f13", "quem": "leo", "off": true, "texto": "Tinha risco pra todo lado. Ela contava os dias."},
+    {"id": "f14", "quem": "leo", "texto": "Tem algum jeito de sair dessa ilha?"},
+    {"id": "f15", "quem": "bia", "tom": "determinado", "texto": "Tem. Mas pra isso a gente precisa entrar na caverna dele.", "pausa_depois": 0.4},
+    {"id": "f16", "quem": "leo", "off": true, "tom": "tenso", "texto": "E ela não tava brincando."},
+    {"id": "s2", "silencio": 1.6}
+  ],
+  "cenas": [
+    {
+      "id": "selva_noite",
+      "cenario": "selva",
+      "luz": "noite",
+      "ambiente": "noite",
+      "personagens": {
+        "leo": {"em": "perto_fogueira", "olhando": "olhos", "expressao": "medo", "pose": "agachado"},
+        "bia": {"em": "atras", "olhando": "leo", "expressao": "serio", "pose": "escondido", "segura": "lanca"},
+        "gigante": {"em": "toca", "olhando": "leo", "pose": "agachado"}
+      },
+      "objetos": [
+        {"tipo": "fogueira", "em": "fogueira", "fogo": "brasas"},
+        {"tipo": "tronco", "em": "tronco", "giro": 35}
+      ],
+      "acoes": [
+        {"quem": "leo", "faz": "tremer", "de": "inicio"},
+        {"quem": "gigante", "faz": "levantar_gigante", "de": "f4:chao"},
+        {"quem": "gigante", "faz": "andar", "para": "frente_arbusto", "de": "f4:tremer", "velocidade": 0.8},
+        {"quem": "bia", "faz": "correr", "para": "leo", "de": "f4:fim+0.1"},
+        {"quem": "leo", "olhar": "bia", "de": "f5"},
+        {"quem": "leo", "expressao": "surpreso", "de": "f5"},
+        {"quem": "bia", "faz": "puxar", "para": "leo", "de": "f5:vem-0.2"},
+        {"quem": "leo", "faz": "levantar", "de": "f5:vem"},
+        {"quem": "bia", "faz": "correr", "para": "raizes", "de": "f5:fim+0.15"},
+        {"quem": "leo", "faz": "correr", "para": "frente_raizes", "de": "f5:fim+0.3"}
+      ],
+      "planos": [
+        {"de": "inicio", "tipo": "ombro", "alvo": "leo", "alvo2": "olhos"},
+        {"de": "f2", "tipo": "close", "alvo": "leo", "lado": "frente", "movimento": "aproximar"},
+        {"de": "f3", "tipo": "close", "alvo": "gigante", "lado": "frente", "movimento": "aproximar", "intensidade": 0.5},
+        {"de": "f4", "tipo": "baixo", "alvo": "gigante", "lado": "frente", "movimento": "subir"},
+        {"de": "f5-0.4", "tipo": "aberto", "alvo": "leo", "alvo2": "bia", "lado": "direita", "transicao": "flash"}
+      ],
+      "sons": [
+        {"de": "f1:enormes", "som": "tensao_sobe", "volume": 0.6},
+        {"de": "f3", "som": "respiracao_gigante"},
+        {"de": "f4:chao", "som": "rugido", "volume": 0.7},
+        {"de": "f5", "som": "folhas"}
+      ],
+      "efeitos": [
+        {"de": "inicio", "efeito": "vinheta", "intensidade": 0.6},
+        {"de": "f1:enormes", "efeito": "zoom_soco"},
+        {"de": "f4:tremer", "efeito": "tremor", "ate": "f5", "intensidade": 0.8}
+      ]
+    },
+    {
+      "id": "raizes",
+      "cenario": "raizes",
+      "de": "f6",
+      "ambiente": "noite",
+      "personagens": {
+        "bia": {"em": "fora", "olhando": "fundo_dir", "expressao": "serio", "segura": "lanterna"},
+        "leo": {"em": [-0.6, 7.4], "olhando": "fundo_esq", "expressao": "medo"},
+        "gigante": {"em": "fora_longe", "olhando": "fora_dir", "pose": "em_pe"}
+      },
+      "objetos": [
+        {"tipo": "riscos", "em": [0, -1.85], "quantos": 365}
+      ],
+      "acoes": [
+        {"quem": "bia", "faz": "correr", "para": "fundo_dir", "de": "inicio"},
+        {"quem": "leo", "faz": "correr", "para": "fundo_esq", "de": "inicio+0.15"},
+        {"quem": "bia", "faz": "esconder", "de": "f6:raizes"},
+        {"quem": "leo", "faz": "esconder", "de": "f6:raizes+0.2"},
+        {"quem": "bia", "olhar": "abertura", "de": "f6:fim"},
+        {"quem": "leo", "olhar": "abertura", "de": "f6:fim"},
+        {"quem": "gigante", "faz": "andar", "para": "fora_dir", "de": "f6:gigantes", "velocidade": 0.75},
+        {"quem": "leo", "faz": "tremer", "de": "f7", "ate": "f8"},
+        {"quem": "leo", "olhar": "bia", "de": "f8"},
+        {"quem": "bia", "olhar": "leo", "de": "f8:aquilo"},
+        {"quem": "bia", "expressao": "triste", "de": "f11"},
+        {"quem": "bia", "faz": "acender", "de": "f12:acendeu"},
+        {"quem": "bia", "faz": "erguer", "para": "parede", "de": "f12:acendeu+0.3"},
+        {"quem": "bia", "olhar": "parede", "de": "f12:acendeu+0.3"},
+        {"quem": "leo", "olhar": "parede", "de": "f12:paredes"},
+        {"quem": "leo", "expressao": "surpreso", "de": "f13"},
+        {"quem": "leo", "olhar": "bia", "de": "f14"},
+        {"quem": "leo", "expressao": "serio", "de": "f14"},
+        {"quem": "bia", "olhar": "leo", "de": "f14:ilha"},
+        {"quem": "bia", "expressao": "determinado", "de": "f15"}
+      ],
+      "planos": [
+        {"de": "inicio", "tipo": "aberto", "alvo": "abertura", "lado": "costas"},
+        {"de": "f7", "tipo": "pov", "alvo": "leo", "alvo2": "fora"},
+        {"de": "s1", "tipo": "medio", "alvo": "leo", "alvo2": "bia", "lado": "frente"},
+        {"de": "f8", "tipo": "close", "alvo": "leo", "lado": "tres_quartos_direita"},
+        {"de": "f9", "tipo": "close", "alvo": "bia", "lado": "tres_quartos_esquerda"},
+        {"de": "f10", "tipo": "ombro", "alvo": "bia", "alvo2": "leo"},
+        {"de": "f11", "tipo": "close", "alvo": "bia", "lado": "frente", "movimento": "aproximar"},
+        {"de": "f12", "tipo": "medio", "alvo": "bia", "lado": "tres_quartos_direita"},
+        {"de": "f12:paredes", "tipo": "detalhe", "alvo": "parede_esq", "alvo2": "parede_dir", "movimento": "panoramica"},
+        {"de": "f13:contava", "tipo": "close", "alvo": "leo", "lado": "tres_quartos_direita"},
+        {"de": "f14", "tipo": "ombro", "alvo": "bia", "alvo2": "leo"},
+        {"de": "f15", "tipo": "close", "alvo": "bia", "lado": "frente", "movimento": "aproximar"}
+      ],
+      "sons": [
+        {"de": "f12:acendeu", "som": "clique"}
+      ],
+      "efeitos": [
+        {"de": "inicio", "efeito": "vinheta", "intensidade": 0.7}
+      ]
+    },
+    {
+      "id": "montanha",
+      "cenario": "montanha",
+      "de": "f16",
+      "ambiente": "noite",
+      "personagens": {
+        "gigante": {"em": "caverna", "pose": "so_olhos", "olhos_fechados": true, "escala": 4}
+      },
+      "acoes": [
+        {"quem": "gigante", "faz": "abrir_olhos", "de": "f16:fim+0.1"},
+        {"quem": "gigante", "faz": "rugir", "de": "s2+0.2"}
+      ],
+      "planos": [
+        {"de": "inicio", "tipo": "geral", "alvo": "caverna", "camera": "mirante", "movimento": "aproximar"}
+      ],
+      "sons": [
+        {"de": "s2+0.2", "som": "rugido"}
+      ],
+      "efeitos": [
+        {"de": "s2+0.2", "efeito": "tremor", "intensidade": 0.7}
+      ]
+    }
+  ],
+  "chamada": {"pergunta": "Você entraria na caverna?", "texto": "COMENTA", "destaque": "PARTE 3"}
+}

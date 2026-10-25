@@ -1,0 +1,41 @@
+{
+  "name": "motor-shorts",
+  "version": "0.1.0",
+  "description": "Motor que transforma o roteiro de um episódio em vídeo 3D vertical (Three.js + Remotion)",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "scripts": {
+    "estudio": "remotion studio src/index.ts",
+    "validar": "tsx ferramentas/validar.ts",
+    "catalogo": "tsx ferramentas/catalogo.ts",
+    "dados": "tsx ferramentas/dados.ts",
+    "quadro": "tsx ferramentas/quadro.ts",
+    "render": "tsx ferramentas/render.ts",
+    "vozes": "tsx ferramentas/vozes.ts",
+    "tipos": "tsc --noEmit -p .",
+    "testar": "tsx --test ferramentas/testes/conexoes.test.ts",
+    "conectar": "tsx ferramentas/conectar.ts"
+  },
+  "dependencies": {
+    "@react-three/drei": "10.7.9",
+    "@react-three/fiber": "9.8.2",
+    "@remotion/bundler": "4.0.538",
+    "@remotion/cli": "4.0.538",
+    "@remotion/media": "4.0.538",
+    "@remotion/renderer": "4.0.538",
+    "@remotion/three": "4.0.538",
+    "@vercel/blob": "2.8.2",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "remotion": "4.0.538",
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.3.0",
+    "@types/three": "^0.186.0",
+    "tsx": "^4.19.0",
+    "typescript": "7.0.2"
+  }
+}
