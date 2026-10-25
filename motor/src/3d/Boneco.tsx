@@ -190,6 +190,51 @@ const Mochila: React.FC<{cor: string}> = ({cor}) => (
 	</>
 );
 
+const domoCapacete = () => geo('domoCapacete', () => new THREE.SphereGeometry(RC * 1.1, 32, 14, 0, Math.PI * 2, 0, Math.PI * 0.5));
+
+/** Capacete de obra: casco arredondado, aba larga e um friso no meio. */
+const Capacete: React.FC<{cor: string}> = ({cor}) => (
+	<group position={[0, MEDIDAS.pescocoCabeca + RC * 0.12, 0]} rotation={[-0.1, 0, 0]}>
+		<Malha g={domoCapacete()} m={toon(cor)} contorno={0.015} />
+		<Malha g={cilindro(RC * 1.32, RC * 1.32, 0.035, 32)} m={toon(cor)} position={[0, 0.01, 0.05]} contorno={0.012} />
+		<Malha g={capsula(0.035, RC * 1.3, 8)} m={toon(escurecer(cor, 0.85))} position={[0, RC * 0.98, 0]} rotation={[Math.PI / 2, 0, 0]} contorno={0.008} />
+	</group>
+);
+
+/** Cartola de inventor do século XIX. */
+const Cartola: React.FC<{cor: string}> = ({cor}) => (
+	<group position={[0, MEDIDAS.pescocoCabeca + RC * 0.72, 0]} rotation={[-0.08, 0, 0.06]}>
+		<Malha g={cilindro(RC * 0.78, RC * 0.82, 0.5, 28)} m={toon(cor)} position={[0, 0.25, 0]} contorno={0.015} />
+		<Malha g={cilindro(RC * 1.28, RC * 1.28, 0.035, 28)} m={toon(cor)} contorno={0.012} />
+		<Malha g={cilindro(RC * 0.83, RC * 0.83, 0.07, 28)} m={toon('#8C2F39')} position={[0, 0.07, 0]} />
+	</group>
+);
+
+/** Óculos redondos na frente dos olhos. */
+const Oculos: React.FC<{cor: string}> = ({cor}) => (
+	<group position={[0, MEDIDAS.pescocoCabeca, 0]}>
+		{[1, -1].map((lado) => (
+			<group key={lado} {...naEsfera(0.14 * lado, 0.04, -0.045)}>
+				<mesh geometry={toro(0.085, 0.012, 32, 6)} material={toon(cor)} rotation={[Math.PI / 2, 0, 0]} />
+			</group>
+		))}
+		<group {...naEsfera(0, 0.06, -0.05)}>
+			<mesh geometry={capsula(0.01, 0.06, 6)} material={toon(cor)} rotation={[0, 0, Math.PI / 2]} />
+		</group>
+	</group>
+);
+
+/** Bigode farto, embaixo do nariz. */
+const Bigode: React.FC<{cor: string}> = ({cor}) => (
+	<group position={[0, MEDIDAS.pescocoCabeca, 0]}>
+		{[1, -1].map((lado) => (
+			<group key={lado} {...naEsfera(0.065 * lado, -0.085, -0.01)}>
+				<mesh geometry={esfera(1, 14, 9)} material={toon(cor)} rotation={[0, 0, lado * 0.35]} scale={[0.08, 0.032, 0.03]} />
+			</group>
+		))}
+	</group>
+);
+
 const escurecer = (cor: string, k = 0.82) => '#' + new THREE.Color(cor).multiplyScalar(k).getHexString();
 
 const AcessoriosCabeca: React.FC<{lista: Acessorio[]; p: Pose}> = ({lista, p}) => (
@@ -200,6 +245,10 @@ const AcessoriosCabeca: React.FC<{lista: Acessorio[]; p: Pose}> = ({lista, p}) =
 			if (a.tipo === 'rabo_de_cavalo') return <RaboDeCavalo key={i} cor={cor} p={p} />;
 			if (a.tipo === 'cabelo_curto') return <CabeloCurto key={i} cor={cor} />;
 			if (a.tipo === 'bone') return <Bone key={i} cor={cor} />;
+			if (a.tipo === 'capacete') return <Capacete key={i} cor={cor} />;
+			if (a.tipo === 'cartola') return <Cartola key={i} cor={cor} />;
+			if (a.tipo === 'oculos') return <Oculos key={i} cor={cor} />;
+			if (a.tipo === 'bigode') return <Bigode key={i} cor={cor} />;
 			return null;
 		})}
 	</>

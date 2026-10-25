@@ -31,6 +31,12 @@ const SOM: Record<(typeof SONS)[number], string> = {
 	buzina: 'aevalsrc=0.5*sin(2*PI*110*t)+0.3*sin(2*PI*220*t)+0.2*sin(2*PI*330*t):d=2.4:s=44100,afade=t=in:d=0.2,afade=t=out:st=1.8:d=0.6[o]',
 	trovao: 'anoisesrc=d=3.2:c=brown:a=1,lowpass=f=240,tremolo=f=6:d=0.5,afade=t=in:d=0.08,afade=t=out:st=0.8:d=2.4,volume=3[o]',
 	clique: 'anoisesrc=d=0.09:c=white:a=0.9,highpass=f=2500,afade=t=out:st=0.005:d=0.07,volume=1.8[o]',
+	pop: 'aevalsrc=0.7*sin(2*PI*(300+2600*t)*t)*exp(-22*t):d=0.18:s=44100[o]',
+	whoosh: 'anoisesrc=d=0.7:c=pink:a=0.8,bandpass=f=900:width_type=h:w=1400,afade=t=in:d=0.3,afade=t=out:st=0.35:d=0.35,volume=1.6[o]',
+	zap: 'aevalsrc=0.35*sgn(sin(2*PI*120*t))*(0.6+0.4*sin(2*PI*31*t))+0.25*(random(0)*2-1):d=0.55:s=44100,highpass=f=200,lowpass=f=5000,afade=t=in:d=0.02,afade=t=out:st=0.35:d=0.2[o]',
+	agua: 'anoisesrc=d=1.8:c=pink:a=0.7,highpass=f=400,lowpass=f=4500,tremolo=f=17:d=0.3,afade=t=in:d=0.2,afade=t=out:st=1.3:d=0.5,volume=1.3[o]',
+	engrenagem: 'aevalsrc=0.9*(random(0)*2-1)*lt(mod(t\\,0.09)\\,0.012):d=1.2:s=44100,highpass=f=1500,volume=1.4[o]',
+	ding: 'aevalsrc=0.45*sin(2*PI*1320*t)*exp(-3*t)+0.2*sin(2*PI*2640*t)*exp(-5*t):d=1.4:s=44100[o]',
 };
 
 /** Entradas extras (além do grafo) de alguns sons: [descrição lavfi, ...]. */
@@ -46,12 +52,17 @@ const AMBIENTE: Record<(typeof AMBIENTES)[number], string> = {
 	selva: 'anoisesrc=d=16:c=pink:a=0.35,bandpass=f=2600:width_type=h:w=3200,tremolo=f=0.25:d=0.4,volume=1.2[o]',
 	chuva: 'anoisesrc=d=16:c=white:a=0.5,highpass=f=1800,lowpass=f=9000,tremolo=f=0.25:d=0.2,volume=1.1[o]',
 	noite: 'anoisesrc=d=16:c=brown:a=0.3,lowpass=f=300[a];sine=f=4300:d=16,tremolo=f=15:d=1,volume=0.04[b];[a][b]amix=inputs=2:normalize=0,volume=1.6[o]',
+	oficina: 'anoisesrc=d=16:c=brown:a=0.25,lowpass=f=400,tremolo=f=0.25:d=0.2,volume=1.2[o]',
+	estudio: 'anoisesrc=d=16:c=pink:a=0.12,lowpass=f=250,volume=1.0[o]',
 };
 
 /** Músicas de 32 s (drones graves que respiram devagar). */
 const MUSICA: Record<(typeof MUSICAS)[number], string> = {
 	tensao:
 		'sine=f=55:d=32[a];sine=f=58.3:d=32[b];sine=f=110:d=32,volume=0.4[c];[a][b][c]amix=inputs=3:normalize=0,tremolo=f=0.125:d=0.5,lowpass=f=900,volume=1.4[o]',
+	// arpejo leve (dó maior com sétima, depois sol) com baixo: clima de descoberta
+	curiosidade:
+		'aevalsrc=0.2*sin(2*PI*523.25*pow(2\\,-5*gte(mod(t\\,8)\\,4)/12)*pow(2\\,(4*floor(mod(t*4\\,4))-gte(floor(mod(t*4\\,4))\\,2))/12)*t)*exp(-7*mod(t\\,0.25))+0.16*sin(2*PI*130.81*pow(2\\,-5*gte(mod(t\\,8)\\,4)/12)*t)*(0.6+0.4*exp(-3*mod(t\\,0.5))):d=32:s=44100,lowpass=f=3200,aecho=0.8:0.6:180:0.25,volume=1.2[o]',
 	misterio:
 		'sine=f=65.4:d=32[a];sine=f=98:d=32,volume=0.7[b];sine=f=130.8:d=32,volume=0.5[c];sine=f=196:d=32,volume=0.25[d];[a][b][c][d]amix=inputs=4:normalize=0,tremolo=f=0.125:d=0.4,lowpass=f=1100,volume=1.3[o]',
 };

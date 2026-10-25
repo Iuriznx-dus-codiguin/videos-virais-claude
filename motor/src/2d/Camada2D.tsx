@@ -2,8 +2,9 @@
 // fala), efeitos de tela (flash, preto, vinheta) e a chamada final para comentar.
 import React from 'react';
 import {AbsoluteFill, cancelRender, continueRender, delayRender, spring, staticFile} from 'remotion';
-import {tipoDoPlano, transicaoNoTempo} from '../animacao/camera';
-import {cenaNoTempo} from '../animacao/simulacao';
+import * as THREE from 'three';
+import {cameraNoTempo, tipoDoPlano, transicaoNoTempo} from '../animacao/camera';
+import {cenaNoTempo, simulacao} from '../animacao/simulacao';
 import {GrupoLegenda, gruposDeLegenda, textoNaTela} from '../roteiro/legendas';
 import type {LinhaDoTempo} from '../roteiro/tipos';
 import {clamp, smoothstep} from '../util/mat';
@@ -48,7 +49,7 @@ const Selo: React.FC<{linha: LinhaDoTempo}> = ({linha}) => (
 				padding: '12px 34px',
 			}}
 		>
-			{linha.tituloSerie} <span style={{color: AMARELO}}>• PARTE {linha.parte}</span>
+			{linha.tituloSerie} <span style={{color: AMARELO}}>• {linha.formato === 'avulso' ? `#${linha.parte}` : `PARTE ${linha.parte}`}</span>
 		</div>
 	</div>
 );
@@ -198,6 +199,113 @@ const Chamada: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: num
 	);
 };
 
+// --- etiquetas presas às peças e cartões --------------------------------------------------
+
+const LARGURA = 1080;
+const ALTURA = 1920;
+
+/** Ponto 3D na tela (px), pela mesma câmera do quadro; null se estiver atrás da lente. */
+const naTela = (linha: LinhaDoTempo, t: number, alvo: string | [number, number, number]): [number, number] | null => {
+	const cena = cenaNoTempo(linha, t);
+	const sim = simulacao(linha, cena);
+	const ponto = sim.ponto(alvo, t);
+	if (!ponto) return null;
+	const c = cameraNoTempo(cena, sim, t);
+	const cam = new THREE.PerspectiveCamera(c.fov, LARGURA / ALTURA, 0.05, 900);
+	cam.position.set(...c.pos);
+	cam.up.set(0, 1, 0);
+	cam.lookAt(...c.alvo);
+	cam.rotateZ(c.rolar);
+	cam.updateMatrixWorld();
+	const v = new THREE.Vector3(...ponto).project(cam);
+	if (v.z > 1) return null;
+	return [((v.x + 1) / 2) * LARGURA, ((1 - v.y) / 2) * ALTURA];
+};
+
+const Rotulos: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: number}> = ({linha, t, frame, fps}) => {
+	if (t >= linha.chamada.ini) return null;
+	const cena = cenaNoTempo(linha, t);
+	const ativos = cena.rotulos.filter((r) => t >= r.ini && t < r.fim);
+	return (
+		<>
+			{ativos.map((r, i) => {
+				const p = naTela(linha, t, r.alvo);
+				if (!p) return null;
+				const [px, py] = p;
+				const lado = r.lado ?? (px < LARGURA / 2 ? 'esquerda' : 'direita');
+				const entra = spring({frame: frame - Math.round(r.ini * fps), fps, config: {damping: 13, stiffness: 200}});
+				const sai = 1 - smoothstep(r.fim - 0.2, r.fim, t);
+				const vis = entra * sai;
+				const ly = r.altura !== undefined ? r.altura * ALTURA : clamp(py - 170 - i * 20, 330, 1050);
+				const lx = lado === 'esquerda' ? 70 : LARGURA - 70;
+				const cor = r.cor ?? AMARELO;
+				// a linha sai da borda da etiqueta e vai até a peça
+				const bx = lado === 'esquerda' ? lx + 40 : lx - 40;
+				return (
+					<React.Fragment key={i}>
+						<svg width={LARGURA} height={ALTURA} style={{position: 'absolute', left: 0, top: 0, opacity: vis}}>
+							<line x1={bx} y1={ly + 40} x2={bx + (px - bx) * entra} y2={ly + 40 + (py - ly - 40) * entra} stroke="#000" strokeWidth={14} strokeLinecap="round" />
+							<line x1={bx} y1={ly + 40} x2={bx + (px - bx) * entra} y2={ly + 40 + (py - ly - 40) * entra} stroke={cor} strokeWidth={7} strokeLinecap="round" />
+							<circle cx={px} cy={py} r={16 * entra} fill={cor} stroke="#000" strokeWidth={6} />
+						</svg>
+						<div
+							style={{
+								position: 'absolute',
+								top: ly,
+								[lado === 'esquerda' ? 'left' : 'right']: 50,
+								maxWidth: 560,
+								fontFamily: FONTE,
+								fontWeight: 900,
+								fontSize: 54,
+								lineHeight: 1.05,
+								color: '#111',
+								background: cor,
+								border: '6px solid #000',
+								borderRadius: 22,
+								padding: '10px 26px 14px',
+								boxShadow: '0 10px 0 #000',
+								opacity: vis,
+								transform: `scale(${0.6 + 0.4 * entra})`,
+								transformOrigin: lado === 'esquerda' ? 'left center' : 'right center',
+							}}
+						>
+							{r.texto.toUpperCase()}
+						</div>
+					</React.Fragment>
+				);
+			})}
+		</>
+	);
+};
+
+const Cartoes: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: number}> = ({linha, t, frame, fps}) => {
+	if (t >= linha.chamada.ini) return null;
+	const cena = cenaNoTempo(linha, t);
+	const c = cena.cartoes.find((x) => t >= x.ini && t < x.fim);
+	if (!c) return null;
+	const entra = spring({frame: frame - Math.round(c.ini * fps), fps, config: {damping: 11, stiffness: 180}});
+	const sai = 1 - smoothstep(c.fim - 0.25, c.fim, t);
+	return (
+		<div style={{position: 'absolute', top: 330, width: '100%', display: 'flex', justifyContent: 'center', opacity: sai}}>
+			<div
+				style={{
+					textAlign: 'center',
+					background: 'rgba(255,255,255,0.96)',
+					border: '7px solid #000',
+					borderRadius: 30,
+					boxShadow: '0 14px 0 #000',
+					padding: '14px 46px 20px',
+					transform: `rotate(-2deg) scale(${entra})`,
+					maxWidth: 900,
+				}}
+			>
+				<div style={{fontFamily: FONTE, fontWeight: 900, fontSize: 120, lineHeight: 1, color: '#111'}}>{c.grande.toUpperCase()}</div>
+				{c.pequeno ? <div style={{fontFamily: FONTE, fontWeight: 800, fontSize: 44, lineHeight: 1.15, color: '#333', marginTop: 8}}>{c.pequeno}</div> : null}
+			</div>
+		</div>
+	);
+};
+
 const Efeitos: React.FC<{linha: LinhaDoTempo; t: number}> = ({linha, t}) => {
 	const cena = cenaNoTempo(linha, t);
 	let branco = 0;
@@ -226,8 +334,10 @@ const Efeitos: React.FC<{linha: LinhaDoTempo; t: number}> = ({linha, t}) => {
 export const Camada2D: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: number; semVoz: boolean}> = ({linha, t, frame, fps, semVoz}) => (
 	<AbsoluteFill>
 		<Efeitos linha={linha} t={t} />
+		<Rotulos linha={linha} t={t} frame={frame} fps={fps} />
 		<Selo linha={linha} />
 		{semVoz ? <AvisoPrevia /> : null}
+		<Cartoes linha={linha} t={t} frame={frame} fps={fps} />
 		<Legenda linha={linha} t={t} frame={frame} fps={fps} />
 		<Chamada linha={linha} t={t} frame={frame} fps={fps} />
 	</AbsoluteFill>

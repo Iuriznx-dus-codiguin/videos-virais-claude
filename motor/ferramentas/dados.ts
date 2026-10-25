@@ -149,7 +149,7 @@ export const entregar = (serie: string, parte: number, dia: string, hora: string
 		writeFileSync(
 			join(dir, `${nome}.md`),
 			[
-				`# ${biblia.titulo} · Parte ${parte}: ${ep.titulo}`,
+				biblia.formato === 'avulso' ? `# ${biblia.titulo} #${parte}: ${ep.titulo}` : `# ${biblia.titulo} · Parte ${parte}: ${ep.titulo}`,
 				'',
 				`**Postar em ${dia.split('-').reverse().join('/')} às ${hora} (Brasília)** · vídeo: ${nome}.mp4`,
 				'',

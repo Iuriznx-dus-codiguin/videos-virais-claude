@@ -1,0 +1,590 @@
+{
+ "como_usar": "Item n = episódio n (estado.json: proxima_parte). A rotina marca status 'produzido' e o dia. Quando faltarem 10 pendentes, a rotina acrescenta 20 novos, variando: cozinha, banheiro, rua, transporte, cidade, energia, grandes obras. Não repita tema.",
+ "itens": [
+  {
+   "n": 1,
+   "id": "chuveiro-eletrico",
+   "nome": "Chuveiro elétrico",
+   "curto": "CHUVEIRO",
+   "invencao": "Francisco Canhos (um dos primeiros), Jaú-SP, 1927",
+   "conceitos": [
+    "efeito Joule",
+    "resistência elétrica",
+    "diafragma de pressão",
+    "potência = tensão²/resistência"
+   ],
+   "gancho": "A água sai gelada do cano e um segundo depois sai quente, sem fogo.",
+   "status": "pendente"
+  },
+  {
+   "n": 2,
+   "id": "lampada",
+   "nome": "Lâmpada incandescente",
+   "curto": "LÂMPADA",
+   "invencao": "Thomas Edison e Joseph Swan, 1879-1880",
+   "conceitos": [
+    "filamento de tungstênio",
+    "vácuo e gás inerte",
+    "incandescência",
+    "LED como sucessor"
+   ],
+   "gancho": "Um fio fininho fica tão quente que vira luz, e não pega fogo.",
+   "status": "pendente"
+  },
+  {
+   "n": 3,
+   "id": "geladeira",
+   "nome": "Geladeira",
+   "curto": "GELADEIRA",
+   "invencao": "Jacob Perkins (máquina de 1834); geladeira doméstica nos anos 1910-1920",
+   "conceitos": [
+    "ciclo de refrigeração",
+    "evaporação rouba calor",
+    "compressor",
+    "condensador atrás da geladeira"
+   ],
+   "gancho": "A geladeira não cria frio: ela tira o calor de dentro e joga fora.",
+   "status": "pendente"
+  },
+  {
+   "n": 4,
+   "id": "descarga",
+   "nome": "Descarga do vaso sanitário",
+   "curto": "DESCARGA",
+   "invencao": "Alexander Cumming patenteou o sifão em S em 1775",
+   "conceitos": [
+    "sifão",
+    "selo d'água contra cheiro",
+    "boia e válvula da caixa",
+    "gravidade"
+   ],
+   "gancho": "Aquela curva no cano do vaso é o que impede o cheiro de subir.",
+   "status": "pendente"
+  },
+  {
+   "n": 5,
+   "id": "micro-ondas",
+   "nome": "Micro-ondas",
+   "curto": "MICROONDAS",
+   "invencao": "Percy Spencer, 1945 (um chocolate derreteu no bolso dele)",
+   "conceitos": [
+    "magnetron",
+    "ondas eletromagnéticas",
+    "moléculas de água agitadas",
+    "prato giratório e pontos frios"
+   ],
+   "gancho": "Ele foi inventado porque um chocolate derreteu no bolso de um engenheiro.",
+   "status": "pendente"
+  },
+  {
+   "n": 6,
+   "id": "panela-de-pressao",
+   "nome": "Panela de pressão",
+   "curto": "PRESSÃO",
+   "invencao": "Denis Papin, 1679 (o 'digestor')",
+   "conceitos": [
+    "ponto de ebulição sobe com a pressão",
+    "válvula de segurança",
+    "vedação",
+    "vapor"
+   ],
+   "gancho": "Dentro dela a água ferve a uns 120 graus, não a 100.",
+   "status": "pendente"
+  },
+  {
+   "n": 7,
+   "id": "ziper",
+   "nome": "Zíper",
+   "curto": "ZÍPER",
+   "invencao": "Whitcomb Judson (1893) e Gideon Sundback (1913)",
+   "conceitos": [
+    "dentes que se encaixam",
+    "cursor em Y",
+    "cunha",
+    "atrito"
+   ],
+   "gancho": "Um zíper tem dezenas de dentes e só uma peça faz todo o trabalho.",
+   "status": "pendente"
+  },
+  {
+   "n": 8,
+   "id": "ventilador",
+   "nome": "Ventilador",
+   "curto": "VENTILADOR",
+   "invencao": "Schuyler Wheeler, 1882",
+   "conceitos": [
+    "motor elétrico",
+    "pás inclinadas empurram ar",
+    "evaporação do suor",
+    "rotação"
+   ],
+   "gancho": "O ventilador não esfria o ar. Ele esfria você.",
+   "status": "pendente"
+  },
+  {
+   "n": 9,
+   "id": "torradeira",
+   "nome": "Torradeira",
+   "curto": "TORRADEIRA",
+   "invencao": "Crompton & Co., 1893; torradeira automática de Charles Strite, 1919",
+   "conceitos": [
+    "fio de nicromo",
+    "radiação de calor",
+    "lâmina bimetálica",
+    "mola que solta o pão"
+   ],
+   "gancho": "Quem decide a hora de pular o pão é uma lâmina de dois metais.",
+   "status": "pendente"
+  },
+  {
+   "n": 10,
+   "id": "fechadura",
+   "nome": "Fechadura de pinos",
+   "curto": "FECHADURA",
+   "invencao": "Linus Yale Jr., 1861 (ideia de pinos já existia no Egito antigo)",
+   "conceitos": [
+    "pinos de alturas diferentes",
+    "linha de corte",
+    "mola",
+    "segredo da chave"
+   ],
+   "gancho": "Os dentes da sua chave levantam pinos até uma linha invisível.",
+   "status": "pendente"
+  },
+  {
+   "n": 11,
+   "id": "caneta",
+   "nome": "Caneta esferográfica",
+   "curto": "CANETA",
+   "invencao": "László Bíró, 1938",
+   "conceitos": [
+    "esfera que gira",
+    "tinta viscosa",
+    "capilaridade",
+    "furo no tubo para entrar ar"
+   ],
+   "gancho": "A ponta da caneta é uma bolinha que gira, e tem um furo de propósito na tampa.",
+   "status": "pendente"
+  },
+  {
+   "n": 12,
+   "id": "liquidificador",
+   "nome": "Liquidificador",
+   "curto": "LIQUIDIFICADOR",
+   "invencao": "Stephen Poplawski, 1922",
+   "conceitos": [
+    "motor de alta rotação",
+    "lâminas e vórtice",
+    "copo com quinas",
+    "acoplamento"
+   ],
+   "gancho": "As lâminas não cortam tudo: o redemoinho é que traz a comida até elas.",
+   "status": "pendente"
+  },
+  {
+   "n": 13,
+   "id": "maquina-de-lavar",
+   "nome": "Máquina de lavar",
+   "curto": "LAVADORA",
+   "invencao": "Alva Fisher, 1908 (uma das primeiras elétricas)",
+   "conceitos": [
+    "tambor",
+    "agitação",
+    "centrifugação",
+    "força centrífuga"
+   ],
+   "gancho": "A centrifugação tira a água da roupa sem calor nenhum.",
+   "status": "pendente"
+  },
+  {
+   "n": 14,
+   "id": "ar-condicionado",
+   "nome": "Ar-condicionado",
+   "curto": "AR",
+   "invencao": "Willis Carrier, 1902 (para uma gráfica, não para pessoas)",
+   "conceitos": [
+    "ciclo de refrigeração",
+    "umidade",
+    "evaporadora e condensadora",
+    "gás refrigerante"
+   ],
+   "gancho": "Ele foi inventado para secar papel numa gráfica, não para refrescar gente.",
+   "status": "pendente"
+  },
+  {
+   "n": 15,
+   "id": "motor-eletrico",
+   "nome": "Motor elétrico",
+   "curto": "MOTOR",
+   "invencao": "Michael Faraday, 1821; motor de indução de Nikola Tesla, 1888",
+   "conceitos": [
+    "eletroímã",
+    "campo magnético",
+    "rotor e estator",
+    "força de Lorentz"
+   ],
+   "gancho": "Ímãs e fio de cobre fazem quase tudo que gira na sua casa.",
+   "status": "pendente"
+  },
+  {
+   "n": 16,
+   "id": "bicicleta",
+   "nome": "Bicicleta",
+   "curto": "BICICLETA",
+   "invencao": "Karl Drais, 1817 (sem pedal); corrente com Starley e Lawson, anos 1880",
+   "conceitos": [
+    "coroa e catraca",
+    "relação de marchas",
+    "equilíbrio em movimento",
+    "rolamento"
+   ],
+   "gancho": "A primeira bicicleta não tinha pedal.",
+   "status": "pendente"
+  },
+  {
+   "n": 17,
+   "id": "relogio-mecanico",
+   "nome": "Relógio mecânico",
+   "curto": "RELÓGIO",
+   "invencao": "Relógios de bolso de Peter Henlein, c. 1510",
+   "conceitos": [
+    "mola real",
+    "escape",
+    "balanço",
+    "engrenagens"
+   ],
+   "gancho": "O tique-taque é uma peça segurando e soltando as engrenagens.",
+   "status": "pendente"
+  },
+  {
+   "n": 18,
+   "id": "camera",
+   "nome": "Câmera fotográfica",
+   "curto": "CÂMERA",
+   "invencao": "Nicéphore Niépce, primeira foto em 1826",
+   "conceitos": [
+    "câmara escura",
+    "lente",
+    "sensor e pixels",
+    "exposição"
+   ],
+   "gancho": "A primeira foto da história levou horas para ficar pronta.",
+   "status": "pendente"
+  },
+  {
+   "n": 19,
+   "id": "tomada",
+   "nome": "Tomada e interruptor",
+   "curto": "TOMADA",
+   "invencao": "Harvey Hubbell, tomada de encaixe, 1904",
+   "conceitos": [
+    "circuito fechado",
+    "fase, neutro e terra",
+    "isolamento",
+    "pino terra"
+   ],
+   "gancho": "Apertar o interruptor só fecha uma porta para a eletricidade.",
+   "status": "pendente"
+  },
+  {
+   "n": 20,
+   "id": "disjuntor",
+   "nome": "Disjuntor",
+   "curto": "DISJUNTOR",
+   "invencao": "Thomas Edison descreveu a ideia em 1879; modelos modernos nos anos 1920",
+   "conceitos": [
+    "sobrecarga",
+    "lâmina bimetálica",
+    "eletroímã",
+    "curto-circuito"
+   ],
+   "gancho": "Quando ele desarma, ele acabou de salvar a sua casa.",
+   "status": "pendente"
+  },
+  {
+   "n": 21,
+   "id": "caixa-dagua",
+   "nome": "Caixa d'água",
+   "curto": "CAIXA",
+   "invencao": "Torres e reservatórios elevados do século XIX",
+   "conceitos": [
+    "pressão pela altura",
+    "vasos comunicantes",
+    "boia",
+    "gravidade"
+   ],
+   "gancho": "Ela fica lá em cima porque a altura é o que empurra a água na torneira.",
+   "status": "pendente"
+  },
+  {
+   "n": 22,
+   "id": "fogao-a-gas",
+   "nome": "Fogão a gás",
+   "curto": "FOGÃO",
+   "invencao": "James Sharp patenteou um fogão a gás em 1826",
+   "conceitos": [
+    "mistura de gás e ar",
+    "bico injetor",
+    "triângulo do fogo",
+    "válvula de segurança"
+   ],
+   "gancho": "A chama azul queima melhor que a amarela, e tem um motivo.",
+   "status": "pendente"
+  },
+  {
+   "n": 23,
+   "id": "extintor",
+   "nome": "Extintor de incêndio",
+   "curto": "EXTINTOR",
+   "invencao": "George William Manby, 1818",
+   "conceitos": [
+    "triângulo do fogo",
+    "abafamento",
+    "resfriamento",
+    "pressão interna"
+   ],
+   "gancho": "Cada extintor tira um lado diferente do triângulo do fogo.",
+   "status": "pendente"
+  },
+  {
+   "n": 24,
+   "id": "motor-a-combustao",
+   "nome": "Motor do carro",
+   "curto": "CARRO",
+   "invencao": "Nicolaus Otto, motor de 4 tempos, 1876",
+   "conceitos": [
+    "admissão, compressão, explosão, escape",
+    "pistão e virabrequim",
+    "vela",
+    "combustão"
+   ],
+   "gancho": "Seu carro anda com milhares de explosões pequenas por minuto.",
+   "status": "pendente"
+  },
+  {
+   "n": 25,
+   "id": "freio",
+   "nome": "Freio do carro",
+   "curto": "FREIO",
+   "invencao": "Freio a disco (Frederick Lanchester, 1902); hidráulico (Malcolm Loughead, 1917)",
+   "conceitos": [
+    "princípio de Pascal",
+    "pastilha e disco",
+    "atrito vira calor",
+    "multiplicação de força"
+   ],
+   "gancho": "Seu pé faz pouca força. O óleo multiplica.",
+   "status": "pendente"
+  },
+  {
+   "n": 26,
+   "id": "airbag",
+   "nome": "Airbag",
+   "curto": "AIRBAG",
+   "invencao": "John Hetrick e Walter Linderer, 1952-1953",
+   "conceitos": [
+    "sensor de desaceleração",
+    "reação química que gera gás",
+    "inflar em milissegundos",
+    "furos que esvaziam"
+   ],
+   "gancho": "Ele enche mais rápido do que você consegue piscar.",
+   "status": "pendente"
+  },
+  {
+   "n": 27,
+   "id": "semaforo",
+   "nome": "Semáforo",
+   "curto": "SEMÁFORO",
+   "invencao": "John Peake Knight, Londres, 1868 (a gás); elétrico em 1912-1914",
+   "conceitos": [
+    "temporizador",
+    "sensores no asfalto",
+    "ciclo de fases",
+    "onda verde"
+   ],
+   "gancho": "O primeiro semáforo funcionava a gás e explodiu.",
+   "status": "pendente"
+  },
+  {
+   "n": 28,
+   "id": "escada-rolante",
+   "nome": "Escada rolante",
+   "curto": "ESCADA",
+   "invencao": "Jesse Reno, 1892 (rampa inclinada); Charles Seeberger nomeou 'escalator'",
+   "conceitos": [
+    "corrente sem fim",
+    "degraus com dois trilhos",
+    "degrau que vira chão",
+    "corrimão sincronizado"
+   ],
+   "gancho": "Os degraus somem no chão porque andam em trilhos diferentes.",
+   "status": "pendente"
+  },
+  {
+   "n": 29,
+   "id": "elevador",
+   "nome": "Elevador",
+   "curto": "ELEVADOR",
+   "invencao": "Elisha Otis, freio de segurança, 1853",
+   "conceitos": [
+    "contrapeso",
+    "polia e cabos",
+    "freio de segurança",
+    "motor e polia de tração"
+   ],
+   "gancho": "Se o cabo do elevador arrebentar, ele não cai. Isso foi demonstrado em 1854.",
+   "status": "pendente"
+  },
+  {
+   "n": 30,
+   "id": "aviao",
+   "nome": "Como o avião voa",
+   "curto": "AVIÃO",
+   "invencao": "Irmãos Wright (1903) e Santos Dumont (14-Bis, 1906)",
+   "conceitos": [
+    "sustentação",
+    "perfil da asa",
+    "ângulo de ataque",
+    "empuxo e arrasto"
+   ],
+   "gancho": "Um avião de 400 toneladas fica no ar por causa do formato da asa.",
+   "status": "pendente"
+  },
+  {
+   "n": 31,
+   "id": "hidreletrica",
+   "nome": "Usina hidrelétrica",
+   "curto": "USINA",
+   "invencao": "Primeira hidrelétrica em Appleton, EUA, 1882; Itaipu, 1984",
+   "conceitos": [
+    "energia potencial da água",
+    "turbina",
+    "gerador",
+    "barragem"
+   ],
+   "gancho": "A luz da sua casa provavelmente veio de água caindo.",
+   "status": "pendente"
+  },
+  {
+   "n": 32,
+   "id": "painel-solar",
+   "nome": "Painel solar",
+   "curto": "SOLAR",
+   "invencao": "Efeito fotovoltaico descoberto por Edmond Becquerel, 1839; célula de silício em 1954",
+   "conceitos": [
+    "efeito fotovoltaico",
+    "silício",
+    "elétrons em movimento",
+    "inversor"
+   ],
+   "gancho": "Luz batendo numa placa empurra elétrons, e isso vira corrente.",
+   "status": "pendente"
+  },
+  {
+   "n": 33,
+   "id": "celular",
+   "nome": "Celular",
+   "curto": "CELULAR",
+   "invencao": "Martin Cooper fez a primeira ligação de celular em 1973",
+   "conceitos": [
+    "ondas de rádio",
+    "antenas e células",
+    "bateria de lítio",
+    "chip"
+   ],
+   "gancho": "A primeira ligação de celular foi para o concorrente.",
+   "status": "pendente"
+  },
+  {
+   "n": 34,
+   "id": "gps",
+   "nome": "GPS",
+   "curto": "GPS",
+   "invencao": "Departamento de Defesa dos EUA, sistema completo em 1995",
+   "conceitos": [
+    "satélites",
+    "tempo do sinal",
+    "triangulação (trilateração)",
+    "relógio atômico e relatividade"
+   ],
+   "gancho": "Sem a teoria da relatividade, o GPS erraria quilômetros por dia.",
+   "status": "pendente"
+  },
+  {
+   "n": 35,
+   "id": "ponte-pensil",
+   "nome": "Ponte pênsil",
+   "curto": "PONTE",
+   "invencao": "Ponte Golden Gate, 1937; ideia antiga com cipós",
+   "conceitos": [
+    "tração e compressão",
+    "cabos principais",
+    "torres",
+    "ancoragem"
+   ],
+   "gancho": "Os cabos seguram a pista, e as pontas ficam presas em blocos gigantes.",
+   "status": "pendente"
+  },
+  {
+   "n": 36,
+   "id": "tunel",
+   "nome": "Túnel debaixo d'água",
+   "curto": "TÚNEL",
+   "invencao": "Túnel do Tâmisa, Marc Brunel, 1843",
+   "conceitos": [
+    "tatuzão (máquina de túnel)",
+    "pressão da água",
+    "anéis de concreto",
+    "ventilação"
+   ],
+   "gancho": "Para cavar debaixo de um rio, a máquina monta a parede enquanto cava.",
+   "status": "pendente"
+  },
+  {
+   "n": 37,
+   "id": "concreto-armado",
+   "nome": "Concreto armado",
+   "curto": "CONCRETO",
+   "invencao": "Joseph Monier, jardineiro, 1867 (vasos de planta)",
+   "conceitos": [
+    "concreto aguenta compressão",
+    "aço aguenta tração",
+    "dilatação parecida",
+    "vigas e pilares"
+   ],
+   "gancho": "Ele foi inventado por um jardineiro que queria vasos mais fortes.",
+   "status": "pendente"
+  },
+  {
+   "n": 38,
+   "id": "guindaste",
+   "nome": "Guindaste de torre",
+   "curto": "GUINDASTE",
+   "invencao": "Guindastes de torre modernos, Europa, anos 1940-1950",
+   "conceitos": [
+    "contrapeso",
+    "alavanca",
+    "momento de força",
+    "como ele sobe sozinho"
+   ],
+   "gancho": "O guindaste do prédio constrói o próprio pedaço para subir.",
+   "status": "pendente"
+  },
+  {
+   "n": 39,
+   "id": "arranha-ceu",
+   "nome": "Arranha-céu",
+   "curto": "PRÉDIO",
+   "invencao": "Home Insurance Building, Chicago, 1885 (William Le Baron Jenney)",
+   "conceitos": [
+    "estrutura de aço",
+    "fundação",
+    "vento e balanço",
+    "amortecedor de massa"
+   ],
+   "gancho": "Prédios muito altos balançam de propósito, e têm um peso gigante para segurar.",
+   "status": "pendente"
+  }
+ ]
+}
