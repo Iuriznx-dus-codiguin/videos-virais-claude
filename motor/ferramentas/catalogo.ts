@@ -1,6 +1,6 @@
 // Imprime o vocabulário do motor em poucas linhas, para quem escreve roteiros não precisar ler o código.
 // Uso: npm run catalogo [-- <cenario>]
-import {ACOES, AMBIENTES, ANIMACOES_PECA, CENARIOS, EFEITOS, EXPRESSOES, FLUXOS, FORMAS, LADOS, LUZES, MOVIMENTOS, MUSICAS, OBJETOS, PLANOS, SONS} from '../src/catalogo.ts';
+import {ACOES, AMBIENTES, ANIMACOES_PECA, CENARIOS, EFEITOS, EXPRESSOES, FLUXOS, FORMAS, LADOS, LUZES, MOVIMENTOS, MUSICAS, OBJETOS, PLANOS, SONS, USO_OBJETOS} from '../src/catalogo.ts';
 
 const so = process.argv[2];
 if (so && !CENARIOS[so]) {
@@ -21,7 +21,9 @@ if (!so) {
 	console.log(`\nPLANOS: ${PLANOS.join(', ')}\nMOVIMENTOS: ${MOVIMENTOS.join(', ')}\nLADOS: ${LADOS.join(', ')}`);
 	console.log(`EXPRESSÕES: ${EXPRESSOES.join(', ')}`);
 	console.log(`EFEITOS: ${Object.keys(EFEITOS).join(', ')}`);
-	console.log(`SONS: ${SONS.join(', ')}\nAMBIENTES: ${AMBIENTES.join(', ')}\nMÚSICAS: ${MUSICAS.join(', ')}\nOBJETOS: ${OBJETOS.join(', ')}`);
+	console.log(`SONS: ${SONS.join(', ')}\nAMBIENTES: ${AMBIENTES.join(', ')}\nMÚSICAS: ${MUSICAS.join(', ')}`);
+	console.log('OBJETOS (opções):');
+	for (const o of OBJETOS) console.log(`  ${o}: ${USO_OBJETOS[o]}`);
 	console.log(`\nMAQUETES (objeto "maquete" com "modelo"; peças em "modelos" do episódio, ver src/roteiro/tipos.ts > Peca)`);
 	console.log(`  FORMAS: ${FORMAS.join(', ')}`);
 	console.log(`  FLUXOS: ${Object.keys(FLUXOS).join(', ')}`);

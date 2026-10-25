@@ -12,8 +12,8 @@ Fluxo separado do de aventura (que segue `PRODUCAO.md`): rotina, skills, pauta e
 A rotina produz: seg–qui 1 vídeo; sexta 3 (sexta 18h, sábado 11h e 18h); sábado 2 (domingo 11h e 18h); domingo nada. O número do vídeo é `proxima_parte` em `public/series/como-funciona/estado.json`, e o tema é o item de mesmo `n` em `pauta.json`. Se um vídeo do dia já foi entregue (rodada repetida), não refaça: confira `npm run dados -- entregas`.
 
 ## Rotina e skills
-1. **Produção (3h):** rotina "Produção Como Funciona", skill `como-funciona-produzir`.
-2. **Correções:** o Iuri responde na sessão da rotina até as 16h; skill `como-funciona-corrigir` corrige o vídeo e grava a regra em `como-funciona/regras.md`. Sem resposta, o original vale.
+1. **Produção (3h):** rotina "Produção Como Funciona", skill `como-funciona-produzir`. Junto com a entrega vai o roteiro do vídeo seguinte (só texto, sem voz nem render), para o Iuri revisar os dois de uma vez.
+2. **Correções:** o Iuri responde na sessão da rotina até as 16h; skill `como-funciona-corrigir` corrige o vídeo e grava a regra em `como-funciona/regras.md`. Correção no roteiro do próximo vídeo vai direto no `epNN.json` dele, e a rotina do dia seguinte parte dessa versão. Sem resposta, o original vale.
 3. **Publicação: manual.** Vídeo e texto para colar em `videos/como-funciona-epNN.*` no ramo `dados`.
 
 ## Formato

@@ -7,7 +7,7 @@
 //
 // Uso (a partir de motor/):
 //   npx tsx ferramentas/dados.ts baixar                    copia series/ do ramo para public/series
-//   npx tsx ferramentas/dados.ts salvar [<serie>...]       copia public/series para o ramo e envia
+//   npx tsx ferramentas/dados.ts salvar <serie> [...]      copia essas pastas de public/series para o ramo e envia
 //   npx tsx ferramentas/dados.ts entregar <serie> <parte> --dia=2026-10-26 --hora=18:00
 //   npx tsx ferramentas/dados.ts entregas                  mostra os vídeos guardados
 //
@@ -15,7 +15,7 @@
 import {execFileSync} from 'node:child_process';
 import {cpSync, existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync} from 'node:fs';
 import {tmpdir} from 'node:os';
-import {join} from 'node:path';
+import {basename, join} from 'node:path';
 import {PASTA_SERIES, RAIZ} from './lib/caminhos.ts';
 import {textosDoEpisodio} from './publicar/texto.ts';
 import {nomeEpisodio} from './validar.ts';
@@ -77,10 +77,43 @@ const enviar = (pasta: string, mensagem: string) => {
 	}
 };
 
-/** Copia sem o cache de áudio das vozes: é grande e se regenera a partir do roteiro e do .pt. */
+/** Episódios recentes cujo áudio de falas viaja entre sessões (correção do dia e a parte seguinte). */
+const EPISODIOS_COM_AUDIO = 3;
+
+/** Chaves (nome sem extensão) dos áudios em vozes/cache usados pelos episódios mais recentes da série. */
+const audiosRecentes = (pastaSerie: string): Set<string> => {
+	const dir = join(pastaSerie, 'vozes');
+	const usados = new Set<string>();
+	if (!existsSync(dir)) return usados;
+	const eps = readdirSync(dir)
+		.map((n) => /^ep(\d+)\.json$/.exec(n))
+		.filter((m): m is RegExpExecArray => m !== null)
+		.sort((a, b) => Number(b[1]) - Number(a[1]))
+		.slice(0, EPISODIOS_COM_AUDIO);
+	for (const m of eps) {
+		const al = JSON.parse(readFileSync(join(dir, m[0]), 'utf8')) as Record<string, {audio?: string}>;
+		for (const f of Object.values(al)) if (f.audio) usados.add(basename(f.audio).replace(/\.wav$/, ''));
+	}
+	return usados;
+};
+
+/**
+ * Copia a série levando do cache de vozes só o áudio tratado (e o alinhamento) dos episódios
+ * recentes: assim uma correção regenera só as falas que mudaram. O resto do cache se refaz do roteiro e do .pt.
+ */
 const substituir = (de: string, para: string) => {
 	rmSync(para, {recursive: true, force: true});
-	if (existsSync(de)) cpSync(de, para, {recursive: true, filter: (origem) => !/[\\/]vozes[\\/]cache([\\/]|$)/.test(origem) && !/\.bruto\.wav$/.test(origem)});
+	if (!existsSync(de)) return;
+	const usados = audiosRecentes(de);
+	cpSync(de, para, {
+		recursive: true,
+		filter: (origem) => {
+			if (/\.bruto\.wav$/.test(origem)) return false;
+			const m = /[\\/]vozes[\\/]cache[\\/]([^\\/]+)\.(wav|json)$/.exec(origem);
+			if (m) return usados.has(m[1]);
+			return !/[\\/]vozes[\\/]cache[\\/]/.test(origem);
+		},
+	});
 };
 
 export const baixar = () => {
@@ -99,7 +132,10 @@ export const baixar = () => {
 export const salvar = (series: string[]) => {
 	const pasta = abrir();
 	try {
-		const alvo = series.length ? series : readdirSync(PASTA_SERIES);
+		// sem nomes, salvaria as pastas de todos os fluxos (histórias e Como Funciona) e uma sessão
+		// sobrescreveria o trabalho da outra
+		if (!series.length) throw new Error('Diga quais pastas salvar, ex.: salvar voo-818 _historias');
+		const alvo = series;
 		for (const s of alvo) {
 			if (!existsSync(join(PASTA_SERIES, s))) throw new Error(`Série ${s} não existe em public/series`);
 			substituir(join(PASTA_SERIES, s), join(pasta, 'series', s));

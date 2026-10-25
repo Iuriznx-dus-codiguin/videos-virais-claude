@@ -15,7 +15,7 @@ const python = () => process.env.SHORTS_VOZ_PY ?? join(MOTOR, 'voz', '.venv', 'b
 const instalado = () => !python().includes('/') || existsSync(python());
 const script = () => process.env.SHORTS_VOZ_SCRIPT ?? join(MOTOR, 'voz', 'gerar.py');
 
-export const DICA_VOZ = 'rode "bash voz/instalar.sh" (dentro de motor/); ele precisa dos domínios huggingface.co, *.hf.co e download.pytorch.org liberados no ambiente de nuvem (Passo 0 do guia)';
+export const DICA_VOZ = 'rode "bash voz/instalar.sh" (dentro de motor/); ele precisa dos domínios huggingface.co, *.hf.co e download.pytorch.org e download-r2.pytorch.org liberados no ambiente de nuvem (Passo 0 do guia)';
 
 export interface TarefaGerar {
 	id: string;

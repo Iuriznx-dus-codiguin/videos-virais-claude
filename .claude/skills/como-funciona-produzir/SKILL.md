@@ -5,13 +5,13 @@ description: Produz o vídeo do dia do Como Funciona (tema da pauta, roteiro com
 
 # Produzir o Como Funciona do dia
 
-Fluxo **separado** do de aventura: só mexa em `motor/public/series/como-funciona/`. Não edite `_geral/regras.md`, outras séries nem as skills `roteirizar-episodio`/`aplicar-correcoes`. Fale com o Iuri em português, curto. **A publicação é manual: nunca publique nada.**
+Fluxo **separado** do de aventura: só mexa em `motor/public/series/como-funciona/`. Não edite `_historias/regras.md`, outras séries nem as skills `roteirizar-episodio`/`aplicar-correcoes`. Fale com o Iuri em português, curto. **A publicação é manual: nunca publique nada.**
 
 ## 1. Preparar
 1. `cd motor && npm ci` (se faltar node_modules) e `npm run dados -- baixar`.
 2. Voz (uma vez por sessão, alguns minutos): `bash voz/instalar.sh`. Se falhar por rede (huggingface.co, download.pytorch.org), siga sem voz e diga no aviso final qual host foi bloqueado. Nunca finja que há voz.
 3. Quantos vídeos hoje: calendário em `motor/producao/COMO-FUNCIONA.md` (seg–qui 1; sexta 3: sexta 18h + sábado 11h e 18h; sábado 2: domingo 11h e 18h; domingo nada). Faça **um de cada vez**, passos 2 a 7.
-4. Leia só: `public/series/_geral/regras.md`, `public/series/como-funciona/regras.md` (vale por cima da geral: aqui não tem cliffhanger nem limite de 1 min), `estilos.md`, `estado.json`, `biblia.json` e o item `n = proxima_parte` de `pauta.json`. Se faltarem 10 itens pendentes ou menos, acrescente 20 temas novos no fim da pauta (mesmo formato, sem repetir, variando cozinha, banheiro, rua, transporte, energia, cidade, grandes obras).
+4. Leia só: `public/series/como-funciona/regras.md` (as regras de `_historias` não valem aqui: sem cliffhanger nem limite de 1 min), `estilos.md`, `estado.json`, `biblia.json` e o item `n = proxima_parte` de `pauta.json`. Se faltarem 10 itens pendentes ou menos, acrescente 20 temas novos no fim da pauta (mesmo formato, sem repetir, variando cozinha, banheiro, rua, transporte, energia, cidade, grandes obras).
 
 ## 2. Pesquisa e roteiro falado
 - Confira os fatos do tema (inventor, ano, lugar, como funciona) com WebSearch quando tiver; na dúvida, use "um dos primeiros" ou "a história mais contada" e nunca invente número.
@@ -21,6 +21,8 @@ Fluxo **separado** do de aventura: só mexa em `motor/public/series/como-funcion
 - Chamada: `pergunta` sobre o próximo tema da pauta, `texto: "Comenta"`, `destaque` = campo `curto` do próximo item.
 
 ## 3. Escrever o episódio (`public/series/como-funciona/epNN.json`)
+**Se `epNN.json` já existir** (roteiro mandado ao Iuri na véspera, passo 8), parta dele: aplique as correções que o Iuri mandou para ele (estão na conversa da revisão ou já no arquivo), revise e siga para o passo 4. Não reescreva do zero o que ele já leu.
+
 Modelo completo: `ep01.json` (chuveiro). Vocabulário: `npm run catalogo` (cenários `estudio` e `oficina`, maquetes, animações, fluxos, acessórios).
 - **Inventor do dia:** em `personagens` do episódio (não na bíblia), sem `voz`. Use acessórios da época (cartola, bigode, oculos, cabelo_curto, lenco).
 - **Maquete:** em `modelos.<nome>` uma lista de peças (`forma`, `tam`, `pos`, `cor`, `explode`, `oculta`, `pai`). Medidas em metros a partir do apoio (tampo do pedestal no estúdio, bancada na oficina). Cartoon: peças grandes e coloridas, até ~15. Carcaça por fora + miolo por dentro; mostre o miolo com `transparente` na carcaça. Coisa grande (prédio, ponte, guindaste) vai no chão do estúdio (`chao_esq`, `chao_dir`, `chao_centro`) com `escala`.
@@ -52,3 +54,10 @@ Modelo completo: `ep01.json` (chuveiro). Vocabulário: `npm run catalogo` (cená
 2. `npm run dados -- entregar como-funciona <n> --dia=AAAA-MM-DD --hora=18:00` (11:00 ou 18:00 conforme o calendário).
 3. Avise o Iuri: tema, título, o que conferiu, avisos (sem voz, peça que faltou no motor…), onde está o vídeo e o texto (ramo `dados`, `videos/como-funciona-epNN.*`) e que ele pode responder com correções até as 16h (sem resposta, o original vale).
 4. Se o tema pediu algo que o motor não sabe fazer (forma de peça, cenário, som), anote em `public/series/como-funciona/pendencias-motor.md` com o exemplo exato; é trabalho de código numa sessão normal.
+
+## 8. Roteiro do próximo vídeo (sempre, junto com a entrega)
+O Iuri revisa a produção de hoje e, na mesma leitura, o roteiro do próximo vídeo, para evitar erros antes de gastar voz e render.
+1. Depois do último vídeo do dia, escreva o episódio seguinte (`n = proxima_parte` já atualizado) com os passos 2 a 4: pesquisa, `epNN.json` completo e `validar` sem avisos. **Sem voz e sem render.**
+2. Em `pauta.json`, marque o item com `"status": "roteiro"`.
+3. `npm run dados -- salvar como-funciona` para o roteiro ficar no ramo `dados` e a rotina de amanhã partir dele.
+4. Na mesma mensagem da entrega, mande o roteiro legível (não o JSON): tema, título, estilo usado e onde está o MAS, as falas numeradas do Tito (f1, f2...) e, por cena, uma linha com o que aparece (cenário, maquete, rótulos e cartões). Diga que correções nele valem para o vídeo de amanhã.

@@ -5,7 +5,7 @@ description: Aplica as correções do Iuri a um vídeo do Como Funciona já entr
 
 # Corrigir o Como Funciona e aprender com isso
 
-Só mexa em `motor/public/series/como-funciona/`. Nunca grave regra em `_geral/regras.md` nem em outra série: este fluxo é separado do de aventura.
+Só mexa em `motor/public/series/como-funciona/`. Nunca grave regra em `_historias/regras.md` nem em outra série: este fluxo é separado do de aventura.
 
 ## 1. Entender o pedido
 Separe cada correção em:
@@ -13,6 +13,7 @@ Separe cada correção em:
 - **regra do Como Funciona** (vale para os próximos: ritmo, jeito de explicar, cores da maquete, tamanho dos rótulos, tom do Tito, tipo de tema na pauta);
 - **estilo de narrativa** (um jeito novo de abrir ou virar a história, um exemplo que funcionou ou não): atualize `estilos.md` com o exemplo dele, sem apagar os estilos validados;
 - **pauta** (trocar, tirar ou adiantar temas): edite `pauta.json` mantendo `n` em ordem para os pendentes.
+- **roteiro do próximo vídeo** (o que foi mandado junto com a entrega): edite o `epNN.json` dele, rode `validar` e `npm run dados -- salvar como-funciona`, sem voz nem render; a rotina de amanhã parte dessa versão.
 Se for ambígua, escolha a leitura mais provável, aplique e diga qual usou.
 
 ## 2. Aplicar no vídeo

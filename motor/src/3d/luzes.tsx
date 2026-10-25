@@ -189,7 +189,8 @@ const direcao = (v: V3, dist: number): V3 => {
 };
 
 /** Luz ambiente, sol/lua com sombra e luz de contra, centradas em `foco` para a sombra caber. */
-export const Iluminacao: React.FC<{nome: string; foco: V3; alcanceSombra?: number}> = ({nome, foco, alcanceSombra = 22}) => {
+/** `alcanceNeblina` multiplica a distância da neblina (vistas do alto precisam enxergar longe). */
+export const Iluminacao: React.FC<{nome: string; foco: V3; alcanceSombra?: number; alcanceNeblina?: number}> = ({nome, foco, alcanceSombra = 22, alcanceNeblina = 1}) => {
 	const c = clima(nome);
 	const sol = direcao(c.solDir, 30);
 	const alvo = React.useMemo(() => new THREE.Object3D(), []);
@@ -216,7 +217,7 @@ export const Iluminacao: React.FC<{nome: string; foco: V3; alcanceSombra?: numbe
 				shadow-normalBias={0.05}
 			/>
 			<directionalLight position={direcao(c.contra.dir, 30)} color={c.contra.cor} intensity={c.contra.intensidade} />
-			{c.neblina ? <fog attach="fog" args={[c.neblina.cor, c.neblina.perto, c.neblina.longe]} /> : null}
+			{c.neblina ? <fog attach="fog" args={[c.neblina.cor, c.neblina.perto * alcanceNeblina, c.neblina.longe * alcanceNeblina]} /> : null}
 		</>
 	);
 };
