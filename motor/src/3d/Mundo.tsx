@@ -17,6 +17,9 @@ import {Raizes} from './cenarios/Raizes';
 import {Montanha} from './cenarios/Montanha';
 import {Cabine} from './cenarios/Cabine';
 import {Mirante} from './cenarios/Mirante';
+import {Adega} from './cenarios/Adega';
+import {SalaFarol} from './cenarios/SalaFarol';
+import {IlhotaFarol} from './cenarios/IlhotaFarol';
 
 const CameraCena: React.FC<{c: Camera; nomeClima: string}> = ({c, nomeClima}) => {
 	const ref = useRef<THREE.PerspectiveCamera>(null);
@@ -56,6 +59,9 @@ export const Mundo: React.FC<{linha: LinhaDoTempo; t: number}> = ({linha, t}) =>
 			{cena.cenario === 'selva' ? <Selva t={t} nomeClima={nomeClima} /> : null}
 			{cena.cenario === 'raizes' ? <Raizes t={t} nomeClima={nomeClima} /> : null}
 			{cena.cenario === 'montanha' ? <Montanha t={t} nomeClima={nomeClima} /> : null}
+			{cena.cenario === 'adega' ? <Adega t={t} nomeClima={nomeClima} /> : null}
+			{cena.cenario === 'sala_farol' ? <SalaFarol t={t} nomeClima={nomeClima} /> : null}
+			{cena.cenario === 'ilhota_farol' ? <IlhotaFarol t={t} nomeClima={nomeClima} /> : null}
 			{cena.cenario === 'mirante' ? <Mirante t={t} nomeClima={nomeClima} /> : null}
 			{cena.cenario === 'cabine' ? <Cabine t={t} nomeClima={nomeClima} /> : null}
 			<Objetos lista={cena.objetos} cenario={cena.cenario} t={t} />

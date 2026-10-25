@@ -5,7 +5,7 @@ import {CENARIOS} from '../catalogo';
 import type {Objeto} from '../roteiro/tipos';
 import {V2, V3, aleatorio} from '../util/mat';
 import {AviaoCaindo, Destrocos, Malas} from './aviao';
-import {Barco, Farol, LanternasMata} from './ilha';
+import {BarrasOuro, Barco, CaixaPreta, Farol, LanternasMata, LuzFarol} from './ilha';
 import {Malha, brilho, caixa, cilindro, cone, decalque, disco, esfera, fumacaMat, haloMat, ico, toon, toro, translucido} from './base';
 
 const posicaoObjeto = (o: Objeto, cenario: string): V2 =>
@@ -265,9 +265,15 @@ export const Objetos: React.FC<{lista: Objeto[]; cenario: string; t: number}> = 
 				case 'lanternas_mata':
 					return <LanternasMata key={i} x={x} z={z} giro={giro} t={t} quantas={(o.quantas as number) ?? 3} largura={(o.largura as number) ?? 8} vultos={o.vultos !== false} />;
 				case 'farol':
-					return <Farol key={i} x={x} z={z} alt={(o.alt as number) ?? 0} giro={giro} escala={esc} t={t} modo={(o.modo as string) ?? 'gira'} />;
+					return <Farol key={i} x={x} z={z} alt={(o.alt as number) ?? 0} giro={giro} escala={esc} t={t} modo={(o.modo as string) ?? 'gira'} ilhota={o.ilhota !== false} />;
 				case 'barco':
 					return <Barco key={i} x={x} z={z} alt={(o.alt as number) ?? 0} giro={giro} escala={esc} t={t} luzes={o.luzes !== false} caixas={o.caixas !== false} />;
+				case 'luz_farol':
+					return <LuzFarol key={i} x={x} z={z} t={t} modo={(o.modo as string) ?? 'apagada'} />;
+				case 'caixa_preta':
+					return <CaixaPreta key={i} x={x} z={z} giro={giro} alt={(o.alt as number) ?? 0} />;
+				case 'barras_ouro':
+					return <BarrasOuro key={i} x={x} z={z} giro={giro} />;
 				case 'prancheta':
 					return <Prancheta key={i} x={x} z={z} giro={giro} alt={(o.alt as number) ?? 0.46} deitada={o.deitada !== false} escala={esc} />;
 				case 'aviao':

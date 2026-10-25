@@ -198,16 +198,39 @@ const Chamada: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: num
 	);
 };
 
+/** Riscos de chuva caindo na diagonal; a posição depende só de t (cada quadro é independente). */
+const GOTAS = Array.from({length: 170}, (_, i) => ({x: (i * 0.618034) % 1, y: (i * 0.754877) % 1, v: 0.8 + ((i * 0.3819) % 1) * 0.5, c: 50 + ((i * 7) % 5) * 14}));
+const Chuva: React.FC<{t: number; intensidade: number}> = ({t, intensidade}) => (
+	<AbsoluteFill style={{opacity: intensidade}}>
+		<AbsoluteFill style={{backgroundColor: 'rgba(40,52,80,0.28)'}} />
+		<svg width="1080" height="1920" viewBox="0 0 1080 1920">
+			{GOTAS.map((g, i) => {
+				const y = ((g.y + t * 1.35 * g.v) % 1) * 2100 - 120;
+				const x = ((g.x + t * 0.18 * g.v) % 1) * 1300 - 110;
+				return <line key={i} x1={x} y1={y} x2={x - g.c * 0.22} y2={y + g.c} stroke="rgba(205,222,255,0.55)" strokeWidth={3} strokeLinecap="round" />;
+			})}
+		</svg>
+	</AbsoluteFill>
+);
+
 const Efeitos: React.FC<{linha: LinhaDoTempo; t: number}> = ({linha, t}) => {
 	const cena = cenaNoTempo(linha, t);
 	let branco = 0;
 	let preto = 0;
 	let vinheta = 0;
+	let chuva = 0;
+	let raio = 0;
 	for (const e of cena.efeitos) {
 		const intens = e.intensidade ?? 1;
 		if (e.efeito === 'flash' && t >= e.ini && t <= e.fim) branco = Math.max(branco, intens * (1 - (t - e.ini) / Math.max(e.fim - e.ini, 0.05)));
 		if (e.efeito === 'preto' && t >= e.ini && t <= e.fim) preto = Math.max(preto, intens * Math.sin((Math.PI * (t - e.ini)) / Math.max(e.fim - e.ini, 0.05)));
 		if (e.efeito === 'vinheta' && t >= e.ini && t <= e.fim) vinheta = Math.max(vinheta, intens * smoothstep(e.ini, e.ini + 0.3, t));
+		if (e.efeito === 'chuva' && t >= e.ini && t <= e.fim) chuva = Math.max(chuva, intens * smoothstep(e.ini, e.ini + 0.4, t));
+		if (e.efeito === 'relampago' && t >= e.ini && t <= e.fim) {
+			// dois clarões seguidos, o segundo mais forte
+			const d = t - e.ini;
+			raio = Math.max(raio, intens * Math.max(0.55 * Math.max(0, 1 - Math.abs(d - 0.04) / 0.05), Math.max(0, 1 - Math.abs(d - 0.16) / 0.08) * (d < 0.16 ? 1 : Math.exp(-(d - 0.16) * 9))));
+		}
 	}
 	const tr = transicaoNoTempo(cena, t);
 	if (tr?.tipo === 'flash') branco = Math.max(branco, 1 - tr.desde / 0.25);
@@ -217,6 +240,8 @@ const Efeitos: React.FC<{linha: LinhaDoTempo; t: number}> = ({linha, t}) => {
 	return (
 		<>
 			<AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 46%, rgba(0,0,0,0) 45%, rgba(0,0,0,0.85) 100%)', opacity: clamp(vinheta)}} />
+			{chuva > 0 ? <Chuva t={t} intensidade={clamp(chuva)} /> : null}
+			{raio > 0 ? <AbsoluteFill style={{backgroundColor: '#DCE6FF', opacity: clamp(raio * 0.85), mixBlendMode: 'screen'}} /> : null}
 			{branco > 0 ? <AbsoluteFill style={{backgroundColor: '#fff', opacity: clamp(branco)}} /> : null}
 			{preto > 0 ? <AbsoluteFill style={{backgroundColor: '#000', opacity: clamp(preto)}} /> : null}
 		</>

@@ -54,7 +54,7 @@ export const LanternasMata: React.FC<{x: number; z: number; giro: number; t: num
 /** SOS em código Morse (· · · — — — · · ·), 1 = aceso; cada casa dura 0,25 s, com pausa no fim. */
 const SOS = '1010100011101110111000101010000000';
 
-const ilhota = () =>
+const pedraIlhota = () =>
 	geo('ilhotaFarol', () => {
 		const g = new THREE.CylinderGeometry(5.5, 8, 2.4, 9, 1);
 		g.translate(0, 0.4, 0);
@@ -65,12 +65,14 @@ const ilhota = () =>
  * Farol de 14 m numa ilhota no mar. `modo`: gira (feixe girando), sos (pisca o SOS) ou apagado.
  * Visto de longe; use `escala` para ajustar ao enquadramento.
  */
-export const Farol: React.FC<{x: number; alt: number; z: number; giro: number; escala: number; t: number; modo: string}> = ({x, alt, z, giro, escala, t, modo}) => {
+export const Farol: React.FC<{x: number; alt: number; z: number; giro: number; escala: number; t: number; modo: string; ilhota: boolean}> = ({x, alt, z, giro, escala, t, modo, ilhota}) => {
 	const aceso = modo === 'gira' || (modo === 'sos' && SOS[Math.floor(t / 0.25) % SOS.length] === '1');
 	const angulo = t * 1.1;
 	return (
-		<group position={[x, alt, z]} rotation={[0, giro, 0]} scale={escala}>
-			<Malha g={ilhota()} m={toon('#4E4A58')} contorno={0.08} sombra={false} />
+		<group position={[x, alt + (ilhota ? 0 : -1.6 * escala), z]} rotation={[0, giro, 0]} scale={escala}>
+			{ilhota ? <Malha g={pedraIlhota()} m={toon('#4E4A58')} contorno={0.08} sombra={false} /> : null}
+			{/* porta da torre (+z) */}
+			<Malha g={caixa(0.8, 1.7, 0.1)} m={toon('#4A3424')} position={[0, 2.45, 1.3]} contorno={0.02} sombra={false} />
 			{/* casa do faroleiro */}
 			<Malha g={caixa(3.2, 2.2, 2.6)} m={toon('#E9E4D8')} position={[3.2, 2.7, 1.2]} contorno={0.05} sombra={false} />
 			<Malha g={cone(2.4, 1.3, 4)} m={toon('#8A3B32')} position={[3.2, 4.45, 1.2]} rotation={[0, Math.PI / 4, 0]} contorno={0.05} sombra={false} />
@@ -154,3 +156,59 @@ export const Barco: React.FC<{x: number; alt: number; z: number; giro: number; e
 		</group>
 	);
 };
+
+// --- peças de perto ---------------------------------------------------------------------------
+
+/** A lente do farol na sala da lâmpada: modo acesa (gira), sos (pisca o SOS) ou apagada. */
+export const LuzFarol: React.FC<{x: number; z: number; t: number; modo: string}> = ({x, z, t, modo}) => {
+	const aceso = modo === 'acesa' || (modo === 'sos' && SOS[Math.floor(t / 0.25) % SOS.length] === '1');
+	return (
+		<group position={[x, 0.9, z]}>
+			<Malha g={cilindro(0.5, 0.5, 1.1, 12)} m={aceso ? brilho('#FFF4C8', 1.4) : toon('#8FA6B8')} position={[0, 0.55, 0]} contorno={0.02} sombra={false} />
+			{[0.15, 0.42, 0.69, 0.96].map((y) => (
+				<mesh key={y} geometry={cilindro(0.52, 0.52, 0.04, 12)} material={toon('#B89A4A')} position={[0, y, 0]} />
+			))}
+			<Malha g={cone(0.55, 0.4, 12)} m={toon('#B89A4A')} position={[0, 1.3, 0]} sombra={false} />
+			{aceso ? (
+				<>
+					<sprite material={haloMat('#FFF0B8', 0.9)} position={[0, 0.75, 0]} scale={[4.5, 4.5, 1]} />
+					<pointLight position={[0, 0.8, 0]} color="#FFF0C0" intensity={4} distance={8} decay={2} />
+					{modo === 'acesa' ? (
+						<group position={[0, 0.75, 0]} rotation={[0, t * 1.1, 0]}>
+							<mesh geometry={cone(2.5, 30, 20)} material={translucido('#FFF2C4', 0.1, true)} rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 15]} />
+						</group>
+					) : null}
+				</>
+			) : null}
+		</group>
+	);
+};
+
+/** Caixa preta do avião (que na verdade é laranja), com faixas refletivas. */
+export const CaixaPreta: React.FC<{x: number; z: number; giro: number; alt: number}> = ({x, z, giro, alt}) => (
+	<group position={[x, alt, z]} rotation={[0, giro, 0]}>
+		<Malha g={caixa(0.5, 0.32, 0.3)} m={toon('#F07A1A')} position={[0, 0.16, 0]} contorno={0.015} />
+		<Malha g={cilindro(0.13, 0.13, 0.22, 16)} m={toon('#F07A1A')} position={[0.32, 0.15, 0]} rotation={[0, 0, Math.PI / 2]} contorno={0.012} />
+		{[-0.12, 0.12].map((px) => (
+			<mesh key={px} geometry={caixa(0.06, 0.33, 0.31)} material={brilho('#E8ECF2', 0.6)} position={[px, 0.16, 0]} />
+		))}
+	</group>
+);
+
+/** Caixote aberto cheio de barras de ouro. */
+export const BarrasOuro: React.FC<{x: number; z: number; giro: number}> = ({x, z, giro}) => (
+	<group position={[x, 0, z]} rotation={[0, giro, 0]}>
+		<Malha g={caixa(0.9, 0.5, 0.6)} m={toon('#8A6440')} position={[0, 0.25, 0]} contorno={0.02} />
+		{Array.from({length: 12}, (_, i) => (
+			<Malha
+				key={i}
+				g={caixa(0.24, 0.07, 0.11)}
+				m={brilho('#F2C14E', 0.55)}
+				position={[-0.3 + (i % 4) * 0.2, 0.5 + Math.floor(i / 8) * 0.07, -0.16 + (Math.floor(i / 4) % 2) * 0.16 + (i >= 8 ? 0.08 : 0)]}
+				contorno={0.008}
+				sombra={false}
+			/>
+		))}
+		<Malha g={caixa(0.92, 0.05, 0.62)} m={toon('#6E4E30')} position={[0.15, 0.62, -0.42]} rotation={[1.2, 0, 0]} sombra={false} />
+	</group>
+);

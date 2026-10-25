@@ -10,3 +10,4 @@ Cada linha vem de uma correção do Iuri ou de uma decisão do projeto. A skill 
 - (2026-10-25) Objeto `prancheta` (manifesto) no assento: marca `assento_manifesto`; plano detalhe com camera [0.1,1.5,-1.9] e alvo no ponto `manifesto`.
 - (2026-10-25) Homens de Laranja de longe: objeto `lanternas_mata` à noite, entre as árvores (nunca em close).
 - (2026-10-25) Vista do farol e do barco (partes 5, 8, 9): cenário `mirante` com farol/barco em alt -35; da praia, farol longe no mar (ex.: em [-20, 90]).
+- (2026-10-25) Partes 10 a 17: cenários `ilhota_farol` (farol de perto, objeto farol com ilhota false), `adega` (passageiros dormindo), `sala_farol` (objeto luz_farol). Tempestade = efeitos chuva + relampago, ambiente chuva, som trovao. Use as câmeras sugeridas no catálogo.
