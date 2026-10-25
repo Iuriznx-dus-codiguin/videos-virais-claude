@@ -1,11 +1,15 @@
 // Transforma o roteiro (âncoras nas falas) em uma linha do tempo com segundos absolutos.
 // Sem áudio, a duração de cada fala é estimada pelo texto; com o alinhamento do OmniVoice,
 // usa o tempo real de cada letra. O resto do roteiro não muda entre um caso e outro.
-import {ACOES, CENARIOS, EFEITOS, ENCERRA_ESTADO, EXPRESSOES, LADOS, MOVIMENTOS, PLANOS} from '../catalogo';
+import {ACOES, ANIMACOES_PECA, CENARIOS, EFEITOS, ENCERRA_ESTADO, EXPRESSOES, FLUXOS, FORMAS, LADOS, MOVIMENTOS, PLANOS} from '../catalogo';
 import {
 	Alinhamentos,
 	AcaoTempo,
+	AnimacaoTempo,
 	Ancora,
+	CartaoTempo,
+	Peca,
+	RotuloTempo,
 	Biblia,
 	Cena,
 	CenaTempo,
@@ -154,18 +158,58 @@ export const resolverAncora = (a: Ancora | undefined, ctx: Contexto): number | u
 	return (partes[2] === 'fim' ? palavra.fim : palavra.ini) + desloc;
 };
 
-const conferirAlvo = (alvo: unknown, cena: Cena, ctx: Contexto, biblia: Biblia) => {
+/** Ids das maquetes da cena e nomes das peças que dá para citar ("peca" e "maquete.peca"). */
+const nomesDeMaquete = (cena: Cena, modelos: Record<string, Peca[]>) => {
+	const maquetes = new Set<string>();
+	const pecas = new Set<string>();
+	for (const o of cena.objetos ?? []) {
+		if (o.tipo !== 'maquete') continue;
+		const modelo = String(o.modelo ?? '');
+		const id = String(o.id ?? modelo);
+		maquetes.add(id);
+		maquetes.add(modelo);
+		for (const p of modelos[modelo] ?? []) {
+			pecas.add(p.id);
+			pecas.add(`${id}.${p.id}`);
+			pecas.add(`${modelo}.${p.id}`);
+		}
+	}
+	return {maquetes, pecas};
+};
+
+const conferirAlvo = (alvo: unknown, cena: Cena, ctx: Contexto, biblia: Biblia, modelos: Record<string, Peca[]> = {}) => {
 	if (alvo === undefined || Array.isArray(alvo) || alvo === 'camera') return;
 	const def = CENARIOS[cena.cenario];
 	const nome = String(alvo);
 	const ehMarca = def && (nome in def.marcas || (def.pontos && nome in def.pontos));
 	const ehPersonagem = nome in (cena.personagens ?? {}) || nome in biblia.personagens;
 	const ehObjeto = (cena.objetos ?? []).some((o) => o.tipo === nome || o.id === nome);
-	if (!ehMarca && !ehPersonagem && !ehObjeto) ctx.avisos.push(`${ctx.onde}: alvo "${nome}" desconhecido no cenário ${cena.cenario}`);
+	const m = nomesDeMaquete(cena, modelos);
+	const ehPeca = m.pecas.has(nome) || m.maquetes.has(nome);
+	if (!ehMarca && !ehPersonagem && !ehObjeto && !ehPeca) ctx.avisos.push(`${ctx.onde}: alvo "${nome}" desconhecido no cenário ${cena.cenario}`);
 };
 
-export const resolverEpisodio = (ep: Episodio, biblia: Biblia, alinhamentos: Alinhamentos = {}): LinhaDoTempo => {
+/** Confere as peças de cada modelo: forma conhecida, ids únicos, mãe que existe. */
+const conferirModelos = (modelos: Record<string, Peca[]>, avisos: string[]) => {
+	for (const [nome, pecas] of Object.entries(modelos)) {
+		const ids = new Set<string>();
+		for (const p of pecas) {
+			const onde = `modelo ${nome}, peça ${p.id}`;
+			if (ids.has(p.id)) avisos.push(`${onde}: id repetido`);
+			ids.add(p.id);
+			if (!(FORMAS as readonly string[]).includes(p.forma)) avisos.push(`${onde}: forma "${p.forma}" desconhecida (formas: ${FORMAS.join(', ')})`);
+			if (p.forma === 'tubo' && !(p.caminho && p.caminho.length >= 2)) avisos.push(`${onde}: tubo precisa de "caminho" com 2 pontos ou mais`);
+		}
+		for (const p of pecas) if (p.pai && !ids.has(p.pai)) avisos.push(`modelo ${nome}, peça ${p.id}: mãe "${p.pai}" não existe`);
+	}
+};
+
+export const resolverEpisodio = (ep: Episodio, bibliaSerie: Biblia, alinhamentos: Alinhamentos = {}): LinhaDoTempo => {
 	const avisos: string[] = [];
+	// personagens só do episódio (o inventor do dia) entram junto com os da bíblia
+	const biblia: Biblia = ep.personagens ? {...bibliaSerie, personagens: {...bibliaSerie.personagens, ...ep.personagens}} : bibliaSerie;
+	const modelos = ep.modelos ?? {};
+	conferirModelos(modelos, avisos);
 	const ctx: Contexto = {itens: new Map(), avisos, onde: 'falas'};
 
 	// 1. falas em sequência
@@ -179,7 +223,10 @@ export const resolverEpisodio = (ep: Episodio, biblia: Biblia, alinhamentos: Ali
 			continue;
 		}
 		if (!(item.quem in biblia.personagens)) avisos.push(`fala ${item.id}: personagem "${item.quem}" não está na bíblia`);
-		const al = alinhamentos[item.id];
+		// alinhamento de uma versão antiga da fala (texto mudou e a voz ainda não foi refeita): estima pelo texto
+		const bruto = alinhamentos[item.id];
+		const al = bruto && bruto.caracteres.join('').toLowerCase().includes(textoParaVoz(item.texto).toLowerCase()) ? bruto : undefined;
+		if (bruto && !al) avisos.push(`fala ${item.id}: o texto mudou depois da voz; rode npm run vozes de novo`);
 		const r = al ? falaDoAlinhamento(item, al, t) : estimarFala(item, t);
 		falas.push({
 			id: item.id,
@@ -222,7 +269,7 @@ export const resolverEpisodio = (ep: Episodio, biblia: Biblia, alinhamentos: Ali
 			if (!(quem in biblia.personagens)) avisos.push(`${ctx.onde}: não está na bíblia`);
 			if (typeof p.em === 'string' && def && !(p.em in def.marcas)) avisos.push(`${ctx.onde}: marca "${p.em}" não existe em ${c.cenario}`);
 			if (p.expressao && !(EXPRESSOES as readonly string[]).includes(p.expressao)) avisos.push(`${ctx.onde}: expressão "${p.expressao}" desconhecida`);
-			conferirAlvo(p.olhando, c, ctx, biblia);
+			conferirAlvo(p.olhando, c, ctx, biblia, modelos);
 		}
 
 		// ações
@@ -231,8 +278,8 @@ export const resolverEpisodio = (ep: Episodio, biblia: Biblia, alinhamentos: Ali
 			if (!(a.quem in (c.personagens ?? {}))) avisos.push(`${ctx.onde}: "${a.quem}" não está na cena`);
 			if (a.faz && !(a.faz in ACOES)) avisos.push(`${ctx.onde}: ação "${a.faz}" desconhecida`);
 			if (a.expressao && !(EXPRESSOES as readonly string[]).includes(a.expressao)) avisos.push(`${ctx.onde}: expressão "${a.expressao}" desconhecida`);
-			conferirAlvo(a.para, c, ctx, biblia);
-			conferirAlvo(a.olhar, c, ctx, biblia);
+			conferirAlvo(a.para, c, ctx, biblia, modelos);
+			conferirAlvo(a.olhar, c, ctx, biblia, modelos);
 			const aIni = resolverAncora(a.de, ctx) ?? ini;
 			const aFim = resolverAncora(a.ate, ctx);
 			return {a, aIni, aFim};
@@ -269,8 +316,8 @@ export const resolverEpisodio = (ep: Episodio, biblia: Biblia, alinhamentos: Ali
 				if (!(PLANOS as readonly string[]).includes(p.tipo)) avisos.push(`${ctx.onde}: tipo "${p.tipo}" desconhecido`);
 				if (p.movimento && !(MOVIMENTOS as readonly string[]).includes(p.movimento)) avisos.push(`${ctx.onde}: movimento "${p.movimento}" desconhecido`);
 				if (p.lado && !(LADOS as readonly string[]).includes(p.lado)) avisos.push(`${ctx.onde}: lado "${p.lado}" desconhecido`);
-				conferirAlvo(p.alvo, c, ctx, biblia);
-				conferirAlvo(p.alvo2, c, ctx, biblia);
+				conferirAlvo(p.alvo, c, ctx, biblia, modelos);
+				conferirAlvo(p.alvo2, c, ctx, biblia, modelos);
 				return {...p, ini: resolverAncora(p.de, ctx) ?? ini, fim: fim};
 			})
 			.sort((x, y) => x.ini - y.ini);
@@ -300,6 +347,34 @@ export const resolverEpisodio = (ep: Episodio, biblia: Biblia, alinhamentos: Ali
 			return {...e, ini: eIni, fim: eFim};
 		});
 
+		// maquetes: objetos "maquete" precisam de um modelo que exista
+		for (const [k, o] of (c.objetos ?? []).entries()) {
+			if (o.tipo === 'maquete' && !(String(o.modelo ?? '') in modelos)) avisos.push(`cena ${c.id}, objeto ${k + 1}: modelo "${o.modelo}" não existe em "modelos"`);
+		}
+		const nomes = nomesDeMaquete(c, modelos);
+		const animacoes: AnimacaoTempo[] = (c.animacoes ?? []).map((a, k) => {
+			ctx.onde = `cena ${c.id}, animação ${k + 1}`;
+			if (!(a.faz in ANIMACOES_PECA)) avisos.push(`${ctx.onde}: animação "${a.faz}" desconhecida`);
+			const deMaquete = a.faz === 'explodir' || a.faz === 'montar' || (a.faz === 'fluxo' && nomes.maquetes.has(a.peca));
+			if (deMaquete ? !nomes.maquetes.has(a.peca) && !nomes.pecas.has(a.peca) : !nomes.pecas.has(a.peca)) avisos.push(`${ctx.onde}: peça "${a.peca}" não existe nas maquetes da cena`);
+			if (a.faz === 'fluxo' && a.tipo && !(a.tipo in FLUXOS)) avisos.push(`${ctx.onde}: fluxo "${a.tipo}" desconhecido (${Object.keys(FLUXOS).join(', ')})`);
+			const aIni = resolverAncora(a.de, ctx) ?? ini;
+			const padrao: Record<string, number> = {girar_para: 0.6, mover: 0.8, explodir: 1.2, montar: 1.0, crescer: 1.2, aparecer: 0.45, sumir: 0.35, transparente: 0.6};
+			const aFim = resolverAncora(a.ate, ctx) ?? (a.faz in padrao ? aIni + padrao[a.faz] : fim);
+			return {...a, ini: aIni, fim: aFim};
+		});
+		const rotulos: RotuloTempo[] = (c.rotulos ?? []).map((r, k) => {
+			ctx.onde = `cena ${c.id}, rótulo ${k + 1}`;
+			conferirAlvo(r.alvo, c, ctx, biblia, modelos);
+			const rIni = resolverAncora(r.de, ctx) ?? ini;
+			return {...r, ini: rIni, fim: resolverAncora(r.ate, ctx) ?? fim};
+		});
+		const cartoes: CartaoTempo[] = (c.cartoes ?? []).map((r, k) => {
+			ctx.onde = `cena ${c.id}, cartão ${k + 1}`;
+			const rIni = resolverAncora(r.de, ctx) ?? ini;
+			return {...r, ini: rIni, fim: resolverAncora(r.ate, ctx) ?? Math.min(fim, rIni + 3)};
+		});
+
 		return {
 			id: c.id,
 			cenario: c.cenario,
@@ -318,11 +393,23 @@ export const resolverEpisodio = (ep: Episodio, biblia: Biblia, alinhamentos: Ali
 			sons,
 			efeitos,
 			ambiente: c.ambiente,
+			animacoes,
+			rotulos,
+			cartoes,
 		};
 	});
 
-	if (duracao < 45) avisos.push(`duração total ${duracao.toFixed(1)}s: curta demais para um episódio (alvo 55 a 62s)`);
-	if (duracao > 65) avisos.push(`duração total ${duracao.toFixed(1)}s: passa de 1 minuto (alvo 55 a 62s)`);
+	if ((biblia.formato ?? 'serie') === 'avulso') {
+		// Como Funciona: alvo ~1min20 com a voz real. Sem voz, a estimativa sai ~20% mais longa que a voz do narrador.
+		const comVoz = falas.length > 0 && falas.every((f) => !f.estimada);
+		const [min, max] = comVoz ? [70, 95] : [85, 112];
+		const alvo = comVoz ? '75 a 90s com voz' : '90 a 105s estimados, que dão ~75 a 90s com voz';
+		if (duracao < min) avisos.push(`duração total ${duracao.toFixed(1)}s: curta demais (alvo ${alvo})`);
+		if (duracao > max) avisos.push(`duração total ${duracao.toFixed(1)}s: longa demais (alvo ${alvo})`);
+	} else {
+		if (duracao < 45) avisos.push(`duração total ${duracao.toFixed(1)}s: curta demais para um episódio (alvo 55 a 62s)`);
+		if (duracao > 65) avisos.push(`duração total ${duracao.toFixed(1)}s: passa de 1 minuto (alvo 55 a 62s)`);
+	}
 
 	return {
 		serie: ep.serie,
@@ -336,5 +423,7 @@ export const resolverEpisodio = (ep: Episodio, biblia: Biblia, alinhamentos: Ali
 		personagens: biblia.personagens,
 		musica: ep.musica,
 		avisos,
+		modelos,
+		formato: biblia.formato ?? 'serie',
 	};
 };

@@ -11,7 +11,22 @@ export interface Textos {
 	tags: string[];
 }
 
+/** Vídeo avulso (Como Funciona): cada um fecha o assunto e a chamada pede o próximo tema nos comentários. */
+const textosAvulso = (biblia: Biblia, ep: Episodio): Textos => {
+	const tags = biblia.hashtags ?? ['comofunciona', 'engenharia', 'curiosidades'];
+	const base = [...tags.map(hashtag), '#shorts'];
+	const pedido = ep.chamada?.destaque ? `Comenta "${ep.chamada.destaque}" ${ep.chamada.pergunta ? `(${ep.chamada.pergunta.replace(/[?!.]+$/, '').toLowerCase()})` : ''}`.trim() : '';
+	const corpo = [`${ep.titulo}`, `${biblia.titulo} #${ep.parte}`, pedido].filter(Boolean).join('\n\n');
+	return {
+		tituloYoutube: `${ep.titulo} #shorts`.slice(0, 100),
+		descricaoYoutube: `${corpo}\n\n${base.join(' ')}`,
+		legendaInstagram: `${corpo}\n\n${base.filter((h) => h !== '#shorts').join(' ')} #reels`,
+		tags: ['shorts', ...tags, biblia.titulo],
+	};
+};
+
 export const textosDoEpisodio = (biblia: Biblia, ep: Episodio): Textos => {
+	if (biblia.formato === 'avulso') return textosAvulso(biblia, ep);
 	const proxima = ep.chamada?.destaque ?? `PARTE ${ep.parte + 1}`;
 	const gancho = ep.chamada?.pergunta ?? '';
 	const base = [hashtag(biblia.titulo), '#historia', '#suspense', '#shorts'];

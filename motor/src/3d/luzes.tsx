@@ -75,6 +75,32 @@ export const CLIMAS: Record<string, Clima> = {
 		mar: ['#5FD8D0', '#2BA6C4', '#2A86C0', '#5AA6DE', '#CFEFFF'],
 		nuvem: '#FFFFFF',
 	},
+	// estúdio do Como Funciona: fundo azul-marinho escuro, luz principal branca e contra azul
+	estudio: {
+		ambiente: [0.3, 0.33, 0.45],
+		sol: [0.7, 0.67, 0.55],
+		solDir: [-5, 12, 9],
+		contra: {cor: '#5AC8FF', dir: [6, 6, -10], intensidade: 0.7},
+		ceu: {cores: ['#16244A', '#111C3C', '#0C1530', '#080F24', '#050A18'], paradas: [0, 0.1, 0.3, 0.65, 1]},
+		astro: {cor: '#16244A', dir: [0, -1, 0], graus: 0.1, halo: 0},
+		estrelas: 0,
+		reforcoRosto: [0.25, 0.25, 0.25],
+		mar: ['#16244A', '#16244A', '#16244A', '#16244A', '#16244A'],
+		nuvem: '#16244A',
+	},
+	// oficina antiga: luz quente de lâmpada e de janela, sombras marrons
+	oficina: {
+		ambiente: [0.28, 0.21, 0.17],
+		sol: [0.72, 0.6, 0.4],
+		solDir: [-6, 10, 6],
+		contra: {cor: '#FFC27A', dir: [5, 6, -8], intensidade: 0.5},
+		ceu: {cores: ['#3A2A20', '#2E2119', '#241913', '#1A120D', '#120C08'], paradas: [0, 0.1, 0.3, 0.65, 1]},
+		astro: {cor: '#3A2A20', dir: [0, -1, 0], graus: 0.1, halo: 0},
+		estrelas: 0,
+		reforcoRosto: [0.26, 0.22, 0.18],
+		mar: ['#3A2A20', '#3A2A20', '#3A2A20', '#3A2A20', '#3A2A20'],
+		nuvem: '#3A2A20',
+	},
 };
 
 export const clima = (nome: string) => CLIMAS[nome] ?? CLIMAS.dia;

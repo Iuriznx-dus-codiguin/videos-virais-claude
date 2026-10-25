@@ -91,6 +91,8 @@ export interface Plano {
 	transicao?: string;
 	/** Posição fixa da câmera (marca, ponto ou [x, y, z]) em vez da calculada pelo tipo de plano. */
 	camera?: Alvo;
+	/** Largura (m) do que precisa caber no quadro vertical nos planos geral, detalhe e drone (troca o padrão). */
+	tamanho?: number;
 }
 
 export interface Som {
@@ -131,6 +133,95 @@ export interface Cena {
 	efeitos?: Efeito[];
 	/** Som de fundo contínuo: mar, selva, noite */
 	ambiente?: string;
+	/** Animações das peças das maquetes da cena (girar, aquecer, explodir, fluxo...). */
+	animacoes?: AnimacaoPeca[];
+	/** Etiquetas 2D presas a uma peça ou ponto 3D ("RESISTÊNCIA" com uma linha até a peça). */
+	rotulos?: Rotulo[];
+	/** Cartões 2D no alto da tela (ano e inventor, número curioso...). */
+	cartoes?: Cartao[];
+}
+
+// --- maquetes (objetos explicados peça por peça) -------------------------------------
+
+/**
+ * Peça de uma maquete, em metros, no sistema da maquete (y para cima, frente para +z).
+ * tam por forma: caixa [x, y, z] · cilindro [raio, altura, raioTopo?] · esfera [raio] ·
+ * cone [raio, altura] · capsula [raio, comprimento] · toro [raio, raioTubo] ·
+ * mola [raio, altura, voltas, raioFio] · engrenagem [raio, espessura, dentes] ·
+ * seta [comprimento, grossura] · tubo [raioTubo] (com "caminho") · placa [largura, altura]
+ */
+export interface Peca {
+	id: string;
+	forma: string;
+	tam?: number[];
+	/** Pontos do tubo (e caminho padrão do fluxo que passa nele). */
+	caminho?: [number, number, number][];
+	pos?: [number, number, number];
+	/** Graus em x, y, z. */
+	giro?: [number, number, number];
+	cor?: string;
+	/** Brilha sozinha (lâmpada, LED, fio aceso): intensidade 0 a 2. */
+	brilho?: number;
+	/** 0 a 1 (vidro, carcaça transparente). */
+	opacidade?: number;
+	/** Peça-mãe: esta peça anda, gira e explode junto com ela. */
+	pai?: string;
+	/** Deslocamento da peça na vista explodida (animação "explodir"). */
+	explode?: [number, number, number];
+	/** Começa escondida (aparece com a animação "aparecer" ou "crescer"). */
+	oculta?: boolean;
+	/** Sem contorno preto (peças finas ou de vidro). */
+	sem_contorno?: boolean;
+}
+
+export interface AnimacaoPeca {
+	/** "peca", "maquete.peca" ou, para explodir/montar, o id da maquete. */
+	peca: string;
+	/** girar, girar_para, mover, aparecer, sumir, crescer, aquecer, pulsar, transparente, tremer, explodir, montar, fluxo */
+	faz: string;
+	de?: Ancora;
+	ate?: Ancora;
+	/** girar e girar_para: x, y ou z (padrão y). */
+	eixo?: string;
+	/** girar: voltas por segundo (padrão 1). */
+	voltas?: number;
+	/** girar_para: graus. */
+	angulo?: number;
+	/** mover: deslocamento [x, y, z]. */
+	desloc?: [number, number, number];
+	/** transparente: opacidade final (padrão 0.25). */
+	opacidade?: number;
+	/** fluxo: agua, eletricidade, calor, ar, gas, luz. */
+	tipo?: string;
+	/** fluxo: pontos (no sistema da peça); padrão: o caminho do tubo. */
+	caminho?: [number, number, number][];
+	/** fluxo: bolinhas e velocidade (voltas no caminho por segundo). */
+	quantidade?: number;
+	velocidade?: number;
+	/** aquecer, pulsar, tremer: força (padrão 1). */
+	intensidade?: number;
+}
+
+export interface Rotulo {
+	/** Peça ("resistencia", "maquete.peca"), personagem, marca ou ponto [x, y, z]. */
+	alvo: Alvo;
+	texto: string;
+	de?: Ancora;
+	ate?: Ancora;
+	/** Lado da tela onde a etiqueta fica (padrão: o lado mais perto da peça). */
+	lado?: 'esquerda' | 'direita';
+	/** Altura da etiqueta na tela, 0 (topo) a 1 (pé); padrão: um pouco acima da peça. */
+	altura?: number;
+	cor?: string;
+}
+
+export interface Cartao {
+	de?: Ancora;
+	ate?: Ancora;
+	/** Texto grande ("1927", "220 V"). */
+	grande: string;
+	/** Linha menor embaixo ("Francisco Canhos, Jaú-SP"). */
+	pequeno?: string;
 }
 
 export interface Chamada {
@@ -148,6 +239,10 @@ export interface Episodio {
 	falas: ItemFala[];
 	cenas: Cena[];
 	chamada: Chamada;
+	/** Maquetes usadas pelos objetos "maquete" (campo modelo): lista de peças. */
+	modelos?: Record<string, Peca[]>;
+	/** Personagens só deste episódio (o inventor do dia), somados aos da bíblia. */
+	personagens?: Record<string, PersonagemBiblia>;
 }
 
 // --- bíblia da série ---------------------------------------------------------
@@ -204,6 +299,10 @@ export interface Biblia {
 	/** O que já foi contado (para manter a continuidade entre partes). */
 	fatos?: string[];
 	ganchos_abertos?: string[];
+	/** serie (padrão: partes em sequência com cliffhanger) ou avulso (cada vídeo fecha uma história; selo "#N"). */
+	formato?: 'serie' | 'avulso';
+	/** Hashtags fixas das publicações (formato avulso), sem o #. */
+	hashtags?: string[];
 }
 
 // --- alinhamento das vozes (saída do OmniVoice) ------------------------------
@@ -281,6 +380,24 @@ export interface CenaTempo {
 	sons: SomTempo[];
 	efeitos: EfeitoTempo[];
 	ambiente?: string;
+	animacoes: AnimacaoTempo[];
+	rotulos: RotuloTempo[];
+	cartoes: CartaoTempo[];
+}
+
+export interface AnimacaoTempo extends AnimacaoPeca {
+	ini: number;
+	fim: number;
+}
+
+export interface RotuloTempo extends Rotulo {
+	ini: number;
+	fim: number;
+}
+
+export interface CartaoTempo extends Cartao {
+	ini: number;
+	fim: number;
 }
 
 export interface LinhaDoTempo {
@@ -295,4 +412,6 @@ export interface LinhaDoTempo {
 	personagens: Record<string, PersonagemBiblia>;
 	musica?: string;
 	avisos: string[];
+	modelos: Record<string, Peca[]>;
+	formato: 'serie' | 'avulso';
 }

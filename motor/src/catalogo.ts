@@ -13,6 +13,8 @@ export interface DefCenario {
 	pontos?: Record<string, Ponto3>;
 	/** Tamanho (m) do que um plano detalhe naquele ponto precisa mostrar inteiro (padrão 2,6). */
 	tamanhos?: Record<string, number>;
+	/** Altura (m) em que um objeto colocado na marca fica apoiado (tampo da bancada, pedestal). */
+	alturas?: Record<string, number>;
 }
 
 export const CENARIOS: Record<string, DefCenario> = {
@@ -113,6 +115,48 @@ export const CENARIOS: Record<string, DefCenario> = {
 		},
 		tamanhos: {manifesto: 0.9, banco_31c: 1.4},
 	},
+	estudio: {
+		descricao: 'Estúdio de explicação (Como Funciona): chão escuro com grade azul de planta técnica, pedestal redondo no centro (tampo a 1 m) onde fica a maquete do dia, telão de planta técnica ao fundo e refletores. Frente para +z. Maquete grande (prédio, ponte) vai no chão: marcas chao_esq e chao_dir.',
+		luzPadrao: 'estudio',
+		marcas: {
+			pedestal: [0, 0],
+			apresentador: [-1.45, 0.75],
+			direita: [1.45, 0.75],
+			frente: [0, 3.2],
+			fundo: [0, -3],
+			chao_esq: [-3.4, -0.8],
+			chao_dir: [3.4, -0.8],
+			chao_centro: [0, -1.2],
+		},
+		pontos: {
+			maquete: [0, 1.55, 0],
+			telao: [0, 3.4, -6.2],
+			teto: [0, 7, 0],
+		},
+		tamanhos: {maquete: 1.6},
+		alturas: {pedestal: 1.0},
+	},
+	oficina: {
+		descricao: 'Oficina antiga de inventor (para contar como a coisa foi inventada): piso de tábuas, bancada de madeira no fundo (tampo a 0,92 m) com ferramentas, lâmpada pendurada, janela com luz entrando, prateleiras com engrenagens e caixotes. Frente para +z.',
+		luzPadrao: 'oficina',
+		marcas: {
+			bancada: [0, -1.3],
+			inventor: [-0.95, -0.35],
+			ajudante: [1.05, -0.3],
+			frente: [0, 2.6],
+			porta: [3.3, 1.8],
+			janela: [-2.4, -1.9],
+			chao: [2.3, -1.2],
+		},
+		pontos: {
+			lampada: [0, 2.55, -0.5],
+			janela: [-2.6, 1.8, -2.95],
+			bancada_topo: [0, 1.05, -1.3],
+			prateleira: [2.2, 1.8, -2.9],
+		},
+		tamanhos: {bancada_topo: 1.4},
+		alturas: {bancada: 0.92},
+	},
 	mirante: {
 		descricao: 'Laje de pedra no alto da ilha, na beira de um penhasco (borda em +z), olhando o mar 35 m abaixo: enseada com areia e cais de madeira, ilhotas ao longe. Ponha farol e barco com alt: -35 (ex.: farol em [-16, 85] escala 1.3, barco em [9, 56] giro 90). Câmera boa: [1.0, 2.3, 0.8] com alvo [-3, -28, 66] (mostra farol, barco e enseada). Olhando para +z, x negativo fica à DIREITA da tela.',
 		luzPadrao: 'noite',
@@ -198,7 +242,7 @@ export const CENARIOS: Record<string, DefCenario> = {
 	},
 };
 
-export const LUZES = ['dia', 'por_do_sol', 'entardecer', 'noite'] as const;
+export const LUZES = ['dia', 'por_do_sol', 'entardecer', 'noite', 'estudio', 'oficina'] as const;
 
 /** modificador: soma por cima da pose atual (tremer) e não encerra nem é encerrado por estados. */
 export type TipoAcao = 'movimento' | 'gesto' | 'estado' | 'modificador';
@@ -295,10 +339,16 @@ export const SONS = [
 	'bip',
 	'buzina',
 	'trovao',
+	'pop',
+	'whoosh',
+	'zap',
+	'agua',
+	'engrenagem',
+	'ding',
 ] as const;
 
-export const AMBIENTES = ['mar', 'selva', 'noite', 'chuva'] as const;
-export const MUSICAS = ['tensao', 'misterio'] as const;
+export const AMBIENTES = ['mar', 'selva', 'noite', 'chuva', 'oficina', 'estudio'] as const;
+export const MUSICAS = ['tensao', 'misterio', 'curiosidade'] as const;
 
 export const OBJETOS = [
 	'sos',
@@ -319,6 +369,7 @@ export const OBJETOS = [
 	'luz_farol',
 	'caixa_preta',
 	'barras_ouro',
+	'maquete',
 ] as const;
 
 /** Para que serve cada objeto e as opções que ele aceita além de em, giro e escala. */
@@ -341,4 +392,36 @@ export const USO_OBJETOS: Record<(typeof OBJETOS)[number], string> = {
 	caixa_preta: 'caixa preta do avião (laranja); alt',
 	barras_ouro: 'caixote aberto cheio de barras de ouro (a carga)',
 	barco: 'barco de carga de 11 m (proa em +x local); luzes (padrão true, com farol de proa), caixas (padrão true); alt (-35 no mirante)',
+	maquete: 'maquete do episódio (Como Funciona); modelo (id em "modelos"), id, alt; peças e animações no roteiro',
+};
+
+// --- maquetes ---------------------------------------------------------------------------
+
+export const FORMAS = ['caixa', 'cilindro', 'esfera', 'cone', 'capsula', 'toro', 'mola', 'engrenagem', 'seta', 'tubo', 'placa'] as const;
+
+/** Animações de peça: o que cada uma faz e se dura até o fim da cena (estado) ou só o intervalo. */
+export const ANIMACOES_PECA: Record<string, string> = {
+	girar: 'gira sem parar em volta do "eixo" (x, y, z), "voltas" por segundo, de "de" até "ate"',
+	girar_para: 'gira "angulo" graus em volta do "eixo" e fica assim (abrir registro, virar chave)',
+	mover: 'desliza "desloc" [x, y, z] e fica lá (pistão, porta, êmbolo)',
+	aparecer: 'surge crescendo com um pulinho (peça com "oculta": true)',
+	sumir: 'encolhe e some',
+	crescer: 'cresce de baixo para cima (andares de prédio, coluna d\'água); a peça começa oculta',
+	aquecer: 'esquenta: vai do cinza ao vermelho-alaranjado brilhando e fica quente ("intensidade" 0 a 1.5)',
+	esfriar: 'volta da cor quente para a cor normal (depois de um aquecer)',
+	pulsar: 'brilho que pulsa (corrente passando, LED)',
+	transparente: 'carcaça fica de vidro até "opacidade" (padrão 0.25) para mostrar o miolo',
+	tremer: 'vibra (motor ligado, panela de pressão)',
+	explodir: 'vista explodida: cada peça vai para o seu "explode"; peca = id da maquete',
+	montar: 'volta da vista explodida para o lugar; peca = id da maquete',
+	fluxo: 'bolinhas correndo por um caminho: "tipo" agua, eletricidade, calor, ar, gas ou luz',
+};
+
+export const FLUXOS: Record<string, {cor: string; brilha: boolean; raio: number}> = {
+	agua: {cor: '#3FA9F5', brilha: false, raio: 0.028},
+	eletricidade: {cor: '#FFE14A', brilha: true, raio: 0.022},
+	calor: {cor: '#FF7A2A', brilha: true, raio: 0.03},
+	ar: {cor: '#E8F4FF', brilha: false, raio: 0.03},
+	gas: {cor: '#7CE07A', brilha: false, raio: 0.03},
+	luz: {cor: '#FFF6C8', brilha: true, raio: 0.024},
 };

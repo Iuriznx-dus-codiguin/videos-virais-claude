@@ -35,6 +35,7 @@ import {
 	somar,
 } from './pose';
 import {centroCabeca, matrizTronco, ombroMundo, paraTronco} from './rig';
+import {pontoDaPeca} from './maquete';
 
 // --- locomoção ------------------------------------------------------------------
 
@@ -269,8 +270,9 @@ export class SimulacaoCena {
 	}
 
 	objeto(nome: string): V3 | undefined {
-		const o = this.cena.objetos.find((ob) => ob.id === nome || ob.tipo === nome);
+		const o = this.cena.objetos.find((ob) => ob.id === nome || ob.tipo === nome || (ob.tipo === 'maquete' && ob.modelo === nome));
 		if (!o) return undefined;
+		if (o.tipo === 'maquete') return pontoDaPeca(this.cena, this.linha, String(o.id ?? o.modelo), 0) ?? undefined;
 		const [x, z] = Array.isArray(o.em) ? (o.em as V2) : (CENARIOS[this.cena.cenario]?.marcas[o.em] ?? [0, 0]);
 		return [x, ALTURA_OBJETO[o.tipo] ?? 0.3, z];
 	}
@@ -293,6 +295,8 @@ export class SimulacaoCena {
 		if (p) return p;
 		const m = def?.marcas[alvo];
 		if (m) return [m[0], 1.0, m[1]];
+		const peca = pontoDaPeca(this.cena, this.linha, alvo, t);
+		if (peca) return peca;
 		return this.objeto(alvo) ?? null;
 	}
 

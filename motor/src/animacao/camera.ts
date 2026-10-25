@@ -100,10 +100,23 @@ const sobreOmbro = (cab: V3, alvo: V3, lado: number, escala: number) => {
 	return {pos, mira: add3(pos, mul3(eixo, 5))};
 };
 
+/** Cenários com uma frente (+z): planos em pontos e peças olham de frente, não a partir do personagem. */
+const FRENTE_FIXA = new Set(['estudio', 'oficina']);
+
 /** Limite da câmera por cenário (esconderijo: precisa ficar dentro da toca). */
 const LIMITES: Record<string, (p: V3, plano: PlanoTempo) => V3> = {
 	// cabine: a parede fica a ±1,7 m do eixo; a câmera nunca passa de ±1,3 m nem do teto e do chão
 	cabine: (p) => [clamp(p[0], -1.3, 1.3), clamp(p[1], 0.25, 1.65), clamp(p[2], -12.6, 12.6)],
+	// estúdio: dentro do fundo curvo (raio 8,5 em volta de z = 1,5)
+	estudio: (p) => {
+		const dx = p[0];
+		const dz = p[2] - 1.5;
+		const n = Math.hypot(dx, dz);
+		const k = n > 7.6 ? 7.6 / n : 1;
+		return [dx * k, clamp(p[1], 0.2, 8), 1.5 + dz * k];
+	},
+	// oficina: entre as paredes e na frente da parede de tijolo
+	oficina: (p) => [clamp(p[0], -4.3, 4.3), clamp(p[1], 0.2, 4.2), Math.max(p[2], -2.75)],
 	raizes: (p, plano) => {
 		if (plano.tipo === 'pov') return p;
 		const centro: V3 = [0, 1.35, 0.25];
@@ -188,7 +201,7 @@ export const cameraNoTempo = (cena: CenaTempo, sim: SimulacaoCena, t: number): C
 
 	// alvo sem frente (ponto ou objeto) e sem lado: olha a partir do personagem principal
 	let dirPonto: [number, number] | null = null;
-	if (!ehAtor(alvoNome) && plano.lado === undefined) {
+	if (!ehAtor(alvoNome) && plano.lado === undefined && !FRENTE_FIXA.has(cena.cenario)) {
 		const quem = Object.keys(cena.personagens).find((id) => !sim.atores.get(id)?.gigante);
 		if (quem) {
 			const [px, pz] = sim.posicao(quem, t0);
@@ -260,7 +273,8 @@ export const cameraNoTempo = (cena: CenaTempo, sim: SimulacaoCena, t: number): C
 			let elev = el.elev;
 			// detalhe: o tamanho do que precisa caber vem do cenário, quando ele diz
 			const tamanho = tipo === 'detalhe' && typeof alvoNome === 'string' ? CENARIOS[cena.cenario]?.tamanhos?.[alvoNome] : undefined;
-			const vis = tamanho ?? el.vis;
+			// tamanho do plano = largura do que precisa caber no quadro vertical (com folga nas bordas)
+			const vis = plano.tamanho !== undefined ? plano.tamanho * 1.9 : (tamanho ?? el.vis);
 			let dist = vis / 2 / Math.tan((el.fov * Math.PI) / 360);
 			const foco: V3 = tipo === 'detalhe' ? base : [base[0], ehAtor(alvoNome) ? base[1] * 0.45 : base[1], base[2]];
 			if (plano.movimento === 'descer' || (tipo === 'drone' && plano.movimento === undefined)) {

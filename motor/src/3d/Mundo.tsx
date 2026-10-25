@@ -16,6 +16,9 @@ import {Selva} from './cenarios/Selva';
 import {Raizes} from './cenarios/Raizes';
 import {Montanha} from './cenarios/Montanha';
 import {Cabine} from './cenarios/Cabine';
+import {Estudio} from './cenarios/Estudio';
+import {Oficina} from './cenarios/Oficina';
+import {Maquetes} from './Maquete';
 import {Mirante} from './cenarios/Mirante';
 import {Adega} from './cenarios/Adega';
 import {SalaFarol} from './cenarios/SalaFarol';
@@ -64,7 +67,10 @@ export const Mundo: React.FC<{linha: LinhaDoTempo; t: number}> = ({linha, t}) =>
 			{cena.cenario === 'ilhota_farol' ? <IlhotaFarol t={t} nomeClima={nomeClima} /> : null}
 			{cena.cenario === 'mirante' ? <Mirante t={t} nomeClima={nomeClima} /> : null}
 			{cena.cenario === 'cabine' ? <Cabine t={t} nomeClima={nomeClima} /> : null}
+			{cena.cenario === 'estudio' ? <Estudio t={t} nomeClima={nomeClima} /> : null}
+			{cena.cenario === 'oficina' ? <Oficina t={t} nomeClima={nomeClima} /> : null}
 			<Objetos lista={cena.objetos} cenario={cena.cenario} t={t} />
+			<Maquetes cena={cena} linha={linha} t={t} />
 			{estados.map((e) => (e.tipo === 'gigante' ? <Gigante key={e.id} e={e} /> : <Boneco key={e.id} e={e} nomeClima={nomeClima} />))}
 		</>
 	);
