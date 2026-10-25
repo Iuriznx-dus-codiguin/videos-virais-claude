@@ -1,16 +1,15 @@
-// Guarda o que muda de uma sessão para a outra (séries, estado, fila de vídeos) num ramo próprio
+// Guarda o que muda de uma sessão para a outra (séries, estado, vídeos prontos) num ramo próprio
 // do repositório, para o código em main ficar limpo e cada sessão nova começar lendo pouco.
 //
 // Ramo "dados":
-//   series/<serie>/...            biblia.json, regras.md, estado.json, epNN.json, vozes/epNN.json
-//   fila/<serie>-epNN.json|.mp4   vídeo pronto esperando a hora de publicar
+//   series/<serie>/...            biblia.json, regras.md, estado.json, epNN.json, vozes/epNN.json, vozes/<personagem>.pt
+//   videos/<serie>-epNN.mp4|.md   vídeo pronto e o texto para postar (a publicação é manual)
 //
 // Uso (a partir de motor/):
 //   npx tsx ferramentas/dados.ts baixar                    copia series/ do ramo para public/series
 //   npx tsx ferramentas/dados.ts salvar [<serie>...]       copia public/series para o ramo e envia
-//   npx tsx ferramentas/dados.ts enfileirar <serie> <parte> --dia=2026-10-26 --hora=18:00
-//   npx tsx ferramentas/dados.ts publicar-pendentes [--agora=ISO]
-//   npx tsx ferramentas/dados.ts fila                      mostra o que está esperando
+//   npx tsx ferramentas/dados.ts entregar <serie> <parte> --dia=2026-10-26 --hora=18:00
+//   npx tsx ferramentas/dados.ts entregas                  mostra os vídeos guardados
 //
 // SHORTS_REMOTO troca o repositório de origem (usado pelos testes).
 import {execFileSync} from 'node:child_process';
@@ -18,7 +17,9 @@ import {cpSync, existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, r
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {PASTA_SERIES, RAIZ} from './lib/caminhos.ts';
+import {textosDoEpisodio} from './publicar/texto.ts';
 import {nomeEpisodio} from './validar.ts';
+import type {Biblia, Episodio} from '../src/roteiro/tipos.ts';
 
 const RAMO = 'dados';
 /** Brasília não tem horário de verão desde 2019: 18h lá são 21h UTC. */
@@ -29,10 +30,9 @@ export interface ItemFila {
 	parte: number;
 	dia: string;
 	hora: string;
-	/** Instante (UTC, ISO) a partir do qual pode publicar. */
+	/** Instante (UTC, ISO) combinado para postar. */
 	publicar_apos: string;
-	status: 'pendente' | 'publicado';
-	publicado_em?: string;
+	status: 'pendente';
 }
 
 const git = (cwd: string, ...args: string[]) =>
@@ -77,9 +77,10 @@ const enviar = (pasta: string, mensagem: string) => {
 	}
 };
 
+/** Copia sem o cache de áudio das vozes: é grande e se regenera a partir do roteiro e do .pt. */
 const substituir = (de: string, para: string) => {
 	rmSync(para, {recursive: true, force: true});
-	if (existsSync(de)) cpSync(de, para, {recursive: true});
+	if (existsSync(de)) cpSync(de, para, {recursive: true, filter: (origem) => !/[\\/]vozes[\\/]cache([\\/]|$)/.test(origem) && !/\.bruto\.wav$/.test(origem)});
 };
 
 export const baixar = () => {
@@ -116,81 +117,70 @@ export const instanteDaPublicacao = (dia: string, hora: string): string => {
 	return new Date(Date.UTC(a, mes - 1, d, h + DESLOCAMENTO_BRASILIA_H, m)).toISOString();
 };
 
-export const enfileirar = (serie: string, parte: number, dia: string, hora: string, video?: string, semVoz = false) => {
+/** Vídeos prontos ficam no ramo por este tempo; depois são apagados (o histórico do git guarda, mas não se paga por isso a cada sessão). */
+const DIAS_GUARDADOS = 10;
+
+/**
+ * Entrega um episódio pronto: guarda o vídeo e o texto de publicação no ramo de dados (pasta videos/)
+ * e a série (estado, roteiro, regras). A publicação é manual: o Iuri baixa o vídeo e posta.
+ */
+export const entregar = (serie: string, parte: number, dia: string, hora: string, video?: string, semVoz = false) => {
 	if (!semVoz && !existsSync(join(PASTA_SERIES, serie, 'vozes', `${nomeEpisodio(parte)}.json`))) {
 		throw new Error(`A parte ${parte} de ${serie} ainda não tem voz (falta public/series/${serie}/vozes/${nomeEpisodio(parte)}.json). Rode npm run vozes antes, ou use --sem-voz só para teste.`);
 	}
 	const arquivo = video ?? join(RAIZ, 'out', `${serie}-${nomeEpisodio(parte)}.mp4`);
 	if (!existsSync(arquivo)) throw new Error(`Não achei o vídeo ${arquivo}. Rode o render antes.`);
+	const biblia = JSON.parse(readFileSync(join(PASTA_SERIES, serie, 'biblia.json'), 'utf8')) as Biblia;
+	const ep = JSON.parse(readFileSync(join(PASTA_SERIES, serie, `${nomeEpisodio(parte)}.json`), 'utf8')) as Episodio;
+	const t = textosDoEpisodio(biblia, ep);
 	const pasta = abrir();
 	try {
 		const nome = `${serie}-${nomeEpisodio(parte)}`;
-		mkdirSync(join(pasta, 'fila'), {recursive: true});
-		cpSync(arquivo, join(pasta, 'fila', `${nome}.mp4`));
-		const item: ItemFila = {serie, parte, dia, hora, publicar_apos: instanteDaPublicacao(dia, hora), status: 'pendente'};
-		writeFileSync(join(pasta, 'fila', `${nome}.json`), `${JSON.stringify(item, null, 2)}\n`);
-		// o ramo guarda também a série (estado, roteiro, vozes) para a rotina de publicação enxergar tudo
-		substituir(join(PASTA_SERIES, serie), join(pasta, 'series', serie));
-		enviar(pasta, `fila: ${nome} para ${dia} ${hora}`);
-		console.log(`na fila: ${nome} (publica a partir de ${item.publicar_apos})`);
-	} finally {
-		rmSync(pasta, {recursive: true, force: true});
-	}
-};
-
-const lerFila = (pasta: string): ItemFila[] => {
-	const dir = join(pasta, 'fila');
-	if (!existsSync(dir)) return [];
-	return readdirSync(dir)
-		.filter((n) => n.endsWith('.json'))
-		.map((n) => JSON.parse(readFileSync(join(dir, n), 'utf8')) as ItemFila)
-		.sort((a, b) => a.publicar_apos.localeCompare(b.publicar_apos));
-};
-
-export const mostrarFila = () => {
-	const pasta = abrir();
-	try {
-		const fila = lerFila(pasta);
-		if (!fila.length) return console.log('fila vazia');
-		for (const i of fila) console.log(`${i.status.padEnd(9)} ${i.serie} parte ${i.parte}  ${i.dia} ${i.hora}`);
-	} finally {
-		rmSync(pasta, {recursive: true, force: true});
-	}
-};
-
-export const publicarPendentes = (agora: Date) => {
-	const pasta = abrir();
-	let falhas = 0;
-	try {
-		const prontos = lerFila(pasta).filter((i) => i.status === 'pendente' && new Date(i.publicar_apos) <= agora);
-		if (!prontos.length) return console.log('nada para publicar agora');
-		// o publicar.ts trabalha em public/series: usa a cópia do ramo, que tem estado e roteiro de cada série
-		for (const s of new Set(prontos.map((i) => i.serie))) substituir(join(pasta, 'series', s), join(PASTA_SERIES, s));
-		for (const i of prontos) {
-			const nome = `${i.serie}-${nomeEpisodio(i.parte)}`;
-			const video = join(pasta, 'fila', `${nome}.mp4`);
-			console.log(`\n== publicando ${nome} ==`);
-			try {
-				execFileSync('npx', ['tsx', join(import.meta.dirname, 'publicar.ts'), i.serie, String(i.parte), `--video=${video}`], {stdio: 'inherit', cwd: import.meta.dirname, env: process.env});
-			} catch {
-				falhas++;
-				console.error(`FALHOU: ${nome} continua pendente (o que já foi publicado em cada rede fica no estado e não se repete)`);
-			}
-			// o publicar.ts grava o resultado parcial no estado mesmo quando uma rede falha
-			substituir(join(PASTA_SERIES, i.serie), join(pasta, 'series', i.serie));
-			const publicado = JSON.parse(readFileSync(join(pasta, 'series', i.serie, 'estado.json'), 'utf8')).publicados?.[String(i.parte)];
-			if (publicado?.youtube && publicado?.instagram) {
-				i.status = 'publicado';
-				i.publicado_em = agora.toISOString();
-				writeFileSync(join(pasta, 'fila', `${nome}.json`), `${JSON.stringify(i, null, 2)}\n`);
-				rmSync(video, {force: true});
-			}
+		const dir = join(pasta, 'videos');
+		mkdirSync(dir, {recursive: true});
+		const limite = Date.now() - DIAS_GUARDADOS * 86_400_000;
+		for (const n of readdirSync(dir).filter((x) => x.endsWith('.json'))) {
+			const velho = JSON.parse(readFileSync(join(dir, n), 'utf8')) as ItemFila;
+			if (Date.parse(`${velho.dia}T12:00:00Z`) < limite) for (const ext of ['json', 'mp4', 'md']) rmSync(join(dir, n.replace(/json$/, ext)), {force: true});
 		}
-		enviar(pasta, `publicado: ${prontos.map((i) => `${i.serie}-${nomeEpisodio(i.parte)}`).join(', ')}`);
+		cpSync(arquivo, join(dir, `${nome}.mp4`));
+		const item: ItemFila = {serie, parte, dia, hora, publicar_apos: instanteDaPublicacao(dia, hora), status: 'pendente'};
+		writeFileSync(join(dir, `${nome}.json`), `${JSON.stringify(item, null, 2)}\n`);
+		writeFileSync(
+			join(dir, `${nome}.md`),
+			[
+				`# ${biblia.titulo} · Parte ${parte}: ${ep.titulo}`,
+				'',
+				`**Postar em ${dia.split('-').reverse().join('/')} às ${hora} (Brasília)** · vídeo: ${nome}.mp4`,
+				'',
+				'## YouTube Shorts',
+				`Título: ${t.tituloYoutube}`,
+				'',
+				t.descricaoYoutube,
+				'',
+				'## Instagram Reels',
+				t.legendaInstagram,
+				'',
+			].join('\n'),
+		);
+		substituir(join(PASTA_SERIES, serie), join(pasta, 'series', serie));
+		enviar(pasta, `entrega: ${nome} para ${dia} ${hora}`);
+		console.log(`entregue: ${nome} (postar ${dia} ${hora}); vídeo e texto no ramo ${RAMO}, pasta videos/`);
 	} finally {
 		rmSync(pasta, {recursive: true, force: true});
 	}
-	if (falhas) process.exit(1);
+};
+
+export const mostrarEntregas = () => {
+	const pasta = abrir();
+	try {
+		const dir = join(pasta, 'videos');
+		const itens = existsSync(dir) ? readdirSync(dir).filter((n) => n.endsWith('.json')).map((n) => JSON.parse(readFileSync(join(dir, n), 'utf8')) as ItemFila) : [];
+		if (!itens.length) return console.log('nenhuma entrega guardada');
+		for (const i of itens.sort((a, b) => a.publicar_apos.localeCompare(b.publicar_apos))) console.log(`${i.dia} ${i.hora}  ${i.serie} parte ${i.parte}`);
+	} finally {
+		rmSync(pasta, {recursive: true, force: true});
+	}
 };
 
 if (process.argv[1] && import.meta.filename === process.argv[1]) {
@@ -200,12 +190,11 @@ if (process.argv[1] && import.meta.filename === process.argv[1]) {
 	try {
 		if (comando === 'baixar') baixar();
 		else if (comando === 'salvar') salvar(pos);
-		else if (comando === 'enfileirar') {
-			if (pos.length < 2 || !opc.dia || !opc.hora) throw new Error('uso: enfileirar <serie> <parte> --dia=AAAA-MM-DD --hora=HH:MM [--video=arquivo.mp4]');
-			enfileirar(pos[0], Number(pos[1]), opc.dia, opc.hora, opc.video, 'sem-voz' in opc);
-		} else if (comando === 'publicar-pendentes') publicarPendentes(opc.agora ? new Date(opc.agora) : new Date());
-		else if (comando === 'fila') mostrarFila();
-		else throw new Error('comandos: baixar | salvar | enfileirar | publicar-pendentes | fila');
+		else if (comando === 'entregar') {
+			if (pos.length < 2 || !opc.dia || !opc.hora) throw new Error('uso: entregar <serie> <parte> --dia=AAAA-MM-DD --hora=HH:MM [--video=arquivo.mp4] [--sem-voz]');
+			entregar(pos[0], Number(pos[1]), opc.dia, opc.hora, opc.video, 'sem-voz' in opc);
+		} else if (comando === 'entregas') mostrarEntregas();
+		else throw new Error('comandos: baixar | salvar | entregar | entregas');
 	} catch (e) {
 		console.error(e instanceof Error ? e.message : e);
 		process.exit(1);

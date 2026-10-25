@@ -1,5 +1,5 @@
 // Transforma o roteiro (âncoras nas falas) em uma linha do tempo com segundos absolutos.
-// Sem áudio, a duração de cada fala é estimada pelo texto; com o alinhamento do ElevenLabs,
+// Sem áudio, a duração de cada fala é estimada pelo texto; com o alinhamento do OmniVoice,
 // usa o tempo real de cada letra. O resto do roteiro não muda entre um caso e outro.
 import {ACOES, CENARIOS, EFEITOS, ENCERRA_ESTADO, EXPRESSOES, LADOS, MOVIMENTOS, PLANOS} from '../catalogo';
 import {
@@ -75,7 +75,7 @@ export const estimarFala = (fala: Fala, ini: number): Pick<FalaTempo, 'palavras'
 	return {palavras, letras, fim: t};
 };
 
-/** Palavras e letras a partir do alinhamento por caractere devolvido pelo ElevenLabs. */
+/** Palavras e letras a partir do alinhamento por caractere devolvido pelo OmniVoice. */
 export const falaDoAlinhamento = (
 	fala: Fala,
 	al: Alinhamentos[string],

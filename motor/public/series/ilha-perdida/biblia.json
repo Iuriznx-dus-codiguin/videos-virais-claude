@@ -10,9 +10,7 @@
       "personalidade": "corajoso por teimosia, faz piada quando está com medo",
       "voz": {
         "descricao": "rapaz brasileiro de uns 22 anos, voz jovem e expressiva, bom para narração de suspense",
-        "estabilidade": 0.4,
-        "similaridade": 0.8,
-        "estilo": 0.35
+        "instruct": "male, young adult, moderate pitch"
       },
       "visual": {
         "altura": 1,
@@ -21,8 +19,14 @@
         "olhos": "redondos",
         "sobrancelhas": "grossas",
         "acessorios": [
-          {"tipo": "bandana", "cor": "#E63946"},
-          {"tipo": "mochila", "cor": "#FFC233"}
+          {
+            "tipo": "bandana",
+            "cor": "#E63946"
+          },
+          {
+            "tipo": "mochila",
+            "cor": "#FFC233"
+          }
         ]
       },
       "cor_legenda": "#FFD60A"
@@ -33,9 +37,7 @@
       "personalidade": "durona, fala pouco e baixo, sabe se virar sozinha",
       "voz": {
         "descricao": "moça brasileira de uns 24 anos, voz firme e um pouco grave, fala baixo",
-        "estabilidade": 0.45,
-        "similaridade": 0.8,
-        "estilo": 0.3
+        "instruct": "female, young adult, low pitch"
       },
       "visual": {
         "altura": 0.94,
@@ -46,8 +48,14 @@
         "cilios": true,
         "bochechas": "#F4A7A3",
         "acessorios": [
-          {"tipo": "rabo_de_cavalo", "cor": "#6B3A1F"},
-          {"tipo": "lenco", "cor": "#6A994E"}
+          {
+            "tipo": "rabo_de_cavalo",
+            "cor": "#6B3A1F"
+          },
+          {
+            "tipo": "lenco",
+            "cor": "#6A994E"
+          }
         ]
       },
       "cor_legenda": "#5CE1E6"

@@ -1,25 +1,22 @@
 // Servidor local que imita, com o formato descrito na documentação de cada API, o que os
-// módulos de voz e publicação chamam. Confere cabeçalhos e campos obrigatórios e guarda o que
+// módulos de publicação chamam. Confere cabeçalhos e campos obrigatórios e guarda o que
 // recebeu para os testes olharem. Não prova que o serviço real aceita; prova que o nosso código
 // monta os pedidos e entende as respostas.
 import {createServer, type IncomingMessage, type Server, type ServerResponse} from 'node:http';
 import type {AddressInfo} from 'node:net';
 
 export interface Registro {
-	voz: {vozId: string; corpo: Record<string, unknown>; chave?: string}[];
 	youtubeMetadados: Record<string, unknown>[];
 	youtubeBytes: number[];
 	instagramMedia: Record<string, string>[];
 	instagramPublicados: string[];
 	blobs: Map<string, Buffer>;
 	apagados: string[];
-	voicesAdicionadas: string[];
 }
 
 export interface Opcoes {
 	/** respostas de erro por rota (para testar mensagens) */
-	falhas?: Partial<Record<'eleven' | 'googleToken' | 'canal' | 'instagramMe' | 'instagramStatus', number>>;
-	chave?: string;
+	falhas?: Partial<Record<'googleToken' | 'canal' | 'instagramMe' | 'instagramStatus', number>>;
 	processamentosAntes?: number;
 }
 
@@ -36,7 +33,7 @@ const json = (res: ServerResponse, status: number, corpo: unknown, cab: Record<s
 };
 
 export const subir = async (op: Opcoes = {}): Promise<{base: string; registro: Registro; fechar: () => Promise<void>}> => {
-	const registro: Registro = {voz: [], youtubeMetadados: [], youtubeBytes: [], instagramMedia: [], instagramPublicados: [], blobs: new Map(), apagados: [], voicesAdicionadas: []};
+	const registro: Registro = {youtubeMetadados: [], youtubeBytes: [], instagramMedia: [], instagramPublicados: [], blobs: new Map(), apagados: []};
 	let consultas = 0;
 	let base = '';
 	const servidor: Server = createServer(async (req, res) => {
@@ -44,52 +41,6 @@ export const subir = async (op: Opcoes = {}): Promise<{base: string; registro: R
 		const p = url.pathname;
 		const corpo = await ler(req);
 		const falha = (n: keyof NonNullable<Opcoes['falhas']>) => op.falhas?.[n];
-
-		// --- ElevenLabs ---
-		if (p.startsWith('/eleven/')) {
-			if (falha('eleven')) return json(res, falha('eleven')!, {detail: {status: 'invalid_api_key', message: 'Invalid API key'}});
-			if (op.chave && req.headers['xi-api-key'] !== op.chave) return json(res, 401, {detail: {status: 'needs_authorization'}});
-			if (p === '/eleven/v1/models') return json(res, 200, [{model_id: 'eleven_multilingual_v2'}, {model_id: 'eleven_v3'}]);
-			if (p === '/eleven/v1/user/subscription') return json(res, 200, {character_count: 1200, character_limit: 100000});
-			const tts = /^\/eleven\/v1\/text-to-speech\/([^/]+)\/with-timestamps$/.exec(p);
-			if (tts && req.method === 'POST') {
-				const c = JSON.parse(corpo.toString()) as {text: string; model_id: string};
-				if (!c.text || !c.model_id) return json(res, 422, {detail: 'text e model_id são obrigatórios'});
-				if (url.searchParams.get('output_format') !== 'mp3_44100_128') return json(res, 422, {detail: 'output_format inesperado'});
-				registro.voz.push({vozId: tts[1], corpo: c});
-				const caracteres = [...c.text];
-				const ini = caracteres.map((_, i) => +(i * 0.06).toFixed(3));
-				const fim = caracteres.map((_, i) => +((i + 1) * 0.06).toFixed(3));
-				return json(res, 200, {audio_base64: Buffer.from('ID3-falso').toString('base64'), alignment: {characters: caracteres, character_start_times_seconds: ini, character_end_times_seconds: fim}});
-			}
-			if (p === '/eleven/v1/shared-voices') {
-				const q = url.searchParams;
-				if (q.get('language') !== 'pt') return json(res, 422, {detail: 'language esperado pt'});
-				return json(res, 200, {
-					voices: [1, 2, 3].map((i) => ({
-						public_owner_id: `dono${i}`,
-						voice_id: `voz${i}`,
-						name: `Voz ${i}`,
-						gender: q.get('gender'),
-						age: q.get('age'),
-						category: i === 2 ? 'professional' : 'generated',
-						use_case: 'narrative_story',
-						cloned_by_count: 100 * i,
-						preview_url: `${base}/eleven/preview/${i}.mp3`,
-					})),
-					has_more: false,
-				});
-			}
-			if (/^\/eleven\/preview\/\d\.mp3$/.test(p)) {
-				res.writeHead(200, {'content-type': 'audio/mpeg'});
-				return res.end('ID3-amostra');
-			}
-			const add = /^\/eleven\/v1\/voices\/add\/([^/]+)\/([^/]+)$/.exec(p);
-			if (add && req.method === 'POST') {
-				registro.voicesAdicionadas.push(`${add[1]}:${add[2]}`);
-				return json(res, 200, {voice_id: `minha-${add[2]}`});
-			}
-		}
 
 		// --- Google ---
 		if (p === '/google/token' && req.method === 'POST') {

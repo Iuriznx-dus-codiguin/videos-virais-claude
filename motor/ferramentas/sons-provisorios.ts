@@ -1,6 +1,6 @@
 // Sons provisórios feitos com ffmpeg (ruído e tons sintéticos) para o render funcionar sem
 // depender de biblioteca de áudio. São deliberadamente simples: trocar por sons de verdade
-// (por exemplo gerados no ElevenLabs) é só colocar o .wav de mesmo nome em public/.
+// é só colocar o .wav de mesmo nome em public/.
 // Uso: npx tsx ferramentas/sons-provisorios.ts [--forcar]
 import {execFile} from 'node:child_process';
 import {existsSync, mkdirSync} from 'node:fs';

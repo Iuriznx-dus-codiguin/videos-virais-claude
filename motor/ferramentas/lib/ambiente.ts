@@ -6,7 +6,6 @@ export const env = (nome: string): string | undefined => process.env[nome]?.trim
 const falsa = env('SHORTS_BASE_FALSA');
 
 export const URLS = {
-	eleven: falsa ? `${falsa}/eleven` : 'https://api.elevenlabs.io',
 	googleToken: falsa ? `${falsa}/google/token` : 'https://oauth2.googleapis.com/token',
 	googleApis: falsa ? `${falsa}/google` : 'https://www.googleapis.com',
 	instagram: falsa ? `${falsa}/instagram` : 'https://graph.instagram.com',
@@ -18,7 +17,6 @@ export const emTeste = () => falsa !== undefined;
 
 /** Nomes das variáveis que guardam segredos (para esconder em mensagens de erro). */
 const SEGREDOS = [
-	'ELEVENLABS_API_KEY',
 	'YOUTUBE_CLIENT_SECRET',
 	'YOUTUBE_REFRESH_TOKEN',
 	'INSTAGRAM_ACCESS_TOKEN',

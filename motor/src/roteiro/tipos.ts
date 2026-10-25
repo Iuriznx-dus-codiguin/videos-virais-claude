@@ -172,13 +172,14 @@ export interface VisualPersonagem {
 }
 
 export interface Voz {
-	/** Descrição usada para escolher a voz na biblioteca do ElevenLabs. */
+	/** Descrição da voz em português, para quem lê a bíblia. */
 	descricao: string;
-	elevenlabs_id?: string;
-	nome?: string;
-	estabilidade?: number;
-	similaridade?: number;
-	estilo?: number;
+	/** Atributos para criar a voz no OmniVoice, em inglês: "male, young adult, low pitch". */
+	instruct?: string;
+	/** Frase usada para criar a voz (uns 8 s de fala); tem um padrão. */
+	amostra?: string;
+	/** Semente da voz escolhida (guardada pela ferramenta escolher-voz). */
+	semente?: number;
 }
 
 export interface PersonagemBiblia {
@@ -205,7 +206,7 @@ export interface Biblia {
 	ganchos_abertos?: string[];
 }
 
-// --- alinhamento das vozes (saída do ElevenLabs) ------------------------------
+// --- alinhamento das vozes (saída do OmniVoice) ------------------------------
 
 export interface AlinhamentoFala {
 	duracao: number;

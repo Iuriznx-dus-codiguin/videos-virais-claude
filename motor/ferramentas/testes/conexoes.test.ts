@@ -32,6 +32,8 @@ const rodar = async (raiz: string, base: string, script: string, args: string[],
 		INSTAGRAM_USER_ID: '999',
 		INSTAGRAM_TOKEN_EMITIDO_EM: new Date(Date.now() - 20 * 86_400_000).toISOString().slice(0, 10),
 		BLOB_READ_WRITE_TOKEN: 'vercel_blob_rw_falso',
+		SHORTS_VOZ_PY: 'python3',
+		SHORTS_VOZ_SCRIPT: join(MOTOR, 'ferramentas', 'testes', 'voz-falsa.py'),
 		...extra,
 	};
 	try {
@@ -43,17 +45,15 @@ const rodar = async (raiz: string, base: string, script: string, args: string[],
 	}
 };
 
-/** Cópia da série do piloto numa raiz temporária, com vozes já escolhidas na bíblia. */
+/** Cópia da série do piloto numa raiz temporária, com vozes (falsas) já escolhidas. */
 const montarRaiz = () => {
 	const raiz = mkdtempSync(join(tmpdir(), 'shorts-teste-'));
 	const origem = join(MOTOR, 'public', 'series', 'ilha-perdida');
 	const destino = join(raiz, 'public', 'series', 'ilha-perdida');
 	mkdirSync(destino, {recursive: true});
 	for (const a of ['biblia.json', 'ep01.json']) cpSync(join(origem, a), join(destino, a));
-	const b = JSON.parse(readFileSync(join(destino, 'biblia.json'), 'utf8')) as Biblia;
-	b.personagens.leo.voz!.elevenlabs_id = 'voz-leo';
-	b.personagens.bia.voz!.elevenlabs_id = 'voz-bia';
-	writeFileSync(join(destino, 'biblia.json'), JSON.stringify(b, null, 2));
+	mkdirSync(join(destino, 'vozes'), {recursive: true});
+	for (const quem of ['leo', 'bia']) writeFileSync(join(destino, 'vozes', `${quem}.pt`), `voz-${quem}`);
 	mkdirSync(join(raiz, 'out'), {recursive: true});
 	writeFileSync(join(raiz, 'out', 'ilha-perdida-ep01.mp4'), Buffer.alloc(4096, 7));
 	return raiz;
@@ -66,10 +66,28 @@ describe('conexões', () => {
 	});
 	after(() => falso.fechar());
 
-	it('as quatro contas respondem e o teste não imprime nenhuma chave', async () => {
+	it('por padrão confere só o motor de voz', async () => {
 		const r = await rodar(montarRaiz(), falso.base, 'conectar.ts', []);
 		assert.equal(r.codigo, 0, r.saida);
-		assert.match(r.saida, /✔ ElevenLabs: 2 modelos de voz, 98800 créditos sobrando/);
+		assert.match(r.saida, /✔ Voz \(OmniVoice\): OmniVoice 0\.0-falso com o modelo falso baixado/);
+		assert.ok(!/YouTube|Instagram/.test(r.saida), 'a publicação está desligada do teste padrão');
+	});
+
+	it('avisa quando o modelo ainda não foi baixado', async () => {
+		const r = await rodar(montarRaiz(), falso.base, 'conectar.ts', [], {VOZ_FALSA_SEM_MODELO: '1'});
+		assert.equal(r.codigo, 1);
+		assert.match(r.saida, /✘ Voz.*ainda não foi baixado.*instalar\.sh.*huggingface\.co/s);
+	});
+
+	it('sem o motor instalado diz qual script rodar', async () => {
+		const r = await rodar(montarRaiz(), falso.base, 'conectar.ts', [], {SHORTS_VOZ_PY: '/nao/existe/python'});
+		assert.equal(r.codigo, 1);
+		assert.match(r.saida, /não está instalado.*instalar\.sh/s);
+	});
+
+	it('as contas de publicação, quando pedidas, respondem e não imprimem nenhuma chave', async () => {
+		const r = await rodar(montarRaiz(), falso.base, 'conectar.ts', ['--so=youtube,instagram,blob']);
+		assert.equal(r.codigo, 0, r.saida);
 		assert.match(r.saida, /✔ YouTube: canal "Canal de Teste"/);
 		assert.match(r.saida, /✔ Instagram: conta @canal_teste \(MEDIA_CREATOR\), 97 publicações liberadas.*token com 40 dias/);
 		assert.match(r.saida, /✔ Vercel Blob: subiu, abriu pelo link público e foi apagado/);
@@ -83,22 +101,8 @@ describe('conexões', () => {
 		assert.match(r.saida, /ATENÇÃO: o token vence em 5 dias/);
 	});
 
-	it('com a chave em variável, ela vai no cabeçalho xi-api-key', async () => {
-		const f = await subir({chave: 'minha-chave-eleven'});
-		try {
-			const sem = await rodar(montarRaiz(), f.base, 'conectar.ts', ['--so=elevenlabs']);
-			assert.match(sem.saida, /✘ ElevenLabs.*401.*Passo 1/s);
-			const com = await rodar(montarRaiz(), f.base, 'conectar.ts', ['--so=elevenlabs'], {ELEVENLABS_API_KEY: 'minha-chave-eleven'});
-			assert.match(com.saida, /✔ ElevenLabs/);
-			assert.ok(!com.saida.includes('minha-chave-eleven'));
-		} finally {
-			await f.fechar();
-		}
-	});
-
-	it('explica cada falha em português e aponta o passo do guia', async () => {
+	it('explica cada falha de publicação em português', async () => {
 		const casos: [Opcoes['falhas'], string, RegExp][] = [
-			[{eleven: 401}, 'elevenlabs', /✘ ElevenLabs.*Passo 1/s],
 			[{googleToken: 400}, 'youtube', /✘ YouTube: o refresh token foi recusado.*modo Teste/s],
 			[{instagramMe: 400}, 'instagram', /✘ Instagram.*60 dias/s],
 		];
@@ -113,24 +117,23 @@ describe('conexões', () => {
 			}
 		}
 	});
-
-	it('rede bloqueada vira uma mensagem sobre Allowed domains', async () => {
-		const r = await rodar(montarRaiz(), 'http://127.0.0.1:1', 'conectar.ts', ['--so=elevenlabs']);
-		assert.equal(r.codigo, 1);
-		assert.match(r.saida, /não consegui conectar em 127\.0\.0\.1:1.*Allowed domains/s);
-	});
 });
 
 describe('vozes', () => {
-	let falso: Awaited<ReturnType<typeof subir>>;
-	before(async () => {
-		falso = await subir();
-	});
-	after(() => falso.fechar());
+	const lerLog = (arq: string) =>
+		existsSync(arq)
+			? readFileSync(arq, 'utf8')
+					.trim()
+					.split('\n')
+					.filter(Boolean)
+					.map((l) => JSON.parse(l) as Record<string, unknown>)
+			: [];
+	const novoLog = () => join(mkdtempSync(join(tmpdir(), 'voz-log-')), 'chamadas.jsonl');
 
 	it('gera fala por fala, grava o alinhamento e o resolver passa a usar os tempos reais', async () => {
 		const raiz = montarRaiz();
-		const r = await rodar(raiz, falso.base, 'vozes.ts', ['ilha-perdida', '1']);
+		const log = novoLog();
+		const r = await rodar(raiz, 'http://x', 'vozes.ts', ['ilha-perdida', '1'], {VOZ_FALSA_LOG: log});
 		assert.equal(r.codigo, 0, r.saida);
 		const pasta = join(raiz, 'public', 'series', 'ilha-perdida');
 		const al = JSON.parse(readFileSync(join(pasta, 'vozes', 'ep01.json'), 'utf8')) as Alinhamentos;
@@ -143,60 +146,89 @@ describe('vozes', () => {
 		const linha = resolverEpisodio(ep, biblia, al);
 		assert.ok(linha.falas.every((f) => !f.estimada && f.audio));
 
-		// voz certa por personagem, com ênfase em minúsculas e contexto das falas vizinhas
-		const porVoz = falso.registro.voz;
-		assert.equal(porVoz.length, ids.length);
-		const f2 = porVoz.find((v) => String(v.corpo.text).includes('Três dias sem comida'))!;
-		assert.equal(f2.vozId, 'voz-leo');
-		assert.ok(String(f2.corpo.next_text).startsWith('Até que'), 'next_text da fala vizinha do mesmo personagem');
-		const quieto = porVoz.find((v) => String(v.corpo.text).includes('Quieto'))!;
-		assert.match(String(quieto.corpo.text), /Quieto demais\./, 'MAIÚSCULAS vão minúsculas para a voz');
-		const bia = porVoz.find((v) => v.vozId === 'voz-bia')!;
-		const settings = bia.corpo.voice_settings as {speed: number; stability: number};
-		assert.ok(settings.speed < 0.9, 'sussurro e velocidade 0.9 deixam a fala mais lenta');
-		assert.equal(bia.corpo.language_code, undefined, 'o modelo multilingual_v2 não aceita language_code');
+		// uma chamada só ao modelo (carregado uma vez), com a voz certa de cada personagem
+		const chamadas = lerLog(log).filter((c) => c.modo === 'gerar');
+		assert.equal(chamadas.length, ids.length);
+		const f2 = chamadas.find((c) => String(c.texto).includes('Três dias sem comida'))!;
+		assert.match(String(f2.voz), /leo\.pt$/);
+		const quieto = chamadas.find((c) => String(c.texto).includes('Quieto'))!;
+		assert.match(String(quieto.texto), /Quieto demais\./, 'MAIÚSCULAS vão minúsculas para a voz');
+		const bia = chamadas.find((c) => /bia\.pt$/.test(String(c.voz)))!;
+		assert.ok(Number(bia.velocidade) < 0.9, 'sussurro e velocidade 0.9 deixam a fala mais lenta');
+
+		// o tempo dos caracteres cobre a duração real do áudio
+		const primeira = Object.values(al)[0];
+		assert.ok(primeira.fim[primeira.fim.length - 1] <= primeira.duracao);
+		assert.ok(primeira.fim[primeira.fim.length - 1] > primeira.duracao * 0.85);
 	});
 
-	it('na segunda rodada usa o cache e não chama a API de novo', async () => {
+	it('na segunda rodada usa o cache e não chama o modelo de novo', async () => {
 		const raiz = montarRaiz();
-		await rodar(raiz, falso.base, 'vozes.ts', ['ilha-perdida', '1']);
-		const antes = falso.registro.voz.length;
-		const r = await rodar(raiz, falso.base, 'vozes.ts', ['ilha-perdida', '1']);
+		const log = novoLog();
+		await rodar(raiz, 'http://x', 'vozes.ts', ['ilha-perdida', '1'], {VOZ_FALSA_LOG: log});
+		const antes = lerLog(log).length;
+		const r = await rodar(raiz, 'http://x', 'vozes.ts', ['ilha-perdida', '1'], {VOZ_FALSA_LOG: log});
 		assert.match(r.saida, /0 para gerar/);
-		assert.equal(falso.registro.voz.length, antes);
+		assert.equal(lerLog(log).length, antes);
 	});
 
-	it('recusa um episódio grande demais antes de gastar créditos', async () => {
-		const r = await rodar(montarRaiz(), falso.base, 'vozes.ts', ['ilha-perdida', '1'], {ELEVENLABS_MAX_CARACTERES: '100'});
-		assert.equal(r.codigo, 1);
-		assert.match(r.saida, /passam do limite de segurança/);
+	it('trocar uma fala regenera só ela', async () => {
+		const raiz = montarRaiz();
+		const log = novoLog();
+		await rodar(raiz, 'http://x', 'vozes.ts', ['ilha-perdida', '1'], {VOZ_FALSA_LOG: log});
+		const antes = lerLog(log).length;
+		const arq = join(raiz, 'public', 'series', 'ilha-perdida', 'ep01.json');
+		const ep = JSON.parse(readFileSync(arq, 'utf8')) as Episodio;
+		const f = ep.falas.find((x) => 'texto' in x) as {texto: string};
+		f.texto = `${f.texto} Mais uma frase.`;
+		writeFileSync(arq, JSON.stringify(ep));
+		const r = await rodar(raiz, 'http://x', 'vozes.ts', ['ilha-perdida', '1'], {VOZ_FALSA_LOG: log});
+		assert.match(r.saida, /1 para gerar/);
+		assert.equal(lerLog(log).length, antes + 1);
 	});
 
 	it('personagem sem voz escolhida diz qual comando rodar', async () => {
 		const raiz = montarRaiz();
-		const arq = join(raiz, 'public', 'series', 'ilha-perdida', 'biblia.json');
-		const b = JSON.parse(readFileSync(arq, 'utf8')) as Biblia;
-		delete b.personagens.bia.voz!.elevenlabs_id;
-		writeFileSync(arq, JSON.stringify(b));
-		const r = await rodar(raiz, falso.base, 'vozes.ts', ['ilha-perdida', '1']);
+		rmSync(join(raiz, 'public', 'series', 'ilha-perdida', 'vozes', 'bia.pt'));
+		const r = await rodar(raiz, 'http://x', 'vozes.ts', ['ilha-perdida', '1']);
 		assert.equal(r.codigo, 1);
-		assert.match(r.saida, /"bia" ainda não tem voz.*escolher-voz\.ts ilha-perdida bia/s);
+		assert.match(r.saida, /"bia" ainda não tem voz.*escolher-voz\.ts ilha-perdida bia --auto/s);
 	});
 
-	it('escolher-voz busca candidatas pelo perfil da bíblia, baixa amostras e grava a escolhida', async () => {
+	it('erro de rede do modelo vira uma dica sobre os domínios', async () => {
 		const raiz = montarRaiz();
-		const arq = join(raiz, 'public', 'series', 'ilha-perdida', 'biblia.json');
-		const b = JSON.parse(readFileSync(arq, 'utf8')) as Biblia;
-		delete b.personagens.bia.voz!.elevenlabs_id;
-		writeFileSync(arq, JSON.stringify(b));
-		const r = await rodar(raiz, falso.base, 'escolher-voz.ts', ['ilha-perdida', 'bia']);
-		assert.equal(r.codigo, 0, r.saida);
-		assert.match(r.saida, /1\. \*\*Voz 2\*\*.*female, young/, 'a profissional vem primeiro e o perfil é de moça jovem');
+		const r = await rodar(raiz, 'http://x', 'vozes.ts', ['ilha-perdida', '1'], {SHORTS_VOZ_SCRIPT: join(MOTOR, 'ferramentas', 'testes', 'voz-falsa-quebrada.py')});
+		assert.equal(r.codigo, 1);
+		assert.match(r.saida, /Parece bloqueio de rede.*huggingface\.co/s);
+	});
+
+	it('escolher-voz cria candidatas, guarda a escolhida e a semente', async () => {
+		const raiz = montarRaiz();
+		const pasta = join(raiz, 'public', 'series', 'ilha-perdida');
+		rmSync(join(pasta, 'vozes', 'bia.pt'));
+		const log = novoLog();
+		const c = await rodar(raiz, 'http://x', 'escolher-voz.ts', ['ilha-perdida', 'bia', '--candidatas=3'], {VOZ_FALSA_LOG: log});
+		assert.equal(c.codigo, 0, c.saida);
+		const gerar = lerLog(log).filter((x) => x.modo === 'gerar');
+		assert.equal(gerar.length, 3);
+		assert.ok(gerar.every((x) => x.instruct === 'female, young adult, low pitch'));
+		assert.deepEqual(gerar.map((x) => x.semente), [1, 2, 3]);
 		assert.ok(existsSync(join(raiz, 'out', 'vozes-candidatas', 'ilha-perdida-bia', 'candidatas.md')));
-		const u = await rodar(raiz, falso.base, 'escolher-voz.ts', ['ilha-perdida', 'bia', '--usar=dono2:voz2']);
+		const u = await rodar(raiz, 'http://x', 'escolher-voz.ts', ['ilha-perdida', 'bia', '--usar=2'], {VOZ_FALSA_LOG: log});
 		assert.equal(u.codigo, 0, u.saida);
-		const depois = JSON.parse(readFileSync(arq, 'utf8')) as Biblia;
-		assert.equal(depois.personagens.bia.voz!.elevenlabs_id, 'minha-voz2');
+		assert.ok(existsSync(join(pasta, 'vozes', 'bia.pt')));
+		assert.ok(existsSync(join(pasta, 'vozes', 'bia-ref.wav')));
+		assert.equal((JSON.parse(readFileSync(join(pasta, 'biblia.json'), 'utf8')) as Biblia).personagens.bia.voz!.semente, 2);
+	});
+
+	it('escolher-voz --auto faz tudo de uma vez', async () => {
+		const raiz = montarRaiz();
+		const pasta = join(raiz, 'public', 'series', 'ilha-perdida');
+		rmSync(join(pasta, 'vozes', 'leo.pt'));
+		const r = await rodar(raiz, 'http://x', 'escolher-voz.ts', ['ilha-perdida', 'leo', '--auto']);
+		assert.equal(r.codigo, 0, r.saida);
+		assert.match(r.saida, /candidata escolhida automaticamente/);
+		assert.ok(existsSync(join(pasta, 'vozes', 'leo.pt')));
 	});
 });
 
@@ -284,71 +316,64 @@ describe('publicação', () => {
 	});
 });
 
-describe('fila de publicação', () => {
+describe('entrega dos vídeos', () => {
 	const git = (cwd: string, ...args: string[]) => execFileSync('git', args, {cwd, encoding: 'utf8'}).trim();
+	const novoRemoto = () => {
+		const remoto = mkdtempSync(join(tmpdir(), 'shorts-remoto-'));
+		git(remoto, 'init', '--quiet', '--bare', '-b', 'main');
+		return {remoto, extra: {SHORTS_REMOTO: remoto}};
+	};
 
-	it('enfileira num ramo à parte, só publica na hora marcada e não repete', async () => {
-		const falso = await subir({processamentosAntes: 1});
-		try {
-			const remoto = mkdtempSync(join(tmpdir(), 'shorts-remoto-'));
-			git(remoto, 'init', '--quiet', '--bare', '-b', 'main');
-			const extra = {SHORTS_REMOTO: remoto};
+	it('guarda vídeo, texto para postar e a série no ramo dados; recusa episódio sem voz', async () => {
+		const {remoto, extra} = novoRemoto();
+		const producao = montarRaiz();
+		const a = await rodar(producao, 'http://x', 'dados.ts', ['entregar', 'ilha-perdida', '1', '--dia=2026-10-26', '--hora=18:00'], extra);
+		assert.equal(a.codigo, 1);
+		assert.match(a.saida, /ainda não tem voz/);
 
-			// sessão de produção (3h): enfileira para as 18h de Brasília
-			const producao = montarRaiz();
-			const a = await rodar(producao, falso.base, 'dados.ts', ['enfileirar', 'ilha-perdida', '1', '--dia=2026-10-26', '--hora=18:00'], extra);
-			assert.equal(a.codigo, 1);
-			assert.match(a.saida, /ainda não tem voz/);
-			mkdirSync(join(producao, 'public', 'series', 'ilha-perdida', 'vozes'), {recursive: true});
-			writeFileSync(join(producao, 'public', 'series', 'ilha-perdida', 'vozes', 'ep01.json'), '{}');
-			const a2 = await rodar(producao, falso.base, 'dados.ts', ['enfileirar', 'ilha-perdida', '1', '--dia=2026-10-26', '--hora=18:00'], extra);
-			assert.equal(a2.codigo, 0, a2.saida);
-			assert.match(a2.saida, /publica a partir de 2026-10-26T21:00:00.000Z/);
+		mkdirSync(join(producao, 'public', 'series', 'ilha-perdida', 'vozes', 'cache'), {recursive: true});
+		writeFileSync(join(producao, 'public', 'series', 'ilha-perdida', 'vozes', 'ep01.json'), '{}');
+		writeFileSync(join(producao, 'public', 'series', 'ilha-perdida', 'vozes', 'cache', 'x.wav'), 'pesado');
+		const b = await rodar(producao, 'http://x', 'dados.ts', ['entregar', 'ilha-perdida', '1', '--dia=2026-10-26', '--hora=18:00'], extra);
+		assert.equal(b.codigo, 0, b.saida);
 
-			// rotina de publicação numa raiz limpa, que só tem o código
-			const rotina = mkdtempSync(join(tmpdir(), 'shorts-rotina-'));
-			const cedo = await rodar(rotina, falso.base, 'dados.ts', ['publicar-pendentes', '--agora=2026-10-26T20:59:00Z'], extra);
-			assert.equal(cedo.codigo, 0, cedo.saida);
-			assert.match(cedo.saida, /nada para publicar agora/);
-			assert.equal(falso.registro.youtubeMetadados.length, 0);
+		const conferir = mkdtempSync(join(tmpdir(), 'shorts-conferir-'));
+		git(conferir, 'clone', '--quiet', '--branch', 'dados', remoto, conferir);
+		assert.equal(readFileSync(join(conferir, 'videos', 'ilha-perdida-ep01.mp4')).length, 4096);
+		const texto = readFileSync(join(conferir, 'videos', 'ilha-perdida-ep01.md'), 'utf8');
+		assert.match(texto, /Postar em 26\/10\/2026 às 18:00 \(Brasília\)/);
+		assert.match(texto, /YouTube Shorts[\s\S]*Instagram Reels/);
+		assert.ok(existsSync(join(conferir, 'series', 'ilha-perdida', 'vozes', 'leo.pt')), 'a voz do personagem acompanha a série');
+		assert.ok(!existsSync(join(conferir, 'series', 'ilha-perdida', 'vozes', 'cache')), 'o cache de áudio não sobe');
 
-			const hora = await rodar(rotina, falso.base, 'dados.ts', ['publicar-pendentes', '--agora=2026-10-26T21:00:30Z'], extra);
-			assert.equal(hora.codigo, 0, hora.saida);
-			assert.match(hora.saida, /YouTube: enviado \(public\)/);
-			assert.match(hora.saida, /Instagram: Reel publicado/);
-			assert.equal((falso.registro.youtubeMetadados[0] as {status: Record<string, unknown>}).status.privacyStatus, 'public');
-			assert.deepEqual(falso.registro.youtubeBytes, [4096]);
-
-			const de_novo = await rodar(rotina, falso.base, 'dados.ts', ['publicar-pendentes', '--agora=2026-10-26T22:00:00Z'], extra);
-			assert.match(de_novo.saida, /nada para publicar agora/);
-			assert.equal(falso.registro.instagramPublicados.length, 1);
-
-			// o vídeo sai do ramo depois de publicado, e o estado registra as duas redes
-			const conferir = mkdtempSync(join(tmpdir(), 'shorts-conferir-'));
-			git(conferir, 'clone', '--quiet', '--branch', 'dados', remoto, conferir);
-			assert.ok(!existsSync(join(conferir, 'fila', 'ilha-perdida-ep01.mp4')));
-			const estado = JSON.parse(readFileSync(join(conferir, 'series', 'ilha-perdida', 'estado.json'), 'utf8')) as {publicados: Record<string, {youtube?: unknown; instagram?: unknown}>};
-			assert.ok(estado.publicados['1'].youtube && estado.publicados['1'].instagram);
-			assert.equal((JSON.parse(readFileSync(join(conferir, 'fila', 'ilha-perdida-ep01.json'), 'utf8')) as {status: string}).status, 'publicado');
-		} finally {
-			await falso.fechar();
-		}
+		const lista = await rodar(montarRaiz(), 'http://x', 'dados.ts', ['entregas'], extra);
+		assert.match(lista.saida, /2026-10-26 18:00 {2}ilha-perdida parte 1/);
 	});
 
 	it('baixar e salvar levam as séries de uma sessão para a outra', async () => {
-		const falso = await subir();
-		try {
-			const remoto = mkdtempSync(join(tmpdir(), 'shorts-remoto-'));
-			git(remoto, 'init', '--quiet', '--bare', '-b', 'main');
-			const extra = {SHORTS_REMOTO: remoto};
-			const a = montarRaiz();
-			assert.equal((await rodar(a, falso.base, 'dados.ts', ['salvar', 'ilha-perdida'], extra)).codigo, 0);
-			const b = mkdtempSync(join(tmpdir(), 'shorts-b-'));
-			const r = await rodar(b, falso.base, 'dados.ts', ['baixar'], extra);
-			assert.equal(r.codigo, 0, r.saida);
-			assert.ok(existsSync(join(b, 'public', 'series', 'ilha-perdida', 'ep01.json')));
-		} finally {
-			await falso.fechar();
-		}
+		const {extra} = novoRemoto();
+		const a = montarRaiz();
+		assert.equal((await rodar(a, 'http://x', 'dados.ts', ['salvar', 'ilha-perdida'], extra)).codigo, 0);
+		const b = mkdtempSync(join(tmpdir(), 'shorts-b-'));
+		const r = await rodar(b, 'http://x', 'dados.ts', ['baixar'], extra);
+		assert.equal(r.codigo, 0, r.saida);
+		assert.ok(existsSync(join(b, 'public', 'series', 'ilha-perdida', 'ep01.json')));
+	});
+
+	it('apaga da pasta videos o que passou de 10 dias', async () => {
+		const {remoto, extra} = novoRemoto();
+		const raiz = montarRaiz();
+		const serie = join(raiz, 'public', 'series', 'ilha-perdida');
+		cpSync(join(serie, 'ep01.json'), join(serie, 'ep02.json'));
+		writeFileSync(join(raiz, 'out', 'ilha-perdida-ep02.mp4'), Buffer.alloc(2048, 3));
+		const velho = await rodar(raiz, 'http://x', 'dados.ts', ['entregar', 'ilha-perdida', '1', '--dia=2026-10-01', '--hora=18:00', '--sem-voz'], extra);
+		assert.equal(velho.codigo, 0, velho.saida);
+		const hoje = new Date().toISOString().slice(0, 10);
+		const novo = await rodar(raiz, 'http://x', 'dados.ts', ['entregar', 'ilha-perdida', '2', `--dia=${hoje}`, '--hora=18:00', '--sem-voz'], extra);
+		assert.equal(novo.codigo, 0, novo.saida);
+		const conferir = mkdtempSync(join(tmpdir(), 'shorts-conferir-'));
+		git(conferir, 'clone', '--quiet', '--branch', 'dados', remoto, conferir);
+		assert.ok(!existsSync(join(conferir, 'videos', 'ilha-perdida-ep01.mp4')));
+		assert.ok(existsSync(join(conferir, 'videos', 'ilha-perdida-ep02.mp4')));
 	});
 });
