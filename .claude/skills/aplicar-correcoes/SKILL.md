@@ -1,6 +1,6 @@
 ---
 name: aplicar-correcoes
-description: Aplica as correções do Iuri a um episódio de HISTÓRIA já entregue (ex.: voo-818) e transforma cada correção em regra permanente da série ou das histórias. Use quando o Iuri responder à revisão de um episódio de história. Não serve para o Como Funciona.
+description: Aplica as correções do Iuri a um episódio de HISTÓRIA já entregue ou ao roteiro da próxima parte (ex.: voo-818) e transforma cada correção em regra permanente da série ou das histórias. Use quando o Iuri responder à revisão de um episódio de história. Não serve para o Como Funciona.
 ---
 
 # Aplicar correções e aprender com elas
@@ -19,6 +19,9 @@ Se uma correção for ambígua, escolha a leitura mais provável, aplique e diga
 2. `npm run validar -- <serie> <parte>`. Se mudou fala: `bash voz/instalar.sh` (se a sessão for nova) e `npm run vozes -- <serie> <parte>`; o áudio dos episódios recentes vem do ramo `dados`, então só as falas alteradas são geradas.
 3. `npm run render -- <serie> <parte>` (em segundo plano, ~15 min) e confira os quadros afetados com `npm run quadro`.
 4. `npm run dados -- entregar <serie> <parte> --dia=... --hora=...` com o mesmo dia e hora de antes (substitui o vídeo e o texto no ramo `dados`). Se já passou do horário de postar, diga ao Iuri que talvez ele já tenha postado o original.
+
+## 2b. Correção no roteiro da próxima parte
+Se a correção é do roteiro da próxima parte (enviado junto com a produção): edite o `epNN.json` dela, rode `npm run validar -- <serie> <N>` e `npm run dados -- salvar <serie> _historias`. Não gere voz nem renderize; a rotina da manhã produz a partir do roteiro corrigido. Responda com a saída de `npm run roteiro -- <serie> <N>` para ele conferir.
 
 ## 3. Virar regra
 - Acrescente **uma linha curta e no imperativo** por correção de série em `public/series/<serie>/regras.md` e por correção das histórias em `public/series/_historias/regras.md`, com a data: `- (2026-10-26) Faça pausa de 0,8 s antes do susto.`

@@ -21,7 +21,7 @@ Se uma parte do calendário já existe pronta (rodada repetida), não refaça: c
 
 ## Rotinas
 1. **Produção (3h, por série).** Prompt: "Use a skill roteirizar-episodio para a série X e produza as partes de hoje conforme motor/producao/PRODUCAO.md." O ambiente é o "Shorts" (rede liberada para huggingface.co, hf.co, download.pytorch.org e download-r2.pytorch.org).
-2. **Correções (sem rotina).** O Iuri responde na própria sessão de produção até as 16h. A sessão usa a skill `aplicar-correcoes`. Sem resposta, o original vale.
+2. **Correções (sem rotina).** Cada entrega traz o vídeo do dia e o roteiro da próxima parte (já escrito e validado, sem voz). O Iuri responde na própria sessão de produção até as 16h, corrigindo um ou outro. A sessão usa a skill `aplicar-correcoes`. Sem resposta, o original vale.
 3. **Publicação: manual.** O vídeo e o texto para colar (título, descrição, legenda) ficam no ramo `dados`, pasta `videos/`, e no `out/` da sessão.
 
 ## Estado
