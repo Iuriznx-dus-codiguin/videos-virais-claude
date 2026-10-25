@@ -1,0 +1,609 @@
+{
+  "serie": "ilha-perdida",
+  "parte": 1,
+  "titulo": "As pegadas",
+  "musica": "misterio",
+  "falas": [
+    {
+      "id": "f1",
+      "quem": "leo",
+      "off": true,
+      "tom": "misterioso",
+      "texto": "Eu achei que era o único nessa ilha."
+    },
+    {
+      "id": "f2",
+      "quem": "leo",
+      "off": true,
+      "tom": "triste",
+      "texto": "Três dias sem comida, sem sinal... e sem ninguém pra me salvar."
+    },
+    {
+      "id": "f3",
+      "quem": "leo",
+      "off": true,
+      "tom": "misterioso",
+      "texto": "Até que, na beira do mar, eu vi uma coisa."
+    },
+    {
+      "id": "f4",
+      "quem": "leo",
+      "off": true,
+      "tom": "tenso",
+      "texto": "Pegadas.",
+      "pausa_depois": 0.5
+    },
+    {
+      "id": "f5",
+      "quem": "leo",
+      "off": true,
+      "tom": "tenso",
+      "texto": "Enormes. De três dedos."
+    },
+    {
+      "id": "f6",
+      "quem": "leo",
+      "tom": "sussurro",
+      "texto": "Isso não é pé de gente..."
+    },
+    {
+      "id": "f7",
+      "quem": "leo",
+      "off": true,
+      "texto": "E elas saíam do mar... direto pra floresta."
+    },
+    {
+      "id": "f8",
+      "quem": "leo",
+      "off": true,
+      "texto": "Qualquer pessoa normal teria fugido."
+    },
+    {
+      "id": "f9",
+      "quem": "leo",
+      "tom": "nervoso",
+      "texto": "Tá bom... só uma olhadinha.",
+      "pausa_depois": 0.35
+    },
+    {
+      "id": "f10",
+      "quem": "leo",
+      "off": true,
+      "tom": "tenso",
+      "texto": "Lá dentro tava tudo quieto. Quieto DEMAIS."
+    },
+    {
+      "id": "f11",
+      "quem": "leo",
+      "off": true,
+      "tom": "tenso",
+      "texto": "Nem os pássaros cantavam."
+    },
+    {
+      "id": "f12",
+      "quem": "leo",
+      "off": true,
+      "texto": "E aí eu achei uma fogueira."
+    },
+    {
+      "id": "f13",
+      "quem": "leo",
+      "off": true,
+      "tom": "sussurro",
+      "texto": "Ainda quente.",
+      "pausa_depois": 0.4
+    },
+    {
+      "id": "f14",
+      "quem": "leo",
+      "off": true,
+      "tom": "medo",
+      "texto": "Ou seja... eu NÃO tava sozinho."
+    },
+    {
+      "id": "f15",
+      "quem": "leo",
+      "tom": "sussurro",
+      "texto": "Oi...? Tem alguém aí?"
+    },
+    {
+      "id": "s1",
+      "silencio": 0.8
+    },
+    {
+      "id": "f16",
+      "quem": "bia",
+      "off": true,
+      "tom": "sussurro",
+      "velocidade": 0.9,
+      "texto": "Não se mexe.",
+      "pausa_depois": 0.45
+    },
+    {
+      "id": "f17",
+      "quem": "leo",
+      "off": true,
+      "tom": "medo",
+      "texto": "A voz veio de trás de mim."
+    },
+    {
+      "id": "f18",
+      "quem": "leo",
+      "off": true,
+      "tom": "medo",
+      "texto": "Mas o que me deixou gelado... foi o que tava na minha FRENTE."
+    },
+    {
+      "id": "s2",
+      "silencio": 1.6
+    }
+  ],
+  "cenas": [
+    {
+      "id": "sos",
+      "cenario": "praia",
+      "ambiente": "mar",
+      "personagens": {
+        "leo": {
+          "em": "sos",
+          "olhando": "mar",
+          "expressao": "triste",
+          "pose": "sentado"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "sos",
+          "em": [
+            -4.5,
+            7.8
+          ]
+        },
+        {
+          "tipo": "pegadas_gigantes",
+          "em": [
+            1.5,
+            12.8
+          ],
+          "ate": [
+            2.9,
+            -6.4
+          ],
+          "passo": 1.75
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "leo",
+          "expressao": "cansado",
+          "de": "f2"
+        },
+        {
+          "quem": "leo",
+          "expressao": "triste",
+          "de": "f2:ninguem"
+        },
+        {
+          "quem": "leo",
+          "faz": "levantar",
+          "de": "f3:beira"
+        },
+        {
+          "quem": "leo",
+          "olhar": "chao_pegadas",
+          "de": "f3:beira+0.2"
+        },
+        {
+          "quem": "leo",
+          "expressao": "surpreso",
+          "de": "f3:coisa"
+        }
+      ],
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "drone",
+          "alvo": "leo",
+          "lado": "frente",
+          "movimento": "descer"
+        },
+        {
+          "de": "f2",
+          "tipo": "medio",
+          "alvo": "leo",
+          "lado": "tres_quartos_direita",
+          "movimento": "aproximar"
+        },
+        {
+          "de": "f2:ninguem",
+          "tipo": "close",
+          "alvo": "leo",
+          "lado": "frente",
+          "movimento": "aproximar",
+          "intensidade": 0.5
+        },
+        {
+          "de": "f3",
+          "tipo": "americano",
+          "alvo": "leo",
+          "lado": "tres_quartos_esquerda"
+        },
+        {
+          "de": "f4",
+          "tipo": "detalhe",
+          "alvo": "chao_pegadas",
+          "movimento": "aproximar",
+          "lado": "frente"
+        }
+      ],
+      "sons": [
+        {
+          "de": "f4",
+          "som": "impacto"
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "f4",
+          "efeito": "zoom_soco"
+        }
+      ]
+    },
+    {
+      "id": "pegadas",
+      "cenario": "praia",
+      "de": "f5",
+      "ambiente": "mar",
+      "personagens": {
+        "leo": {
+          "em": "pegadas",
+          "olhando": "dedos",
+          "expressao": "surpreso",
+          "pose": "agachado"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "sos",
+          "em": [
+            -4.5,
+            7.8
+          ]
+        },
+        {
+          "tipo": "pegadas_gigantes",
+          "em": [
+            1.5,
+            12.8
+          ],
+          "ate": [
+            2.9,
+            -6.4
+          ],
+          "passo": 1.75
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "leo",
+          "faz": "estender_mao",
+          "para": "dedos",
+          "de": "f5:tres",
+          "ate": "f6:fim"
+        },
+        {
+          "quem": "leo",
+          "expressao": "medo",
+          "de": "f6"
+        },
+        {
+          "quem": "leo",
+          "faz": "levantar",
+          "de": "f7"
+        },
+        {
+          "quem": "leo",
+          "olhar": "mar",
+          "de": "f7+0.3"
+        },
+        {
+          "quem": "leo",
+          "olhar": "mata_fundo",
+          "de": "f7:direto"
+        },
+        {
+          "quem": "leo",
+          "expressao": "desconfiado",
+          "de": "f8"
+        },
+        {
+          "quem": "leo",
+          "expressao": "nervoso",
+          "de": "f9"
+        },
+        {
+          "quem": "leo",
+          "faz": "andar",
+          "para": "mata",
+          "de": "f9:fim+0.1"
+        }
+      ],
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "aberto",
+          "alvo": "leo",
+          "lado": "tres_quartos_direita",
+          "movimento": "afastar",
+          "intensidade": 0.6
+        },
+        {
+          "de": "f6",
+          "tipo": "close",
+          "alvo": "leo",
+          "lado": "tres_quartos_esquerda",
+          "movimento": "aproximar",
+          "intensidade": 0.5
+        },
+        {
+          "de": "f7",
+          "tipo": "drone",
+          "alvo": "trilha",
+          "lado": "frente",
+          "movimento": "aproximar"
+        },
+        {
+          "de": "f8",
+          "tipo": "close",
+          "alvo": "leo",
+          "lado": "frente",
+          "movimento": "aproximar",
+          "intensidade": 0.5
+        },
+        {
+          "de": "f9",
+          "tipo": "medio",
+          "alvo": "leo",
+          "lado": "tres_quartos_direita"
+        },
+        {
+          "de": "f9:fim+0.2",
+          "tipo": "americano",
+          "alvo": "leo",
+          "lado": "costas",
+          "movimento": "acompanhar"
+        }
+      ],
+      "sons": [
+        {
+          "de": "f5:enormes",
+          "som": "tensao_sobe",
+          "volume": 0.6
+        }
+      ]
+    },
+    {
+      "id": "selva",
+      "cenario": "selva",
+      "de": "f10",
+      "ambiente": "selva",
+      "personagens": {
+        "leo": {
+          "em": "trilha",
+          "olhando": "clareira",
+          "expressao": "desconfiado"
+        },
+        "gigante": {
+          "em": "toca",
+          "olhando": "leo",
+          "pose": "agachado",
+          "olhos_fechados": true
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "fogueira",
+          "em": "fogueira",
+          "fogo": "brasas"
+        },
+        {
+          "tipo": "tronco",
+          "em": "tronco",
+          "giro": 35
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "leo",
+          "faz": "andar",
+          "para": "perto_fogueira",
+          "de": "inicio+0.1",
+          "velocidade": 0.75
+        },
+        {
+          "quem": "leo",
+          "faz": "olhar_em_volta",
+          "de": "f10:quieto"
+        },
+        {
+          "quem": "leo",
+          "olhar": "copa",
+          "de": "f11"
+        },
+        {
+          "quem": "leo",
+          "olhar": "brasas",
+          "de": "f12:fogueira"
+        },
+        {
+          "quem": "leo",
+          "expressao": "surpreso",
+          "de": "f12:fogueira"
+        },
+        {
+          "quem": "leo",
+          "faz": "agachar",
+          "de": "f12:fim"
+        },
+        {
+          "quem": "leo",
+          "faz": "estender_mao",
+          "para": "brasas",
+          "de": "f13",
+          "ate": "f14"
+        },
+        {
+          "quem": "leo",
+          "expressao": "medo",
+          "de": "f14:nao"
+        },
+        {
+          "quem": "leo",
+          "olhar": "olhos",
+          "de": "f15"
+        },
+        {
+          "quem": "leo",
+          "faz": "susto",
+          "de": "s1+0.05"
+        },
+        {
+          "quem": "leo",
+          "faz": "tremer",
+          "de": "f16:fim"
+        },
+        {
+          "quem": "gigante",
+          "faz": "abrir_olhos",
+          "de": "s2+0.15"
+        }
+      ],
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "aberto",
+          "alvo": "leo",
+          "lado": "frente",
+          "movimento": "acompanhar"
+        },
+        {
+          "de": "f10:demais",
+          "tipo": "close",
+          "alvo": "leo",
+          "lado": "tres_quartos_direita"
+        },
+        {
+          "de": "f11",
+          "tipo": "geral",
+          "alvo": "clareira",
+          "lado": "tres_quartos_esquerda",
+          "movimento": "orbitar"
+        },
+        {
+          "de": "f12",
+          "tipo": "pov",
+          "alvo": "leo",
+          "alvo2": "fogueira"
+        },
+        {
+          "de": "f13",
+          "tipo": "detalhe",
+          "alvo": "brasas",
+          "movimento": "aproximar"
+        },
+        {
+          "de": "f14",
+          "tipo": "close",
+          "alvo": "leo",
+          "lado": "frente",
+          "movimento": "aproximar"
+        },
+        {
+          "de": "f15",
+          "tipo": "medio",
+          "alvo": "leo",
+          "lado": "tres_quartos_esquerda"
+        },
+        {
+          "de": "s1",
+          "tipo": "medio",
+          "alvo": "leo",
+          "lado": "tres_quartos_esquerda",
+          "movimento": "tremer",
+          "intensidade": 0.5
+        },
+        {
+          "de": "f16",
+          "tipo": "close",
+          "alvo": "leo",
+          "lado": "frente",
+          "movimento": "aproximar",
+          "intensidade": 0.6
+        },
+        {
+          "de": "f17",
+          "tipo": "medio",
+          "alvo": "leo",
+          "lado": "frente",
+          "movimento": "afastar",
+          "intensidade": 0.5
+        },
+        {
+          "de": "f18",
+          "tipo": "ombro",
+          "alvo": "leo",
+          "alvo2": "olhos",
+          "movimento": "aproximar"
+        },
+        {
+          "de": "s2",
+          "tipo": "close",
+          "alvo": "gigante",
+          "lado": "frente",
+          "movimento": "aproximar",
+          "intensidade": 0.6
+        }
+      ],
+      "sons": [
+        {
+          "de": "f13",
+          "som": "fogo",
+          "volume": 0.5
+        },
+        {
+          "de": "s1+0.05",
+          "som": "galho"
+        },
+        {
+          "de": "s2+0.1",
+          "som": "respiracao_gigante"
+        },
+        {
+          "de": "s2+0.15",
+          "som": "impacto"
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "inicio",
+          "efeito": "vinheta",
+          "intensidade": 0.5
+        },
+        {
+          "de": "s1+0.05",
+          "efeito": "tremor",
+          "intensidade": 0.3
+        },
+        {
+          "de": "s2+0.15",
+          "efeito": "zoom_soco"
+        }
+      ]
+    }
+  ],
+  "chamada": {
+    "pergunta": "O que tem na floresta?",
+    "texto": "COMENTA",
+    "destaque": "PARTE 2"
+  }
+}
