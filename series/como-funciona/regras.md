@@ -1,6 +1,6 @@
 # Regras do Como Funciona
 
-Cada linha vem de uma correção do Iuri ou de uma decisão do projeto. A skill como-funciona-corrigir mantém este arquivo curto. Estas regras valem por cima de `_geral/regras.md` (o formato aqui é outro: vídeo avulso, sem cliffhanger).
+Cada linha vem de uma correção do Iuri ou de uma decisão do projeto. A skill como-funciona-corrigir mantém este arquivo curto. As regras das séries de histórias (`_historias/regras.md`) não valem aqui: o formato é outro (vídeo avulso, sem cliffhanger).
 
 - (2026-10-25) Vídeo avulso de ~1min20 (75 a 90 s com a voz; nunca menos de 1 min, varia com a curiosidade): cada vídeo fecha um tema da pauta inteiro. Não termine em cliffhanger.
 - (2026-10-25) Varie o estilo de narrativa conforme o tema (estilos.md): quebrar um mito, E SE?, dúvida comum ou cadeia de MAS. Use SEMPRE pelo menos uma virada com MAS no meio (o estilo mais importante): "funciona assim, MAS daria errado, por isso existe esta peça".
