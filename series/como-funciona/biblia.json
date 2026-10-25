@@ -1,0 +1,45 @@
+{
+  "serie": "como-funciona",
+  "titulo": "COMO FUNCIONA",
+  "formato": "avulso",
+  "hashtags": [
+    "comofunciona",
+    "engenharia",
+    "curiosidades",
+    "ciencia"
+  ],
+  "sinopse": "Vídeos avulsos de ~1 min: o Tito, engenheiro do canal, mostra como uma coisa do dia a dia foi inventada e como ela funciona por dentro, peça por peça, numa maquete 3D. A lista de temas está em pauta.json (do chuveiro elétrico ao arranha-céu).",
+  "narrador": "tito",
+  "personagens": {
+    "tito": {
+      "nome": "Tito",
+      "papel": "narrador fixo e personagem do canal: engenheiro que explica tudo apontando para a maquete",
+      "personalidade": "animado, curioso, fala com o público como um amigo; adora um 'parece mágica, mas é física'",
+      "voz": {
+        "descricao": "homem brasileiro de uns 40 anos, voz calorosa e animada, ritmo de quem conta uma curiosidade",
+        "instruct": "male, middle-aged, moderate pitch",
+        "amostra": "Você já parou para pensar como a água do chuveiro esquenta em poucos segundos? Hoje eu vou te mostrar, peça por peça, o que acontece lá dentro.",
+        "semente": 2
+      },
+      "visual": {
+        "altura": 1,
+        "corpo": "#1F7A8C",
+        "cabeca": "#FFFFFF",
+        "olhos": "redondos",
+        "sobrancelhas": "grossas",
+        "acessorios": [
+          {
+            "tipo": "capacete",
+            "cor": "#FFC20E"
+          },
+          {
+            "tipo": "oculos",
+            "cor": "#1A1A22"
+          }
+        ]
+      },
+      "cor_legenda": "#FFD60A"
+    }
+  },
+  "fatos": []
+}

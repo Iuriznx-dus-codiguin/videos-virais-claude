@@ -1,0 +1,1141 @@
+{
+  "serie": "como-funciona",
+  "parte": 1,
+  "titulo": "Como o chuveiro elétrico esquenta a água em segundos?",
+  "musica": "curiosidade",
+  "personagens": {
+    "canhos": {
+      "nome": "Francisco Canhos",
+      "papel": "inventor de um dos primeiros chuveiros elétricos (Jaú-SP, 1927); não fala",
+      "visual": {
+        "altura": 1.02,
+        "corpo": "#5A3E2B",
+        "cabeca": "#F2D5BD",
+        "olhos": "ovais",
+        "sobrancelhas": "grossas",
+        "acessorios": [
+          {
+            "tipo": "cabelo_curto",
+            "cor": "#2A1D14"
+          },
+          {
+            "tipo": "bigode",
+            "cor": "#2A1D14"
+          },
+          {
+            "tipo": "lenco",
+            "cor": "#B23A3A"
+          }
+        ]
+      }
+    }
+  },
+  "modelos": {
+    "chuveiro": [
+      {
+        "id": "parede",
+        "forma": "placa",
+        "tam": [
+          1.3,
+          1.5
+        ],
+        "pos": [
+          0,
+          0.75,
+          -0.56
+        ],
+        "cor": "#BFDCE6"
+      },
+      {
+        "id": "cano",
+        "forma": "tubo",
+        "tam": [
+          0.05
+        ],
+        "caminho": [
+          [
+            0,
+            1.2,
+            -0.55
+          ],
+          [
+            0,
+            1.2,
+            -0.25
+          ],
+          [
+            0,
+            1.12,
+            -0.06
+          ],
+          [
+            0,
+            0.99,
+            0
+          ]
+        ],
+        "cor": "#E9ECF1"
+      },
+      {
+        "id": "fio_fase",
+        "forma": "tubo",
+        "tam": [
+          0.02
+        ],
+        "caminho": [
+          [
+            -0.3,
+            1.35,
+            -0.55
+          ],
+          [
+            -0.3,
+            1.12,
+            -0.36
+          ],
+          [
+            -0.17,
+            0.95,
+            -0.1
+          ],
+          [
+            -0.13,
+            0.91,
+            0
+          ]
+        ],
+        "cor": "#D93A3A",
+        "explode": [
+          -0.15,
+          0.1,
+          0
+        ]
+      },
+      {
+        "id": "fio_neutro",
+        "forma": "tubo",
+        "tam": [
+          0.02
+        ],
+        "caminho": [
+          [
+            0.3,
+            1.35,
+            -0.55
+          ],
+          [
+            0.3,
+            1.12,
+            -0.36
+          ],
+          [
+            0.17,
+            0.95,
+            -0.1
+          ],
+          [
+            0.13,
+            0.91,
+            0
+          ]
+        ],
+        "cor": "#2B2F3A",
+        "explode": [
+          0.15,
+          0.1,
+          0
+        ]
+      },
+      {
+        "id": "carcaca",
+        "forma": "cilindro",
+        "tam": [
+          0.3,
+          0.36
+        ],
+        "pos": [
+          0,
+          0.8,
+          0
+        ],
+        "cor": "#F4F6FA",
+        "explode": [
+          0,
+          0.05,
+          -0.55
+        ]
+      },
+      {
+        "id": "diafragma",
+        "forma": "cilindro",
+        "tam": [
+          0.22,
+          0.025
+        ],
+        "pos": [
+          0,
+          0.94,
+          0
+        ],
+        "cor": "#33384A",
+        "explode": [
+          0,
+          0.42,
+          0.25
+        ]
+      },
+      {
+        "id": "contato_e",
+        "forma": "caixa",
+        "tam": [
+          0.07,
+          0.035,
+          0.07
+        ],
+        "pos": [
+          -0.13,
+          0.9,
+          0
+        ],
+        "cor": "#E8B923",
+        "explode": [
+          -0.35,
+          0.3,
+          0.3
+        ]
+      },
+      {
+        "id": "contato_d",
+        "forma": "caixa",
+        "tam": [
+          0.07,
+          0.035,
+          0.07
+        ],
+        "pos": [
+          0.13,
+          0.9,
+          0
+        ],
+        "cor": "#E8B923",
+        "explode": [
+          0.35,
+          0.3,
+          0.3
+        ]
+      },
+      {
+        "id": "resistencia",
+        "forma": "mola",
+        "tam": [
+          0.15,
+          0.2,
+          7,
+          0.016
+        ],
+        "pos": [
+          0,
+          0.76,
+          0
+        ],
+        "cor": "#A7AFBA",
+        "explode": [
+          0,
+          0.05,
+          0.6
+        ]
+      },
+      {
+        "id": "seletor",
+        "forma": "cilindro",
+        "tam": [
+          0.075,
+          0.06
+        ],
+        "pos": [
+          0.33,
+          0.8,
+          0.02
+        ],
+        "giro": [
+          0,
+          0,
+          90
+        ],
+        "cor": "#3FA9F5",
+        "explode": [
+          0.35,
+          0,
+          0.2
+        ]
+      },
+      {
+        "id": "crivo",
+        "forma": "cilindro",
+        "tam": [
+          0.4,
+          0.07,
+          0.3
+        ],
+        "pos": [
+          0,
+          0.585,
+          0
+        ],
+        "cor": "#E9ECF1",
+        "explode": [
+          0,
+          -0.25,
+          0.15
+        ]
+      }
+    ],
+    "prototipo": [
+      {
+        "id": "lata",
+        "forma": "cilindro",
+        "tam": [
+          0.17,
+          0.3
+        ],
+        "pos": [
+          0,
+          0.15,
+          0
+        ],
+        "cor": "#B87333"
+      },
+      {
+        "id": "tampa",
+        "forma": "cilindro",
+        "tam": [
+          0.18,
+          0.03
+        ],
+        "pos": [
+          0,
+          0.315,
+          0
+        ],
+        "cor": "#8E5A2B"
+      },
+      {
+        "id": "cano",
+        "forma": "tubo",
+        "tam": [
+          0.03
+        ],
+        "caminho": [
+          [
+            0,
+            0.33,
+            0
+          ],
+          [
+            0,
+            0.5,
+            0
+          ],
+          [
+            -0.25,
+            0.55,
+            0
+          ]
+        ],
+        "cor": "#9AA3AE"
+      },
+      {
+        "id": "fio",
+        "forma": "mola",
+        "tam": [
+          0.1,
+          0.16,
+          6,
+          0.012
+        ],
+        "pos": [
+          0,
+          0.15,
+          0.2
+        ],
+        "cor": "#C9D0D8",
+        "oculta": true
+      }
+    ]
+  },
+  "falas": [
+    {
+      "id": "f1",
+      "quem": "tito",
+      "tom": "animado",
+      "texto": "A água do chuveiro sai GELADA do cano... e um segundo depois, sai QUENTE."
+    },
+    {
+      "id": "f2",
+      "quem": "tito",
+      "texto": "Sem fogo. Só um fio de metal. Como?",
+      "pausa_depois": 0.35
+    },
+    {
+      "id": "f3",
+      "quem": "tito",
+      "off": true,
+      "texto": "Em 1927, em Jaú, Francisco Canhos criou um dos primeiros chuveiros elétricos."
+    },
+    {
+      "id": "f4",
+      "quem": "tito",
+      "off": true,
+      "texto": "A ideia: esquentar a água no CAMINHO, e não num tanque."
+    },
+    {
+      "id": "f5",
+      "quem": "tito",
+      "off": true,
+      "texto": "Por dentro: abriu o registro, a água empurra o diafragma."
+    },
+    {
+      "id": "f6",
+      "quem": "tito",
+      "off": true,
+      "texto": "Ele sobe, fecha os contatos, e a eletricidade entra."
+    },
+    {
+      "id": "f7",
+      "quem": "tito",
+      "off": true,
+      "texto": "Ela atravessa a resistência, um fio de níquel e cromo."
+    },
+    {
+      "id": "f8",
+      "quem": "tito",
+      "off": true,
+      "tom": "animado",
+      "texto": "O metal freia a corrente, e isso vira CALOR. É o efeito Joule."
+    },
+    {
+      "id": "f9",
+      "quem": "tito",
+      "off": true,
+      "texto": "A água passa pelo fio quente e sai aquecida."
+    },
+    {
+      "id": "f10",
+      "quem": "tito",
+      "texto": "E no inverno? A chave usa um pedaço MENOR do fio."
+    },
+    {
+      "id": "f11",
+      "quem": "tito",
+      "tom": "animado",
+      "texto": "Menos fio, mais corrente, mais calor. Parece ao contrário, mas é física!",
+      "pausa_depois": 0.3
+    },
+    {
+      "id": "f12",
+      "quem": "tito",
+      "off": true,
+      "texto": "Por isso o chuveiro pesa tanto na conta de luz."
+    },
+    {
+      "id": "f13",
+      "quem": "tito",
+      "tom": "animado",
+      "texto": "E sabia que lá fora ele é raro? Na maioria dos países, a água quente vem de um tanque aquecido."
+    }
+  ],
+  "cenas": [
+    {
+      "id": "gancho",
+      "cenario": "estudio",
+      "ambiente": "estudio",
+      "personagens": {
+        "tito": {
+          "em": "apresentador",
+          "olhando": "camera",
+          "expressao": "feliz"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "maquete",
+          "modelo": "chuveiro",
+          "em": "pedestal"
+        }
+      ],
+      "animacoes": [
+        {
+          "peca": "chuveiro",
+          "faz": "fluxo",
+          "tipo": "agua",
+          "caminho": [
+            [
+              0,
+              0.55,
+              0
+            ],
+            [
+              0,
+              0.02,
+              0
+            ]
+          ],
+          "quantidade": 16,
+          "velocidade": 1.2,
+          "de": "inicio"
+        },
+        {
+          "peca": "chuveiro",
+          "faz": "fluxo",
+          "tipo": "agua",
+          "caminho": [
+            [
+              -0.18,
+              0.55,
+              0.1
+            ],
+            [
+              -0.24,
+              0.02,
+              0.13
+            ]
+          ],
+          "quantidade": 16,
+          "velocidade": 1.1,
+          "de": "inicio"
+        },
+        {
+          "peca": "chuveiro",
+          "faz": "fluxo",
+          "tipo": "agua",
+          "caminho": [
+            [
+              0.18,
+              0.55,
+              -0.1
+            ],
+            [
+              0.24,
+              0.02,
+              -0.13
+            ]
+          ],
+          "quantidade": 16,
+          "velocidade": 1.15,
+          "de": "inicio"
+        },
+        {
+          "peca": "resistencia",
+          "faz": "aquecer",
+          "de": "f1:quente"
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "tito",
+          "faz": "apontar",
+          "para": "maquete",
+          "de": "f1:gelada"
+        },
+        {
+          "quem": "tito",
+          "olhar": "camera",
+          "expressao": "surpreso",
+          "de": "f1:quente"
+        },
+        {
+          "quem": "tito",
+          "faz": "acenar",
+          "de": "f2:como"
+        },
+        {
+          "quem": "tito",
+          "expressao": "desconfiado",
+          "de": "f2:como"
+        }
+      ],
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "detalhe",
+          "alvo": "chuveiro",
+          "lado": "tres_quartos_esquerda",
+          "tamanho": 1.7,
+          "movimento": "aproximar"
+        },
+        {
+          "de": "f1:quente",
+          "tipo": "medio",
+          "alvo": "tito",
+          "lado": "tres_quartos_direita",
+          "transicao": "flash"
+        },
+        {
+          "de": "f2:como",
+          "tipo": "close",
+          "alvo": "tito",
+          "lado": "frente",
+          "movimento": "aproximar"
+        }
+      ],
+      "sons": [
+        {
+          "de": "inicio",
+          "som": "agua",
+          "volume": 0.6
+        },
+        {
+          "de": "f1:quente",
+          "som": "zap",
+          "volume": 0.6
+        },
+        {
+          "de": "f2:como",
+          "som": "whoosh"
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "f1:quente",
+          "efeito": "zoom_soco"
+        }
+      ]
+    },
+    {
+      "id": "invencao",
+      "cenario": "oficina",
+      "de": "f3",
+      "ambiente": "oficina",
+      "personagens": {
+        "canhos": {
+          "em": "inventor",
+          "olhando": "bancada_topo",
+          "expressao": "determinado"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "maquete",
+          "modelo": "prototipo",
+          "em": "bancada",
+          "escala": 1.3
+        }
+      ],
+      "cartoes": [
+        {
+          "de": "f3:1927",
+          "ate": "f3:fim",
+          "grande": "1927",
+          "pequeno": "Francisco Canhos · Jaú (SP)"
+        }
+      ],
+      "animacoes": [
+        {
+          "peca": "fio",
+          "faz": "aparecer",
+          "de": "f4:caminho"
+        },
+        {
+          "peca": "fio",
+          "faz": "aquecer",
+          "de": "f4:caminho+0.3"
+        },
+        {
+          "peca": "prototipo.cano",
+          "faz": "fluxo",
+          "tipo": "agua",
+          "de": "f4:caminho",
+          "velocidade": 0.7
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "canhos",
+          "faz": "andar",
+          "para": [
+            -0.45,
+            -0.6
+          ],
+          "de": "f3"
+        },
+        {
+          "quem": "canhos",
+          "faz": "estender_mao",
+          "para": "prototipo",
+          "de": "f3:criou"
+        },
+        {
+          "quem": "canhos",
+          "olhar": "camera",
+          "expressao": "feliz",
+          "de": "f4:caminho"
+        },
+        {
+          "quem": "canhos",
+          "faz": "apontar",
+          "para": "prototipo",
+          "de": "f4:caminho+0.2"
+        }
+      ],
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "aberto",
+          "alvo": "canhos",
+          "lado": "tres_quartos_esquerda",
+          "transicao": "preto"
+        },
+        {
+          "de": "f3:criou",
+          "tipo": "medio",
+          "alvo": "canhos",
+          "lado": "tres_quartos_direita",
+          "movimento": "aproximar"
+        },
+        {
+          "de": "f4",
+          "tipo": "detalhe",
+          "alvo": "prototipo",
+          "lado": "frente",
+          "tamanho": 1.2
+        },
+        {
+          "de": "f4:caminho",
+          "tipo": "close",
+          "alvo": "canhos",
+          "lado": "frente"
+        }
+      ],
+      "sons": [
+        {
+          "de": "f3:1927",
+          "som": "pop"
+        },
+        {
+          "de": "f4:caminho",
+          "som": "ding"
+        }
+      ]
+    },
+    {
+      "id": "por_dentro",
+      "cenario": "estudio",
+      "de": "f5",
+      "ambiente": "estudio",
+      "personagens": {
+        "tito": {
+          "em": "apresentador",
+          "olhando": "maquete",
+          "expressao": "feliz"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "maquete",
+          "modelo": "chuveiro",
+          "em": "pedestal"
+        }
+      ],
+      "rotulos": [
+        {
+          "alvo": "diafragma",
+          "texto": "Diafragma",
+          "de": "f5:diafragma",
+          "ate": "f6:entra"
+        },
+        {
+          "alvo": "contato_e",
+          "texto": "Contatos",
+          "de": "f6:contatos",
+          "ate": "f7",
+          "cor": "#FFB03A"
+        },
+        {
+          "alvo": "resistencia",
+          "texto": "Resistência",
+          "de": "f7:resistencia",
+          "ate": "f8:joule"
+        },
+        {
+          "alvo": "seletor",
+          "texto": "Verão / Inverno",
+          "de": "f10",
+          "ate": "f11",
+          "cor": "#7BE0FF"
+        }
+      ],
+      "cartoes": [
+        {
+          "de": "f8:joule",
+          "ate": "f9:aquecida",
+          "grande": "Efeito Joule",
+          "pequeno": "corrente elétrica → calor"
+        },
+        {
+          "de": "f11",
+          "ate": "f11:fim",
+          "grande": "P = V² ÷ R",
+          "pequeno": "menos resistência, mais potência"
+        }
+      ],
+      "animacoes": [
+        {
+          "peca": "carcaca",
+          "faz": "transparente",
+          "de": "f5",
+          "opacidade": 0.18
+        },
+        {
+          "peca": "cano",
+          "faz": "fluxo",
+          "tipo": "agua",
+          "de": "f5:registro",
+          "velocidade": 0.8
+        },
+        {
+          "peca": "diafragma",
+          "faz": "mover",
+          "desloc": [
+            0,
+            0.035,
+            0
+          ],
+          "de": "f5:diafragma"
+        },
+        {
+          "peca": "contato_e",
+          "faz": "mover",
+          "desloc": [
+            0.03,
+            0.02,
+            0
+          ],
+          "de": "f6:fecha"
+        },
+        {
+          "peca": "contato_d",
+          "faz": "mover",
+          "desloc": [
+            -0.03,
+            0.02,
+            0
+          ],
+          "de": "f6:fecha"
+        },
+        {
+          "peca": "contato_e",
+          "faz": "pulsar",
+          "de": "f6:eletricidade",
+          "ate": "f8"
+        },
+        {
+          "peca": "contato_d",
+          "faz": "pulsar",
+          "de": "f6:eletricidade",
+          "ate": "f8"
+        },
+        {
+          "peca": "fio_fase",
+          "faz": "fluxo",
+          "tipo": "eletricidade",
+          "de": "f6:eletricidade",
+          "velocidade": 0.9
+        },
+        {
+          "peca": "fio_neutro",
+          "faz": "fluxo",
+          "tipo": "eletricidade",
+          "de": "f6:eletricidade",
+          "velocidade": 0.9
+        },
+        {
+          "peca": "resistencia",
+          "faz": "pulsar",
+          "de": "f7:resistencia",
+          "ate": "f8:calor"
+        },
+        {
+          "peca": "resistencia",
+          "faz": "aquecer",
+          "de": "f8:calor"
+        },
+        {
+          "peca": "chuveiro",
+          "faz": "fluxo",
+          "tipo": "agua",
+          "caminho": [
+            [
+              0,
+              0.99,
+              0
+            ],
+            [
+              0.12,
+              0.88,
+              0.1
+            ],
+            [
+              -0.12,
+              0.78,
+              0.1
+            ],
+            [
+              0.12,
+              0.7,
+              0.08
+            ],
+            [
+              0,
+              0.6,
+              0
+            ]
+          ],
+          "de": "f9",
+          "velocidade": 0.6
+        },
+        {
+          "peca": "chuveiro",
+          "faz": "fluxo",
+          "tipo": "calor",
+          "caminho": [
+            [
+              0,
+              0.55,
+              0
+            ],
+            [
+              0,
+              0.02,
+              0
+            ]
+          ],
+          "quantidade": 16,
+          "velocidade": 1.2,
+          "de": "f9:aquecida"
+        },
+        {
+          "peca": "chuveiro",
+          "faz": "fluxo",
+          "tipo": "agua",
+          "caminho": [
+            [
+              -0.18,
+              0.55,
+              0.1
+            ],
+            [
+              -0.24,
+              0.02,
+              0.13
+            ]
+          ],
+          "quantidade": 16,
+          "velocidade": 1.1,
+          "de": "f9:aquecida"
+        },
+        {
+          "peca": "chuveiro",
+          "faz": "fluxo",
+          "tipo": "agua",
+          "caminho": [
+            [
+              0.18,
+              0.55,
+              -0.1
+            ],
+            [
+              0.24,
+              0.02,
+              -0.13
+            ]
+          ],
+          "quantidade": 16,
+          "velocidade": 1.15,
+          "de": "f9:aquecida"
+        },
+        {
+          "peca": "seletor",
+          "faz": "girar_para",
+          "eixo": "y",
+          "angulo": 120,
+          "de": "f10:inverno"
+        },
+        {
+          "peca": "chuveiro",
+          "faz": "explodir",
+          "de": "f12",
+          "ate": "f12+1.4"
+        },
+        {
+          "peca": "carcaca",
+          "faz": "transparente",
+          "de": "f12",
+          "opacidade": 1
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "tito",
+          "faz": "apontar",
+          "para": "diafragma",
+          "de": "f5:diafragma"
+        },
+        {
+          "quem": "tito",
+          "faz": "apontar",
+          "para": "resistencia",
+          "de": "f7:resistencia"
+        },
+        {
+          "quem": "tito",
+          "olhar": "camera",
+          "expressao": "surpreso",
+          "de": "f10"
+        },
+        {
+          "quem": "tito",
+          "faz": "apontar",
+          "para": "seletor",
+          "de": "f10:inverno"
+        },
+        {
+          "quem": "tito",
+          "faz": "acenar",
+          "de": "f11:fisica"
+        },
+        {
+          "quem": "tito",
+          "expressao": "feliz",
+          "de": "f11"
+        }
+      ],
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "detalhe",
+          "alvo": "chuveiro",
+          "lado": "frente",
+          "tamanho": 1.5,
+          "transicao": "flash"
+        },
+        {
+          "de": "f5:diafragma",
+          "tipo": "detalhe",
+          "alvo": "diafragma",
+          "lado": "tres_quartos_esquerda",
+          "tamanho": 0.75,
+          "movimento": "aproximar"
+        },
+        {
+          "de": "f6:eletricidade",
+          "tipo": "detalhe",
+          "alvo": "fio_fase",
+          "lado": "tres_quartos_esquerda",
+          "tamanho": 1.1
+        },
+        {
+          "de": "f7",
+          "tipo": "detalhe",
+          "alvo": "resistencia",
+          "lado": "frente",
+          "tamanho": 0.8,
+          "movimento": "aproximar"
+        },
+        {
+          "de": "f8:joule",
+          "tipo": "detalhe",
+          "alvo": "resistencia",
+          "lado": "tres_quartos_esquerda",
+          "tamanho": 1.3,
+          "movimento": "orbitar"
+        },
+        {
+          "de": "f9",
+          "tipo": "detalhe",
+          "alvo": "chuveiro",
+          "lado": "frente",
+          "tamanho": 1.6,
+          "movimento": "afastar"
+        },
+        {
+          "de": "f10",
+          "tipo": "medio",
+          "alvo": "tito",
+          "lado": "tres_quartos_direita"
+        },
+        {
+          "de": "f10:inverno",
+          "tipo": "detalhe",
+          "alvo": "seletor",
+          "lado": "tres_quartos_esquerda",
+          "tamanho": 0.8
+        },
+        {
+          "de": "f11",
+          "tipo": "close",
+          "alvo": "tito",
+          "lado": "frente",
+          "movimento": "aproximar"
+        },
+        {
+          "de": "f12",
+          "tipo": "detalhe",
+          "alvo": "chuveiro",
+          "lado": "tres_quartos_esquerda",
+          "tamanho": 2.3,
+          "movimento": "orbitar",
+          "transicao": "flash"
+        }
+      ],
+      "sons": [
+        {
+          "de": "f5:registro",
+          "som": "agua",
+          "volume": 0.7
+        },
+        {
+          "de": "f6:fecha",
+          "som": "clique"
+        },
+        {
+          "de": "f6:eletricidade",
+          "som": "zap",
+          "volume": 0.7
+        },
+        {
+          "de": "f8:calor",
+          "som": "fogo",
+          "volume": 0.4
+        },
+        {
+          "de": "f8:joule",
+          "som": "pop"
+        },
+        {
+          "de": "f10:inverno",
+          "som": "clique"
+        },
+        {
+          "de": "f11",
+          "som": "pop"
+        },
+        {
+          "de": "f12",
+          "som": "whoosh"
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "f8:calor",
+          "efeito": "zoom_soco",
+          "intensidade": 0.7
+        }
+      ]
+    }
+  ],
+  "chamada": {
+    "pergunta": "E a lâmpada? Como um fio vira luz?",
+    "texto": "Comenta",
+    "destaque": "LÂMPADA"
+  }
+}
