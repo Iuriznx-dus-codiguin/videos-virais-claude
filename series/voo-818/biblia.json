@@ -10,7 +10,8 @@
       "personalidade": "teimoso, faz piada quando está com medo, nunca desiste de entender como as coisas funcionam",
       "voz": {
         "descricao": "homem brasileiro de uns 29 anos, voz jovem e expressiva, bom para narração de suspense",
-        "instruct": "male, young adult, moderate pitch"
+        "instruct": "male, young adult, moderate pitch",
+        "semente": 1
       },
       "visual": {
         "altura": 1,
@@ -18,7 +19,12 @@
         "cabeca": "#FFFFFF",
         "olhos": "redondos",
         "sobrancelhas": "grossas",
-        "acessorios": [{"tipo": "cabelo_curto", "cor": "#3B2A20"}]
+        "acessorios": [
+          {
+            "tipo": "cabelo_curto",
+            "cor": "#3B2A20"
+          }
+        ]
       },
       "cor_legenda": "#FFD60A"
     },
@@ -38,7 +44,16 @@
         "sobrancelhas": "finas",
         "cilios": true,
         "bochechas": "#F4A7A3",
-        "acessorios": [{"tipo": "rabo_de_cavalo", "cor": "#2A1A12"}, {"tipo": "lenco", "cor": "#D63B3B"}]
+        "acessorios": [
+          {
+            "tipo": "rabo_de_cavalo",
+            "cor": "#2A1A12"
+          },
+          {
+            "tipo": "lenco",
+            "cor": "#D63B3B"
+          }
+        ]
       },
       "cor_legenda": "#7BE0FF"
     },
@@ -56,7 +71,12 @@
         "cabeca": "#FFE2C4",
         "olhos": "redondos",
         "sobrancelhas": "finas",
-        "acessorios": [{"tipo": "bandana", "cor": "#3FA35B"}]
+        "acessorios": [
+          {
+            "tipo": "bandana",
+            "cor": "#3FA35B"
+          }
+        ]
       },
       "cor_legenda": "#9BFF8A"
     },
@@ -74,7 +94,12 @@
         "cabeca": "#F2D5BD",
         "olhos": "sonolentos",
         "sobrancelhas": "grossas",
-        "acessorios": [{"tipo": "bone", "cor": "#1A1F2B"}]
+        "acessorios": [
+          {
+            "tipo": "bone",
+            "cor": "#1A1F2B"
+          }
+        ]
       },
       "cor_legenda": "#FF9F7A"
     },
@@ -84,7 +109,8 @@
       "personalidade": "doce, calma, nunca erra a hora de sorrir",
       "voz": {
         "descricao": "mulher brasileira de uns 48 anos, voz calma, doce e firme",
-        "instruct": "female, middle-aged, moderate pitch"
+        "instruct": "female, middle-aged, moderate pitch",
+        "semente": 1
       },
       "visual": {
         "altura": 0.98,
@@ -93,25 +119,108 @@
         "olhos": "ovais",
         "sobrancelhas": "finas",
         "cilios": true,
-        "acessorios": [{"tipo": "lenco", "cor": "#EDE7F6"}]
+        "acessorios": [
+          {
+            "tipo": "lenco",
+            "cor": "#EDE7F6"
+          }
+        ]
       },
       "cor_legenda": "#E0B3FF"
     },
     "laranja1": {
       "nome": "Homem de Laranja",
       "papel": "equipe de Ramos, nunca fala",
-      "voz": {"descricao": "sem fala"},
-      "visual": {"altura": 1.02, "corpo": "#E8641E", "cabeca": "#2A2A30", "olhos": "sonolentos", "sobrancelhas": "nenhuma", "acessorios": [{"tipo": "colete", "cor": "#FF7A1A"}]}
+      "voz": {
+        "descricao": "sem fala"
+      },
+      "visual": {
+        "altura": 1.02,
+        "corpo": "#E8641E",
+        "cabeca": "#2A2A30",
+        "olhos": "sonolentos",
+        "sobrancelhas": "nenhuma",
+        "acessorios": [
+          {
+            "tipo": "colete",
+            "cor": "#FF7A1A"
+          }
+        ]
+      }
     },
     "laranja2": {
       "nome": "Homem de Laranja",
       "papel": "equipe de Ramos, nunca fala",
-      "voz": {"descricao": "sem fala"},
-      "visual": {"altura": 1.1, "corpo": "#E8641E", "cabeca": "#2A2A30", "olhos": "sonolentos", "sobrancelhas": "nenhuma", "acessorios": [{"tipo": "colete", "cor": "#FF7A1A"}]}
+      "voz": {
+        "descricao": "sem fala"
+      },
+      "visual": {
+        "altura": 1.1,
+        "corpo": "#E8641E",
+        "cabeca": "#2A2A30",
+        "olhos": "sonolentos",
+        "sobrancelhas": "nenhuma",
+        "acessorios": [
+          {
+            "tipo": "colete",
+            "cor": "#FF7A1A"
+          }
+        ]
+      }
     },
-    "pax1": {"nome": "Passageiro", "papel": "adormecido", "visual": {"altura": 1.0, "corpo": "#6B8E5A", "cabeca": "#FFE2C4", "olhos": "sonolentos"}},
-    "pax2": {"nome": "Passageira", "papel": "adormecida", "visual": {"altura": 0.93, "corpo": "#B65A7A", "cabeca": "#F2D5BD", "olhos": "sonolentos", "cilios": true, "acessorios": [{"tipo": "rabo_de_cavalo", "cor": "#5A3A24"}]}},
-    "pax3": {"nome": "Passageiro", "papel": "adormecido", "visual": {"altura": 1.05, "corpo": "#5A7AA8", "cabeca": "#E9C9A8", "olhos": "sonolentos"}},
-    "pax4": {"nome": "Passageira", "papel": "adormecida", "visual": {"altura": 0.9, "corpo": "#C9A04A", "cabeca": "#FFE7D1", "olhos": "sonolentos", "cilios": true, "acessorios": [{"tipo": "lenco", "cor": "#8A5AA8"}]}}
+    "pax1": {
+      "nome": "Passageiro",
+      "papel": "adormecido",
+      "visual": {
+        "altura": 1,
+        "corpo": "#6B8E5A",
+        "cabeca": "#FFE2C4",
+        "olhos": "sonolentos"
+      }
+    },
+    "pax2": {
+      "nome": "Passageira",
+      "papel": "adormecida",
+      "visual": {
+        "altura": 0.93,
+        "corpo": "#B65A7A",
+        "cabeca": "#F2D5BD",
+        "olhos": "sonolentos",
+        "cilios": true,
+        "acessorios": [
+          {
+            "tipo": "rabo_de_cavalo",
+            "cor": "#5A3A24"
+          }
+        ]
+      }
+    },
+    "pax3": {
+      "nome": "Passageiro",
+      "papel": "adormecido",
+      "visual": {
+        "altura": 1.05,
+        "corpo": "#5A7AA8",
+        "cabeca": "#E9C9A8",
+        "olhos": "sonolentos"
+      }
+    },
+    "pax4": {
+      "nome": "Passageira",
+      "papel": "adormecida",
+      "visual": {
+        "altura": 0.9,
+        "corpo": "#C9A04A",
+        "cabeca": "#FFE7D1",
+        "olhos": "sonolentos",
+        "cilios": true,
+        "acessorios": [
+          {
+            "tipo": "lenco",
+            "cor": "#8A5AA8"
+          }
+        ]
+      }
+    }
   }
 }
