@@ -16,7 +16,7 @@ Fluxo **separado** do de aventura: só mexa em `motor/public/series/como-funcion
 ## 2. Pesquisa e roteiro falado
 - Confira os fatos do tema (inventor, ano, lugar, como funciona) com WebSearch quando tiver; na dúvida, use "um dos primeiros" ou "a história mais contada" e nunca invente número.
 - Estrutura (regras.md): gancho em até 3 s → invenção (oficina) → por dentro (estúdio, maquete) → conceito com nome (cartão) → curiosidade → chamada.
-- ~55–60 s, frases curtas e faladas. O Tito é a única voz. MAIÚSCULAS viram ênfase.
+- ~55–60 s com a voz real. A voz do Tito fala ~20% mais rápido que a estimativa do `validar` sem voz: mire em ~65–70 s estimados e confira de novo depois do passo 5. Frases curtas e faladas. O Tito é a única voz. MAIÚSCULAS viram ênfase.
 - Chamada: `pergunta` sobre o próximo tema da pauta, `texto: "Comenta"`, `destaque` = campo `curto` do próximo item.
 
 ## 3. Escrever o episódio (`public/series/como-funciona/epNN.json`)

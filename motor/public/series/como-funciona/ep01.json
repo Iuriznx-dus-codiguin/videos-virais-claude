@@ -436,6 +436,12 @@
       "quem": "tito",
       "off": true,
       "texto": "Por isso o chuveiro pesa tanto na conta de luz."
+    },
+    {
+      "id": "f13",
+      "quem": "tito",
+      "tom": "animado",
+      "texto": "E sabia que lá fora ele é raro? Na maioria dos países, a água quente vem de um tanque aquecido."
     }
   ],
   "cenas": [
