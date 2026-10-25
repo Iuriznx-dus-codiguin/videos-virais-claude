@@ -113,6 +113,23 @@ export const CENARIOS: Record<string, DefCenario> = {
 		},
 		tamanhos: {manifesto: 0.9, banco_31c: 1.4},
 	},
+	mirante: {
+		descricao: 'Laje de pedra no alto da ilha, na beira de um penhasco (borda em +z), olhando o mar 35 m abaixo: enseada com areia e cais de madeira, ilhotas ao longe. Ponha farol e barco com alt: -35 (ex.: farol em [-16, 85] escala 1.3, barco em [9, 56] giro 90). Câmera boa: [1.0, 2.3, 0.8] com alvo [-3, -28, 66] (mostra farol, barco e enseada). Olhando para +z, x negativo fica à DIREITA da tela.',
+		luzPadrao: 'noite',
+		marcas: {
+			borda: [0, 3.2],
+			borda_esq: [-1.4, 2.9],
+			borda_dir: [1.4, 2.9],
+			meio: [0, 0],
+			atras: [0, -4],
+		},
+		pontos: {
+			farol: [-16, -18, 85],
+			cais: [9, -34, 56],
+			enseada: [10, -35, 38],
+			mar: [0, -33, 100],
+		},
+	},
 	montanha: {
 		descricao: 'Vista noturna da montanha da ilha, com uma caverna escura no meio e copas de árvores na frente.',
 		luzPadrao: 'noite',
@@ -238,4 +255,26 @@ export const OBJETOS = [
 	'aviao',
 	'radio',
 	'prancheta',
+	'lanternas_mata',
+	'farol',
+	'barco',
 ] as const;
+
+/** Para que serve cada objeto e as opções que ele aceita além de em, giro e escala. */
+export const USO_OBJETOS: Record<(typeof OBJETOS)[number], string> = {
+	sos: 'SOS escrito na areia',
+	pegadas_gigantes: 'trilha de pegadas; ate: [x, z], passo',
+	fogueira: 'fogo: chamas | brasas | apagada',
+	tronco: 'tronco caído para sentar',
+	lanterna: 'lanterna no chão',
+	riscos: 'riscos de contagem na parede; quantos',
+	caixote: 'caixote de madeira',
+	destrocos: 'fuselagem aberta, cauda, asa, malas e fumaça (praia)',
+	malas: 'malas espalhadas; quantas, raio, semente',
+	aviao: 'avião caindo em chamas; de_ponto, ate_ponto [x,y,z], quando_de, quando_ate, fogo',
+	radio: 'rádio de emergência com luz; ligado (padrão true)',
+	prancheta: 'manifesto de passageiros (nomes riscados de laranja, um circulado); alt (altura, padrão 0.46), deitada',
+	lanternas_mata: 'Homens de Laranja de longe: lanternas andando com feixe varrendo para +z local; quantas (3), largura (8), vultos (corpo escuro sem rosto, padrão true). Use à noite, entre as árvores',
+	farol: 'farol de 14 m numa ilhota, para pôr longe no mar; modo: gira | sos | apagado; escala; alt (altura do mar: -35 no mirante)',
+	barco: 'barco de carga de 11 m (proa em +x local); luzes (padrão true, com farol de proa), caixas (padrão true); alt (-35 no mirante)',
+};

@@ -9,7 +9,7 @@ Trabalhe sempre em **uma série por sessão** (economiza tokens). Fale com o Iur
 
 ## 1. Preparar
 1. `cd motor && npm ci` (se faltar node_modules) e `npm run dados -- baixar` (traz séries, estado, vozes e regras do ramo `dados`).
-2. Voz (uma vez por sessão, leva alguns minutos): `bash voz/instalar.sh`. Se falhar por rede (huggingface.co, download.pytorch.org), pare e avise o Iuri qual host foi bloqueado; sem voz o vídeo sai marcado "sem voz" e isso vai no aviso final. Nunca finja que há voz.
+2. Voz (uma vez por sessão, leva alguns minutos): `bash voz/instalar.sh`. Se falhar por rede (huggingface.co, download.pytorch.org, download-r2.pytorch.org), pare e avise o Iuri qual host foi bloqueado; sem voz o vídeo sai marcado "sem voz" e isso vai no aviso final. Nunca finja que há voz.
 3. Descubra quais partes produzir hoje (calendário em `motor/producao/PRODUCAO.md`: sexta produz sexta + 2 de sábado; sábado produz 2 de domingo; domingo nada). Faça as partes **uma de cada vez, na ordem**, cada uma com os passos 2 a 7.
 4. Leia só: `public/series/_geral/regras.md` (se existir), `public/series/<serie>/regras.md`, `estado.json`, `biblia.json` e `roteiro-geral.md` (se existir; é o mapa da história, siga-o). Do episódio anterior leia só `resumo_ultima`.
 5. Se a série ainda não existe: crie `biblia.json` (modelo: `public/series/voo-818/biblia.json`) e um `regras.md`.

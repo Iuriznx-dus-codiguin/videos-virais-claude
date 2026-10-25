@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Instala o OmniVoice (voz grátis e aberta) num ambiente virtual em motor/voz/.venv e baixa o modelo.
-# Precisa dos domínios huggingface.co, *.hf.co e download.pytorch.org liberados no ambiente de nuvem.
+# Precisa dos domínios huggingface.co, *.hf.co e download.pytorch.org e download-r2.pytorch.org liberados no ambiente de nuvem.
 # Uso: bash voz/instalar.sh        (a partir de motor/; é seguro rodar de novo)
 set -euo pipefail
 cd "$(dirname "$0")"

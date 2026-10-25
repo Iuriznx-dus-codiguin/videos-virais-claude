@@ -18,7 +18,7 @@ Cada rotina produz o que o **calendário** manda para o dia, olhando `estado.jso
 Se uma parte do calendário já existe pronta (rodada repetida), não refaça: confira `npm run dados -- entregas`.
 
 ## Rotinas
-1. **Produção (3h, por série).** Prompt: "Use a skill roteirizar-episodio para a série X e produza as partes de hoje conforme motor/producao/PRODUCAO.md." O ambiente é o "Shorts" (rede liberada para huggingface.co, hf.co e download.pytorch.org).
+1. **Produção (3h, por série).** Prompt: "Use a skill roteirizar-episodio para a série X e produza as partes de hoje conforme motor/producao/PRODUCAO.md." O ambiente é o "Shorts" (rede liberada para huggingface.co, hf.co, download.pytorch.org e download-r2.pytorch.org).
 2. **Correções (sem rotina).** O Iuri responde na própria sessão de produção até as 16h. A sessão usa a skill `aplicar-correcoes`. Sem resposta, o original vale.
 3. **Publicação: manual.** O vídeo e o texto para colar (título, descrição, legenda) ficam no ramo `dados`, pasta `videos/`, e no `out/` da sessão.
 
