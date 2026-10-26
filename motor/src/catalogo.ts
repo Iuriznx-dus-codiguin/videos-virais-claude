@@ -93,7 +93,7 @@ export const CENARIOS: Record<string, DefCenario> = {
 		tamanhos: {parede: 2.6, parede_esq: 2.2, parede_dir: 2.2},
 	},
 	cabine: {
-		descricao: 'Dentro da fuselagem do Voo 818: corredor comprido (eixo z, de -13 a 13) com bancos azuis nos dois lados (x = ±0,62 e ±1,16), bagageiros, luzes de teto e celulares acesos nos bancos vazios. Parede a ±1,7 m: use câmera fixa (campo "camera") dentro do corredor, com x entre -0,4 e 0,4. Os bonecos são grandes para a cabine: use "escala": 0.55 e, nos bancos, "pose": "sentado_banco" (bancos em z = 0,15 + 0,95·n, virados para +z).',
+		descricao: 'Dentro da fuselagem do Voo 818: corredor comprido (eixo z, de -13 a 13) com bancos azuis nos dois lados (x = ±0,62 e ±1,16), bagageiros, luzes de teto, cintos abertos em todos os assentos e celulares acesos nos bancos vazios. Parede a ±1,7 m: use câmera fixa (campo "camera") dentro do corredor, com x entre -0,4 e 0,4. Os bonecos são grandes para a cabine: use "escala": 0.55 e, nos bancos, "pose": "sentado_banco" (bancos em z = 0,15 + 0,95·n, virados para +z).',
 		luzPadrao: 'entardecer',
 		marcas: {
 			frente: [0, 7],
@@ -427,7 +427,7 @@ export const USO_OBJETOS: Record<(typeof OBJETOS)[number], string> = {
 	malas: 'malas espalhadas; quantas, raio, semente',
 	aviao: 'avião caindo em chamas; de_ponto, ate_ponto [x,y,z], quando_de, quando_ate, fogo',
 	radio: 'rádio de emergência com luz; ligado (padrão true)',
-	prancheta: 'manifesto de passageiros (nomes riscados de laranja, um circulado); alt (altura, padrão 0.46), deitada',
+	prancheta: 'manifesto de passageiros (nomes riscados de laranja e circulados de vermelho); circulados (quantos nomes, padrão 1, até 10), alt (altura, padrão 0.46), deitada',
 	lanternas_mata: 'Homens de Laranja de longe: lanternas andando com feixe varrendo para +z local; quantas (3), largura (8), vultos (corpo escuro sem rosto, padrão true). Use à noite, entre as árvores',
 	farol: 'farol de 14 m numa ilhota, para pôr longe no mar; modo: gira | sos | apagado; escala; ilhota (false no cenário ilhota_farol, onde fica na marca farol); alt (altura do mar: -35 no mirante)',
 	luz_farol: 'a lente do farol na sala_farol (marca lente); modo: acesa | sos | apagada (padrão)',

@@ -338,25 +338,36 @@ const Mascaras: React.FC<{x: number; z: number; t: number; cai: number; quantas:
 	);
 };
 
-/** Lista de passageiros (manifesto) numa prancheta: nomes riscados de laranja e um circulado de vermelho. */
-const Prancheta: React.FC<{x: number; z: number; giro: number; alt: number; deitada: boolean; escala: number}> = React.memo(({x, z, giro, alt, deitada, escala}) => (
-	<group position={[x, alt, z]} rotation={[deitada ? -Math.PI / 2 : 0, giro, 0, 'YXZ']} scale={0.8 * escala}>
-		<Malha g={caixa(0.3, 0.42, 0.02)} m={toon('#6B4A2E')} position={[0, 0.21, 0]} contorno={0.012} />
-		<Malha g={caixa(0.26, 0.37, 0.006)} m={toon('#F4F1E8')} position={[0, 0.205, 0.014]} sombra={false} />
-		<Malha g={caixa(0.09, 0.03, 0.02)} m={toon('#9AA3AE')} position={[0, 0.425, 0.012]} sombra={false} />
-		{Array.from({length: 10}, (_, i) => {
-			const y = 0.355 - i * 0.032;
-			const alvo = i === 6;
-			return (
-				<React.Fragment key={i}>
-					<mesh geometry={caixa(0.19, 0.008, 0.002)} material={toon('#2B2F3A')} position={[0, y, 0.019]} />
-					{!alvo ? <mesh geometry={caixa(0.22, 0.012, 0.002)} material={brilho('#FF8A1F', 0.9)} position={[0, y, 0.021]} rotation={[0, 0, i % 2 ? 0.03 : -0.03]} /> : null}
-				</React.Fragment>
-			);
-		})}
-		<mesh geometry={toro(0.075, 0.006, 24, 8)} material={brilho('#E5252A', 1)} position={[0, 0.355 - 6 * 0.032, 0.022]} scale={[1.55, 0.5, 1]} />
-	</group>
-));
+/** Ordem em que as linhas do manifesto ganham o círculo vermelho (até 4, nunca duas vizinhas). */
+const CIRCULADOS = [6, 1, 9, 3, 4, 8, 0, 5, 2, 7];
+
+/** Lista de passageiros (manifesto) numa prancheta: nomes riscados de laranja e `circulados` (padrão 1) circulados de vermelho. */
+const Prancheta: React.FC<{x: number; z: number; giro: number; alt: number; deitada: boolean; escala: number; circulados: number}> = React.memo(
+	({x, z, giro, alt, deitada, escala, circulados}) => {
+		const marcadas = new Set(CIRCULADOS.slice(0, circulados));
+		return (
+			<group position={[x, alt, z]} rotation={[deitada ? -Math.PI / 2 : 0, giro, 0, 'YXZ']} scale={0.8 * escala}>
+				<Malha g={caixa(0.3, 0.42, 0.02)} m={toon('#6B4A2E')} position={[0, 0.21, 0]} contorno={0.012} />
+				<Malha g={caixa(0.26, 0.37, 0.006)} m={toon('#F4F1E8')} position={[0, 0.205, 0.014]} sombra={false} />
+				<Malha g={caixa(0.09, 0.03, 0.02)} m={toon('#9AA3AE')} position={[0, 0.425, 0.012]} sombra={false} />
+				{Array.from({length: 10}, (_, i) => {
+					const y = 0.355 - i * 0.032;
+					return (
+						<React.Fragment key={i}>
+							<mesh geometry={caixa(0.19, 0.008, 0.002)} material={toon('#2B2F3A')} position={[0, y, 0.019]} />
+							{marcadas.has(i) ? (
+								// o toro deita no plano xz: gira de volta para o plano do papel e achata numa elipse em volta do nome
+								<mesh geometry={toro(0.075, 0.006, 24, 8)} material={brilho('#E5252A', 1)} position={[0, y, 0.022]} rotation={[-Math.PI / 2, 0, 0]} scale={[1.6, 0.5, 0.25]} />
+							) : (
+								<mesh geometry={caixa(0.22, 0.012, 0.002)} material={brilho('#FF8A1F', 0.9)} position={[0, y, 0.021]} rotation={[0, 0, i % 2 ? 0.03 : -0.03]} />
+							)}
+						</React.Fragment>
+					);
+				})}
+			</group>
+		);
+	},
+);
 
 /** Objeto que surge ("aparece") cresce com um pulinho; antes disso e depois de "some" não existe. */
 const visibilidade = (o: Objeto, t: number) => {
@@ -441,7 +452,7 @@ const objeto = (o: Objeto, i: number, x: number, z: number, t: number) => {
 		case 'barras_ouro':
 			return <BarrasOuro key={i} x={x} z={z} giro={giro} />;
 		case 'prancheta':
-			return <Prancheta key={i} x={x} z={z} giro={giro} alt={(o.alt as number) ?? 0.46} deitada={o.deitada !== false} escala={esc} />;
+			return <Prancheta key={i} x={x} z={z} giro={giro} alt={(o.alt as number) ?? 0.46} deitada={o.deitada !== false} escala={esc} circulados={(o.circulados as number) ?? 1} />;
 		case 'aviao':
 			return (
 				<AviaoCaindo
