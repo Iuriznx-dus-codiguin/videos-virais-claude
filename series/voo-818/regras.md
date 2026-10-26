@@ -11,3 +11,6 @@ Cada linha vem de uma correção do Iuri ou de uma decisão do projeto. A skill 
 - (2026-10-25) Homens de Laranja de longe: objeto `lanternas_mata` à noite, entre as árvores (nunca em close).
 - (2026-10-25) Vista do farol e do barco (partes 5, 8, 9): cenário `mirante` com farol/barco em alt -35; da praia, farol longe no mar (ex.: em [-20, 90]).
 - (2026-10-25) Partes 10 a 17: cenários `ilhota_farol` (farol de perto, objeto farol com ilhota false), `adega` (passageiros dormindo), `sala_farol` (objeto luz_farol). Tempestade = efeitos chuva + relampago, ambiente chuva, som trovao. Use as câmeras sugeridas no catálogo.
+- (2026-10-26) Sobreviventes da queda: Davi (protagonista), Lia (13 anos, medo de tubarão), o copiloto Otávio e Dona Cida (79, ex-enfermeira). Os outros 143 passageiros sumiram.
+- (2026-10-26) Na cabine, todo personagem usa "escala": 0.55; sentado no banco, "pose": "sentado_banco".
+- (2026-10-26) Ideia do Iuri para as próximas partes: Otávio quer construir uma jangada e ir pro mar, Lia tem medo de tubarão; chamada "comenta: deixa a Lia construir a jangada ou ficam na ilha?".

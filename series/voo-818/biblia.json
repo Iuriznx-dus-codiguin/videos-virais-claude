@@ -1,7 +1,7 @@
 {
   "serie": "voo-818",
   "titulo": "VOO 818",
-  "sinopse": "O Voo 818 cai numa ilha. Davi acorda na praia e não encontra ninguém: nem vivos, nem mortos. Pelo rádio, uma voz pergunta quantos sobreviventes há. Quando ele diz que é só ele, a voz responde: \"Ótimo.\"",
+  "sinopse": "O Voo 818 cai numa ilha sem nome. Só quatro pessoas sobrevivem: Davi, a menina Lia, o copiloto Otávio e Dona Cida. Os outros 143 passageiros sumiram. Para sair vivos, eles precisam decidir juntos, e nem todo mundo conta tudo o que sabe.",
   "narrador": "davi",
   "personagens": {
     "davi": {
@@ -221,6 +221,88 @@
           }
         ]
       }
+    },
+    "lia": {
+      "nome": "Lia",
+      "papel": "menina de 13 anos, sobrevivente; viajava sozinha para ver o pai",
+      "personalidade": "esperta e teimosa, morre de medo do mar e de tubarões, fala o que pensa",
+      "voz": {
+        "descricao": "menina brasileira de 13 anos, voz aguda e rápida",
+        "instruct": "female, teenager, high pitch",
+        "semente": 1
+      },
+      "visual": {
+        "altura": 0.8,
+        "corpo": "#7A4FB5",
+        "cabeca": "#FFE2C4",
+        "olhos": "redondos",
+        "sobrancelhas": "finas",
+        "cilios": true,
+        "bochechas": "#F4A7A3",
+        "acessorios": [
+          {
+            "tipo": "rabo_de_cavalo",
+            "cor": "#2A1A12"
+          }
+        ]
+      },
+      "cor_legenda": "#FF9BD2"
+    },
+    "otavio": {
+      "nome": "Otávio",
+      "papel": "copiloto do Voo 818, sobrevivente",
+      "personalidade": "seguro de si, quer sair da ilha de qualquer jeito, esconde alguma coisa",
+      "voz": {
+        "descricao": "homem brasileiro de uns 45 anos, voz grave e firme",
+        "instruct": "male, middle-aged, low pitch",
+        "semente": 1
+      },
+      "visual": {
+        "altura": 1.05,
+        "corpo": "#E8ECF2",
+        "cabeca": "#E9C9A8",
+        "olhos": "ovais",
+        "sobrancelhas": "grossas",
+        "acessorios": [
+          {
+            "tipo": "bone",
+            "cor": "#1F2A44"
+          },
+          {
+            "tipo": "bigode",
+            "cor": "#3B2A20"
+          }
+        ]
+      },
+      "cor_legenda": "#8FD3FF"
+    },
+    "cida": {
+      "nome": "Dona Cida",
+      "papel": "senhora de 79 anos, sobrevivente; ex-enfermeira",
+      "personalidade": "calma, prática, cuida de todo mundo e já viu de tudo",
+      "voz": {
+        "descricao": "senhora brasileira de 79 anos, voz calma e doce",
+        "instruct": "female, elderly, moderate pitch",
+        "semente": 1
+      },
+      "visual": {
+        "altura": 0.86,
+        "corpo": "#4F8A7A",
+        "cabeca": "#F2D5BD",
+        "olhos": "sonolentos",
+        "sobrancelhas": "finas",
+        "acessorios": [
+          {
+            "tipo": "cabelo_curto",
+            "cor": "#D8D8DE"
+          },
+          {
+            "tipo": "oculos",
+            "cor": "#6B4A2E"
+          }
+        ]
+      },
+      "cor_legenda": "#B8F28A"
     }
   }
 }
