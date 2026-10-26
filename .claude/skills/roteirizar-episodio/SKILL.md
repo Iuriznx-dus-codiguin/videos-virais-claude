@@ -49,7 +49,7 @@ Trabalhe sempre em **uma série por sessão** (economiza uso). Fale com o Iuri e
 4. `npm run validar -- <serie> <parte>` de novo, agora com os tempos reais: 75 a 88 s. Se passar, corte falas e refaça só as que mudaram.
 
 ## 6. Render e conferência
-1. Antes do render, confira um quadro de cada plano nos tempos reais: `npm run quadro -- <serie> <parte> <segundos...> --escala=0.4` (rápido) e olhe as imagens em `out/quadros/`: rosto tampado, nuca no lugar do rosto, cabeça cortada na borda, item na mão errada, personagem dentro de objeto. Corrija antes de gastar o render.
+1. Antes do render, `npm run enquadramento -- <serie> <parte>` (segundos, sem renderizar): lista os trechos com cabeça cortada na borda, nuca ou topo da cabeça virado para a câmera em quem fala, rosto tampado e câmera dentro de alguém. Corrija até sobrar só o que for falso (cabeça escondida atrás de banco ou objeto). Depois confira um quadro de cada plano nos tempos reais: `npm run quadro -- <serie> <parte> <segundos...> --escala=0.4` (rápido) e olhe as imagens em `out/quadros/`: item na mão errada, braço na frente do rosto, personagem dentro de objeto, rótulo em cima do rosto. Corrija antes de gastar o render.
 2. `npm run render -- <serie> <parte>` em segundo plano (~55 min para 80 s em alta qualidade, crf 18; sai em `out/<serie>-epNN.mp4`, com o volume já normalizado em -14 LUFS).
 3. `npm run quadro -- <serie> <parte> 1 3 15 35 <fim-1>`: gancho visível nos primeiros 3 s, legenda legível, chamada final com fundo claro. Se algo estiver errado, corrija e renderize de novo.
 

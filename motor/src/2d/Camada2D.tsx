@@ -4,6 +4,7 @@ import React from 'react';
 import {AbsoluteFill, cancelRender, continueRender, delayRender, spring, staticFile} from 'remotion';
 import * as THREE from 'three';
 import {cameraNoTempo, tipoDoPlano, transicaoNoTempo} from '../animacao/camera';
+import {MEDIDAS} from '../animacao/pose';
 import {cenaNoTempo, simulacao} from '../animacao/simulacao';
 import {GrupoLegenda, gruposDeLegenda, textoNaTela} from '../roteiro/legendas';
 import type {LinhaDoTempo} from '../roteiro/tipos';
@@ -204,8 +205,11 @@ const Chamada: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: num
 const LARGURA = 1080;
 const ALTURA = 1920;
 
-/** Ponto 3D na tela (px), pela mesma câmera do quadro; null se estiver atrás da lente. */
-const naTela = (linha: LinhaDoTempo, t: number, alvo: string | [number, number, number]): [number, number] | null => {
+/**
+ * Ponto 3D na tela (px), pela mesma câmera do quadro, e o raio da cabeça na tela quando o alvo é
+ * um personagem (0 para pontos e objetos); null se estiver atrás da lente.
+ */
+const naTela = (linha: LinhaDoTempo, t: number, alvo: string | [number, number, number]): {x: number; y: number; raio: number} | null => {
 	const cena = cenaNoTempo(linha, t);
 	const sim = simulacao(linha, cena);
 	const ponto = sim.ponto(alvo, t);
@@ -219,8 +223,19 @@ const naTela = (linha: LinhaDoTempo, t: number, alvo: string | [number, number, 
 	cam.updateMatrixWorld();
 	const v = new THREE.Vector3(...ponto).project(cam);
 	if (v.z > 1) return null;
-	return [((v.x + 1) / 2) * LARGURA, ((1 - v.y) / 2) * ALTURA];
+	let raio = 0;
+	const est = typeof alvo === 'string' ? sim.estado(alvo, t) : null;
+	if (est?.tipo === 'palito') {
+		const cima = new THREE.Vector3(0, 1, 0).applyQuaternion(cam.quaternion);
+		const topo = new THREE.Vector3(...ponto).addScaledVector(cima, MEDIDAS.raioCabeca * est.escala).project(cam);
+		raio = (Math.abs(topo.y - v.y) / 2) * ALTURA;
+	}
+	return {x: ((v.x + 1) / 2) * LARGURA, y: ((1 - v.y) / 2) * ALTURA, raio};
 };
+
+/** Altura da etiqueta com duas linhas de texto e o primeiro y livre abaixo do selo da série. */
+const ALTURA_ETIQUETA = 150;
+const TOPO_LIVRE = 300;
 
 const Rotulos: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: number}> = ({linha, t, frame, fps}) => {
 	if (t >= linha.chamada.ini) return null;
@@ -231,12 +246,20 @@ const Rotulos: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: num
 			{ativos.map((r, i) => {
 				const p = naTela(linha, t, r.alvo);
 				if (!p) return null;
-				const [px, py] = p;
-				const lado = r.lado ?? (px < LARGURA / 2 ? 'esquerda' : 'direita');
+				const lado = r.lado ?? (p.x < LARGURA / 2 ? 'esquerda' : 'direita');
 				const entra = spring({frame: frame - Math.round(r.ini * fps), fps, config: {damping: 13, stiffness: 200}});
 				const sai = 1 - smoothstep(r.fim - 0.2, r.fim, t);
 				const vis = entra * sai;
-				const ly = r.altura !== undefined ? r.altura * ALTURA : clamp(py - 170 - i * 20, 330, 1050);
+				// em personagem, a etiqueta fica acima da cabeça (nunca em cima do rosto) e a linha
+				// encosta no alto da cabeça; em ponto ou objeto, a linha vai até o próprio ponto
+				const px = p.x;
+				const py = p.raio ? p.y - p.raio * 0.9 : p.y;
+				const ly =
+					r.altura !== undefined
+						? r.altura * ALTURA
+						: p.raio
+							? clamp(p.y - p.raio - 50 - ALTURA_ETIQUETA - i * 20, TOPO_LIVRE, 1050)
+							: clamp(py - 170 - i * 20, 330, 1050);
 				const lx = lado === 'esquerda' ? 70 : LARGURA - 70;
 				const cor = r.cor ?? AMARELO;
 				// a linha sai da borda da etiqueta e vai até a peça
