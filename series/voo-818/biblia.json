@@ -219,6 +219,13 @@
           {
             "tipo": "bigode",
             "cor": "#3B2A20"
+          },
+          {
+            "tipo": "curativo"
+          },
+          {
+            "tipo": "tala",
+            "lado": "D"
           }
         ]
       },

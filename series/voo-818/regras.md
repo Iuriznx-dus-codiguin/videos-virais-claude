@@ -3,7 +3,7 @@
 Cada linha vem de uma correção do Iuri ou de uma decisão do projeto. A skill aplicar-correcoes mantém este arquivo curto.
 
 - (2026-10-26) Davi narra em primeira pessoa e boa parte em off; Lia, Cida e Otávio conversam e discordam em cena, com falas curtas.
-- (2026-10-25) Sem violência gráfica: nada de sangue, corpos ou ferimentos à mostra. O perigo é sugerido por sombras, sons e lanternas.
+- (2026-10-26) Sem violência gráfica: nada de sangue nem corpos. Ferimento aparece só como curativo e tala. O perigo é sugerido por sombras, sons e lanternas.
 - (2026-10-25) Os Homens de Laranja nunca falam e nunca mostram o rosto: aparecem de longe ou de costas.
 - (2026-10-25) A voz do rádio (Valéria) nunca é mostrada antes da parte 17.
 - (2026-10-25) Na cabine, use `camera` fixa: no corredor (x entre -0,3 e 0,3) ou acima dos encostos (y 1,2 a 1,6). Dentro dos bancos a lente fica cega.
@@ -14,3 +14,4 @@ Cada linha vem de uma correção do Iuri ou de uma decisão do projeto. A skill 
 - (2026-10-26) Sobreviventes da queda: Davi (protagonista), Lia (13 anos, medo de tubarão), o copiloto Otávio e Dona Cida (79, ex-enfermeira). Os outros 143 passageiros sumiram.
 - (2026-10-26) Na cabine, todo personagem usa "escala": 0.55; sentado no banco, "pose": "sentado_banco".
 - (2026-10-26) Ideia do Iuri para as próximas partes: Otávio quer construir uma jangada e ir pro mar, Lia tem medo de tubarão; chamada "comenta: deixa a Lia construir a jangada ou ficam na ilha?".
+- (2026-10-26) Otávio se machucou na queda: curativo no rosto e tala na perna direita (já na bíblia) e anda com "mancar" até a perna sarar no roteiro.

@@ -8,13 +8,13 @@
       "id": "f1",
       "quem": "davi",
       "tom": "bravo",
-      "texto": "Por que você desligou o rádio? Podia ser o RESGATE!"
+      "texto": "Como você sabia que era EU?"
     },
     {
       "id": "f2",
       "quem": "otavio",
       "tom": "serio",
-      "texto": "Resgate pergunta ONDE a gente está. Não quantos sobraram."
+      "texto": "Resgate pergunta ONDE a gente está. Não pergunta NOME."
     },
     {
       "id": "f3",
@@ -32,13 +32,13 @@
       "id": "f4b",
       "quem": "otavio",
       "tom": "determinado",
-      "texto": "Amanhã a gente começa uma jangada. Em dois dias, estamos no mar."
+      "texto": "Amanhã a gente começa uma jangada. Nem que eu vá mancando."
     },
     {
       "id": "f4c",
       "quem": "lia",
       "tom": "grito",
-      "texto": "No MAR? Nem pensar!",
+      "texto": "Jangada? No MAR? Nem pensar!",
       "pausa_depois": 0.4
     },
     {
@@ -211,7 +211,7 @@
           "quem": "davi",
           "faz": "apontar",
           "para": "radio",
-          "de": "f1:radio"
+          "de": "f1"
         },
         {
           "quem": "otavio",
@@ -275,6 +275,24 @@
           "quem": "davi",
           "faz": "sentar",
           "de": "f4c:fim"
+        },
+        {
+          "quem": "otavio",
+          "faz": "mancar",
+          "para": [
+            3.7,
+            3.0
+          ],
+          "de": "f4b"
+        },
+        {
+          "quem": "otavio",
+          "olhar": [
+            5.6,
+            1.2,
+            5.5
+          ],
+          "de": "f4b+1.6"
         }
       ],
       "planos": [

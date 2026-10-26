@@ -3,7 +3,7 @@
 Rumo escolhido pelo Iuri em 26/10/2026: **sobrevivência com mistério**. Cada parte mostra o grupo sobrevivendo e decidindo junto (regras reais de sobrevivência, conflitos, escolhas do público), com o mistério do avião correndo por trás. Quem escreve cada episódio lê este arquivo, `regras.md` e `estado.json`. Não revele antes da hora o que está marcado como **segredo**.
 
 ## Premissa
-O Voo 818 cai numa ilha sem nome. Só quatro pessoas acordam na praia: Davi, a menina Lia, a Dona Cida e o copiloto Otávio. Os outros 143 passageiros sumiram: nem vivos, nem corpos, só cintos abertos. Pelo rádio, uma voz pergunta quantos sobreviventes há, e o copiloto desliga antes de Davi responder.
+O Voo 818 cai numa ilha sem nome. Só quatro pessoas acordam na praia: Davi, a menina Lia, a Dona Cida e o copiloto Otávio. Os outros 143 passageiros sumiram: nem vivos, nem corpos, só cintos abertos. Pelo rádio, uma voz pergunta quantos sobreviventes há e reconhece Davi pelo nome; o copiloto, ferido na queda, toma o rádio e desliga: "Eles estão procurando VOCÊ."
 
 ## Segredo (a verdade, na ordem em que aparece)
 1. **O pouso foi de propósito.** O Capitão Ramos levou o avião até a ilha, onde uma equipe de coletes laranja esperava. Os passageiros foram dopados com gás pelo sistema de ar e levados dormindo para uma adega embaixo de um farol. Os quatro escaparam do gás por acaso (Lia estava no banheiro, Dona Cida usa oxigênio portátil, Davi estava com a máscara de oxigênio que caiu na turbulência, Otávio estava trancado fora da cabine de comando).
@@ -17,7 +17,7 @@ O Voo 818 cai numa ilha sem nome. Só quatro pessoas acordam na praia: Davi, a m
 - **Davi Rocha** (29), mecânico de aviões, narra em primeira pessoa. Brinca quando está com medo. Entende de máquinas.
 - **Lia Martins** (13), viajava sozinha para ver o pai. Esperta, teimosa, fala o que pensa. Morre de medo do mar e de tubarões.
 - **Dona Cida (Aparecida Souza)** (79), ex-enfermeira. Calma, prática, conhece regras de sobrevivência e cuida de todo mundo.
-- **Otávio Lemos** (45), copiloto. Seguro, quer sair da ilha de qualquer jeito (jangada), esconde o que ouviu no rádio.
+- **Otávio Lemos** (45), copiloto. Seguro, quer sair da ilha de qualquer jeito (jangada), esconde o que ouviu no rádio. Machucou a perna direita na queda (tala, curativo no rosto) e anda mancando até a perna sarar (por volta da parte 7).
 - **Capitão Ramos** (52), piloto. Educado, cansado, perigoso. Aparece de corpo a partir da parte 10.
 - **Valéria Menezes** (48), voz do rádio. Só voz até a parte 17.
 - **Homens de Laranja:** coletes laranja e lanternas, nunca falam, nunca mostram o rosto.
@@ -28,8 +28,8 @@ Segunda a sexta uma parte, sábado e domingo duas (11h e 18h). A parte 1 vai ao 
 
 | # | Título | O que acontece | Cliffhanger / chamada |
 |---|---|---|---|
-| 1 | A queda | Turbulência dentro do avião, a queda, os quatro se acham na praia. Regras: longe dos destroços, água antes de comida, fogo antes da noite. O rádio chama. | Otávio desliga o rádio: "Não responde." |
-| 2 | Assentos vazios | Discussão na fogueira sobre o rádio; Otávio fala em jangada, Lia não quer o mar. À noite Davi volta ao avião: cintos abertos, manifesto com todos os nomes riscados de laranja, menos os quatro deles, circulados de vermelho. | Otávio atrás dele: "Achou o que estava procurando?" |
+| 1 | A queda | Turbulência dentro do avião (sem fala), a queda, os quatro se acham na praia e Otávio está ferido. Regras: longe dos destroços, água antes de comida, fogo antes da noite. O rádio chama e a voz diz: "Davi Rocha... é você?" | Otávio toma o rádio: "Estão procurando VOCÊ." Davi: "Como você sabe disso?" Chamada: "Você confia na voz do rádio ou no copiloto?" |
+| 2 | Assentos vazios | Na fogueira, Otávio foge da pergunta ("Resgate não pergunta NOME"); fala em jangada mesmo mancando, Lia não quer o mar. À noite Davi volta ao avião: cintos abertos, manifesto com todos os nomes riscados de laranja, menos os quatro deles, circulados de vermelho. | Otávio atrás dele: "Achou o que estava procurando?" |
 | 3 | A jangada | Otávio explica a pressa: comida acaba, ninguém vem. O grupo começa a jangada com bancos e boias do avião (regra: abrigo e boia antes de mar). Lia, com medo de tubarão, faz a proposta de construir ela mesma uma jangada "segura" e ficar na beira. | Chamada de escolha: "Comenta: deixa a Lia construir a jangada ou ficam na ilha?" Último quadro: lanternas acendem na mata. |
 | 4 | Lanternas | À noite, os Homens de Laranja passam pela praia contando os bancos. O grupo se esconde nas raízes. Cida mantém Lia em silêncio. | "Eles não estão procurando sobreviventes. Estão CONTANDO." |
 | 5 | Água doce | Sem água, Cida ensina a achar e ferver água; Davi sobe nas pedras com Lia. Ao amanhecer, uma luz gira no mar. | "Essa ilha não tem farol em mapa nenhum." |
