@@ -2,7 +2,7 @@
 
 Cada linha vem de uma correção do Iuri ou de uma decisão do projeto. A skill aplicar-correcoes mantém este arquivo curto.
 
-- (2026-10-25) Davi narra em primeira pessoa e quase tudo em off; as falas em cena são curtas.
+- (2026-10-26) Davi narra em primeira pessoa e boa parte em off; Lia, Cida e Otávio conversam e discordam em cena, com falas curtas.
 - (2026-10-25) Sem violência gráfica: nada de sangue, corpos ou ferimentos à mostra. O perigo é sugerido por sombras, sons e lanternas.
 - (2026-10-25) Os Homens de Laranja nunca falam e nunca mostram o rosto: aparecem de longe ou de costas.
 - (2026-10-25) A voz do rádio (Valéria) nunca é mostrada antes da parte 17.
