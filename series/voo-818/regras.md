@@ -6,7 +6,7 @@ Cada linha vem de uma correção do Iuri ou de uma decisão do projeto. A skill 
 - (2026-10-26) Sem violência gráfica: nada de sangue nem corpos. Ferimento aparece só como curativo e tala. O perigo é sugerido por sombras, sons e lanternas.
 - (2026-10-25) Os Homens de Laranja nunca falam e nunca mostram o rosto: aparecem de longe ou de costas.
 - (2026-10-25) A voz do rádio (Valéria) nunca é mostrada antes da parte 17.
-- (2026-10-25) Na cabine, use `camera` fixa: no corredor (x entre -0,3 e 0,3) ou acima dos encostos (y 1,2 a 1,6). Dentro dos bancos a lente fica cega.
+- (2026-10-26) Na cabine, use `camera` fixa só no corredor (x entre -0,4 e 0,4), com altura de 1,2 a 1,6. Fora do corredor a lente entra nos bancos ou no bagageiro e o quadro fica preto.
 - (2026-10-25) Objeto `prancheta` (manifesto) no assento: marca `assento_manifesto`; plano detalhe com camera [0.1,1.5,-1.9] e alvo no ponto `manifesto`.
 - (2026-10-25) Homens de Laranja de longe: objeto `lanternas_mata` à noite, entre as árvores (nunca em close).
 - (2026-10-25) Vista do farol e do barco (partes 5, 8, 9): cenário `mirante` com farol/barco em alt -35; da praia, farol longe no mar (ex.: em [-20, 90]).
