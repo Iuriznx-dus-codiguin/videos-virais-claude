@@ -1,5 +1,5 @@
 // Renderiza um episódio em MP4 vertical (1080x1920, 30 fps) com a voz e os sons da trilha.
-// Uso: npm run render -- <serie> <parte> [--saida=caminho.mp4] [--crf=24]
+// Uso: npm run render -- <serie> <parte> [--saida=caminho.mp4] [--crf=18]
 import {renderMedia, selectComposition} from '@remotion/renderer';
 import {mkdirSync} from 'node:fs';
 import {dirname, join} from 'node:path';
@@ -17,7 +17,7 @@ const main = async () => {
 	const opc = Object.fromEntries(args.filter((a) => a.startsWith('--')).map((a) => a.slice(2).split('=')));
 	const [serie, parteTxt] = args.filter((a) => !a.startsWith('--'));
 	if (!serie || !parteTxt) {
-		console.error('uso: npm run render -- <serie> <parte> [--saida=caminho.mp4] [--crf=24]');
+		console.error('uso: npm run render -- <serie> <parte> [--saida=caminho.mp4] [--crf=18]');
 		process.exit(2);
 	}
 	const parte = Number(parteTxt);
@@ -38,7 +38,7 @@ const main = async () => {
 		codec: 'h264',
 		outputLocation: saida,
 		inputProps,
-		crf: Number(opc.crf ?? 24),
+		crf: Number(opc.crf ?? 18),
 		concurrency: 2,
 		browserExecutable: CHROME,
 		chromiumOptions: {gl: 'swangle'},

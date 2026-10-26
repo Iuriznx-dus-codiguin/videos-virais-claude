@@ -206,7 +206,8 @@ export const Iluminacao: React.FC<{nome: string; foco: V3; alcanceSombra?: numbe
 				color={linear(...c.sol)}
 				intensity={Math.PI}
 				castShadow
-				shadow-mapSize={[2048, 2048]}
+				shadow-mapSize={[4096, 4096]}
+				shadow-radius={3}
 				shadow-camera-left={-alcanceSombra}
 				shadow-camera-right={alcanceSombra}
 				shadow-camera-top={alcanceSombra}

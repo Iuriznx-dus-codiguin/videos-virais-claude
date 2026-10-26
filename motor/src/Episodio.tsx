@@ -8,6 +8,9 @@ import {Mundo} from './3d/Mundo';
 import {Trilha} from './audio/Trilha';
 import type {LinhaDoTempo} from './roteiro/tipos';
 
+/** Supersampling: desenha o 3D 1,5x maior e reduz, para bordas e sombras lisas. */
+const DPR = 1.5;
+
 export interface PropsEpisodio extends Record<string, unknown> {
 	serie: string;
 	parte: number;
@@ -25,7 +28,7 @@ export const Episodio: React.FC<PropsEpisodio> = ({linha, semVoz = true, semAudi
 	const t = frame / fps;
 	return (
 		<AbsoluteFill style={{backgroundColor: '#000'}}>
-			<ThreeCanvas width={width} height={height} flat shadows="percentage" gl={{antialias: true}}>
+			<ThreeCanvas width={width} height={height} flat shadows="percentage" dpr={DPR} gl={{antialias: true}}>
 				<Mundo linha={linha} t={t} />
 			</ThreeCanvas>
 			<Camada2D linha={linha} t={t} frame={frame} fps={fps} semVoz={semVoz} />

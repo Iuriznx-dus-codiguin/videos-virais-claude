@@ -93,7 +93,7 @@ export const CENARIOS: Record<string, DefCenario> = {
 		tamanhos: {parede: 2.6, parede_esq: 2.2, parede_dir: 2.2},
 	},
 	cabine: {
-		descricao: 'Dentro da fuselagem do Voo 818: corredor comprido (eixo z, de -13 a 13) com bancos azuis nos dois lados (x = ±0,62 e ±1,16), bagageiros, luzes de teto e celulares acesos nos bancos vazios. Parede a ±1,7 m: use câmera fixa (campo "camera") dentro do corredor, com x entre -0,4 e 0,4.',
+		descricao: 'Dentro da fuselagem do Voo 818: corredor comprido (eixo z, de -13 a 13) com bancos azuis nos dois lados (x = ±0,62 e ±1,16), bagageiros, luzes de teto e celulares acesos nos bancos vazios. Parede a ±1,7 m: use câmera fixa (campo "camera") dentro do corredor, com x entre -0,4 e 0,4. Os bonecos são grandes para a cabine: use "escala": 0.55 e, nos bancos, "pose": "sentado_banco" (bancos em z = 0,15 + 0,95·n, virados para +z).',
 		luzPadrao: 'entardecer',
 		marcas: {
 			frente: [0, 7],

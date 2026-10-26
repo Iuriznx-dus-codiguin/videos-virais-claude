@@ -184,6 +184,27 @@ const sentado: PoseParcial = {
 	cotovD: 0.55,
 };
 
+/** Sentado num banco de avião, joelhos dobrados e pés no chão. Feito para personagem com
+ * escala ~0,55 na cabine (o assento fica a 0,45 m): o quadril sem escala fica a 0,82. */
+const sentadoBanco: PoseParcial = {
+	altQuadril: 0.82,
+	incl: -0.1,
+	peEz: 0.55,
+	peEy: chaoPe(0.82),
+	peDz: 0.5,
+	peDy: chaoPe(0.82),
+	abrePernas: 0.1,
+	cabPitch: 0.05,
+	ombroE: 0.95,
+	abreE: 0.28,
+	giroE: -0.2,
+	cotovE: 0.9,
+	ombroD: 0.95,
+	abreD: 0.28,
+	giroD: 0.2,
+	cotovD: 0.9,
+};
+
 const medo: PoseParcial = {
 	altQuadril: 1.1,
 	incl: 0.14,
@@ -236,6 +257,7 @@ export const POSES_CORPO: Record<string, PoseParcial> = {
 	esconder: escondido,
 	sentado,
 	sentar: sentado,
+	sentado_banco: sentadoBanco,
 	medo,
 	maos_na_cabeca: maosNaCabeca,
 	bracos_cruzados: bracosCruzados,

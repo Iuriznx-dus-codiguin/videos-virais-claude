@@ -19,7 +19,7 @@ Trabalhe sempre em **uma série por sessão** (economiza uso). Fale com o Iuri e
 5. Série nova: crie `biblia.json` (modelo: `public/series/voo-818/biblia.json`), `regras.md` e `roteiro-geral.md` com a história inteira e o que acontece em cada parte.
 
 ## 2. Ideia
-- ~55 a 60 s, uma ideia só, gancho nos 3 primeiros segundos, termina em **cliffhanger**.
+- ~1min20 (75 a 88 s com a voz), uma ideia só, gancho nos 3 primeiros segundos, termina em **cliffhanger**.
 - A parte N continua exatamente do `resumo_ultima`. Não repita o já mostrado, não resolva o mistério antes da hora (o `roteiro-geral.md` diz quando).
 - Último quadro: chamada para comentar "PARTE N+1" (campo `chamada`, com uma pergunta curta que puxa comentário).
 - Frases curtas, faladas, português do Brasil. MAIÚSCULAS viram ênfase na legenda.
@@ -40,7 +40,7 @@ Trabalhe sempre em **uma série por sessão** (economiza uso). Fale com o Iuri e
 1. Personagem sem voz guardada (`vozes/<id>.pt`): `npx tsx ferramentas/escolher-voz.ts <serie> <id> --auto` (usa `voz.instruct` da bíblia, em inglês, ex.: "male, young adult, low pitch"). Vozes guardadas nunca são recriadas.
 2. `npm run vozes -- <serie> <parte>` (~10 s de cálculo por segundo de fala; falas já geradas são reaproveitadas).
 3. **Logo em seguida** salve, para não perder as vozes se a sessão cair: `npm run dados -- salvar <serie> _historias`.
-4. `npm run validar -- <serie> <parte>` de novo, agora com os tempos reais: até 60 s. Se passar, corte falas e refaça só as que mudaram.
+4. `npm run validar -- <serie> <parte>` de novo, agora com os tempos reais: 75 a 88 s. Se passar, corte falas e refaça só as que mudaram.
 
 ## 6. Render e conferência
 1. `npm run render -- <serie> <parte>` (~15 min; sai em `out/<serie>-epNN.mp4`, com o volume já normalizado em -14 LUFS).

@@ -407,8 +407,9 @@ export const resolverEpisodio = (ep: Episodio, bibliaSerie: Biblia, alinhamentos
 		if (duracao < min) avisos.push(`duração total ${duracao.toFixed(1)}s: curta demais (alvo ${alvo})`);
 		if (duracao > max) avisos.push(`duração total ${duracao.toFixed(1)}s: longa demais (alvo ${alvo})`);
 	} else {
-		if (duracao < 45) avisos.push(`duração total ${duracao.toFixed(1)}s: curta demais para um episódio (alvo 55 a 62s)`);
-		if (duracao > 65) avisos.push(`duração total ${duracao.toFixed(1)}s: passa de 1 minuto (alvo 55 a 62s)`);
+		// histórias: alvo ~1min20 (pedido do Iuri em 26/10)
+		if (duracao < 72) avisos.push(`duração total ${duracao.toFixed(1)}s: curta demais para um episódio (alvo 75 a 88s)`);
+		if (duracao > 92) avisos.push(`duração total ${duracao.toFixed(1)}s: longa demais (alvo 75 a 88s)`);
 	}
 
 	return {
