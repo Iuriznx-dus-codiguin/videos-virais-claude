@@ -291,21 +291,21 @@
           "tipo": "close",
           "alvo": "davi",
           "camera": [
-            5.8,
-            2.45,
-            5.0
+            7.0,
+            3.2,
+            3.6
           ],
           "movimento": "aproximar",
-          "intensidade": 0.3
+          "intensidade": 0.2
         },
         {
           "de": "f2",
           "tipo": "medio",
           "alvo": "otavio",
           "camera": [
-            4.5,
-            2.5,
-            4.2
+            3.4,
+            3.2,
+            5.6
           ]
         },
         {
@@ -335,9 +335,9 @@
           "tipo": "medio",
           "alvo": "otavio",
           "camera": [
-            4.2,
-            2.5,
-            4.1
+            3.4,
+            3.2,
+            5.6
           ]
         },
         {
@@ -359,9 +359,9 @@
             4.6
           ],
           "camera": [
-            5.2,
-            5.5,
-            -3.8
+            8.9,
+            5.6,
+            14.4
           ],
           "movimento": "afastar",
           "intensidade": 0.3
@@ -447,9 +447,9 @@
           "tipo": "detalhe",
           "alvo": "banco_31c",
           "camera": [
-            0.2,
-            1.2,
-            1.6
+            -0.05,
+            1.45,
+            0.9
           ],
           "movimento": "aproximar",
           "intensidade": 0.3
@@ -536,7 +536,8 @@
       "objetos": [
         {
           "tipo": "prancheta",
-          "em": "assento_manifesto"
+          "em": "assento_manifesto",
+          "circulados": 4
         }
       ],
       "acoes": [
@@ -555,6 +556,16 @@
           "quem": "davi",
           "expressao": "medo",
           "de": "f13"
+        },
+        {
+          "quem": "davi",
+          "olhar": "corredor_frente",
+          "de": "f13"
+        },
+        {
+          "quem": "davi",
+          "olhar": "manifesto",
+          "de": "f14"
         },
         {
           "quem": "davi",
@@ -579,12 +590,35 @@
           "tipo": "detalhe",
           "alvo": "manifesto",
           "camera": [
-            0.15,
-            1.5,
-            -3.3
+            0.55,
+            1.35,
+            -2.25
           ],
           "movimento": "aproximar",
           "intensidade": 0.3
+        },
+        {
+          "de": "f13",
+          "tipo": "close",
+          "alvo": "davi",
+          "camera": [
+            0.05,
+            1.3,
+            -0.7
+          ],
+          "movimento": "fixo"
+        },
+        {
+          "de": "f14",
+          "tipo": "detalhe",
+          "alvo": "manifesto",
+          "camera": [
+            0.62,
+            1.05,
+            -2.3
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
         },
         {
           "de": "f15",
@@ -592,8 +626,8 @@
           "alvo": "davi",
           "camera": [
             0,
-            1.15,
-            -1.3
+            1.25,
+            -0.9
           ],
           "movimento": "aproximar",
           "intensidade": 0.4
@@ -647,7 +681,8 @@
       "objetos": [
         {
           "tipo": "prancheta",
-          "em": "assento_manifesto"
+          "em": "assento_manifesto",
+          "circulados": 4
         }
       ],
       "acoes": [
