@@ -333,6 +333,12 @@ const Efeitos: React.FC<{linha: LinhaDoTempo; t: number}> = ({linha, t}) => {
 		if (e.efeito === 'preto' && t >= e.ini && t <= e.fim) preto = Math.max(preto, intens * Math.sin((Math.PI * (t - e.ini)) / Math.max(e.fim - e.ini, 0.05)));
 		if (e.efeito === 'vinheta' && t >= e.ini && t <= e.fim) vinheta = Math.max(vinheta, intens * smoothstep(e.ini, e.ini + 0.3, t));
 		if (e.efeito === 'chuva' && t >= e.ini && t <= e.fim) chuva = Math.max(chuva, intens * smoothstep(e.ini, e.ini + 0.4, t));
+		if (e.efeito === 'piscar' && t >= e.ini && t <= e.fim) {
+			// luz falhando: apagões curtos e irregulares (mesmo padrão em todo render)
+			const passo = Math.floor((t - e.ini) / 0.07);
+			const apagada = Math.sin(passo * 12.9898 + 78.233) * 43758.5453;
+			if (apagada - Math.floor(apagada) < 0.34) preto = Math.max(preto, intens * 0.62);
+		}
 		if (e.efeito === 'relampago' && t >= e.ini && t <= e.fim) {
 			// dois clarões seguidos, o segundo mais forte
 			const d = t - e.ini;

@@ -1,9 +1,11 @@
 // Objetos de cena que o roteiro pode colocar: SOS de pedras, trilha de pegadas gigantes,
-// fogueira (chamas, brasas ou apagada), tronco caído, riscos na parede e caixote.
+// fogueira (chamas, brasas ou apagada, ou acendendo), tronco caído, riscos na parede, caixote,
+// garrafas, mantimentos numa lona e máscaras de oxigênio. Todo objeto pode surgir ("aparece")
+// e sumir ("some") num instante do roteiro.
 import React from 'react';
 import {CENARIOS} from '../catalogo';
 import type {Objeto} from '../roteiro/tipos';
-import {V2, V3, aleatorio} from '../util/mat';
+import {V2, V3, aleatorio, clamp, easeOut, lerp, smoothstep} from '../util/mat';
 import {AviaoCaindo, Destrocos, Malas} from './aviao';
 import {BarrasOuro, Barco, CaixaPreta, Farol, LanternasMata, LuzFarol} from './ilha';
 import {Malha, brilho, caixa, cilindro, cone, decalque, disco, esfera, fumacaMat, haloMat, ico, toon, toro, translucido} from './base';
@@ -115,10 +117,14 @@ const PedrasFogueira: React.FC = React.memo(() => (
 	</>
 ));
 
-const Fogueira: React.FC<{x: number; z: number; fogo: string; t: number}> = ({x, z, fogo, t}) => {
-	const chamas = fogo === 'chamas';
-	const brasas = fogo !== 'apagada';
-	const tremula = 0.82 + 0.12 * Math.sin(t * 11.3) + 0.06 * Math.sin(t * 23.1 + 1);
+/** Com `acende`, a fogueira começa apagada e as chamas crescem em ~1,5 s a partir dali. */
+const Fogueira: React.FC<{x: number; z: number; fogo: string; t: number; acende?: number}> = ({x, z, fogo, t, acende}) => {
+	const aceso = acende === undefined || t >= acende;
+	// força do fogo: começa pequeno e tremido e cresce até o normal
+	const k = acende === undefined ? 1 : smoothstep(acende, acende + 1.5, t) * (0.85 + 0.15 * Math.sin(t * 17));
+	const chamas = fogo === 'chamas' && aceso;
+	const brasas = fogo !== 'apagada' && aceso;
+	const tremula = (0.82 + 0.12 * Math.sin(t * 11.3) + 0.06 * Math.sin(t * 23.1 + 1)) * Math.max(0.15, k);
 	return (
 		<group position={[x, 0, z]}>
 			<PedrasFogueira />
@@ -134,7 +140,7 @@ const Fogueira: React.FC<{x: number; z: number; fogo: string; t: number}> = ({x,
 				: null}
 			{chamas
 				? [0, 1, 2].map((i) => {
-						const s = (0.75 + 0.25 * Math.sin(t * (9 + i * 2.3) + i)) * (i === 0 ? 1 : 0.7);
+						const s = (0.75 + 0.25 * Math.sin(t * (9 + i * 2.3) + i)) * (i === 0 ? 1 : 0.7) * (0.2 + 0.8 * k);
 						return (
 							<mesh key={i} geometry={cone(0.2, 0.7, 8)} material={brilho(i === 0 ? '#FFB23A' : '#FF6A1F', 1.3)} position={[(i - 1) * 0.12, 0.35 * s + 0.1, 0]} scale={[s, s, s]} />
 						);
@@ -155,7 +161,7 @@ const Fogueira: React.FC<{x: number; z: number; fogo: string; t: number}> = ({x,
 			{brasas ? (
 				<>
 					<pointLight position={[0, 0.5, 0]} color={chamas ? '#FF9A4A' : '#FF6A2A'} intensity={(chamas ? 9 : 3.2) * tremula} distance={chamas ? 9 : 4.5} decay={2} />
-					<sprite material={haloMat('#FF7A2A', chamas ? 0.55 : 0.35)} position={[0, 0.2, 0]} scale={chamas ? [2.2, 2.2, 1] : [1.1, 1.1, 1]} />
+					<sprite material={haloMat('#FF7A2A', chamas ? 0.55 : 0.35)} position={[0, 0.2, 0]} scale={chamas ? [0.6 + 1.6 * k, 0.6 + 1.6 * k, 1] : [1.1, 1.1, 1]} />
 				</>
 			) : null}
 		</group>
@@ -217,6 +223,121 @@ const Radio: React.FC<{x: number; z: number; giro: number; t: number; ligado: bo
 	</group>
 );
 
+// --- garrafas, mantimentos e máscaras -----------------------------------------------------
+
+/** Garrafa de água em pé, com o fundo no chão. */
+const GarrafaEmPe: React.FC<{x: number; z: number; y?: number}> = ({x, z, y = 0}) => (
+	<group position={[x, y, z]}>
+		<Malha g={cilindro(0.075, 0.075, 0.3, 16)} m={toon('#8FD3FF')} position={[0, 0.15, 0]} contorno={0.012} />
+		<Malha g={cilindro(0.03, 0.075, 0.07, 14)} m={toon('#8FD3FF')} position={[0, 0.335, 0]} contorno={0.01} />
+		<Malha g={cilindro(0.034, 0.034, 0.04, 12)} m={toon('#F4F6F8')} position={[0, 0.39, 0]} contorno={0.008} />
+		<mesh geometry={cilindro(0.078, 0.078, 0.1, 16)} material={toon('#2E86DE')} position={[0, 0.15, 0]} />
+	</group>
+);
+
+const Garrafas: React.FC<{x: number; z: number; quantas: number}> = React.memo(({x, z, quantas}) => (
+	<>
+		{Array.from({length: quantas}, (_, i) => (
+			<GarrafaEmPe key={i} x={x + (i % 3) * 0.19 - (Math.min(quantas, 3) - 1) * 0.095} z={z + Math.floor(i / 3) * 0.19} />
+		))}
+	</>
+));
+
+const CORES_PACOTE = ['#F2A541', '#E4572E', '#76B041', '#F4D35E', '#B56576'];
+
+/** Pacote de comida deitado (biscoito, castanha, barra). */
+const Pacote: React.FC<{x: number; z: number; i: number}> = ({x, z, i}) => (
+	<group position={[x, 0.06, z]} rotation={[0, (i % 3) * 0.25 - 0.25, 0]}>
+		<Malha g={caixa(0.24, 0.1, 0.16)} m={toon(CORES_PACOTE[i % CORES_PACOTE.length])} contorno={0.01} />
+		<mesh geometry={caixa(0.244, 0.03, 0.164)} material={toon('#F7F4EA')} position={[0, 0.02, 0]} />
+	</group>
+);
+
+/**
+ * Lona com os mantimentos do grupo: garrafas numa fileira e pacotes na outra. Entre `enche` e
+ * `cheio` os itens vão aparecendo um a um, alternando garrafa e pacote (alguém arrumando).
+ */
+const Mantimentos: React.FC<{x: number; z: number; giro: number; t: number; garrafas: number; pacotes: number; inicial?: number; enche?: number; cheio?: number}> = ({
+	x,
+	z,
+	giro,
+	t,
+	garrafas,
+	pacotes,
+	inicial,
+	enche,
+	cheio,
+}) => {
+	const ordem: {tipo: 'g' | 'p'; i: number}[] = [];
+	for (let i = 0; i < Math.max(garrafas, pacotes); i++) {
+		if (i < garrafas) ordem.push({tipo: 'g', i});
+		if (i < pacotes) ordem.push({tipo: 'p', i});
+	}
+	const total = ordem.length;
+	// quantos já estão na lona (fração para o pulinho do último)
+	let n = Math.min(total, inicial ?? total);
+	if (enche !== undefined) {
+		const fim = cheio ?? enche + 4;
+		const de = Math.min(total, inicial ?? 0);
+		n = t < enche ? de : lerp(de, total, clamp((t - enche) / Math.max(fim - enche, 0.1)));
+	}
+	return (
+		<group position={[x, 0, z]} rotation={[0, giro, 0]}>
+			<Malha g={caixa(1.6, 0.02, 1.0)} m={toon('#3E6FB0')} position={[0, 0.01, 0]} contorno={0.012} sombra={false} />
+			<mesh geometry={caixa(1.62, 0.022, 0.06)} material={toon('#2C5290')} position={[0, 0.012, 0.47]} />
+			{ordem.map((it, k) => {
+				if (k >= Math.ceil(n)) return null;
+				// o item mais novo cai na lona com um pulinho
+				const p = k < Math.floor(n) ? 1 : n - Math.floor(n);
+				const y = (1 - easeOut(p * 1.6)) * 0.25;
+				const s = 0.6 + 0.4 * clamp(p * 2);
+				const px = -0.6 + (it.i % 6) * 0.24;
+				return it.tipo === 'g' ? (
+					<group key={k} position={[0, y, 0]} scale={s}>
+						<GarrafaEmPe x={px} z={-0.22} y={0.02} />
+					</group>
+				) : (
+					<group key={k} position={[0, y, 0]} scale={s}>
+						<Pacote x={px} z={0.22} i={it.i} />
+					</group>
+				);
+			})}
+		</group>
+	);
+};
+
+/**
+ * Par de máscaras de oxigênio que despenca do teto da cabine em `cai`: desce num tranco,
+ * quica no fim do tubo e fica balançando com a turbulência.
+ */
+const Mascaras: React.FC<{x: number; z: number; t: number; cai: number; quantas: number}> = ({x, z, t, cai, quantas}) => {
+	if (t < cai) return null;
+	const d = t - cai;
+	// comprimento do tubo: cai em 0,25 s e quica
+	const queda = clamp(d / 0.25);
+	const quique = d > 0.25 ? Math.exp(-(d - 0.25) * 7) * Math.sin((d - 0.25) * 22) * 0.06 : 0;
+	const L = lerp(0.04, 0.3, easeOut(queda)) + quique;
+	return (
+		<>
+			{Array.from({length: quantas}, (_, i) => {
+				const lado = quantas === 1 ? 0 : (i / (quantas - 1) - 0.5) * 0.5;
+				const fase = i * 1.9 + x * 3;
+				const balanco = 0.32 * Math.exp(-d * 0.7) * Math.sin(d * 4.6 + fase) + 0.07 * Math.sin(t * 11 + fase);
+				const balancoZ = 0.18 * Math.exp(-d * 0.9) * Math.sin(d * 3.7 + fase + 1) + 0.05 * Math.sin(t * 9 + fase);
+				return (
+					<group key={i} position={[x + lado, 1.42, z]} rotation={[balanco, 0, balancoZ]}>
+						<mesh geometry={cilindro(0.005, 0.005, L, 6)} material={translucido('#E8F1F5', 0.55)} position={[0, -L / 2, 0]} />
+						<group position={[0, -L - 0.06, 0]}>
+							<Malha g={cilindro(0.085, 0.05, 0.11, 14)} m={toon('#F7C948')} contorno={0.008} />
+							<mesh geometry={toro(0.07, 0.006, 18, 6)} material={toon('#F4F4F4')} position={[0, -0.04, 0]} rotation={[Math.PI / 2, 0, 0]} />
+						</group>
+					</group>
+				);
+			})}
+		</>
+	);
+};
+
 /** Lista de passageiros (manifesto) numa prancheta: nomes riscados de laranja e um circulado de vermelho. */
 const Prancheta: React.FC<{x: number; z: number; giro: number; alt: number; deitada: boolean; escala: number}> = React.memo(({x, z, giro, alt, deitada, escala}) => (
 	<group position={[x, alt, z]} rotation={[deitada ? -Math.PI / 2 : 0, giro, 0, 'YXZ']} scale={0.8 * escala}>
@@ -237,61 +358,103 @@ const Prancheta: React.FC<{x: number; z: number; giro: number; alt: number; deit
 	</group>
 ));
 
+/** Objeto que surge ("aparece") cresce com um pulinho; antes disso e depois de "some" não existe. */
+const visibilidade = (o: Objeto, t: number) => {
+	const aparece = o._aparece as number | undefined;
+	const some = o._some as number | undefined;
+	if (aparece !== undefined && t < aparece) return 0;
+	if (some !== undefined && t >= some) return 0;
+	if (aparece === undefined) return 1;
+	const p = clamp((t - aparece) / 0.22);
+	return p >= 1 ? 1 : 0.35 + 0.65 * p + Math.sin(Math.PI * p) * 0.15;
+};
+
 export const Objetos: React.FC<{lista: Objeto[]; cenario: string; t: number}> = ({lista, cenario, t}) => (
 	<>
 		{lista.map((o, i) => {
+			const vis = visibilidade(o, t);
+			if (vis <= 0) return null;
 			const [x, z] = posicaoObjeto(o, cenario);
-			const giro = ((o.giro ?? 0) * Math.PI) / 180;
-			const esc = o.escala ?? 1;
-			switch (o.tipo) {
-				case 'sos':
-					return <Sos key={i} x={x} z={z} escala={esc} />;
-				case 'pegadas_gigantes':
-					return <Pegadas key={i} de={[x, z]} ate={(o.ate as V2) ?? [x, z - 10]} passo={(o.passo as number) ?? 1.75} escala={1.6 * esc} />;
-				case 'fogueira':
-					return <Fogueira key={i} x={x} z={z} fogo={(o.fogo as string) ?? 'chamas'} t={t} />;
-				case 'tronco':
-					return <Tronco key={i} x={x} z={z} giro={giro} />;
-				case 'riscos':
-					return <Riscos key={i} x={x} z={z} quantos={(o.quantos as number) ?? 100} />;
-				case 'caixote':
-					return <Caixote key={i} x={x} z={z} giro={giro} />;
-				case 'destrocos':
-					return <Destrocos key={i} x={x} z={z} giro={giro} escala={esc} t={t} />;
-				case 'malas':
-					return <Malas key={i} x={x} z={z} quantas={(o.quantas as number) ?? 8} raio={(o.raio as number) ?? 5} semente={(o.semente as number) ?? 3} />;
-				case 'radio':
-					return <Radio key={i} x={x} z={z} giro={giro} t={t} ligado={o.ligado !== false} />;
-				case 'lanternas_mata':
-					return <LanternasMata key={i} x={x} z={z} giro={giro} t={t} quantas={(o.quantas as number) ?? 3} largura={(o.largura as number) ?? 8} vultos={o.vultos !== false} />;
-				case 'farol':
-					return <Farol key={i} x={x} z={z} alt={(o.alt as number) ?? 0} giro={giro} escala={esc} t={t} modo={(o.modo as string) ?? 'gira'} ilhota={o.ilhota !== false} />;
-				case 'barco':
-					return <Barco key={i} x={x} z={z} alt={(o.alt as number) ?? 0} giro={giro} escala={esc} t={t} luzes={o.luzes !== false} caixas={o.caixas !== false} />;
-				case 'luz_farol':
-					return <LuzFarol key={i} x={x} z={z} t={t} modo={(o.modo as string) ?? 'apagada'} />;
-				case 'caixa_preta':
-					return <CaixaPreta key={i} x={x} z={z} giro={giro} alt={(o.alt as number) ?? 0} />;
-				case 'barras_ouro':
-					return <BarrasOuro key={i} x={x} z={z} giro={giro} />;
-				case 'prancheta':
-					return <Prancheta key={i} x={x} z={z} giro={giro} alt={(o.alt as number) ?? 0.46} deitada={o.deitada !== false} escala={esc} />;
-				case 'aviao':
-					return (
-						<AviaoCaindo
-							key={i}
-							de={(o.de_ponto as V3) ?? [-60, 70, -120]}
-							ate={(o.ate_ponto as V3) ?? [20, 2, 40]}
-							ini={(o._ini as number) ?? 0}
-							fim={(o._fim as number) ?? 4}
-							t={t}
-							fogo={o.fogo !== false}
-						/>
-					);
-				default:
-					return null;
-			}
+			const el = objeto(o, i, x, z, t);
+			if (vis >= 1 || !el) return el;
+			return (
+				<group key={i} position={[x, 0, z]} scale={vis}>
+					<group position={[-x, 0, -z]}>{el}</group>
+				</group>
+			);
 		})}
 	</>
 );
 
+/** Desenho de um objeto do roteiro (sem a visibilidade). */
+const objeto = (o: Objeto, i: number, x: number, z: number, t: number) => {
+	const giro = ((o.giro ?? 0) * Math.PI) / 180;
+	const esc = o.escala ?? 1;
+	switch (o.tipo) {
+		case 'sos':
+			return <Sos key={i} x={x} z={z} escala={esc} />;
+		case 'pegadas_gigantes':
+			return <Pegadas key={i} de={[x, z]} ate={(o.ate as V2) ?? [x, z - 10]} passo={(o.passo as number) ?? 1.75} escala={1.6 * esc} />;
+		case 'fogueira':
+			return <Fogueira key={i} x={x} z={z} fogo={(o.fogo as string) ?? 'chamas'} t={t} acende={o._acende as number | undefined} />;
+		case 'garrafa':
+			return <Garrafas key={i} x={x} z={z} quantas={(o.quantas as number) ?? 1} />;
+		case 'mantimentos':
+			return (
+				<Mantimentos
+					key={i}
+					x={x}
+					z={z}
+					giro={giro}
+					t={t}
+					garrafas={(o.garrafas as number) ?? 6}
+					pacotes={(o.pacotes as number) ?? 5}
+					inicial={(o.inicial as number) ?? 0}
+					enche={o._enche as number | undefined}
+					cheio={o._cheio as number | undefined}
+				/>
+			);
+		case 'mascaras':
+			return <Mascaras key={i} x={x} z={z} t={t} cai={(o._cai as number) ?? -1e9} quantas={(o.quantas as number) ?? 2} />;
+		case 'tronco':
+			return <Tronco key={i} x={x} z={z} giro={giro} />;
+		case 'riscos':
+			return <Riscos key={i} x={x} z={z} quantos={(o.quantos as number) ?? 100} />;
+		case 'caixote':
+			return <Caixote key={i} x={x} z={z} giro={giro} />;
+		case 'destrocos':
+			return <Destrocos key={i} x={x} z={z} giro={giro} escala={esc} t={t} />;
+		case 'malas':
+			return <Malas key={i} x={x} z={z} quantas={(o.quantas as number) ?? 8} raio={(o.raio as number) ?? 5} semente={(o.semente as number) ?? 3} />;
+		case 'radio':
+			return <Radio key={i} x={x} z={z} giro={giro} t={t} ligado={o.ligado !== false} />;
+		case 'lanternas_mata':
+			return <LanternasMata key={i} x={x} z={z} giro={giro} t={t} quantas={(o.quantas as number) ?? 3} largura={(o.largura as number) ?? 8} vultos={o.vultos !== false} />;
+		case 'farol':
+			return <Farol key={i} x={x} z={z} alt={(o.alt as number) ?? 0} giro={giro} escala={esc} t={t} modo={(o.modo as string) ?? 'gira'} ilhota={o.ilhota !== false} />;
+		case 'barco':
+			return <Barco key={i} x={x} z={z} alt={(o.alt as number) ?? 0} giro={giro} escala={esc} t={t} luzes={o.luzes !== false} caixas={o.caixas !== false} />;
+		case 'luz_farol':
+			return <LuzFarol key={i} x={x} z={z} t={t} modo={(o.modo as string) ?? 'apagada'} />;
+		case 'caixa_preta':
+			return <CaixaPreta key={i} x={x} z={z} giro={giro} alt={(o.alt as number) ?? 0} />;
+		case 'barras_ouro':
+			return <BarrasOuro key={i} x={x} z={z} giro={giro} />;
+		case 'prancheta':
+			return <Prancheta key={i} x={x} z={z} giro={giro} alt={(o.alt as number) ?? 0.46} deitada={o.deitada !== false} escala={esc} />;
+		case 'aviao':
+			return (
+				<AviaoCaindo
+					key={i}
+					de={(o.de_ponto as V3) ?? [-60, 70, -120]}
+					ate={(o.ate_ponto as V3) ?? [20, 2, 40]}
+					ini={(o._ini as number) ?? 0}
+					fim={(o._fim as number) ?? 4}
+					t={t}
+					fogo={o.fogo !== false}
+				/>
+			);
+		default:
+			return null;
+	}
+};

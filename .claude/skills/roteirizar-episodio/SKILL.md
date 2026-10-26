@@ -20,7 +20,9 @@ Trabalhe sempre em **uma série por sessão** (economiza uso). Fale com o Iuri e
 
 ## 2. Ideia
 - ~1min20 (75 a 88 s com a voz), uma ideia só, gancho nos 3 primeiros segundos, termina em **cliffhanger**.
+- Abertura de ação vivida por dentro (ex.: turbulência no assento) é curta, ~4 s, e **sem fala**: comece `falas` com um silêncio (`{"id": "s1", "silencio": 4.4}`) e deixe imagem e som contarem.
 - A parte N continua exatamente do `resumo_ultima`. Não repita o já mostrado, não resolva o mistério antes da hora (o `roteiro-geral.md` diz quando).
+- O final planta dúvida: uma revelação e uma pergunta que fica sem resposta. Quando houver dois lados, a chamada vira escolha ("Você confia na voz do rádio ou no copiloto?").
 - Último quadro: chamada para comentar "PARTE N+1" (campo `chamada`, com uma pergunta curta que puxa comentário).
 - Frases curtas, faladas, português do Brasil. MAIÚSCULAS viram ênfase na legenda.
 
@@ -31,6 +33,10 @@ Trabalhe sempre em **uma série por sessão** (economiza uso). Fale com o Iuri e
 - Som por baixo de fala: volume até 0,5. Nos primeiros 4 s a primeira fala precisa ser entendida.
 - Chamada final: fundo com close claro do protagonista reagindo (`close`, `frente`), nunca um detalhe de objeto.
 - Em cenário fechado (cabine, sala_farol, adega) use `camera` fixa; o catálogo sugere posições que não atravessam parede nem objeto.
+- **Apresentação de personagem:** um plano limpo por personagem, um de cada vez, com `rotulos` ("LIA · 13 ANOS"): nada entre a câmera e o rosto, nenhuma cabeça de outro personagem cortada na borda, e a fala diz o nome com clareza ("Lia, treze anos.", não "Era a Lia").
+- **Enquadramento:** o personagem tem ~3,1 m de altura na escala 1 e a cabeça ~0,84 m. Close: câmera a ~3 m do rosto; médio: ~4,4 m; aberto: 6 m ou mais. Uma `camera` explícita deixa o alvo (ponto ou rosto) no centro. Olhando para +z, o +x do mundo fica à esquerda da tela; olhando para -z, à direita. Em plano de um personagem com outro por perto, ponha a câmera de modo que o outro fique a mais de ~20° do eixo. O desvio automático só contorna personagens, não objetos: se um objeto tampar o rosto, mude a câmera à mão. Câmera alta apontando para baixo num rosto mostra a nuca: prefira a câmera na altura do rosto.
+- **Sobrevivência na tela:** mostre a ação acontecendo. `pegar`/`largar` com `item` (garrafa, galhos, isqueiro, radio, pacote; o item troca de mão 0,5 s depois do início do gesto), `arrumar` (agachado mexendo nas coisas), `acender` (com o isqueiro na mão) e a fogueira com `acende`, `mantimentos` com `inicial`/`enche`/`cheio`, `garrafa`, `mascaras` com `cai`. Ferido: acessórios `curativo` e `tala` (com `lado`) na bíblia e ação `mancar`. Sem sangue.
+- **Sons:** nada de assovio (tom que sobe ou desce). Para susto e tensão use `impacto`, `susto`, `tensao_sobe`, `queda`, `turbulencia`: já são graves, de ronco e pancada.
 - Salve em `public/series/<serie>/epNN.json`.
 
 ## 4. Validar
@@ -38,17 +44,19 @@ Trabalhe sempre em **uma série por sessão** (economiza uso). Fale com o Iuri e
 
 ## 5. Voz
 1. Personagem sem voz guardada (`vozes/<id>.pt`): `npx tsx ferramentas/escolher-voz.ts <serie> <id> --auto` (usa `voz.instruct` da bíblia, em inglês, ex.: "male, young adult, low pitch"). Vozes guardadas nunca são recriadas.
-2. `npm run vozes -- <serie> <parte>` (~10 s de cálculo por segundo de fala; falas já geradas são reaproveitadas).
+2. `npm run vozes -- <serie> <parte>` (~20 a 40 s de cálculo por segundo de fala; falas já geradas são reaproveitadas). No fim ele confere a pronúncia das falas novas com o Whisper (`--conferir-tudo` confere todas) e refaz as ruins com outras sementes, gravando a `semente` boa no episódio. Se uma fala sair "AINDA RUIM", reescreva a frase trocando a palavra que a voz engole e rode de novo.
 3. **Logo em seguida** salve, para não perder as vozes se a sessão cair: `npm run dados -- salvar <serie> _historias`.
 4. `npm run validar -- <serie> <parte>` de novo, agora com os tempos reais: 75 a 88 s. Se passar, corte falas e refaça só as que mudaram.
 
 ## 6. Render e conferência
-1. `npm run render -- <serie> <parte>` (~15 min; sai em `out/<serie>-epNN.mp4`, com o volume já normalizado em -14 LUFS).
-2. `npm run quadro -- <serie> <parte> 1 3 15 35 <fim-1>` e olhe as imagens em `out/quadros/`: gancho visível nos primeiros 3 s, personagem cortado, câmera atrás de objeto, legenda ilegível, chamada final com fundo claro. Se algo estiver errado, corrija e renderize de novo.
+1. Antes do render, confira um quadro de cada plano nos tempos reais: `npm run quadro -- <serie> <parte> <segundos...> --escala=0.4` (rápido) e olhe as imagens em `out/quadros/`: rosto tampado, nuca no lugar do rosto, cabeça cortada na borda, item na mão errada, personagem dentro de objeto. Corrija antes de gastar o render.
+2. `npm run render -- <serie> <parte>` em segundo plano (~55 min para 80 s em alta qualidade, crf 18; sai em `out/<serie>-epNN.mp4`, com o volume já normalizado em -14 LUFS).
+3. `npm run quadro -- <serie> <parte> 1 3 15 35 <fim-1>`: gancho visível nos primeiros 3 s, legenda legível, chamada final com fundo claro. Se algo estiver errado, corrija e renderize de novo.
 
 ## 7. Entregar
 1. Atualize `estado.json`: `proxima_parte` +1 e `resumo_ultima` (3 a 5 linhas: o que aconteceu e como terminou). Fato novo vai para `biblia.json` (`fatos`, `ganchos_abertos`).
 2. `npm run dados -- entregar <serie> <parte> --dia=AAAA-MM-DD --hora=18:00` (11:00 ou 18:00 conforme o calendário). Guarda o vídeo, o texto para postar e a série no ramo `dados`.
+3. Para o Iuri, o mp4 vai em alta qualidade (o próprio arquivo do render). Se passar de ~25 MB, mande junto uma cópia leve só para assistir no app: `ffmpeg -i out/<serie>-epNN.mp4 -c:v libx264 -crf 28 -preset veryfast -vf scale=720:-2 -c:a aac -b:a 128k <...>-leve.mp4`.
 
 ## 8. Roteiro da próxima parte (sempre)
 O Iuri revisa a produção de hoje e o roteiro da próxima juntos, para evitar erros antes de produzir.
