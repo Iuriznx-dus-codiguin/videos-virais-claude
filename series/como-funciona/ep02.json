@@ -1,0 +1,1591 @@
+{
+ "serie": "como-funciona",
+ "parte": 2,
+ "titulo": "Por que o fio da lâmpada não pega fogo?",
+ "musica": "curiosidade",
+ "personagens": {
+  "edison": {
+   "nome": "Thomas Edison",
+   "papel": "inventor da lâmpada de filamento de carbono que ficava horas acesa (EUA, 1879); não fala",
+   "visual": {
+    "altura": 1.0,
+    "corpo": "#2F3A4A",
+    "cabeca": "#F2D5BD",
+    "olhos": "ovais",
+    "sobrancelhas": "grossas",
+    "acessorios": [
+     {
+      "tipo": "cabelo_curto",
+      "cor": "#9AA0A8"
+     },
+     {
+      "tipo": "colete",
+      "cor": "#4A3A2A"
+     },
+     {
+      "tipo": "lenco",
+      "cor": "#1E1E24"
+     }
+    ]
+   }
+  }
+ },
+ "modelos": {
+  "lampada": [
+   {
+    "id": "ponta",
+    "forma": "cilindro",
+    "tam": [
+     0.04,
+     0.03
+    ],
+    "pos": [
+     0,
+     0.015,
+     0
+    ],
+    "cor": "#8E96A3",
+    "explode": [
+     0,
+     -0.25,
+     0
+    ]
+   },
+   {
+    "id": "base",
+    "forma": "cilindro",
+    "tam": [
+     0.095,
+     0.2
+    ],
+    "pos": [
+     0,
+     0.13,
+     0
+    ],
+    "cor": "#C9A24A",
+    "explode": [
+     0,
+     -0.15,
+     0
+    ]
+   },
+   {
+    "id": "rosca",
+    "forma": "mola",
+    "tam": [
+     0.1,
+     0.18,
+     5,
+     0.014
+    ],
+    "pos": [
+     0,
+     0.13,
+     0
+    ],
+    "cor": "#B8913A",
+    "explode": [
+     0,
+     -0.15,
+     0
+    ]
+   },
+   {
+    "id": "suporte",
+    "forma": "cilindro",
+    "tam": [
+     0.018,
+     0.22
+    ],
+    "pos": [
+     0,
+     0.34,
+     0
+    ],
+    "cor": "#E9F4FA",
+    "opacidade": 0.6,
+    "sem_contorno": true,
+    "explode": [
+     0,
+     0.05,
+     0.35
+    ]
+   },
+   {
+    "id": "haste_e",
+    "forma": "tubo",
+    "tam": [
+     0.008
+    ],
+    "caminho": [
+     [
+      -0.03,
+      0.23,
+      0
+     ],
+     [
+      -0.03,
+      0.38,
+      0
+     ],
+     [
+      -0.09,
+      0.52,
+      0
+     ]
+    ],
+    "cor": "#9AA3AE",
+    "explode": [
+     0,
+     0.05,
+     0.35
+    ]
+   },
+   {
+    "id": "haste_d",
+    "forma": "tubo",
+    "tam": [
+     0.008
+    ],
+    "caminho": [
+     [
+      0.03,
+      0.23,
+      0
+     ],
+     [
+      0.03,
+      0.38,
+      0
+     ],
+     [
+      0.09,
+      0.52,
+      0
+     ]
+    ],
+    "cor": "#9AA3AE",
+    "explode": [
+     0,
+     0.05,
+     0.35
+    ]
+   },
+   {
+    "id": "fio_carvao",
+    "forma": "tubo",
+    "tam": [
+     0.01
+    ],
+    "caminho": [
+     [
+      -0.09,
+      0.52,
+      0
+     ],
+     [
+      -0.07,
+      0.62,
+      0
+     ],
+     [
+      0,
+      0.66,
+      0
+     ],
+     [
+      0.07,
+      0.62,
+      0
+     ],
+     [
+      0.09,
+      0.52,
+      0
+     ]
+    ],
+    "cor": "#2E2A26",
+    "explode": [
+     0,
+     0.05,
+     0.35
+    ]
+   },
+   {
+    "id": "filamento",
+    "forma": "mola",
+    "tam": [
+     0.02,
+     0.18,
+     9,
+     0.006
+    ],
+    "pos": [
+     0,
+     0.53,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#A7AFBA",
+    "oculta": true,
+    "explode": [
+     0,
+     0.05,
+     0.35
+    ]
+   },
+   {
+    "id": "led",
+    "forma": "caixa",
+    "tam": [
+     0.12,
+     0.03,
+     0.12
+    ],
+    "pos": [
+     0,
+     0.45,
+     0
+    ],
+    "cor": "#FFF3B0",
+    "oculta": true,
+    "explode": [
+     0,
+     0.05,
+     0.35
+    ]
+   },
+   {
+    "id": "pescoco",
+    "forma": "cilindro",
+    "tam": [
+     0.1,
+     0.08,
+     0.14
+    ],
+    "pos": [
+     0,
+     0.27,
+     0
+    ],
+    "cor": "#CDEBF7",
+    "opacidade": 0.45,
+    "sem_contorno": true,
+    "explode": [
+     0,
+     0.25,
+     -0.3
+    ]
+   },
+   {
+    "id": "bulbo",
+    "forma": "esfera",
+    "tam": [
+     0.24
+    ],
+    "pos": [
+     0,
+     0.5,
+     0
+    ],
+    "cor": "#CDEBF7",
+    "opacidade": 0.45,
+    "sem_contorno": true,
+    "explode": [
+     0,
+     0.35,
+     -0.35
+    ]
+   },
+   {
+    "id": "fuligem",
+    "forma": "esfera",
+    "tam": [
+     0.235
+    ],
+    "pos": [
+     0,
+     0.5,
+     0
+    ],
+    "cor": "#2B2620",
+    "opacidade": 0.5,
+    "oculta": true,
+    "sem_contorno": true,
+    "explode": [
+     0,
+     0.35,
+     -0.35
+    ]
+   }
+  ],
+  "prototipo": [
+   {
+    "id": "base",
+    "forma": "cilindro",
+    "tam": [
+     0.05,
+     0.08
+    ],
+    "pos": [
+     0,
+     0.04,
+     0
+    ],
+    "cor": "#B87333"
+   },
+   {
+    "id": "bulbo",
+    "forma": "esfera",
+    "tam": [
+     0.12
+    ],
+    "pos": [
+     0,
+     0.2,
+     0
+    ],
+    "cor": "#DDF1FA",
+    "opacidade": 0.3,
+    "sem_contorno": true
+   },
+   {
+    "id": "bambu",
+    "forma": "tubo",
+    "tam": [
+     0.006
+    ],
+    "caminho": [
+     [
+      -0.04,
+      0.12,
+      0
+     ],
+     [
+      -0.04,
+      0.22,
+      0
+     ],
+     [
+      0,
+      0.26,
+      0
+     ],
+     [
+      0.04,
+      0.22,
+      0
+     ],
+     [
+      0.04,
+      0.12,
+      0
+     ]
+    ],
+    "cor": "#3A2E22"
+   },
+   {
+    "id": "fios",
+    "forma": "tubo",
+    "tam": [
+     0.01
+    ],
+    "caminho": [
+     [
+      0.05,
+      0.03,
+      0
+     ],
+     [
+      0.3,
+      0.02,
+      0.05
+     ],
+     [
+      0.42,
+      0.02,
+      -0.1
+     ]
+    ],
+    "cor": "#D93A3A"
+   },
+   {
+    "id": "pilha",
+    "forma": "caixa",
+    "tam": [
+     0.16,
+     0.14,
+     0.12
+    ],
+    "pos": [
+     0.45,
+     0.07,
+     -0.12
+    ],
+    "cor": "#4A5A6A"
+   }
+  ]
+ },
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "tito",
+   "texto": "Um fio mais fino que um cabelo fica tão QUENTE... que vira LUZ.",
+   "tom": "animado"
+  },
+  {
+   "id": "f2",
+   "quem": "tito",
+   "texto": "E por que ele não pega fogo? Cada peça da lâmpada resolve um problema.",
+   "pausa_depois": 0.35
+  },
+  {
+   "id": "f3",
+   "quem": "tito",
+   "texto": "Em 1879, nos Estados Unidos, Thomas Edison acendeu uma lâmpada que ficava horas acesa.",
+   "off": true
+  },
+  {
+   "id": "f4",
+   "quem": "tito",
+   "texto": "Na Inglaterra, Joseph Swan chegou quase junto. Brigaram na justiça e viraram sócios.",
+   "off": true
+  },
+  {
+   "id": "f5",
+   "quem": "tito",
+   "texto": "Para o fio, Edison testou de tudo. Até bambu queimado.",
+   "off": true
+  },
+  {
+   "id": "f6",
+   "quem": "tito",
+   "texto": "Passou corrente num fio fino, ele esquenta tanto que BRILHA. É a incandescência.",
+   "off": true
+  },
+  {
+   "id": "f7",
+   "quem": "tito",
+   "texto": "MAS no ar, o fio em brasa reage com o oxigênio... e QUEIMA em segundos.",
+   "off": true,
+   "tom": "tenso",
+   "pausa_depois": 0.4
+  },
+  {
+   "id": "f8",
+   "quem": "tito",
+   "texto": "Então o fio foi para dentro de uma bola de vidro, e tiraram o ar lá de dentro. Vácuo.",
+   "off": true
+  },
+  {
+   "id": "f9",
+   "quem": "tito",
+   "texto": "MAS o carvão era frágil e, com o calor, ia se gastando.",
+   "off": true,
+   "tom": "tenso"
+  },
+  {
+   "id": "f10",
+   "quem": "tito",
+   "texto": "Então veio o tungstênio: um metal que só derrete a 3.422 graus.",
+   "off": true
+  },
+  {
+   "id": "f11",
+   "quem": "tito",
+   "texto": "MAS no vácuo, o tungstênio quente evapora aos pouquinhos... e o vidro fica PRETO por dentro.",
+   "off": true,
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f12",
+   "quem": "tito",
+   "texto": "A saída? Encher o vidro com um gás que não reage com o fio, como o argônio.",
+   "off": true
+  },
+  {
+   "id": "f13",
+   "quem": "tito",
+   "texto": "E enrolar o fio numa molinha: ele perde menos calor e brilha mais.",
+   "off": true
+  },
+  {
+   "id": "f14",
+   "quem": "tito",
+   "texto": "MAS sobrou um problema: mais de 90% da energia vira CALOR, e não luz.",
+   "tom": "tenso"
+  },
+  {
+   "id": "f15",
+   "quem": "tito",
+   "texto": "Por isso ela deu lugar ao LED, que dá a mesma luz gastando bem menos.",
+   "tom": "animado",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f16",
+   "quem": "tito",
+   "texto": "E tem uma lâmpada na Califórnia acesa, quase sem parar, desde 1901.",
+   "off": true
+  },
+  {
+   "id": "f17",
+   "quem": "tito",
+   "texto": "O segredo? Ela é bem fraquinha e quase nunca foi desligada.",
+   "tom": "animado"
+  }
+ ],
+ "cenas": [
+  {
+   "id": "gancho",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "camera",
+     "expressao": "feliz"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "lampada",
+     "em": "pedestal"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "fio_carvao",
+     "faz": "aquecer",
+     "de": "f1:quente",
+     "intensidade": 0.9
+    },
+    {
+     "peca": "fio_carvao",
+     "faz": "aquecer",
+     "de": "f1:luz",
+     "intensidade": 1.5
+    },
+    {
+     "peca": "lampada",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "caminho": [
+      [
+       0,
+       0.6,
+       0
+      ],
+      [
+       0,
+       0.6,
+       0.7
+      ]
+     ],
+     "quantidade": 10,
+     "velocidade": 1.2,
+     "de": "f1:luz"
+    },
+    {
+     "peca": "lampada",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "caminho": [
+      [
+       0,
+       0.6,
+       0
+      ],
+      [
+       -0.6,
+       0.8,
+       0.3
+      ]
+     ],
+     "quantidade": 10,
+     "velocidade": 1.1,
+     "de": "f1:luz"
+    },
+    {
+     "peca": "lampada",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "caminho": [
+      [
+       0,
+       0.6,
+       0
+      ],
+      [
+       0.6,
+       0.8,
+       0.3
+      ]
+     ],
+     "quantidade": 10,
+     "velocidade": 1.15,
+     "de": "f1:luz"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "maquete",
+     "de": "f1:fio"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f1:luz"
+    },
+    {
+     "quem": "tito",
+     "faz": "acenar",
+     "de": "f2:fogo"
+    },
+    {
+     "quem": "tito",
+     "expressao": "desconfiado",
+     "de": "f2:fogo"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "alvo": "fio_carvao",
+     "lado": "frente",
+     "tamanho": 0.5,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f1:luz",
+     "tipo": "detalhe",
+     "alvo": "bulbo",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 1.3,
+     "transicao": "flash"
+    },
+    {
+     "de": "f2",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita"
+    },
+    {
+     "de": "f2:fogo",
+     "tipo": "close",
+     "alvo": "tito",
+     "lado": "frente",
+     "movimento": "aproximar"
+    }
+   ],
+   "sons": [
+    {
+     "de": "f1:quente",
+     "som": "zap",
+     "volume": 0.6
+    },
+    {
+     "de": "f1:luz",
+     "som": "ding"
+    },
+    {
+     "de": "f2:fogo",
+     "som": "whoosh"
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f1:luz",
+     "efeito": "zoom_soco"
+    }
+   ]
+  },
+  {
+   "id": "invencao",
+   "cenario": "oficina",
+   "de": "f3",
+   "ambiente": "oficina",
+   "personagens": {
+    "edison": {
+     "em": "inventor",
+     "olhando": "bancada_topo",
+     "expressao": "determinado"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "prototipo",
+     "em": "bancada",
+     "escala": 1.4
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f3:1879",
+     "ate": "f3:fim",
+     "grande": "1879",
+     "pequeno": "Thomas Edison · EUA"
+    },
+    {
+     "de": "f4:inglaterra",
+     "ate": "f4:fim",
+     "grande": "Joseph Swan",
+     "pequeno": "Inglaterra · depois, sócio de Edison"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "prototipo.fios",
+     "faz": "fluxo",
+     "tipo": "eletricidade",
+     "de": "f3:acendeu",
+     "velocidade": 0.8
+    },
+    {
+     "peca": "bambu",
+     "faz": "aquecer",
+     "de": "f3:acendeu+0.3",
+     "intensidade": 1.3
+    },
+    {
+     "peca": "bambu",
+     "faz": "esfriar",
+     "de": "f5"
+    },
+    {
+     "peca": "bambu",
+     "faz": "aquecer",
+     "de": "f5:bambu",
+     "intensidade": 1.4
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "edison",
+     "faz": "andar",
+     "para": [
+      -0.45,
+      -0.6
+     ],
+     "de": "f3"
+    },
+    {
+     "quem": "edison",
+     "faz": "estender_mao",
+     "para": "prototipo",
+     "de": "f3:acendeu"
+    },
+    {
+     "quem": "edison",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f3:horas"
+    },
+    {
+     "quem": "edison",
+     "faz": "bracos_cruzados",
+     "de": "f4",
+     "expressao": "bravo"
+    },
+    {
+     "quem": "edison",
+     "faz": "levantar",
+     "de": "f4:socios",
+     "expressao": "aliviado"
+    },
+    {
+     "quem": "edison",
+     "faz": "apontar",
+     "para": "prototipo",
+     "de": "f5:bambu"
+    },
+    {
+     "quem": "edison",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f5:bambu+0.4"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "alvo": "edison",
+     "lado": "tres_quartos_esquerda",
+     "transicao": "preto"
+    },
+    {
+     "de": "f3:acendeu",
+     "tipo": "detalhe",
+     "alvo": "prototipo",
+     "lado": "frente",
+     "tamanho": 1.0,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f4",
+     "tipo": "medio",
+     "alvo": "edison",
+     "lado": "tres_quartos_direita"
+    },
+    {
+     "de": "f4:socios",
+     "tipo": "close",
+     "alvo": "edison",
+     "lado": "frente"
+    },
+    {
+     "de": "f5",
+     "tipo": "detalhe",
+     "alvo": "bancada_topo",
+     "lado": "frente",
+     "tamanho": 1.4
+    },
+    {
+     "de": "f5:bambu",
+     "tipo": "detalhe",
+     "alvo": "prototipo",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.6,
+     "movimento": "aproximar"
+    }
+   ],
+   "sons": [
+    {
+     "de": "f3:1879",
+     "som": "pop"
+    },
+    {
+     "de": "f3:acendeu",
+     "som": "zap",
+     "volume": 0.5
+    },
+    {
+     "de": "f4:brigaram",
+     "som": "impacto",
+     "volume": 0.5
+    },
+    {
+     "de": "f4:socios",
+     "som": "ding"
+    },
+    {
+     "de": "f5:bambu",
+     "som": "pop"
+    }
+   ]
+  },
+  {
+   "id": "por_dentro",
+   "cenario": "estudio",
+   "de": "f6",
+   "ambiente": "estudio",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "feliz"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "lampada",
+     "em": "pedestal"
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "fio_carvao",
+     "texto": "Fio de carvão",
+     "de": "f6",
+     "ate": "f6:incandescencia"
+    },
+    {
+     "alvo": "bulbo",
+     "texto": "Vidro",
+     "de": "f8:vidro",
+     "ate": "f8:vacuo"
+    },
+    {
+     "alvo": "bulbo",
+     "texto": "Vácuo",
+     "de": "f8:vacuo",
+     "ate": "f9"
+    },
+    {
+     "alvo": "filamento",
+     "texto": "Tungstênio",
+     "de": "f10:tungstenio",
+     "ate": "f10:fim",
+     "cor": "#FFB03A"
+    },
+    {
+     "alvo": "bulbo",
+     "texto": "Argônio",
+     "de": "f12:argonio",
+     "ate": "f13",
+     "cor": "#7BE0FF"
+    },
+    {
+     "alvo": "filamento",
+     "texto": "Fio enrolado",
+     "de": "f13:molinha",
+     "ate": "f13:fim"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f6:incandescencia",
+     "ate": "f6:fim+0.3",
+     "grande": "Incandescência",
+     "pequeno": "metal muito quente solta luz"
+    },
+    {
+     "de": "f7:queima",
+     "ate": "f7:fim+0.4",
+     "grande": "Ar + fio em brasa = fogo",
+     "pequeno": "o oxigênio queima o fio"
+    },
+    {
+     "de": "f10:3.422",
+     "ate": "f10:fim+0.3",
+     "grande": "3.422 °C",
+     "pequeno": "o tungstênio só derrete aqui"
+    },
+    {
+     "de": "f12:gas",
+     "ate": "f12:fim",
+     "grande": "Gás inerte",
+     "pequeno": "não reage com o fio quente"
+    },
+    {
+     "de": "f14:90",
+     "ate": "f14:fim+0.3",
+     "grande": "+ de 90% vira calor",
+     "pequeno": "só um pouquinho vira luz"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "base",
+     "faz": "fluxo",
+     "tipo": "eletricidade",
+     "caminho": [
+      [
+       -0.03,
+       0.03,
+       0
+      ],
+      [
+       -0.03,
+       0.38,
+       0
+      ],
+      [
+       -0.09,
+       0.52,
+       0
+      ]
+     ],
+     "de": "f6:corrente",
+     "ate": "f7:fim",
+     "velocidade": 0.9
+    },
+    {
+     "peca": "fio_carvao",
+     "faz": "aquecer",
+     "de": "f6:esquenta",
+     "intensidade": 0.9
+    },
+    {
+     "peca": "fio_carvao",
+     "faz": "aquecer",
+     "de": "f6:brilha",
+     "intensidade": 1.5
+    },
+    {
+     "peca": "fio_carvao",
+     "faz": "tremer",
+     "de": "f7:queima",
+     "ate": "f7:fim+0.3",
+     "intensidade": 1.5
+    },
+    {
+     "peca": "lampada",
+     "faz": "fluxo",
+     "tipo": "calor",
+     "caminho": [
+      [
+       0,
+       0.62,
+       0
+      ],
+      [
+       0,
+       1.1,
+       0
+      ]
+     ],
+     "quantidade": 12,
+     "velocidade": 1.3,
+     "de": "f7:queima",
+     "ate": "f7:fim+0.3"
+    },
+    {
+     "peca": "fio_carvao",
+     "faz": "esfriar",
+     "de": "f8"
+    },
+    {
+     "peca": "lampada",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "caminho": [
+      [
+       0,
+       0.55,
+       0
+      ],
+      [
+       0,
+       0.3,
+       0
+      ],
+      [
+       0,
+       0.02,
+       0
+      ]
+     ],
+     "quantidade": 12,
+     "velocidade": 1.4,
+     "de": "f8:tiraram",
+     "ate": "f8:vacuo"
+    },
+    {
+     "peca": "fio_carvao",
+     "faz": "aquecer",
+     "de": "f8:vacuo",
+     "intensidade": 1.3
+    },
+    {
+     "peca": "fio_carvao",
+     "faz": "tremer",
+     "de": "f9:fragil",
+     "ate": "f9:gastando",
+     "intensidade": 0.8
+    },
+    {
+     "peca": "fio_carvao",
+     "faz": "sumir",
+     "de": "f9:gastando"
+    },
+    {
+     "peca": "filamento",
+     "faz": "aparecer",
+     "de": "f10:tungstenio"
+    },
+    {
+     "peca": "filamento",
+     "faz": "aquecer",
+     "de": "f10:metal",
+     "intensidade": 1.3
+    },
+    {
+     "peca": "fuligem",
+     "faz": "aparecer",
+     "de": "f11:preto"
+    },
+    {
+     "peca": "lampada",
+     "faz": "fluxo",
+     "tipo": "calor",
+     "caminho": [
+      [
+       0,
+       0.53,
+       0
+      ],
+      [
+       0.12,
+       0.62,
+       0.1
+      ],
+      [
+       0.2,
+       0.55,
+       0.05
+      ]
+     ],
+     "quantidade": 10,
+     "velocidade": 0.5,
+     "de": "f11:evapora",
+     "ate": "f12"
+    },
+    {
+     "peca": "fuligem",
+     "faz": "sumir",
+     "de": "f12:saida"
+    },
+    {
+     "peca": "lampada",
+     "faz": "fluxo",
+     "tipo": "gas",
+     "caminho": [
+      [
+       0.15,
+       0.5,
+       0
+      ],
+      [
+       0,
+       0.66,
+       0.1
+      ],
+      [
+       -0.15,
+       0.5,
+       0
+      ],
+      [
+       0,
+       0.36,
+       -0.1
+      ],
+      [
+       0.15,
+       0.5,
+       0
+      ]
+     ],
+     "quantidade": 14,
+     "velocidade": 0.4,
+     "de": "f12:gas"
+    },
+    {
+     "peca": "filamento",
+     "faz": "pulsar",
+     "de": "f13:molinha",
+     "ate": "f13:fim"
+    },
+    {
+     "peca": "filamento",
+     "faz": "aquecer",
+     "de": "f13:brilha",
+     "intensidade": 1.5
+    },
+    {
+     "peca": "lampada",
+     "faz": "fluxo",
+     "tipo": "calor",
+     "caminho": [
+      [
+       0,
+       0.6,
+       0
+      ],
+      [
+       0,
+       1.2,
+       0
+      ]
+     ],
+     "quantidade": 16,
+     "velocidade": 1.0,
+     "de": "f14:calor",
+     "ate": "f15"
+    },
+    {
+     "peca": "lampada",
+     "faz": "fluxo",
+     "tipo": "calor",
+     "caminho": [
+      [
+       0,
+       0.6,
+       0
+      ],
+      [
+       -0.5,
+       1.0,
+       0.2
+      ]
+     ],
+     "quantidade": 16,
+     "velocidade": 1.0,
+     "de": "f14:calor",
+     "ate": "f15"
+    },
+    {
+     "peca": "filamento",
+     "faz": "sumir",
+     "de": "f15:led"
+    },
+    {
+     "peca": "led",
+     "faz": "aparecer",
+     "de": "f15:led"
+    },
+    {
+     "peca": "led",
+     "faz": "pulsar",
+     "de": "f15:led+0.4"
+    },
+    {
+     "peca": "lampada",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "caminho": [
+      [
+       0,
+       0.47,
+       0
+      ],
+      [
+       0,
+       0.47,
+       0.7
+      ]
+     ],
+     "quantidade": 10,
+     "velocidade": 1.2,
+     "de": "f15:mesma"
+    },
+    {
+     "peca": "lampada",
+     "faz": "explodir",
+     "de": "f16",
+     "ate": "f16+1.4"
+    },
+    {
+     "peca": "lampada",
+     "faz": "montar",
+     "de": "f17",
+     "ate": "f17+1.2"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "fio_carvao",
+     "de": "f6:fino"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f7"
+    },
+    {
+     "quem": "tito",
+     "faz": "maos_na_cabeca",
+     "de": "f7:queima"
+    },
+    {
+     "quem": "tito",
+     "faz": "levantar",
+     "de": "f8",
+     "expressao": "feliz",
+     "olhar": "maquete"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "filamento",
+     "de": "f10:tungstenio"
+    },
+    {
+     "quem": "tito",
+     "expressao": "nervoso",
+     "de": "f11:preto"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "bulbo",
+     "de": "f12:gas"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "serio",
+     "de": "f14"
+    },
+    {
+     "quem": "tito",
+     "expressao": "feliz",
+     "de": "f15"
+    },
+    {
+     "quem": "tito",
+     "faz": "acenar",
+     "de": "f15:led"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f16:1901"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "camera",
+     "de": "f17:segredo"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "alvo": "bulbo",
+     "lado": "frente",
+     "tamanho": 1.2,
+     "transicao": "flash"
+    },
+    {
+     "de": "f6:corrente",
+     "tipo": "detalhe",
+     "alvo": "fio_carvao",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.5,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f7",
+     "tipo": "close",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f7:queima",
+     "tipo": "detalhe",
+     "alvo": "fio_carvao",
+     "lado": "frente",
+     "tamanho": 0.45,
+     "movimento": "tremer",
+     "transicao": "flash"
+    },
+    {
+     "de": "f8",
+     "tipo": "detalhe",
+     "alvo": "bulbo",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.8,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f8:vacuo",
+     "tipo": "detalhe",
+     "alvo": "bulbo",
+     "lado": "frente",
+     "tamanho": 0.8
+    },
+    {
+     "de": "f9",
+     "tipo": "close",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita"
+    },
+    {
+     "de": "f9:gastando",
+     "tipo": "detalhe",
+     "alvo": "fio_carvao",
+     "lado": "frente",
+     "tamanho": 0.45
+    },
+    {
+     "de": "f10",
+     "tipo": "detalhe",
+     "alvo": "filamento",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.45,
+     "movimento": "orbitar"
+    },
+    {
+     "de": "f11",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita"
+    },
+    {
+     "de": "f11:preto",
+     "tipo": "detalhe",
+     "alvo": "bulbo",
+     "lado": "frente",
+     "tamanho": 0.8,
+     "movimento": "aproximar",
+     "transicao": "flash"
+    },
+    {
+     "de": "f12",
+     "tipo": "detalhe",
+     "alvo": "bulbo",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.9
+    },
+    {
+     "de": "f13",
+     "tipo": "detalhe",
+     "alvo": "filamento",
+     "lado": "frente",
+     "tamanho": 0.4,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f14",
+     "tipo": "close",
+     "alvo": "tito",
+     "lado": "frente",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f14:calor",
+     "tipo": "detalhe",
+     "alvo": "bulbo",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 1.4
+    },
+    {
+     "de": "f15:led",
+     "tipo": "detalhe",
+     "alvo": "led",
+     "lado": "frente",
+     "tamanho": 0.6,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f16",
+     "tipo": "detalhe",
+     "alvo": "bulbo",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 1.4,
+     "movimento": "orbitar",
+     "transicao": "flash"
+    },
+    {
+     "de": "f17",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "frente",
+     "movimento": "aproximar"
+    }
+   ],
+   "sons": [
+    {
+     "de": "f6:corrente",
+     "som": "zap",
+     "volume": 0.6
+    },
+    {
+     "de": "f6:incandescencia",
+     "som": "pop"
+    },
+    {
+     "de": "f7:mas",
+     "som": "tensao_sobe",
+     "volume": 0.7
+    },
+    {
+     "de": "f7:queima",
+     "som": "fogo",
+     "volume": 0.7
+    },
+    {
+     "de": "f8:vidro",
+     "som": "pop"
+    },
+    {
+     "de": "f8:tiraram",
+     "som": "sopro",
+     "volume": 0.6
+    },
+    {
+     "de": "f9:mas",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f10:tungstenio",
+     "som": "ding"
+    },
+    {
+     "de": "f11:mas",
+     "som": "tensao_sobe",
+     "volume": 0.7
+    },
+    {
+     "de": "f11:preto",
+     "som": "impacto",
+     "volume": 0.7
+    },
+    {
+     "de": "f12:gas",
+     "som": "chiado",
+     "volume": 0.5
+    },
+    {
+     "de": "f14:mas",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f15:led",
+     "som": "ding"
+    },
+    {
+     "de": "f16",
+     "som": "whoosh"
+    },
+    {
+     "de": "f17:segredo",
+     "som": "pop"
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f7:mas",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f7:queima",
+     "efeito": "flash",
+     "intensidade": 0.6
+    },
+    {
+     "de": "f7:queima",
+     "efeito": "tremor",
+     "intensidade": 0.6
+    },
+    {
+     "de": "f11:preto",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f14:calor",
+     "efeito": "zoom_soco"
+    }
+   ]
+  }
+ ],
+ "chamada": {
+  "pergunta": "E a geladeira? Ela cria frio mesmo?",
+  "texto": "Comenta",
+  "destaque": "GELADEIRA"
+ }
+}
