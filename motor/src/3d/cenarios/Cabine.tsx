@@ -1,5 +1,5 @@
 // Cabine do Voo 818 por dentro: corredor comprido (eixo z), bancos azuis dos dois lados, bagageiros,
-// luzes de teto e celulares acesos nos bancos vazios. O casco é fechado: use câmera dentro dele.
+// luzes de teto, cintos abertos e celulares acesos nos bancos vazios. O casco é fechado: use câmera dentro dele.
 import React from 'react';
 import {Malha, brilho, caixa, cilindro, haloMat, toon} from '../base';
 import {Fuselagem} from '../aviao';

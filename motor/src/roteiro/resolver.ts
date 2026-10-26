@@ -1,7 +1,7 @@
 // Transforma o roteiro (âncoras nas falas) em uma linha do tempo com segundos absolutos.
 // Sem áudio, a duração de cada fala é estimada pelo texto; com o alinhamento do OmniVoice,
 // usa o tempo real de cada letra. O resto do roteiro não muda entre um caso e outro.
-import {ACOES, ANIMACOES_PECA, CENARIOS, EFEITOS, ENCERRA_ESTADO, EXPRESSOES, FLUXOS, FORMAS, LADOS, MOVIMENTOS, PLANOS} from '../catalogo';
+import {ACOES, ANCORAS_OBJETO, ANIMACOES_PECA, CENARIOS, EFEITOS, ENCERRA_ESTADO, EXPRESSOES, FLUXOS, FORMAS, ITENS_MAO, LADOS, MOVIMENTOS, PLANOS} from '../catalogo';
 import {
 	Alinhamentos,
 	AcaoTempo,
@@ -19,6 +19,7 @@ import {
 	FalaTempo,
 	LetraTempo,
 	LinhaDoTempo,
+	Objeto,
 	PalavraTempo,
 	PlanoTempo,
 	SomTempo,
@@ -269,6 +270,7 @@ export const resolverEpisodio = (ep: Episodio, bibliaSerie: Biblia, alinhamentos
 			if (!(quem in biblia.personagens)) avisos.push(`${ctx.onde}: não está na bíblia`);
 			if (typeof p.em === 'string' && def && !(p.em in def.marcas)) avisos.push(`${ctx.onde}: marca "${p.em}" não existe em ${c.cenario}`);
 			if (p.expressao && !(EXPRESSOES as readonly string[]).includes(p.expressao)) avisos.push(`${ctx.onde}: expressão "${p.expressao}" desconhecida`);
+			if (p.segura && !(ITENS_MAO as readonly string[]).includes(p.segura)) avisos.push(`${ctx.onde}: não sei desenhar "${p.segura}" na mão (${ITENS_MAO.join(', ')})`);
 			conferirAlvo(p.olhando, c, ctx, biblia, modelos);
 		}
 
@@ -278,6 +280,7 @@ export const resolverEpisodio = (ep: Episodio, bibliaSerie: Biblia, alinhamentos
 			if (!(a.quem in (c.personagens ?? {}))) avisos.push(`${ctx.onde}: "${a.quem}" não está na cena`);
 			if (a.faz && !(a.faz in ACOES)) avisos.push(`${ctx.onde}: ação "${a.faz}" desconhecida`);
 			if (a.expressao && !(EXPRESSOES as readonly string[]).includes(a.expressao)) avisos.push(`${ctx.onde}: expressão "${a.expressao}" desconhecida`);
+			if (a.faz === 'pegar' && !(ITENS_MAO as readonly string[]).includes(a.item ?? '')) avisos.push(`${ctx.onde}: pegar precisa de "item" (${ITENS_MAO.join(', ')})`);
 			conferirAlvo(a.para, c, ctx, biblia, modelos);
 			conferirAlvo(a.olhar, c, ctx, biblia, modelos);
 			const aIni = resolverAncora(a.de, ctx) ?? ini;
@@ -382,11 +385,17 @@ export const resolverEpisodio = (ep: Episodio, bibliaSerie: Biblia, alinhamentos
 			ini,
 			fim,
 			personagens: c.personagens ?? {},
-			// objetos animados (o avião caindo) dizem quando começam e terminam em "quando_de" e "quando_ate"
+			// objetos animados (o avião caindo) dizem quando começam e terminam em "quando_de" e "quando_ate";
+			// as outras âncoras (aparece, some, acende, cai, enche, cheio) viram _aparece, _some...
 			objetos: (c.objetos ?? []).map((o, k) => {
-				if (o.quando_de === undefined && o.quando_ate === undefined) return o;
 				ctx.onde = `cena ${c.id}, objeto ${k + 1}`;
-				return {...o, _ini: resolverAncora(o.quando_de as Ancora, ctx) ?? ini, _fim: resolverAncora(o.quando_ate as Ancora, ctx) ?? fim};
+				const r: Objeto = {...o};
+				if (o.quando_de !== undefined || o.quando_ate !== undefined) {
+					r._ini = resolverAncora(o.quando_de as Ancora, ctx) ?? ini;
+					r._fim = resolverAncora(o.quando_ate as Ancora, ctx) ?? fim;
+				}
+				for (const nome of ANCORAS_OBJETO) if (o[nome] !== undefined) r[`_${nome}`] = resolverAncora(o[nome] as Ancora, ctx);
+				return r;
 			}),
 			acoes,
 			planos,

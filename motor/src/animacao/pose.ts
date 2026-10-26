@@ -146,6 +146,21 @@ const agachado: PoseParcial = {
 	cotovD: 0.4,
 };
 
+/** Ajoelhado e debruçado, as duas mãos à frente perto do chão (o balanço das mãos vem da simulação). */
+const arrumar: PoseParcial = {
+	...agachado,
+	incl: 0.38,
+	cabPitch: 0.12,
+	ombroE: 1.0,
+	abreE: 0.18,
+	giroE: -0.1,
+	cotovE: 0.45,
+	ombroD: 1.0,
+	abreD: 0.18,
+	giroD: 0.1,
+	cotovD: 0.45,
+};
+
 const escondido: PoseParcial = {
 	altQuadril: 0.52,
 	incl: 0.72,
@@ -253,6 +268,7 @@ export const POSES_CORPO: Record<string, PoseParcial> = {
 	em_pe: {},
 	agachado,
 	agachar: agachado,
+	arrumar,
 	escondido,
 	esconder: escondido,
 	sentado,

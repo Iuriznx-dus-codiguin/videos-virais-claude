@@ -12,6 +12,7 @@
     "catalogo": "tsx ferramentas/catalogo.ts",
     "dados": "tsx ferramentas/dados.ts",
     "quadro": "tsx ferramentas/quadro.ts",
+    "enquadramento": "tsx ferramentas/enquadramento.ts",
     "render": "tsx ferramentas/render.ts",
     "vozes": "tsx ferramentas/vozes.ts",
     "tipos": "tsc --noEmit -p .",

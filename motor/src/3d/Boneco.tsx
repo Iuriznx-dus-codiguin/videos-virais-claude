@@ -7,7 +7,7 @@ import {MEDIDAS, Pose} from '../animacao/pose';
 import {EstadoPalito, pernasDaPose} from '../animacao/simulacao';
 import type {Acessorio, VisualPersonagem} from '../roteiro/tipos';
 import {clamp} from '../util/mat';
-import {Contorno, Malha, basico, capsula, cilindro, cone, esfera, geo, toon, toro} from './base';
+import {Contorno, Malha, basico, brilho, caixa, capsula, cilindro, cone, esfera, geo, haloMat, toon, toro} from './base';
 import {clima} from './luzes';
 
 const RC = MEDIDAS.raioCabeca;
@@ -235,6 +235,29 @@ const Bigode: React.FC<{cor: string}> = ({cor}) => (
 	</group>
 );
 
+/** Curativo em cruz na bochecha (ferido sem sangue): duas tiras cor de pele clara. */
+const Curativo: React.FC<{cor: string}> = ({cor}) => (
+	<group position={[0, MEDIDAS.pescocoCabeca, 0]}>
+		<group {...naEsfera(-0.22, -0.02, -0.004)}>
+			<Malha g={caixa(0.16, 0.055, 0.012)} m={toon(cor)} rotation={[0, 0, 0.6]} contorno={0.006} sombra={false} />
+			<Malha g={caixa(0.16, 0.055, 0.012)} m={toon(cor)} rotation={[0, 0, -0.6]} contorno={0.006} sombra={false} />
+			<mesh geometry={caixa(0.045, 0.045, 0.016)} material={toon(escurecer(cor, 0.85))} />
+		</group>
+	</group>
+);
+
+/** Tala na canela: duas ripas de madeira dos lados e faixas brancas amarrando. */
+const Tala: React.FC = () => (
+	<>
+		{[1, -1].map((l) => (
+			<Malha key={l} g={caixa(0.03, MEDIDAS.canela * 0.9, 0.05)} m={toon('#B98A57')} position={[0.085 * l, -MEDIDAS.canela * 0.5, 0]} contorno={0.01} />
+		))}
+		{[0.22, 0.5, 0.78].map((k) => (
+			<Malha key={k} g={cilindro(0.1, 0.1, 0.07, 14)} m={toon('#F2EFE8')} position={[0, -MEDIDAS.canela * k, 0]} contorno={0.01} />
+		))}
+	</>
+);
+
 const escurecer = (cor: string, k = 0.82) => '#' + new THREE.Color(cor).multiplyScalar(k).getHexString();
 
 const AcessoriosCabeca: React.FC<{lista: Acessorio[]; p: Pose}> = ({lista, p}) => (
@@ -249,6 +272,7 @@ const AcessoriosCabeca: React.FC<{lista: Acessorio[]; p: Pose}> = ({lista, p}) =
 			if (a.tipo === 'cartola') return <Cartola key={i} cor={cor} />;
 			if (a.tipo === 'oculos') return <Oculos key={i} cor={cor} />;
 			if (a.tipo === 'bigode') return <Bigode key={i} cor={cor} />;
+			if (a.tipo === 'curativo') return <Curativo key={i} cor={a.cor ?? '#FAF7F0'} />;
 			return null;
 		})}
 	</>
@@ -288,6 +312,62 @@ const ObjetoNaMao: React.FC<{tipo: string; luz: number}> = ({tipo, luz}) => {
 		return (
 			<group position={[0, -0.44, 0]}>
 				<Malha g={cilindro(0.035, 0.045, 0.9, 10)} m={toon('#6B4226')} position={[0, 0.1, 0]} contorno={0.012} />
+			</group>
+		);
+	// garrafa de água segura pelo meio, ao longo do antebraço
+	if (tipo === 'garrafa')
+		return (
+			<group position={[0, -0.47, 0.03]}>
+				<Malha g={cilindro(0.075, 0.075, 0.3, 16)} m={toon('#8FD3FF')} contorno={0.012} />
+				<Malha g={cilindro(0.03, 0.07, 0.07, 14)} m={toon('#8FD3FF')} position={[0, -0.18, 0]} rotation={[Math.PI, 0, 0]} contorno={0.01} />
+				<Malha g={cilindro(0.034, 0.034, 0.04, 12)} m={toon('#F4F6F8')} position={[0, -0.235, 0]} contorno={0.008} />
+				<mesh geometry={cilindro(0.078, 0.078, 0.1, 16)} material={toon('#2E86DE')} position={[0, 0.02, 0]} />
+			</group>
+		);
+	// feixe de galhos atravessado na mão
+	if (tipo === 'galhos')
+		return (
+			<group position={[0, -0.46, 0.04]} rotation={[0, 0, Math.PI / 2]}>
+				{[
+					[0, 0, 0.95, 0.035],
+					[0.05, 0.04, 0.8, 0.03],
+					[-0.05, -0.03, 0.88, 0.028],
+					[0.02, -0.06, 0.7, 0.025],
+				].map(([dx, dz, comp, r], i) => (
+					<Malha key={i} g={cilindro(r, r * 1.15, comp, 7)} m={toon(i % 2 ? '#5C3D27' : '#6E4A33')} position={[dx, 0.06 * i - 0.08, dz]} rotation={[0.08 * i, 0, 0.06 * (i - 1.5)]} contorno={0.01} />
+				))}
+			</group>
+		);
+	// isqueiro: chama pequena e luz quente quando aceso
+	if (tipo === 'isqueiro')
+		return (
+			<group position={[0, -0.5, 0.04]}>
+				<Malha g={caixa(0.07, 0.12, 0.04)} m={toon('#D7263D')} contorno={0.008} />
+				<mesh geometry={caixa(0.072, 0.03, 0.042)} material={toon('#B8BEC8')} position={[0, -0.07, 0]} />
+				{luz > 0.5 ? (
+					<>
+						<mesh geometry={esfera(1, 10, 8)} material={brilho('#FFB23A', 1.6)} position={[0, -0.13, 0.02]} scale={[0.03, 0.06, 0.03]} />
+						<sprite material={haloMat('#FF9A3A', 0.6)} position={[0, -0.13, 0.03]} scale={[0.35, 0.35, 1]} />
+						<pointLight position={[0, -0.15, 0.05]} color="#FF9A4A" intensity={1.6} distance={2.5} decay={2} />
+					</>
+				) : null}
+			</group>
+		);
+	// rádio de emergência na mão: mostrador verde aceso enquanto ligado
+	if (tipo === 'radio')
+		return (
+			<group position={[0, -0.52, 0.05]} rotation={[Math.PI / 2, 0, 0]}>
+				<Malha g={caixa(0.3, 0.2, 0.17)} m={toon('#4B5563')} contorno={0.014} />
+				<mesh geometry={caixa(0.22, 0.07, 0.01)} material={luz > 0.5 ? brilho('#7CFFB2', 1.2) : toon('#26332C')} position={[-0.02, 0.03, 0.09]} />
+				<Malha g={cilindro(0.008, 0.008, 0.45, 6)} m={toon('#9AA3AE')} position={[0.11, 0.3, -0.03]} sombra={false} />
+				{luz > 0.5 ? <pointLight position={[0, 0.05, 0.3]} color="#7CFFB2" intensity={0.6} distance={1.5} decay={2} /> : null}
+			</group>
+		);
+	if (tipo === 'pacote')
+		return (
+			<group position={[0, -0.5, 0.04]}>
+				<Malha g={caixa(0.22, 0.14, 0.12)} m={toon('#F2A541')} contorno={0.012} />
+				<mesh geometry={caixa(0.224, 0.04, 0.124)} material={toon('#C0392B')} />
 			</group>
 		);
 	return null;
@@ -335,6 +415,7 @@ export const Boneco: React.FC<{e: EstadoPalito; nomeClima: string}> = ({e, nomeC
 							<Malha g={capsula(0.068, MEDIDAS.coxa)} m={corpo} position={[0, -MEDIDAS.coxa / 2, 0]} contorno={0.02} />
 							<group position={[0, -MEDIDAS.coxa, 0]} rotation={[ang.joelho, 0, 0]}>
 								<Malha g={capsula(0.064, MEDIDAS.canela)} m={corpo} position={[0, -MEDIDAS.canela / 2, 0]} contorno={0.02} />
+								{acess.some((a) => a.tipo === 'tala' && (a.lado === 'E' ? 1 : -1) === lado) ? <Tala /> : null}
 								<group position={[0, -MEDIDAS.canela, 0]} rotation={[ang.coxa - ang.joelho, 0, -lado * p.abrePernas]}>
 									<Malha g={esfera(1, 14, 9)} m={corpo} position={[0, 0.005, 0.06]} scale={[0.085, 0.07, 0.16]} contorno={0.02} />
 								</group>

@@ -1,6 +1,6 @@
 // Imprime o vocabulário do motor em poucas linhas, para quem escreve roteiros não precisar ler o código.
 // Uso: npm run catalogo [-- <cenario>]
-import {ACOES, AMBIENTES, ANIMACOES_PECA, CENARIOS, EFEITOS, EXPRESSOES, FLUXOS, FORMAS, LADOS, LUZES, MOVIMENTOS, MUSICAS, OBJETOS, PLANOS, SONS, USO_OBJETOS} from '../src/catalogo.ts';
+import {ACESSORIOS, ACOES, AMBIENTES, ANCORAS_OBJETO, ANIMACOES_PECA, CENARIOS, EFEITOS, EXPRESSOES, FLUXOS, FORMAS, ITENS_MAO, LADOS, LUZES, MOVIMENTOS, MUSICAS, OBJETOS, PLANOS, SONS, USO_OBJETOS} from '../src/catalogo.ts';
 
 const so = process.argv[2];
 if (so && !CENARIOS[so]) {
@@ -22,12 +22,14 @@ if (!so) {
 	console.log(`EXPRESSÕES: ${EXPRESSOES.join(', ')}`);
 	console.log(`EFEITOS: ${Object.keys(EFEITOS).join(', ')}`);
 	console.log(`SONS: ${SONS.join(', ')}\nAMBIENTES: ${AMBIENTES.join(', ')}\nMÚSICAS: ${MUSICAS.join(', ')}`);
+	console.log(`ITENS NA MÃO ("segura" ou "item" de pegar): ${ITENS_MAO.join(', ')}`);
 	console.log('OBJETOS (opções):');
 	for (const o of OBJETOS) console.log(`  ${o}: ${USO_OBJETOS[o]}`);
+	console.log(`  todo objeto aceita "aparece" e "some" (surge com um pulinho, some na hora); opções que são âncoras: ${ANCORAS_OBJETO.join(', ')}`);
 	console.log(`\nMAQUETES (objeto "maquete" com "modelo"; peças em "modelos" do episódio, ver src/roteiro/tipos.ts > Peca)`);
 	console.log(`  FORMAS: ${FORMAS.join(', ')}`);
 	console.log(`  FLUXOS: ${Object.keys(FLUXOS).join(', ')}`);
 	console.log('  ANIMAÇÕES (campo "animacoes" da cena):');
 	for (const [n, d] of Object.entries(ANIMACOES_PECA)) console.log(`    ${n}: ${d}`);
-	console.log('  ACESSÓRIOS de personagem: cabelo_curto, rabo_de_cavalo, bandana, bone, capacete, cartola, oculos, bigode, mochila, lenco, colete');
+	console.log(`  ACESSÓRIOS de personagem: ${ACESSORIOS.join(', ')} (curativo: cruz de esparadrapo na bochecha; tala: perna imobilizada, "lado": "D" ou "E", e quem tem tala manca com "mancar")`);
 }

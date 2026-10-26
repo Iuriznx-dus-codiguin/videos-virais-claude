@@ -32,6 +32,16 @@ export const centroCabeca = (tronco: THREE.Matrix4): V3 => {
 	return [v.x, v.y, v.z];
 };
 
+/** Centro da cabeça e direção do rosto no mundo, já com a rotação da cabeça (como o boneco desenha). */
+export const cabecaMundo = (tronco: THREE.Matrix4, p: Pose): {centro: V3; frente: V3} => {
+	const m = new THREE.Matrix4().copy(tronco);
+	m.multiply(new THREE.Matrix4().makeTranslation(0, MEDIDAS.coluna, 0));
+	m.multiply(new THREE.Matrix4().makeRotationFromEuler(new THREE.Euler(p.cabPitch, p.cabYaw, p.cabRoll, 'YXZ')));
+	const centro = new THREE.Vector3(0, MEDIDAS.pescocoCabeca, 0).applyMatrix4(m);
+	const frente = new THREE.Vector3(0, 0, 1).transformDirection(m);
+	return {centro: [centro.x, centro.y, centro.z], frente: [frente.x, frente.y, frente.z]};
+};
+
 /** Posição do ombro (lado 1 = esquerdo, em +x) no mundo. */
 export const ombroMundo = (tronco: THREE.Matrix4, lado: 1 | -1): V3 => {
 	v.set(MEDIDAS.ombroX * lado, MEDIDAS.ombroY, 0).applyMatrix4(tronco);

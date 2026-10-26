@@ -33,6 +33,8 @@ export interface Fala {
 	pausa_depois?: number;
 	/** Velocidade da fala (0.8 a 1.2, padrão 1). */
 	velocidade?: number;
+	/** Semente da voz só desta fala (a ferramenta de vozes grava aqui a tomada que soou melhor). */
+	semente?: number;
 }
 
 export interface Silencio {
@@ -51,7 +53,7 @@ export interface PersonagemNaCena {
 	expressao?: string;
 	/** em_pe (padrão), agachado, sentado, escondido */
 	pose?: string;
-	/** Objeto na mão direita: lanca, lanterna, tocha */
+	/** Objeto na mão direita no começo da cena (ver ITENS_MAO no catálogo). */
 	segura?: string;
 	/** Tamanho em relação ao normal (o gigante na montanha usa 4). */
 	escala?: number;
@@ -73,6 +75,10 @@ export interface Acao {
 	ate?: Ancora;
 	/** Multiplica a velocidade padrão de andar/correr (0.5 = devagar). */
 	velocidade?: number;
+	/** pegar: o que vai para a mão (garrafa, galhos, isqueiro, radio...). */
+	item?: string;
+	/** pegar: o item já vem ligado (rádio, lanterna). */
+	acesa?: boolean;
 }
 
 export interface Plano {

@@ -93,7 +93,7 @@ export const CENARIOS: Record<string, DefCenario> = {
 		tamanhos: {parede: 2.6, parede_esq: 2.2, parede_dir: 2.2},
 	},
 	cabine: {
-		descricao: 'Dentro da fuselagem do Voo 818: corredor comprido (eixo z, de -13 a 13) com bancos azuis nos dois lados (x = ±0,62 e ±1,16), bagageiros, luzes de teto e celulares acesos nos bancos vazios. Parede a ±1,7 m: use câmera fixa (campo "camera") dentro do corredor, com x entre -0,4 e 0,4. Os bonecos são grandes para a cabine: use "escala": 0.55 e, nos bancos, "pose": "sentado_banco" (bancos em z = 0,15 + 0,95·n, virados para +z).',
+		descricao: 'Dentro da fuselagem do Voo 818: corredor comprido (eixo z, de -13 a 13) com bancos azuis nos dois lados (x = ±0,62 e ±1,16), bagageiros, luzes de teto, cintos abertos em todos os assentos e celulares acesos nos bancos vazios. Parede a ±1,7 m: use câmera fixa (campo "camera") dentro do corredor, com x entre -0,4 e 0,4. Os bonecos são grandes para a cabine: use "escala": 0.55 e, nos bancos, "pose": "sentado_banco" (bancos em z = 0,15 + 0,95·n, virados para +z).',
 		luzPadrao: 'entardecer',
 		marcas: {
 			frente: [0, 7],
@@ -259,6 +259,7 @@ export interface DefAcao {
 export const ACOES: Record<string, DefAcao> = {
 	andar: {tipo: 'movimento', velocidade: 1.7, descricao: 'anda até "para"'},
 	correr: {tipo: 'movimento', velocidade: 4.2, descricao: 'corre até "para"'},
+	mancar: {tipo: 'movimento', velocidade: 0.9, descricao: 'anda mancando até "para", poupando a perna da tala (ou a direita)'},
 	recuar: {tipo: 'movimento', velocidade: 1.0, descricao: 'dá passos para trás, de frente para onde olha'},
 	virar: {tipo: 'gesto', duracao: 0.5, descricao: 'vira o corpo para "para"'},
 	agachar: {tipo: 'estado', descricao: 'agacha olhando o chão'},
@@ -276,8 +277,20 @@ export const ACOES: Record<string, DefAcao> = {
 	puxar: {tipo: 'gesto', duracao: 0.9, descricao: 'estica o braço até "para" e puxa'},
 	estender_mao: {tipo: 'gesto', duracao: 1.2, descricao: 'estica a mão para tocar algo em "para"'},
 	erguer: {tipo: 'estado', descricao: 'ergue o objeto que segura (lanterna, tocha, lança) na direção de "para" ou de onde olha'},
-	acender: {tipo: 'gesto', duracao: 0.4, descricao: 'acende a lanterna ou tocha que segura'},
-	apagar: {tipo: 'gesto', duracao: 0.4, descricao: 'apaga a lanterna ou tocha que segura'},
+	acender: {tipo: 'gesto', duracao: 0.4, descricao: 'acende o que segura (lanterna, tocha, isqueiro, rádio)'},
+	apagar: {tipo: 'gesto', duracao: 0.4, descricao: 'apaga o que segura (lanterna, tocha, isqueiro, rádio)'},
+	pegar: {
+		tipo: 'gesto',
+		duracao: 1.0,
+		descricao:
+			'abaixa se preciso e pega "item" em "para"; o item aparece na mão direita 0,5 s depois do início (dê ao objeto pego "some" na mesma âncora +0.5). "acesa": true já pega ligado (rádio, lanterna)',
+	},
+	largar: {
+		tipo: 'gesto',
+		duracao: 0.9,
+		descricao: 'põe o que segura em "para" (chão, monte, outro personagem); a mão fica vazia 0,5 s depois do início (dê ao objeto largado "aparece" na mesma âncora +0.5)',
+	},
+	arrumar: {tipo: 'estado', descricao: 'ajoelhado, as duas mãos arrumam coisas no chão à frente (mantimentos, fogueira, curativo na perna de alguém)'},
 	abrir_olhos: {tipo: 'gesto', duracao: 0.3, descricao: 'abre os olhos (quem começou com olhos_fechados)'},
 	fechar_olhos: {tipo: 'gesto', duracao: 0.3, descricao: 'fecha os olhos'},
 	falar: {tipo: 'estado', descricao: 'gesticula enquanto fala (automático nas falas em cena)'},
@@ -287,7 +300,7 @@ export const ACOES: Record<string, DefAcao> = {
 };
 
 /** Ações que encerram estados de corpo anteriores (agachar, esconder, sentar...). */
-export const ENCERRA_ESTADO = new Set(['levantar', 'andar', 'correr', 'recuar']);
+export const ENCERRA_ESTADO = new Set(['levantar', 'andar', 'correr', 'recuar', 'mancar']);
 
 export const PLANOS = ['geral', 'aberto', 'medio', 'americano', 'close', 'detalhe', 'ombro', 'pov', 'baixo', 'drone', 'nuca'] as const;
 export const MOVIMENTOS = ['fixo', 'aproximar', 'afastar', 'acompanhar', 'orbitar', 'subir', 'descer', 'panoramica', 'tremer'] as const;
@@ -319,7 +332,31 @@ export const EFEITOS: Record<string, number | null> = {
 	chuva: null,
 	/** clarão duplo de raio; combine com o som trovao */
 	relampago: 0.6,
+	/** luz falhando: apagões curtos e irregulares até "ate" (turbulência, pane) */
+	piscar: 1.5,
 };
+
+/** O que um personagem pode ter na mão direita ("segura" na cena ou "item" de pegar). */
+export const ITENS_MAO = ['lanca', 'lanterna', 'tocha', 'garrafa', 'galhos', 'isqueiro', 'radio', 'pacote'] as const;
+
+export const ACESSORIOS = [
+	'cabelo_curto',
+	'rabo_de_cavalo',
+	'bandana',
+	'bone',
+	'capacete',
+	'cartola',
+	'oculos',
+	'bigode',
+	'curativo',
+	'mochila',
+	'lenco',
+	'colete',
+	'tala',
+] as const;
+
+/** Opções de objeto que são âncoras de tempo (o resolvedor converte "aparece" em "_aparece" etc.). */
+export const ANCORAS_OBJETO = ['aparece', 'some', 'acende', 'cai', 'enche', 'cheio'] as const;
 
 export const SONS = [
 	'impacto',
@@ -345,6 +382,8 @@ export const SONS = [
 	'agua',
 	'engrenagem',
 	'ding',
+	'turbulencia',
+	'isqueiro',
 ] as const;
 
 export const AMBIENTES = ['mar', 'selva', 'noite', 'chuva', 'oficina', 'estudio'] as const;
@@ -370,13 +409,16 @@ export const OBJETOS = [
 	'caixa_preta',
 	'barras_ouro',
 	'maquete',
+	'garrafa',
+	'mantimentos',
+	'mascaras',
 ] as const;
 
 /** Para que serve cada objeto e as opções que ele aceita além de em, giro e escala. */
 export const USO_OBJETOS: Record<(typeof OBJETOS)[number], string> = {
 	sos: 'SOS escrito na areia',
 	pegadas_gigantes: 'trilha de pegadas; ate: [x, z], passo',
-	fogueira: 'fogo: chamas | brasas | apagada',
+	fogueira: 'fogo: chamas | brasas | apagada; acende (âncora: a lenha pega fogo e as chamas crescem em ~1,5 s)',
 	tronco: 'tronco caído para sentar',
 	lanterna: 'lanterna no chão',
 	riscos: 'riscos de contagem na parede; quantos',
@@ -385,7 +427,7 @@ export const USO_OBJETOS: Record<(typeof OBJETOS)[number], string> = {
 	malas: 'malas espalhadas; quantas, raio, semente',
 	aviao: 'avião caindo em chamas; de_ponto, ate_ponto [x,y,z], quando_de, quando_ate, fogo',
 	radio: 'rádio de emergência com luz; ligado (padrão true)',
-	prancheta: 'manifesto de passageiros (nomes riscados de laranja, um circulado); alt (altura, padrão 0.46), deitada',
+	prancheta: 'manifesto de passageiros (nomes riscados de laranja e circulados de vermelho); circulados (quantos nomes, padrão 1, até 10), alt (altura, padrão 0.46), deitada',
 	lanternas_mata: 'Homens de Laranja de longe: lanternas andando com feixe varrendo para +z local; quantas (3), largura (8), vultos (corpo escuro sem rosto, padrão true). Use à noite, entre as árvores',
 	farol: 'farol de 14 m numa ilhota, para pôr longe no mar; modo: gira | sos | apagado; escala; ilhota (false no cenário ilhota_farol, onde fica na marca farol); alt (altura do mar: -35 no mirante)',
 	luz_farol: 'a lente do farol na sala_farol (marca lente); modo: acesa | sos | apagada (padrão)',
@@ -393,6 +435,9 @@ export const USO_OBJETOS: Record<(typeof OBJETOS)[number], string> = {
 	barras_ouro: 'caixote aberto cheio de barras de ouro (a carga)',
 	barco: 'barco de carga de 11 m (proa em +x local); luzes (padrão true, com farol de proa), caixas (padrão true); alt (-35 no mirante)',
 	maquete: 'maquete do episódio (Como Funciona); modelo (id em "modelos"), id, alt; peças e animações no roteiro',
+	garrafa: 'garrafa de água de pé; quantas (padrão 1, as outras do lado)',
+	mantimentos: 'lona com garrafas e pacotes enfileirados; garrafas (6), pacotes (5), inicial (quantos estão lá; padrão todos, ou 0 se tiver "enche"); entre "enche" e "cheio" os itens vão aparecendo um a um',
+	mascaras: 'máscaras de oxigênio que caem do teto da cabine em "cai" e ficam balançando; em: [x do meio do par de bancos, z da fileira]; quantas (2)',
 };
 
 // --- maquetes ---------------------------------------------------------------------------

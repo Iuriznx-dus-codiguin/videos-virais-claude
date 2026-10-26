@@ -16,8 +16,8 @@ Se uma correção for ambígua, escolha a leitura mais provável, aplique e diga
 
 ## 2. Aplicar no episódio
 1. Sessão nova: `cd motor && npm ci && npm run dados -- baixar`. Edite `public/series/<serie>/epNN.json`.
-2. `npm run validar -- <serie> <parte>`. Se mudou fala: `bash voz/instalar.sh` (se a sessão for nova) e `npm run vozes -- <serie> <parte>`; o áudio dos episódios recentes vem do ramo `dados`, então só as falas alteradas são geradas.
-3. `npm run render -- <serie> <parte>` (em segundo plano, ~15 min) e confira os quadros afetados com `npm run quadro`.
+2. `npm run validar -- <serie> <parte>`. Se mudou fala: `bash voz/instalar.sh` (se a sessão for nova) e `npm run vozes -- <serie> <parte>`; o áudio dos episódios recentes vem do ramo `dados`, então só as falas alteradas são geradas, e a pronúncia delas é conferida com o Whisper (se ele reclamar de fala errada, use `--conferir-tudo` para conferir também as antigas). Se o Iuri disse que uma fala saiu estranha, reescreva a frase em vez de só gerar de novo.
+3. Rode `npm run enquadramento -- <serie> <parte>` e corrija o que ele apontar; os tempos mudam quando a voz muda, então rode de novo depois das vozes. Confira os quadros dos planos que mudaram (`npm run quadro -- <serie> <parte> <segundos...> --escala=0.4`) antes de renderizar. Depois `npm run render -- <serie> <parte>` (em segundo plano, ~55 min) e confira os quadros afetados de novo no vídeo final. Entregue o mp4 em alta qualidade e, se ele for grande, uma cópia leve só para assistir.
 4. `npm run dados -- entregar <serie> <parte> --dia=... --hora=...` com o mesmo dia e hora de antes (substitui o vídeo e o texto no ramo `dados`). Se já passou do horário de postar, diga ao Iuri que talvez ele já tenha postado o original.
 
 ## 2b. Correção no roteiro da próxima parte

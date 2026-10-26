@@ -54,6 +54,7 @@ const PASSOS: Record<string, DefPasso> = {
 	andar: {vmax: 1.7, acel: 0.35, freio: 0.45, ciclo: 1.35, apoio: 0.6, elevacao: 0.12},
 	correr: {vmax: 4.2, acel: 0.3, freio: 0.4, ciclo: 2.9, apoio: 0.38, elevacao: 0.26},
 	recuar: {vmax: 1.0, acel: 0.3, freio: 0.4, ciclo: 1.1, apoio: 0.62, elevacao: 0.08},
+	mancar: {vmax: 0.9, acel: 0.4, freio: 0.45, ciclo: 1.0, apoio: 0.62, elevacao: 0.09},
 	gigante: {vmax: 2.6, acel: 0.6, freio: 0.8, ciclo: 7.0, apoio: 0.6, elevacao: 1.1},
 };
 
@@ -191,7 +192,10 @@ interface Ator {
 	olhos: {t: number; aberto: boolean}[];
 	luzes: {t: number; acesa: boolean}[];
 	alturas: {t: number; dur: number; valor: number}[];
-	segura?: string;
+	/** o que está na mão direita a partir de cada instante (pegar e largar mudam) */
+	itens: {t: number; item?: string}[];
+	/** perna machucada (tala): 1 = esquerda, -1 = direita, 0 = nenhuma */
+	manca: number;
 	piscadas: number[];
 	soOlhos: boolean;
 	pontoOlhos?: V3;
@@ -206,7 +210,14 @@ const ALTURA_OBJETO: Record<string, number> = {
 	lanterna: 0.1,
 	riscos: 1.3,
 	caixote: 0.4,
+	garrafa: 0.15,
+	mantimentos: 0.12,
+	radio: 0.25,
+	mascaras: 1.3,
 };
+
+/** Quanto o item troca de mão depois do início de pegar/largar (o roteiro sincroniza o objeto com isso). */
+export const TROCA_ITEM = 0.5;
 
 export class SimulacaoCena {
 	readonly atores = new Map<string, Ator>();
@@ -240,7 +251,8 @@ export class SimulacaoCena {
 				olhos: [{t: -1e9, aberto: !pc.olhos_fechados}],
 				luzes: [{t: -1e9, acesa: false}],
 				alturas: [{t: -1e9, dur: 0, valor: pc.pose === 'agachado' ? 0 : 1}],
-				segura: pc.segura,
+				itens: [{t: -1e9, item: pc.segura}],
+				manca: ladoTala(bib),
 				piscadas: [],
 				soOlhos,
 				pontoOlhos,
@@ -411,13 +423,21 @@ export class SimulacaoCena {
 					if (a.faz === 'acender' || a.faz === 'apagar') ator.luzes.push({t: a.ini + 0.15, acesa: a.faz === 'acender'});
 					else if (a.faz === 'abrir_olhos' || a.faz === 'fechar_olhos') ator.olhos.push({t: a.ini, aberto: a.faz === 'abrir_olhos'});
 					else if (a.faz === 'levantar_gigante') ator.alturas.push({t: a.ini, dur: a.fim - a.ini, valor: 1});
-					else ator.gestos.push(a);
+					else {
+						ator.gestos.push(a);
+						if (a.faz === 'pegar') {
+							ator.itens.push({t: a.ini + TROCA_ITEM, item: a.item});
+							if (a.acesa) ator.luzes.push({t: a.ini + TROCA_ITEM, acesa: true});
+						}
+						if (a.faz === 'largar') ator.itens.push({t: a.ini + TROCA_ITEM, item: undefined});
+					}
 				} else if (tipo === 'modificador') ator.modificadores.push(a);
 			}
 			ator.olhares.sort((a, b) => a.t - b.t);
 			ator.expressoes.sort((a, b) => a.t - b.t);
 			ator.luzes.sort((a, b) => a.t - b.t);
 			ator.olhos.sort((a, b) => a.t - b.t);
+			ator.itens.sort((a, b) => a.t - b.t);
 		}
 	}
 
@@ -664,8 +684,24 @@ export class SimulacaoCena {
 			if (alvo && w > 0) misturar(P, alvo, w);
 		}
 
+		// arrumar: as mãos se revezam pegando e ajeitando coisas no chão
+		for (const c of ator.estados) {
+			if (c.nome !== 'arrumar') continue;
+			const w = pesoCamada(c, t) * (1 - fator);
+			if (w <= 0) continue;
+			const ph = 2 * Math.PI * 0.75 * (t - c.ini);
+			somar(P, {
+				ombroE: 0.28 * Math.sin(ph),
+				ombroD: 0.28 * Math.sin(ph + Math.PI),
+				cotovE: 0.25 * Math.max(0, Math.cos(ph)),
+				cotovD: 0.25 * Math.max(0, -Math.cos(ph)),
+				torcer: 0.08 * Math.sin(ph),
+				cabYaw: 0.12 * Math.sin(ph * 0.5),
+			}, w);
+		}
+
 		// locomoção
-		if (s && fator > 0.001) misturar(P, ciclo(s.tipo, this.fase(ator, t), s.def), fator);
+		if (s && fator > 0.001) misturar(P, ciclo(s.tipo, this.fase(ator, t), s.def, ator.manca || -1), fator);
 
 		// olhar
 		const tronco = matrizTronco(x, z, yaw, ator.escala, P);
@@ -720,8 +756,33 @@ export class SimulacaoCena {
 			const w = pesoGesto(g, t);
 			if (w <= 0) continue;
 			const p = clamp((t - g.ini) / Math.max(g.fim - g.ini, 1e-3));
-			const alvo = g.para !== undefined ? this.ponto(g.para, t, camera, true) : g.faz === 'erguer' ? this.ponto(o.atual.alvo, t, camera, true) : null;
+			let alvo = g.para !== undefined ? this.ponto(g.para, t, camera, true) : g.faz === 'erguer' ? this.ponto(o.atual.alvo, t, camera, true) : null;
+			// largar sem destino: no chão, logo à frente
+			if (!alvo && g.faz === 'largar') {
+				const f = frenteDe(yaw);
+				alvo = [x + f[0] * 0.7 * ator.escala, 0.1, z + f[1] * 0.7 * ator.escala];
+			}
 			switch (g.faz) {
+				case 'pegar':
+				case 'largar': {
+					// alvo baixo: dobra o corpo e os joelhos para alcançar (quem já está ajoelhado não precisa)
+					if (alvo) {
+						const ajoelhado = ator.estados.reduce((m, c) => (c.nome === 'agachar' || c.nome === 'agachado' || c.nome === 'arrumar' ? Math.max(m, pesoCamada(c, t)) : m), 0);
+						const baixo = clamp((0.95 * ator.escala - alvo[1]) / (0.6 * ator.escala));
+						if (baixo > 0) {
+							misturar(P, ABAIXAR, w * baixo * (1 - ajoelhado));
+							// ajoelhado, só debruça mais para a mão chegar ao chão
+							somar(P, {incl: 0.4, cabPitch: 0.1}, w * baixo * ajoelhado);
+						}
+						const tr = matrizTronco(x, z, yaw, ator.escala, P);
+						const ombro = ombroMundo(tr, -1);
+						const l = paraTronco(tr, alvo);
+						const lo = paraTronco(tr, ombro);
+						const mira = mirarBraco([l[0] - lo[0], l[1] - lo[1], l[2] - lo[2]], -1);
+						misturar(P, {ombroD: mira.ombro, abreD: mira.abre, giroD: 0, cotovD: 0.3}, w);
+					}
+					break;
+				}
 				case 'apontar':
 				case 'estender_mao':
 				case 'erguer':
@@ -839,13 +900,26 @@ export class SimulacaoCena {
 		let luz = ator.luzes[0].acesa ? 1 : 0;
 		for (const l of ator.luzes.slice(1)) if (l.t <= t) luz = l.acesa ? smoothstep(l.t, l.t + 0.08, t) : 1 - smoothstep(l.t, l.t + 0.08, t);
 
+		let segura: string | undefined;
+		for (const it of ator.itens) if (it.t <= t) segura = it.item;
+
 		// pernas por cinemática inversa a partir do alvo dos pés
-		return {tipo: 'palito', id: ator.id, x, z, yaw, escala: ator.escala, pose: P, segura: ator.segura, luz, bib: ator.bib, movendo: fator};
+		return {tipo: 'palito', id: ator.id, x, z, yaw, escala: ator.escala, pose: P, segura, luz, bib: ator.bib, movendo: fator};
 	}
 }
 
 /** Quanto o tronco inclina para a frente ao estender a mão. */
 const INCLINA_ESTENDER = 0.18;
+
+/** Corpo dobrado para pegar ou pôr algo no chão (joelhos flexionados, tronco para a frente). */
+const ABAIXAR: Partial<Pose> = {altQuadril: 0.8, incl: 0.62, peEz: 0.3, peEy: chaoPe(0.8), peDz: -0.16, peDy: chaoPe(0.8), cabPitch: 0.22};
+
+/** Lado da perna com tala (o acessório "tala" com "lado": "E" ou "D"; padrão direita). */
+const ladoTala = (bib: PersonagemBiblia) => {
+	const tala = bib.visual?.acessorios?.find((a) => a.tipo === 'tala');
+	if (!tala) return 0;
+	return tala.lado === 'E' ? 1 : -1;
+};
 
 const pesoCamada = (c: Camada, t: number) => smoothstep(c.ini, c.ini + c.sobe, t) * (1 - smoothstep(c.fim, c.fim + c.desce, t));
 
@@ -856,10 +930,15 @@ const pesoGesto = (g: AcaoTempo, t: number) => {
 	return envelope((t - g.ini) / dur, Math.min(0.35, 0.3 / dur), Math.min(0.35, 0.35 / dur));
 };
 
-/** Pose do ciclo de passos na fase `fase` (em ciclos). */
-const ciclo = (tipo: string, fase: number, def: DefPasso): Partial<Pose> => {
+/**
+ * Pose do ciclo de passos na fase `fase` (em ciclos). Mancando, a perna machucada (`ladoRuim`:
+ * 1 esquerda, -1 direita) quase não dobra nem sobe, pisa rápido, e o corpo afunda e pende para
+ * o lado bom enquanto ela segura o peso.
+ */
+const ciclo = (tipo: string, fase: number, def: DefPasso, ladoRuim = -1): Partial<Pose> => {
 	const correndo = tipo === 'correr';
 	const recuando = tipo === 'recuar';
+	const mancando = tipo === 'mancar';
 	const ph = 2 * Math.PI * fase;
 	const h = correndo ? 1.03 + 0.05 * Math.abs(Math.sin(ph)) : 1.13 + 0.025 * Math.cos(2 * ph);
 	const pe = (desloc: number) => {
@@ -879,6 +958,35 @@ const ciclo = (tipo: string, fase: number, def: DefPasso): Partial<Pose> => {
 	const e = pe(0);
 	const d = pe(0.5);
 	const balanco = Math.sin(ph);
+	if (mancando) {
+		const ruim = ladoRuim === 1 ? e : d;
+		const bom = ladoRuim === 1 ? d : e;
+		// a perna ruim sobe pouco (joelho duro) e a boa sobe mais para compensar
+		const chao = chaoPe(1.13);
+		ruim.y = chao + (ruim.y - chao) * 0.35;
+		bom.y = chao + (bom.y - chao) * 1.25;
+		let u = (fase + (ladoRuim === 1 ? 0 : 0.5)) % 1;
+		if (u < 0) u += 1;
+		const peso = u < def.apoio ? Math.sin((Math.PI * u) / def.apoio) : 0;
+		return {
+			altQuadril: 1.13 - 0.09 * peso,
+			incl: 0.12 + 0.05 * peso,
+			rolar: -ladoRuim * 0.11 * peso,
+			torcer: 0.05 * balanco,
+			cabRoll: ladoRuim * 0.06 * peso,
+			peEz: e.z,
+			peEy: e.y,
+			peDz: d.z,
+			peDy: d.y,
+			abrePernas: 0.06,
+			ombroE: -0.25 * balanco + (ladoRuim === -1 ? 0.25 * peso : 0),
+			ombroD: 0.25 * balanco + (ladoRuim === 1 ? 0.25 * peso : 0),
+			cotovE: 0.35,
+			cotovD: 0.35,
+			abreE: 0.18 + (ladoRuim === -1 ? 0.25 * peso : 0),
+			abreD: 0.18 + (ladoRuim === 1 ? 0.25 * peso : 0),
+		};
+	}
 	const bracos = correndo
 		? {ombroE: -0.85 * balanco + 0.25, ombroD: 0.85 * balanco + 0.25, cotovE: 1.55, cotovD: 1.55, abreE: 0.22, abreD: 0.22, giroE: -0.3, giroD: 0.3}
 		: recuando

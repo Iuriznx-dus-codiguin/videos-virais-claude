@@ -2,6 +2,7 @@
 // e a fuselagem por dentro. Tudo em medidas de avião de corredor único: fuselagem de 1,9 m de raio.
 import React from 'react';
 import * as THREE from 'three';
+import {mergeGeometries} from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 import {aleatorio, easeIn, clamp, lerp3, type V3} from '../util/mat';
 import {Malha, brilho, caixa, cilindro, cone, esfera, fumacaMat, geo, gradiente, haloMat, memo, toon} from './base';
 
@@ -77,9 +78,44 @@ export const Malas: React.FC<{x: number; z: number; quantas?: number; raio?: num
 	);
 };
 
-/** Fileira de bancos azuis de um lado e do outro do corredor. */
+/**
+ * Cintos abertos de todos os assentos: as duas metades caídas no estofado, sem fechar. Tiras e
+ * fivelas viram duas geometrias só (dois desenhos por fuselagem, por mais bancos que ela tenha).
+ */
+const cintos = (de: number, ate: number, passo: number, chao: number, parte: 'tiras' | 'fivelas') =>
+	geo(`cintos-${parte}${de},${ate},${passo},${chao}`, () => {
+		const pecas: THREE.BufferGeometry[] = [];
+		const r = aleatorio(818);
+		const banco = new THREE.Matrix4();
+		const metade = new THREE.Matrix4();
+		const ponta = new THREE.Matrix4();
+		for (let x = de; x <= ate; x += passo) {
+			for (const z of [-1.16, -0.62, 0.62, 1.16]) {
+				banco.makeTranslation(x, chao, z);
+				// [lado, comprimento, recuo para o encosto, giro]
+				for (const [lado, comp, recuo, giro] of [
+					[-1, 0.15, -0.07, 0.2 + r() * 0.35],
+					[1, 0.13, -0.02, -0.25 - r() * 0.4],
+				]) {
+					metade.makeRotationY(giro).setPosition(recuo, 0.452, lado * (0.24 - comp / 2));
+					metade.premultiply(banco);
+					if (parte === 'tiras') pecas.push(caixa(0.07, 0.012, comp).clone().applyMatrix4(metade));
+					else {
+						ponta.makeTranslation(0, 0.004, -lado * (comp / 2 + 0.03));
+						pecas.push(caixa(lado < 0 ? 0.05 : 0.07, lado < 0 ? 0.012 : 0.022, 0.06).clone().applyMatrix4(metade.clone().multiply(ponta)));
+					}
+				}
+			}
+		}
+		return mergeGeometries(pecas);
+	});
+
+/** Fileira de bancos azuis de um lado e do outro do corredor, com os cintos abertos. */
 const Bancos: React.FC<{de: number; ate: number; passo?: number; chao: number}> = ({de, ate, passo = 0.95, chao}) => {
-	const itens: React.ReactNode[] = [];
+	const itens: React.ReactNode[] = [
+		<mesh key="tiras" geometry={cintos(de, ate, passo, chao, 'tiras')} material={toon('#7A828E')} receiveShadow />,
+		<mesh key="fivelas" geometry={cintos(de, ate, passo, chao, 'fivelas')} material={toon('#D9DEE6')} />,
+	];
 	for (let x = de, i = 0; x <= ate; x += passo, i++) {
 		for (const lado of [-1, 1]) {
 			for (const faixa of [0.62, 1.16]) {
