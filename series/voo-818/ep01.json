@@ -197,11 +197,11 @@
         },
         "cida": {
           "em": [
-            -0.62,
-            0.15
+            -1.16,
+            -1.75
           ],
           "olhando": [
-            -0.62,
+            -1.16,
             1.0,
             6
           ],
@@ -223,52 +223,10 @@
           "pose": "sentado_banco",
           "escala": 0.55
         },
-        "pax1": {
-          "em": [
-            0.62,
-            -0.8
-          ],
-          "olhando": [
-            0.62,
-            1.0,
-            6
-          ],
-          "expressao": "medo",
-          "pose": "sentado_banco",
-          "escala": 0.55
-        },
         "pax2": {
           "em": [
-            1.16,
-            -0.8
-          ],
-          "olhando": [
-            1.16,
-            1.0,
-            6
-          ],
-          "expressao": "medo",
-          "pose": "sentado_banco",
-          "escala": 0.55
-        },
-        "pax3": {
-          "em": [
-            -0.62,
-            -0.8
-          ],
-          "olhando": [
-            -0.62,
-            1.0,
-            6
-          ],
-          "expressao": "medo",
-          "pose": "sentado_banco",
-          "escala": 0.55
-        },
-        "pax4": {
-          "em": [
             -1.16,
-            -1.75
+            -2.7
           ],
           "olhando": [
             -1.16,
@@ -398,25 +356,7 @@
           "ate": "fim"
         },
         {
-          "quem": "pax1",
-          "faz": "tremer",
-          "de": "inicio",
-          "ate": "fim"
-        },
-        {
           "quem": "pax2",
-          "faz": "tremer",
-          "de": "inicio",
-          "ate": "fim"
-        },
-        {
-          "quem": "pax3",
-          "faz": "tremer",
-          "de": "inicio",
-          "ate": "fim"
-        },
-        {
-          "quem": "pax4",
           "faz": "tremer",
           "de": "inicio",
           "ate": "fim"
@@ -425,11 +365,6 @@
           "quem": "davi",
           "faz": "susto",
           "de": "s1+1.2"
-        },
-        {
-          "quem": "pax1",
-          "faz": "susto",
-          "de": "s1+1.25"
         },
         {
           "quem": "davi",
@@ -438,20 +373,12 @@
         },
         {
           "quem": "lia",
-          "olhar": "cida",
+          "olhar": [
+            -0.6,
+            1.6,
+            1.8
+          ],
           "de": "s1+2.6"
-        },
-        {
-          "quem": "cida",
-          "olhar": "lia",
-          "de": "s1+2.6"
-        },
-        {
-          "quem": "cida",
-          "faz": "estender_mao",
-          "para": "lia",
-          "de": "s1+2.6",
-          "ate": "fim"
         },
         {
           "quem": "cida",
@@ -470,14 +397,14 @@
             1.2,
             6
           ],
-          "de": "s1+3.6"
+          "de": "s1+3.0"
         },
         {
           "quem": "davi",
           "olhar": [
-            0.3,
-            1.3,
-            -3.0
+            0.4,
+            2.1,
+            1.6
           ],
           "de": "s1+1.6"
         }
@@ -513,12 +440,12 @@
         },
         {
           "de": "s1+2.8",
-          "tipo": "medio",
+          "tipo": "close",
           "alvo": "lia",
           "camera": [
-            -0.45,
+            -0.3,
             1.45,
-            1.55
+            1.6
           ],
           "movimento": "tremer",
           "intensidade": 0.55
@@ -801,9 +728,13 @@
         },
         {
           "de": "f5",
-          "tipo": "ombro",
-          "alvo": "davi",
-          "alvo2": "lia"
+          "tipo": "medio",
+          "alvo": "lia",
+          "camera": [
+            4.05,
+            1.75,
+            2.6
+          ]
         }
       ],
       "sons": [
@@ -877,10 +808,68 @@
       ]
     },
     {
-      "id": "ferido",
+      "id": "cida",
       "cenario": "praia",
       "luz": "entardecer",
       "de": "f7",
+      "personagens": {
+        "cida": {
+          "em": [
+            4.55,
+            5.55
+          ],
+          "olhando": [
+            4.5,
+            1.55,
+            2.2
+          ],
+          "expressao": "serio",
+          "pose": "arrumar"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "destrocos",
+          "em": "destrocos",
+          "giro": 20
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "cida",
+          "olhar": "camera",
+          "de": "inicio"
+        }
+      ],
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "medio",
+          "alvo": "cida",
+          "camera": [
+            4.5,
+            1.55,
+            2.2
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        }
+      ],
+      "rotulos": [
+        {
+          "alvo": "cida",
+          "texto": "DONA CIDA · 79 ANOS",
+          "cor": "#B8F28A",
+          "de": "f7+0.1"
+        }
+      ],
+      "ambiente": "mar"
+    },
+    {
+      "id": "ferido",
+      "cenario": "praia",
+      "luz": "entardecer",
+      "de": "f8",
       "ambiente": "mar",
       "personagens": {
         "otavio": {
@@ -889,9 +878,9 @@
             5.4
           ],
           "olhando": [
-            9,
-            1.4,
-            5.6
+            6.0,
+            1.5,
+            8.5
           ],
           "expressao": "cansado",
           "pose": "sentado"
@@ -919,11 +908,6 @@
       ],
       "acoes": [
         {
-          "quem": "cida",
-          "olhar": "otavio",
-          "de": "f8"
-        },
-        {
           "quem": "otavio",
           "olhar": "cida",
           "de": "f8"
@@ -931,9 +915,9 @@
         {
           "quem": "otavio",
           "olhar": [
-            5.06,
-            1.85,
-            8.84
+            3.68,
+            1.95,
+            8.3
           ],
           "de": "f9"
         },
@@ -945,9 +929,9 @@
         {
           "quem": "otavio",
           "olhar": [
-            6.0,
-            0.6,
-            2.0
+            4.9,
+            0.9,
+            7.6
           ],
           "de": "f11"
         },
@@ -955,6 +939,11 @@
           "quem": "otavio",
           "expressao": "desconfiado",
           "de": "f11"
+        },
+        {
+          "quem": "cida",
+          "olhar": "otavio",
+          "de": "f8"
         }
       ],
       "planos": [
@@ -962,57 +951,30 @@
           "de": "inicio",
           "tipo": "aberto",
           "alvo": [
-            3.55,
-            1.2,
-            5.5
-          ],
-          "camera": [
             3.6,
-            1.55,
-            9.6
-          ],
-          "movimento": "aproximar",
-          "intensidade": 0.2
-        },
-        {
-          "de": "f8",
-          "tipo": "medio",
-          "alvo": [
-            3.95,
-            1.35,
-            5.55
+            1.6,
+            5.47
           ],
           "camera": [
-            2.15,
-            1.55,
-            7.85
+            2.6,
+            1.75,
+            11.0
           ]
         },
         {
           "de": "f9",
           "tipo": "medio",
-          "alvo": [
-            3.35,
-            1.25,
-            5.45
-          ],
+          "alvo": "otavio",
           "camera": [
-            5.06,
-            1.85,
-            8.84
+            3.68,
+            1.95,
+            8.3
           ],
           "movimento": "aproximar",
           "intensidade": 0.2
         }
       ],
       "rotulos": [
-        {
-          "alvo": "cida",
-          "texto": "DONA CIDA · 79 ANOS",
-          "cor": "#B8F28A",
-          "de": "f7+0.1",
-          "ate": "f8"
-        },
         {
           "alvo": "otavio",
           "texto": "OTÁVIO · COPILOTO",
@@ -1193,7 +1155,7 @@
           "de": "f13+1.3",
           "tipo": "aberto",
           "alvo": [
-            3.0,
+            2.6,
             1.3,
             5.9
           ],
@@ -1263,9 +1225,9 @@
         {
           "quem": "cida",
           "olhar": [
-            3.4,
-            2.5,
-            3.9
+            3.45,
+            1.5,
+            3.0
           ],
           "de": "f15:noite"
         }
@@ -1273,19 +1235,19 @@
       "planos": [
         {
           "de": "inicio",
-          "tipo": "medio",
+          "tipo": "aberto",
           "alvo": [
             3.7,
-            1.0,
-            6.4
+            0.85,
+            6.5
           ],
           "camera": [
-            3.4,
-            2.5,
-            3.9
+            3.45,
+            1.5,
+            3.0
           ],
           "movimento": "aproximar",
-          "intensidade": 0.25
+          "intensidade": 0.2
         }
       ],
       "efeitos": [
@@ -1416,7 +1378,7 @@
           "quem": "lia",
           "faz": "recuar",
           "de": "f16:fim-0.8",
-          "velocidade": 0.8
+          "velocidade": 0.6
         },
         {
           "quem": "davi",
@@ -1462,12 +1424,20 @@
       "planos": [
         {
           "de": "inicio",
-          "tipo": "medio",
-          "alvo": "lia",
-          "lado": "tres_quartos_esquerda"
+          "tipo": "aberto",
+          "alvo": [
+            2.0,
+            1.5,
+            4.5
+          ],
+          "camera": [
+            -1.3,
+            1.8,
+            0.7
+          ]
         },
         {
-          "de": "f16:fim+0.6",
+          "de": "f16:fim+1.0",
           "tipo": "aberto",
           "alvo": [
             2.5,
@@ -1760,14 +1730,14 @@
           "de": "inicio",
           "tipo": "medio",
           "alvo": [
-            3.5,
-            1.1,
-            5.6
+            3.05,
+            1.4,
+            5.4
           ],
           "camera": [
-            4.3,
-            1.75,
-            1.6
+            3.6,
+            1.6,
+            1.8
           ],
           "movimento": "aproximar",
           "intensidade": 0.25
@@ -1798,14 +1768,14 @@
           "de": "f21",
           "tipo": "aberto",
           "alvo": [
-            4.0,
-            1.6,
+            3.95,
+            2.0,
             5.6
           ],
           "camera": [
-            4.0,
-            2.4,
-            11.0
+            1.43,
+            2.3,
+            1.28
           ]
         },
         {
