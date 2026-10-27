@@ -204,17 +204,23 @@
         },
         {
           "quem": "otavio",
-          "olhar": "corredor_frente",
-          "de": "f4b"
-        },
-        {
-          "quem": "otavio",
           "expressao": "determinado",
           "de": "f4b"
         },
         {
           "quem": "davi",
           "expressao": "medo",
+          "de": "f4b"
+        },
+        {
+          "quem": "davi",
+          "faz": "virar",
+          "para": "otavio",
+          "de": "f4+0.5"
+        },
+        {
+          "quem": "otavio",
+          "olhar": "davi",
           "de": "f4b"
         }
       ],
@@ -233,18 +239,7 @@
             0.0
           ],
           "movimento": "aproximar",
-          "intensidade": 0.3
-        },
-        {
-          "de": "f3",
-          "tipo": "close",
-          "alvo": "davi",
-          "camera": [
-            0.38,
-            1.35,
-            -0.95
-          ],
-          "movimento": "fixo"
+          "intensidade": 0.6
         },
         {
           "de": "f4",
@@ -260,19 +255,10 @@
         },
         {
           "de": "f4b",
-          "tipo": "medio",
-          "alvo": [
-            0.05,
-            1.5,
-            -3.0
-          ],
-          "camera": [
-            -0.3,
-            1.25,
-            0.0
-          ],
-          "movimento": "aproximar",
-          "intensidade": 0.6
+          "tipo": "pov",
+          "alvo": "davi",
+          "alvo2": "otavio",
+          "movimento": "fixo"
         }
       ],
       "sons": [
@@ -529,6 +515,11 @@
           "quem": "cida",
           "expressao": "feliz",
           "de": "f9c"
+        },
+        {
+          "quem": "cida",
+          "olhar": "lia",
+          "de": "f9c-0.2"
         }
       ],
       "planos": [
@@ -565,9 +556,9 @@
           "tipo": "medio",
           "alvo": "cida",
           "camera": [
-            -3.3,
-            1.7,
-            5.9
+            -3.22,
+            1.5,
+            5.03
           ],
           "movimento": "aproximar",
           "intensidade": 0.2
@@ -621,6 +612,11 @@
         }
       },
       "objetos": [
+        {
+          "tipo": "destrocos",
+          "em": "destrocos",
+          "giro": 20
+        },
         {
           "tipo": "tronco",
           "em": [
@@ -696,9 +692,9 @@
           "de": "inicio",
           "tipo": "aberto",
           "alvo": [
-            0.6,
-            0.8,
-            9.2
+            1.1,
+            0.9,
+            9.3
           ],
           "camera": [
             -1.6,
@@ -710,16 +706,16 @@
         },
         {
           "de": "f10b",
-          "tipo": "detalhe",
+          "tipo": "aberto",
           "alvo": [
-            1.2,
-            0.5,
-            9.3
+            -1.5,
+            1.5,
+            -1.5
           ],
           "camera": [
-            1.0,
-            2.2,
-            11.6
+            3.0,
+            2.0,
+            6.0
           ],
           "movimento": "aproximar",
           "intensidade": 0.3
@@ -809,9 +805,9 @@
             4.6
           ],
           "olhando": [
-            2.6,
-            2.0,
-            -9.5
+            7.5,
+            1.5,
+            -3.4
           ],
           "expressao": "desconfiado"
         },
@@ -846,12 +842,12 @@
         {
           "tipo": "lanternas_mata",
           "em": [
-            2.6,
-            -9.5
+            7.2,
+            -2.2
           ],
-          "giro": 0,
+          "giro": -25,
           "quantas": 3,
-          "largura": 8,
+          "largura": 2,
           "aparece": "f16:acendeu"
         }
       ],
@@ -859,9 +855,9 @@
         {
           "quem": "lia",
           "olhar": [
-            2.6,
-            2.0,
-            -9.5
+            7.5,
+            1.5,
+            -3.4
           ],
           "de": "f16:acendeu+0.3"
         },
@@ -886,14 +882,14 @@
           "de": "inicio",
           "tipo": "aberto",
           "alvo": [
-            4.4,
-            1.4,
-            4.9
+            4.83,
+            1.5,
+            4.23
           ],
           "camera": [
-            1.8,
-            2.6,
-            0.8
+            7.6,
+            3.0,
+            -2.2
           ],
           "movimento": "aproximar",
           "intensidade": 0.2
@@ -902,14 +898,14 @@
           "de": "f16:acendeu",
           "tipo": "aberto",
           "alvo": [
-            2.6,
-            2.4,
-            -9.5
+            7.8,
+            1.4,
+            -3.5
           ],
           "camera": [
-            1.5,
-            2.2,
-            5.5
+            5.6,
+            2.4,
+            5.6
           ],
           "movimento": "aproximar",
           "intensidade": 0.3
@@ -931,9 +927,9 @@
           "tipo": "close",
           "alvo": "davi",
           "camera": [
-            3.4,
+            4.84,
             2.75,
-            1.7
+            1.92
           ],
           "movimento": "aproximar",
           "intensidade": 0.5
