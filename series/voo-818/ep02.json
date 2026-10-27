@@ -20,13 +20,14 @@
       "id": "f3",
       "quem": "cida",
       "tom": "calmo",
-      "texto": "Ninguém resolve nada de cabeça quente. Amanhã a gente pensa."
+      "texto": "Cabeça quente não resolve nada. Fogo aceso a noite toda e um vigia de cada vez."
     },
     {
       "id": "f4",
       "quem": "lia",
       "tom": "medo",
-      "texto": "Eu não vou dormir perto do mar. Tem tubarão."
+      "texto": "Eu não vou dormir perto do mar. Tem tubarão.",
+      "semente": 102
     },
     {
       "id": "f4b",
@@ -46,7 +47,7 @@
       "quem": "davi",
       "off": true,
       "tom": "tenso",
-      "texto": "Eu fingi que dormi. Quando todo mundo apagou, eu voltei pro avião.",
+      "texto": "Eu fiquei com o primeiro turno. Quando todo mundo apagou, eu voltei pro avião.",
       "pausa_depois": 0.4
     },
     {
@@ -161,7 +162,7 @@
         "cida": {
           "em": [
             5.2,
-            3.0
+            3
           ],
           "olhando": [
             5.2,
@@ -227,10 +228,21 @@
           "de": "f3"
         },
         {
+          "quem": "cida",
+          "faz": "arrumar",
+          "de": "f3+0.3",
+          "ate": "f3:fim"
+        },
+        {
+          "quem": "cida",
+          "faz": "sentar",
+          "de": "f3:fim"
+        },
+        {
           "quem": "lia",
           "olhar": [
             7.5,
-            1.0,
+            1,
             4.5
           ],
           "de": "f4"
@@ -291,7 +303,7 @@
           "tipo": "close",
           "alvo": "davi",
           "camera": [
-            7.0,
+            7,
             3.2,
             3.6
           ],
@@ -313,7 +325,7 @@
           "tipo": "medio",
           "alvo": "cida",
           "camera": [
-            5.0,
+            5,
             1.65,
             5.4
           ]
@@ -355,7 +367,7 @@
           "tipo": "aberto",
           "alvo": [
             5.2,
-            1.0,
+            1,
             4.6
           ],
           "camera": [
@@ -376,6 +388,11 @@
         {
           "de": "f2:fim",
           "som": "tensao_sobe",
+          "volume": 0.35
+        },
+        {
+          "de": "f3:fogo",
+          "som": "galho",
           "volume": 0.35
         }
       ],
@@ -483,7 +500,7 @@
           "alvo": "davi",
           "camera": [
             0,
-            1.15,
+            1.2,
             -1.3
           ],
           "movimento": "fixo"
@@ -699,12 +716,12 @@
           "alvo": [
             0.05,
             1.5,
-            -3.0
+            -3
           ],
           "camera": [
             -0.3,
             1.25,
-            0.0
+            0
           ],
           "movimento": "aproximar",
           "intensidade": 0.5

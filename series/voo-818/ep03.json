@@ -1,0 +1,982 @@
+{
+  "serie": "voo-818",
+  "parte": 3,
+  "titulo": "A jangada",
+  "musica": "misterio",
+  "falas": [
+    {
+      "id": "f1",
+      "quem": "davi",
+      "off": true,
+      "tom": "sussurro",
+      "texto": "Eu não tive coragem de virar."
+    },
+    {
+      "id": "f2",
+      "quem": "otavio",
+      "tom": "serio",
+      "texto": "O meu nome também está aí. Eu já tinha visto."
+    },
+    {
+      "id": "f3",
+      "quem": "davi",
+      "tom": "bravo",
+      "texto": "E não ia contar pra NINGUÉM?"
+    },
+    {
+      "id": "f4",
+      "quem": "otavio",
+      "tom": "serio",
+      "texto": "Quem circulou esses nomes vai voltar. Pra conferir."
+    },
+    {
+      "id": "f4b",
+      "quem": "otavio",
+      "tom": "determinado",
+      "texto": "Amanhã cedo, a gente começa a jangada.",
+      "pausa_depois": 0.4
+    },
+    {
+      "id": "f5",
+      "quem": "davi",
+      "off": true,
+      "texto": "De manhã, o Otávio fez as contas na frente de todo mundo."
+    },
+    {
+      "id": "f6",
+      "quem": "otavio",
+      "tom": "serio",
+      "texto": "Comida pra cinco dias. Se fosse resgate, já tinha chegado."
+    },
+    {
+      "id": "f7",
+      "quem": "cida",
+      "tom": "calmo",
+      "texto": "Resgate procura primeiro onde o avião caiu. A gente fica e faz sinal."
+    },
+    {
+      "id": "f8",
+      "quem": "otavio",
+      "tom": "bravo",
+      "texto": "E se quem vier NÃO for resgate?",
+      "pausa_depois": 0.4
+    },
+    {
+      "id": "f9",
+      "quem": "davi",
+      "off": true,
+      "texto": "Regra número quatro: sinal que se vê do céu. A Dona Cida fez um SOS de pedra."
+    },
+    {
+      "id": "f9b",
+      "quem": "lia",
+      "tom": "nervoso",
+      "texto": "E se ninguém olhar pra baixo?"
+    },
+    {
+      "id": "f9c",
+      "quem": "cida",
+      "tom": "calmo",
+      "texto": "Alguém sempre olha, minha filha."
+    },
+    {
+      "id": "f10",
+      "quem": "davi",
+      "off": true,
+      "texto": "E o Otávio, mancando, começou a jangada com os troncos da praia."
+    },
+    {
+      "id": "f10b",
+      "quem": "davi",
+      "off": true,
+      "tom": "tenso",
+      "texto": "Corda, a gente tinha. Cento e quarenta e sete cintos."
+    },
+    {
+      "id": "f11",
+      "quem": "lia",
+      "tom": "medo",
+      "texto": "Eu não subo nisso. Um tubarão vira essa coisa fácil."
+    },
+    {
+      "id": "f12",
+      "quem": "otavio",
+      "tom": "serio",
+      "texto": "Então fica esperando na praia. Eu vou."
+    },
+    {
+      "id": "f13",
+      "quem": "lia",
+      "tom": "bravo",
+      "texto": "Não! Deixa EU fazer a jangada. Uma que não vira."
+    },
+    {
+      "id": "f14",
+      "quem": "lia",
+      "tom": "determinado",
+      "texto": "E a gente testa aqui na beira primeiro."
+    },
+    {
+      "id": "f15",
+      "quem": "davi",
+      "off": true,
+      "texto": "Treze anos, dando ordem no copiloto. Eu gostei dela.",
+      "pausa_depois": 0.5
+    },
+    {
+      "id": "f16",
+      "quem": "davi",
+      "off": true,
+      "tom": "tenso",
+      "texto": "Mas naquela noite... a mata ACENDEU.",
+      "pausa_depois": 0.6
+    },
+    {
+      "id": "f17",
+      "quem": "lia",
+      "tom": "sussurro",
+      "texto": "Davi... tem gente lá.",
+      "pausa_depois": 0.3
+    },
+    {
+      "id": "f18",
+      "quem": "davi",
+      "off": true,
+      "tom": "medo",
+      "texto": "E as luzes vinham direto pro nosso fogo.",
+      "pausa_depois": 0.8
+    }
+  ],
+  "cenas": [
+    {
+      "id": "flagra",
+      "cenario": "cabine",
+      "luz": "noite",
+      "personagens": {
+        "davi": {
+          "em": [
+            0.15,
+            -2.5
+          ],
+          "olhando": "corredor_frente",
+          "expressao": "medo",
+          "escala": 0.55,
+          "segura": "lanterna"
+        },
+        "otavio": {
+          "em": [
+            -0.2,
+            -3.6
+          ],
+          "olhando": "corredor_frente",
+          "expressao": "serio",
+          "escala": 0.55
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "prancheta",
+          "em": "assento_manifesto",
+          "circulados": 4
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "davi",
+          "faz": "tremer",
+          "de": "inicio",
+          "ate": "f2"
+        },
+        {
+          "quem": "davi",
+          "expressao": "surpreso",
+          "de": "f2:visto"
+        },
+        {
+          "quem": "davi",
+          "expressao": "bravo",
+          "de": "f3"
+        },
+        {
+          "quem": "otavio",
+          "olhar": "manifesto",
+          "de": "f4"
+        },
+        {
+          "quem": "otavio",
+          "olhar": "corredor_frente",
+          "de": "f4b"
+        },
+        {
+          "quem": "otavio",
+          "expressao": "determinado",
+          "de": "f4b"
+        },
+        {
+          "quem": "davi",
+          "expressao": "medo",
+          "de": "f4b"
+        }
+      ],
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "medio",
+          "alvo": [
+            0.05,
+            1.5,
+            -3.0
+          ],
+          "camera": [
+            -0.3,
+            1.25,
+            0.0
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f3",
+          "tipo": "close",
+          "alvo": "davi",
+          "camera": [
+            0.38,
+            1.35,
+            -0.95
+          ],
+          "movimento": "fixo"
+        },
+        {
+          "de": "f4",
+          "tipo": "detalhe",
+          "alvo": "manifesto",
+          "camera": [
+            0.55,
+            1.35,
+            -2.25
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f4b",
+          "tipo": "medio",
+          "alvo": [
+            0.05,
+            1.5,
+            -3.0
+          ],
+          "camera": [
+            -0.3,
+            1.25,
+            0.0
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.6
+        }
+      ],
+      "sons": [
+        {
+          "de": "inicio",
+          "som": "tensao_sobe",
+          "volume": 0.3
+        },
+        {
+          "de": "f4",
+          "som": "impacto",
+          "volume": 0.35
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "inicio",
+          "efeito": "vinheta",
+          "intensidade": 0.7
+        }
+      ]
+    },
+    {
+      "id": "contas",
+      "cenario": "praia",
+      "luz": "dia",
+      "ambiente": "mar",
+      "de": "f5",
+      "personagens": {
+        "otavio": {
+          "em": [
+            5.0,
+            7.7
+          ],
+          "olhando": [
+            5.0,
+            1.5,
+            3.0
+          ],
+          "expressao": "serio"
+        },
+        "davi": {
+          "em": [
+            2.9,
+            4.4
+          ],
+          "olhando": [
+            5.0,
+            2.8,
+            7.7
+          ],
+          "expressao": "desconfiado"
+        },
+        "cida": {
+          "em": [
+            5.3,
+            3.4
+          ],
+          "olhando": [
+            5.0,
+            2.6,
+            7.7
+          ],
+          "expressao": "serio",
+          "pose": "sentado"
+        },
+        "lia": {
+          "em": [
+            7.3,
+            4.6
+          ],
+          "olhando": [
+            5.0,
+            2.6,
+            7.7
+          ],
+          "expressao": "nervoso",
+          "pose": "sentado"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "destrocos",
+          "em": "destrocos",
+          "giro": 20
+        },
+        {
+          "tipo": "mantimentos",
+          "em": [
+            5.0,
+            6.5
+          ],
+          "garrafas": 6,
+          "pacotes": 5,
+          "inicial": 5
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "otavio",
+          "faz": "apontar",
+          "para": [
+            5.0,
+            0.2,
+            6.5
+          ],
+          "de": "f6"
+        },
+        {
+          "quem": "lia",
+          "expressao": "medo",
+          "de": "f6:cinco"
+        },
+        {
+          "quem": "otavio",
+          "expressao": "bravo",
+          "de": "f8"
+        },
+        {
+          "quem": "otavio",
+          "olhar": [
+            5.3,
+            1.4,
+            3.4
+          ],
+          "de": "f8"
+        },
+        {
+          "quem": "cida",
+          "expressao": "desconfiado",
+          "de": "f8:fim"
+        }
+      ],
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "aberto",
+          "alvo": [
+            5.0,
+            1.2,
+            5.6
+          ],
+          "camera": [
+            15.5,
+            4.2,
+            11.5
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f6",
+          "tipo": "medio",
+          "alvo": "otavio",
+          "camera": [
+            4.2,
+            2.9,
+            3.6
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f7",
+          "tipo": "medio",
+          "alvo": "cida",
+          "camera": [
+            5.4,
+            1.7,
+            6.2
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f8",
+          "tipo": "close",
+          "alvo": "otavio",
+          "camera": [
+            4.5,
+            2.9,
+            5.0
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.4
+        }
+      ],
+      "sons": [
+        {
+          "de": "f8:fim",
+          "som": "tensao_sobe",
+          "volume": 0.35
+        }
+      ]
+    },
+    {
+      "id": "sos",
+      "cenario": "praia",
+      "luz": "dia",
+      "ambiente": "mar",
+      "de": "f9",
+      "personagens": {
+        "cida": {
+          "em": [
+            -0.5,
+            5.7
+          ],
+          "olhando": [
+            -2.2,
+            0.2,
+            5.7
+          ],
+          "expressao": "determinado",
+          "pose": "arrumar"
+        },
+        "lia": {
+          "em": [
+            -4.4,
+            3.6
+          ],
+          "olhando": [
+            -3.0,
+            0.2,
+            5.0
+          ],
+          "expressao": "neutro",
+          "pose": "arrumar"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "destrocos",
+          "em": "destrocos",
+          "giro": 20
+        },
+        {
+          "tipo": "sos",
+          "em": "sos",
+          "escala": 1.3
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "lia",
+          "olhar": "cida",
+          "de": "f9b"
+        },
+        {
+          "quem": "lia",
+          "expressao": "nervoso",
+          "de": "f9b"
+        },
+        {
+          "quem": "cida",
+          "expressao": "feliz",
+          "de": "f9c"
+        }
+      ],
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "geral",
+          "alvo": [
+            -3.4,
+            0.0,
+            5.6
+          ],
+          "camera": [
+            -3.4,
+            14.0,
+            15.0
+          ],
+          "movimento": "afastar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f9b",
+          "tipo": "medio",
+          "alvo": "lia",
+          "camera": [
+            -2.66,
+            1.7,
+            5.92
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f9c",
+          "tipo": "medio",
+          "alvo": "cida",
+          "camera": [
+            -3.3,
+            1.7,
+            5.9
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        }
+      ],
+      "sons": []
+    },
+    {
+      "id": "jangada",
+      "cenario": "praia",
+      "luz": "dia",
+      "ambiente": "mar",
+      "de": "f10",
+      "personagens": {
+        "otavio": {
+          "em": [
+            2.4,
+            9.3
+          ],
+          "olhando": [
+            0.0,
+            0.3,
+            9.3
+          ],
+          "expressao": "determinado",
+          "pose": "arrumar"
+        },
+        "lia": {
+          "em": [
+            -3.2,
+            7.4
+          ],
+          "olhando": [
+            2.4,
+            2.0,
+            9.3
+          ],
+          "expressao": "medo"
+        },
+        "davi": {
+          "em": [
+            -2.0,
+            5.6
+          ],
+          "olhando": [
+            0.0,
+            1.0,
+            9.3
+          ],
+          "expressao": "neutro"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "tronco",
+          "em": [
+            0.0,
+            8.6
+          ],
+          "giro": 0
+        },
+        {
+          "tipo": "tronco",
+          "em": [
+            0.0,
+            9.3
+          ],
+          "giro": 0,
+          "aparece": "f10+1.2"
+        },
+        {
+          "tipo": "tronco",
+          "em": [
+            0.0,
+            10.0
+          ],
+          "giro": 0,
+          "aparece": "f10:troncos"
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "otavio",
+          "olhar": "lia",
+          "de": "f12"
+        },
+        {
+          "quem": "lia",
+          "faz": "medo",
+          "de": "f11",
+          "ate": "f12"
+        },
+        {
+          "quem": "lia",
+          "expressao": "bravo",
+          "de": "f13"
+        },
+        {
+          "quem": "lia",
+          "faz": "apontar",
+          "para": [
+            0.5,
+            0.3,
+            11.6
+          ],
+          "de": "f14"
+        },
+        {
+          "quem": "lia",
+          "expressao": "determinado",
+          "de": "f14"
+        },
+        {
+          "quem": "otavio",
+          "expressao": "surpreso",
+          "de": "f13"
+        },
+        {
+          "quem": "davi",
+          "expressao": "feliz",
+          "de": "f15"
+        }
+      ],
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "aberto",
+          "alvo": [
+            0.6,
+            0.8,
+            9.2
+          ],
+          "camera": [
+            -1.6,
+            3.2,
+            1.8
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f10b",
+          "tipo": "detalhe",
+          "alvo": [
+            1.2,
+            0.5,
+            9.3
+          ],
+          "camera": [
+            1.0,
+            2.2,
+            11.6
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f11",
+          "tipo": "medio",
+          "alvo": "lia",
+          "camera": [
+            -0.1,
+            2.0,
+            8.45
+          ]
+        },
+        {
+          "de": "f12",
+          "tipo": "medio",
+          "alvo": "otavio",
+          "camera": [
+            -1.4,
+            2.3,
+            9.6
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f13",
+          "tipo": "close",
+          "alvo": "lia",
+          "camera": [
+            -1.0,
+            1.9,
+            8.2
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f14",
+          "tipo": "medio",
+          "alvo": "lia",
+          "camera": [
+            -0.1,
+            2.0,
+            8.45
+          ],
+          "movimento": "afastar",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f15",
+          "tipo": "close",
+          "alvo": "davi",
+          "camera": [
+            -0.6,
+            2.9,
+            8.2
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        }
+      ],
+      "sons": [
+        {
+          "de": "f10+1.2",
+          "som": "galho",
+          "volume": 0.4
+        },
+        {
+          "de": "f10:troncos",
+          "som": "galho",
+          "volume": 0.4
+        }
+      ]
+    },
+    {
+      "id": "lanternas",
+      "cenario": "praia",
+      "luz": "noite",
+      "ambiente": "mar",
+      "de": "f16",
+      "personagens": {
+        "davi": {
+          "em": [
+            3.5,
+            4.6
+          ],
+          "olhando": [
+            2.6,
+            2.0,
+            -9.5
+          ],
+          "expressao": "desconfiado"
+        },
+        "lia": {
+          "em": [
+            5.2,
+            6.2
+          ],
+          "olhando": [
+            5.2,
+            0.4,
+            4.6
+          ],
+          "expressao": "cansado",
+          "pose": "sentado"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "destrocos",
+          "em": "destrocos",
+          "giro": 20
+        },
+        {
+          "tipo": "fogueira",
+          "em": [
+            5.2,
+            4.6
+          ],
+          "fogo": "chamas"
+        },
+        {
+          "tipo": "lanternas_mata",
+          "em": [
+            2.6,
+            -9.5
+          ],
+          "giro": 0,
+          "quantas": 3,
+          "largura": 8,
+          "aparece": "f16:acendeu"
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "lia",
+          "olhar": [
+            2.6,
+            2.0,
+            -9.5
+          ],
+          "de": "f16:acendeu+0.3"
+        },
+        {
+          "quem": "lia",
+          "expressao": "medo",
+          "de": "f16:acendeu+0.3"
+        },
+        {
+          "quem": "davi",
+          "expressao": "medo",
+          "de": "f16:acendeu+0.3"
+        },
+        {
+          "quem": "davi",
+          "faz": "susto",
+          "de": "f17:fim"
+        }
+      ],
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "aberto",
+          "alvo": [
+            4.4,
+            1.4,
+            4.9
+          ],
+          "camera": [
+            1.8,
+            2.6,
+            0.8
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f16:acendeu",
+          "tipo": "aberto",
+          "alvo": [
+            2.6,
+            2.4,
+            -9.5
+          ],
+          "camera": [
+            1.5,
+            2.2,
+            5.5
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f17",
+          "tipo": "close",
+          "alvo": "lia",
+          "camera": [
+            5.4,
+            1.5,
+            3.9
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f17:fim",
+          "tipo": "close",
+          "alvo": "davi",
+          "camera": [
+            3.4,
+            2.75,
+            1.7
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.5
+        }
+      ],
+      "sons": [
+        {
+          "de": "inicio",
+          "som": "fogo",
+          "volume": 0.3
+        },
+        {
+          "de": "f16:acendeu",
+          "som": "impacto",
+          "volume": 0.5
+        },
+        {
+          "de": "f16:acendeu+0.4",
+          "som": "tensao_sobe",
+          "volume": 0.35
+        },
+        {
+          "de": "f17:fim+0.2",
+          "som": "galho",
+          "volume": 0.5
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "inicio",
+          "efeito": "vinheta",
+          "intensidade": 0.6
+        },
+        {
+          "de": "f16:acendeu",
+          "efeito": "zoom_soco"
+        }
+      ]
+    }
+  ],
+  "chamada": {
+    "pergunta": "Deixa a Lia construir a jangada ou ficam na ilha?",
+    "texto": "COMENTA",
+    "destaque": "PARTE 4"
+  }
+}
