@@ -24,6 +24,7 @@ Se uma correção for ambígua, escolha a leitura mais provável, aplique e diga
 Se a correção é do roteiro da próxima parte (enviado junto com a produção): edite o `epNN.json` dela, rode `npm run validar -- <serie> <N>` e `npm run dados -- salvar <serie> _historias`. Não gere voz nem renderize; a rotina da manhã produz a partir do roteiro corrigido. Responda com a saída de `npm run roteiro -- <serie> <N>` para ele conferir.
 
 ## 3. Virar regra
+- Correção sobre o jeito de contar (gancho, ritmo, palavra difícil, virada, chamada): veja antes se a `estrutura.md` da skill roteirizar-episodio já pede isso. Se já pede, a falha foi de execução: corrija o episódio e não crie regra. Se não pede, grave a regra (linha abaixo) e proponha a mudança na `estrutura.md` no resumo final.
 - Acrescente **uma linha curta e no imperativo** por correção de série em `public/series/<serie>/regras.md` e por correção das histórias em `public/series/_historias/regras.md`, com a data: `- (2026-10-26) Faça pausa de 0,8 s antes do susto.`
 - Antes de escrever, leia o arquivo e **não duplique**: se já existe regra parecida, reescreva a existente mais forte. Se duas regras se contradizem, a mais recente vence e a antiga é apagada.
 - Mantenha cada `regras.md` abaixo de ~40 linhas: ao passar disso, funda regras parecidas em uma só.
