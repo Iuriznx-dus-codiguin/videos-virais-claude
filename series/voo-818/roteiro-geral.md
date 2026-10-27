@@ -48,9 +48,9 @@ Segunda a sexta uma parte, sábado e domingo duas (11h e 18h). A parte 1 vai ao 
 | 18 | Resgate (dom 18h) | A Marinha chega pelo SOS. Ramos é preso, Valéria foge, os passageiros acordam. Meses depois, Valéria aparece na TV como heroína. | "Ela sorriu pra câmera. E mandou uma mensagem só pra mim." Comente "TEMPORADA 2". |
 
 ## Estilo de cada episódio
-- ~1min20. Abertura com o gancho nos três primeiros segundos, de preferência vivido por dentro (ação, perigo).
-- Davi narra em off boa parte; Lia, Cida e Otávio conversam e discordam em cena (frases curtas).
-- Pelo menos uma regra real de sobrevivência por episódio, mostrada na prática.
-- Um mistério novo ou uma revelação por episódio, sempre terminando no pior momento.
-- Quando houver uma decisão do grupo, a chamada pode virar escolha do público ("comenta: A ou B").
+- ~1min20, nas 8 batidas de `.claude/skills/roteirizar-episodio/estrutura.md`. Cada parte abre com o Davi falando com quem assiste sobre o problema daquela parte ("Se o seu avião cair numa ilha, não tente fugir pelo mar.") e se entende sozinha.
+- Davi narra em off, no presente, e corrige os instintos errados do grupo (e os dele); Lia, Cida e Otávio conversam e discordam em cena (frases curtas).
+- Pelo menos uma regra real de sobrevivência por episódio, mostrada na prática, como decisão com motivo.
+- Um passo do mistério por episódio, sempre terminando no pior momento; a virada usa contra eles algo que parecia seguro.
+- Quando houver uma decisão do grupo, a chamada vira escolha do público ("comenta: A ou B").
 - Humor curto do Davi para aliviar o medo (no máximo uma piada por episódio).
