@@ -1,5 +1,5 @@
 {
- "como_usar": "Item n = episódio n (estado.json: proxima_parte). A rotina marca status 'produzido' e o dia. Quando faltarem 10 pendentes, a rotina acrescenta 20 novos, variando: cozinha, banheiro, rua, transporte, cidade, energia, grandes obras. Não repita tema. 'estilo' é a abertura sugerida (veja estilos.md); toda pauta usa também pelo menos um MAS no meio.",
+ "como_usar": "Item n = episódio n (estado.json: proxima_parte). A rotina marca status 'produzido' e o dia. Quando faltarem 10 pendentes, a rotina acrescenta 20 novos, variando: cozinha, banheiro, rua, transporte, cidade, energia, grandes obras. Não repita tema. Todo vídeo segue o framework 'você constrói' de estilos.md: ache o jeito mais simples ('Se você...') e a cadeia de problemas até o objeto de hoje. 'conceitos' são candidatos a peças da cadeia; 'gancho' é um fato bom para a virada final ou para um degrau. O campo 'estilo' dos itens já produzidos é do formato antigo (2026-10-25).",
  "itens": [
   {
    "n": 1,
@@ -14,8 +14,7 @@
     "potência = tensão²/resistência"
    ],
    "gancho": "A água sai gelada do cano e um segundo depois sai quente, sem fogo.",
-   "status": "pendente",
-   "estilo": "MAS"
+   "status": "pendente"
   },
   {
    "n": 2,
@@ -30,8 +29,7 @@
     "LED como sucessor"
    ],
    "gancho": "Um fio fininho fica tão quente que vira luz, e não pega fogo.",
-   "status": "pendente",
-   "estilo": "cadeia de MAS"
+   "status": "pendente"
   },
   {
    "n": 3,
@@ -46,8 +44,7 @@
     "condensador atrás da geladeira"
    ],
    "gancho": "A geladeira não cria frio: ela tira o calor de dentro e joga fora.",
-   "status": "pendente",
-   "estilo": "mito"
+   "status": "pendente"
   },
   {
    "n": 4,
@@ -62,8 +59,7 @@
     "gravidade"
    ],
    "gancho": "Aquela curva no cano do vaso é o que impede o cheiro de subir.",
-   "status": "pendente",
-   "estilo": "dúvida comum"
+   "status": "pendente"
   },
   {
    "n": 5,
@@ -78,8 +74,7 @@
     "prato giratório e pontos frios"
    ],
    "gancho": "Ele foi inventado porque um chocolate derreteu no bolso de um engenheiro.",
-   "status": "pendente",
-   "estilo": "mito"
+   "status": "pendente"
   },
   {
    "n": 6,
@@ -94,8 +89,7 @@
     "vapor"
    ],
    "gancho": "Dentro dela a água ferve a uns 120 graus, não a 100.",
-   "status": "pendente",
-   "estilo": "E SE"
+   "status": "pendente"
   },
   {
    "n": 7,
@@ -110,8 +104,7 @@
     "atrito"
    ],
    "gancho": "Um zíper tem dezenas de dentes e só uma peça faz todo o trabalho.",
-   "status": "pendente",
-   "estilo": "dúvida comum"
+   "status": "pendente"
   },
   {
    "n": 8,
@@ -126,8 +119,7 @@
     "rotação"
    ],
    "gancho": "O ventilador não esfria o ar. Ele esfria você.",
-   "status": "pendente",
-   "estilo": "mito"
+   "status": "pendente"
   },
   {
    "n": 9,
@@ -142,8 +134,7 @@
     "mola que solta o pão"
    ],
    "gancho": "Quem decide a hora de pular o pão é uma lâmina de dois metais.",
-   "status": "pendente",
-   "estilo": "dúvida comum"
+   "status": "pendente"
   },
   {
    "n": 10,
@@ -158,8 +149,7 @@
     "segredo da chave"
    ],
    "gancho": "Os dentes da sua chave levantam pinos até uma linha invisível.",
-   "status": "pendente",
-   "estilo": "dúvida comum"
+   "status": "pendente"
   },
   {
    "n": 11,
@@ -174,8 +164,7 @@
     "furo no tubo para entrar ar"
    ],
    "gancho": "A ponta da caneta é uma bolinha que gira, e tem um furo de propósito na tampa.",
-   "status": "pendente",
-   "estilo": "dúvida comum"
+   "status": "pendente"
   },
   {
    "n": 12,
@@ -190,8 +179,7 @@
     "acoplamento"
    ],
    "gancho": "As lâminas não cortam tudo: o redemoinho é que traz a comida até elas.",
-   "status": "pendente",
-   "estilo": "mito"
+   "status": "pendente"
   },
   {
    "n": 13,
@@ -206,8 +194,7 @@
     "força centrífuga"
    ],
    "gancho": "A centrifugação tira a água da roupa sem calor nenhum.",
-   "status": "pendente",
-   "estilo": "dúvida comum"
+   "status": "pendente"
   },
   {
    "n": 14,
@@ -222,8 +209,7 @@
     "gás refrigerante"
    ],
    "gancho": "Ele foi inventado para secar papel numa gráfica, não para refrescar gente.",
-   "status": "pendente",
-   "estilo": "mito"
+   "status": "pendente"
   },
   {
    "n": 15,
@@ -238,8 +224,7 @@
     "força de Lorentz"
    ],
    "gancho": "Ímãs e fio de cobre fazem quase tudo que gira na sua casa.",
-   "status": "pendente",
-   "estilo": "cadeia de MAS"
+   "status": "pendente"
   },
   {
    "n": 16,
@@ -254,8 +239,7 @@
     "rolamento"
    ],
    "gancho": "A primeira bicicleta não tinha pedal.",
-   "status": "pendente",
-   "estilo": "mito"
+   "status": "pendente"
   },
   {
    "n": 17,
@@ -270,8 +254,7 @@
     "engrenagens"
    ],
    "gancho": "O tique-taque é uma peça segurando e soltando as engrenagens.",
-   "status": "pendente",
-   "estilo": "cadeia de MAS"
+   "status": "pendente"
   },
   {
    "n": 18,
@@ -286,8 +269,7 @@
     "exposição"
    ],
    "gancho": "A primeira foto da história levou horas para ficar pronta.",
-   "status": "pendente",
-   "estilo": "E SE"
+   "status": "pendente"
   },
   {
    "n": 19,
@@ -302,8 +284,7 @@
     "pino terra"
    ],
    "gancho": "Apertar o interruptor só fecha uma porta para a eletricidade.",
-   "status": "pendente",
-   "estilo": "dúvida comum"
+   "status": "pendente"
   },
   {
    "n": 20,
@@ -318,8 +299,7 @@
     "curto-circuito"
    ],
    "gancho": "Quando ele desarma, ele acabou de salvar a sua casa.",
-   "status": "pendente",
-   "estilo": "E SE"
+   "status": "pendente"
   },
   {
    "n": 21,
@@ -334,8 +314,7 @@
     "gravidade"
    ],
    "gancho": "Ela fica lá em cima porque a altura é o que empurra a água na torneira.",
-   "status": "pendente",
-   "estilo": "E SE"
+   "status": "pendente"
   },
   {
    "n": 22,
@@ -350,8 +329,7 @@
     "válvula de segurança"
    ],
    "gancho": "A chama azul queima melhor que a amarela, e tem um motivo.",
-   "status": "pendente",
-   "estilo": "dúvida comum"
+   "status": "pendente"
   },
   {
    "n": 23,
@@ -366,8 +344,7 @@
     "pressão interna"
    ],
    "gancho": "Cada extintor tira um lado diferente do triângulo do fogo.",
-   "status": "pendente",
-   "estilo": "mito"
+   "status": "pendente"
   },
   {
    "n": 24,
@@ -382,8 +359,7 @@
     "combustão"
    ],
    "gancho": "Seu carro anda com milhares de explosões pequenas por minuto.",
-   "status": "pendente",
-   "estilo": "cadeia de MAS"
+   "status": "pendente"
   },
   {
    "n": 25,
@@ -398,8 +374,7 @@
     "multiplicação de força"
    ],
    "gancho": "Seu pé faz pouca força. O óleo multiplica.",
-   "status": "pendente",
-   "estilo": "E SE"
+   "status": "pendente"
   },
   {
    "n": 26,
@@ -414,8 +389,7 @@
     "furos que esvaziam"
    ],
    "gancho": "Ele enche mais rápido do que você consegue piscar.",
-   "status": "pendente",
-   "estilo": "cadeia de MAS"
+   "status": "pendente"
   },
   {
    "n": 27,
@@ -430,8 +404,7 @@
     "onda verde"
    ],
    "gancho": "O primeiro semáforo funcionava a gás e explodiu.",
-   "status": "pendente",
-   "estilo": "dúvida comum"
+   "status": "pendente"
   },
   {
    "n": 28,
@@ -446,8 +419,7 @@
     "corrimão sincronizado"
    ],
    "gancho": "Os degraus somem no chão porque andam em trilhos diferentes.",
-   "status": "pendente",
-   "estilo": "dúvida comum"
+   "status": "pendente"
   },
   {
    "n": 29,
@@ -462,8 +434,7 @@
     "motor e polia de tração"
    ],
    "gancho": "Se o cabo do elevador arrebentar, ele não cai. Isso foi demonstrado em 1854.",
-   "status": "pendente",
-   "estilo": "E SE"
+   "status": "pendente"
   },
   {
    "n": 30,
@@ -478,8 +449,7 @@
     "empuxo e arrasto"
    ],
    "gancho": "Um avião de 400 toneladas fica no ar por causa do formato da asa.",
-   "status": "pendente",
-   "estilo": "mito"
+   "status": "pendente"
   },
   {
    "n": 31,
@@ -494,8 +464,7 @@
     "barragem"
    ],
    "gancho": "A luz da sua casa provavelmente veio de água caindo.",
-   "status": "pendente",
-   "estilo": "cadeia de MAS"
+   "status": "pendente"
   },
   {
    "n": 32,
@@ -510,8 +479,7 @@
     "inversor"
    ],
    "gancho": "Luz batendo numa placa empurra elétrons, e isso vira corrente.",
-   "status": "pendente",
-   "estilo": "dúvida comum"
+   "status": "pendente"
   },
   {
    "n": 33,
@@ -526,8 +494,7 @@
     "chip"
    ],
    "gancho": "A primeira ligação de celular foi para o concorrente.",
-   "status": "pendente",
-   "estilo": "dúvida comum"
+   "status": "pendente"
   },
   {
    "n": 34,
@@ -542,8 +509,7 @@
     "relógio atômico e relatividade"
    ],
    "gancho": "Sem a teoria da relatividade, o GPS erraria quilômetros por dia.",
-   "status": "pendente",
-   "estilo": "E SE"
+   "status": "pendente"
   },
   {
    "n": 35,
@@ -558,8 +524,7 @@
     "ancoragem"
    ],
    "gancho": "Os cabos seguram a pista, e as pontas ficam presas em blocos gigantes.",
-   "status": "pendente",
-   "estilo": "cadeia de MAS"
+   "status": "pendente"
   },
   {
    "n": 36,
@@ -574,8 +539,7 @@
     "ventilação"
    ],
    "gancho": "Para cavar debaixo de um rio, a máquina monta a parede enquanto cava.",
-   "status": "pendente",
-   "estilo": "cadeia de MAS"
+   "status": "pendente"
   },
   {
    "n": 37,
@@ -590,8 +554,7 @@
     "vigas e pilares"
    ],
    "gancho": "Ele foi inventado por um jardineiro que queria vasos mais fortes.",
-   "status": "pendente",
-   "estilo": "mito"
+   "status": "pendente"
   },
   {
    "n": 38,
@@ -606,8 +569,7 @@
     "como ele sobe sozinho"
    ],
    "gancho": "O guindaste do prédio constrói o próprio pedaço para subir.",
-   "status": "pendente",
-   "estilo": "dúvida comum"
+   "status": "pendente"
   },
   {
    "n": 39,
@@ -622,8 +584,7 @@
     "amortecedor de massa"
    ],
    "gancho": "Prédios muito altos balançam de propósito, e têm um peso gigante para segurar.",
-   "status": "pendente",
-   "estilo": "cadeia de MAS"
+   "status": "pendente"
   }
  ]
 }
