@@ -11,7 +11,7 @@ Só mexa em `motor/public/series/como-funciona/`. Nunca grave regra em `_histori
 Separe cada correção em:
 - **só este vídeo** (troca de fala, peça errada, câmera cortando o Tito);
 - **regra do Como Funciona** (vale para os próximos: ritmo, jeito de explicar, cores da maquete, tamanho dos rótulos, tom do Tito, tipo de tema na pauta);
-- **estilo de narrativa** (um jeito novo de abrir ou virar a história, um exemplo que funcionou ou não): atualize `estilos.md` com o exemplo dele, sem apagar os estilos validados;
+- **framework** (`estilos.md`, o esqueleto "você constrói": "Se você..." → degraus "MAS/SÓ QUE..." + "Então, você..." → "Parabéns! Você construiu..."): um vídeo validado que ele mandou, um degrau que ficou difícil de entender, um jeito novo de abrir ou fechar. Acrescente o exemplo dele em `estilos.md` sem apagar os validados; mude o esqueleto só se o pedido mudar o esqueleto, e diga ao Iuri o que mudou;
 - **pauta** (trocar, tirar ou adiantar temas): edite `pauta.json` mantendo `n` em ordem para os pendentes.
 - **roteiro do próximo vídeo** (o que foi mandado junto com a entrega): edite o `epNN.json` dele, rode `validar` e `npm run dados -- salvar como-funciona`, sem voz nem render; a rotina de amanhã parte dessa versão.
 Se for ambígua, escolha a leitura mais provável, aplique e diga qual usou.
