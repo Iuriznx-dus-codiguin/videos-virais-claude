@@ -1,0 +1,1903 @@
+{
+ "serie": "como-funciona",
+ "parte": 3,
+ "titulo": "A geladeira não cria frio",
+ "musica": "curiosidade",
+ "personagens": {
+  "perkins": {
+   "nome": "Jacob Perkins",
+   "papel": "inventor americano que patenteou em Londres (1834) a máquina de compressão de vapor com éter, que fazia gelo; não fala",
+   "visual": {
+    "altura": 1.0,
+    "corpo": "#34495E",
+    "cabeca": "#F2D5BD",
+    "olhos": "ovais",
+    "sobrancelhas": "grossas",
+    "acessorios": [
+     {
+      "tipo": "cabelo_curto",
+      "cor": "#E2E2E2"
+     },
+     {
+      "tipo": "colete",
+      "cor": "#7A5230"
+     },
+     {
+      "tipo": "lenco",
+      "cor": "#F4F4F4"
+     }
+    ]
+   }
+  }
+ },
+ "modelos": {
+  "geladeira": [
+   {
+    "id": "gabinete",
+    "forma": "caixa",
+    "tam": [
+     0.56,
+     1.0,
+     0.5
+    ],
+    "pos": [
+     0,
+     0.5,
+     0
+    ],
+    "cor": "#EAF1F6"
+   },
+   {
+    "id": "dobradica",
+    "forma": "cilindro",
+    "tam": [
+     0.012,
+     0.98
+    ],
+    "pos": [
+     -0.28,
+     0.5,
+     0.27
+    ],
+    "cor": "#C8D0D8",
+    "sem_contorno": true
+   },
+   {
+    "id": "porta",
+    "forma": "caixa",
+    "tam": [
+     0.56,
+     0.98,
+     0.04
+    ],
+    "pos": [
+     0.28,
+     0,
+     0
+    ],
+    "pai": "dobradica",
+    "cor": "#F6F9FB"
+   },
+   {
+    "id": "puxador",
+    "forma": "caixa",
+    "tam": [
+     0.03,
+     0.26,
+     0.04
+    ],
+    "pos": [
+     0.22,
+     0.12,
+     0.04
+    ],
+    "pai": "porta",
+    "cor": "#9AA3AE"
+   },
+   {
+    "id": "divisoria",
+    "forma": "caixa",
+    "tam": [
+     0.5,
+     0.02,
+     0.44
+    ],
+    "pos": [
+     0,
+     0.74,
+     0
+    ],
+    "cor": "#D7E3EA"
+   },
+   {
+    "id": "prateleira",
+    "forma": "caixa",
+    "tam": [
+     0.5,
+     0.015,
+     0.42
+    ],
+    "pos": [
+     0,
+     0.42,
+     0
+    ],
+    "cor": "#CFE6F2",
+    "opacidade": 0.7,
+    "sem_contorno": true
+   },
+   {
+    "id": "evaporador",
+    "forma": "tubo",
+    "tam": [
+     0.014
+    ],
+    "caminho": [
+     [
+      0.2,
+      0.91,
+      -0.19
+     ],
+     [
+      -0.2,
+      0.91,
+      -0.19
+     ],
+     [
+      -0.2,
+      0.85,
+      -0.19
+     ],
+     [
+      0.2,
+      0.85,
+      -0.19
+     ],
+     [
+      0.2,
+      0.79,
+      -0.19
+     ],
+     [
+      -0.2,
+      0.79,
+      -0.19
+     ]
+    ],
+    "cor": "#7FD0FF"
+   },
+   {
+    "id": "gelo",
+    "forma": "caixa",
+    "tam": [
+     0.46,
+     0.16,
+     0.035
+    ],
+    "pos": [
+     0,
+     0.85,
+     -0.19
+    ],
+    "cor": "#F2FBFF",
+    "opacidade": 0.55,
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "maca",
+    "forma": "esfera",
+    "tam": [
+     0.055
+    ],
+    "pos": [
+     -0.13,
+     0.485,
+     0.06
+    ],
+    "cor": "#E53935"
+   },
+   {
+    "id": "leite",
+    "forma": "caixa",
+    "tam": [
+     0.09,
+     0.17,
+     0.09
+    ],
+    "pos": [
+     0.1,
+     0.515,
+     0.0
+    ],
+    "cor": "#FFFFFF"
+   },
+   {
+    "id": "compressor",
+    "forma": "capsula",
+    "tam": [
+     0.075,
+     0.05
+    ],
+    "pos": [
+     0.12,
+     0.1,
+     -0.34
+    ],
+    "cor": "#25272B"
+   },
+   {
+    "id": "saida",
+    "forma": "tubo",
+    "tam": [
+     0.01
+    ],
+    "caminho": [
+     [
+      0.17,
+      0.16,
+      -0.34
+     ],
+     [
+      0.22,
+      0.2,
+      -0.31
+     ],
+     [
+      0.2,
+      0.24,
+      -0.28
+     ]
+    ],
+    "cor": "#C9A24A"
+   },
+   {
+    "id": "condensador",
+    "forma": "tubo",
+    "tam": [
+     0.012
+    ],
+    "caminho": [
+     [
+      0.2,
+      0.24,
+      -0.28
+     ],
+     [
+      -0.2,
+      0.24,
+      -0.28
+     ],
+     [
+      -0.2,
+      0.36,
+      -0.28
+     ],
+     [
+      0.2,
+      0.36,
+      -0.28
+     ],
+     [
+      0.2,
+      0.48,
+      -0.28
+     ],
+     [
+      -0.2,
+      0.48,
+      -0.28
+     ],
+     [
+      -0.2,
+      0.6,
+      -0.28
+     ],
+     [
+      0.2,
+      0.6,
+      -0.28
+     ],
+     [
+      0.2,
+      0.72,
+      -0.28
+     ],
+     [
+      -0.2,
+      0.72,
+      -0.28
+     ],
+     [
+      -0.2,
+      0.84,
+      -0.28
+     ],
+     [
+      0.2,
+      0.84,
+      -0.28
+     ]
+    ],
+    "cor": "#3A3F47"
+   },
+   {
+    "id": "capilar",
+    "forma": "tubo",
+    "tam": [
+     0.006
+    ],
+    "caminho": [
+     [
+      0.2,
+      0.84,
+      -0.28
+     ],
+     [
+      0.25,
+      0.92,
+      -0.27
+     ],
+     [
+      0.24,
+      0.96,
+      -0.22
+     ],
+     [
+      0.2,
+      0.91,
+      -0.19
+     ]
+    ],
+    "cor": "#E0A84F"
+   },
+   {
+    "id": "retorno",
+    "forma": "tubo",
+    "tam": [
+     0.01
+    ],
+    "caminho": [
+     [
+      -0.2,
+      0.79,
+      -0.19
+     ],
+     [
+      -0.25,
+      0.76,
+      -0.27
+     ],
+     [
+      -0.25,
+      0.3,
+      -0.3
+     ],
+     [
+      -0.1,
+      0.12,
+      -0.34
+     ],
+     [
+      0.05,
+      0.1,
+      -0.34
+     ]
+    ],
+    "cor": "#C9A24A"
+   }
+  ],
+  "maquina": [
+   {
+    "id": "tanque",
+    "forma": "cilindro",
+    "tam": [
+     0.07,
+     0.18
+    ],
+    "pos": [
+     -0.16,
+     0.09,
+     0
+    ],
+    "cor": "#8E96A3"
+   },
+   {
+    "id": "bomba",
+    "forma": "cilindro",
+    "tam": [
+     0.035,
+     0.2
+    ],
+    "pos": [
+     0.06,
+     0.1,
+     0
+    ],
+    "cor": "#B87333"
+   },
+   {
+    "id": "roda",
+    "forma": "engrenagem",
+    "tam": [
+     0.09,
+     0.03,
+     10
+    ],
+    "pos": [
+     0.06,
+     0.25,
+     0.06
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#C9A24A"
+   },
+   {
+    "id": "cano",
+    "forma": "tubo",
+    "tam": [
+     0.012
+    ],
+    "caminho": [
+     [
+      -0.1,
+      0.16,
+      0
+     ],
+     [
+      -0.03,
+      0.22,
+      0
+     ],
+     [
+      0.04,
+      0.17,
+      0
+     ],
+     [
+      0.12,
+      0.08,
+      0
+     ],
+     [
+      0.22,
+      0.08,
+      0
+     ]
+    ],
+    "cor": "#B87333"
+   },
+   {
+    "id": "serpentina",
+    "forma": "mola",
+    "tam": [
+     0.055,
+     0.12,
+     5,
+     0.01
+    ],
+    "pos": [
+     0.27,
+     0.06,
+     0
+    ],
+    "cor": "#C9A24A"
+   },
+   {
+    "id": "gelo",
+    "forma": "caixa",
+    "tam": [
+     0.15,
+     0.14,
+     0.15
+    ],
+    "pos": [
+     0.27,
+     0.07,
+     0
+    ],
+    "cor": "#DFF4FF",
+    "opacidade": 0.6,
+    "oculta": true
+   }
+  ]
+ },
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "tito",
+   "texto": "A geladeira não cria FRIO.",
+   "tom": "animado"
+  },
+  {
+   "id": "f2",
+   "quem": "tito",
+   "texto": "Ela tira o CALOR lá de dentro... e joga na sua cozinha.",
+   "pausa_depois": 0.35
+  },
+  {
+   "id": "f3",
+   "quem": "tito",
+   "texto": "Em 1834, em Londres, o americano Jacob Perkins patenteou uma máquina que fazia gelo.",
+   "off": true
+  },
+  {
+   "id": "f4",
+   "quem": "tito",
+   "texto": "No mesmo ano, o Rio de Janeiro recebia gelo de NAVIO, vindo dos Estados Unidos.",
+   "off": true
+  },
+  {
+   "id": "f5",
+   "quem": "tito",
+   "texto": "Geladeira em casa? Só quase cem anos depois.",
+   "off": true,
+   "pausa_depois": 0.35
+  },
+  {
+   "id": "f6",
+   "quem": "tito",
+   "texto": "O segredo é a evaporação: todo líquido que evapora ROUBA calor. É o frio de sair molhado do banho."
+  },
+  {
+   "id": "f7",
+   "quem": "tito",
+   "texto": "Lá em cima passa o famoso gás da geladeira: ele chega LÍQUIDO, evapora num cano e puxa o calor da comida.",
+   "off": true
+  },
+  {
+   "id": "f8",
+   "quem": "tito",
+   "texto": "MAS aí o calor fica preso no gás, ainda DENTRO da geladeira.",
+   "tom": "tenso",
+   "pausa_depois": 0.35
+  },
+  {
+   "id": "f9",
+   "quem": "tito",
+   "texto": "Por isso existe o compressor, essa bola preta lá atrás: ele espreme o gás.",
+   "off": true
+  },
+  {
+   "id": "f10",
+   "quem": "tito",
+   "texto": "Espremido, o gás fica QUENTE e corre pela grade de trás, o condensador.",
+   "off": true
+  },
+  {
+   "id": "f11",
+   "quem": "tito",
+   "texto": "Ali o calor sai para a cozinha, e o gás vira líquido de novo.",
+   "off": true
+  },
+  {
+   "id": "f12",
+   "quem": "tito",
+   "texto": "Num cano fininho a pressão cai, ele evapora... e o ciclo recomeça.",
+   "off": true,
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f13",
+   "quem": "tito",
+   "texto": "MAS os primeiros gases eram TÓXICOS: um vazamento podia matar.",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f14",
+   "quem": "tito",
+   "texto": "Em 1928 inventaram um gás seguro, o freon. MAS ele atacava a camada de OZÔNIO.",
+   "tom": "tenso"
+  },
+  {
+   "id": "f15",
+   "quem": "tito",
+   "texto": "Por isso, hoje as geladeiras usam outros gases.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f16",
+   "quem": "tito",
+   "texto": "E SE você abrir a porta para refrescar a cozinha? Ela ESQUENTA!",
+   "tom": "animado"
+  },
+  {
+   "id": "f17",
+   "quem": "tito",
+   "texto": "O calor de dentro volta para a cozinha... e ainda soma o calor do motor.",
+   "tom": "animado"
+  },
+  {
+   "id": "f18",
+   "quem": "tito",
+   "texto": "E o ar-condicionado faz igualzinho: tira o calor da sala e joga lá na rua.",
+   "tom": "animado"
+  }
+ ],
+ "cenas": [
+  {
+   "id": "gancho",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "camera",
+     "expressao": "desconfiado"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "geladeira",
+     "em": "pedestal"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "dobradica",
+     "faz": "girar_para",
+     "angulo": -40,
+     "de": "inicio",
+     "ate": "inicio+0.8"
+    },
+    {
+     "peca": "geladeira",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "caminho": [
+      [
+       0.15,
+       0.45,
+       0.3
+      ],
+      [
+       0.2,
+       0.25,
+       0.6
+      ],
+      [
+       0.25,
+       0.05,
+       0.85
+      ]
+     ],
+     "quantidade": 14,
+     "velocidade": 0.7,
+     "de": "inicio+0.4",
+     "ate": "f2"
+    },
+    {
+     "peca": "geladeira",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "caminho": [
+      [
+       0.1,
+       0.7,
+       0.3
+      ],
+      [
+       0.2,
+       0.45,
+       0.65
+      ],
+      [
+       0.3,
+       0.1,
+       0.9
+      ]
+     ],
+     "quantidade": 10,
+     "velocidade": 0.6,
+     "de": "inicio+0.6",
+     "ate": "f2"
+    },
+    {
+     "peca": "dobradica",
+     "faz": "girar_para",
+     "angulo": 40,
+     "de": "f2",
+     "ate": "f2+0.5"
+    },
+    {
+     "peca": "gabinete",
+     "faz": "transparente",
+     "de": "f2:calor"
+    },
+    {
+     "peca": "porta",
+     "faz": "transparente",
+     "de": "f2:calor"
+    },
+    {
+     "peca": "geladeira",
+     "faz": "fluxo",
+     "tipo": "calor",
+     "caminho": [
+      [
+       -0.1,
+       0.5,
+       0.05
+      ],
+      [
+       0,
+       0.65,
+       -0.15
+      ],
+      [
+       0,
+       0.6,
+       -0.3
+      ],
+      [
+       0,
+       0.65,
+       -0.75
+      ]
+     ],
+     "quantidade": 14,
+     "velocidade": 0.8,
+     "de": "f2:calor"
+    },
+    {
+     "peca": "condensador",
+     "faz": "aquecer",
+     "de": "f2:joga",
+     "intensidade": 0.9
+    },
+    {
+     "peca": "geladeira",
+     "faz": "fluxo",
+     "tipo": "calor",
+     "caminho": [
+      [
+       0.1,
+       0.4,
+       -0.3
+      ],
+      [
+       0.3,
+       0.7,
+       -0.8
+      ]
+     ],
+     "quantidade": 12,
+     "velocidade": 0.9,
+     "de": "f2:joga"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "camera",
+     "de": "f1:cria"
+    },
+    {
+     "quem": "tito",
+     "expressao": "feliz",
+     "de": "f1:frio"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "maquete",
+     "de": "f2:calor"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "alvo": "geladeira",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 1.35,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f1:cria",
+     "tipo": "close",
+     "alvo": "tito",
+     "lado": "frente",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f2:calor",
+     "tipo": "detalhe",
+     "alvo": "geladeira",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 1.1,
+     "movimento": "orbitar",
+     "transicao": "flash"
+    }
+   ],
+   "sons": [
+    {
+     "de": "inicio",
+     "som": "chiado",
+     "volume": 0.4
+    },
+    {
+     "de": "f1:frio",
+     "som": "impacto",
+     "volume": 0.6
+    },
+    {
+     "de": "f2:calor",
+     "som": "whoosh"
+    },
+    {
+     "de": "f2:joga",
+     "som": "fogo",
+     "volume": 0.4
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f1:frio",
+     "efeito": "zoom_soco"
+    }
+   ]
+  },
+  {
+   "id": "invencao",
+   "cenario": "oficina",
+   "de": "f3",
+   "ambiente": "oficina",
+   "personagens": {
+    "perkins": {
+     "em": [
+      -1.0,
+      -0.3
+     ],
+     "olhando": [
+      1.2,
+      2.2,
+      3.0
+     ],
+     "expressao": "determinado"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "maquina",
+     "em": [
+      0,
+      -1.05
+     ],
+     "alt": 0.92,
+     "escala": 1.6
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f3:1834",
+     "ate": "f3:fim",
+     "grande": "1834",
+     "pequeno": "Jacob Perkins · Londres"
+    },
+    {
+     "de": "f4:navio",
+     "ate": "f4:fim+0.3",
+     "grande": "Rio de Janeiro",
+     "pequeno": "gelo de navio, vindo dos EUA"
+    },
+    {
+     "de": "f5:quase",
+     "ate": "f5:fim+0.3",
+     "grande": "Quase 100 anos",
+     "pequeno": "até a geladeira chegar às casas"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "roda",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 1.2,
+     "de": "f3:maquina",
+     "ate": "f4:fim"
+    },
+    {
+     "peca": "cano",
+     "faz": "fluxo",
+     "tipo": "gas",
+     "velocidade": 0.7,
+     "de": "f3:maquina"
+    },
+    {
+     "peca": "gelo",
+     "faz": "aparecer",
+     "de": "f3:gelo"
+    },
+    {
+     "peca": "serpentina",
+     "faz": "pulsar",
+     "de": "f3:gelo",
+     "ate": "f3:fim",
+     "intensidade": 0.5
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "perkins",
+     "olhar": "maquina",
+     "de": "f3:maquina"
+    },
+    {
+     "quem": "perkins",
+     "faz": "virar",
+     "para": [
+      0.3,
+      2.85,
+      2.2
+     ],
+     "de": "f4"
+    },
+    {
+     "quem": "perkins",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f4"
+    },
+    {
+     "quem": "perkins",
+     "faz": "apontar",
+     "para": "maquina",
+     "de": "f4:navio"
+    },
+    {
+     "quem": "perkins",
+     "expressao": "cansado",
+     "de": "f5"
+    },
+    {
+     "quem": "perkins",
+     "faz": "bracos_cruzados",
+     "de": "f5:quase"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "camera": [
+      0.9,
+      2.85,
+      3.9
+     ],
+     "alvo": [
+      -0.55,
+      2.25,
+      -0.7
+     ],
+     "transicao": "preto"
+    },
+    {
+     "de": "f3:maquina",
+     "tipo": "detalhe",
+     "alvo": "maquina",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.8,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f4",
+     "tipo": "close",
+     "camera": [
+      0.3,
+      2.85,
+      2.2
+     ],
+     "alvo": "perkins"
+    },
+    {
+     "de": "f4:navio",
+     "tipo": "detalhe",
+     "alvo": "maquina.gelo",
+     "lado": "frente",
+     "tamanho": 0.45,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f5",
+     "tipo": "medio",
+     "camera": [
+      0.4,
+      2.7,
+      3.6
+     ],
+     "alvo": "perkins",
+     "movimento": "aproximar",
+     "intensidade": 0.3
+    }
+   ],
+   "sons": [
+    {
+     "de": "f3:1834",
+     "som": "pop"
+    },
+    {
+     "de": "f3:maquina",
+     "som": "engrenagem",
+     "volume": 0.6
+    },
+    {
+     "de": "f3:gelo",
+     "som": "ding"
+    },
+    {
+     "de": "f4:navio",
+     "som": "whoosh"
+    },
+    {
+     "de": "f5:quase",
+     "som": "pop"
+    }
+   ]
+  },
+  {
+   "id": "por_dentro",
+   "cenario": "estudio",
+   "de": "f6",
+   "ambiente": "estudio",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "feliz"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "geladeira",
+     "em": "pedestal"
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "evaporador",
+     "texto": "Evaporador",
+     "de": "f7:cano",
+     "ate": "f7:fim",
+     "cor": "#7FD0FF"
+    },
+    {
+     "alvo": "compressor",
+     "texto": "Compressor",
+     "de": "f9:compressor",
+     "ate": "f10:corre"
+    },
+    {
+     "alvo": "condensador",
+     "texto": "Condensador",
+     "de": "f10:condensador",
+     "ate": "f11:fim",
+     "cor": "#FFB03A"
+    },
+    {
+     "alvo": "capilar",
+     "texto": "Cano fininho",
+     "de": "f12",
+     "ate": "f12:ciclo"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f6:evaporacao",
+     "ate": "f6:frio",
+     "grande": "Evaporar esfria",
+     "pequeno": "é por isso que o suor refresca"
+    },
+    {
+     "de": "f12:ciclo",
+     "ate": "f12:fim+0.3",
+     "grande": "Ciclo de refrige­ração",
+     "pequeno": "o gás dá voltas sem parar"
+    },
+    {
+     "de": "f13:toxicos",
+     "ate": "f13:fim+0.3",
+     "grande": "Gás tóxico",
+     "pequeno": "como a amônia das primeiras geladeiras"
+    },
+    {
+     "de": "f14:1928",
+     "ate": "f14:mas",
+     "grande": "Freon · 1928",
+     "pequeno": "seguro para quem respira"
+    },
+    {
+     "de": "f18:igualzinho",
+     "ate": "f18:fim+0.3",
+     "grande": "Mesmo ciclo",
+     "pequeno": "geladeira e ar-condicionado"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "gabinete",
+     "faz": "transparente",
+     "de": "f6:evaporacao"
+    },
+    {
+     "peca": "porta",
+     "faz": "transparente",
+     "de": "f6:evaporacao"
+    },
+    {
+     "peca": "evaporador",
+     "faz": "fluxo",
+     "tipo": "gas",
+     "velocidade": 0.6,
+     "de": "f7:gas",
+     "ate": "f8:dentro"
+    },
+    {
+     "peca": "geladeira",
+     "faz": "fluxo",
+     "tipo": "calor",
+     "caminho": [
+      [
+       -0.13,
+       0.5,
+       0.06
+      ],
+      [
+       -0.08,
+       0.65,
+       -0.05
+      ],
+      [
+       -0.05,
+       0.8,
+       -0.16
+      ]
+     ],
+     "quantidade": 8,
+     "velocidade": 0.7,
+     "de": "f7:puxa",
+     "ate": "f8:dentro"
+    },
+    {
+     "peca": "geladeira",
+     "faz": "fluxo",
+     "tipo": "calor",
+     "caminho": [
+      [
+       0.1,
+       0.6,
+       0.0
+      ],
+      [
+       0.08,
+       0.7,
+       -0.08
+      ],
+      [
+       0.05,
+       0.82,
+       -0.16
+      ]
+     ],
+     "quantidade": 8,
+     "velocidade": 0.65,
+     "de": "f7:puxa",
+     "ate": "f8:dentro"
+    },
+    {
+     "peca": "gelo",
+     "faz": "aparecer",
+     "de": "f7:calor"
+    },
+    {
+     "peca": "evaporador",
+     "faz": "fluxo",
+     "tipo": "calor",
+     "velocidade": 0.5,
+     "de": "f8:dentro",
+     "ate": "f9:espreme"
+    },
+    {
+     "peca": "evaporador",
+     "faz": "pulsar",
+     "de": "f8:dentro",
+     "ate": "f8:fim+0.3",
+     "intensidade": 0.6
+    },
+    {
+     "peca": "retorno",
+     "faz": "fluxo",
+     "tipo": "gas",
+     "velocidade": 0.8,
+     "de": "f9:compressor"
+    },
+    {
+     "peca": "compressor",
+     "faz": "tremer",
+     "de": "f9:espreme",
+     "intensidade": 1.2
+    },
+    {
+     "peca": "compressor",
+     "faz": "aquecer",
+     "de": "f10:quente",
+     "intensidade": 0.7
+    },
+    {
+     "peca": "saida",
+     "faz": "fluxo",
+     "tipo": "calor",
+     "velocidade": 0.8,
+     "de": "f10:quente"
+    },
+    {
+     "peca": "condensador",
+     "faz": "fluxo",
+     "tipo": "calor",
+     "velocidade": 0.9,
+     "de": "f10:corre"
+    },
+    {
+     "peca": "condensador",
+     "faz": "aquecer",
+     "de": "f10:condensador",
+     "intensidade": 0.9
+    },
+    {
+     "peca": "geladeira",
+     "faz": "fluxo",
+     "tipo": "calor",
+     "caminho": [
+      [
+       0,
+       0.5,
+       -0.3
+      ],
+      [
+       0.05,
+       0.7,
+       -0.9
+      ]
+     ],
+     "quantidade": 10,
+     "velocidade": 0.9,
+     "de": "f11:cozinha"
+    },
+    {
+     "peca": "geladeira",
+     "faz": "fluxo",
+     "tipo": "calor",
+     "caminho": [
+      [
+       0.15,
+       0.35,
+       -0.3
+      ],
+      [
+       0.35,
+       0.6,
+       -0.85
+      ]
+     ],
+     "quantidade": 10,
+     "velocidade": 0.8,
+     "de": "f11:cozinha"
+    },
+    {
+     "peca": "geladeira",
+     "faz": "fluxo",
+     "tipo": "calor",
+     "caminho": [
+      [
+       -0.15,
+       0.65,
+       -0.3
+      ],
+      [
+       -0.35,
+       0.9,
+       -0.85
+      ]
+     ],
+     "quantidade": 10,
+     "velocidade": 0.85,
+     "de": "f11:cozinha"
+    },
+    {
+     "peca": "condensador",
+     "faz": "esfriar",
+     "de": "f11:liquido"
+    },
+    {
+     "peca": "capilar",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "velocidade": 0.6,
+     "de": "f11:liquido"
+    },
+    {
+     "peca": "evaporador",
+     "faz": "fluxo",
+     "tipo": "gas",
+     "velocidade": 0.6,
+     "de": "f12:evapora"
+    },
+    {
+     "peca": "geladeira",
+     "faz": "fluxo",
+     "tipo": "gas",
+     "caminho": [
+      [
+       -0.25,
+       0.5,
+       -0.3
+      ],
+      [
+       -0.55,
+       0.7,
+       -0.2
+      ],
+      [
+       -0.8,
+       0.95,
+       0.0
+      ]
+     ],
+     "quantidade": 12,
+     "velocidade": 0.9,
+     "de": "f13:vazamento",
+     "ate": "f14"
+    },
+    {
+     "peca": "retorno",
+     "faz": "tremer",
+     "de": "f13:vazamento",
+     "ate": "f13:fim",
+     "intensidade": 1.0
+    },
+    {
+     "peca": "dobradica",
+     "faz": "girar_para",
+     "angulo": -100,
+     "de": "f16:porta",
+     "ate": "f16:porta+0.8"
+    },
+    {
+     "peca": "geladeira",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "caminho": [
+      [
+       0.0,
+       0.5,
+       0.3
+      ],
+      [
+       0.1,
+       0.3,
+       0.7
+      ],
+      [
+       0.15,
+       0.05,
+       1.0
+      ]
+     ],
+     "quantidade": 16,
+     "velocidade": 0.7,
+     "de": "f16:porta+0.4"
+    },
+    {
+     "peca": "geladeira",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "caminho": [
+      [
+       0.05,
+       0.25,
+       0.3
+      ],
+      [
+       0.15,
+       0.15,
+       0.7
+      ],
+      [
+       0.25,
+       0.03,
+       1.0
+      ]
+     ],
+     "quantidade": 12,
+     "velocidade": 0.6,
+     "de": "f16:porta+0.5"
+    },
+    {
+     "peca": "condensador",
+     "faz": "aquecer",
+     "de": "f16:esquenta",
+     "intensidade": 1.2
+    },
+    {
+     "peca": "compressor",
+     "faz": "aquecer",
+     "de": "f17:motor",
+     "intensidade": 1.3
+    },
+    {
+     "peca": "compressor",
+     "faz": "tremer",
+     "de": "f17:motor",
+     "ate": "f17:fim+0.5",
+     "intensidade": 1.5
+    },
+    {
+     "peca": "geladeira",
+     "faz": "fluxo",
+     "tipo": "calor",
+     "caminho": [
+      [
+       0,
+       0.5,
+       0.05
+      ],
+      [
+       0,
+       0.62,
+       -0.3
+      ],
+      [
+       0.1,
+       0.75,
+       -0.95
+      ]
+     ],
+     "quantidade": 12,
+     "velocidade": 0.9,
+     "de": "f18:tira"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f6"
+    },
+    {
+     "quem": "tito",
+     "faz": "bracos_cruzados",
+     "olhar": "camera",
+     "expressao": "nervoso",
+     "de": "f6:frio"
+    },
+    {
+     "quem": "tito",
+     "faz": "tremer",
+     "de": "f6:frio",
+     "ate": "f6:fim+0.4"
+    },
+    {
+     "quem": "tito",
+     "faz": "levantar",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f7"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "evaporador",
+     "de": "f7:cima"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f8"
+    },
+    {
+     "quem": "tito",
+     "faz": "maos_na_cabeca",
+     "de": "f8:mas"
+    },
+    {
+     "quem": "tito",
+     "faz": "levantar",
+     "expressao": "feliz",
+     "olhar": "maquete",
+     "de": "f9"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "compressor",
+     "de": "f9:bola"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "medo",
+     "de": "f13"
+    },
+    {
+     "quem": "tito",
+     "faz": "medo",
+     "de": "f13:toxicos"
+    },
+    {
+     "quem": "tito",
+     "faz": "levantar",
+     "expressao": "aliviado",
+     "de": "f14"
+    },
+    {
+     "quem": "tito",
+     "olhar": "teto",
+     "expressao": "nervoso",
+     "de": "f14:camada"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f15"
+    },
+    {
+     "quem": "tito",
+     "expressao": "surpreso",
+     "de": "f16:esquenta"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "camera",
+     "de": "f17:motor"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f18"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "transicao": "flash"
+    },
+    {
+     "de": "f6:evaporacao",
+     "tipo": "detalhe",
+     "alvo": "geladeira",
+     "lado": "frente",
+     "tamanho": 0.95,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f7:cima",
+     "tipo": "detalhe",
+     "alvo": "evaporador",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.55,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f8",
+     "tipo": "close",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f8:dentro",
+     "tipo": "detalhe",
+     "alvo": "evaporador",
+     "lado": "frente",
+     "tamanho": 0.5,
+     "transicao": "flash"
+    },
+    {
+     "de": "f9:compressor",
+     "tipo": "detalhe",
+     "camera": [
+      -0.85,
+      1.75,
+      -1.65
+     ],
+     "alvo": [
+      0.05,
+      1.2,
+      -0.32
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f10:corre",
+     "tipo": "detalhe",
+     "camera": [
+      -0.95,
+      1.95,
+      -1.75
+     ],
+     "alvo": [
+      0,
+      1.5,
+      -0.28
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.2
+    },
+    {
+     "de": "f11:cozinha",
+     "tipo": "detalhe",
+     "camera": [
+      0.2,
+      2.1,
+      -2.4
+     ],
+     "alvo": [
+      0,
+      1.5,
+      -0.35
+     ]
+    },
+    {
+     "de": "f12",
+     "tipo": "detalhe",
+     "camera": [
+      0.4,
+      2.35,
+      -1.35
+     ],
+     "alvo": [
+      0.2,
+      1.88,
+      -0.25
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.2
+    },
+    {
+     "de": "f12:ciclo",
+     "tipo": "detalhe",
+     "alvo": "geladeira",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 1.1,
+     "movimento": "orbitar"
+    },
+    {
+     "de": "f13",
+     "tipo": "close",
+     "alvo": "tito",
+     "lado": "frente",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f13:vazamento",
+     "tipo": "detalhe",
+     "camera": [
+      -1.3,
+      1.9,
+      -1.2
+     ],
+     "alvo": [
+      -0.3,
+      1.6,
+      -0.2
+     ],
+     "transicao": "flash"
+    },
+    {
+     "de": "f14",
+     "tipo": "detalhe",
+     "alvo": "evaporador",
+     "lado": "frente",
+     "tamanho": 0.7,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f14:mas",
+     "tipo": "close",
+     "alvo": "tito",
+     "lado": "frente",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f15",
+     "tipo": "detalhe",
+     "alvo": "geladeira",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 1.0
+    },
+    {
+     "de": "f16",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "frente",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f16:porta",
+     "tipo": "detalhe",
+     "alvo": "geladeira",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 1.2,
+     "movimento": "afastar"
+    },
+    {
+     "de": "f17",
+     "tipo": "detalhe",
+     "camera": [
+      -1.2,
+      2.0,
+      -1.9
+     ],
+     "alvo": [
+      0,
+      1.4,
+      -0.3
+     ]
+    },
+    {
+     "de": "f17:motor",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "frente",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f6:frio",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f7:puxa",
+     "tipo": "detalhe",
+     "alvo": "geladeira",
+     "lado": "frente",
+     "tamanho": 0.8,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f18:igualzinho",
+     "tipo": "detalhe",
+     "alvo": "geladeira",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 1.1,
+     "movimento": "afastar"
+    }
+   ],
+   "sons": [
+    {
+     "de": "f6:evaporacao",
+     "som": "pop"
+    },
+    {
+     "de": "f7:gas",
+     "som": "chiado",
+     "volume": 0.4
+    },
+    {
+     "de": "f8:mas",
+     "som": "tensao_sobe",
+     "volume": 0.7
+    },
+    {
+     "de": "f8:dentro",
+     "som": "impacto",
+     "volume": 0.6
+    },
+    {
+     "de": "f9:compressor",
+     "som": "engrenagem",
+     "volume": 0.6
+    },
+    {
+     "de": "f10:quente",
+     "som": "fogo",
+     "volume": 0.5
+    },
+    {
+     "de": "f11:cozinha",
+     "som": "sopro",
+     "volume": 0.5
+    },
+    {
+     "de": "f12:ciclo",
+     "som": "ding"
+    },
+    {
+     "de": "f13:mas",
+     "som": "tensao_sobe",
+     "volume": 0.7
+    },
+    {
+     "de": "f13:vazamento",
+     "som": "alarme",
+     "volume": 0.45
+    },
+    {
+     "de": "f14:1928",
+     "som": "pop"
+    },
+    {
+     "de": "f14:mas",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f15:hoje",
+     "som": "ding"
+    },
+    {
+     "de": "f16:porta",
+     "som": "whoosh"
+    },
+    {
+     "de": "f16:esquenta",
+     "som": "impacto",
+     "volume": 0.6
+    },
+    {
+     "de": "f17:motor",
+     "som": "engrenagem",
+     "volume": 0.5
+    },
+    {
+     "de": "f6:frio",
+     "som": "sopro",
+     "volume": 0.35
+    },
+    {
+     "de": "f18:igualzinho",
+     "som": "pop"
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f8:mas",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f13:toxicos",
+     "efeito": "flash",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f13:vazamento",
+     "efeito": "tremor",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f14:ozonio",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f16:esquenta",
+     "efeito": "zoom_soco"
+    }
+   ]
+  }
+ ],
+ "chamada": {
+  "pergunta": "E a descarga? Pra que serve aquela curva no cano?",
+  "texto": "Comenta",
+  "destaque": "DESCARGA"
+ }
+}

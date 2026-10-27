@@ -8,7 +8,7 @@
    "nome": "Thomas Edison",
    "papel": "inventor da lâmpada de filamento de carbono que ficava horas acesa (EUA, 1879); não fala",
    "visual": {
-    "altura": 1.0,
+    "altura": 1,
     "corpo": "#2F3A4A",
     "cabeca": "#F2D5BD",
     "olhos": "ovais",
@@ -25,6 +25,27 @@
      {
       "tipo": "lenco",
       "cor": "#1E1E24"
+     }
+    ]
+   }
+  },
+  "swan": {
+   "nome": "Joseph Swan",
+   "papel": "inventor inglês da lâmpada de filamento de carvão (Inglaterra, 1878-1880), depois sócio de Edison; não fala",
+   "visual": {
+    "altura": 1.0,
+    "corpo": "#5B3A6B",
+    "cabeca": "#F2D5BD",
+    "olhos": "ovais",
+    "sobrancelhas": "grossas",
+    "acessorios": [
+     {
+      "tipo": "cartola",
+      "cor": "#1E1E24"
+     },
+     {
+      "tipo": "bigode",
+      "cor": "#E4E4E4"
      }
     ]
    }
@@ -211,6 +232,47 @@
      0.05,
      0.35
     ]
+   },
+   {
+    "id": "fio_velho",
+    "forma": "tubo",
+    "tam": [
+     0.01
+    ],
+    "caminho": [
+     [
+      -0.09,
+      0.52,
+      0
+     ],
+     [
+      -0.07,
+      0.62,
+      0
+     ],
+     [
+      0,
+      0.66,
+      0
+     ],
+     [
+      0.07,
+      0.62,
+      0
+     ],
+     [
+      0.09,
+      0.52,
+      0
+     ]
+    ],
+    "cor": "#2E2A26",
+    "explode": [
+     0,
+     0.05,
+     0.35
+    ],
+    "oculta": true
    },
    {
     "id": "filamento",
@@ -454,13 +516,15 @@
    "id": "f4",
    "quem": "tito",
    "texto": "Na Inglaterra, Joseph Swan chegou quase junto. Brigaram na justiça e viraram sócios.",
-   "off": true
+   "off": true,
+   "pausa_depois": 0.45
   },
   {
    "id": "f5",
    "quem": "tito",
-   "texto": "Para o fio, Edison testou de tudo. Até bambu queimado.",
-   "off": true
+   "texto": "Para o fio, Edison testou de tudo. Até bambu virado carvão.",
+   "off": true,
+   "semente": 103
   },
   {
    "id": "f6",
@@ -472,7 +536,6 @@
    "id": "f7",
    "quem": "tito",
    "texto": "MAS no ar, o fio em brasa reage com o oxigênio... e QUEIMA em segundos.",
-   "off": true,
    "tom": "tenso",
    "pausa_depois": 0.4
   },
@@ -486,28 +549,25 @@
    "id": "f9",
    "quem": "tito",
    "texto": "MAS o carvão era frágil e, com o calor, ia se gastando.",
-   "off": true,
    "tom": "tenso"
   },
   {
    "id": "f10",
    "quem": "tito",
-   "texto": "Então veio o tungstênio: um metal que só derrete a 3.422 graus.",
+   "texto": "Então veio o tungstênio: um metal que só derrete acima de TRÊS MIL graus.",
    "off": true
   },
   {
    "id": "f11",
    "quem": "tito",
    "texto": "MAS no vácuo, o tungstênio quente evapora aos pouquinhos... e o vidro fica PRETO por dentro.",
-   "off": true,
    "tom": "tenso",
    "pausa_depois": 0.3
   },
   {
    "id": "f12",
    "quem": "tito",
-   "texto": "A saída? Encher o vidro com um gás que não reage com o fio, como o argônio.",
-   "off": true
+   "texto": "A saída? Encher o vidro com um gás que não reage com o fio, como o argônio."
   },
   {
    "id": "f13",
@@ -518,7 +578,7 @@
   {
    "id": "f14",
    "quem": "tito",
-   "texto": "MAS sobrou um problema: mais de 90% da energia vira CALOR, e não luz.",
+   "texto": "MAS sobrou um problema: mais de noventa por cento da energia vira CALOR, e não luz.",
    "tom": "tenso"
   },
   {
@@ -632,6 +692,12 @@
      "quantidade": 10,
      "velocidade": 1.15,
      "de": "f1:luz"
+    },
+    {
+     "peca": "lampada",
+     "faz": "explodir",
+     "de": "f2:cada",
+     "ate": "f2:cada+0.9"
     }
    ],
    "acoes": [
@@ -655,7 +721,7 @@
     {
      "quem": "tito",
      "expressao": "desconfiado",
-     "de": "f2:fogo"
+     "de": "f2"
     }
    ],
    "planos": [
@@ -677,16 +743,26 @@
     },
     {
      "de": "f2",
-     "tipo": "medio",
-     "alvo": "tito",
-     "lado": "tres_quartos_direita"
-    },
-    {
-     "de": "f2:fogo",
      "tipo": "close",
      "alvo": "tito",
      "lado": "frente",
      "movimento": "aproximar"
+    },
+    {
+     "de": "f2:cada",
+     "tipo": "detalhe",
+     "camera": [
+      0.7,
+      1.7,
+      2.3
+     ],
+     "alvo": [
+      0,
+      1.45,
+      0
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.3
     }
    ],
    "sons": [
@@ -700,7 +776,7 @@
      "som": "ding"
     },
     {
-     "de": "f2:fogo",
+     "de": "f2:cada",
      "som": "whoosh"
     }
    ],
@@ -718,8 +794,23 @@
    "ambiente": "oficina",
    "personagens": {
     "edison": {
-     "em": "inventor",
-     "olhando": "bancada_topo",
+     "em": [
+      -1.0,
+      -0.3
+     ],
+     "olhando": [
+      1.2,
+      2.2,
+      3.0
+     ],
+     "expressao": "determinado"
+    },
+    "swan": {
+     "em": [
+      3.5,
+      1.4
+     ],
+     "olhando": "edison",
      "expressao": "determinado"
     }
    },
@@ -727,8 +818,12 @@
     {
      "tipo": "maquete",
      "modelo": "prototipo",
-     "em": "bancada",
-     "escala": 1.4
+     "em": [
+      0,
+      -1.05
+     ],
+     "alt": 0.92,
+     "escala": 1.8
     }
    ],
    "cartoes": [
@@ -740,9 +835,9 @@
     },
     {
      "de": "f4:inglaterra",
-     "ate": "f4:fim",
+     "ate": "f4:brigaram",
      "grande": "Joseph Swan",
-     "pequeno": "Inglaterra · depois, sócio de Edison"
+     "pequeno": "Inglaterra · chegou quase junto"
     }
    ],
    "animacoes": [
@@ -774,18 +869,18 @@
    "acoes": [
     {
      "quem": "edison",
-     "faz": "andar",
-     "para": [
-      -0.45,
-      -0.6
-     ],
-     "de": "f3"
+     "olhar": "prototipo",
+     "de": "f3:acendeu"
     },
     {
      "quem": "edison",
-     "faz": "estender_mao",
-     "para": "prototipo",
-     "de": "f3:acendeu"
+     "faz": "virar",
+     "para": [
+      0.3,
+      2.85,
+      2.2
+     ],
+     "de": "f3:horas"
     },
     {
      "quem": "edison",
@@ -794,70 +889,170 @@
      "de": "f3:horas"
     },
     {
+     "quem": "swan",
+     "faz": "andar",
+     "para": [
+      1.0,
+      -0.3
+     ],
+     "de": "f4",
+     "velocidade": 1.3
+    },
+    {
+     "quem": "edison",
+     "olhar": "swan",
+     "expressao": "desconfiado",
+     "de": "f4:swan"
+    },
+    {
      "quem": "edison",
      "faz": "bracos_cruzados",
-     "de": "f4",
-     "expressao": "bravo"
+     "expressao": "bravo",
+     "de": "f4:brigaram"
+    },
+    {
+     "quem": "swan",
+     "faz": "bracos_cruzados",
+     "expressao": "bravo",
+     "de": "f4:brigaram"
     },
     {
      "quem": "edison",
      "faz": "levantar",
-     "de": "f4:socios",
-     "expressao": "aliviado"
+     "expressao": "feliz",
+     "de": "f4:viraram"
+    },
+    {
+     "quem": "swan",
+     "faz": "levantar",
+     "expressao": "feliz",
+     "de": "f4:viraram"
     },
     {
      "quem": "edison",
-     "faz": "apontar",
-     "para": "prototipo",
-     "de": "f5:bambu"
+     "faz": "estender_mao",
+     "para": [
+      0,
+      1.85,
+      -0.3
+     ],
+     "de": "f4:viraram+0.2"
+    },
+    {
+     "quem": "swan",
+     "faz": "estender_mao",
+     "para": [
+      0,
+      1.85,
+      -0.3
+     ],
+     "de": "f4:viraram+0.2"
+    },
+    {
+     "quem": "edison",
+     "faz": "virar",
+     "para": [
+      -0.35,
+      2.85,
+      2.5
+     ],
+     "de": "f5"
     },
     {
      "quem": "edison",
      "olhar": "camera",
+     "expressao": "cansado",
+     "de": "f5"
+    },
+    {
+     "quem": "edison",
+     "faz": "maos_na_cabeca",
+     "de": "f5:testou"
+    },
+    {
+     "quem": "edison",
+     "faz": "levantar",
      "expressao": "surpreso",
-     "de": "f5:bambu+0.4"
+     "de": "f5:bambu"
     }
    ],
    "planos": [
     {
      "de": "inicio",
      "tipo": "aberto",
-     "alvo": "edison",
-     "lado": "tres_quartos_esquerda",
+     "camera": [
+      0.9,
+      2.85,
+      3.9
+     ],
+     "alvo": [
+      -0.55,
+      2.25,
+      -0.7
+     ],
      "transicao": "preto"
     },
     {
      "de": "f3:acendeu",
      "tipo": "detalhe",
      "alvo": "prototipo",
-     "lado": "frente",
-     "tamanho": 1.0,
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.75,
      "movimento": "aproximar"
     },
     {
-     "de": "f4",
-     "tipo": "medio",
-     "alvo": "edison",
-     "lado": "tres_quartos_direita"
+     "de": "f3:horas",
+     "tipo": "close",
+     "camera": [
+      0.3,
+      2.85,
+      2.2
+     ],
+     "alvo": "edison"
     },
     {
-     "de": "f4:socios",
-     "tipo": "close",
-     "alvo": "edison",
-     "lado": "frente"
+     "de": "f4",
+     "tipo": "aberto",
+     "camera": [
+      2.2,
+      3.0,
+      5.5
+     ],
+     "alvo": [
+      0.0,
+      2.2,
+      -0.4
+     ]
+    },
+    {
+     "de": "f4:brigaram",
+     "tipo": "aberto",
+     "camera": [
+      0,
+      2.6,
+      6.2
+     ],
+     "alvo": [
+      0,
+      1.9,
+      -0.3
+     ]
     },
     {
      "de": "f5",
-     "tipo": "detalhe",
-     "alvo": "bancada_topo",
-     "lado": "frente",
-     "tamanho": 1.4
+     "tipo": "close",
+     "camera": [
+      -0.35,
+      2.85,
+      2.5
+     ],
+     "alvo": "edison"
     },
     {
      "de": "f5:bambu",
      "tipo": "detalhe",
      "alvo": "prototipo",
-     "lado": "tres_quartos_esquerda",
+     "lado": "frente",
      "tamanho": 0.6,
      "movimento": "aproximar"
     }
@@ -875,7 +1070,7 @@
     {
      "de": "f4:brigaram",
      "som": "impacto",
-     "volume": 0.5
+     "volume": 0.6
     },
     {
      "de": "f4:socios",
@@ -884,6 +1079,14 @@
     {
      "de": "f5:bambu",
      "som": "pop"
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f4:brigaram",
+     "ate": "f4:brigaram+0.5",
+     "efeito": "tremor",
+     "intensidade": 0.5
     }
    ]
   },
@@ -950,7 +1153,7 @@
     {
      "de": "f6:incandescencia",
      "ate": "f6:fim+0.3",
-     "grande": "Incandescência",
+     "grande": "Incandes­cência",
      "pequeno": "metal muito quente solta luz"
     },
     {
@@ -960,7 +1163,7 @@
      "pequeno": "o oxigênio queima o fio"
     },
     {
-     "de": "f10:3.422",
+     "de": "f10:tres",
      "ate": "f10:fim+0.3",
      "grande": "3.422 °C",
      "pequeno": "o tungstênio só derrete aqui"
@@ -972,10 +1175,22 @@
      "pequeno": "não reage com o fio quente"
     },
     {
-     "de": "f14:90",
-     "ate": "f14:fim+0.3",
+     "de": "f14:noventa",
+     "ate": "f14:fim",
      "grande": "+ de 90% vira calor",
      "pequeno": "só um pouquinho vira luz"
+    },
+    {
+     "de": "f16:1901",
+     "ate": "f17:segredo",
+     "grande": "1901",
+     "pequeno": "Livermore, Califórnia · acesa até hoje"
+    },
+    {
+     "de": "f17:fraquinha",
+     "ate": "f17:fim",
+     "grande": "4 watts",
+     "pequeno": "mais fraca que as de casa"
     }
    ],
    "animacoes": [
@@ -1173,7 +1388,8 @@
      ],
      "quantidade": 14,
      "velocidade": 0.4,
-     "de": "f12:gas"
+     "de": "f12:gas",
+     "ate": "f15:led"
     },
     {
      "peca": "filamento",
@@ -1204,7 +1420,7 @@
       ]
      ],
      "quantidade": 16,
-     "velocidade": 1.0,
+     "velocidade": 1,
      "de": "f14:calor",
      "ate": "f15"
     },
@@ -1220,12 +1436,12 @@
       ],
       [
        -0.5,
-       1.0,
+       1,
        0.2
       ]
      ],
      "quantidade": 16,
-     "velocidade": 1.0,
+     "velocidade": 1,
      "de": "f14:calor",
      "ate": "f15"
     },
@@ -1262,19 +1478,44 @@
      ],
      "quantidade": 10,
      "velocidade": 1.2,
-     "de": "f15:mesma"
+     "de": "f15:mesma",
+     "ate": "f16:lampada"
+    },
+    {
+     "peca": "led",
+     "faz": "sumir",
+     "de": "f16:lampada"
+    },
+    {
+     "peca": "fio_velho",
+     "faz": "aparecer",
+     "de": "f16:lampada+0.2"
+    },
+    {
+     "peca": "fio_velho",
+     "faz": "aquecer",
+     "de": "f16:acesa",
+     "intensidade": 1.15
     },
     {
      "peca": "lampada",
-     "faz": "explodir",
-     "de": "f16",
-     "ate": "f16+1.4"
-    },
-    {
-     "peca": "lampada",
-     "faz": "montar",
-     "de": "f17",
-     "ate": "f17+1.2"
+     "faz": "fluxo",
+     "tipo": "luz",
+     "caminho": [
+      [
+       0,
+       0.62,
+       0
+      ],
+      [
+       0,
+       0.62,
+       0.6
+      ]
+     ],
+     "quantidade": 4,
+     "velocidade": 0.5,
+     "de": "f16:acesa"
     }
    ],
    "acoes": [
@@ -1301,6 +1542,12 @@
      "de": "f8",
      "expressao": "feliz",
      "olhar": "maquete"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "serio",
+     "de": "f9"
     },
     {
      "quem": "tito",
@@ -1434,10 +1681,10 @@
     },
     {
      "de": "f12",
-     "tipo": "detalhe",
-     "alvo": "bulbo",
-     "lado": "tres_quartos_esquerda",
-     "tamanho": 0.9
+     "tipo": "close",
+     "alvo": "tito",
+     "lado": "frente",
+     "movimento": "aproximar"
     },
     {
      "de": "f13",
@@ -1455,11 +1702,11 @@
      "movimento": "aproximar"
     },
     {
-     "de": "f14:calor",
+     "de": "f14:noventa",
      "tipo": "detalhe",
      "alvo": "bulbo",
      "lado": "tres_quartos_esquerda",
-     "tamanho": 1.4
+     "tamanho": 0.95
     },
     {
      "de": "f15:led",
@@ -1473,14 +1720,44 @@
      "de": "f16",
      "tipo": "detalhe",
      "alvo": "bulbo",
-     "lado": "tres_quartos_esquerda",
-     "tamanho": 1.4,
-     "movimento": "orbitar",
+     "lado": "frente",
+     "tamanho": 0.9,
+     "movimento": "aproximar",
      "transicao": "flash"
     },
     {
      "de": "f17",
      "tipo": "medio",
+     "alvo": "tito",
+     "lado": "frente",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f11:evapora",
+     "tipo": "detalhe",
+     "alvo": "filamento",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.5,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f12:encher",
+     "tipo": "detalhe",
+     "alvo": "bulbo",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.9
+    },
+    {
+     "de": "f16:acesa",
+     "tipo": "detalhe",
+     "alvo": "fio_velho",
+     "lado": "frente",
+     "tamanho": 0.5,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f15",
+     "tipo": "close",
      "alvo": "tito",
      "lado": "frente",
      "movimento": "aproximar"
@@ -1549,11 +1826,15 @@
      "som": "ding"
     },
     {
+     "de": "f17:segredo",
+     "som": "pop"
+    },
+    {
      "de": "f16",
      "som": "whoosh"
     },
     {
-     "de": "f17:segredo",
+     "de": "f16:1901",
      "som": "pop"
     }
    ],
