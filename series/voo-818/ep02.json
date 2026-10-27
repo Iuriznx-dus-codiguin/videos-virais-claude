@@ -17,6 +17,18 @@
       "texto": "Resgate pergunta ONDE a gente está. Não pergunta NOME."
     },
     {
+      "id": "f2b",
+      "quem": "davi",
+      "tom": "bravo",
+      "texto": "E se o rádio chamar de novo?"
+    },
+    {
+      "id": "f2c",
+      "quem": "otavio",
+      "tom": "serio",
+      "texto": "Ninguém encosta nesse rádio."
+    },
+    {
       "id": "f3",
       "quem": "cida",
       "tom": "calmo",
@@ -49,6 +61,10 @@
       "tom": "tenso",
       "texto": "Eu fiquei com o primeiro turno. Quando todo mundo apagou, eu voltei pro avião.",
       "pausa_depois": 0.4
+    },
+    {
+      "id": "s1",
+      "silencio": 1.6
     },
     {
       "id": "f6",
@@ -216,7 +232,7 @@
         {
           "quem": "davi",
           "expressao": "desconfiado",
-          "de": "f2:fim"
+          "de": "f2c:fim"
         },
         {
           "quem": "cida",
@@ -295,6 +311,16 @@
           "quem": "davi",
           "faz": "sentar",
           "de": "f4c:fim"
+        },
+        {
+          "quem": "davi",
+          "expressao": "bravo",
+          "de": "f2b"
+        },
+        {
+          "quem": "otavio",
+          "expressao": "bravo",
+          "de": "f2c"
         }
       ],
       "planos": [
@@ -319,6 +345,30 @@
             3.2,
             5.6
           ]
+        },
+        {
+          "de": "f2b",
+          "tipo": "close",
+          "alvo": "davi",
+          "camera": [
+            7.0,
+            3.2,
+            3.6
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f2c",
+          "tipo": "medio",
+          "alvo": "otavio",
+          "camera": [
+            3.4,
+            3.2,
+            5.6
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.3
         },
         {
           "de": "f3",
@@ -386,7 +436,7 @@
           "volume": 0.3
         },
         {
-          "de": "f2:fim",
+          "de": "f2c:fim",
           "som": "tensao_sobe",
           "volume": 0.35
         },
@@ -408,7 +458,7 @@
       "id": "corredor",
       "cenario": "cabine",
       "luz": "noite",
-      "de": "f6",
+      "de": "s1",
       "personagens": {
         "davi": {
           "em": "fundo",
@@ -422,13 +472,13 @@
         {
           "quem": "davi",
           "faz": "acender",
-          "de": "f6"
+          "de": "s1+0.2"
         },
         {
           "quem": "davi",
           "faz": "andar",
           "para": "corredor_manifesto",
-          "de": "f6",
+          "de": "s1+0.5",
           "velocidade": 0.5
         },
         {
@@ -508,7 +558,7 @@
       ],
       "sons": [
         {
-          "de": "f6",
+          "de": "s1+0.2",
           "som": "clique",
           "volume": 0.5
         },
