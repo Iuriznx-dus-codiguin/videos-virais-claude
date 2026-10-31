@@ -329,7 +329,8 @@
      "alvo": "pino",
      "texto": "Pino",
      "de": "f8:pino",
-     "ate": "f9:fim"
+     "ate": "f9:fim",
+     "lado": "direita"
     },
     {
      "alvo": "valvula",
@@ -1065,7 +1066,7 @@
      "quem": "tito",
      "faz": "estender_mao",
      "para": "tampa",
-     "olhar": "maquete",
+     "olhar": "camera",
      "de": "f12:abrir"
     },
     {

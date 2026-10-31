@@ -1138,6 +1138,18 @@
     {
      "peca": "forno",
      "faz": "transparente",
+     "de": "f11:mas",
+     "opacidade": 0.12
+    },
+    {
+     "peca": "forno",
+     "faz": "transparente",
+     "de": "f13:assim",
+     "opacidade": 0.34
+    },
+    {
+     "peca": "forno",
+     "faz": "transparente",
      "de": "f16",
      "opacidade": 1
     },
