@@ -48,7 +48,8 @@
     "condensador atrás da geladeira"
    ],
    "gancho": "A geladeira não cria frio: ela tira o calor de dentro e joga fora.",
-   "status": "roteiro"
+   "status": "produzido",
+   "dia": "2026-10-31"
   },
   {
    "n": 4,
@@ -63,7 +64,7 @@
     "gravidade"
    ],
    "gancho": "Aquela curva no cano do vaso é o que impede o cheiro de subir.",
-   "status": "pendente"
+   "status": "roteiro"
   },
   {
    "n": 5,
