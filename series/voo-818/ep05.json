@@ -699,8 +699,8 @@
         },
         "lia": {
           "em": [
-            1.8,
-            7.4
+            2.6,
+            7.0
           ],
           "olhando": [
             5.2,
@@ -803,15 +803,31 @@
         },
         {
           "de": "f15",
-          "tipo": "aberto",
+          "tipo": "medio",
           "alvo": "lia",
           "camera": [
-            2,
+            5.0,
             2.4,
-            11.6
+            1.2
           ],
           "movimento": "aproximar",
           "intensidade": 0.2
+        },
+        {
+          "de": "f15:fim-1.0",
+          "tipo": "geral",
+          "alvo": [
+            5.0,
+            1.2,
+            4.9
+          ],
+          "camera": [
+            0.9,
+            2.4,
+            0.5
+          ],
+          "movimento": "afastar",
+          "intensidade": 0.15
         }
       ],
       "sons": [
