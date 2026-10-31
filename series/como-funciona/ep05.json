@@ -1,0 +1,1815 @@
+{
+ "serie": "como-funciona",
+ "parte": 5,
+ "titulo": "Construa um micro-ondas do zero",
+ "musica": "curiosidade",
+ "modelos": {
+  "microondas": [
+   {
+    "id": "magnetron",
+    "forma": "caixa",
+    "tam": [
+     0.2,
+     0.2,
+     0.2
+    ],
+    "pos": [
+     0.3875,
+     0.15,
+     0.025
+    ],
+    "cor": "#4A505A"
+   },
+   {
+    "id": "chocolate",
+    "forma": "caixa",
+    "tam": [
+     0.2,
+     0.0312,
+     0.1
+    ],
+    "pos": [
+     -0.175,
+     0.0163,
+     0.025
+    ],
+    "cor": "#6B3A1E"
+   },
+   {
+    "id": "poca",
+    "forma": "cilindro",
+    "tam": [
+     0.125,
+     0.0075
+    ],
+    "pos": [
+     -0.175,
+     0.0037,
+     0.025
+    ],
+    "cor": "#5A2E16",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "eixo_motor",
+    "forma": "cilindro",
+    "tam": [
+     0.0438,
+     0.0562
+    ],
+    "pos": [
+     -0.175,
+     0.0287,
+     0.025
+    ],
+    "cor": "#555B66",
+    "oculta": true
+   },
+   {
+    "id": "prato",
+    "forma": "cilindro",
+    "tam": [
+     0.1875,
+     0.015
+    ],
+    "pos": [
+     -0.175,
+     0.065,
+     0.025
+    ],
+    "cor": "#DDEFF7",
+    "oculta": true
+   },
+   {
+    "id": "comida",
+    "forma": "caixa",
+    "tam": [
+     0.2,
+     0.0625,
+     0.1375
+    ],
+    "pos": [
+     0.0,
+     0.0387,
+     0.0
+    ],
+    "pai": "prato",
+    "cor": "#E8892B"
+   },
+   {
+    "id": "mancha_quente",
+    "forma": "esfera",
+    "tam": [
+     0.035
+    ],
+    "pos": [
+     -0.0562,
+     0.0312,
+     0.0
+    ],
+    "pai": "comida",
+    "cor": "#FF5A1F",
+    "oculta": true
+   },
+   {
+    "id": "mancha_fria",
+    "forma": "esfera",
+    "tam": [
+     0.035
+    ],
+    "pos": [
+     0.0562,
+     0.0312,
+     0.0
+    ],
+    "pai": "comida",
+    "cor": "#7FD0FF",
+    "oculta": true
+   },
+   {
+    "id": "garfo",
+    "forma": "caixa",
+    "tam": [
+     0.0312,
+     0.0075,
+     0.2
+    ],
+    "pos": [
+     0.0,
+     0.0375,
+     0.0
+    ],
+    "giro": [
+     0,
+     30,
+     0
+    ],
+    "pai": "comida",
+    "cor": "#D9DEE5",
+    "oculta": true
+   },
+   {
+    "id": "forno",
+    "forma": "caixa",
+    "tam": [
+     1.125,
+     0.65,
+     0.6875
+    ],
+    "pos": [
+     0.0,
+     0.325,
+     0.0
+    ],
+    "cor": "#6F8396",
+    "oculta": true
+   },
+   {
+    "id": "dobradica",
+    "forma": "cilindro",
+    "tam": [
+     0.015,
+     0.625
+    ],
+    "pos": [
+     -0.5625,
+     0.325,
+     0.3625
+    ],
+    "cor": "#8E97A3",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "porta_vidro",
+    "forma": "caixa",
+    "tam": [
+     0.775,
+     0.6,
+     0.0312
+    ],
+    "pos": [
+     0.3875,
+     0.0,
+     0.0
+    ],
+    "pai": "dobradica",
+    "cor": "#BFE6FF",
+    "opacidade": 0.35,
+    "sem_contorno": true
+   },
+   {
+    "id": "tela",
+    "forma": "caixa",
+    "tam": [
+     0.625,
+     0.45,
+     0.0075
+    ],
+    "pos": [
+     0.0,
+     0.0,
+     0.02
+    ],
+    "pai": "porta_vidro",
+    "cor": "#2B2F36",
+    "opacidade": 0.55,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "trava",
+    "forma": "caixa",
+    "tam": [
+     0.0438,
+     0.0875,
+     0.0438
+    ],
+    "pos": [
+     0.2125,
+     0.4125,
+     0.3562
+    ],
+    "cor": "#E53935",
+    "oculta": true
+   },
+   {
+    "id": "painel",
+    "forma": "caixa",
+    "tam": [
+     0.3375,
+     0.6,
+     0.0312
+    ],
+    "pos": [
+     0.3875,
+     0.325,
+     0.3625
+    ],
+    "cor": "#2B2F36",
+    "oculta": true
+   }
+  ]
+ },
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "tito",
+   "texto": "Se você ficar do lado de um radar ligado com um chocolate no bolso, ele DERRETE sozinho.",
+   "tom": "animado"
+  },
+  {
+   "id": "f2",
+   "quem": "tito",
+   "texto": "Então, você pega a peça do radar que solta essas ondas, o magnetron, e aponta para um prato de comida."
+  },
+  {
+   "id": "f3",
+   "quem": "tito",
+   "texto": "Essas ondas fazem a água da comida CHACOALHAR bilhões de vezes por segundo. E isso vira calor, igual esfregar as mãos no frio.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f4",
+   "quem": "tito",
+   "texto": "MAS essas ondas se espalham para TODO lado e esquentam tudo em volta. Até você.",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f5",
+   "quem": "tito",
+   "texto": "Então, você fecha tudo numa caixa de METAL. O metal rebate as ondas, igual espelho, e elas ficam presas lá dentro."
+  },
+  {
+   "id": "f6",
+   "quem": "tito",
+   "texto": "SÓ QUE a caixa precisa de uma porta. E de vidro não dá: as ondas ATRAVESSAM o vidro.",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f7",
+   "quem": "tito",
+   "texto": "Então, você cola no vidro uma tela de metal cheia de FURINHOS."
+  },
+  {
+   "id": "f8",
+   "quem": "tito",
+   "texto": "A luz passa e você vê a comida. Já as ondas são grandes demais para os furinhos, e voltam.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f9",
+   "quem": "tito",
+   "texto": "E SE alguém abrir a porta com tudo ligado?",
+   "tom": "tenso",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f10",
+   "quem": "tito",
+   "texto": "Então, você coloca travas na porta: abriu, o magnetron desliga na HORA.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f11",
+   "quem": "tito",
+   "texto": "MAS a comida sai com manchas: um pedaço PELANDO e outro ainda gelado.",
+   "tom": "tenso"
+  },
+  {
+   "id": "f12",
+   "quem": "tito",
+   "texto": "É que as ondas, batendo nas paredes, ficam fortes em uns pontos e fracas em outros."
+  },
+  {
+   "id": "f13",
+   "quem": "tito",
+   "texto": "Então, você coloca um motorzinho embaixo do prato, para ele GIRAR. Assim, cada pedaço passa pelos pontos fortes.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f14",
+   "quem": "tito",
+   "texto": "E sabe por que garfo não pode entrar aqui?",
+   "tom": "animado"
+  },
+  {
+   "id": "f15",
+   "quem": "tito",
+   "texto": "As ondas se juntam nas PONTAS do metal e soltam faísca. A caixa, lisinha, não tem ponta nenhuma.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f16",
+   "quem": "tito",
+   "texto": "Parabéns! Você construiu um MICRO-ONDAS!",
+   "tom": "animado"
+  }
+ ],
+ "cenas": [
+  {
+   "id": "construcao",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "feliz"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "microondas",
+     "em": "pedestal"
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "magnetron",
+     "texto": "Magnetron",
+     "de": "f2:magnetron",
+     "ate": "f3:segundo",
+     "cor": "#FFE14A"
+    },
+    {
+     "alvo": "forno",
+     "texto": "Metal",
+     "de": "f5:metal",
+     "ate": "f5:presas"
+    },
+    {
+     "alvo": "tela",
+     "texto": "Tela de metal",
+     "de": "f7:tela",
+     "ate": "f8:fim"
+    },
+    {
+     "alvo": "trava",
+     "texto": "Trava",
+     "de": "f10:travas",
+     "ate": "f10:fim",
+     "cor": "#FF6B6B"
+    },
+    {
+     "alvo": "mancha_quente",
+     "texto": "Ponto forte",
+     "de": "f12:fortes",
+     "ate": "f13:motorzinho",
+     "cor": "#FFB03A"
+    },
+    {
+     "alvo": "mancha_fria",
+     "texto": "Ponto fraco",
+     "de": "f12:fracas",
+     "ate": "f13:motorzinho",
+     "cor": "#7FD0FF"
+    },
+    {
+     "alvo": "prato",
+     "texto": "Prato que gira",
+     "de": "f13:girar",
+     "ate": "f13:fim"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f3:bilhoes",
+     "ate": "f3:fim",
+     "grande": "Bilhões de vezes",
+     "pequeno": "por segundo a água chacoalha"
+    },
+    {
+     "de": "f8:ondas",
+     "ate": "f8:fim+0.3",
+     "grande": "Furinhos",
+     "pequeno": "a luz passa, a onda não"
+    },
+    {
+     "de": "f15:pontas",
+     "ate": "f15:fim+0.3",
+     "grande": "Nada de garfo",
+     "pequeno": "ponta de metal solta faísca"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "magnetron",
+     "faz": "pulsar",
+     "de": "inicio",
+     "ate": "f10:desliga",
+     "intensidade": 0.6
+    },
+    {
+     "peca": "microondas",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "de": "inicio",
+     "ate": "f1:fim",
+     "caminho": [
+      [
+       0.275,
+       0.175,
+       0.025
+      ],
+      [
+       0.0625,
+       0.1125,
+       0.025
+      ],
+      [
+       -0.125,
+       0.0375,
+       0.025
+      ]
+     ],
+     "quantidade": 12,
+     "velocidade": 0.8,
+     "intensidade": 1.4
+    },
+    {
+     "peca": "chocolate",
+     "faz": "tremer",
+     "de": "f1:derrete",
+     "ate": "f1:fim",
+     "intensidade": 0.6
+    },
+    {
+     "peca": "chocolate",
+     "faz": "aquecer",
+     "de": "f1:derrete",
+     "intensidade": 0.5
+    },
+    {
+     "peca": "chocolate",
+     "faz": "sumir",
+     "de": "f1:sozinho"
+    },
+    {
+     "peca": "poca",
+     "faz": "aparecer",
+     "de": "f1:sozinho"
+    },
+    {
+     "peca": "poca",
+     "faz": "sumir",
+     "de": "f2:prato"
+    },
+    {
+     "peca": "prato",
+     "faz": "aparecer",
+     "de": "f2:prato"
+    },
+    {
+     "peca": "microondas",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "de": "f2:aponta",
+     "ate": "f4:mas",
+     "caminho": [
+      [
+       0.275,
+       0.175,
+       0.025
+      ],
+      [
+       0.0625,
+       0.15,
+       0.025
+      ],
+      [
+       -0.15,
+       0.1125,
+       0.025
+      ]
+     ],
+     "quantidade": 12,
+     "velocidade": 0.8,
+     "intensidade": 1.4
+    },
+    {
+     "peca": "comida",
+     "faz": "tremer",
+     "de": "f3:chacoalhar",
+     "ate": "f3:fim",
+     "intensidade": 0.5
+    },
+    {
+     "peca": "comida",
+     "faz": "aquecer",
+     "de": "f3:calor",
+     "intensidade": 0.5
+    },
+    {
+     "peca": "microondas",
+     "faz": "fluxo",
+     "tipo": "calor",
+     "de": "f3:calor",
+     "ate": "f4:mas",
+     "caminho": [
+      [
+       -0.175,
+       0.125,
+       0.025
+      ],
+      [
+       -0.1625,
+       0.275,
+       0.0375
+      ],
+      [
+       -0.1875,
+       0.425,
+       0.025
+      ]
+     ],
+     "quantidade": 8,
+     "velocidade": 0.6
+    },
+    {
+     "peca": "microondas",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "de": "f4:espalham",
+     "ate": "f5:metal",
+     "caminho": [
+      [
+       0.275,
+       0.175,
+       0.025
+      ],
+      [
+       0.0,
+       0.25,
+       0.5
+      ],
+      [
+       -0.25,
+       0.375,
+       1.5
+      ]
+     ],
+     "quantidade": 12,
+     "velocidade": 0.9,
+     "intensidade": 1.4
+    },
+    {
+     "peca": "microondas",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "de": "f4:espalham",
+     "ate": "f5:metal",
+     "caminho": [
+      [
+       0.275,
+       0.175,
+       0.025
+      ],
+      [
+       -0.375,
+       0.3125,
+       0.25
+      ],
+      [
+       -1.375,
+       0.625,
+       0.75
+      ]
+     ],
+     "quantidade": 12,
+     "velocidade": 0.85,
+     "intensidade": 1.4
+    },
+    {
+     "peca": "microondas",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "de": "f4:espalham",
+     "ate": "f5:metal",
+     "caminho": [
+      [
+       0.275,
+       0.175,
+       0.025
+      ],
+      [
+       0.125,
+       0.625,
+       0.0
+      ],
+      [
+       0.0,
+       1.375,
+       -0.5
+      ]
+     ],
+     "quantidade": 12,
+     "velocidade": 0.9,
+     "intensidade": 1.4
+    },
+    {
+     "peca": "microondas",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "de": "f4:espalham",
+     "ate": "f5:metal",
+     "caminho": [
+      [
+       0.275,
+       0.175,
+       0.025
+      ],
+      [
+       0.625,
+       0.25,
+       0.375
+      ],
+      [
+       1.375,
+       0.375,
+       1.125
+      ]
+     ],
+     "quantidade": 12,
+     "velocidade": 0.8,
+     "intensidade": 1.4
+    },
+    {
+     "peca": "forno",
+     "faz": "aparecer",
+     "de": "f5:metal"
+    },
+    {
+     "peca": "forno",
+     "faz": "transparente",
+     "de": "f5:metal",
+     "opacidade": 0.34
+    },
+    {
+     "peca": "microondas",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "de": "f5:rebate",
+     "ate": "f6:so",
+     "caminho": [
+      [
+       0.275,
+       0.175,
+       0.025
+      ],
+      [
+       -0.525,
+       0.5625,
+       -0.25
+      ],
+      [
+       -0.0625,
+       0.05,
+       0.3
+      ],
+      [
+       -0.525,
+       0.2,
+       0.125
+      ],
+      [
+       -0.0625,
+       0.575,
+       -0.3
+      ],
+      [
+       -0.175,
+       0.125,
+       0.025
+      ]
+     ],
+     "quantidade": 14,
+     "velocidade": 0.6,
+     "intensidade": 1.4
+    },
+    {
+     "peca": "dobradica",
+     "faz": "aparecer",
+     "de": "f6:porta"
+    },
+    {
+     "peca": "microondas",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "de": "f6:atravessam",
+     "ate": "f7:tela",
+     "caminho": [
+      [
+       -0.175,
+       0.15,
+       0.025
+      ],
+      [
+       -0.15,
+       0.3,
+       0.375
+      ],
+      [
+       -0.0625,
+       0.5,
+       1.5
+      ]
+     ],
+     "quantidade": 12,
+     "velocidade": 0.9,
+     "intensidade": 1.4
+    },
+    {
+     "peca": "microondas",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "de": "f6:atravessam",
+     "ate": "f7:tela",
+     "caminho": [
+      [
+       -0.25,
+       0.1875,
+       0.0
+      ],
+      [
+       -0.375,
+       0.25,
+       0.375
+      ],
+      [
+       -0.5625,
+       0.3125,
+       1.375
+      ]
+     ],
+     "quantidade": 10,
+     "velocidade": 0.85,
+     "intensidade": 1.4
+    },
+    {
+     "peca": "tela",
+     "faz": "aparecer",
+     "de": "f7:tela"
+    },
+    {
+     "peca": "microondas",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "de": "f8:ondas",
+     "ate": "f9",
+     "caminho": [
+      [
+       -0.175,
+       0.15,
+       -0.0625
+      ],
+      [
+       -0.15,
+       0.3,
+       0.325
+      ],
+      [
+       -0.4,
+       0.45,
+       -0.1875
+      ]
+     ],
+     "quantidade": 12,
+     "velocidade": 0.8,
+     "intensidade": 1.4
+    },
+    {
+     "peca": "microondas",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "de": "f8:ondas",
+     "ate": "f9",
+     "caminho": [
+      [
+       -0.0625,
+       0.125,
+       -0.125
+      ],
+      [
+       0.0,
+       0.25,
+       0.325
+      ],
+      [
+       -0.25,
+       0.525,
+       -0.25
+      ]
+     ],
+     "quantidade": 10,
+     "velocidade": 0.75,
+     "intensidade": 1.4
+    },
+    {
+     "peca": "dobradica",
+     "faz": "girar_para",
+     "de": "f9:abrir",
+     "ate": "f9:abrir+0.6",
+     "angulo": -100
+    },
+    {
+     "peca": "microondas",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "de": "f9:ligado",
+     "ate": "f10:desliga",
+     "caminho": [
+      [
+       -0.175,
+       0.15,
+       0.025
+      ],
+      [
+       -0.125,
+       0.3,
+       0.5
+      ],
+      [
+       0.125,
+       0.4375,
+       1.5
+      ]
+     ],
+     "quantidade": 12,
+     "velocidade": 0.9,
+     "intensidade": 1.4
+    },
+    {
+     "peca": "trava",
+     "faz": "aparecer",
+     "de": "f10:travas"
+    },
+    {
+     "peca": "dobradica",
+     "faz": "girar_para",
+     "de": "f10:hora+0.2",
+     "ate": "f10:hora+0.9",
+     "angulo": 100
+    },
+    {
+     "peca": "magnetron",
+     "faz": "pulsar",
+     "de": "f11",
+     "ate": "f16:fim",
+     "intensidade": 0.6
+    },
+    {
+     "peca": "microondas",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "de": "f11",
+     "ate": "f13:girar",
+     "caminho": [
+      [
+       0.275,
+       0.175,
+       0.025
+      ],
+      [
+       -0.525,
+       0.5625,
+       -0.25
+      ],
+      [
+       -0.0625,
+       0.05,
+       0.3
+      ],
+      [
+       -0.525,
+       0.2,
+       0.125
+      ],
+      [
+       -0.0625,
+       0.575,
+       -0.3
+      ],
+      [
+       -0.175,
+       0.125,
+       0.025
+      ]
+     ],
+     "quantidade": 14,
+     "velocidade": 0.6,
+     "intensidade": 1.4
+    },
+    {
+     "peca": "mancha_quente",
+     "faz": "aparecer",
+     "de": "f11:pedaco"
+    },
+    {
+     "peca": "mancha_quente",
+     "faz": "aquecer",
+     "de": "f11:pelando",
+     "intensidade": 1.2
+    },
+    {
+     "peca": "mancha_fria",
+     "faz": "aparecer",
+     "de": "f11:gelado"
+    },
+    {
+     "peca": "microondas",
+     "faz": "fluxo",
+     "tipo": "calor",
+     "de": "f11:pelando",
+     "ate": "f13:girar",
+     "caminho": [
+      [
+       -0.2313,
+       0.15,
+       0.025
+      ],
+      [
+       -0.2375,
+       0.275,
+       0.0375
+      ],
+      [
+       -0.25,
+       0.4,
+       0.025
+      ]
+     ],
+     "quantidade": 8,
+     "velocidade": 0.6
+    },
+    {
+     "peca": "eixo_motor",
+     "faz": "aparecer",
+     "de": "f13:motorzinho"
+    },
+    {
+     "peca": "prato",
+     "faz": "girar",
+     "de": "f13:girar",
+     "ate": "f16:fim",
+     "voltas": 0.25
+    },
+    {
+     "peca": "mancha_quente",
+     "faz": "sumir",
+     "de": "f13:passa"
+    },
+    {
+     "peca": "mancha_fria",
+     "faz": "sumir",
+     "de": "f13:passa"
+    },
+    {
+     "peca": "comida",
+     "faz": "aquecer",
+     "de": "f13:passa",
+     "intensidade": 0.7
+    },
+    {
+     "peca": "microondas",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "de": "f13:girar",
+     "ate": "f14:garfo",
+     "caminho": [
+      [
+       0.275,
+       0.175,
+       0.025
+      ],
+      [
+       -0.525,
+       0.5625,
+       -0.25
+      ],
+      [
+       -0.0625,
+       0.05,
+       0.3
+      ],
+      [
+       -0.525,
+       0.2,
+       0.125
+      ],
+      [
+       -0.0625,
+       0.575,
+       -0.3
+      ],
+      [
+       -0.175,
+       0.125,
+       0.025
+      ]
+     ],
+     "quantidade": 14,
+     "velocidade": 0.6,
+     "intensidade": 1.4
+    },
+    {
+     "peca": "garfo",
+     "faz": "aparecer",
+     "de": "f14:garfo"
+    },
+    {
+     "peca": "garfo",
+     "faz": "fluxo",
+     "tipo": "eletricidade",
+     "de": "f15:pontas",
+     "ate": "f15:caixa",
+     "caminho": [
+      [
+       0.0,
+       0.0125,
+       0.0875
+      ],
+      [
+       0.0375,
+       0.0625,
+       0.1125
+      ],
+      [
+       -0.025,
+       0.0875,
+       0.125
+      ],
+      [
+       0.025,
+       0.125,
+       0.1
+      ]
+     ],
+     "quantidade": 10,
+     "velocidade": 1.4
+    },
+    {
+     "peca": "garfo",
+     "faz": "fluxo",
+     "tipo": "eletricidade",
+     "de": "f15:pontas+0.2",
+     "ate": "f15:caixa",
+     "caminho": [
+      [
+       0.0,
+       0.0125,
+       0.0875
+      ],
+      [
+       -0.0375,
+       0.05,
+       0.075
+      ],
+      [
+       0.0125,
+       0.1,
+       0.0625
+      ],
+      [
+       -0.025,
+       0.1375,
+       0.0875
+      ]
+     ],
+     "quantidade": 10,
+     "velocidade": 1.2
+    },
+    {
+     "peca": "garfo",
+     "faz": "tremer",
+     "de": "f15:pontas",
+     "ate": "f15:caixa",
+     "intensidade": 0.8
+    },
+    {
+     "peca": "garfo",
+     "faz": "sumir",
+     "de": "f15:caixa"
+    },
+    {
+     "peca": "forno",
+     "faz": "transparente",
+     "de": "f16",
+     "opacidade": 1
+    },
+    {
+     "peca": "painel",
+     "faz": "aparecer",
+     "de": "f16:parabens"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "inicio"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "chocolate",
+     "de": "f1:chocolate"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f1:derrete"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "de": "f1:derrete"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f2"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "magnetron",
+     "olhar": "maquete",
+     "de": "f2:magnetron"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f3"
+    },
+    {
+     "quem": "tito",
+     "faz": "bracos_cruzados",
+     "expressao": "nervoso",
+     "de": "f3:igual"
+    },
+    {
+     "quem": "tito",
+     "faz": "tremer",
+     "de": "f3:igual",
+     "ate": "f3:fim+0.3"
+    },
+    {
+     "quem": "tito",
+     "faz": "levantar",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f4"
+    },
+    {
+     "quem": "tito",
+     "faz": "medo",
+     "expressao": "medo",
+     "de": "f4:ate"
+    },
+    {
+     "quem": "tito",
+     "faz": "levantar",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f5"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "forno",
+     "olhar": "maquete",
+     "de": "f5:metal"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f6"
+    },
+    {
+     "quem": "tito",
+     "faz": "maos_na_cabeca",
+     "de": "f6:atravessam"
+    },
+    {
+     "quem": "tito",
+     "faz": "levantar",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f7"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "tela",
+     "olhar": "maquete",
+     "de": "f7:tela"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f9"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "de": "f9:abrir"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f10"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "trava",
+     "olhar": "maquete",
+     "de": "f10:travas"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f11"
+    },
+    {
+     "quem": "tito",
+     "faz": "bracos_cruzados",
+     "de": "f11:mas"
+    },
+    {
+     "quem": "tito",
+     "faz": "levantar",
+     "olhar": "maquete",
+     "expressao": "serio",
+     "de": "f12"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f13"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "prato",
+     "olhar": "maquete",
+     "de": "f13:motorzinho"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f14"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "camera",
+     "de": "f14:garfo"
+    },
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "surpreso",
+     "de": "f15"
+    },
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.55,
+      2.05,
+      6.8
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f16"
+    },
+    {
+     "quem": "tito",
+     "faz": "acenar",
+     "de": "f16:voce"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "alvo": "microondas",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.938,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f1:derrete",
+     "tipo": "detalhe",
+     "alvo": "chocolate",
+     "lado": "frente",
+     "tamanho": 0.5,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f2",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f2:magnetron",
+     "tipo": "detalhe",
+     "alvo": "magnetron",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.625,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f2:prato",
+     "tipo": "detalhe",
+     "alvo": "microondas",
+     "lado": "frente",
+     "tamanho": 1.0,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f3:chacoalhar",
+     "tipo": "detalhe",
+     "alvo": "comida",
+     "lado": "frente",
+     "tamanho": 0.5,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f3:igual",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f4",
+     "tipo": "close",
+     "alvo": "tito",
+     "lado": "frente",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f4:espalham",
+     "tipo": "detalhe",
+     "alvo": "microondas",
+     "lado": "frente",
+     "tamanho": 1.875,
+     "movimento": "afastar",
+     "transicao": "flash"
+    },
+    {
+     "de": "f4:ate",
+     "tipo": "close",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f5",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita"
+    },
+    {
+     "de": "f5:metal",
+     "tipo": "detalhe",
+     "alvo": "microondas",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 1.375,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f5:rebate",
+     "tipo": "detalhe",
+     "alvo": "microondas",
+     "lado": "frente",
+     "tamanho": 1.188,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f6",
+     "tipo": "close",
+     "alvo": "tito",
+     "lado": "frente",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f6:vidro",
+     "tipo": "detalhe",
+     "alvo": "microondas",
+     "lado": "frente",
+     "tamanho": 1.375,
+     "movimento": "afastar",
+     "transicao": "flash"
+    },
+    {
+     "de": "f7",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita"
+    },
+    {
+     "de": "f7:tela",
+     "tipo": "detalhe",
+     "alvo": "tela",
+     "lado": "frente",
+     "tamanho": 0.875,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f8:ondas",
+     "tipo": "detalhe",
+     "alvo": "microondas",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 1.25,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f9",
+     "tipo": "close",
+     "alvo": "tito",
+     "lado": "frente",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f9:abrir",
+     "tipo": "detalhe",
+     "alvo": "microondas",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 1.75,
+     "movimento": "afastar",
+     "transicao": "flash"
+    },
+    {
+     "de": "f10",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita"
+    },
+    {
+     "de": "f10:travas",
+     "tipo": "detalhe",
+     "alvo": "trava",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.562,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f10:desliga",
+     "tipo": "detalhe",
+     "alvo": "magnetron",
+     "lado": "frente",
+     "tamanho": 0.625
+    },
+    {
+     "de": "f11",
+     "tipo": "close",
+     "alvo": "tito",
+     "lado": "frente",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f11:pedaco",
+     "tipo": "detalhe",
+     "alvo": [
+      -0.175,
+      1.1,
+      0.03
+     ],
+     "movimento": "aproximar",
+     "transicao": "flash",
+     "camera": [
+      -0.2,
+      2.05,
+      0.95
+     ],
+     "intensidade": 0.3
+    },
+    {
+     "de": "f12",
+     "tipo": "detalhe",
+     "alvo": "microondas",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 1.188,
+     "movimento": "orbitar"
+    },
+    {
+     "de": "f12:fortes",
+     "tipo": "detalhe",
+     "alvo": [
+      -0.175,
+      1.1,
+      0.03
+     ],
+     "movimento": "aproximar",
+     "camera": [
+      0.25,
+      2.1,
+      0.85
+     ],
+     "intensidade": 0.2
+    },
+    {
+     "de": "f13",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita"
+    },
+    {
+     "de": "f13:motorzinho",
+     "tipo": "detalhe",
+     "alvo": "prato",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.625,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f13:assim",
+     "tipo": "detalhe",
+     "alvo": "microondas",
+     "lado": "frente",
+     "tamanho": 1.062,
+     "movimento": "orbitar"
+    },
+    {
+     "de": "f14",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f14:garfo",
+     "tipo": "detalhe",
+     "alvo": [
+      -0.175,
+      1.1,
+      0.03
+     ],
+     "movimento": "aproximar",
+     "camera": [
+      -0.2,
+      2.05,
+      0.95
+     ],
+     "intensidade": 0.3
+    },
+    {
+     "de": "f15:caixa",
+     "tipo": "detalhe",
+     "alvo": "microondas",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 1.25,
+     "movimento": "orbitar"
+    },
+    {
+     "de": "f16",
+     "tipo": "aberto",
+     "alvo": [
+      -0.9,
+      1.45,
+      0.3
+     ],
+     "movimento": "aproximar",
+     "camera": [
+      -0.55,
+      2.05,
+      6.8
+     ],
+     "intensidade": 0.2
+    }
+   ],
+   "sons": [
+    {
+     "de": "inicio",
+     "som": "chiado",
+     "volume": 0.35
+    },
+    {
+     "de": "f1:derrete",
+     "som": "fogo",
+     "volume": 0.4
+    },
+    {
+     "de": "f1:sozinho",
+     "som": "agua",
+     "volume": 0.4
+    },
+    {
+     "de": "f2:prato",
+     "som": "pop"
+    },
+    {
+     "de": "f2:magnetron",
+     "som": "zap",
+     "volume": 0.4
+    },
+    {
+     "de": "f3:chacoalhar",
+     "som": "engrenagem",
+     "volume": 0.35
+    },
+    {
+     "de": "f4:mas",
+     "som": "tensao_sobe",
+     "volume": 0.7
+    },
+    {
+     "de": "f4:ate",
+     "som": "impacto",
+     "volume": 0.6
+    },
+    {
+     "de": "f5:metal",
+     "som": "pop"
+    },
+    {
+     "de": "f5:rebate",
+     "som": "whoosh",
+     "volume": 0.5
+    },
+    {
+     "de": "f6:so",
+     "som": "tensao_sobe",
+     "volume": 0.7
+    },
+    {
+     "de": "f6:porta",
+     "som": "pop"
+    },
+    {
+     "de": "f7:tela",
+     "som": "pop"
+    },
+    {
+     "de": "f8:voltam",
+     "som": "clique",
+     "volume": 0.5
+    },
+    {
+     "de": "f9:e",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f9:abrir",
+     "som": "alarme",
+     "volume": 0.45
+    },
+    {
+     "de": "f10:travas",
+     "som": "pop"
+    },
+    {
+     "de": "f10:desliga",
+     "som": "bip",
+     "volume": 0.6
+    },
+    {
+     "de": "f10:hora+0.6",
+     "som": "clique",
+     "volume": 0.6
+    },
+    {
+     "de": "f11:mas",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f11:pelando",
+     "som": "fogo",
+     "volume": 0.4
+    },
+    {
+     "de": "f13:motorzinho",
+     "som": "pop"
+    },
+    {
+     "de": "f13:girar",
+     "som": "engrenagem",
+     "volume": 0.5
+    },
+    {
+     "de": "f14:garfo",
+     "som": "pop"
+    },
+    {
+     "de": "f15:faisca",
+     "som": "zap",
+     "volume": 0.7
+    },
+    {
+     "de": "f16:parabens",
+     "som": "ding"
+    },
+    {
+     "de": "f16:microondas",
+     "som": "bip",
+     "volume": 0.7
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f1:derrete",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f4:mas",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f4:ate",
+     "efeito": "tremor",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f6:atravessam",
+     "efeito": "flash",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f9:abrir",
+     "efeito": "tremor",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f11:pelando",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f15:faisca",
+     "efeito": "flash",
+     "intensidade": 0.6
+    },
+    {
+     "de": "f16:microondas",
+     "efeito": "zoom_soco"
+    }
+   ]
+  }
+ ],
+ "chamada": {
+  "pergunta": "E agora, topa construir uma panela de pressão?",
+  "texto": "Comenta",
+  "destaque": "PRESSÃO"
+ }
+}

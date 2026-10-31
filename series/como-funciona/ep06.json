@@ -1,0 +1,1530 @@
+{
+ "serie": "como-funciona",
+ "parte": 6,
+ "titulo": "Construa uma panela de pressão do zero",
+ "musica": "curiosidade",
+ "modelos": {
+  "panela": [
+   {
+    "id": "boca",
+    "forma": "toro",
+    "tam": [
+     0.25,
+     0.025
+    ],
+    "pos": [
+     0.0,
+     0.025,
+     0.0
+    ],
+    "cor": "#2B2F36"
+   },
+   {
+    "id": "chama",
+    "forma": "toro",
+    "tam": [
+     0.2,
+     0.0275
+    ],
+    "pos": [
+     0.0,
+     0.0438,
+     0.0
+    ],
+    "cor": "#FF7A2A",
+    "brilho": 0.8,
+    "sem_contorno": true
+   },
+   {
+    "id": "corpo",
+    "forma": "cilindro",
+    "tam": [
+     0.375,
+     0.375
+    ],
+    "pos": [
+     0.0,
+     0.25,
+     0.0
+    ],
+    "cor": "#C9CFD6"
+   },
+   {
+    "id": "cabo",
+    "forma": "caixa",
+    "tam": [
+     0.325,
+     0.0562,
+     0.0875
+    ],
+    "pos": [
+     0.525,
+     0.3875,
+     0.0
+    ],
+    "cor": "#2B2B2B"
+   },
+   {
+    "id": "agua",
+    "forma": "cilindro",
+    "tam": [
+     0.35,
+     0.2125
+    ],
+    "pos": [
+     0.0,
+     0.175,
+     0.0
+    ],
+    "cor": "#3FA9F5",
+    "opacidade": 0.6,
+    "sem_contorno": true
+   },
+   {
+    "id": "feijao1",
+    "forma": "esfera",
+    "tam": [
+     0.0438
+    ],
+    "pos": [
+     -0.1,
+     0.15,
+     0.075
+    ],
+    "cor": "#5A2E1A"
+   },
+   {
+    "id": "feijao2",
+    "forma": "esfera",
+    "tam": [
+     0.0438
+    ],
+    "pos": [
+     0.0875,
+     0.125,
+     -0.025
+    ],
+    "cor": "#5A2E1A"
+   },
+   {
+    "id": "tampa",
+    "forma": "cilindro",
+    "tam": [
+     0.3875,
+     0.0375
+    ],
+    "pos": [
+     0.0,
+     0.4562,
+     0.0
+    ],
+    "cor": "#D5DADF",
+    "oculta": true
+   },
+   {
+    "id": "borracha",
+    "forma": "toro",
+    "tam": [
+     0.375,
+     0.0225
+    ],
+    "pos": [
+     0.0,
+     0.44,
+     0.0
+    ],
+    "cor": "#E2574C",
+    "oculta": true
+   },
+   {
+    "id": "bico",
+    "forma": "cilindro",
+    "tam": [
+     0.0163,
+     0.0625
+    ],
+    "pos": [
+     0.0,
+     0.5063,
+     0.0
+    ],
+    "cor": "#8E97A3",
+    "oculta": true
+   },
+   {
+    "id": "pino",
+    "forma": "cilindro",
+    "tam": [
+     0.05,
+     0.075
+    ],
+    "pos": [
+     0.0,
+     0.5625,
+     0.0
+    ],
+    "cor": "#2B2F36",
+    "oculta": true
+   },
+   {
+    "id": "valvula",
+    "forma": "cilindro",
+    "tam": [
+     0.035,
+     0.0375
+    ],
+    "pos": [
+     0.1875,
+     0.4938,
+     0.1
+    ],
+    "cor": "#E53935",
+    "oculta": true
+   },
+   {
+    "id": "trava",
+    "forma": "cilindro",
+    "tam": [
+     0.02,
+     0.0625
+    ],
+    "pos": [
+     -0.25,
+     0.4875,
+     0.15
+    ],
+    "cor": "#FFC20E",
+    "oculta": true
+   }
+  ]
+ },
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "tito",
+   "texto": "Se você cozinhar feijão numa panela comum, a água ferve a cem graus e não fica mais quente que isso.",
+   "tom": "animado"
+  },
+  {
+   "id": "f2",
+   "quem": "tito",
+   "texto": "MAS nesse calor, o feijão leva HORAS para amolecer.",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f3",
+   "quem": "tito",
+   "texto": "Então, você prende uma tampa bem firme. O vapor fica preso, e a pressão lá dentro SOBE."
+  },
+  {
+   "id": "f4",
+   "quem": "tito",
+   "texto": "E com mais pressão, a água só ferve lá pelos cento e vinte graus. Mais quente, o feijão fica pronto muito mais rápido.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f5",
+   "quem": "tito",
+   "texto": "SÓ QUE o vapor foge pela beirada da tampa, e a pressão não sobe.",
+   "tom": "tenso"
+  },
+  {
+   "id": "f6",
+   "quem": "tito",
+   "texto": "Então, você coloca uma BORRACHA em volta da tampa, que fecha cada frestinha.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f7",
+   "quem": "tito",
+   "texto": "MAS agora a pressão sobe sem parar, e a panela pode EXPLODIR.",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f8",
+   "quem": "tito",
+   "texto": "Então, você faz um furinho na tampa e coloca um peso em cima: o pino."
+  },
+  {
+   "id": "f9",
+   "quem": "tito",
+   "texto": "Quando a pressão passa do ponto, ela levanta o pino, o vapor escapa, e a panela CHIA.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f10",
+   "quem": "tito",
+   "texto": "E SE o furinho entupir com um grão de feijão?",
+   "tom": "tenso",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f11",
+   "quem": "tito",
+   "texto": "Então, você coloca uma segunda saída, a válvula de segurança, que solta o vapor se o pino falhar.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f12",
+   "quem": "tito",
+   "texto": "SÓ QUE alguém pode tentar abrir a tampa com a panela ainda cheia de vapor.",
+   "tom": "tenso"
+  },
+  {
+   "id": "f13",
+   "quem": "tito",
+   "texto": "Então, você faz a tampa de um jeito que a própria pressão segura ela fechada. Com vapor lá dentro, ela NÃO abre.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f14",
+   "quem": "tito",
+   "texto": "E repara: no alto das montanhas, a água ferve antes dos cem graus. Lá em cima, sem essa panela, o feijão demora MUITO mais.",
+   "tom": "animado",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f15",
+   "quem": "tito",
+   "texto": "Parabéns! Você construiu uma panela de PRESSÃO!",
+   "tom": "animado"
+  }
+ ],
+ "cenas": [
+  {
+   "id": "construcao",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "feliz"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "panela",
+     "em": "pedestal"
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "tampa",
+     "texto": "Tampa presa",
+     "de": "f3:tampa",
+     "ate": "f3:fim"
+    },
+    {
+     "alvo": "borracha",
+     "texto": "Borracha",
+     "de": "f6:borracha",
+     "ate": "f6:fim",
+     "cor": "#FF8A80"
+    },
+    {
+     "alvo": "pino",
+     "texto": "Pino",
+     "de": "f8:pino",
+     "ate": "f9:fim"
+    },
+    {
+     "alvo": "valvula",
+     "texto": "Válvula",
+     "de": "f11:valvula",
+     "ate": "f11:fim",
+     "cor": "#FF6B6B"
+    },
+    {
+     "alvo": "trava",
+     "texto": "Trava",
+     "de": "f13:tampa",
+     "ate": "f13:fim",
+     "cor": "#FFC20E"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f1:cem",
+     "ate": "f1:fim+0.3",
+     "grande": "100 graus",
+     "pequeno": "e a água não passa disso"
+    },
+    {
+     "de": "f4:cento",
+     "ate": "f4:fim",
+     "grande": "120 graus",
+     "pequeno": "com a pressão lá dentro"
+    },
+    {
+     "de": "f14:montanhas",
+     "ate": "f14:fim",
+     "grande": "Na montanha",
+     "pequeno": "a água ferve antes dos 100 graus"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "chama",
+     "faz": "pulsar",
+     "de": "inicio",
+     "ate": "f15:fim",
+     "intensidade": 0.7
+    },
+    {
+     "peca": "corpo",
+     "faz": "transparente",
+     "de": "inicio",
+     "opacidade": 0.35
+    },
+    {
+     "peca": "panela",
+     "faz": "fluxo",
+     "tipo": "calor",
+     "de": "inicio",
+     "ate": "f3:tampa",
+     "caminho": [
+      [
+       0.0,
+       0.05,
+       0.125
+      ],
+      [
+       0.0,
+       0.0875,
+       0.125
+      ],
+      [
+       0.0,
+       0.125,
+       0.125
+      ]
+     ],
+     "quantidade": 6,
+     "velocidade": 0.6
+    },
+    {
+     "peca": "panela",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "de": "f1:ferve",
+     "ate": "f3:tampa",
+     "caminho": [
+      [
+       -0.125,
+       0.1,
+       0.0625
+      ],
+      [
+       -0.1,
+       0.375,
+       0.075
+      ],
+      [
+       -0.15,
+       0.75,
+       0.1
+      ],
+      [
+       -0.225,
+       1.125,
+       0.125
+      ]
+     ],
+     "quantidade": 8,
+     "velocidade": 0.5
+    },
+    {
+     "peca": "panela",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "de": "f1:ferve",
+     "ate": "f3:tampa",
+     "caminho": [
+      [
+       0.125,
+       0.1,
+       -0.0375
+      ],
+      [
+       0.1125,
+       0.375,
+       -0.025
+      ],
+      [
+       0.175,
+       0.75,
+       0.0
+      ],
+      [
+       0.25,
+       1.125,
+       0.025
+      ]
+     ],
+     "quantidade": 8,
+     "velocidade": 0.5
+    },
+    {
+     "peca": "panela",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "de": "f1:ferve",
+     "ate": "f3:tampa",
+     "caminho": [
+      [
+       0.0,
+       0.1,
+       0.15
+      ],
+      [
+       0.025,
+       0.375,
+       0.15
+      ],
+      [
+       0.0,
+       0.75,
+       0.1875
+      ],
+      [
+       0.0625,
+       1.125,
+       0.25
+      ]
+     ],
+     "quantidade": 8,
+     "velocidade": 0.5
+    },
+    {
+     "peca": "feijao1",
+     "faz": "tremer",
+     "de": "f1:ferve",
+     "ate": "f3:tampa",
+     "intensidade": 0.5
+    },
+    {
+     "peca": "feijao2",
+     "faz": "tremer",
+     "de": "f1:ferve",
+     "ate": "f3:tampa",
+     "intensidade": 0.5
+    },
+    {
+     "peca": "agua",
+     "faz": "aquecer",
+     "de": "f1:ferve",
+     "intensidade": 0.25
+    },
+    {
+     "peca": "tampa",
+     "faz": "aparecer",
+     "de": "f3:tampa"
+    },
+    {
+     "peca": "tampa",
+     "faz": "transparente",
+     "de": "f3:tampa",
+     "opacidade": 0.4
+    },
+    {
+     "peca": "panela",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "de": "f3:preso",
+     "ate": "f5:foge",
+     "caminho": [
+      [
+       -0.25,
+       0.3,
+       0.125
+      ],
+      [
+       0.0,
+       0.4125,
+       0.1875
+      ],
+      [
+       0.25,
+       0.3375,
+       0.0625
+      ],
+      [
+       0.0625,
+       0.4125,
+       -0.1875
+      ],
+      [
+       -0.25,
+       0.325,
+       -0.0625
+      ],
+      [
+       -0.25,
+       0.3,
+       0.125
+      ]
+     ],
+     "quantidade": 14,
+     "velocidade": 0.4
+    },
+    {
+     "peca": "tampa",
+     "faz": "tremer",
+     "de": "f3:sobe",
+     "ate": "f3:fim",
+     "intensidade": 0.4
+    },
+    {
+     "peca": "agua",
+     "faz": "aquecer",
+     "de": "f4:cento",
+     "intensidade": 0.7
+    },
+    {
+     "peca": "feijao1",
+     "faz": "aquecer",
+     "de": "f4:rapido",
+     "intensidade": 0.5
+    },
+    {
+     "peca": "feijao2",
+     "faz": "aquecer",
+     "de": "f4:rapido",
+     "intensidade": 0.5
+    },
+    {
+     "peca": "feijao1",
+     "faz": "tremer",
+     "de": "f4:rapido",
+     "ate": "f5",
+     "intensidade": 0.8
+    },
+    {
+     "peca": "feijao2",
+     "faz": "tremer",
+     "de": "f4:rapido",
+     "ate": "f5",
+     "intensidade": 0.8
+    },
+    {
+     "peca": "panela",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "de": "f5:foge",
+     "ate": "f6:borracha",
+     "caminho": [
+      [
+       0.125,
+       0.375,
+       0.1875
+      ],
+      [
+       0.3125,
+       0.4375,
+       0.275
+      ],
+      [
+       0.5625,
+       0.5,
+       0.4375
+      ],
+      [
+       0.8125,
+       0.5625,
+       0.625
+      ]
+     ],
+     "quantidade": 10,
+     "velocidade": 0.8
+    },
+    {
+     "peca": "panela",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "de": "f5:foge",
+     "ate": "f6:borracha",
+     "caminho": [
+      [
+       -0.125,
+       0.375,
+       0.125
+      ],
+      [
+       -0.3375,
+       0.4375,
+       0.1875
+      ],
+      [
+       -0.625,
+       0.525,
+       0.3125
+      ],
+      [
+       -0.875,
+       0.625,
+       0.4375
+      ]
+     ],
+     "quantidade": 10,
+     "velocidade": 0.75
+    },
+    {
+     "peca": "panela",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "de": "f5:foge",
+     "ate": "f6:borracha",
+     "caminho": [
+      [
+       0.0,
+       0.375,
+       -0.125
+      ],
+      [
+       0.0625,
+       0.4375,
+       -0.375
+      ],
+      [
+       0.125,
+       0.5625,
+       -0.6875
+      ],
+      [
+       0.1875,
+       0.6875,
+       -0.9375
+      ]
+     ],
+     "quantidade": 10,
+     "velocidade": 0.8
+    },
+    {
+     "peca": "borracha",
+     "faz": "aparecer",
+     "de": "f6:borracha"
+    },
+    {
+     "peca": "panela",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "de": "f6:frestinha",
+     "ate": "f8:furinho",
+     "caminho": [
+      [
+       -0.25,
+       0.3,
+       0.125
+      ],
+      [
+       0.0,
+       0.4125,
+       0.1875
+      ],
+      [
+       0.25,
+       0.3375,
+       0.0625
+      ],
+      [
+       0.0625,
+       0.4125,
+       -0.1875
+      ],
+      [
+       -0.25,
+       0.325,
+       -0.0625
+      ],
+      [
+       -0.25,
+       0.3,
+       0.125
+      ]
+     ],
+     "quantidade": 16,
+     "velocidade": 0.5
+    },
+    {
+     "peca": "tampa",
+     "faz": "tremer",
+     "de": "f7:sobe",
+     "ate": "f8:furinho",
+     "intensidade": 1.4
+    },
+    {
+     "peca": "corpo",
+     "faz": "tremer",
+     "de": "f7:explodir",
+     "ate": "f8:furinho",
+     "intensidade": 0.8
+    },
+    {
+     "peca": "tampa",
+     "faz": "aquecer",
+     "de": "f7:explodir",
+     "intensidade": 0.5
+    },
+    {
+     "peca": "bico",
+     "faz": "aparecer",
+     "de": "f8:furinho"
+    },
+    {
+     "peca": "pino",
+     "faz": "aparecer",
+     "de": "f8:pino"
+    },
+    {
+     "peca": "tampa",
+     "faz": "esfriar",
+     "de": "f9:levanta"
+    },
+    {
+     "peca": "pino",
+     "faz": "tremer",
+     "de": "f9:levanta",
+     "ate": "f10:entupir",
+     "intensidade": 1.0
+    },
+    {
+     "peca": "panela",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "de": "f9:vapor",
+     "ate": "f10:entupir",
+     "caminho": [
+      [
+       0.0,
+       0.5375,
+       0.0
+      ],
+      [
+       0.025,
+       0.6875,
+       0.025
+      ],
+      [
+       0.0625,
+       0.9375,
+       0.0625
+      ],
+      [
+       0.125,
+       1.1875,
+       0.1
+      ]
+     ],
+     "quantidade": 14,
+     "velocidade": 0.9
+    },
+    {
+     "peca": "tampa",
+     "faz": "tremer",
+     "de": "f10:entupir",
+     "ate": "f11:seguranca",
+     "intensidade": 1.2
+    },
+    {
+     "peca": "valvula",
+     "faz": "aparecer",
+     "de": "f11:valvula"
+    },
+    {
+     "peca": "panela",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "de": "f11:solta",
+     "ate": "f12",
+     "caminho": [
+      [
+       0.1875,
+       0.5125,
+       0.1
+      ],
+      [
+       0.225,
+       0.6875,
+       0.15
+      ],
+      [
+       0.3125,
+       0.9375,
+       0.225
+      ],
+      [
+       0.4,
+       1.1875,
+       0.3
+      ]
+     ],
+     "quantidade": 12,
+     "velocidade": 0.9
+    },
+    {
+     "peca": "pino",
+     "faz": "tremer",
+     "de": "f12",
+     "ate": "f15:fim",
+     "intensidade": 0.9
+    },
+    {
+     "peca": "panela",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "de": "f12",
+     "caminho": [
+      [
+       0.0,
+       0.5375,
+       0.0
+      ],
+      [
+       0.025,
+       0.6875,
+       0.025
+      ],
+      [
+       0.0625,
+       0.9375,
+       0.0625
+      ],
+      [
+       0.125,
+       1.1875,
+       0.1
+      ]
+     ],
+     "quantidade": 14,
+     "velocidade": 0.9
+    },
+    {
+     "peca": "trava",
+     "faz": "aparecer",
+     "de": "f13:tampa"
+    },
+    {
+     "peca": "trava",
+     "faz": "mover",
+     "de": "f13:pressao",
+     "ate": "f13:pressao+0.5",
+     "desloc": [
+      0.0,
+      0.0375,
+      0.0
+     ]
+    },
+    {
+     "peca": "corpo",
+     "faz": "transparente",
+     "de": "f15",
+     "opacidade": 1
+    },
+    {
+     "peca": "tampa",
+     "faz": "transparente",
+     "de": "f15",
+     "opacidade": 1
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "inicio"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "agua",
+     "de": "f1:feijao"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "cansado",
+     "de": "f2"
+    },
+    {
+     "quem": "tito",
+     "faz": "bracos_cruzados",
+     "de": "f2:horas"
+    },
+    {
+     "quem": "tito",
+     "faz": "levantar",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f3"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "tampa",
+     "olhar": "maquete",
+     "de": "f3:tampa"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f4"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f5"
+    },
+    {
+     "quem": "tito",
+     "faz": "olhar_em_volta",
+     "de": "f5:foge"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f6"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "borracha",
+     "olhar": "maquete",
+     "de": "f6:borracha"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f7"
+    },
+    {
+     "quem": "tito",
+     "faz": "maos_na_cabeca",
+     "expressao": "medo",
+     "de": "f7:explodir"
+    },
+    {
+     "quem": "tito",
+     "faz": "levantar",
+     "olhar": "camera",
+     "expressao": "aliviado",
+     "de": "f8"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "pino",
+     "olhar": "maquete",
+     "de": "f8:pino"
+    },
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f9"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f10"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "de": "f10:entupir"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f11"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "valvula",
+     "olhar": "maquete",
+     "de": "f11:valvula"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f12"
+    },
+    {
+     "quem": "tito",
+     "faz": "estender_mao",
+     "para": "tampa",
+     "olhar": "maquete",
+     "de": "f12:abrir"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "de": "f12:vapor"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "serio",
+     "de": "f13"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "trava",
+     "olhar": "maquete",
+     "de": "f13:tampa"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "determinado",
+     "de": "f13:nao"
+    },
+    {
+     "quem": "tito",
+     "olhar": "teto",
+     "expressao": "surpreso",
+     "de": "f14:montanhas"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f14:la"
+    },
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.6,
+      2.05,
+      6.6
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f15"
+    },
+    {
+     "quem": "tito",
+     "faz": "acenar",
+     "de": "f15:voce"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "alvo": "panela",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 1.0,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f1:ferve",
+     "tipo": "detalhe",
+     "alvo": "agua",
+     "lado": "frente",
+     "tamanho": 0.75,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f2",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f3",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita"
+    },
+    {
+     "de": "f3:tampa",
+     "tipo": "detalhe",
+     "alvo": "panela",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 1.0,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f3:pressao",
+     "tipo": "detalhe",
+     "alvo": "tampa",
+     "lado": "frente",
+     "tamanho": 0.812,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f4:cento",
+     "tipo": "detalhe",
+     "alvo": "agua",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.75,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f4:mais",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f5",
+     "tipo": "close",
+     "alvo": "tito",
+     "lado": "frente",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f5:foge",
+     "tipo": "detalhe",
+     "alvo": "panela",
+     "lado": "frente",
+     "tamanho": 1.625,
+     "movimento": "afastar",
+     "transicao": "flash"
+    },
+    {
+     "de": "f6",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita"
+    },
+    {
+     "de": "f6:borracha",
+     "tipo": "detalhe",
+     "alvo": "borracha",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.812,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f7",
+     "tipo": "close",
+     "alvo": "tito",
+     "lado": "frente",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f7:pressao",
+     "tipo": "detalhe",
+     "alvo": "tampa",
+     "lado": "frente",
+     "tamanho": 0.875,
+     "movimento": "aproximar",
+     "transicao": "flash"
+    },
+    {
+     "de": "f7:explodir",
+     "tipo": "close",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f8",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita"
+    },
+    {
+     "de": "f8:furinho",
+     "tipo": "detalhe",
+     "alvo": "bico",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.438,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f9",
+     "tipo": "detalhe",
+     "alvo": "pino",
+     "lado": "frente",
+     "tamanho": 0.562,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f9:vapor",
+     "tipo": "detalhe",
+     "alvo": "panela",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 1.5,
+     "movimento": "afastar"
+    },
+    {
+     "de": "f10",
+     "tipo": "close",
+     "alvo": "tito",
+     "lado": "frente",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f10:entupir",
+     "tipo": "detalhe",
+     "alvo": "bico",
+     "lado": "frente",
+     "tamanho": 0.5,
+     "movimento": "aproximar",
+     "transicao": "flash"
+    },
+    {
+     "de": "f11",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita"
+    },
+    {
+     "de": "f11:valvula",
+     "tipo": "detalhe",
+     "alvo": "valvula",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.5,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f11:solta",
+     "tipo": "detalhe",
+     "alvo": "panela",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 1.5,
+     "movimento": "afastar"
+    },
+    {
+     "de": "f12",
+     "tipo": "close",
+     "alvo": "tito",
+     "lado": "frente",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f12:abrir",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f13",
+     "tipo": "detalhe",
+     "alvo": "panela",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 1.125,
+     "movimento": "orbitar"
+    },
+    {
+     "de": "f13:tampa",
+     "tipo": "detalhe",
+     "alvo": "trava",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.438,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f13:vapor",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f14",
+     "tipo": "detalhe",
+     "alvo": "panela",
+     "lado": "frente",
+     "tamanho": 1.25,
+     "movimento": "orbitar"
+    },
+    {
+     "de": "f14:la",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f15",
+     "tipo": "aberto",
+     "alvo": [
+      -0.6,
+      1.45,
+      0.3
+     ],
+     "movimento": "aproximar",
+     "camera": [
+      -0.6,
+      2.05,
+      6.6
+     ],
+     "intensidade": 0.2
+    }
+   ],
+   "sons": [
+    {
+     "de": "inicio",
+     "som": "fogo",
+     "volume": 0.35
+    },
+    {
+     "de": "f1:ferve",
+     "som": "agua",
+     "volume": 0.5
+    },
+    {
+     "de": "f2:mas",
+     "som": "tensao_sobe",
+     "volume": 0.7
+    },
+    {
+     "de": "f3:tampa",
+     "som": "pop"
+    },
+    {
+     "de": "f3:sobe",
+     "som": "clique",
+     "volume": 0.6
+    },
+    {
+     "de": "f4:cento",
+     "som": "ding"
+    },
+    {
+     "de": "f5:so",
+     "som": "tensao_sobe",
+     "volume": 0.7
+    },
+    {
+     "de": "f5:foge",
+     "som": "sopro",
+     "volume": 0.5
+    },
+    {
+     "de": "f6:borracha",
+     "som": "pop"
+    },
+    {
+     "de": "f7:mas",
+     "som": "tensao_sobe",
+     "volume": 0.7
+    },
+    {
+     "de": "f7:explodir",
+     "som": "impacto",
+     "volume": 0.7
+    },
+    {
+     "de": "f8:furinho",
+     "som": "pop"
+    },
+    {
+     "de": "f8:pino",
+     "som": "pop"
+    },
+    {
+     "de": "f9:chia",
+     "som": "chiado",
+     "volume": 0.7
+    },
+    {
+     "de": "f10:e",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f11:valvula",
+     "som": "pop"
+    },
+    {
+     "de": "f11:solta",
+     "som": "sopro",
+     "volume": 0.5
+    },
+    {
+     "de": "f12:so",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f13:tampa",
+     "som": "clique",
+     "volume": 0.6
+    },
+    {
+     "de": "f13:nao",
+     "som": "impacto",
+     "volume": 0.5
+    },
+    {
+     "de": "f14:montanhas",
+     "som": "whoosh"
+    },
+    {
+     "de": "f15:parabens",
+     "som": "ding"
+    },
+    {
+     "de": "f15:pressao",
+     "som": "chiado",
+     "volume": 0.6
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f2:mas",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f5:foge",
+     "efeito": "flash",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f7:sobe",
+     "efeito": "tremor",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f7:explodir",
+     "efeito": "flash",
+     "intensidade": 0.6
+    },
+    {
+     "de": "f10:entupir",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f12:vapor",
+     "efeito": "tremor",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f13:nao",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f15:pressao",
+     "efeito": "zoom_soco"
+    }
+   ]
+  }
+ ],
+ "chamada": {
+  "pergunta": "E agora, topa construir um zíper?",
+  "texto": "Comenta",
+  "destaque": "ZÍPER"
+ }
+}

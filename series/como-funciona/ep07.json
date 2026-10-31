@@ -1,0 +1,1335 @@
+{
+ "serie": "como-funciona",
+ "parte": 7,
+ "titulo": "Construa um zíper do zero",
+ "musica": "curiosidade",
+ "modelos": {
+  "ziper": [
+   {
+    "id": "fita_esq",
+    "forma": "caixa",
+    "tam": [
+     0.14,
+     0.9,
+     0.012
+    ],
+    "pos": [
+     -0.17,
+     0.45,
+     0
+    ],
+    "cor": "#1F5FA8"
+   },
+   {
+    "id": "fita_dir",
+    "forma": "caixa",
+    "tam": [
+     0.14,
+     0.9,
+     0.012
+    ],
+    "pos": [
+     0.17,
+     0.45,
+     0
+    ],
+    "cor": "#1F5FA8"
+   },
+   {
+    "id": "dente_e1",
+    "forma": "caixa",
+    "tam": [
+     0.07,
+     0.06,
+     0.03
+    ],
+    "pos": [
+     0.065,
+     -0.33,
+     0
+    ],
+    "pai": "fita_esq",
+    "cor": "#D9B23A"
+   },
+   {
+    "id": "dente_e2",
+    "forma": "caixa",
+    "tam": [
+     0.07,
+     0.06,
+     0.03
+    ],
+    "pos": [
+     0.065,
+     -0.15,
+     0
+    ],
+    "pai": "fita_esq",
+    "cor": "#D9B23A"
+   },
+   {
+    "id": "dente_e3",
+    "forma": "caixa",
+    "tam": [
+     0.07,
+     0.06,
+     0.03
+    ],
+    "pos": [
+     0.065,
+     0.03,
+     0
+    ],
+    "pai": "fita_esq",
+    "cor": "#D9B23A"
+   },
+   {
+    "id": "dente_e4",
+    "forma": "caixa",
+    "tam": [
+     0.07,
+     0.06,
+     0.03
+    ],
+    "pos": [
+     0.065,
+     0.21,
+     0
+    ],
+    "pai": "fita_esq",
+    "cor": "#D9B23A"
+   },
+   {
+    "id": "dente_d1",
+    "forma": "caixa",
+    "tam": [
+     0.07,
+     0.06,
+     0.03
+    ],
+    "pos": [
+     -0.065,
+     -0.24,
+     0
+    ],
+    "pai": "fita_dir",
+    "cor": "#D9B23A"
+   },
+   {
+    "id": "dente_d2",
+    "forma": "caixa",
+    "tam": [
+     0.07,
+     0.06,
+     0.03
+    ],
+    "pos": [
+     -0.065,
+     -0.06,
+     0
+    ],
+    "pai": "fita_dir",
+    "cor": "#D9B23A"
+   },
+   {
+    "id": "dente_d3",
+    "forma": "caixa",
+    "tam": [
+     0.07,
+     0.06,
+     0.03
+    ],
+    "pos": [
+     -0.065,
+     0.12,
+     0
+    ],
+    "pai": "fita_dir",
+    "cor": "#D9B23A"
+   },
+   {
+    "id": "dente_d4",
+    "forma": "caixa",
+    "tam": [
+     0.07,
+     0.06,
+     0.03
+    ],
+    "pos": [
+     -0.065,
+     0.3,
+     0
+    ],
+    "pai": "fita_dir",
+    "cor": "#D9B23A"
+   },
+   {
+    "id": "batente_esq",
+    "forma": "caixa",
+    "tam": [
+     0.06,
+     0.03,
+     0.04
+    ],
+    "pos": [
+     0.065,
+     0.42,
+     0
+    ],
+    "pai": "fita_esq",
+    "cor": "#C0392B",
+    "oculta": true
+   },
+   {
+    "id": "batente_dir",
+    "forma": "caixa",
+    "tam": [
+     0.06,
+     0.03,
+     0.04
+    ],
+    "pos": [
+     -0.065,
+     0.42,
+     0
+    ],
+    "pai": "fita_dir",
+    "cor": "#C0392B",
+    "oculta": true
+   },
+   {
+    "id": "cursor",
+    "forma": "caixa",
+    "tam": [
+     0.2,
+     0.1,
+     0.07
+    ],
+    "pos": [
+     0,
+     0.05,
+     0
+    ],
+    "cor": "#9AA3AE",
+    "oculta": true
+   },
+   {
+    "id": "cunha",
+    "forma": "cone",
+    "tam": [
+     0.03,
+     0.07
+    ],
+    "pos": [
+     0,
+     0.0,
+     0
+    ],
+    "pai": "cursor",
+    "cor": "#E53935",
+    "oculta": true
+   },
+   {
+    "id": "puxador",
+    "forma": "caixa",
+    "tam": [
+     0.045,
+     0.13,
+     0.012
+    ],
+    "pos": [
+     0,
+     -0.075,
+     0.05
+    ],
+    "pai": "cursor",
+    "cor": "#7A8491"
+   },
+   {
+    "id": "pino",
+    "forma": "cilindro",
+    "tam": [
+     0.01,
+     0.035
+    ],
+    "pos": [
+     0,
+     0.04,
+     -0.015
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "pai": "puxador",
+    "cor": "#FFC20E",
+    "oculta": true
+   }
+  ]
+ },
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "tito",
+   "texto": "Se você quiser fechar uma jaqueta bem rápido, pode costurar uma fileira de dentinhos em cada lado.",
+   "tom": "animado"
+  },
+  {
+   "id": "f2",
+   "quem": "tito",
+   "texto": "MAS se os dentes só encostam um no outro, a jaqueta abre no primeiro PUXÃO.",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f3",
+   "quem": "tito",
+   "texto": "Então, você faz cada dente com um calombinho em cima e um buraquinho embaixo. O calombo de um entra no buraco do outro, e eles TRAVAM.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f4",
+   "quem": "tito",
+   "texto": "SÓ QUE encaixar dente por dente com a mão demora mais que abotoar.",
+   "tom": "tenso"
+  },
+  {
+   "id": "f5",
+   "quem": "tito",
+   "texto": "Então, você coloca uma pecinha que corre pelos dentes: o cursor. Por dentro, ele tem a forma de um Y."
+  },
+  {
+   "id": "f6",
+   "quem": "tito",
+   "texto": "Subindo, o Y aperta os dois lados um contra o outro, e os dentes se encaixam SOZINHOS.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f7",
+   "quem": "tito",
+   "texto": "MAS e para abrir? Puxar os lados não adianta: os dentes estão travados.",
+   "tom": "tenso"
+  },
+  {
+   "id": "f8",
+   "quem": "tito",
+   "texto": "Então, você coloca uma CUNHA no meio do cursor. Descendo, ela entra entre os dentes e separa um por um.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f9",
+   "quem": "tito",
+   "texto": "SÓ QUE o cursor sobe demais e escapa pela ponta.",
+   "tom": "tenso"
+  },
+  {
+   "id": "f10",
+   "quem": "tito",
+   "texto": "Então, você prende um batente no fim de cada lado, que segura o cursor no lugar.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f11",
+   "quem": "tito",
+   "texto": "E SE o zíper da sua calça descer sozinho no meio do dia?",
+   "tom": "tenso",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f12",
+   "quem": "tito",
+   "texto": "Então, você põe um pininho embaixo do puxador. Com ele deitado, o pino CRAVA entre os dentes, e o cursor não desce.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f13",
+   "quem": "tito",
+   "texto": "E repara: são dezenas de dentes, e quem faz todo o trabalho é uma pecinha só, que você puxa com dois dedos: o cursor.",
+   "tom": "animado",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f14",
+   "quem": "tito",
+   "texto": "Parabéns! Você construiu um ZÍPER!",
+   "tom": "animado"
+  }
+ ],
+ "cenas": [
+  {
+   "id": "construcao",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "feliz"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "ziper",
+     "em": "pedestal"
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "dente_e2",
+     "texto": "Dentes",
+     "de": "f1:dentinhos",
+     "ate": "f1:fim"
+    },
+    {
+     "alvo": "cursor",
+     "texto": "Cursor",
+     "de": "f5:cursor",
+     "ate": "f5:dentro"
+    },
+    {
+     "alvo": "cunha",
+     "texto": "Cunha",
+     "de": "f8:cunha",
+     "ate": "f8:descendo",
+     "cor": "#FF6B6B"
+    },
+    {
+     "alvo": "batente_esq",
+     "texto": "Batente",
+     "de": "f10:batente",
+     "ate": "f10:fim"
+    },
+    {
+     "alvo": "pino",
+     "texto": "Pino trava",
+     "de": "f12:pininho",
+     "ate": "f12:fim",
+     "cor": "#FFC20E"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f3:calombo",
+     "ate": "f3:fim",
+     "grande": "Calombo e buraco",
+     "pequeno": "um dente trava no outro"
+    },
+    {
+     "de": "f5:y",
+     "ate": "f6:fim",
+     "grande": "Forma de Y",
+     "pequeno": "junta os dois lados"
+    },
+    {
+     "de": "f13:dezenas",
+     "ate": "f13:fim+0.3",
+     "grande": "Uma peça só",
+     "pequeno": "faz o trabalho de todos os dentes"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "fita_esq",
+     "faz": "mover",
+     "de": "f2:encostam",
+     "ate": "f2:encostam+0.5",
+     "desloc": [
+      0.06,
+      0,
+      0
+     ]
+    },
+    {
+     "peca": "fita_dir",
+     "faz": "mover",
+     "de": "f2:encostam",
+     "ate": "f2:encostam+0.5",
+     "desloc": [
+      -0.06,
+      0,
+      0
+     ]
+    },
+    {
+     "peca": "fita_esq",
+     "faz": "mover",
+     "de": "f2:puxao",
+     "ate": "f2:puxao+0.3",
+     "desloc": [
+      -0.06,
+      0,
+      0
+     ]
+    },
+    {
+     "peca": "fita_dir",
+     "faz": "mover",
+     "de": "f2:puxao",
+     "ate": "f2:puxao+0.3",
+     "desloc": [
+      0.06,
+      0,
+      0
+     ]
+    },
+    {
+     "peca": "fita_esq",
+     "faz": "tremer",
+     "de": "f2:puxao",
+     "ate": "f2:fim",
+     "intensidade": 1.2
+    },
+    {
+     "peca": "fita_dir",
+     "faz": "tremer",
+     "de": "f2:puxao",
+     "ate": "f2:fim",
+     "intensidade": 1.2
+    },
+    {
+     "peca": "dente_e1",
+     "faz": "pulsar",
+     "de": "f3:calombinho",
+     "ate": "f3:outro",
+     "intensidade": 0.7
+    },
+    {
+     "peca": "dente_e2",
+     "faz": "pulsar",
+     "de": "f3:calombinho",
+     "ate": "f3:outro",
+     "intensidade": 0.7
+    },
+    {
+     "peca": "dente_e3",
+     "faz": "pulsar",
+     "de": "f3:calombinho",
+     "ate": "f3:outro",
+     "intensidade": 0.7
+    },
+    {
+     "peca": "dente_e4",
+     "faz": "pulsar",
+     "de": "f3:calombinho",
+     "ate": "f3:outro",
+     "intensidade": 0.7
+    },
+    {
+     "peca": "dente_d1",
+     "faz": "pulsar",
+     "de": "f3:calombinho",
+     "ate": "f3:outro",
+     "intensidade": 0.7
+    },
+    {
+     "peca": "dente_d2",
+     "faz": "pulsar",
+     "de": "f3:calombinho",
+     "ate": "f3:outro",
+     "intensidade": 0.7
+    },
+    {
+     "peca": "dente_d3",
+     "faz": "pulsar",
+     "de": "f3:calombinho",
+     "ate": "f3:outro",
+     "intensidade": 0.7
+    },
+    {
+     "peca": "dente_d4",
+     "faz": "pulsar",
+     "de": "f3:calombinho",
+     "ate": "f3:outro",
+     "intensidade": 0.7
+    },
+    {
+     "peca": "fita_esq",
+     "faz": "mover",
+     "de": "f3:travam",
+     "ate": "f3:travam+0.4",
+     "desloc": [
+      0.08,
+      0,
+      0
+     ]
+    },
+    {
+     "peca": "fita_dir",
+     "faz": "mover",
+     "de": "f3:travam",
+     "ate": "f3:travam+0.4",
+     "desloc": [
+      -0.08,
+      0,
+      0
+     ]
+    },
+    {
+     "peca": "fita_esq",
+     "faz": "tremer",
+     "de": "f3:travam+0.4",
+     "ate": "f3:fim",
+     "intensidade": 0.6
+    },
+    {
+     "peca": "fita_dir",
+     "faz": "tremer",
+     "de": "f3:travam+0.4",
+     "ate": "f3:fim",
+     "intensidade": 0.6
+    },
+    {
+     "peca": "fita_esq",
+     "faz": "mover",
+     "de": "f4:dente",
+     "ate": "f4:dente+0.5",
+     "desloc": [
+      -0.08,
+      0,
+      0
+     ]
+    },
+    {
+     "peca": "fita_dir",
+     "faz": "mover",
+     "de": "f4:dente",
+     "ate": "f4:dente+0.5",
+     "desloc": [
+      0.08,
+      0,
+      0
+     ]
+    },
+    {
+     "peca": "cursor",
+     "faz": "aparecer",
+     "de": "f5:cursor"
+    },
+    {
+     "peca": "cursor",
+     "faz": "transparente",
+     "de": "f5:dentro",
+     "opacidade": 0.35
+    },
+    {
+     "peca": "cunha",
+     "faz": "aparecer",
+     "de": "f5:dentro"
+    },
+    {
+     "peca": "cursor",
+     "faz": "mover",
+     "de": "f6:subindo",
+     "ate": "f6:sozinhos",
+     "desloc": [
+      0,
+      0.75,
+      0
+     ]
+    },
+    {
+     "peca": "fita_esq",
+     "faz": "mover",
+     "de": "f6:subindo",
+     "ate": "f6:sozinhos",
+     "desloc": [
+      0.08,
+      0,
+      0
+     ]
+    },
+    {
+     "peca": "fita_dir",
+     "faz": "mover",
+     "de": "f6:subindo",
+     "ate": "f6:sozinhos",
+     "desloc": [
+      -0.08,
+      0,
+      0
+     ]
+    },
+    {
+     "peca": "fita_esq",
+     "faz": "tremer",
+     "de": "f7:puxar",
+     "ate": "f7:adianta",
+     "intensidade": 1.0
+    },
+    {
+     "peca": "fita_dir",
+     "faz": "tremer",
+     "de": "f7:puxar",
+     "ate": "f7:adianta",
+     "intensidade": 1.0
+    },
+    {
+     "peca": "cunha",
+     "faz": "pulsar",
+     "de": "f8:cunha",
+     "ate": "f8:descendo",
+     "intensidade": 1.0
+    },
+    {
+     "peca": "cursor",
+     "faz": "mover",
+     "de": "f8:descendo",
+     "ate": "f8:um+0.4",
+     "desloc": [
+      0,
+      -0.75,
+      0
+     ]
+    },
+    {
+     "peca": "fita_esq",
+     "faz": "mover",
+     "de": "f8:descendo",
+     "ate": "f8:um+0.4",
+     "desloc": [
+      -0.08,
+      0,
+      0
+     ]
+    },
+    {
+     "peca": "fita_dir",
+     "faz": "mover",
+     "de": "f8:descendo",
+     "ate": "f8:um+0.4",
+     "desloc": [
+      0.08,
+      0,
+      0
+     ]
+    },
+    {
+     "peca": "cursor",
+     "faz": "mover",
+     "de": "f9:sobe",
+     "ate": "f9:ponta",
+     "desloc": [
+      0,
+      0.95,
+      0
+     ]
+    },
+    {
+     "peca": "fita_esq",
+     "faz": "mover",
+     "de": "f9:sobe",
+     "ate": "f9:demais",
+     "desloc": [
+      0.08,
+      0,
+      0
+     ]
+    },
+    {
+     "peca": "fita_dir",
+     "faz": "mover",
+     "de": "f9:sobe",
+     "ate": "f9:demais",
+     "desloc": [
+      -0.08,
+      0,
+      0
+     ]
+    },
+    {
+     "peca": "cursor",
+     "faz": "tremer",
+     "de": "f9:escapa",
+     "ate": "f9:fim+0.2",
+     "intensidade": 1.0
+    },
+    {
+     "peca": "batente_esq",
+     "faz": "aparecer",
+     "de": "f10:batente"
+    },
+    {
+     "peca": "batente_dir",
+     "faz": "aparecer",
+     "de": "f10:batente"
+    },
+    {
+     "peca": "cursor",
+     "faz": "mover",
+     "de": "f10:batente",
+     "ate": "f10:batente+0.6",
+     "desloc": [
+      0,
+      -0.2,
+      0
+     ]
+    },
+    {
+     "peca": "cursor",
+     "faz": "mover",
+     "de": "f11:descer",
+     "ate": "f11:dia",
+     "desloc": [
+      0,
+      -0.35,
+      0
+     ]
+    },
+    {
+     "peca": "pino",
+     "faz": "aparecer",
+     "de": "f12:pininho"
+    },
+    {
+     "peca": "cursor",
+     "faz": "mover",
+     "de": "f12",
+     "ate": "f12:pininho",
+     "desloc": [
+      0,
+      0.35,
+      0
+     ]
+    },
+    {
+     "peca": "puxador",
+     "faz": "girar_para",
+     "de": "f12:deitado",
+     "ate": "f12:deitado+0.5",
+     "eixo": "x",
+     "angulo": -80
+    },
+    {
+     "peca": "cursor",
+     "faz": "pulsar",
+     "de": "f13:trabalho",
+     "ate": "f13:fim",
+     "intensidade": 0.8
+    },
+    {
+     "peca": "cursor",
+     "faz": "transparente",
+     "de": "f14",
+     "opacidade": 1
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "inicio"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "fita_esq",
+     "de": "f1:dentinhos"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f2"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "de": "f2:puxao"
+    },
+    {
+     "quem": "tito",
+     "faz": "levantar",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f3"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "dente_e2",
+     "olhar": "maquete",
+     "de": "f3:calombinho"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "cansado",
+     "de": "f4"
+    },
+    {
+     "quem": "tito",
+     "faz": "bracos_cruzados",
+     "de": "f4:demora"
+    },
+    {
+     "quem": "tito",
+     "faz": "levantar",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f5"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "cursor",
+     "olhar": "maquete",
+     "de": "f5:cursor"
+    },
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f6"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f7"
+    },
+    {
+     "quem": "tito",
+     "faz": "puxar",
+     "para": "fita_esq",
+     "de": "f7:puxar"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f8"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "cunha",
+     "olhar": "maquete",
+     "de": "f8:cunha"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f9"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "de": "f9:escapa"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f10"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "batente_esq",
+     "olhar": "maquete",
+     "de": "f10:batente"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "nervoso",
+     "de": "f11"
+    },
+    {
+     "quem": "tito",
+     "faz": "maos_na_cabeca",
+     "de": "f11:descer"
+    },
+    {
+     "quem": "tito",
+     "faz": "levantar",
+     "olhar": "camera",
+     "expressao": "aliviado",
+     "de": "f12"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "pino",
+     "olhar": "maquete",
+     "de": "f12:pininho"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f13"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "cursor",
+     "olhar": "maquete",
+     "de": "f13:pecinha"
+    },
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.7,
+      2.0,
+      6.0
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f14"
+    },
+    {
+     "quem": "tito",
+     "faz": "acenar",
+     "de": "f14:voce"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "alvo": "ziper",
+     "lado": "frente",
+     "tamanho": 1.0,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f2",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f2:encostam",
+     "tipo": "detalhe",
+     "alvo": "ziper",
+     "lado": "frente",
+     "tamanho": 0.7,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f2:puxao",
+     "tipo": "detalhe",
+     "alvo": "ziper",
+     "lado": "frente",
+     "tamanho": 0.9,
+     "movimento": "afastar",
+     "transicao": "flash"
+    },
+    {
+     "de": "f3",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita"
+    },
+    {
+     "de": "f3:calombinho",
+     "tipo": "detalhe",
+     "alvo": "dente_e2",
+     "lado": "frente",
+     "tamanho": 0.35,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f3:travam",
+     "tipo": "detalhe",
+     "alvo": "ziper",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.8,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f4",
+     "tipo": "close",
+     "alvo": "tito",
+     "lado": "frente",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f5",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita"
+    },
+    {
+     "de": "f5:cursor",
+     "tipo": "detalhe",
+     "alvo": "cursor",
+     "lado": "frente",
+     "tamanho": 0.45,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f6:subindo",
+     "tipo": "detalhe",
+     "alvo": "ziper",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 1.0,
+     "movimento": "acompanhar"
+    },
+    {
+     "de": "f7",
+     "tipo": "close",
+     "alvo": "tito",
+     "lado": "frente",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f7:puxar",
+     "tipo": "detalhe",
+     "alvo": "ziper",
+     "lado": "frente",
+     "tamanho": 0.9
+    },
+    {
+     "de": "f8",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita"
+    },
+    {
+     "de": "f8:cunha",
+     "tipo": "detalhe",
+     "alvo": "cursor",
+     "lado": "frente",
+     "tamanho": 0.4,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f8:descendo",
+     "tipo": "detalhe",
+     "alvo": "ziper",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 1.0
+    },
+    {
+     "de": "f9",
+     "tipo": "close",
+     "alvo": "tito",
+     "lado": "frente",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f9:sobe",
+     "tipo": "detalhe",
+     "alvo": "ziper",
+     "lado": "frente",
+     "tamanho": 1.2,
+     "movimento": "afastar",
+     "transicao": "flash"
+    },
+    {
+     "de": "f10",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita"
+    },
+    {
+     "de": "f10:batente",
+     "tipo": "detalhe",
+     "alvo": "batente_esq",
+     "lado": "frente",
+     "tamanho": 0.45,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f11",
+     "tipo": "close",
+     "alvo": "tito",
+     "lado": "frente",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f11:descer",
+     "tipo": "detalhe",
+     "alvo": "cursor",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.6,
+     "movimento": "acompanhar"
+    },
+    {
+     "de": "f12",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita"
+    },
+    {
+     "de": "f12:pininho",
+     "tipo": "detalhe",
+     "alvo": "puxador",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.35,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f13",
+     "tipo": "detalhe",
+     "alvo": "ziper",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 1.0,
+     "movimento": "orbitar"
+    },
+    {
+     "de": "f13:trabalho",
+     "tipo": "detalhe",
+     "alvo": "cursor",
+     "lado": "frente",
+     "tamanho": 0.45,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f14",
+     "tipo": "aberto",
+     "alvo": [
+      -0.7,
+      1.45,
+      0.3
+     ],
+     "movimento": "aproximar",
+     "camera": [
+      -0.7,
+      2.0,
+      6.0
+     ],
+     "intensidade": 0.2
+    }
+   ],
+   "sons": [
+    {
+     "de": "inicio",
+     "som": "chiado",
+     "volume": 0.3
+    },
+    {
+     "de": "f2:mas",
+     "som": "tensao_sobe",
+     "volume": 0.7
+    },
+    {
+     "de": "f2:puxao",
+     "som": "impacto",
+     "volume": 0.6
+    },
+    {
+     "de": "f3:travam",
+     "som": "clique",
+     "volume": 0.7
+    },
+    {
+     "de": "f4:so",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f5:cursor",
+     "som": "pop"
+    },
+    {
+     "de": "f6:subindo",
+     "som": "whoosh"
+    },
+    {
+     "de": "f7:mas",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f8:cunha",
+     "som": "pop"
+    },
+    {
+     "de": "f8:descendo",
+     "som": "whoosh"
+    },
+    {
+     "de": "f9:so",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f9:escapa",
+     "som": "susto",
+     "volume": 0.5
+    },
+    {
+     "de": "f10:batente",
+     "som": "pop"
+    },
+    {
+     "de": "f11:e",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f11:descer",
+     "som": "whoosh",
+     "volume": 0.5
+    },
+    {
+     "de": "f12:pininho",
+     "som": "pop"
+    },
+    {
+     "de": "f12:crava",
+     "som": "clique",
+     "volume": 0.7
+    },
+    {
+     "de": "f13:trabalho",
+     "som": "ding"
+    },
+    {
+     "de": "f14:parabens",
+     "som": "ding"
+    },
+    {
+     "de": "f14:ziper",
+     "som": "whoosh"
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f2:puxao",
+     "efeito": "tremor",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f3:travam",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f7:mas",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f9:escapa",
+     "efeito": "flash",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f11:descer",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f12:crava",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f14:ziper",
+     "efeito": "zoom_soco"
+    }
+   ]
+  }
+ ],
+ "chamada": {
+  "pergunta": "E agora, topa construir um ventilador?",
+  "texto": "Comenta",
+  "destaque": "VENTILADOR"
+ }
+}
