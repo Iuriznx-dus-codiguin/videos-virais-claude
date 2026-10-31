@@ -320,9 +320,9 @@
           "tipo": "close",
           "alvo": "davi",
           "camera": [
-            5.76,
+            6.77,
             1.9,
-            4.8
+            3.31
           ],
           "movimento": "aproximar",
           "intensidade": 0.2
@@ -332,9 +332,9 @@
           "tipo": "close",
           "alvo": "otavio",
           "camera": [
-            4.64,
+            3.61,
             2.0,
-            4.4
+            5.34
           ],
           "movimento": "aproximar",
           "intensidade": 0.2
@@ -560,9 +560,9 @@
           "tipo": "close",
           "alvo": "lia",
           "camera": [
-            5.34,
+            5.13,
             1.9,
-            4.22
+            3.03
           ],
           "movimento": "aproximar",
           "intensidade": 0.2
@@ -572,9 +572,9 @@
           "tipo": "close",
           "alvo": "otavio",
           "camera": [
-            4.64,
+            3.61,
             2.0,
-            4.4
+            5.34
           ],
           "movimento": "aproximar",
           "intensidade": 0.2
