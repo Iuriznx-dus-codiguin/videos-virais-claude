@@ -58,7 +58,8 @@
       "id": "f9",
       "quem": "davi",
       "off": true,
-      "texto": "Então a Dona Cida faz um SOS de pedra na areia."
+      "texto": "Então a Dona Cida faz um SOS de pedra na areia.",
+      "semente": 102
     },
     {
       "id": "f10",
@@ -130,7 +131,7 @@
       "quem": "davi",
       "off": true,
       "tom": "aliviado",
-      "texto": "SOS, fogo aceso e meia jangada."
+      "texto": "Sinal de pedra, fogo aceso e meia jangada."
     },
     {
       "id": "f21",
@@ -173,12 +174,12 @@
         "otavio": {
           "em": [
             1.4,
-            9.0
+            9
           ],
           "olhando": [
-            1.0,
+            1,
             1.5,
-            30.0
+            30
           ],
           "expressao": "determinado"
         },
@@ -190,7 +191,7 @@
           "olhando": [
             1.4,
             2.6,
-            9.0
+            9
           ],
           "expressao": "desconfiado"
         },
@@ -202,7 +203,7 @@
           "olhando": [
             1.4,
             2.6,
-            9.0
+            9
           ],
           "expressao": "serio",
           "pose": "sentado"
@@ -210,12 +211,12 @@
         "lia": {
           "em": [
             6.6,
-            5.0
+            5
           ],
           "olhando": [
             1.4,
             2.6,
-            9.0
+            9
           ],
           "expressao": "nervoso",
           "pose": "sentado"
@@ -230,7 +231,7 @@
         {
           "tipo": "tronco",
           "em": [
-            0.0,
+            0,
             8.6
           ],
           "giro": 0
@@ -238,7 +239,7 @@
         {
           "tipo": "mantimentos",
           "em": [
-            5.0,
+            5,
             6.5
           ],
           "garrafas": 6,
@@ -259,14 +260,14 @@
           "de": "inicio",
           "tipo": "geral",
           "alvo": [
-            0.0,
-            0.0,
-            3.0
+            0,
+            0,
+            3
           ],
           "camera": [
-            9.0,
-            24.0,
-            32.0
+            9,
+            24,
+            32
           ],
           "movimento": "aproximar",
           "intensidade": 0.6
@@ -275,14 +276,14 @@
           "de": "f2",
           "tipo": "geral",
           "alvo": [
-            -2.0,
-            0.0,
-            1.0
+            -2,
+            0,
+            1
           ],
           "camera": [
-            -1.0,
-            40.0,
-            14.0
+            -1,
+            40,
+            14
           ],
           "movimento": "afastar",
           "intensidade": 0.6
@@ -291,13 +292,13 @@
           "de": "f3",
           "tipo": "aberto",
           "alvo": [
-            5.0,
+            5,
             0.9,
             4.7
           ],
           "camera": [
-            -3.0,
-            3.0,
+            -3,
+            3,
             4.9
           ],
           "movimento": "aproximar",
@@ -322,12 +323,12 @@
         "otavio": {
           "em": [
             1.4,
-            9.0
+            9
           ],
           "olhando": [
-            1.0,
+            1,
             1.5,
-            30.0
+            30
           ],
           "expressao": "determinado"
         },
@@ -339,7 +340,7 @@
           "olhando": [
             1.4,
             2.6,
-            9.0
+            9
           ],
           "expressao": "desconfiado"
         }
@@ -353,7 +354,7 @@
         {
           "tipo": "tronco",
           "em": [
-            0.0,
+            0,
             8.6
           ],
           "giro": 0
@@ -361,7 +362,7 @@
         {
           "tipo": "mantimentos",
           "em": [
-            5.0,
+            5,
             6.5
           ],
           "garrafas": 6,
@@ -427,7 +428,7 @@
           "quem": "otavio",
           "faz": "apontar",
           "para": [
-            5.0,
+            5,
             0.2,
             6.5
           ],
@@ -468,14 +469,14 @@
           "de": "f7",
           "tipo": "geral",
           "alvo": [
-            1.0,
-            0.0,
+            1,
+            0,
             9.6
           ],
           "camera": [
-            3.0,
-            30.0,
-            22.0
+            3,
+            30,
+            22
           ],
           "movimento": "afastar",
           "intensidade": 0.7
@@ -532,9 +533,9 @@
             3.6
           ],
           "olhando": [
-            -3.0,
+            -3,
             0.2,
-            5.0
+            5
           ],
           "expressao": "neutro",
           "pose": "arrumar"
@@ -596,13 +597,13 @@
           "tipo": "geral",
           "alvo": [
             -3.4,
-            0.0,
+            0,
             5.6
           ],
           "camera": [
             -3.4,
-            14.0,
-            15.0
+            14,
+            15
           ],
           "movimento": "afastar",
           "intensidade": 0.2
@@ -646,7 +647,7 @@
             9.3
           ],
           "olhando": [
-            0.0,
+            0,
             0.3,
             9.3
           ],
@@ -660,19 +661,19 @@
           ],
           "olhando": [
             2.4,
-            2.0,
+            2,
             9.3
           ],
           "expressao": "medo"
         },
         "davi": {
           "em": [
-            -2.0,
+            -2,
             5.6
           ],
           "olhando": [
-            0.0,
-            1.0,
+            0,
+            1,
             9.3
           ],
           "expressao": "neutro"
@@ -687,7 +688,7 @@
         {
           "tipo": "tronco",
           "em": [
-            0.0,
+            0,
             8.6
           ],
           "giro": 0
@@ -695,7 +696,7 @@
         {
           "tipo": "tronco",
           "em": [
-            0.0,
+            0,
             9.3
           ],
           "giro": 0,
@@ -704,8 +705,8 @@
         {
           "tipo": "tronco",
           "em": [
-            0.0,
-            10.0
+            0,
+            10
           ],
           "giro": 0,
           "aparece": "f12:jangada"
@@ -737,7 +738,7 @@
           "quem": "lia",
           "faz": "apontar",
           "para": [
-            0.0,
+            0,
             0.4,
             9.3
           ],
@@ -780,9 +781,9 @@
             -1.5
           ],
           "camera": [
-            3.0,
-            2.0,
-            6.0
+            3,
+            2,
+            6
           ],
           "movimento": "aproximar",
           "intensidade": 0.3
@@ -793,7 +794,7 @@
           "alvo": "lia",
           "camera": [
             -0.1,
-            2.0,
+            2,
             8.45
           ]
         },
@@ -814,7 +815,7 @@
           "tipo": "close",
           "alvo": "lia",
           "camera": [
-            -1.0,
+            -1,
             1.9,
             8.2
           ],
@@ -856,7 +857,7 @@
       "personagens": {
         "davi": {
           "em": [
-            6.0,
+            6,
             4.15
           ],
           "olhando": [
@@ -913,7 +914,7 @@
           "de": "inicio",
           "tipo": "aberto",
           "alvo": [
-            5.0,
+            5,
             1.5,
             4.9
           ],
@@ -948,9 +949,9 @@
             4.6
           ],
           "camera": [
-            6.0,
+            6,
             1.9,
-            27.0
+            27
           ],
           "movimento": "afastar",
           "intensidade": 0.5
@@ -1031,7 +1032,7 @@
         {
           "tipo": "tronco",
           "em": [
-            0.0,
+            0,
             8.6
           ],
           "giro": 0
@@ -1039,7 +1040,7 @@
         {
           "tipo": "tronco",
           "em": [
-            0.0,
+            0,
             9.3
           ],
           "giro": 0
@@ -1047,8 +1048,8 @@
         {
           "tipo": "tronco",
           "em": [
-            0.0,
-            10.0
+            0,
+            10
           ],
           "giro": 0
         },
@@ -1115,7 +1116,7 @@
           ],
           "camera": [
             7.6,
-            3.0,
+            3,
             -2.2
           ],
           "movimento": "aproximar",
@@ -1127,7 +1128,7 @@
           "alvo": "davi",
           "camera": [
             6.8,
-            2.0,
+            2,
             2.3
           ],
           "movimento": "aproximar",
