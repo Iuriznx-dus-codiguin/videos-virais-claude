@@ -1,11 +1,12 @@
 {
- "como_usar": "Item n = episódio n (estado.json: proxima_parte). A rotina marca status 'produzido' e o dia. Quando faltarem 10 pendentes, a rotina acrescenta 20 novos, variando: cozinha, banheiro, rua, transporte, cidade, energia, grandes obras. Não repita tema. Todo vídeo segue o framework 'você constrói' de estilos.md: ache o jeito mais simples ('Se você...') e a cadeia de problemas até o objeto de hoje. 'conceitos' são candidatos a peças da cadeia; 'gancho' é um fato bom para a virada final ou para um degrau. O campo 'estilo' dos itens já produzidos é do formato antigo (2026-10-25).",
+ "como_usar": "Item n = episódio n (estado.json: proxima_parte). A rotina marca status 'produzido' e o dia. Quando faltarem 10 pendentes, a rotina acrescenta 20 novos, variando: cozinha, banheiro, rua, transporte, cidade, energia, grandes obras. Não repita tema. Cada item tem 'framework' (estilos.md, regra do Iuri de 2026-11-01): 'laboratorio' para invenção com inventor ('invencao' vira a cena da oficina e 'estilo' é a abertura: mito, E SE, dúvida comum ou fato impossível) ou 'voce_constroi' para o que foi desenvolvido ao longo de anos (ache o jeito mais simples, 'Se você...', e a cadeia de problemas até o objeto de hoje). Tema novo leva 'framework' (e 'estilo', se for laboratório) pela pergunta de estilos.md, intercalando os dois, sem mais de 3 seguidos no mesmo. 'conceitos' são candidatos a peças e ao conceito do vídeo; 'gancho' é a abertura (laboratório) ou a virada final (você constrói).",
  "itens": [
   {
    "n": 1,
    "id": "chuveiro-eletrico",
    "nome": "Chuveiro elétrico",
    "curto": "CHUVEIRO",
+   "framework": "laboratorio",
    "invencao": "Francisco Canhos (um dos primeiros), Jaú-SP, 1927",
    "conceitos": [
     "efeito Joule",
@@ -14,8 +15,8 @@
     "potência = tensão²/resistência"
    ],
    "gancho": "A água sai gelada do cano e um segundo depois sai quente, sem fogo.",
-   "status": "produzido",
    "estilo": "MAS",
+   "status": "produzido",
    "dia": "2026-10-26"
   },
   {
@@ -23,6 +24,7 @@
    "id": "lampada",
    "nome": "Lâmpada incandescente",
    "curto": "LÂMPADA",
+   "framework": "laboratorio",
    "invencao": "Thomas Edison e Joseph Swan, 1879-1880",
    "conceitos": [
     "filamento de tungstênio",
@@ -31,8 +33,8 @@
     "LED como sucessor"
    ],
    "gancho": "Um fio fininho fica tão quente que vira luz, e não pega fogo.",
-   "status": "produzido",
    "estilo": "cadeia de MAS",
+   "status": "produzido",
    "dia": "2026-10-27"
   },
   {
@@ -40,6 +42,7 @@
    "id": "geladeira",
    "nome": "Geladeira",
    "curto": "GELADEIRA",
+   "framework": "voce_constroi",
    "invencao": "Jacob Perkins (máquina de 1834); geladeira doméstica nos anos 1910-1920",
    "conceitos": [
     "ciclo de refrigeração",
@@ -56,6 +59,7 @@
    "id": "descarga",
    "nome": "Descarga do vaso sanitário",
    "curto": "DESCARGA",
+   "framework": "voce_constroi",
    "invencao": "Alexander Cumming patenteou o sifão em S em 1775",
    "conceitos": [
     "sifão",
@@ -72,6 +76,7 @@
    "id": "micro-ondas",
    "nome": "Micro-ondas",
    "curto": "MICROONDAS",
+   "framework": "voce_constroi",
    "invencao": "Percy Spencer, 1945 (um chocolate derreteu no bolso dele)",
    "conceitos": [
     "magnetron",
@@ -88,6 +93,7 @@
    "id": "panela-de-pressao",
    "nome": "Panela de pressão",
    "curto": "PRESSÃO",
+   "framework": "voce_constroi",
    "invencao": "Denis Papin, 1679 (o 'digestor')",
    "conceitos": [
     "ponto de ebulição sobe com a pressão",
@@ -104,6 +110,7 @@
    "id": "ziper",
    "nome": "Zíper",
    "curto": "ZÍPER",
+   "framework": "laboratorio",
    "invencao": "Whitcomb Judson (1893) e Gideon Sundback (1913)",
    "conceitos": [
     "dentes que se encaixam",
@@ -112,6 +119,7 @@
     "atrito"
    ],
    "gancho": "Um zíper tem dezenas de dentes e só uma peça faz todo o trabalho.",
+   "estilo": "dúvida comum",
    "status": "roteiro"
   },
   {
@@ -119,6 +127,7 @@
    "id": "ventilador",
    "nome": "Ventilador",
    "curto": "VENTILADOR",
+   "framework": "laboratorio",
    "invencao": "Schuyler Wheeler, 1882",
    "conceitos": [
     "motor elétrico",
@@ -127,6 +136,7 @@
     "rotação"
    ],
    "gancho": "O ventilador não esfria o ar. Ele esfria você.",
+   "estilo": "mito",
    "status": "pendente"
   },
   {
@@ -134,6 +144,7 @@
    "id": "torradeira",
    "nome": "Torradeira",
    "curto": "TORRADEIRA",
+   "framework": "laboratorio",
    "invencao": "Crompton & Co., 1893; torradeira automática de Charles Strite, 1919",
    "conceitos": [
     "fio de nicromo",
@@ -142,6 +153,7 @@
     "mola que solta o pão"
    ],
    "gancho": "Quem decide a hora de pular o pão é uma lâmina de dois metais.",
+   "estilo": "dúvida comum",
    "status": "pendente"
   },
   {
@@ -149,6 +161,7 @@
    "id": "fechadura",
    "nome": "Fechadura de pinos",
    "curto": "FECHADURA",
+   "framework": "voce_constroi",
    "invencao": "Linus Yale Jr., 1861 (ideia de pinos já existia no Egito antigo)",
    "conceitos": [
     "pinos de alturas diferentes",
@@ -164,6 +177,7 @@
    "id": "caneta",
    "nome": "Caneta esferográfica",
    "curto": "CANETA",
+   "framework": "laboratorio",
    "invencao": "László Bíró, 1938",
    "conceitos": [
     "esfera que gira",
@@ -172,6 +186,7 @@
     "furo no tubo para entrar ar"
    ],
    "gancho": "A ponta da caneta é uma bolinha que gira, e tem um furo de propósito na tampa.",
+   "estilo": "dúvida comum",
    "status": "pendente"
   },
   {
@@ -179,6 +194,7 @@
    "id": "liquidificador",
    "nome": "Liquidificador",
    "curto": "LIQUIDIFICADOR",
+   "framework": "laboratorio",
    "invencao": "Stephen Poplawski, 1922",
    "conceitos": [
     "motor de alta rotação",
@@ -187,6 +203,7 @@
     "acoplamento"
    ],
    "gancho": "As lâminas não cortam tudo: o redemoinho é que traz a comida até elas.",
+   "estilo": "mito",
    "status": "pendente"
   },
   {
@@ -194,6 +211,7 @@
    "id": "maquina-de-lavar",
    "nome": "Máquina de lavar",
    "curto": "LAVADORA",
+   "framework": "voce_constroi",
    "invencao": "Alva Fisher, 1908 (uma das primeiras elétricas)",
    "conceitos": [
     "tambor",
@@ -209,6 +227,7 @@
    "id": "ar-condicionado",
    "nome": "Ar-condicionado",
    "curto": "AR",
+   "framework": "laboratorio",
    "invencao": "Willis Carrier, 1902 (para uma gráfica, não para pessoas)",
    "conceitos": [
     "ciclo de refrigeração",
@@ -217,6 +236,7 @@
     "gás refrigerante"
    ],
    "gancho": "Ele foi inventado para secar papel numa gráfica, não para refrescar gente.",
+   "estilo": "mito",
    "status": "pendente"
   },
   {
@@ -224,6 +244,7 @@
    "id": "motor-eletrico",
    "nome": "Motor elétrico",
    "curto": "MOTOR",
+   "framework": "voce_constroi",
    "invencao": "Michael Faraday, 1821; motor de indução de Nikola Tesla, 1888",
    "conceitos": [
     "eletroímã",
@@ -239,6 +260,7 @@
    "id": "bicicleta",
    "nome": "Bicicleta",
    "curto": "BICICLETA",
+   "framework": "voce_constroi",
    "invencao": "Karl Drais, 1817 (sem pedal); corrente com Starley e Lawson, anos 1880",
    "conceitos": [
     "coroa e catraca",
@@ -254,6 +276,7 @@
    "id": "relogio-mecanico",
    "nome": "Relógio mecânico",
    "curto": "RELÓGIO",
+   "framework": "voce_constroi",
    "invencao": "Relógios de bolso de Peter Henlein, c. 1510",
    "conceitos": [
     "mola real",
@@ -269,6 +292,7 @@
    "id": "camera",
    "nome": "Câmera fotográfica",
    "curto": "CÂMERA",
+   "framework": "laboratorio",
    "invencao": "Nicéphore Niépce, primeira foto em 1826",
    "conceitos": [
     "câmara escura",
@@ -277,6 +301,7 @@
     "exposição"
    ],
    "gancho": "A primeira foto da história levou horas para ficar pronta.",
+   "estilo": "E SE",
    "status": "pendente"
   },
   {
@@ -284,6 +309,7 @@
    "id": "tomada",
    "nome": "Tomada e interruptor",
    "curto": "TOMADA",
+   "framework": "laboratorio",
    "invencao": "Harvey Hubbell, tomada de encaixe, 1904",
    "conceitos": [
     "circuito fechado",
@@ -292,6 +318,7 @@
     "pino terra"
    ],
    "gancho": "Apertar o interruptor só fecha uma porta para a eletricidade.",
+   "estilo": "dúvida comum",
    "status": "pendente"
   },
   {
@@ -299,6 +326,7 @@
    "id": "disjuntor",
    "nome": "Disjuntor",
    "curto": "DISJUNTOR",
+   "framework": "voce_constroi",
    "invencao": "Thomas Edison descreveu a ideia em 1879; modelos modernos nos anos 1920",
    "conceitos": [
     "sobrecarga",
@@ -314,6 +342,7 @@
    "id": "caixa-dagua",
    "nome": "Caixa d'água",
    "curto": "CAIXA",
+   "framework": "voce_constroi",
    "invencao": "Torres e reservatórios elevados do século XIX",
    "conceitos": [
     "pressão pela altura",
@@ -329,6 +358,7 @@
    "id": "fogao-a-gas",
    "nome": "Fogão a gás",
    "curto": "FOGÃO",
+   "framework": "voce_constroi",
    "invencao": "James Sharp patenteou um fogão a gás em 1826",
    "conceitos": [
     "mistura de gás e ar",
@@ -344,6 +374,7 @@
    "id": "extintor",
    "nome": "Extintor de incêndio",
    "curto": "EXTINTOR",
+   "framework": "laboratorio",
    "invencao": "George William Manby, 1818",
    "conceitos": [
     "triângulo do fogo",
@@ -352,6 +383,7 @@
     "pressão interna"
    ],
    "gancho": "Cada extintor tira um lado diferente do triângulo do fogo.",
+   "estilo": "mito",
    "status": "pendente"
   },
   {
@@ -359,6 +391,7 @@
    "id": "motor-a-combustao",
    "nome": "Motor do carro",
    "curto": "CARRO",
+   "framework": "voce_constroi",
    "invencao": "Nicolaus Otto, motor de 4 tempos, 1876",
    "conceitos": [
     "admissão, compressão, explosão, escape",
@@ -374,6 +407,7 @@
    "id": "freio",
    "nome": "Freio do carro",
    "curto": "FREIO",
+   "framework": "voce_constroi",
    "invencao": "Freio a disco (Frederick Lanchester, 1902); hidráulico (Malcolm Loughead, 1917)",
    "conceitos": [
     "princípio de Pascal",
@@ -389,6 +423,7 @@
    "id": "airbag",
    "nome": "Airbag",
    "curto": "AIRBAG",
+   "framework": "laboratorio",
    "invencao": "John Hetrick e Walter Linderer, 1952-1953",
    "conceitos": [
     "sensor de desaceleração",
@@ -397,6 +432,7 @@
     "furos que esvaziam"
    ],
    "gancho": "Ele enche mais rápido do que você consegue piscar.",
+   "estilo": "fato impossível",
    "status": "pendente"
   },
   {
@@ -404,6 +440,7 @@
    "id": "semaforo",
    "nome": "Semáforo",
    "curto": "SEMÁFORO",
+   "framework": "laboratorio",
    "invencao": "John Peake Knight, Londres, 1868 (a gás); elétrico em 1912-1914",
    "conceitos": [
     "temporizador",
@@ -412,6 +449,7 @@
     "onda verde"
    ],
    "gancho": "O primeiro semáforo funcionava a gás e explodiu.",
+   "estilo": "dúvida comum",
    "status": "pendente"
   },
   {
@@ -419,6 +457,7 @@
    "id": "escada-rolante",
    "nome": "Escada rolante",
    "curto": "ESCADA",
+   "framework": "voce_constroi",
    "invencao": "Jesse Reno, 1892 (rampa inclinada); Charles Seeberger nomeou 'escalator'",
    "conceitos": [
     "corrente sem fim",
@@ -434,6 +473,7 @@
    "id": "elevador",
    "nome": "Elevador",
    "curto": "ELEVADOR",
+   "framework": "laboratorio",
    "invencao": "Elisha Otis, freio de segurança, 1853",
    "conceitos": [
     "contrapeso",
@@ -442,6 +482,7 @@
     "motor e polia de tração"
    ],
    "gancho": "Se o cabo do elevador arrebentar, ele não cai. Isso foi demonstrado em 1854.",
+   "estilo": "E SE",
    "status": "pendente"
   },
   {
@@ -449,6 +490,7 @@
    "id": "aviao",
    "nome": "Como o avião voa",
    "curto": "AVIÃO",
+   "framework": "voce_constroi",
    "invencao": "Irmãos Wright (1903) e Santos Dumont (14-Bis, 1906)",
    "conceitos": [
     "sustentação",
@@ -464,6 +506,7 @@
    "id": "hidreletrica",
    "nome": "Usina hidrelétrica",
    "curto": "USINA",
+   "framework": "voce_constroi",
    "invencao": "Primeira hidrelétrica em Appleton, EUA, 1882; Itaipu, 1984",
    "conceitos": [
     "energia potencial da água",
@@ -479,6 +522,7 @@
    "id": "painel-solar",
    "nome": "Painel solar",
    "curto": "SOLAR",
+   "framework": "laboratorio",
    "invencao": "Efeito fotovoltaico descoberto por Edmond Becquerel, 1839; célula de silício em 1954",
    "conceitos": [
     "efeito fotovoltaico",
@@ -487,6 +531,7 @@
     "inversor"
    ],
    "gancho": "Luz batendo numa placa empurra elétrons, e isso vira corrente.",
+   "estilo": "dúvida comum",
    "status": "pendente"
   },
   {
@@ -494,6 +539,7 @@
    "id": "celular",
    "nome": "Celular",
    "curto": "CELULAR",
+   "framework": "laboratorio",
    "invencao": "Martin Cooper fez a primeira ligação de celular em 1973",
    "conceitos": [
     "ondas de rádio",
@@ -502,6 +548,7 @@
     "chip"
    ],
    "gancho": "A primeira ligação de celular foi para o concorrente.",
+   "estilo": "dúvida comum",
    "status": "pendente"
   },
   {
@@ -509,6 +556,7 @@
    "id": "gps",
    "nome": "GPS",
    "curto": "GPS",
+   "framework": "voce_constroi",
    "invencao": "Departamento de Defesa dos EUA, sistema completo em 1995",
    "conceitos": [
     "satélites",
@@ -524,6 +572,7 @@
    "id": "ponte-pensil",
    "nome": "Ponte pênsil",
    "curto": "PONTE",
+   "framework": "voce_constroi",
    "invencao": "Ponte Golden Gate, 1937; ideia antiga com cipós",
    "conceitos": [
     "tração e compressão",
@@ -539,6 +588,7 @@
    "id": "tunel",
    "nome": "Túnel debaixo d'água",
    "curto": "TÚNEL",
+   "framework": "voce_constroi",
    "invencao": "Túnel do Tâmisa, Marc Brunel, 1843",
    "conceitos": [
     "tatuzão (máquina de túnel)",
@@ -554,6 +604,7 @@
    "id": "concreto-armado",
    "nome": "Concreto armado",
    "curto": "CONCRETO",
+   "framework": "laboratorio",
    "invencao": "Joseph Monier, jardineiro, 1867 (vasos de planta)",
    "conceitos": [
     "concreto aguenta compressão",
@@ -562,6 +613,7 @@
     "vigas e pilares"
    ],
    "gancho": "Ele foi inventado por um jardineiro que queria vasos mais fortes.",
+   "estilo": "mito",
    "status": "pendente"
   },
   {
@@ -569,6 +621,7 @@
    "id": "guindaste",
    "nome": "Guindaste de torre",
    "curto": "GUINDASTE",
+   "framework": "voce_constroi",
    "invencao": "Guindastes de torre modernos, Europa, anos 1940-1950",
    "conceitos": [
     "contrapeso",
@@ -584,6 +637,7 @@
    "id": "arranha-ceu",
    "nome": "Arranha-céu",
    "curto": "PRÉDIO",
+   "framework": "voce_constroi",
    "invencao": "Home Insurance Building, Chicago, 1885 (William Le Baron Jenney)",
    "conceitos": [
     "estrutura de aço",

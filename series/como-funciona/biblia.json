@@ -8,7 +8,7 @@
     "curiosidades",
     "ciencia"
   ],
-  "sinopse": "Vídeos avulsos de ~1min20 no framework \"você constrói\" (estilos.md): o Tito, engenheiro do canal, desafia quem assiste a construir uma coisa do dia a dia do zero, começando pelo jeito mais simples; cada problema obriga a pôr uma peça nova na maquete 3D, até a coisa ficar pronta e ele dizer \"Parabéns! Você construiu...\". A lista de temas está em pauta.json (do chuveiro elétrico ao arranha-céu).",
+  "sinopse": "Vídeos avulsos de ~1min20 em dois frameworks (estilos.md), escolhidos pela ideia do tema: nas invenções, o Tito, engenheiro do canal, volta ao laboratório do inventor para mostrar como a coisa nasceu e depois abre a maquete 3D peça por peça; no que foi desenvolvido ao longo de anos (barragem, prédio, ponte), ele desafia quem assiste a construir a coisa do zero, uma peça a cada problema, até dizer \"Parabéns! Você construiu...\". A lista de temas está em pauta.json (do chuveiro elétrico ao arranha-céu).",
   "narrador": "tito",
   "personagens": {
     "tito": {
