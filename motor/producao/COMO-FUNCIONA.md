@@ -17,11 +17,15 @@ A rotina produz: seg–qui 1 vídeo; sexta 3 (sexta 18h, sábado 11h e 18h); sá
 3. **Publicação: manual.** Vídeo e texto para colar em `videos/como-funciona-epNN.*` no ramo `dados`.
 
 ## Formato
-Vídeos de ~1min20 (75 a 90 s com voz) no framework "você constrói" (modelo da barragem, validado pelo Iuri em 2026-10-27): "Se você..." com o jeito mais simples → 4 a 6 degraus "MAS/SÓ QUE [problema]" + "Então, você [põe a peça]" → virada final → "Parabéns! Você construiu um(a) ___!". Tudo no estúdio, com a maquete ganhando uma peça por degrau. Veja `public/series/como-funciona/estilos.md`. Render de 1min20 leva ~35 min; na sexta (3 vídeos) a rotina roda por umas 2 h.
+Vídeos de ~1min20 (75 a 90 s com voz) em dois frameworks, escolhidos pela ideia do tema (Iuri, 2026-11-01) e marcados no campo `framework` da pauta:
+- **Volta ao laboratório** (`laboratorio`), para invenções com inventor, ano e lugar: abertura no estilo do tema (mito, E SE, dúvida comum, fato impossível) → oficina com o inventor e o protótipo → por dentro no estúdio, com pelo menos um MAS → conceito com nome → curiosidade.
+- **Você constrói** (`voce_constroi`, modelo da barragem), para o que foi desenvolvido e melhorado ao longo de anos (barragem, prédio, ponte, usina): "Se você..." com o jeito mais simples → 4 a 6 degraus "MAS/SÓ QUE [problema]" + "Então, você [põe a peça]" → "Parabéns! Você construiu um(a) ___!", tudo no estúdio com a maquete ganhando uma peça por degrau.
+
+Nunca mais de 3 vídeos seguidos no mesmo framework. Veja `public/series/como-funciona/estilos.md`. Render de 1min20 leva ~35 min; na sexta (3 vídeos) a rotina roda por umas 2 h.
 
 ## Arquivos do formato
 - `biblia.json`: Tito (narrador fixo, capacete amarelo e óculos), `formato: "avulso"` (selo "#N", texto de publicação sem "Parte").
-- `pauta.json`: lista de temas em ordem, do chuveiro elétrico ao arranha-céu; a rotina acrescenta temas quando faltarem.
+- `pauta.json`: lista de temas em ordem, do chuveiro elétrico ao arranha-céu, cada um com o `framework` (e o `estilo` de abertura, nos do laboratório); a rotina acrescenta temas quando faltarem.
 - `regras.md`: regras do formato, alimentadas pelas correções.
-- `estilos.md`: o framework do roteiro ("você constrói"), com os vídeos validados pelo Iuri como exemplo.
-- `epNN.json`: roteiro com `modelos` (maquete peça por peça), `animacoes`, `rotulos` e `cartoes`. Modelo do framework: `ep03.json` (geladeira, no ramo `dados`).
+- `estilos.md`: os dois frameworks do roteiro e a regra de escolha, com os vídeos validados pelo Iuri como exemplo.
+- `epNN.json`: roteiro com `modelos` (maquete peça por peça), `animacoes`, `rotulos` e `cartoes`. Modelos no ramo `dados`: `ep07.json` (zíper) e `ep02.json` (lâmpada) para o laboratório; `ep03.json` (geladeira) para o você constrói.
