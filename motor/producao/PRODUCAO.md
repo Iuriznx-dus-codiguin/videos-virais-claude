@@ -25,6 +25,7 @@ Se uma parte do calendário já existe pronta (rodada repetida), não refaça: c
 3. **Publicação: manual.** O vídeo e o texto para colar (título, descrição, legenda) ficam no ramo `dados`, pasta `videos/`, e no `out/` da sessão.
 
 ## Estado
+- Jeito de contar cada parte (as 8 batidas, a linguagem e o checklist): `.claude/skills/roteirizar-episodio/estrutura.md`, com os vídeos que viralizaram em `modelos.md`. Fica na skill (ramo `main`), porque o `baixar` substitui as pastas de `public/series/`.
 - Regras gerais das histórias: `public/series/_historias/regras.md`; de cada série: `public/series/<serie>/regras.md`.
 - Salve sempre nomeando as pastas: `npm run dados -- salvar <serie> _historias`.
 - O ramo `dados` guarda as vozes (.pt) e o áudio das falas dos 3 episódios mais recentes, para uma correção regenerar só o que mudou.
