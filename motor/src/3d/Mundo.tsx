@@ -11,6 +11,7 @@ import {Boneco} from './Boneco';
 import {Gigante} from './Gigante';
 import {Ceu, Iluminacao} from './luzes';
 import {Objetos} from './objetos';
+import {Atmosfera} from './atmosfera';
 import {Praia} from './cenarios/Praia';
 import {Selva} from './cenarios/Selva';
 import {Raizes} from './cenarios/Raizes';
@@ -70,6 +71,7 @@ export const Mundo: React.FC<{linha: LinhaDoTempo; t: number}> = ({linha, t}) =>
 			{cena.cenario === 'estudio' ? <Estudio t={t} nomeClima={nomeClima} /> : null}
 			{cena.cenario === 'oficina' ? <Oficina t={t} nomeClima={nomeClima} /> : null}
 			<Objetos lista={cena.objetos} cenario={cena.cenario} t={t} />
+			<Atmosfera cena={cena} t={t} />
 			<Maquetes cena={cena} linha={linha} t={t} />
 			{estados.map((e) => (e.tipo === 'gigante' ? <Gigante key={e.id} e={e} /> : <Boneco key={e.id} e={e} nomeClima={nomeClima} />))}
 		</>

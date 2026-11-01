@@ -1,10 +1,35 @@
 // Roteiro de um episódio em texto corrido (Markdown), para o Iuri revisar a próxima parte antes
 // da produção: cenas, quem fala o quê e a chamada final. Os tempos são estimados se ainda não há voz.
 // Uso: npm run roteiro -- <serie> <parte>
+import type {CenaTempo} from '../src/roteiro/tipos.ts';
 import {carregarEpisodio} from './validar.ts';
 
 const seg = (t: number) => `${Math.round(t)} s`;
 const LUZ: Record<string, string> = {dia: 'dia', por_do_sol: 'pôr do sol', entardecer: 'entardecer', noite: 'noite'};
+
+const alvoTxt = (a: unknown, nome: (id: string) => string) => (Array.isArray(a) ? 'ponto' : nome(String(a)));
+
+/** Uma linha com o que a cena tem de produção (câmera, transições, letreiros, partículas, cor). */
+const producaoDaCena = (c: CenaTempo, nome: (id: string) => string) => {
+	const partes: string[] = [];
+	if (c.filtro) partes.push(`cor ${c.filtro}`);
+	const movs = [...new Set(c.planos.map((p) => p.movimento).filter((m): m is string => !!m && m !== 'fixo' && m !== 'aproximar'))];
+	if (movs.length) partes.push(`câmera ${movs.join(', ').replace(/_/g, ' ')}`);
+	const trans = c.planos.map((p) => p.transicao).filter((x): x is string => !!x && x !== 'corte');
+	if (trans.length) partes.push(`transições ${trans.join(', ')}`);
+	for (const e of c.efeitos) {
+		if (e.efeito === 'letreiro' && e.texto) partes.push(`letreiro "${e.texto}"`);
+		else if (e.efeito === 'circular') partes.push(`círculo em ${alvoTxt(e.alvo, nome)}`);
+		else if (e.efeito === 'destacar') partes.push(`destaque em ${alvoTxt(e.alvo, nome)}`);
+		else if (e.efeito === 'barras') partes.push('faixas de cinema');
+		else if (e.efeito === 'linhas') partes.push('linhas de ação');
+	}
+	const parts = c.objetos.filter((o) => o.tipo === 'particulas').map((o) => String(o.particula));
+	if (parts.length) partes.push(`partículas ${[...new Set(parts)].join(', ')}`);
+	const contadores = c.cartoes.filter((k) => k.contar).length;
+	if (contadores) partes.push(`${contadores} número(s) contando`);
+	return partes.join(' · ');
+};
 
 export const roteiroEmTexto = (serie: string, parte: number): string => {
 	const {linha} = carregarEpisodio(serie, parte);
@@ -16,6 +41,8 @@ export const roteiroEmTexto = (serie: string, parte: number): string => {
 			const como = [f.off ? 'em off' : '', f.tom ?? ''].filter(Boolean).join(', ');
 			linhas.push(`- **${nome(f.quem)}**${como ? ` (${como})` : ''}: ${f.texto}`);
 		}
+		const prod = producaoDaCena(c, nome);
+		if (prod) linhas.push(`- _Produção: ${prod}_`);
 		linhas.push('');
 	});
 	const ch = linha.chamada;

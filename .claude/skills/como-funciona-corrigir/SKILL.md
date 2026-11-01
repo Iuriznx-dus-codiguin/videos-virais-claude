@@ -19,7 +19,7 @@ Se for ambígua, escolha a leitura mais provável, aplique e diga qual usou.
 ## 2. Aplicar no vídeo
 1. `cd motor && npm run dados -- baixar` (sessão nova) e edite `public/series/como-funciona/epNN.json`.
 2. `npm run validar -- como-funciona <n>`; se mudou fala, `bash voz/instalar.sh` (sessão nova) e `npm run vozes -- como-funciona <n>`.
-3. `npm run render -- como-funciona <n>` e confira com `npm run quadro`.
+3. `npm run render -- como-funciona <n>` (qualidade média, 20 a 35 MB; mande o próprio mp4) e confira com `npm run quadro`. Correção de produção (transição, câmera, partícula, círculo, letreiro) segue `como-funciona-produzir/producao.md`.
 4. `npm run dados -- entregar como-funciona <n> --dia=... --hora=...` com o mesmo dia e hora de antes. Se já passou do horário, avise que ele talvez já tenha postado o original.
 
 ## 3. Virar regra

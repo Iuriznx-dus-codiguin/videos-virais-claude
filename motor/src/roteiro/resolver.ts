@@ -1,7 +1,7 @@
 // Transforma o roteiro (âncoras nas falas) em uma linha do tempo com segundos absolutos.
 // Sem áudio, a duração de cada fala é estimada pelo texto; com o alinhamento do OmniVoice,
 // usa o tempo real de cada letra. O resto do roteiro não muda entre um caso e outro.
-import {ACOES, ANCORAS_OBJETO, ANIMACOES_PECA, CENARIOS, EFEITOS, ENCERRA_ESTADO, EXPRESSOES, FLUXOS, FORMAS, ITENS_MAO, LADOS, MOVIMENTOS, PLANOS} from '../catalogo';
+import {ACOES, ANCORAS_OBJETO, ANIMACOES_PECA, CENARIOS, EFEITOS, EFEITOS_COM_ALVO, EFEITOS_COM_TEXTO, ENCERRA_ESTADO, EXPRESSOES, FILTROS, FLUXOS, FORMAS, ITENS_MAO, LADOS, MOVIMENTOS, OBJETOS, PARTICULAS, PLANOS, TRANSICOES} from '../catalogo';
 import {
 	Alinhamentos,
 	AcaoTempo,
@@ -319,6 +319,7 @@ export const resolverEpisodio = (ep: Episodio, bibliaSerie: Biblia, alinhamentos
 				if (!(PLANOS as readonly string[]).includes(p.tipo)) avisos.push(`${ctx.onde}: tipo "${p.tipo}" desconhecido`);
 				if (p.movimento && !(MOVIMENTOS as readonly string[]).includes(p.movimento)) avisos.push(`${ctx.onde}: movimento "${p.movimento}" desconhecido`);
 				if (p.lado && !(LADOS as readonly string[]).includes(p.lado)) avisos.push(`${ctx.onde}: lado "${p.lado}" desconhecido`);
+				if (p.transicao && !(p.transicao in TRANSICOES)) avisos.push(`${ctx.onde}: transição "${p.transicao}" desconhecida (${Object.keys(TRANSICOES).join(', ')})`);
 				conferirAlvo(p.alvo, c, ctx, biblia, modelos);
 				conferirAlvo(p.alvo2, c, ctx, biblia, modelos);
 				return {...p, ini: resolverAncora(p.de, ctx) ?? ini, fim: fim};
@@ -344,6 +345,11 @@ export const resolverEpisodio = (ep: Episodio, bibliaSerie: Biblia, alinhamentos
 		const efeitos: EfeitoTempo[] = (c.efeitos ?? []).map((e, k) => {
 			ctx.onde = `cena ${c.id}, efeito ${k + 1}`;
 			if (!(e.efeito in EFEITOS)) avisos.push(`${ctx.onde}: efeito "${e.efeito}" desconhecido`);
+			if (EFEITOS_COM_TEXTO.has(e.efeito) && !e.texto) avisos.push(`${ctx.onde}: ${e.efeito} precisa de "texto"`);
+			if (EFEITOS_COM_ALVO.has(e.efeito)) {
+				if (e.alvo === undefined) avisos.push(`${ctx.onde}: ${e.efeito} precisa de "alvo"`);
+				else conferirAlvo(e.alvo, c, ctx, biblia, modelos);
+			}
 			const eIni = resolverAncora(e.de, ctx) ?? ini;
 			const padrao = EFEITOS[e.efeito];
 			const eFim = resolverAncora(e.ate, ctx) ?? (padrao == null ? fim : eIni + padrao);
@@ -352,8 +358,12 @@ export const resolverEpisodio = (ep: Episodio, bibliaSerie: Biblia, alinhamentos
 
 		// maquetes: objetos "maquete" precisam de um modelo que exista
 		for (const [k, o] of (c.objetos ?? []).entries()) {
+			if (!(OBJETOS as readonly string[]).includes(o.tipo)) avisos.push(`cena ${c.id}, objeto ${k + 1}: tipo "${o.tipo}" desconhecido`);
 			if (o.tipo === 'maquete' && !(String(o.modelo ?? '') in modelos)) avisos.push(`cena ${c.id}, objeto ${k + 1}: modelo "${o.modelo}" não existe em "modelos"`);
+			if (o.tipo === 'particulas' && !(String(o.particula ?? '') in PARTICULAS))
+				avisos.push(`cena ${c.id}, objeto ${k + 1}: particulas precisa de "particula" (${Object.keys(PARTICULAS).join(', ')})`);
 		}
+		if (c.filtro && !(c.filtro in FILTROS)) avisos.push(`cena ${c.id}: filtro "${c.filtro}" desconhecido (${Object.keys(FILTROS).join(', ')})`);
 		const nomes = nomesDeMaquete(c, modelos);
 		const animacoes: AnimacaoTempo[] = (c.animacoes ?? []).map((a, k) => {
 			ctx.onde = `cena ${c.id}, animação ${k + 1}`;
@@ -405,7 +415,16 @@ export const resolverEpisodio = (ep: Episodio, bibliaSerie: Biblia, alinhamentos
 			animacoes,
 			rotulos,
 			cartoes,
+			filtro: c.filtro,
+			atmosfera: c.atmosfera !== false,
 		};
+	});
+
+	// cada plano sabe como o seguinte entra (chicote, zoom...), para sair no mesmo estilo
+	const todos = cenas.flatMap((c) => c.planos);
+	todos.forEach((p, k) => {
+		const prox = todos[k + 1]?.transicao;
+		if (prox && prox !== 'corte') p.saida = prox;
 	});
 
 	if ((biblia.formato ?? 'serie') === 'avulso') {

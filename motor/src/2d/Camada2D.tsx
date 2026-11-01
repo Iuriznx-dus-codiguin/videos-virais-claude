@@ -4,11 +4,13 @@ import React from 'react';
 import {AbsoluteFill, cancelRender, continueRender, delayRender, spring, staticFile} from 'remotion';
 import * as THREE from 'three';
 import {cameraNoTempo, tipoDoPlano, transicaoNoTempo} from '../animacao/camera';
+import {transicaoAtiva} from '../animacao/transicoes';
 import {MEDIDAS} from '../animacao/pose';
+import {raioDaPeca} from '../animacao/maquete';
 import {cenaNoTempo, simulacao} from '../animacao/simulacao';
 import {GrupoLegenda, gruposDeLegenda, textoNaTela} from '../roteiro/legendas';
 import type {LinhaDoTempo} from '../roteiro/tipos';
-import {clamp, smoothstep} from '../util/mat';
+import {aleatorio, clamp, easeInOut, easeOut, lerp, smoothstep} from '../util/mat';
 
 const FONTE = 'Montserrat';
 const carregarFontes = () => {
@@ -34,6 +36,15 @@ const contornoTexto = (px: number) => ({
 	paintOrder: 'stroke fill' as const,
 	textShadow: '0 8px 0 rgba(0,0,0,0.85), 0 14px 28px rgba(0,0,0,0.45)',
 });
+
+/**
+ * Fonte que faz a palavra mais comprida caber em `largura` px (Montserrat 900 em maiúsculas tem
+ * ~0,74 em por letra). Palavras longas ("MICRO-ONDAS", "INCANDESCÊNCIA") diminuem em vez de vazar.
+ */
+const fonteQueCabe = (texto: string, base: number, largura: number) => {
+	const maior = Math.max(1, ...texto.replace(/\u00AD/g, '').split(/[\s-]+/).map((p) => p.length));
+	return Math.min(base, Math.floor(largura / (maior * 0.74)));
+};
 
 const Selo: React.FC<{linha: LinhaDoTempo}> = ({linha}) => (
 	<div style={{position: 'absolute', top: 150, width: '100%', display: 'flex', justifyContent: 'center'}}>
@@ -118,7 +129,7 @@ const Legenda: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: num
 						style={{
 							fontFamily: FONTE,
 							fontWeight: 900,
-							fontSize: p.enfase ? 148 : 112,
+							fontSize: fonteQueCabe(textoNaTela(p.texto), p.enfase ? 148 : 112, 940),
 							lineHeight: 1.05,
 							color: falando ? (p.enfase ? VERMELHO : corFala) : '#FFFFFF',
 							display: 'inline-block',
@@ -183,7 +194,7 @@ const Chamada: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: num
 						marginTop: 26,
 						fontFamily: FONTE,
 						fontWeight: 900,
-						fontSize: 138,
+						fontSize: fonteQueCabe(`“${c.destaque}”`, 138, 900),
 						color: '#111',
 						background: AMARELO,
 						border: '8px solid #000',
@@ -209,7 +220,7 @@ const ALTURA = 1920;
  * Ponto 3D na tela (px), pela mesma câmera do quadro, e o raio da cabeça na tela quando o alvo é
  * um personagem (0 para pontos e objetos); null se estiver atrás da lente.
  */
-const naTela = (linha: LinhaDoTempo, t: number, alvo: string | [number, number, number]): {x: number; y: number; raio: number} | null => {
+const naTela = (linha: LinhaDoTempo, t: number, alvo: string | [number, number, number]): {x: number; y: number; raio: number; raioPeca?: number} | null => {
 	const cena = cenaNoTempo(linha, t);
 	const sim = simulacao(linha, cena);
 	const ponto = sim.ponto(alvo, t);
@@ -230,7 +241,15 @@ const naTela = (linha: LinhaDoTempo, t: number, alvo: string | [number, number, 
 		const topo = new THREE.Vector3(...ponto).addScaledVector(cima, MEDIDAS.raioCabeca * est.escala).project(cam);
 		raio = (Math.abs(topo.y - v.y) / 2) * ALTURA;
 	}
-	return {x: ((v.x + 1) / 2) * LARGURA, y: ((1 - v.y) / 2) * ALTURA, raio};
+	// peça de maquete: tamanho dela na tela (para o círculo abraçar a peça inteira)
+	let raioPeca: number | undefined;
+	const rPeca = typeof alvo === 'string' && !est ? raioDaPeca(cena, linha, alvo) : null;
+	if (rPeca) {
+		const lado = new THREE.Vector3(1, 0, 0).applyQuaternion(cam.quaternion);
+		const borda = new THREE.Vector3(...ponto).addScaledVector(lado, rPeca).project(cam);
+		raioPeca = Math.hypot((borda.x - v.x) * LARGURA, (borda.y - v.y) * ALTURA) / 2;
+	}
+	return {x: ((v.x + 1) / 2) * LARGURA, y: ((1 - v.y) / 2) * ALTURA, raio, raioPeca};
 };
 
 /** Altura da etiqueta com duas linhas de texto e o primeiro y livre abaixo do selo da série. */
@@ -301,6 +320,17 @@ const Rotulos: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: num
 	);
 };
 
+/** Texto grande do cartão; com "contar", o "#" vira o número contando de "de" até "até". */
+const textoDoCartao = (c: {grande: string; contar?: [number, number]; ini: number; fim: number}, t: number) => {
+	if (!c.contar) return c.grande;
+	const [de, ate] = c.contar;
+	const dur = Math.min(1.4, Math.max(0.4, (c.fim - c.ini) * 0.6));
+	const v = lerp(de, ate, easeOut(clamp((t - c.ini) / dur)));
+	const inteiro = Number.isInteger(de) && Number.isInteger(ate);
+	const num = inteiro ? Math.round(v).toLocaleString('pt-BR') : v.toLocaleString('pt-BR', {minimumFractionDigits: 1, maximumFractionDigits: 1});
+	return c.grande.includes('#') ? c.grande.replace('#', num) : num;
+};
+
 const Cartoes: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: number}> = ({linha, t, frame, fps}) => {
 	if (t >= linha.chamada.ini) return null;
 	const cena = cenaNoTempo(linha, t);
@@ -308,6 +338,7 @@ const Cartoes: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: num
 	if (!c) return null;
 	const entra = spring({frame: frame - Math.round(c.ini * fps), fps, config: {damping: 11, stiffness: 180}});
 	const sai = 1 - smoothstep(c.fim - 0.25, c.fim, t);
+	const grande = textoDoCartao(c, t).toUpperCase();
 	return (
 		<div style={{position: 'absolute', top: 330, width: '100%', display: 'flex', justifyContent: 'center', opacity: sai}}>
 			<div
@@ -322,7 +353,7 @@ const Cartoes: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: num
 					maxWidth: 900,
 				}}
 			>
-				<div style={{fontFamily: FONTE, fontWeight: 900, fontSize: 120, lineHeight: 1, color: '#111'}}>{c.grande.toUpperCase()}</div>
+				<div style={{fontFamily: FONTE, fontWeight: 900, fontSize: fonteQueCabe(c.contar ? c.grande.replace('#', String(c.contar[1])) : c.grande, 120, 800), lineHeight: 1, color: '#111', fontVariantNumeric: 'tabular-nums'}}>{grande}</div>
 				{c.pequeno ? <div style={{fontFamily: FONTE, fontWeight: 800, fontSize: 44, lineHeight: 1.15, color: '#333', marginTop: 8}}>{c.pequeno}</div> : null}
 			</div>
 		</div>
@@ -342,6 +373,174 @@ const Chuva: React.FC<{t: number; intensidade: number}> = ({t, intensidade}) => 
 		</svg>
 	</AbsoluteFill>
 );
+
+// --- efeitos de produção: linhas de ação, letreiro, círculo, destaque, barras de cinema ---
+
+/** Linhas de ação de desenho animado: cunhas finas vindo das bordas, trocando a cada 2 quadros. */
+const Linhas: React.FC<{t: number; ini: number; fim: number; intensidade: number; cor: string}> = ({t, ini, fim, intensidade, cor}) => {
+	const vis = smoothstep(ini, ini + 0.08, t) * (1 - smoothstep(fim - 0.2, fim, t)) * intensidade;
+	const r = aleatorio(Math.floor(t * 15) + 7);
+	const cx = 540;
+	const cy = 880;
+	const cunhas = Array.from({length: 56}, (_, i) => {
+		const a = (i / 56) * Math.PI * 2 + r() * 0.08;
+		const larg = 0.012 + r() * 0.02;
+		const dentro = 560 + r() * 260;
+		const fora = 1500;
+		const p = (ang: number, d: number) => `${(cx + Math.cos(ang) * d * 0.62).toFixed(0)},${(cy + Math.sin(ang) * d).toFixed(0)}`;
+		return `M${p(a - larg, fora)} L${p(a, dentro)} L${p(a + larg, fora)} Z`;
+	});
+	return (
+		<svg width={LARGURA} height={ALTURA} style={{position: 'absolute', left: 0, top: 0, opacity: clamp(vis)}}>
+			<path d={cunhas.join(' ')} fill={cor} />
+		</svg>
+	);
+};
+
+/** Texto grande no meio da tela, numa faixa inclinada: entra batendo e sai sumindo. */
+const Letreiro: React.FC<{texto: string; ini: number; fim: number; t: number; frame: number; fps: number; cor: string; altura: number}> = ({texto, ini, fim, t, frame, fps, cor, altura}) => {
+	const entra = spring({frame: frame - Math.round(ini * fps), fps, config: {damping: 10, stiffness: 210, mass: 0.7}});
+	const sai = 1 - smoothstep(fim - 0.22, fim, t);
+	const faixa = easeOut(clamp((t - ini) / 0.18));
+	const txt = texto.toUpperCase();
+	return (
+		<div style={{position: 'absolute', top: `${(clamp(altura, 0.15, 0.85) * 100).toFixed(1)}%`, width: '100%', transform: 'translateY(-50%)', opacity: sai}}>
+			<div
+				style={{
+					position: 'absolute',
+					left: -100,
+					right: -100,
+					top: '50%',
+					height: 210,
+					transform: `translateY(-50%) rotate(-4deg) scaleX(${faixa})`,
+					background: 'rgba(12, 10, 24, 0.82)',
+					borderTop: `10px solid ${cor}`,
+					borderBottom: `10px solid ${cor}`,
+				}}
+			/>
+			<div
+				style={{
+					position: 'relative',
+					textAlign: 'center',
+					padding: '0 50px',
+					fontFamily: FONTE,
+					fontWeight: 900,
+					fontSize: fonteQueCabe(txt, 132, 960),
+					lineHeight: 1.02,
+					color: '#fff',
+					transform: `rotate(-4deg) scale(${lerp(1.7, 1, entra)})`,
+					...contornoTexto(14),
+				}}
+			>
+				{txt}
+			</div>
+		</div>
+	);
+};
+
+/** Círculo vermelho "à mão" desenhado em volta do alvo (duas voltas tortas). */
+const Circulo: React.FC<{x: number; y: number; raio: number; ini: number; fim: number; t: number; cor: string}> = ({x, y, raio, ini, fim, t, cor}) => {
+	const desenho = easeInOut(clamp((t - ini) / 0.45));
+	const sai = 1 - smoothstep(fim - 0.2, fim, t);
+	const rx = raio * 1.25;
+	const ry = raio;
+	const pts: string[] = [];
+	const voltas = 1.18;
+	const n = 64;
+	for (let i = 0; i <= n; i++) {
+		const a = -Math.PI * 0.6 + (i / n) * Math.PI * 2 * voltas;
+		const k = 1 + 0.07 * Math.sin(i * 0.37) + 0.06 * (i / n);
+		pts.push(`${(x + Math.cos(a) * rx * k).toFixed(1)},${(y + Math.sin(a) * ry * k).toFixed(1)}`);
+	}
+	const d = `M${pts.join(' L')}`;
+	const comp = 2 * Math.PI * Math.max(rx, ry) * voltas * 1.1;
+	const traco = {strokeDasharray: comp, strokeDashoffset: comp * (1 - desenho), fill: 'none', strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const};
+	return (
+		<svg width={LARGURA} height={ALTURA} style={{position: 'absolute', left: 0, top: 0, opacity: sai}}>
+			<path d={d} stroke="#000" strokeWidth={22} {...traco} />
+			<path d={d} stroke={cor} strokeWidth={12} {...traco} />
+		</svg>
+	);
+};
+
+/** Escurece a tela menos um círculo de luz em volta do alvo. */
+const Destaque: React.FC<{x: number; y: number; raio: number; ini: number; fim: number; t: number; intensidade: number}> = ({x, y, raio, ini, fim, t, intensidade}) => {
+	const vis = smoothstep(ini, ini + 0.35, t) * (1 - smoothstep(fim - 0.3, fim, t));
+	// no close o rosto é enorme: o círculo para em ~420 px e vira um holofote no rosto
+	const r = clamp(raio * 1.9, 150, 420);
+	return (
+		<AbsoluteFill
+			style={{
+				background: `radial-gradient(circle at ${x.toFixed(0)}px ${y.toFixed(0)}px, rgba(0,0,0,0) ${r.toFixed(0)}px, rgba(0,0,0,${(0.72 * intensidade).toFixed(2)}) ${(r * 1.45).toFixed(0)}px)`,
+				opacity: clamp(vis),
+			}}
+		/>
+	);
+};
+
+/** Faixas pretas de cinema em cima e embaixo. */
+const Barras: React.FC<{vis: number}> = ({vis}) => {
+	const h = 165 * easeInOut(vis);
+	return (
+		<>
+			<div style={{position: 'absolute', left: 0, right: 0, top: 0, height: h, background: '#000'}} />
+			<div style={{position: 'absolute', left: 0, right: 0, bottom: 0, height: h, background: '#000'}} />
+		</>
+	);
+};
+
+const EfeitosDeProducao: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: number}> = ({linha, t, frame, fps}) => {
+	const cena = cenaNoTempo(linha, t);
+	const itens: React.ReactNode[] = [];
+	let barras = 0;
+	cena.efeitos.forEach((e, i) => {
+		if (e.efeito === 'barras') {
+			if (t >= e.ini && t <= e.fim + 0.35) barras = Math.max(barras, Math.min(clamp((t - e.ini) / 0.35), 1 - clamp((t - e.fim) / 0.35)));
+			return;
+		}
+		if (t < e.ini || t >= e.fim) return;
+		const intens = e.intensidade ?? 1;
+		if (e.efeito === 'linhas') itens.push(<Linhas key={i} t={t} ini={e.ini} fim={e.fim} intensidade={Math.min(1, 0.85 * intens)} cor={e.cor ?? '#FFFFFF'} />);
+		else if (e.efeito === 'letreiro' && e.texto) itens.push(<Letreiro key={i} texto={e.texto} ini={e.ini} fim={e.fim} t={t} frame={frame} fps={fps} cor={e.cor ?? AMARELO} altura={e.altura ?? 0.3} />);
+		else if ((e.efeito === 'circular' || e.efeito === 'destacar') && e.alvo !== undefined) {
+			// o alvo fica onde estava no começo do efeito (não persegue o tremor da câmera)
+			const p = naTela(linha, t, e.alvo);
+			if (!p) return;
+			const raio = p.raio ? p.raio * 1.5 : p.raioPeca ? clamp(p.raioPeca * 1.15, 55, 480) : 110 * intens;
+			if (e.efeito === 'circular') itens.push(<Circulo key={i} x={p.x} y={p.y} raio={raio} ini={e.ini} fim={e.fim} t={t} cor={e.cor ?? VERMELHO} />);
+			else itens.push(<Destaque key={i} x={p.x} y={p.y} raio={raio} ini={e.ini} fim={e.fim} t={t} intensidade={Math.min(1.2, intens)} />);
+		}
+	});
+	return (
+		<>
+			{itens}
+			{barras > 0 ? <Barras vis={barras} /> : null}
+		</>
+	);
+};
+
+/** Varrer (faixa amarela e preta na diagonal) e íris (círculo preto) cobrindo o corte. */
+const Transicao2D: React.FC<{linha: LinhaDoTempo; t: number}> = ({linha, t}) => {
+	const tr = transicaoAtiva(cenaNoTempo(linha, t), t);
+	if (!tr) return null;
+	if (tr.tipo === 'varrer') {
+		const g = tr.fase === 'saida' ? 0.5 * tr.p : 0.5 + 0.5 * tr.p;
+		const x = lerp(-3300, 3300, g);
+		return (
+			<div style={{position: 'absolute', left: '50%', top: '50%', width: 0, height: 0, transform: 'rotate(-16deg)'}}>
+				<div style={{position: 'absolute', left: x - 1300 - 260, top: -2200, width: 220, height: 4400, background: '#000'}} />
+				<div style={{position: 'absolute', left: x - 1300, top: -2200, width: 2600, height: 4400, background: AMARELO, borderLeft: '34px solid #000', borderRight: '34px solid #000'}} />
+				<div style={{position: 'absolute', left: x + 1300 + 50, top: -2200, width: 90, height: 4400, background: AMARELO}} />
+			</div>
+		);
+	}
+	if (tr.tipo === 'iris') {
+		const fecha = tr.fase === 'saida' ? 1 - tr.p ** 1.6 : tr.p ** 1.4;
+		const r = Math.max(0, 1250 * fecha - 8);
+		return <AbsoluteFill style={{background: `radial-gradient(circle at 50% 44%, rgba(0,0,0,0) ${r.toFixed(0)}px, #000 ${(r + 4).toFixed(0)}px)`}} />;
+	}
+	return null;
+};
 
 const Efeitos: React.FC<{linha: LinhaDoTempo; t: number}> = ({linha, t}) => {
 	const cena = cenaNoTempo(linha, t);
@@ -387,11 +586,13 @@ const Efeitos: React.FC<{linha: LinhaDoTempo; t: number}> = ({linha, t}) => {
 export const Camada2D: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: number; semVoz: boolean}> = ({linha, t, frame, fps, semVoz}) => (
 	<AbsoluteFill>
 		<Efeitos linha={linha} t={t} />
+		<EfeitosDeProducao linha={linha} t={t} frame={frame} fps={fps} />
 		<Rotulos linha={linha} t={t} frame={frame} fps={fps} />
 		<Selo linha={linha} />
 		{semVoz ? <AvisoPrevia /> : null}
 		<Cartoes linha={linha} t={t} frame={frame} fps={fps} />
 		<Legenda linha={linha} t={t} frame={frame} fps={fps} />
 		<Chamada linha={linha} t={t} frame={frame} fps={fps} />
+		<Transicao2D linha={linha} t={t} />
 	</AbsoluteFill>
 );

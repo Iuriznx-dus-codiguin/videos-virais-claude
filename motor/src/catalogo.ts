@@ -303,7 +303,64 @@ export const ACOES: Record<string, DefAcao> = {
 export const ENCERRA_ESTADO = new Set(['levantar', 'andar', 'correr', 'recuar', 'mancar']);
 
 export const PLANOS = ['geral', 'aberto', 'medio', 'americano', 'close', 'detalhe', 'ombro', 'pov', 'baixo', 'drone', 'nuca'] as const;
-export const MOVIMENTOS = ['fixo', 'aproximar', 'afastar', 'acompanhar', 'orbitar', 'subir', 'descer', 'panoramica', 'tremer'] as const;
+export const MOVIMENTOS = [
+	'fixo',
+	'aproximar',
+	'afastar',
+	'acompanhar',
+	'orbitar',
+	'subir',
+	'descer',
+	'panoramica',
+	'tremer',
+	'travelling',
+	'arco',
+	'dolly_zoom',
+	'zoom_rapido',
+] as const;
+
+/** O que cada movimento de câmera faz (o catálogo mostra; vale para qualquer tipo de plano, inclusive com "camera"). */
+export const USO_MOVIMENTOS: Record<(typeof MOVIMENTOS)[number], string> = {
+	fixo: 'parada (só a respiração de câmera na mão)',
+	aproximar: 'chega mais perto devagar',
+	afastar: 'se afasta devagar',
+	acompanhar: 'segue o alvo que anda',
+	orbitar: 'gira um pouco em volta do alvo',
+	subir: 'sobe olhando o alvo',
+	descer: 'desce olhando o alvo (no drone: mergulha do alto)',
+	panoramica: 'vai do alvo ao alvo2 (geral, detalhe, drone)',
+	tremer: 'câmera na mão nervosa',
+	travelling: 'desliza de lado com o fundo correndo atrás (paralaxe); intensidade negativa inverte o sentido',
+	arco: 'grua: contorna o alvo subindo, revela o lugar (aberturas, chegadas, finais); intensidade negativa contorna para o outro lado',
+	dolly_zoom: 'efeito vertigem: a câmera avança e a lente abre, o alvo fica do mesmo tamanho e o fundo estica (a hora em que alguém percebe algo)',
+	zoom_rapido: 'zoom seco nos primeiros 0,3 s e segura (susto, revelação, ênfase)',
+};
+
+/**
+ * Como o plano entra (campo "transicao"). Com "chicote", "zoom", "varrer" e "desfoque" o plano
+ * anterior também sai no mesmo estilo; chicote, zoom e varrer já tocam um whoosh sozinhos.
+ */
+export const TRANSICOES: Record<string, string> = {
+	corte: 'corte seco (padrão)',
+	flash: 'clarão branco',
+	preto: 'escurece e volta',
+	chicote: 'a câmera vira rápido com borrão para o lado e o plano novo entra virando (troca de lugar, ação, piada)',
+	zoom: 'mergulho no centro com borrão e o plano novo entra ainda avançando (entrar em algo, ir para o detalhe)',
+	desfoque: 'desfoca e o plano novo entra desfocado ficando nítido (passagem de tempo, lembrança, acordar)',
+	varrer: 'faixa amarela e preta atravessa a tela na diagonal cobrindo o corte (novo passo, novo assunto)',
+	iris: 'círculo preto fecha no centro e abre no plano novo (fim de bloco, cartoon)',
+};
+
+/** Filtro de cor da cena inteira (campo "filtro" da cena): só o 3D, a legenda não muda. */
+export const FILTROS: Record<string, string> = {
+	quente: 'dourado, aconchego, pôr do sol',
+	frio: 'azulado, perigo, noite fria',
+	dramatico: 'mais contraste e menos cor (tensão, virada)',
+	vivo: 'cores mais fortes (alegria, descoberta)',
+	sepia: 'foto antiga (passado, lembrança)',
+	noir: 'preto e branco (pesadelo, lembrança ruim)',
+	sonho: 'claro e lavado (sonho, delírio)',
+};
 export const LADOS = ['frente', 'costas', 'direita', 'esquerda', 'tres_quartos_direita', 'tres_quartos_esquerda'] as const;
 
 export const EXPRESSOES = [
@@ -334,7 +391,21 @@ export const EFEITOS: Record<string, number | null> = {
 	relampago: 0.6,
 	/** luz falhando: apagões curtos e irregulares até "ate" (turbulência, pane) */
 	piscar: 1.5,
+	/** linhas de ação de desenho animado vindo das bordas (susto, velocidade, revelação) */
+	linhas: 0.9,
+	/** texto grande no meio da tela ("texto"): "3 DIAS DEPOIS", "PASSO 2", "ERRADO!" */
+	letreiro: 1.8,
+	/** círculo vermelho desenhado à mão em volta do "alvo" (peça, pegada, nome no manifesto) */
+	circular: 1.8,
+	/** escurece a tela toda menos um círculo de luz em volta do "alvo" */
+	destacar: 2.0,
+	/** faixas pretas de cinema em cima e embaixo (momento épico ou tenso) até "ate" */
+	barras: null,
 };
+
+/** Efeitos que precisam de "alvo" (peça, personagem, marca, ponto) e de "texto". */
+export const EFEITOS_COM_ALVO = new Set(['circular', 'destacar']);
+export const EFEITOS_COM_TEXTO = new Set(['letreiro']);
 
 /** O que um personagem pode ter na mão direita ("segura" na cena ou "item" de pegar). */
 export const ITENS_MAO = ['lanca', 'lanterna', 'tocha', 'garrafa', 'galhos', 'isqueiro', 'radio', 'pacote'] as const;
@@ -412,8 +483,22 @@ export const OBJETOS = [
 	'garrafa',
 	'mantimentos',
 	'mascaras',
+	'particulas',
+	'feixe_luz',
 ] as const;
 
+/** Valores do campo "particula" do objeto "particulas" e para que serve cada um. */
+export const PARTICULAS: Record<string, string> = {
+	poeira: 'poeira flutuando na luz (cabine, oficina, caverna, estúdio)',
+	fagulhas: 'fagulhas subindo (fogueira, incêndio, destroços)',
+	fumaca: 'coluna de fumaça cinza subindo (destroços, sinal, incêndio)',
+	vapor: 'vapor branco subindo (panela, chuveiro, chaleira, motor quente)',
+	folhas: 'folhas caindo girando (selva, vento)',
+	vagalumes: 'vaga-lumes piscando (selva e praia à noite)',
+	faiscas: 'estouros de faísca elétrica (curto-circuito, solda, peça elétrica)',
+	bolhas: 'bolhas subindo (água fervendo, mergulho, aquário)',
+	confete: 'confete estourando no "aparece" e caindo (comemoração, "Parabéns!")',
+};
 /** Para que serve cada objeto e as opções que ele aceita além de em, giro e escala. */
 export const USO_OBJETOS: Record<(typeof OBJETOS)[number], string> = {
 	sos: 'SOS escrito na areia',
@@ -438,6 +523,8 @@ export const USO_OBJETOS: Record<(typeof OBJETOS)[number], string> = {
 	garrafa: 'garrafa de água de pé; quantas (padrão 1, as outras do lado)',
 	mantimentos: 'lona com garrafas e pacotes enfileirados; garrafas (6), pacotes (5), inicial (quantos estão lá; padrão todos, ou 0 se tiver "enche"); entre "enche" e "cheio" os itens vão aparecendo um a um',
 	mascaras: 'máscaras de oxigênio que caem do teto da cabine em "cai" e ficam balançando; em: [x do meio do par de bancos, z da fileira]; quantas (2)',
+	particulas: 'efeito de partículas; particula (poeira, fagulhas, fumaca, vapor, folhas, vagalumes, faiscas, bolhas, confete), alt (altura da base, ex.: 1.1 em cima do pedestal), raio (área, m), altura (até onde sobem/caem, m), quantas, cor; "aparece" liga e "some" desliga',
+	feixe_luz: 'feixe de luz visível (refletor, sol entrando pela mata ou pela janela, lanterna forte): de [x, y, z] (de onde a luz sai), em = onde ela bate, alt (altura do ponto onde bate, padrão 0), largura (raio no fim, padrão 1.2), cor, intensidade (0.1 a 1, padrão 0.35), varrer (graus que o feixe balança, padrão 0)',
 };
 
 // --- maquetes ---------------------------------------------------------------------------

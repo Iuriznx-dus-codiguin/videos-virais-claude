@@ -9,6 +9,23 @@ import {V2, V3, aleatorio, clamp, easeOut, lerp, smoothstep} from '../util/mat';
 import {AviaoCaindo, Destrocos, Malas} from './aviao';
 import {BarrasOuro, Barco, CaixaPreta, Farol, LanternasMata, LuzFarol} from './ilha';
 import {Malha, brilho, caixa, cilindro, cone, decalque, disco, esfera, fumacaMat, haloMat, ico, toon, toro, translucido} from './base';
+import {FeixeLuz, Particulas} from './particulas';
+
+/** Área (raio) e altura padrão de cada tipo de partícula, em metros. */
+const PADRAO_PARTICULAS: Record<string, [number, number]> = {
+	poeira: [3, 3],
+	fagulhas: [0.6, 2.6],
+	vagalumes: [5, 2],
+	faiscas: [0.6, 0],
+	bolhas: [0.3, 0.8],
+	folhas: [4, 6],
+	confete: [1.2, 4],
+	fumaca: [1, 7],
+	vapor: [0.25, 1.4],
+};
+
+/** Objetos que não crescem com pulinho ao aparecer (efeitos de luz e partículas só ligam). */
+const SEM_PULINHO = new Set(['particulas', 'feixe_luz']);
 
 const posicaoObjeto = (o: Objeto, cenario: string): V2 =>
 	Array.isArray(o.em) ? (o.em as V2) : (CENARIOS[cenario]?.marcas[o.em] ?? [0, 0]);
@@ -387,7 +404,7 @@ export const Objetos: React.FC<{lista: Objeto[]; cenario: string; t: number}> = 
 			if (vis <= 0) return null;
 			const [x, z] = posicaoObjeto(o, cenario);
 			const el = objeto(o, i, x, z, t);
-			if (vis >= 1 || !el) return el;
+			if (vis >= 1 || !el || SEM_PULINHO.has(o.tipo)) return el;
 			return (
 				<group key={i} position={[x, 0, z]} scale={vis}>
 					<group position={[-x, 0, -z]}>{el}</group>
@@ -453,6 +470,39 @@ const objeto = (o: Objeto, i: number, x: number, z: number, t: number) => {
 			return <BarrasOuro key={i} x={x} z={z} giro={giro} />;
 		case 'prancheta':
 			return <Prancheta key={i} x={x} z={z} giro={giro} alt={(o.alt as number) ?? 0.46} deitada={o.deitada !== false} escala={esc} circulados={(o.circulados as number) ?? 1} />;
+		case 'particulas': {
+			const tipo = String(o.particula ?? 'poeira');
+			const [raio, altura] = PADRAO_PARTICULAS[tipo] ?? [2, 2];
+			return (
+				<Particulas
+					key={i}
+					particula={tipo}
+					x={x}
+					z={z}
+					alt={(o.alt as number) ?? 0}
+					raio={((o.raio as number) ?? raio) * esc}
+					altura={((o.altura as number) ?? altura) * esc}
+					quantas={o.quantas as number | undefined}
+					cor={o.cor as string | undefined}
+					t={t}
+					ini={(o._aparece as number | undefined) ?? -1000}
+					chave={`${i}-${tipo}-${x}-${z}`}
+				/>
+			);
+		}
+		case 'feixe_luz':
+			return (
+				<FeixeLuz
+					key={i}
+					de={(o.de as V3) ?? [x + 1.5, 6.5, z + 1]}
+					para={[x, (o.alt as number) ?? 0, z]}
+					largura={((o.largura as number) ?? 1.2) * esc}
+					cor={(o.cor as string) ?? '#FFF1D0'}
+					intensidade={(o.intensidade as number) ?? 0.35}
+					varrer={(o.varrer as number) ?? 0}
+					t={t}
+				/>
+			);
 		case 'aviao':
 			return (
 				<AviaoCaindo
