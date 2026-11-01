@@ -11,8 +11,8 @@ Só mexa em `motor/public/series/como-funciona/`. Nunca grave regra em `_histori
 Separe cada correção em:
 - **só este vídeo** (troca de fala, peça errada, câmera cortando o Tito);
 - **regra do Como Funciona** (vale para os próximos: ritmo, jeito de explicar, cores da maquete, tamanho dos rótulos, tom do Tito, tipo de tema na pauta);
-- **estilo de narrativa** (um jeito novo de abrir ou virar a história, um exemplo que funcionou ou não): atualize `estilos.md` com o exemplo dele, sem apagar os estilos validados;
-- **pauta** (trocar, tirar ou adiantar temas): edite `pauta.json` mantendo `n` em ordem para os pendentes.
+- **framework** (`estilos.md`: "volta ao laboratório" para invenções, "você constrói" para o que foi desenvolvido ao longo de anos, e a regra de escolha entre os dois): um vídeo validado que ele mandou, um trecho ou degrau difícil de entender, um jeito novo de abrir ou fechar, ou um tema que deve ir para o outro framework. Acrescente o exemplo dele no framework certo de `estilos.md` sem apagar os validados; para trocar o framework de um tema, mude o campo `framework` dele na pauta (e, se for o roteiro do próximo vídeo, reescreva o `epNN.json` no outro framework); mude um esqueleto ou a regra de escolha só se o pedido mudar isso, e diga ao Iuri o que mudou;
+- **pauta** (trocar, tirar ou adiantar temas): edite `pauta.json` mantendo `n` em ordem para os pendentes, com `framework` em todo tema (e `estilo` nos do laboratório) e sem mais de 3 seguidos no mesmo framework.
 - **roteiro do próximo vídeo** (o que foi mandado junto com a entrega): edite o `epNN.json` dele, rode `validar` e `npm run dados -- salvar como-funciona`, sem voz nem render; a rotina de amanhã parte dessa versão.
 Se for ambígua, escolha a leitura mais provável, aplique e diga qual usou.
 
