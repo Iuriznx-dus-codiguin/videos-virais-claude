@@ -16,9 +16,10 @@ Trabalhe sempre em **uma série por sessão** (economiza uso). Fale com o Iuri e
 ## 1. Preparar
 1. `cd motor && npm ci` (se faltar node_modules) e `npm run dados -- baixar` (traz séries, estado, vozes e regras do ramo `dados`).
 2. Voz (uma vez por sessão, ~4 min): `bash voz/instalar.sh`. Se falhar por rede (huggingface.co, *.hf.co, download.pytorch.org, download-r2.pytorch.org), siga sem voz e avise o Iuri qual host foi bloqueado; o vídeo sai marcado "sem voz". Nunca finja que há voz.
-3. Descubra quais partes produzir hoje (calendário em `motor/producao/PRODUCAO.md`: sexta produz sexta + 2 de sábado; sábado produz 2 de domingo; domingo nada). Confira `npm run dados -- entregas` para não refazer o que já foi entregue. Faça as partes **uma de cada vez, na ordem**, cada uma com os passos 2 a 7.
-4. Leia só: `estrutura.md` e `modelos.md` desta skill (o jeito de contar), `public/series/_historias/regras.md`, `public/series/<serie>/regras.md`, `estado.json`, `biblia.json` e `roteiro-geral.md` (o mapa da história: siga-o). Do episódio anterior leia só `resumo_ultima`.
-5. Série nova: crie `biblia.json` (modelo: `public/series/voo-818/biblia.json`), `regras.md` e `roteiro-geral.md` com a história inteira e, para cada parte, o problema do gancho "Se você...", o passo do mistério e a virada.
+3. Descubra quais partes produzir hoje (calendário em `motor/producao/PRODUCAO.md`: sexta produz sexta + 2 de sábado; sábado produz 2 de domingo; domingo nada). Confira `npm run dados -- entregas` para não refazer o que já foi entregue. Faça as partes **uma de cada vez, na ordem**, cada uma com os passos 2 a 7. **Nunca rode `npm run vozes` e `npm run render` ao mesmo tempo** (dividem os 4 núcleos: uma fala de ~1,5 min passa de 40 min e o render dobra): termine um antes de começar o outro.
+4. Se o `salvar` ou o `entregar` parar dizendo que outra sessão salvou a série depois do seu `baixar`, não force: junte a versão do ramo (fica em `out/dados-ramo/<serie>/`) com a sua em `public/series/<serie>/`, como a mensagem explica, e rode o mesmo comando com `--juntei`.
+5. Leia só: `estrutura.md` e `modelos.md` desta skill (o jeito de contar), `public/series/_historias/regras.md`, `public/series/<serie>/regras.md`, `estado.json`, `biblia.json` e `roteiro-geral.md` (o mapa da história: siga-o). Do episódio anterior leia só `resumo_ultima`.
+6. Série nova: crie `biblia.json` (modelo: `public/series/voo-818/biblia.json`), `regras.md` e `roteiro-geral.md` com a história inteira e, para cada parte, o problema do gancho "Se você...", o passo do mistério e a virada.
 
 ## 2. Escrever a história (só o texto)
 Antes de qualquer JSON, escreva a parte como texto corrido: uma linha por fala, com a batida, quem fala e a frase (como o exemplo do fim de `estrutura.md`).
@@ -32,7 +33,7 @@ Antes de qualquer JSON, escreva a parte como texto corrido: uma linha por fala, 
 
 ## 3. Montar as cenas (JSON)
 Agora cada frase vira uma imagem.
-- Se `epNN.json` já existir (rascunho revisado pelo Iuri), use-o como base: valide, confira e só corrija o que estiver errado, sem reescrever as falas sem motivo. Modelo: `public/series/voo-818/ep01.json`.
+- Se `epNN.json` já existir (rascunho revisado pelo Iuri), use-o como base: valide, confira e só corrija o que estiver errado, sem reescrever as falas sem motivo. A produção não mexe no texto: se o rascunho ainda não tem os movimentos, transições e efeitos de `producao.md` (rascunhos de antes de 01/11 não têm), acrescente-os. Modelo: `public/series/voo-818/ep01.json`.
 - Cada batida tem a sua imagem: o gancho mostra a situação grande e clara logo no primeiro quadro (de cima ou de longe); o instinto errado mostra o personagem fazendo; cada elo da corrente mostra a ação acontecendo; a virada fecha em close de quem percebe.
 - Vocabulário: `npm run catalogo` (cenários, objetos com as opções de cada um, ações, sons) ou `npm run catalogo -- <cenario>` (marcas, pontos e câmera sugerida). **Use só nomes que existem.** Se faltar cenário ou objeto, escolha o mais próximo e avise o Iuri no resumo final (é trabalho de código, numa sessão normal).
 - Âncoras de tempo sempre ligadas às falas (`"f3:fim+0.4"`), nunca segundos fixos. Alterne planos, use sons e efeitos nos sustos; nada de plano parado por mais de ~5 s.

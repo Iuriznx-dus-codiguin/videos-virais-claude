@@ -11,9 +11,10 @@ Fluxo **separado** do de aventura: só mexa em `motor/public/series/como-funcion
 
 ## 1. Preparar
 1. `cd motor && npm ci` (se faltar node_modules) e `npm run dados -- baixar`.
-2. Voz (uma vez por sessão, alguns minutos): `bash voz/instalar.sh`. Se falhar por rede (huggingface.co, download.pytorch.org), siga sem voz e diga no aviso final qual host foi bloqueado. Nunca finja que há voz.
-3. Quantos vídeos hoje: calendário em `motor/producao/COMO-FUNCIONA.md` (seg–qui 1; sexta 3: sexta 18h + sábado 11h e 18h; sábado 2: domingo 11h e 18h; domingo nada). Faça **um de cada vez**, passos 2 a 7.
-4. Leia só: `public/series/como-funciona/estilos.md` (os dois frameworks e a regra de escolha, obrigatório), `regras.md` (as regras de `_historias` não valem aqui: sem cliffhanger nem limite de 1 min), `estado.json`, `biblia.json` e o item `n = proxima_parte` de `pauta.json`. Se faltarem 10 itens pendentes ou menos, acrescente 20 temas novos no fim da pauta (mesmo formato, sem repetir, variando cozinha, banheiro, rua, transporte, energia, cidade, grandes obras), cada um com `framework` (e `estilo`, se for laboratório) pela regra de `estilos.md`, sem mais de 3 seguidos no mesmo framework.
+2. Voz (uma vez por sessão, alguns minutos): `bash voz/instalar.sh`. Se falhar por rede (huggingface.co, *.hf.co, download.pytorch.org, download-r2.pytorch.org), siga sem voz e diga no aviso final qual host foi bloqueado. Nunca finja que há voz.
+3. Quantos vídeos hoje: calendário em `motor/producao/COMO-FUNCIONA.md` (seg–qui 1; sexta 3: sexta 18h + sábado 11h e 18h; sábado 2: domingo 11h e 18h; domingo nada). Confira `npm run dados -- entregas` para não refazer o que já foi entregue. Faça **um de cada vez**, passos 2 a 7. **Nunca rode `npm run vozes` e `npm run render` ao mesmo tempo** (dividem os 4 núcleos: o render do #3 levou 116 min em vez de ~35): termine um antes de começar o outro.
+4. Se o `salvar` ou o `entregar` parar dizendo que outra sessão salvou a série depois do seu `baixar`, não force: junte a versão do ramo (fica em `out/dados-ramo/como-funciona/`) com a sua em `public/series/como-funciona/`, como a mensagem explica, e rode o mesmo comando com `--juntei`.
+5. Leia só: `public/series/como-funciona/estilos.md` (os dois frameworks e a regra de escolha, obrigatório), `regras.md` (as regras de `_historias` não valem aqui: sem cliffhanger nem limite de 1 min), `estado.json`, `biblia.json` e o item `n = proxima_parte` de `pauta.json`. Se faltarem 10 itens pendentes ou menos, acrescente 20 temas novos no fim da pauta (mesmo formato, sem repetir, variando cozinha, banheiro, rua, transporte, energia, cidade, grandes obras), cada um com `framework` (e `estilo`, se for laboratório) pela regra de `estilos.md`, sem mais de 3 seguidos no mesmo framework.
 
 ## 2. Framework, pesquisa e roteiro
 - **Framework:** o campo `framework` do item: `laboratorio` (invenção com inventor) ou `voce_constroi` (desenvolvido ao longo de anos). Sem o campo, decida pela pergunta de `estilos.md` ("dá para contar o momento em que alguém inventou isso?") e grave na pauta.
@@ -35,7 +36,7 @@ Fluxo **separado** do de aventura: só mexa em `motor/public/series/como-funcion
 - **Chamada:** `pergunta` sobre o próximo tema da pauta no jeito do framework DELE (laboratório: a dúvida ou o mito dele, "E o ventilador? Ele esfria o ar mesmo?"; você constrói: o desafio, "E agora, topa construir uma fechadura?"), `texto: "Comenta"`, `destaque` = campo `curto` do próximo item.
 
 ## 3. Escrever o episódio (`public/series/como-funciona/epNN.json`)
-**Se `epNN.json` já existir** (roteiro mandado ao Iuri na véspera, passo 8), parta dele: aplique as correções que o Iuri mandou para ele (estão na conversa da revisão ou já no arquivo), revise e siga para o passo 4. Não reescreva do zero o que ele já leu, a não ser que ele tenha pedido o outro framework.
+**Se `epNN.json` já existir** (roteiro mandado ao Iuri na véspera, passo 8), parta dele: aplique as correções que o Iuri mandou para ele (estão na conversa da revisão ou já no arquivo), revise e siga para o passo 4. Não reescreva do zero o que ele já leu, a não ser que ele tenha pedido o outro framework. A produção não mexe nas falas: se o roteiro ainda não tem os movimentos, transições, partículas e efeitos de `producao.md` (roteiros de antes de 01/11 não têm), acrescente-os antes de validar.
 
 Modelos (vêm com o `dados baixar`): laboratório, `ep07.json` (zíper) e `ep02.json` (lâmpada); você constrói, `ep03.json` (geladeira). Vocabulário: `npm run catalogo` (cenários `estudio` e `oficina`, maquetes, animações, fluxos, acessórios).
 - **Laboratório, três cenas:**
@@ -63,11 +64,12 @@ Modelos (vêm com o `dados baixar`): laboratório, `ep07.json` (zíper) e `ep02.
 
 ## 5. Voz
 1. Voz do Tito guardada em `vozes/tito.pt`; se não existir: `npx tsx ferramentas/escolher-voz.ts como-funciona tito --auto`.
-2. `npm run vozes -- como-funciona <n>`. O validar com voz quer 70 a 95 s (alvo 75 a 90). Curto: no laboratório, mais um MAS ou uma curiosidade; no você constrói, mais um degrau ou uma curiosidade virada problema. Longo: enxugue as frases ou corte o trecho mais técnico, nunca o MAS do laboratório, o "Se você..." nem o "Parabéns".
+2. `npm run vozes -- como-funciona <n>` e, **logo em seguida**, `npm run dados -- salvar como-funciona` (se a sessão cair, as vozes não se perdem). O validar com voz quer 70 a 95 s (alvo 75 a 90). Curto: no laboratório, mais um MAS ou uma curiosidade; no você constrói, mais um degrau ou uma curiosidade virada problema. Longo: enxugue as frases ou corte o trecho mais técnico, nunca o MAS do laboratório, o "Se você..." nem o "Parabéns".
 
 ## 6. Render e conferência
-1. `npm run render -- como-funciona <n>` (~25 min para 1min20 em qualidade média; sai em `out/como-funciona-epNN.mp4` com 20 a 35 MB). Antes, confira os quadros de produção (`producao.md`, "Conferir antes do render").
-2. `npm run quadro -- como-funciona <n> 2 20 40 60 75` e olhe: peça certa no quadro, Tito não tapando a maquete, inventor de frente na oficina, rótulo apontando para a peça certa, cartão legível, chamada visível. Corrija e renderize de novo se precisar.
+1. Antes do render, com os tempos reais da voz: `npm run enquadramento -- como-funciona <n>` de novo (os planos mudam de tempo quando a voz entra) e os quadros de produção (`producao.md`, "Conferir antes do render"). Corrija o que aparecer.
+2. `npm run render -- como-funciona <n>` em segundo plano (~25 min para 1min20 em qualidade média; sai em `out/como-funciona-epNN.mp4` com 20 a 35 MB). Não use `--qualidade=alta` a não ser que o Iuri peça. Se o render avisar que o tamanho saiu da faixa, diga no aviso final.
+3. `npm run quadro -- como-funciona <n> 2 20 40 60 75` e olhe: peça certa no quadro, Tito não tapando a maquete, inventor de frente na oficina, rótulo apontando para a peça certa, cartão legível, chamada visível. Corrija e renderize de novo se precisar.
 
 ## 7. Entregar
 1. `estado.json`: `proxima_parte` +1 e `resumo_ultima` (tema, framework e o caminho: laboratório, "abertura → inventor e ano → MAS → conceito → curiosidade"; você constrói, "Se você... → peça 1 → peça 2... → Parabéns"). Em `pauta.json`, marque o item: `"status": "produzido"`, `"dia": "AAAA-MM-DD"`. Fato novo que valha para outros vídeos vai em `biblia.json` > `fatos`.

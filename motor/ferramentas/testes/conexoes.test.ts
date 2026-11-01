@@ -364,6 +364,33 @@ describe('entrega dos vídeos', () => {
 		assert.ok(existsSync(join(b, 'public', 'series', 'ilha-perdida', 'ep01.json')));
 	});
 
+	it('não apaga o que outra sessão salvou da mesma série: para, deixa a versão do ramo e aceita --juntei', async () => {
+		const {extra} = novoRemoto();
+		assert.equal((await rodar(montarRaiz(), 'http://x', 'dados.ts', ['salvar', 'ilha-perdida'], extra)).codigo, 0);
+		const a = mkdtempSync(join(tmpdir(), 'shorts-a-'));
+		const b = mkdtempSync(join(tmpdir(), 'shorts-b-'));
+		for (const s of [a, b]) assert.equal((await rodar(s, 'http://x', 'dados.ts', ['baixar'], extra)).codigo, 0);
+		writeFileSync(join(b, 'public', 'series', 'ilha-perdida', 'ep09.json'), '{"de": "b"}');
+		assert.equal((await rodar(b, 'http://x', 'dados.ts', ['salvar', 'ilha-perdida'], extra)).codigo, 0);
+		assert.equal((await rodar(b, 'http://x', 'dados.ts', ['salvar', 'ilha-perdida'], extra)).codigo, 0, 'a própria sessão salva de novo sem travar');
+
+		writeFileSync(join(a, 'public', 'series', 'ilha-perdida', 'ep08.json'), '{"de": "a"}');
+		const parou = await rodar(a, 'http://x', 'dados.ts', ['salvar', 'ilha-perdida'], extra);
+		assert.equal(parou.codigo, 1);
+		assert.match(parou.saida, /PAROU para não apagar trabalho de outra sessão[\s\S]*--juntei/);
+		assert.ok(existsSync(join(a, 'out', 'dados-ramo', 'ilha-perdida', 'ep09.json')), 'a versão do ramo fica para juntar');
+
+		cpSync(join(a, 'out', 'dados-ramo', 'ilha-perdida', 'ep09.json'), join(a, 'public', 'series', 'ilha-perdida', 'ep09.json'));
+		const juntou = await rodar(a, 'http://x', 'dados.ts', ['salvar', 'ilha-perdida', '--juntei'], extra);
+		assert.equal(juntou.codigo, 0, juntou.saida);
+		const c = mkdtempSync(join(tmpdir(), 'shorts-c-'));
+		assert.equal((await rodar(c, 'http://x', 'dados.ts', ['baixar'], extra)).codigo, 0);
+		for (const n of ['ep08.json', 'ep09.json']) assert.ok(existsSync(join(c, 'public', 'series', 'ilha-perdida', n)), `${n} das duas sessões ficou no ramo`);
+
+		const semBaixar = await rodar(montarRaiz(), 'http://x', 'dados.ts', ['salvar', 'ilha-perdida'], extra);
+		assert.equal(semBaixar.codigo, 1, 'pasta que não veio do baixar não troca a do ramo');
+	});
+
 	it('apaga da pasta videos o que passou de 10 dias', async () => {
 		const {remoto, extra} = novoRemoto();
 		const raiz = montarRaiz();
