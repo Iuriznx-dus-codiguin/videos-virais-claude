@@ -7,6 +7,8 @@ description: Produz o vídeo do dia do Como Funciona (tema da pauta, roteiro no 
 
 Fluxo **separado** do de aventura: só mexa em `motor/public/series/como-funciona/`. Não edite `_historias/regras.md`, outras séries nem as skills `roteirizar-episodio`/`aplicar-correcoes`. Fale com o Iuri em português, curto. **A publicação é manual: nunca publique nada.**
 
+**Produção (pedido do Iuri em 01/11):** ao escrever o `epNN.json` (passo 3), leia e aplique `producao.md` desta skill, na tabela do framework do tema: movimento de câmera com intenção em cada plano, partícula na falha (maquete ou protótipo), `circular` na peça nova e número contando nos cartões; no "você constrói", `varrer` nos "Então, você..." e confete no "Parabéns!"; no laboratório, a oficina em `sepia` com `desfoque` na ida e na volta. Um vídeo só com cortes secos e `aproximar` não passa. O render sai em qualidade média (20 a 35 MB); mande o próprio mp4, sem cópia leve.
+
 ## 1. Preparar
 1. `cd motor && npm ci` (se faltar node_modules) e `npm run dados -- baixar`.
 2. Voz (uma vez por sessão, alguns minutos): `bash voz/instalar.sh`. Se falhar por rede (huggingface.co, download.pytorch.org), siga sem voz e diga no aviso final qual host foi bloqueado. Nunca finja que há voz.
@@ -64,7 +66,7 @@ Modelos (vêm com o `dados baixar`): laboratório, `ep07.json` (zíper) e `ep02.
 2. `npm run vozes -- como-funciona <n>`. O validar com voz quer 70 a 95 s (alvo 75 a 90). Curto: no laboratório, mais um MAS ou uma curiosidade; no você constrói, mais um degrau ou uma curiosidade virada problema. Longo: enxugue as frases ou corte o trecho mais técnico, nunca o MAS do laboratório, o "Se você..." nem o "Parabéns".
 
 ## 6. Render e conferência
-1. `npm run render -- como-funciona <n>` (~35 min para 1min20; sai em `out/como-funciona-epNN.mp4`).
+1. `npm run render -- como-funciona <n>` (~25 min para 1min20 em qualidade média; sai em `out/como-funciona-epNN.mp4` com 20 a 35 MB). Antes, confira os quadros de produção (`producao.md`, "Conferir antes do render").
 2. `npm run quadro -- como-funciona <n> 2 20 40 60 75` e olhe: peça certa no quadro, Tito não tapando a maquete, inventor de frente na oficina, rótulo apontando para a peça certa, cartão legível, chamada visível. Corrija e renderize de novo se precisar.
 
 ## 7. Entregar

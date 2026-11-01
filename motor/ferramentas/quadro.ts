@@ -1,5 +1,5 @@
 // Gera quadros soltos (PNG) de um episódio para conferir o visual sem renderizar o vídeo todo.
-// Uso: npm run quadro -- <serie> <parte> <segundos...> [--escala=0.5]
+// Uso: npm run quadro -- <serie> <parte> <segundos...> [--escala=0.5] [--dpr=1]
 import {bundle} from '@remotion/bundler';
 import {renderStill, selectComposition} from '@remotion/renderer';
 import {mkdirSync} from 'node:fs';
@@ -21,7 +21,7 @@ const main = async () => {
 	}
 	const escala = Number(opcoes.escala ?? 0.5);
 	const servir = await empacotar();
-	const inputProps = {serie, parte: Number(parte), semAudio: true};
+	const inputProps = {serie, parte: Number(parte), semAudio: true, ...(opcoes.dpr ? {dpr: Number(opcoes.dpr)} : {})};
 	const comp = await selectComposition({serveUrl: servir, id: 'Episodio', inputProps, browserExecutable: CHROME, chromiumOptions: {gl: 'swangle'}});
 	const pasta = join(RAIZ, 'out', 'quadros');
 	mkdirSync(pasta, {recursive: true});

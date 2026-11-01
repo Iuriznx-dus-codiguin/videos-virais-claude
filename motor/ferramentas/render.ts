@@ -1,7 +1,11 @@
 // Renderiza um episódio em MP4 vertical (1080x1920, 30 fps) com a voz e os sons da trilha.
-// Uso: npm run render -- <serie> <parte> [--saida=caminho.mp4] [--crf=18]
+// Uso: npm run render -- <serie> <parte> [--saida=caminho.mp4] [--qualidade=media|alta] [--crf=N]
+//
+// Qualidade média (padrão desde 01/11, pedido do Iuri): 3D sem supersampling, crf 24 e um teto de
+// bitrate calculado pela duração, para o arquivo ficar entre ~20 e ~35 MB num vídeo de 1min20.
+// "alta" é o jeito antigo (crf 18, 3D 1,5x maior): ~60 MB e render bem mais lento.
 import {renderMedia, selectComposition} from '@remotion/renderer';
-import {mkdirSync} from 'node:fs';
+import {mkdirSync, statSync} from 'node:fs';
 import {dirname, join} from 'node:path';
 import {RAIZ} from './lib/caminhos.ts';
 import {CHROME, empacotar} from './quadro.ts';
@@ -17,7 +21,12 @@ const main = async () => {
 	const opc = Object.fromEntries(args.filter((a) => a.startsWith('--')).map((a) => a.slice(2).split('=')));
 	const [serie, parteTxt] = args.filter((a) => !a.startsWith('--'));
 	if (!serie || !parteTxt) {
-		console.error('uso: npm run render -- <serie> <parte> [--saida=caminho.mp4] [--crf=18]');
+		console.error('uso: npm run render -- <serie> <parte> [--saida=caminho.mp4] [--qualidade=media|alta] [--crf=N]');
+		process.exit(2);
+	}
+	const q = QUALIDADES[opc.qualidade ?? 'media'];
+	if (!q) {
+		console.error(`qualidade "${opc.qualidade}" não existe (${Object.keys(QUALIDADES).join(', ')})`);
 		process.exit(2);
 	}
 	const parte = Number(parteTxt);
@@ -26,10 +35,14 @@ const main = async () => {
 
 	await gerarSons();
 	const servir = await empacotar();
-	const inputProps = {serie, parte};
+	const inputProps = {serie, parte, dpr: q.dpr};
 	const comp = await selectComposition({serveUrl: servir, id: 'Episodio', inputProps, browserExecutable: CHROME, chromiumOptions: {gl: 'swangle'}});
 	const semVoz = (comp.props as {semVoz?: boolean}).semVoz;
 	if (semVoz) console.warn('AVISO: sem voz (rode npm run vozes antes); o vídeo sai só com sons e música.');
+	const duracao = comp.durationInFrames / comp.fps;
+	const teto = q.tetoMB ? tetoDeBitrate(duracao, q.tetoMB) : null;
+	const crf = Number(opc.crf ?? q.crf);
+	console.log(`qualidade ${opc.qualidade ?? 'media'}: crf ${crf}, 3D ${q.dpr}x${teto ? `, teto ${teto} (≤ ${q.tetoMB} MB em ${duracao.toFixed(0)} s)` : ''}`);
 	const inicio = Date.now();
 	let ultimo = -1;
 	await renderMedia({
@@ -38,7 +51,8 @@ const main = async () => {
 		codec: 'h264',
 		outputLocation: saida,
 		inputProps,
-		crf: Number(opc.crf ?? 18),
+		crf,
+		...(teto ? {encodingMaxRate: teto, encodingBufferSize: dobro(teto)} : {}),
 		concurrency: 2,
 		browserExecutable: CHROME,
 		chromiumOptions: {gl: 'swangle'},
@@ -51,8 +65,36 @@ const main = async () => {
 		},
 	});
 	await normalizarVolume(saida);
+	const mb = statSync(saida).size / 1e6;
+	console.log(`tamanho: ${mb.toFixed(1)} MB`);
+	if (q.tetoMB && (mb < 15 || mb > 36)) console.warn(`AVISO: ${mb.toFixed(1)} MB está fora do esperado (20 a 35 MB para ~1min20).`);
 	console.log(`pronto: ${saida} (${Math.round((Date.now() - inicio) / 1000)} s)`);
 };
+
+interface Qualidade {
+	crf: number;
+	/** pixels do 3D por pixel do vídeo */
+	dpr: number;
+	/** tamanho máximo do arquivo (MB); vira um teto de bitrate do vídeo */
+	tetoMB?: number;
+}
+
+const QUALIDADES: Record<string, Qualidade> = {
+	// no teste de 01/11 (parte 6 do Voo 818 com transições e partículas) o crf 23 encostou no teto:
+	// crf 24 com teto de 30 MB deixa ~25–30 MB, no meio da faixa que o Iuri pediu
+	media: {crf: 24, dpr: 1, tetoMB: 30},
+	alta: {crf: 18, dpr: 1.5},
+};
+
+const AUDIO_KBPS = 128;
+
+/** Bitrate máximo do vídeo (ex.: "3100k") para o arquivo inteiro não passar de `mb`. */
+type Taxa = `${number}k`;
+const tetoDeBitrate = (segundos: number, mb: number): Taxa => {
+	const totalKbps = (mb * 8 * 1000) / Math.max(1, segundos);
+	return `${Math.max(800, Math.floor(totalKbps - AUDIO_KBPS - 60))}k`;
+};
+const dobro = (taxa: Taxa): Taxa => `${parseInt(taxa, 10) * 2}k`;
 
 /** Volume integrado padrão de YouTube e Instagram; pico máximo um pouco abaixo de 0 dB. */
 const ALVO_LUFS = -14;
@@ -72,7 +114,7 @@ const normalizarVolume = async (arquivo: string) => {
 	const m = JSON.parse(json[0]) as Record<string, string>;
 	const temp = arquivo.replace(/\.mp4$/, '.normalizado.mp4');
 	const filtro = `${base}:measured_I=${m.input_i}:measured_TP=${m.input_tp}:measured_LRA=${m.input_lra}:measured_thresh=${m.input_thresh}:offset=${m.target_offset}:linear=true`;
-	const r = spawnSync('ffmpeg', ['-y', '-v', 'error', '-i', arquivo, '-c:v', 'copy', '-af', filtro, '-ar', '48000', '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', temp], {encoding: 'utf8'});
+	const r = spawnSync('ffmpeg', ['-y', '-v', 'error', '-i', arquivo, '-c:v', 'copy', '-af', filtro, '-ar', '48000', '-c:a', 'aac', '-b:a', `${AUDIO_KBPS}k`, '-movflags', '+faststart', temp], {encoding: 'utf8'});
 	if (r.status !== 0) {
 		console.warn(`AVISO: normalização de volume falhou (${r.stderr?.trim()}); o vídeo fica como saiu do render.`);
 		return;

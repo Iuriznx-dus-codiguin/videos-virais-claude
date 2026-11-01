@@ -6,6 +6,77 @@ import {CENARIOS} from '../catalogo';
 import type {CenaTempo, PlanoTempo} from '../roteiro/tipos';
 import {V3, add3, clamp, easeInOut, frenteDe, len3, lerp, lerp3, mul3, norm3, ruido, smoothstep, sub3} from '../util/mat';
 import {SimulacaoCena, olhosGigante} from './simulacao';
+import {transicaoDoPlano} from './transicoes';
+
+/** Gira o vetor v em volta do eixo vertical (y) por `ang` radianos. */
+const girarY = (v: V3, ang: number): V3 => {
+	const c = Math.cos(ang);
+	const s = Math.sin(ang);
+	return [v[0] * c + v[2] * s, v[1], -v[0] * s + v[2] * c];
+};
+
+/**
+ * Movimentos que valem para qualquer tipo de plano (inclusive com "camera" fixa): mexem na
+ * posição, na mira e na lente já calculadas pelo plano.
+ */
+const aplicarMovimento = (q: {pos: V3; alvo: V3; fov: number}, plano: PlanoTempo, t: number): {pos: V3; alvo: V3; fov: number} => {
+	const dur = Math.max(0.3, plano.fim - plano.ini);
+	const k = plano.intensidade ?? 1;
+	const u = easeInOut((t - plano.ini) / dur);
+	let {pos, alvo, fov} = q;
+	const rel = sub3(pos, alvo);
+	const dist = Math.max(0.3, len3(rel));
+	switch (plano.movimento) {
+		case 'travelling': {
+			// desliza de lado; a mira anda menos que a câmera, então o fundo corre mais que o assunto
+			// intensidade negativa desliza para o outro lado
+			const ida = norm3([-rel[2], 0, rel[0]]);
+			const desl = mul3(ida, lerp(-0.5, 0.5, u) * 0.36 * dist * k);
+			pos = add3(pos, desl);
+			alvo = add3(alvo, mul3(desl, 0.45));
+			break;
+		}
+		case 'arco': {
+			// grua: contorna o alvo e sobe
+			// intensidade negativa contorna para o outro lado (sempre subindo)
+			const girado = girarY(rel, lerp(-0.42, 0.42, u) * k);
+			pos = add3(alvo, add3(girado, [0, lerp(-0.12, 0.3, u) * dist * Math.abs(k), 0]));
+			break;
+		}
+		case 'dolly_zoom': {
+			// avança e abre a lente na mesma medida: o alvo fica do mesmo tamanho e o fundo estica
+			const s = lerp(1 + 0.75 * Math.abs(k), 1, u);
+			pos = add3(alvo, mul3(rel, s));
+			fov = (2 * Math.atan(Math.tan((fov * Math.PI) / 360) / s) * 180) / Math.PI;
+			break;
+		}
+		case 'zoom_rapido': {
+			const p = clamp((t - plano.ini) / 0.3);
+			const z = 1 + 0.55 * Math.abs(k) * (1 - (1 - p) ** 3);
+			fov = (2 * Math.atan(Math.tan((fov * Math.PI) / 360) / z) * 180) / Math.PI;
+			break;
+		}
+		default:
+			break;
+	}
+	return {pos, alvo, fov};
+};
+
+/** Chicote e zoom mexem na câmera perto do corte (o borrão vem da camada 2D). */
+const aplicarTransicao = (q: {pos: V3; alvo: V3; fov: number}, plano: PlanoTempo, t: number): {pos: V3; alvo: V3; fov: number} => {
+	const tr = transicaoDoPlano(plano, t);
+	if (!tr) return q;
+	let {pos, alvo, fov} = q;
+	if (tr.tipo === 'chicote') {
+		// vira sempre para o mesmo lado: o velho sai girando e o novo chega do outro lado
+		const ang = tr.fase === 'saida' ? 0.95 * tr.p ** 2.2 : -0.75 * (1 - tr.p) ** 2.2;
+		alvo = add3(pos, girarY(sub3(alvo, pos), ang));
+	} else if (tr.tipo === 'zoom') {
+		const z = tr.fase === 'saida' ? 1 + 1.3 * tr.p ** 2.5 : lerp(0.72, 1, 1 - (1 - tr.p) ** 3);
+		fov = (2 * Math.atan(Math.tan((fov * Math.PI) / 360) / z) * 180) / Math.PI;
+	}
+	return {pos, alvo, fov};
+};
 
 export interface Camera {
 	pos: V3;
@@ -341,7 +412,7 @@ export const cameraNoTempo = (cena: CenaTempo, sim: SimulacaoCena, t: number): C
 			});
 		desvio = DESVIOS.find(livre) ?? 0;
 	}
-	let {pos, alvo, fov} = quadro(t, desvio);
+	let {pos, alvo, fov} = aplicarTransicao(aplicarMovimento(quadro(t, desvio), plano, t), plano, t);
 
 	// câmera na mão: respiração leve, mais forte no tremer
 	const mao = plano.movimento === 'tremer' ? 0.05 * k : 0.012;

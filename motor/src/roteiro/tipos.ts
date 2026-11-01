@@ -90,10 +90,10 @@ export interface Plano {
 	alvo2?: Alvo;
 	/** frente, costas, direita, esquerda, tres_quartos_direita, tres_quartos_esquerda */
 	lado?: string;
-	/** fixo, aproximar, afastar, acompanhar, orbitar, subir, descer, panoramica, tremer */
+	/** fixo, aproximar, afastar, acompanhar, orbitar, subir, descer, panoramica, tremer, travelling, arco, dolly_zoom, zoom_rapido */
 	movimento?: string;
 	intensidade?: number;
-	/** corte (padrão), flash, preto */
+	/** Como o plano entra: corte (padrão), flash, preto, chicote, zoom, desfoque, varrer, iris (ver TRANSICOES no catálogo). */
 	transicao?: string;
 	/** Posição fixa da câmera (marca, ponto ou [x, y, z]) em vez da calculada pelo tipo de plano. */
 	camera?: Alvo;
@@ -110,9 +110,17 @@ export interface Som {
 export interface Efeito {
 	de: Ancora;
 	ate?: Ancora;
-	/** flash, tremor, zoom_soco, vinheta, preto */
+	/** flash, tremor, zoom_soco, vinheta, preto, chuva, relampago, piscar, linhas, letreiro, circular, destacar, barras */
 	efeito: string;
 	intensidade?: number;
+	/** letreiro: o texto ("3 DIAS DEPOIS"). */
+	texto?: string;
+	/** letreiro: altura na tela, 0 (topo) a 1 (pé); padrão 0.3 (acima do rosto num close). */
+	altura?: number;
+	/** circular e destacar: peça, personagem, marca ou ponto. */
+	alvo?: Alvo;
+	/** letreiro, circular e linhas: cor (padrão amarelo/vermelho/branco). */
+	cor?: string;
 }
 
 export interface Objeto {
@@ -145,6 +153,10 @@ export interface Cena {
 	rotulos?: Rotulo[];
 	/** Cartões 2D no alto da tela (ano e inventor, número curioso...). */
 	cartoes?: Cartao[];
+	/** Filtro de cor da cena: quente, frio, dramatico, vivo, sepia, noir, sonho. */
+	filtro?: string;
+	/** false tira a vida própria do cenário (poeira, folhas, vaga-lumes, feixes de luz que ele já traz). */
+	atmosfera?: boolean;
 }
 
 // --- maquetes (objetos explicados peça por peça) -------------------------------------
@@ -228,6 +240,8 @@ export interface Cartao {
 	grande: string;
 	/** Linha menor embaixo ("Francisco Canhos, Jaú-SP"). */
 	pequeno?: string;
+	/** Número que conta no texto grande: [de, até]; o "#" do grande vira o número ("# °C", "DIA #"). */
+	contar?: [number, number];
 }
 
 export interface Chamada {
@@ -362,6 +376,8 @@ export interface AcaoTempo extends Acao {
 export interface PlanoTempo extends Plano {
 	ini: number;
 	fim: number;
+	/** Transição do plano seguinte (o fim deste plano sai no mesmo estilo). */
+	saida?: string;
 }
 
 export interface SomTempo extends Som {
@@ -389,6 +405,8 @@ export interface CenaTempo {
 	animacoes: AnimacaoTempo[];
 	rotulos: RotuloTempo[];
 	cartoes: CartaoTempo[];
+	filtro?: string;
+	atmosfera: boolean;
 }
 
 export interface AnimacaoTempo extends AnimacaoPeca {

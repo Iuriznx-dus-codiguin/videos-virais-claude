@@ -4,6 +4,7 @@ import {Audio} from '@remotion/media';
 import React from 'react';
 import {Sequence, staticFile, useVideoConfig} from 'remotion';
 import {simulacao} from '../animacao/simulacao';
+import {TRANSICOES_COM_WHOOSH} from '../animacao/transicoes';
 import type {LinhaDoTempo} from '../roteiro/tipos';
 import {clamp, smoothstep} from '../util/mat';
 
@@ -11,9 +12,14 @@ export const arquivoSom = (nome: string) => `sons/${nome}.wav`;
 export const arquivoAmbiente = (nome: string) => `ambiente/${nome}.wav`;
 export const arquivoMusica = (nome: string) => `musica/${nome}.wav`;
 
+/** Cortes com chicote, zoom ou varrer: o whoosh chega no máximo bem no corte. */
+export const whooshesDoEpisodio = (linha: LinhaDoTempo) =>
+	linha.cenas.flatMap((c) => c.planos.filter((p) => p.transicao && TRANSICOES_COM_WHOOSH.has(p.transicao)).map((p) => Math.max(0, p.ini - 0.3)));
+
 /** Todos os arquivos de som que o episódio usa (para gerar os que faltam antes do render). */
 export const sonsDoEpisodio = (linha: LinhaDoTempo) => {
 	const lista = new Set<string>();
+	if (whooshesDoEpisodio(linha).length) lista.add(arquivoSom('whoosh'));
 	for (const c of linha.cenas) {
 		for (const s of c.sons) lista.add(arquivoSom(s.som));
 		if (c.ambiente) lista.add(arquivoAmbiente(c.ambiente));
@@ -44,6 +50,11 @@ export const Trilha: React.FC<{linha: LinhaDoTempo}> = ({linha}) => {
 					</Sequence>
 				)),
 			)}
+			{whooshesDoEpisodio(linha).map((ini, i) => (
+				<Sequence key={`whoosh-${i}`} from={fr(ini)} layout="none">
+					<Audio src={staticFile(arquivoSom('whoosh'))} volume={0.45} />
+				</Sequence>
+			))}
 			{linha.cenas.flatMap((c) =>
 				simulacao(linha, c).passosGigante.map((p, i) => (
 					<Sequence key={`${c.id}-passo-${i}`} from={fr(p.t)} layout="none">

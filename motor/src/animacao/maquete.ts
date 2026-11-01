@@ -212,6 +212,43 @@ export const acharPeca = (maquetes: MaqueteNaCena[], nome: string): {m: MaqueteN
 	return null;
 };
 
+/** Meia largura (m) da peça vista de fora, sem a escala da maquete. */
+const meiaLargura = (p: Peca): number => {
+	const t = p.tam ?? [];
+	switch (p.forma) {
+		case 'caixa':
+			return Math.max(t[0] ?? 0.2, t[2] ?? 0.2) / 2;
+		case 'cilindro':
+			return Math.max(t[0] ?? 0.1, t[2] ?? 0);
+		case 'toro':
+			return (t[0] ?? 0.1) + (t[1] ?? 0.02);
+		case 'capsula':
+			return Math.max(t[0] ?? 0.05, (t[1] ?? 0.2) / 2 + (t[0] ?? 0.05));
+		case 'seta':
+			return (t[0] ?? 0.3) / 2;
+		case 'placa':
+			return Math.max(t[0] ?? 0.3, t[1] ?? 0.3) / 2;
+		case 'tubo': {
+			const c = centroLocal(p);
+			return Math.max(0.05, ...(p.caminho ?? []).map((q) => Math.hypot(q[0] - c[0], q[1] - c[1], q[2] - c[2])));
+		}
+		default:
+			return t[0] ?? 0.1;
+	}
+};
+
+/** Raio (m, já com a escala) do que precisa caber num círculo em volta da peça ou da maquete inteira. */
+export const raioDaPeca = (cena: CenaTempo, linha: LinhaDoTempo, nome: string): number | null => {
+	const maquetes = maquetesDaCena(cena, linha);
+	const inteira = maquetes.find((m) => m.id === nome || m.modelo === nome);
+	if (inteira) {
+		const r = Math.max(0.2, ...inteira.pecas.filter((p) => !p.pai).map((p) => Math.hypot(p.pos?.[0] ?? 0, p.pos?.[2] ?? 0) + meiaLargura(p)));
+		return r * inteira.escala;
+	}
+	const achada = acharPeca(maquetes, nome);
+	return achada ? meiaLargura(achada.p) * achada.m.escala : null;
+};
+
 /** Ponto no mundo do centro da peça (ou da maquete inteira, se o nome for o id dela). */
 export const pontoDaPeca = (cena: CenaTempo, linha: LinhaDoTempo, nome: string, t: number): V3 | null => {
 	const maquetes = maquetesDaCena(cena, linha);

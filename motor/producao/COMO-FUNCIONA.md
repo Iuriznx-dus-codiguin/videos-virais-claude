@@ -21,7 +21,7 @@ Vídeos de ~1min20 (75 a 90 s com voz) em dois frameworks, escolhidos pela ideia
 - **Volta ao laboratório** (`laboratorio`), para invenções com inventor, ano e lugar: abertura no estilo do tema (mito, E SE, dúvida comum, fato impossível) → oficina com o inventor e o protótipo → por dentro no estúdio, com pelo menos um MAS → conceito com nome → curiosidade.
 - **Você constrói** (`voce_constroi`, modelo da barragem), para o que foi desenvolvido e melhorado ao longo de anos (barragem, prédio, ponte, usina): "Se você..." com o jeito mais simples → 4 a 6 degraus "MAS/SÓ QUE [problema]" + "Então, você [põe a peça]" → "Parabéns! Você construiu um(a) ___!", tudo no estúdio com a maquete ganhando uma peça por degrau.
 
-Nunca mais de 3 vídeos seguidos no mesmo framework. Veja `public/series/como-funciona/estilos.md`. Render de 1min20 leva ~35 min; na sexta (3 vídeos) a rotina roda por umas 2 h.
+Nunca mais de 3 vídeos seguidos no mesmo framework. Veja `public/series/como-funciona/estilos.md`. Render de 1min20 leva ~25 min em qualidade média (20 a 35 MB); na sexta (3 vídeos) a rotina roda por umas 1h30.
 
 ## Arquivos do formato
 - `biblia.json`: Tito (narrador fixo, capacete amarelo e óculos), `formato: "avulso"` (selo "#N", texto de publicação sem "Parte").
