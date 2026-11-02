@@ -323,9 +323,9 @@
           "tipo": "medio",
           "alvo": "davi",
           "camera": [
-            3.69,
-            2.4,
-            10.99
+            0.6,
+            2.7,
+            9.6
           ],
           "movimento": "aproximar",
           "intensidade": 0.25
@@ -562,7 +562,7 @@
             4.8
           ],
           "movimento": "zoom_rapido",
-          "intensidade": 0.6
+          "intensidade": 0.25
         },
         {
           "de": "f6",
@@ -768,14 +768,14 @@
           "de": "f11",
           "tipo": "aberto",
           "alvo": [
-            1.0,
-            0.2,
-            10.8
+            1.2,
+            0.0,
+            10.6
           ],
           "camera": [
-            -2.0,
-            1.4,
-            8.4
+            5.5,
+            3.0,
+            8.0
           ],
           "movimento": "travelling",
           "intensidade": 0.3,
@@ -821,7 +821,7 @@
           "ate": "f9:fim",
           "efeito": "letreiro",
           "texto": "3H",
-          "altura": 0.15
+          "altura": 0.21
         },
         {
           "de": "f10:passo",
@@ -839,12 +839,8 @@
         {
           "de": "f11",
           "ate": "f13",
-          "grande": "# MIN",
-          "pequeno": "ATÉ A MARÉ SUBIR",
-          "contar": [
-            60,
-            52
-          ]
+          "grande": "4H",
+          "pequeno": "HORA DA MARÉ"
         }
       ]
     },
@@ -1043,11 +1039,11 @@
             9.6
           ],
           "camera": [
-            -2.6,
-            2.2,
-            6.8
+            -4.5,
+            3.2,
+            5.5
           ],
-          "movimento": "orbitar",
+          "movimento": "afastar",
           "intensidade": 0.2
         },
         {
@@ -1214,14 +1210,14 @@
       "planos": [
         {
           "de": "inicio",
-          "tipo": "medio",
+          "tipo": "close",
           "alvo": "cida",
           "camera": [
-            1.18,
-            2.4,
-            6.31
+            0.1,
+            2.6,
+            5.6
           ],
-          "movimento": "travelling",
+          "movimento": "aproximar",
           "intensidade": 0.2,
           "transicao": "chicote"
         },
@@ -1330,6 +1326,20 @@
           ],
           "passo": 0.75,
           "escala": 0.21
+        },
+        {
+          "tipo": "feixe_luz",
+          "de": [
+            -0.65,
+            1.8,
+            6.0
+          ],
+          "em": [
+            -0.4,
+            4.0
+          ],
+          "largura": 0.9,
+          "intensidade": 0.25
         }
       ],
       "acoes": [
@@ -1395,7 +1405,7 @@
         {
           "de": "inicio",
           "efeito": "vinheta",
-          "intensidade": 0.6
+          "intensidade": 0.35
         },
         {
           "de": "inicio",
@@ -1403,9 +1413,9 @@
           "efeito": "barras"
         },
         {
-          "de": "f22",
+          "de": "f22:bota",
           "ate": "f22:fim",
-          "efeito": "destacar",
+          "efeito": "circular",
           "alvo": [
             -0.2,
             0.0,
@@ -1417,8 +1427,7 @@
           "ate": "f22:fim",
           "efeito": "linhas"
         }
-      ],
-      "filtro": "dramatico"
+      ]
     },
     {
       "id": "reacao",
@@ -1512,6 +1521,12 @@
           "de": "inicio",
           "ate": "f23:fim",
           "efeito": "barras"
+        },
+        {
+          "de": "inicio",
+          "ate": "f23:fim",
+          "efeito": "destacar",
+          "alvo": "davi"
         }
       ],
       "filtro": "dramatico"
