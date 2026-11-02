@@ -1,0 +1,1163 @@
+{
+  "serie": "voo-818",
+  "parte": 8,
+  "titulo": "A vista",
+  "musica": "tensao",
+  "falas": [
+    {
+      "id": "f1",
+      "quem": "davi",
+      "off": true,
+      "tom": "tenso",
+      "texto": "Se você se perder numa ilha à noite, não ande pela mata. Suba."
+    },
+    {
+      "id": "f2",
+      "quem": "davi",
+      "off": true,
+      "texto": "Porque, lá de cima, no escuro, qualquer luz se entrega."
+    },
+    {
+      "id": "f3",
+      "quem": "davi",
+      "off": true,
+      "texto": "Mas só se a sua estiver apagada."
+    },
+    {
+      "id": "f4",
+      "quem": "davi",
+      "off": true,
+      "tom": "tenso",
+      "texto": "As botas que levaram a nossa Lia, de treze anos, sobem o morro."
+    },
+    {
+      "id": "f5",
+      "quem": "davi",
+      "off": true,
+      "texto": "E o meu primeiro instinto é correr atrás, de lanterna acesa."
+    },
+    {
+      "id": "f6",
+      "quem": "cida",
+      "tom": "bravo",
+      "texto": "Apaga isso, menino!"
+    },
+    {
+      "id": "f7",
+      "quem": "davi",
+      "off": true,
+      "tom": "serio",
+      "texto": "Ela tem razão. Lanterna na mata grita: estou AQUI."
+    },
+    {
+      "id": "f8",
+      "quem": "otavio",
+      "tom": "serio",
+      "texto": "O sol nasce em duas horas. Depois, quem vira alvo é a gente."
+    },
+    {
+      "id": "f9",
+      "quem": "cida",
+      "tom": "calmo",
+      "texto": "Sem luz, espera dez minutos. O olho acostuma."
+    },
+    {
+      "id": "f10",
+      "quem": "davi",
+      "off": true,
+      "tom": "tenso",
+      "texto": "Dez minutos parado, sem saber onde ela está.",
+      "pausa_depois": 0.3
+    },
+    {
+      "id": "f11",
+      "quem": "davi",
+      "off": true,
+      "texto": "Aí a trilha aparece. Só que cada passo na mata faz barulho."
+    },
+    {
+      "id": "f12",
+      "quem": "otavio",
+      "tom": "sussurro",
+      "texto": "Pisa na pedra, nunca na folha. Folha estala."
+    },
+    {
+      "id": "f13",
+      "quem": "davi",
+      "off": true,
+      "texto": "Ou seja, um morro inteiro em silêncio, com o Otávio mancando.",
+      "pausa_depois": 0.3
+    },
+    {
+      "id": "f14",
+      "quem": "davi",
+      "off": true,
+      "texto": "No topo, dá pra ver tudo: um farol, um cais e um barco."
+    },
+    {
+      "id": "f15",
+      "quem": "davi",
+      "off": true,
+      "tom": "tenso",
+      "texto": "Um barco sendo carregado de caixas, no meio da noite."
+    },
+    {
+      "id": "f16",
+      "quem": "otavio",
+      "tom": "determinado",
+      "texto": "Barco carregado de madrugada é gente indo EMBORA."
+    },
+    {
+      "id": "f17",
+      "quem": "cida",
+      "tom": "aliviado",
+      "texto": "Então é só esperar. Sem eles, a ilha é nossa."
+    },
+    {
+      "id": "f18",
+      "quem": "davi",
+      "off": true,
+      "tom": "aliviado",
+      "texto": "E a gente procura a menina com calma, de dia.",
+      "pausa_depois": 0.5
+    },
+    {
+      "id": "f19",
+      "quem": "davi",
+      "off": true,
+      "tom": "tenso",
+      "texto": "Só que a luz do farol para de girar.",
+      "pausa_depois": 0.4
+    },
+    {
+      "id": "f20",
+      "quem": "davi",
+      "off": true,
+      "tom": "tenso",
+      "texto": "E começa a piscar. Três curtas. Três longas. Três curtas.",
+      "pausa_depois": 0.3
+    },
+    {
+      "id": "f21",
+      "quem": "otavio",
+      "tom": "medo",
+      "texto": "Isso é SOS.",
+      "pausa_depois": 0.8
+    }
+  ],
+  "cenas": [
+    {
+      "id": "gancho",
+      "cenario": "mirante",
+      "luz": "noite",
+      "ambiente": "mar",
+      "filtro": "frio",
+      "objetos": [
+        {
+          "tipo": "farol",
+          "em": [
+            -16,
+            85
+          ],
+          "escala": 1.3,
+          "alt": -35,
+          "modo": "gira"
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            9,
+            56
+          ],
+          "giro": 90,
+          "alt": -35
+        }
+      ],
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "geral",
+          "alvo": [
+            -3.0,
+            -28.0,
+            66.0
+          ],
+          "camera": [
+            1.0,
+            2.3,
+            0.8
+          ],
+          "movimento": "arco",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f2",
+          "tipo": "detalhe",
+          "alvo": [
+            -16.0,
+            -20.0,
+            85.0
+          ],
+          "camera": [
+            0.6,
+            3.2,
+            3.6
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.3
+        }
+      ],
+      "sons": [
+        {
+          "de": "inicio",
+          "som": "tensao_sobe",
+          "volume": 0.3
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "inicio",
+          "efeito": "vinheta",
+          "intensidade": 0.5
+        }
+      ]
+    },
+    {
+      "id": "mata",
+      "cenario": "selva",
+      "luz": "noite",
+      "ambiente": "selva",
+      "de": "f3",
+      "filtro": "frio",
+      "personagens": {
+        "davi": {
+          "em": [
+            -0.6,
+            7.0
+          ],
+          "olhando": [
+            -0.3,
+            0.0,
+            3.0
+          ],
+          "expressao": "determinado",
+          "segura": "lanterna"
+        },
+        "cida": {
+          "em": [
+            -3.0,
+            9.2
+          ],
+          "olhando": [
+            -0.6,
+            2.4,
+            7.0
+          ],
+          "expressao": "serio"
+        },
+        "otavio": {
+          "em": [
+            2.2,
+            9.6
+          ],
+          "olhando": [
+            -0.6,
+            2.4,
+            7.0
+          ],
+          "expressao": "cansado"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "pegadas_gigantes",
+          "em": [
+            -0.4,
+            6.0
+          ],
+          "ate": [
+            0.4,
+            0.5
+          ],
+          "passo": 0.75,
+          "escala": 0.21
+        },
+        {
+          "tipo": "feixe_luz",
+          "de": [
+            -0.45,
+            1.6,
+            6.5
+          ],
+          "em": [
+            -0.3,
+            4.4
+          ],
+          "largura": 0.8,
+          "intensidade": 0.4,
+          "some": "f7+0.4"
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "davi",
+          "faz": "acender",
+          "de": "inicio"
+        },
+        {
+          "quem": "davi",
+          "faz": "erguer",
+          "para": [
+            -0.3,
+            0.0,
+            4.4
+          ],
+          "de": "inicio+0.3"
+        },
+        {
+          "quem": "davi",
+          "expressao": "nervoso",
+          "de": "f5"
+        },
+        {
+          "quem": "cida",
+          "expressao": "bravo",
+          "de": "f6"
+        },
+        {
+          "quem": "davi",
+          "faz": "apagar",
+          "de": "f7"
+        },
+        {
+          "quem": "otavio",
+          "expressao": "serio",
+          "de": "f8"
+        },
+        {
+          "quem": "cida",
+          "expressao": "neutro",
+          "de": "f9"
+        }
+      ],
+      "rotulos": [
+        {
+          "alvo": "davi",
+          "texto": "DAVI · MECÂNICO",
+          "cor": "#FFD60A",
+          "de": "f3",
+          "ate": "f3:fim"
+        },
+        {
+          "alvo": "cida",
+          "texto": "DONA CIDA · 79 ANOS",
+          "cor": "#B8F28A",
+          "de": "f6",
+          "ate": "f6:fim"
+        },
+        {
+          "alvo": "otavio",
+          "texto": "OTÁVIO · COPILOTO",
+          "cor": "#8FD3FF",
+          "de": "f8",
+          "ate": "f8:fim"
+        }
+      ],
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "close",
+          "alvo": "davi",
+          "camera": [
+            -0.3,
+            2.6,
+            4.1
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2,
+          "transicao": "chicote"
+        },
+        {
+          "de": "f4",
+          "tipo": "detalhe",
+          "alvo": [
+            0.0,
+            0.0,
+            3.4
+          ],
+          "camera": [
+            1.4,
+            1.7,
+            5.6
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f5",
+          "tipo": "medio",
+          "alvo": "davi",
+          "camera": [
+            -0.4,
+            2.8,
+            2.6
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f6",
+          "tipo": "close",
+          "alvo": "cida",
+          "camera": [
+            -2.33,
+            2.6,
+            6.28
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f7",
+          "tipo": "close",
+          "alvo": "davi",
+          "camera": [
+            -0.3,
+            2.6,
+            4.1
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f8",
+          "tipo": "close",
+          "alvo": "otavio",
+          "camera": [
+            1.58,
+            2.6,
+            6.67
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f9",
+          "tipo": "close",
+          "alvo": "cida",
+          "camera": [
+            -2.33,
+            2.6,
+            6.28
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f10",
+          "tipo": "medio",
+          "alvo": "davi",
+          "camera": [
+            -0.4,
+            2.8,
+            2.6
+          ],
+          "movimento": "afastar",
+          "intensidade": 0.2,
+          "transicao": "desfoque"
+        },
+        {
+          "de": "f11",
+          "tipo": "detalhe",
+          "alvo": [
+            0.0,
+            0.0,
+            3.4
+          ],
+          "camera": [
+            1.4,
+            1.7,
+            5.6
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.3
+        }
+      ],
+      "sons": [
+        {
+          "de": "inicio",
+          "som": "clique",
+          "volume": 0.5
+        },
+        {
+          "de": "f7",
+          "som": "clique",
+          "volume": 0.5
+        },
+        {
+          "de": "f11:barulho",
+          "som": "galho",
+          "volume": 0.5
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "inicio",
+          "efeito": "vinheta",
+          "intensidade": 0.6
+        },
+        {
+          "de": "f4:botas",
+          "ate": "f4:fim",
+          "efeito": "circular",
+          "alvo": [
+            0.0,
+            0.0,
+            3.6
+          ]
+        },
+        {
+          "de": "f7:aqui",
+          "ate": "f7:fim",
+          "efeito": "linhas"
+        },
+        {
+          "de": "f4",
+          "ate": "f4:fim",
+          "efeito": "letreiro",
+          "texto": "4H DA MANHÃ"
+        }
+      ],
+      "cartoes": [
+        {
+          "de": "f10",
+          "ate": "f11",
+          "grande": "# MIN",
+          "pequeno": "PRO OLHO ACOSTUMAR",
+          "contar": [
+            10,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "subida",
+      "cenario": "selva",
+      "luz": "noite",
+      "ambiente": "selva",
+      "de": "f12",
+      "filtro": "frio",
+      "personagens": {
+        "otavio": {
+          "em": [
+            0.0,
+            8.4
+          ],
+          "olhando": [
+            0.3,
+            1.5,
+            0.0
+          ],
+          "expressao": "determinado"
+        },
+        "cida": {
+          "em": [
+            -0.6,
+            9.6
+          ],
+          "olhando": [
+            0.0,
+            1.5,
+            0.0
+          ],
+          "expressao": "serio"
+        },
+        "davi": {
+          "em": [
+            -1.0,
+            9.9
+          ],
+          "olhando": [
+            -0.3,
+            1.5,
+            0.0
+          ],
+          "expressao": "nervoso",
+          "segura": "lanterna"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "pegadas_gigantes",
+          "em": [
+            -0.4,
+            6.0
+          ],
+          "ate": [
+            0.4,
+            0.5
+          ],
+          "passo": 0.75,
+          "escala": 0.21
+        },
+        {
+          "tipo": "pegadas_gigantes",
+          "em": [
+            0.4,
+            0.3
+          ],
+          "ate": [
+            1.0,
+            -4.5
+          ],
+          "passo": 0.75,
+          "escala": 0.21
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "otavio",
+          "faz": "mancar",
+          "para": [
+            0.3,
+            3.6
+          ],
+          "de": "inicio"
+        },
+        {
+          "quem": "cida",
+          "faz": "andar",
+          "para": [
+            -0.1,
+            5.2
+          ],
+          "de": "inicio+1.0"
+        },
+        {
+          "quem": "davi",
+          "faz": "andar",
+          "para": [
+            -0.4,
+            6.6
+          ],
+          "de": "inicio+1.6"
+        }
+      ],
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "medio",
+          "alvo": "otavio",
+          "camera": [
+            1.2,
+            2.6,
+            2.0
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f13",
+          "tipo": "aberto",
+          "alvo": "cida",
+          "camera": [
+            0.3,
+            2.8,
+            -1.0
+          ],
+          "movimento": "afastar",
+          "intensidade": 0.2
+        }
+      ],
+      "sons": [
+        {
+          "de": "inicio",
+          "som": "folhas",
+          "volume": 0.3
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "inicio",
+          "efeito": "vinheta",
+          "intensidade": 0.6
+        }
+      ]
+    },
+    {
+      "id": "topo",
+      "cenario": "mirante",
+      "luz": "noite",
+      "ambiente": "mar",
+      "de": "f14",
+      "filtro": "quente",
+      "personagens": {
+        "davi": {
+          "em": [
+            -0.2,
+            2.5
+          ],
+          "olhando": [
+            4,
+            -12,
+            62
+          ],
+          "expressao": "surpreso"
+        },
+        "cida": {
+          "em": [
+            -2.2,
+            1.9
+          ],
+          "olhando": [
+            4,
+            -12,
+            62
+          ],
+          "expressao": "serio"
+        },
+        "otavio": {
+          "em": [
+            1.8,
+            2.1
+          ],
+          "olhando": [
+            4,
+            -12,
+            62
+          ],
+          "expressao": "desconfiado"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "farol",
+          "em": [
+            -16,
+            85
+          ],
+          "escala": 1.3,
+          "alt": -35,
+          "modo": "gira"
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            9,
+            56
+          ],
+          "giro": 90,
+          "alt": -35
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "otavio",
+          "expressao": "determinado",
+          "de": "f16"
+        },
+        {
+          "quem": "cida",
+          "expressao": "aliviado",
+          "de": "f17"
+        },
+        {
+          "quem": "cida",
+          "faz": "sentar",
+          "de": "f17:fim"
+        },
+        {
+          "quem": "davi",
+          "faz": "sentar",
+          "de": "f17:fim+0.2"
+        },
+        {
+          "quem": "otavio",
+          "faz": "sentar",
+          "de": "f17:fim+0.4"
+        },
+        {
+          "quem": "davi",
+          "expressao": "aliviado",
+          "de": "f18"
+        }
+      ],
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "geral",
+          "alvo": [
+            -2.0,
+            -26.0,
+            60.0
+          ],
+          "camera": [
+            0.5,
+            5.5,
+            -4.0
+          ],
+          "movimento": "arco",
+          "intensidade": 0.4,
+          "transicao": "chicote"
+        },
+        {
+          "de": "f15",
+          "tipo": "detalhe",
+          "alvo": [
+            9.0,
+            -34.0,
+            56.0
+          ],
+          "camera": [
+            1.0,
+            2.3,
+            3.0
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f16",
+          "tipo": "close",
+          "alvo": "otavio",
+          "camera": [
+            2.6,
+            2.6,
+            5.0
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f17",
+          "tipo": "close",
+          "alvo": "cida",
+          "camera": [
+            -2.8,
+            2.6,
+            4.8
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f18",
+          "tipo": "aberto",
+          "alvo": [
+            -0.2,
+            1.2,
+            2.3
+          ],
+          "camera": [
+            7.0,
+            1.8,
+            1.6
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.2
+        }
+      ],
+      "sons": [],
+      "efeitos": [
+        {
+          "de": "inicio",
+          "efeito": "vinheta",
+          "intensidade": 0.5
+        },
+        {
+          "de": "f14",
+          "ate": "f14:fim",
+          "efeito": "letreiro",
+          "texto": "MIRANTE"
+        },
+        {
+          "de": "f15:caixas",
+          "ate": "f15:fim",
+          "efeito": "circular",
+          "alvo": [
+            9.0,
+            -34.0,
+            56.0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "para",
+      "cenario": "mirante",
+      "luz": "noite",
+      "ambiente": "mar",
+      "de": "f19",
+      "filtro": "dramatico",
+      "personagens": {
+        "davi": {
+          "em": [
+            -0.2,
+            2.5
+          ],
+          "olhando": [
+            4,
+            -12,
+            62
+          ],
+          "expressao": "medo",
+          "pose": "sentado"
+        },
+        "cida": {
+          "em": [
+            -2.2,
+            1.9
+          ],
+          "olhando": [
+            4,
+            -12,
+            62
+          ],
+          "expressao": "medo",
+          "pose": "sentado"
+        },
+        "otavio": {
+          "em": [
+            1.8,
+            2.1
+          ],
+          "olhando": [
+            4,
+            -12,
+            62
+          ],
+          "expressao": "medo",
+          "pose": "sentado"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "farol",
+          "em": [
+            -16,
+            85
+          ],
+          "escala": 1.3,
+          "alt": -35,
+          "modo": "apagado"
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            9,
+            56
+          ],
+          "giro": 90,
+          "alt": -35
+        }
+      ],
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "detalhe",
+          "alvo": [
+            -16.0,
+            -20.0,
+            85.0
+          ],
+          "camera": [
+            0.6,
+            3.2,
+            3.6
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.3,
+          "transicao": "zoom"
+        }
+      ],
+      "sons": [
+        {
+          "de": "inicio",
+          "som": "tensao_sobe",
+          "volume": 0.35
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "inicio",
+          "efeito": "vinheta",
+          "intensidade": 0.6
+        },
+        {
+          "de": "inicio",
+          "ate": "fim",
+          "efeito": "barras"
+        }
+      ]
+    },
+    {
+      "id": "pisca",
+      "cenario": "mirante",
+      "luz": "noite",
+      "ambiente": "mar",
+      "de": "f20",
+      "filtro": "dramatico",
+      "personagens": {
+        "davi": {
+          "em": [
+            -0.2,
+            2.5
+          ],
+          "olhando": [
+            4,
+            -12,
+            62
+          ],
+          "expressao": "medo",
+          "pose": "sentado"
+        },
+        "cida": {
+          "em": [
+            -2.2,
+            1.9
+          ],
+          "olhando": [
+            4,
+            -12,
+            62
+          ],
+          "expressao": "medo",
+          "pose": "sentado"
+        },
+        "otavio": {
+          "em": [
+            1.8,
+            2.1
+          ],
+          "olhando": [
+            4,
+            -12,
+            62
+          ],
+          "expressao": "medo",
+          "pose": "sentado"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "farol",
+          "em": [
+            -16,
+            85
+          ],
+          "escala": 1.3,
+          "alt": -35,
+          "modo": "sos"
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            9,
+            56
+          ],
+          "giro": 90,
+          "alt": -35
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "otavio",
+          "faz": "levantar",
+          "de": "inicio+0.3"
+        },
+        {
+          "quem": "davi",
+          "faz": "levantar",
+          "de": "inicio+0.5"
+        },
+        {
+          "quem": "cida",
+          "faz": "levantar",
+          "de": "inicio+0.7"
+        }
+      ],
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "detalhe",
+          "alvo": [
+            -16.0,
+            -20.0,
+            85.0
+          ],
+          "camera": [
+            0.6,
+            3.2,
+            3.6
+          ],
+          "movimento": "tremer",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f21",
+          "tipo": "close",
+          "alvo": "otavio",
+          "camera": [
+            2.6,
+            2.6,
+            5.0
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f21:fim",
+          "tipo": "close",
+          "alvo": "davi",
+          "camera": [
+            -0.2,
+            2.6,
+            5.3
+          ],
+          "movimento": "dolly_zoom",
+          "intensidade": 0.8
+        }
+      ],
+      "sons": [
+        {
+          "de": "f21:sos",
+          "som": "impacto",
+          "volume": 0.45
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "inicio",
+          "efeito": "vinheta",
+          "intensidade": 0.6
+        },
+        {
+          "de": "inicio",
+          "ate": "f21:fim",
+          "efeito": "barras"
+        },
+        {
+          "de": "inicio",
+          "ate": "f20:fim",
+          "efeito": "destacar",
+          "alvo": [
+            -16.0,
+            -20.0,
+            85.0
+          ]
+        },
+        {
+          "de": "f21:sos",
+          "ate": "f21:fim",
+          "efeito": "linhas"
+        }
+      ]
+    }
+  ],
+  "chamada": {
+    "pergunta": "Vão até o farol agora ou esperam o sol?",
+    "texto": "COMENTA",
+    "destaque": "PARTE 9"
+  }
+}
