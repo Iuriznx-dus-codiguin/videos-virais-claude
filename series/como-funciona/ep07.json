@@ -1270,7 +1270,7 @@
    "quem": "tito",
    "texto": "Vinte anos depois, Gideon Sundback, engenheiro da empresa dele, trocou os ganchos por DENTES. E deu certo!",
    "off": true,
-   "pausa_depois": 0.4
+   "pausa_depois": 0.8
   },
   {
    "id": "f7",
@@ -1328,7 +1328,7 @@
   {
    "id": "f16",
    "quem": "tito",
-   "texto": "Em 1923, uma fábrica de botas de borracha deu ao fecho o nome do som que ele faz: ZIP!",
+   "texto": "Em 1923, uma fábrica pôs o fecho em botas de borracha e deu a elas o nome do som que ele faz: ZIP!",
    "tom": "animado"
   }
  ],
@@ -1494,7 +1494,7 @@
      "alvo": "fita_esq",
      "lado": "frente",
      "tamanho": 0.75,
-     "movimento": "aproximar"
+     "movimento": "arco"
     },
     {
      "de": "f1:trabalho",
@@ -1502,7 +1502,7 @@
      "alvo": "ziper_aberto",
      "lado": "tres_quartos_esquerda",
      "tamanho": 1.1,
-     "movimento": "acompanhar"
+     "movimento": "subir"
     },
     {
      "de": "f1:pecinha",
@@ -1510,15 +1510,15 @@
      "alvo": "cursor",
      "lado": "frente",
      "tamanho": 0.4,
-     "movimento": "aproximar",
-     "transicao": "flash"
+     "movimento": "zoom_rapido",
+     "transicao": "zoom"
     },
     {
      "de": "f2",
      "tipo": "medio",
      "alvo": "tito",
      "lado": "tres_quartos_direita",
-     "movimento": "aproximar"
+     "movimento": "travelling"
     }
    ],
    "sons": [
@@ -1545,8 +1545,15 @@
     {
      "de": "f1:pecinha",
      "efeito": "zoom_soco"
+    },
+    {
+     "de": "f1:pecinha+0.2",
+     "ate": "f2",
+     "efeito": "circular",
+     "alvo": "cursor"
     }
-   ]
+   ],
+   "filtro": "vivo"
   },
   {
    "id": "judson",
@@ -1577,6 +1584,20 @@
      ],
      "alt": 0.92,
      "escala": 1.8
+    },
+    {
+     "tipo": "particulas",
+     "particula": "poeira",
+     "em": [
+      0,
+      -1.05
+     ],
+     "alt": 1.25,
+     "raio": 0.3,
+     "altura": 0.45,
+     "quantas": 60,
+     "aparece": "f5:soltavam",
+     "some": "f5:fim"
     }
    ],
    "cartoes": [
@@ -1783,7 +1804,9 @@
       2.25,
       -0.7
      ],
-     "transicao": "preto"
+     "movimento": "arco",
+     "intensidade": 0.6,
+     "transicao": "desfoque"
     },
     {
      "de": "f3:botas",
@@ -1799,7 +1822,8 @@
      "alvo": "fita_e",
      "lado": "frente",
      "tamanho": 0.45,
-     "movimento": "aproximar"
+     "movimento": "arco",
+     "intensidade": 0.5
     },
     {
      "de": "f4:vez",
@@ -1809,7 +1833,21 @@
       2.85,
       2.2
      ],
-     "alvo": "judson"
+     "alvo": "judson",
+     "movimento": "travelling",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f5:mas",
+     "tipo": "medio",
+     "camera": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "alvo": "judson",
+     "movimento": "zoom_rapido",
+     "intensidade": 0.6
     },
     {
      "de": "f5:soltavam",
@@ -1817,8 +1855,7 @@
      "alvo": "bota_ganchos",
      "lado": "frente",
      "tamanho": 0.65,
-     "movimento": "tremer",
-     "transicao": "flash"
+     "movimento": "tremer"
     },
     {
      "de": "f5:abria",
@@ -1828,7 +1865,8 @@
       2.85,
       2.5
      ],
-     "alvo": "judson"
+     "alvo": "judson",
+     "movimento": "aproximar"
     }
    ],
    "sons": [
@@ -1864,6 +1902,12 @@
    ],
    "efeitos": [
     {
+     "de": "f3:botas+0.2",
+     "ate": "f4",
+     "efeito": "circular",
+     "alvo": "bota_ganchos"
+    },
+    {
      "de": "f5:mas",
      "efeito": "zoom_soco"
     },
@@ -1872,8 +1916,15 @@
      "ate": "f5:soltavam+0.5",
      "efeito": "tremor",
      "intensidade": 0.5
+    },
+    {
+     "de": "f5:soltavam",
+     "ate": "f5:soltavam+0.7",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
     }
-   ]
+   ],
+   "filtro": "sepia"
   },
   {
    "id": "sundback",
@@ -2052,12 +2103,12 @@
     {
      "quem": "sundback",
      "expressao": "feliz",
-     "de": "f6:certo+0.5"
+     "de": "f6:certo+0.3"
     },
     {
      "quem": "sundback",
      "faz": "acenar",
-     "de": "f6:certo+0.7"
+     "de": "f6:certo+0.45"
     }
    ],
    "planos": [
@@ -2074,7 +2125,9 @@
       1.9,
       -0.3
      ],
-     "transicao": "preto"
+     "movimento": "arco",
+     "intensidade": -0.6,
+     "transicao": "desfoque"
     },
     {
      "de": "f6:sundback",
@@ -2084,7 +2137,9 @@
       2.85,
       2.2
      ],
-     "alvo": "sundback"
+     "alvo": "sundback",
+     "movimento": "travelling",
+     "intensidade": 0.4
     },
     {
      "de": "f6:dentes",
@@ -2095,14 +2150,15 @@
      "movimento": "aproximar"
     },
     {
-     "de": "f6:certo+0.5",
+     "de": "f6:certo+0.35",
      "tipo": "close",
      "camera": [
       0.3,
       2.85,
       2.2
      ],
-     "alvo": "sundback"
+     "alvo": "sundback",
+     "movimento": "aproximar"
     }
    ],
    "sons": [
@@ -2121,16 +2177,23 @@
      "volume": 0.6
     },
     {
-     "de": "f6:certo+0.5",
+     "de": "f6:certo+0.35",
      "som": "ding"
     }
    ],
    "efeitos": [
     {
-     "de": "f6:certo+0.5",
+     "de": "f6:dentes+0.2",
+     "ate": "f6:certo",
+     "efeito": "circular",
+     "alvo": "dentinho_e3"
+    },
+    {
+     "de": "f6:certo+0.35",
      "efeito": "zoom_soco"
     }
-   ]
+   ],
+   "filtro": "sepia"
   },
   {
    "id": "por_dentro",
@@ -2572,11 +2635,19 @@
     {
      "de": "inicio",
      "tipo": "detalhe",
+     "alvo": "ziper",
+     "lado": "frente",
+     "tamanho": 1.1,
+     "movimento": "arco",
+     "transicao": "zoom"
+    },
+    {
+     "de": "f7:calombinho",
+     "tipo": "detalhe",
      "alvo": "dente_e3",
      "lado": "frente",
      "tamanho": 0.3,
-     "movimento": "aproximar",
-     "transicao": "flash"
+     "movimento": "aproximar"
     },
     {
      "de": "f8",
@@ -2584,13 +2655,22 @@
      "alvo": "fita_esq",
      "lado": "tres_quartos_esquerda",
      "tamanho": 0.65,
-     "movimento": "aproximar"
+     "movimento": "arco",
+     "intensidade": 0.5
     },
     {
      "de": "f9",
      "tipo": "medio",
      "alvo": "tito",
      "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido"
+    },
+    {
+     "de": "f9:mao",
+     "tipo": "detalhe",
+     "alvo": "ziper",
+     "lado": "frente",
+     "tamanho": 0.95,
      "movimento": "aproximar"
     },
     {
@@ -2599,20 +2679,24 @@
      "alvo": "cursor",
      "lado": "frente",
      "tamanho": 0.38,
-     "movimento": "aproximar"
+     "movimento": "aproximar",
+     "transicao": "varrer"
     },
     {
      "de": "f11:subindo",
      "tipo": "detalhe",
      "alvo": "ziper",
      "lado": "tres_quartos_esquerda",
-     "tamanho": 1.1
+     "tamanho": 1.1,
+     "movimento": "subir"
     },
     {
      "de": "f12",
      "tipo": "medio",
      "alvo": "tito",
-     "lado": "tres_quartos_direita"
+     "lado": "tres_quartos_direita",
+     "movimento": "dolly_zoom",
+     "transicao": "chicote"
     },
     {
      "de": "f12:puxar",
@@ -2628,34 +2712,41 @@
      "alvo": "cursor",
      "lado": "frente",
      "tamanho": 0.38,
-     "movimento": "aproximar"
+     "movimento": "aproximar",
+     "transicao": "zoom"
     },
     {
      "de": "f13:descendo",
      "tipo": "detalhe",
      "alvo": "ziper",
      "lado": "tres_quartos_esquerda",
-     "tamanho": 1.1
+     "tamanho": 1.1,
+     "movimento": "aproximar",
+     "intensidade": 0.5
     },
     {
      "de": "f14",
      "tipo": "medio",
      "alvo": "tito",
      "lado": "tres_quartos_direita",
-     "movimento": "aproximar"
+     "movimento": "travelling"
     },
     {
      "de": "f14:simples",
      "tipo": "detalhe",
      "alvo": "cursor",
      "lado": "frente",
-     "tamanho": 0.45
+     "tamanho": 0.45,
+     "movimento": "arco",
+     "intensidade": 0.5
     },
     {
      "de": "f15",
      "tipo": "medio",
      "alvo": "tito",
-     "lado": "tres_quartos_direita"
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
     },
     {
      "de": "f15:barulho",
@@ -2663,25 +2754,29 @@
      "alvo": "ziper",
      "lado": "frente",
      "tamanho": 1.1,
-     "transicao": "flash"
+     "movimento": "aproximar"
     },
     {
      "de": "f16",
      "tipo": "medio",
      "alvo": "tito",
      "lado": "tres_quartos_direita",
-     "movimento": "aproximar"
+     "movimento": "travelling",
+     "intensidade": -0.6
     },
     {
      "de": "f16:som",
      "tipo": "detalhe",
      "alvo": "ziper",
      "lado": "frente",
-     "tamanho": 1.1
+     "tamanho": 1.1,
+     "movimento": "aproximar"
     },
     {
      "de": "f16:zip",
      "tipo": "aberto",
+     "movimento": "arco",
+     "intensidade": 0.4,
      "camera": [
       -0.9,
       2.0,
@@ -2691,9 +2786,7 @@
       -0.9,
       1.5,
       0.3
-     ],
-     "movimento": "aproximar",
-     "intensidade": 0.2
+     ]
     }
    ],
    "sons": [
@@ -2748,10 +2841,6 @@
      "som": "ding"
     },
     {
-     "de": "f15:barulho",
-     "som": "whoosh"
-    },
-    {
      "de": "f16:zip",
      "som": "whoosh"
     },
@@ -2762,6 +2851,12 @@
    ],
    "efeitos": [
     {
+     "de": "f7:calombinho+0.2",
+     "ate": "f7:fim",
+     "efeito": "circular",
+     "alvo": "calombo"
+    },
+    {
      "de": "f8:travam",
      "efeito": "zoom_soco"
     },
@@ -2770,8 +2865,23 @@
      "efeito": "zoom_soco"
     },
     {
-     "de": "f12:mas",
-     "efeito": "zoom_soco"
+     "de": "f10:cursor+0.3",
+     "ate": "f10:y",
+     "efeito": "circular",
+     "alvo": "cursor"
+    },
+    {
+     "de": "f12:puxar",
+     "ate": "f12:adianta",
+     "efeito": "linhas",
+     "intensidade": 0.6,
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f13:cunha",
+     "ate": "f13:descendo",
+     "efeito": "destacar",
+     "alvo": "cunha"
     },
     {
      "de": "f14:enorme",
@@ -2780,8 +2890,15 @@
     {
      "de": "f16:zip",
      "efeito": "zoom_soco"
+    },
+    {
+     "de": "f16:zip",
+     "ate": "f16:zip+0.8",
+     "efeito": "linhas",
+     "intensidade": 0.6
     }
-   ]
+   ],
+   "filtro": "vivo"
   }
  ],
  "chamada": {

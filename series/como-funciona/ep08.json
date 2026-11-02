@@ -1,0 +1,2069 @@
+{
+ "serie": "como-funciona",
+ "parte": 8,
+ "titulo": "Por que o ventilador refresca se não esfria o ar?",
+ "musica": "curiosidade",
+ "personagens": {
+  "wheeler": {
+   "nome": "Schuyler Wheeler",
+   "papel": "engenheiro que pôs uma hélice de duas pás no eixo de um motor elétrico (EUA, 1882), um dos primeiros ventiladores elétricos; não fala",
+   "visual": {
+    "altura": 1,
+    "corpo": "#4A3B5C",
+    "cabeca": "#F2D5BD",
+    "olhos": "redondos",
+    "sobrancelhas": "grossas",
+    "acessorios": [
+     {
+      "tipo": "cabelo_curto",
+      "cor": "#3A2A1C"
+     },
+     {
+      "tipo": "bigode",
+      "cor": "#3A2A1C"
+     },
+     {
+      "tipo": "colete",
+      "cor": "#7A2E2E"
+     }
+    ]
+   }
+  }
+ },
+ "modelos": {
+  "ventilador_pronto": [
+   {
+    "id": "base",
+    "forma": "cilindro",
+    "tam": [
+     0.22,
+     0.05
+    ],
+    "pos": [
+     0,
+     0.025,
+     0
+    ],
+    "cor": "#2F80ED"
+   },
+   {
+    "id": "haste",
+    "forma": "cilindro",
+    "tam": [
+     0.03,
+     0.42
+    ],
+    "pos": [
+     0,
+     0.26,
+     -0.06
+    ],
+    "cor": "#E0E4EA"
+   },
+   {
+    "id": "motor",
+    "forma": "cilindro",
+    "tam": [
+     0.12,
+     0.22
+    ],
+    "pos": [
+     0,
+     0.56,
+     -0.08
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#2F80ED"
+   },
+   {
+    "id": "eixo",
+    "forma": "cilindro",
+    "tam": [
+     0.013,
+     0.14
+    ],
+    "pos": [
+     0,
+     0.56,
+     0.08
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#9AA3AE"
+   },
+   {
+    "id": "cubo",
+    "forma": "esfera",
+    "tam": [
+     0.05
+    ],
+    "pos": [
+     0,
+     0.56,
+     0.16
+    ],
+    "cor": "#E0E4EA"
+   },
+   {
+    "id": "pa1",
+    "forma": "caixa",
+    "tam": [
+     0.11,
+     0.2,
+     0.012
+    ],
+    "pos": [
+     -0.0,
+     0.14,
+     0
+    ],
+    "giro": [
+     -0.0,
+     28.0,
+     -0.0
+    ],
+    "pai": "cubo",
+    "cor": "#FFC83D"
+   },
+   {
+    "id": "pa2",
+    "forma": "caixa",
+    "tam": [
+     0.11,
+     0.2,
+     0.012
+    ],
+    "pos": [
+     -0.1212,
+     -0.07,
+     0
+    ],
+    "giro": [
+     -24.7,
+     -13.6,
+     117.0
+    ],
+    "pai": "cubo",
+    "cor": "#FFC83D"
+   },
+   {
+    "id": "pa3",
+    "forma": "caixa",
+    "tam": [
+     0.11,
+     0.2,
+     0.012
+    ],
+    "pos": [
+     0.1212,
+     -0.07,
+     0
+    ],
+    "giro": [
+     24.7,
+     -13.6,
+     -117.0
+    ],
+    "pai": "cubo",
+    "cor": "#FFC83D"
+   },
+   {
+    "id": "grade_aro",
+    "forma": "toro",
+    "tam": [
+     0.29,
+     0.01
+    ],
+    "pos": [
+     0,
+     0.56,
+     0.21
+    ],
+    "cor": "#C9CED6"
+   },
+   {
+    "id": "grade_meio",
+    "forma": "toro",
+    "tam": [
+     0.17,
+     0.007
+    ],
+    "pos": [
+     0,
+     0.56,
+     0.215
+    ],
+    "cor": "#C9CED6"
+   },
+   {
+    "id": "grade_v",
+    "forma": "caixa",
+    "tam": [
+     0.01,
+     0.58,
+     0.01
+    ],
+    "pos": [
+     0,
+     0.56,
+     0.22
+    ],
+    "cor": "#C9CED6"
+   },
+   {
+    "id": "grade_h",
+    "forma": "caixa",
+    "tam": [
+     0.58,
+     0.01,
+     0.01
+    ],
+    "pos": [
+     0,
+     0.56,
+     0.22
+    ],
+    "cor": "#C9CED6"
+   }
+  ],
+  "ventilador": [
+   {
+    "id": "base",
+    "forma": "cilindro",
+    "tam": [
+     0.22,
+     0.05
+    ],
+    "pos": [
+     0,
+     0.025,
+     0
+    ],
+    "cor": "#2F80ED"
+   },
+   {
+    "id": "haste",
+    "forma": "cilindro",
+    "tam": [
+     0.03,
+     0.42
+    ],
+    "pos": [
+     0,
+     0.26,
+     -0.06
+    ],
+    "cor": "#E0E4EA"
+   },
+   {
+    "id": "motor",
+    "forma": "cilindro",
+    "tam": [
+     0.12,
+     0.22
+    ],
+    "pos": [
+     0,
+     0.56,
+     -0.08
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#2F80ED"
+   },
+   {
+    "id": "bobina_e",
+    "forma": "mola",
+    "tam": [
+     0.035,
+     0.16,
+     7,
+     0.009
+    ],
+    "pos": [
+     -0.072,
+     0.56,
+     -0.08
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#D97A2B",
+    "oculta": true
+   },
+   {
+    "id": "bobina_d",
+    "forma": "mola",
+    "tam": [
+     0.035,
+     0.16,
+     7,
+     0.009
+    ],
+    "pos": [
+     0.072,
+     0.56,
+     -0.08
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#D97A2B",
+    "oculta": true
+   },
+   {
+    "id": "rotor",
+    "forma": "engrenagem",
+    "tam": [
+     0.04,
+     0.16,
+     8
+    ],
+    "pos": [
+     0,
+     0.56,
+     -0.08
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#8E9AA8",
+    "oculta": true
+   },
+   {
+    "id": "eixo",
+    "forma": "cilindro",
+    "tam": [
+     0.013,
+     0.14
+    ],
+    "pos": [
+     0,
+     0.56,
+     0.08
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#9AA3AE"
+   },
+   {
+    "id": "cubo",
+    "forma": "esfera",
+    "tam": [
+     0.05
+    ],
+    "pos": [
+     0,
+     0.56,
+     0.16
+    ],
+    "cor": "#E0E4EA"
+   },
+   {
+    "id": "pa1",
+    "forma": "caixa",
+    "tam": [
+     0.11,
+     0.2,
+     0.012
+    ],
+    "pos": [
+     -0.0,
+     0.14,
+     0
+    ],
+    "giro": [
+     -0.0,
+     28.0,
+     -0.0
+    ],
+    "pai": "cubo",
+    "cor": "#FFC83D"
+   },
+   {
+    "id": "pa2",
+    "forma": "caixa",
+    "tam": [
+     0.11,
+     0.2,
+     0.012
+    ],
+    "pos": [
+     -0.1212,
+     -0.07,
+     0
+    ],
+    "giro": [
+     -24.7,
+     -13.6,
+     117.0
+    ],
+    "pai": "cubo",
+    "cor": "#FFC83D"
+   },
+   {
+    "id": "pa3",
+    "forma": "caixa",
+    "tam": [
+     0.11,
+     0.2,
+     0.012
+    ],
+    "pos": [
+     0.1212,
+     -0.07,
+     0
+    ],
+    "giro": [
+     24.7,
+     -13.6,
+     -117.0
+    ],
+    "pai": "cubo",
+    "cor": "#FFC83D"
+   },
+   {
+    "id": "grade_aro",
+    "forma": "toro",
+    "tam": [
+     0.29,
+     0.01
+    ],
+    "pos": [
+     0,
+     0.56,
+     0.21
+    ],
+    "cor": "#C9CED6",
+    "oculta": true
+   },
+   {
+    "id": "grade_meio",
+    "forma": "toro",
+    "tam": [
+     0.17,
+     0.007
+    ],
+    "pos": [
+     0,
+     0.56,
+     0.215
+    ],
+    "cor": "#C9CED6",
+    "oculta": true
+   },
+   {
+    "id": "grade_v",
+    "forma": "caixa",
+    "tam": [
+     0.01,
+     0.58,
+     0.01
+    ],
+    "pos": [
+     0,
+     0.56,
+     0.22
+    ],
+    "cor": "#C9CED6",
+    "oculta": true
+   },
+   {
+    "id": "grade_h",
+    "forma": "caixa",
+    "tam": [
+     0.58,
+     0.01,
+     0.01
+    ],
+    "pos": [
+     0,
+     0.56,
+     0.22
+    ],
+    "cor": "#C9CED6",
+    "oculta": true
+   }
+  ],
+  "termometro": [
+   {
+    "id": "t_base",
+    "forma": "caixa",
+    "tam": [
+     0.12,
+     0.03,
+     0.09
+    ],
+    "pos": [
+     0,
+     0.015,
+     0
+    ],
+    "cor": "#E0E4EA"
+   },
+   {
+    "id": "t_vidro",
+    "forma": "cilindro",
+    "tam": [
+     0.032,
+     0.38
+    ],
+    "pos": [
+     0,
+     0.23,
+     0
+    ],
+    "cor": "#DDEEFF",
+    "opacidade": 0.4
+   },
+   {
+    "id": "t_bulbo",
+    "forma": "esfera",
+    "tam": [
+     0.048
+    ],
+    "pos": [
+     0,
+     0.07,
+     0
+    ],
+    "cor": "#E53935"
+   },
+   {
+    "id": "t_coluna",
+    "forma": "cilindro",
+    "tam": [
+     0.015,
+     0.2
+    ],
+    "pos": [
+     0,
+     0.19,
+     0
+    ],
+    "cor": "#E53935"
+   }
+  ],
+  "pele": [
+   {
+    "id": "braco",
+    "forma": "capsula",
+    "tam": [
+     0.06,
+     0.3
+    ],
+    "pos": [
+     0,
+     0.07,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#F2C6A0"
+   },
+   {
+    "id": "gota1",
+    "forma": "esfera",
+    "tam": [
+     0.022
+    ],
+    "pos": [
+     -0.1,
+     0.135,
+     0.01
+    ],
+    "cor": "#5EC8FF",
+    "oculta": true
+   },
+   {
+    "id": "gota2",
+    "forma": "esfera",
+    "tam": [
+     0.02
+    ],
+    "pos": [
+     0.0,
+     0.137,
+     -0.02
+    ],
+    "cor": "#5EC8FF",
+    "oculta": true
+   },
+   {
+    "id": "gota3",
+    "forma": "esfera",
+    "tam": [
+     0.022
+    ],
+    "pos": [
+     0.1,
+     0.135,
+     0.015
+    ],
+    "cor": "#5EC8FF",
+    "oculta": true
+   },
+   {
+    "id": "abafado",
+    "forma": "capsula",
+    "tam": [
+     0.1,
+     0.36
+    ],
+    "pos": [
+     0,
+     0.08,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#FF8A65",
+    "opacidade": 0.3,
+    "sem_contorno": true,
+    "oculta": true
+   }
+  ],
+  "ventilador_1882": [
+   {
+    "id": "b_base",
+    "forma": "caixa",
+    "tam": [
+     0.26,
+     0.04,
+     0.16
+    ],
+    "pos": [
+     0,
+     0.02,
+     0
+    ],
+    "cor": "#6B4226"
+   },
+   {
+    "id": "b_suporte",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.08,
+     0.05
+    ],
+    "pos": [
+     0,
+     0.08,
+     -0.02
+    ],
+    "cor": "#2B2F36"
+   },
+   {
+    "id": "b_motor",
+    "forma": "cilindro",
+    "tam": [
+     0.065,
+     0.14
+    ],
+    "pos": [
+     0,
+     0.15,
+     -0.03
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#3A3F48"
+   },
+   {
+    "id": "b_eixo",
+    "forma": "cilindro",
+    "tam": [
+     0.008,
+     0.08
+    ],
+    "pos": [
+     0,
+     0.15,
+     0.07
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#C9A43A"
+   },
+   {
+    "id": "b_cubo",
+    "forma": "esfera",
+    "tam": [
+     0.022
+    ],
+    "pos": [
+     0,
+     0.15,
+     0.115
+    ],
+    "cor": "#C9A43A"
+   },
+   {
+    "id": "b_pa1",
+    "forma": "caixa",
+    "tam": [
+     0.055,
+     0.13,
+     0.008
+    ],
+    "pos": [
+     -0.0,
+     0.075,
+     0
+    ],
+    "giro": [
+     -0.0,
+     30.0,
+     -0.0
+    ],
+    "pai": "b_cubo",
+    "cor": "#D9B23A"
+   },
+   {
+    "id": "b_pa2",
+    "forma": "caixa",
+    "tam": [
+     0.055,
+     0.13,
+     0.008
+    ],
+    "pos": [
+     -0.0,
+     -0.075,
+     0
+    ],
+    "giro": [
+     -0.0,
+     -30.0,
+     180.0
+    ],
+    "pai": "b_cubo",
+    "cor": "#D9B23A"
+   },
+   {
+    "id": "b_fio",
+    "forma": "tubo",
+    "tam": [
+     0.008
+    ],
+    "pos": [
+     0.1,
+     0.1,
+     -0.04
+    ],
+    "caminho": [
+     [
+      -0.04,
+      0.03,
+      0
+     ],
+     [
+      0.03,
+      -0.03,
+      0
+     ],
+     [
+      0.12,
+      -0.075,
+      0.02
+     ]
+    ],
+    "cor": "#1E1E24"
+   }
+  ]
+ },
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "tito",
+   "texto": "O ventilador NÃO esfria o ar. Num quarto a trinta graus, o vento dele sai a trinta graus.",
+   "tom": "animado"
+  },
+  {
+   "id": "f2",
+   "quem": "tito",
+   "texto": "Então por que dá friozinho? Para descobrir, vamos voltar para onde tudo começou.",
+   "pausa_depois": 0.35
+  },
+  {
+   "id": "f3",
+   "quem": "tito",
+   "texto": "Em 1882, nos Estados Unidos, o engenheiro Schuyler Wheeler teve uma ideia simples.",
+   "off": true
+  },
+  {
+   "id": "f4",
+   "quem": "tito",
+   "texto": "Ele prendeu uma hélice de duas pás no eixo de um motor elétrico.",
+   "off": true
+  },
+  {
+   "id": "f5",
+   "quem": "tito",
+   "texto": "Ligou o motor, e saiu VENTO, sem ninguém abanar!",
+   "off": true,
+   "tom": "animado"
+  },
+  {
+   "id": "f6",
+   "quem": "tito",
+   "texto": "MAS as pás de metal giravam soltas, sem grade nenhuma. Chegou perto, machucou o dedo.",
+   "off": true,
+   "tom": "tenso",
+   "pausa_depois": 0.4
+  },
+  {
+   "id": "f7",
+   "quem": "tito",
+   "texto": "Por isso, hoje todo ventilador tem uma GRADE na frente das pás.",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f8",
+   "quem": "tito",
+   "texto": "Dentro do motor tem BOBINAS: rolos de fio de cobre."
+  },
+  {
+   "id": "f9",
+   "quem": "tito",
+   "texto": "A eletricidade passa por elas e elas viram ímãs. Ímã puxa e empurra, e o miolo GIRA."
+  },
+  {
+   "id": "f10",
+   "quem": "tito",
+   "texto": "E as pás são tortas de propósito: elas empurram o ar para a frente, como um REMO na água.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f11",
+   "quem": "tito",
+   "texto": "MAS se o vento é o mesmo ar quente do quarto, por que você sente FRIO?",
+   "tom": "tenso",
+   "pausa_depois": 0.35
+  },
+  {
+   "id": "f12",
+   "quem": "tito",
+   "texto": "O segredo está na sua pele: ela vive soltando um pouquinho de SUOR, mesmo sem você perceber."
+  },
+  {
+   "id": "f13",
+   "quem": "tito",
+   "texto": "Com o ar parado, ela fica cercada de ar abafado, e o suor demora a secar."
+  },
+  {
+   "id": "f14",
+   "quem": "tito",
+   "texto": "O vento leva esse ar embora, e o suor EVAPORA mais rápido."
+  },
+  {
+   "id": "f15",
+   "quem": "tito",
+   "texto": "E evaporar rouba calor da pele. É o friozinho de sair molhado do BANHO!",
+   "tom": "animado",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f16",
+   "quem": "tito",
+   "texto": "E o mais curioso: num quarto vazio, ele deixa o quarto um tiquinho MAIS quente.",
+   "tom": "animado"
+  },
+  {
+   "id": "f17",
+   "quem": "tito",
+   "texto": "O motor esquenta girando, e esse calor fica no ar. Saiu do quarto? DESLIGA!",
+   "tom": "animado"
+  }
+ ],
+ "chamada": {
+  "pergunta": "E a torradeira? Como ela sabe a hora de soltar o pão?",
+  "texto": "Comenta",
+  "destaque": "TORRA­DEIRA"
+ },
+ "cenas": [
+  {
+   "id": "gancho",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "feliz"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "ventilador_pronto",
+     "em": "pedestal"
+    },
+    {
+     "tipo": "maquete",
+     "modelo": "termometro",
+     "em": [
+      -0.42,
+      0.45
+     ],
+     "alt": 1.0
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "ventilador_pronto.cubo",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": 2.2,
+     "de": "inicio",
+     "ate": "f2:fim"
+    },
+    {
+     "peca": "ventilador_pronto",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "de": "inicio",
+     "ate": "f2:fim",
+     "caminho": [
+      [
+       0,
+       0.56,
+       0.24
+      ],
+      [
+       -0.15,
+       0.45,
+       0.36
+      ],
+      [
+       -0.38,
+       0.3,
+       0.48
+      ]
+     ],
+     "quantidade": 14
+    },
+    {
+     "peca": "termometro.t_coluna",
+     "faz": "pulsar",
+     "de": "f1:quarto",
+     "ate": "f1:fim",
+     "intensidade": 1.0
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "termometro",
+     "de": "f1:quarto"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f2"
+    },
+    {
+     "quem": "tito",
+     "expressao": "feliz",
+     "de": "f2:descobrir"
+    },
+    {
+     "quem": "tito",
+     "faz": "acenar",
+     "de": "f2:voltar"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "alvo": "ventilador_pronto",
+     "lado": "frente",
+     "tamanho": 0.95,
+     "movimento": "arco"
+    },
+    {
+     "de": "f1:quarto",
+     "tipo": "detalhe",
+     "alvo": "termometro",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.55,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f2",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f1:vento",
+     "ate": "f1:fim+0.3",
+     "grande": "30 °C",
+     "pequeno": "o vento sai igual ao quarto"
+    }
+   ],
+   "sons": [
+    {
+     "de": "inicio",
+     "som": "turbulencia",
+     "volume": 0.25
+    },
+    {
+     "de": "f1:nao",
+     "som": "impacto",
+     "volume": 0.6
+    },
+    {
+     "de": "f1:vento",
+     "som": "ding",
+     "volume": 0.7
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f1:nao",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f1:quarto+0.2",
+     "ate": "f1:fim",
+     "efeito": "circular",
+     "alvo": "termometro"
+    }
+   ]
+  },
+  {
+   "id": "wheeler",
+   "cenario": "oficina",
+   "de": "f3",
+   "ambiente": "oficina",
+   "filtro": "sepia",
+   "personagens": {
+    "wheeler": {
+     "em": [
+      -1.0,
+      -0.3
+     ],
+     "olhando": [
+      1.2,
+      2.2,
+      3.0
+     ],
+     "expressao": "determinado"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "ventilador_1882",
+     "em": [
+      0,
+      -1.05
+     ],
+     "alt": 0.92,
+     "escala": 1.5
+    },
+    {
+     "tipo": "particulas",
+     "particula": "poeira",
+     "em": [
+      0,
+      -1.05
+     ],
+     "alt": 1.1,
+     "raio": 0.3,
+     "altura": 0.4,
+     "quantas": 60,
+     "aparece": "f6:perto",
+     "some": "f6:fim"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f3:1882",
+     "ate": "f3:fim",
+     "grande": "1882",
+     "pequeno": "Schuyler Wheeler · EUA"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "b_motor",
+     "faz": "pulsar",
+     "de": "f4:motor",
+     "ate": "f4:fim",
+     "intensidade": 0.8
+    },
+    {
+     "peca": "b_pa1",
+     "faz": "pulsar",
+     "de": "f4:helice",
+     "ate": "f4:motor",
+     "intensidade": 0.9
+    },
+    {
+     "peca": "b_pa2",
+     "faz": "pulsar",
+     "de": "f4:helice",
+     "ate": "f4:motor",
+     "intensidade": 0.9
+    },
+    {
+     "peca": "b_cubo",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": 2.5,
+     "de": "f5:ligou",
+     "ate": "f6:fim"
+    },
+    {
+     "peca": "ventilador_1882",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "de": "f5:vento",
+     "ate": "f6:mas",
+     "caminho": [
+      [
+       0,
+       0.15,
+       0.14
+      ],
+      [
+       0,
+       0.16,
+       0.3
+      ],
+      [
+       0,
+       0.15,
+       0.5
+      ]
+     ],
+     "quantidade": 10
+    },
+    {
+     "peca": "b_base",
+     "faz": "tremer",
+     "de": "f6:perto",
+     "ate": "f6:fim",
+     "intensidade": 1.0
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "wheeler",
+     "olhar": "ventilador_1882",
+     "de": "f4:helice"
+    },
+    {
+     "quem": "wheeler",
+     "faz": "estender_mao",
+     "para": "ventilador_1882",
+     "de": "f5:ligou"
+    },
+    {
+     "quem": "wheeler",
+     "faz": "virar",
+     "para": [
+      0.3,
+      2.85,
+      2.2
+     ],
+     "de": "f5:vento"
+    },
+    {
+     "quem": "wheeler",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f5:vento"
+    },
+    {
+     "quem": "wheeler",
+     "olhar": "ventilador_1882",
+     "expressao": "determinado",
+     "de": "f6:mas"
+    },
+    {
+     "quem": "wheeler",
+     "faz": "estender_mao",
+     "para": "ventilador_1882",
+     "de": "f6:perto"
+    },
+    {
+     "quem": "wheeler",
+     "faz": "virar",
+     "para": [
+      -0.35,
+      2.85,
+      2.5
+     ],
+     "de": "f6:machucou"
+    },
+    {
+     "quem": "wheeler",
+     "faz": "susto",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f6:machucou"
+    },
+    {
+     "quem": "wheeler",
+     "faz": "maos_na_cabeca",
+     "de": "f6:dedo"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "camera": [
+      0.9,
+      2.85,
+      3.9
+     ],
+     "alvo": [
+      -0.55,
+      2.25,
+      -0.7
+     ],
+     "movimento": "arco",
+     "intensidade": 0.6,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f4:helice",
+     "tipo": "detalhe",
+     "alvo": "ventilador_1882",
+     "lado": "frente",
+     "tamanho": 0.6,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f5:vento",
+     "tipo": "close",
+     "camera": [
+      0.3,
+      2.85,
+      2.2
+     ],
+     "alvo": "wheeler",
+     "movimento": "travelling",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f6:mas",
+     "tipo": "medio",
+     "camera": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "alvo": "wheeler",
+     "movimento": "zoom_rapido",
+     "intensidade": 0.6
+    },
+    {
+     "de": "f6:perto",
+     "tipo": "detalhe",
+     "alvo": "ventilador_1882",
+     "lado": "frente",
+     "tamanho": 0.55,
+     "movimento": "tremer"
+    },
+    {
+     "de": "f6:machucou",
+     "tipo": "close",
+     "camera": [
+      -0.35,
+      2.85,
+      2.5
+     ],
+     "alvo": "wheeler",
+     "movimento": "aproximar"
+    }
+   ],
+   "sons": [
+    {
+     "de": "f3:1882",
+     "som": "pop"
+    },
+    {
+     "de": "f4:helice",
+     "som": "pop",
+     "volume": 0.6
+    },
+    {
+     "de": "f5:ligou",
+     "som": "engrenagem",
+     "volume": 0.5
+    },
+    {
+     "de": "f5:vento",
+     "som": "sopro",
+     "volume": 0.7
+    },
+    {
+     "de": "f6:mas",
+     "som": "tensao_sobe",
+     "volume": 0.7
+    },
+    {
+     "de": "f6:machucou",
+     "som": "impacto",
+     "volume": 0.7
+    },
+    {
+     "de": "f6:dedo",
+     "som": "susto",
+     "volume": 0.5
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f4:helice+0.2",
+     "ate": "f5:ligou",
+     "efeito": "circular",
+     "alvo": "ventilador_1882"
+    },
+    {
+     "de": "f6:mas",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f6:machucou",
+     "ate": "f6:machucou+0.5",
+     "efeito": "tremor",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f6:machucou",
+     "ate": "f6:machucou+0.7",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    }
+   ]
+  },
+  {
+   "id": "por_dentro",
+   "cenario": "estudio",
+   "de": "f7",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "feliz"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "ventilador",
+     "em": "pedestal"
+    },
+    {
+     "tipo": "maquete",
+     "modelo": "pele",
+     "em": [
+      0.42,
+      0.45
+     ],
+     "alt": 1.0
+    },
+    {
+     "tipo": "particulas",
+     "particula": "vapor",
+     "em": [
+      0.42,
+      0.45
+     ],
+     "alt": 1.12,
+     "raio": 0.18,
+     "altura": 0.45,
+     "quantas": 40,
+     "aparece": "f14:evapora",
+     "some": "f15:fim"
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "grade_aro",
+     "texto": "Grade",
+     "de": "f7:grade",
+     "ate": "f7:fim"
+    },
+    {
+     "alvo": "bobina_d",
+     "texto": "Bobina",
+     "de": "f8:bobinas",
+     "ate": "f8:fim",
+     "cor": "#FFB46B"
+    },
+    {
+     "alvo": "pa1",
+     "texto": "Pá torta",
+     "de": "f10:tortas",
+     "ate": "f10:remo"
+    },
+    {
+     "alvo": "gota2",
+     "texto": "Suor",
+     "de": "f12:suor",
+     "ate": "f12:fim",
+     "cor": "#8FD8FF"
+    },
+    {
+     "alvo": "abafado",
+     "texto": "Ar abafado",
+     "de": "f13:cercada",
+     "ate": "f13:fim",
+     "cor": "#FFB199"
+    },
+    {
+     "alvo": "motor",
+     "texto": "Calor",
+     "de": "f17:esquenta",
+     "ate": "f17:ar",
+     "cor": "#FF6B6B"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f15:rouba",
+     "ate": "f15:fim+0.2",
+     "grande": "Evapo­ração",
+     "pequeno": "a água leva o calor da pele"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "grade_aro",
+     "faz": "aparecer",
+     "de": "f7:grade"
+    },
+    {
+     "peca": "grade_meio",
+     "faz": "aparecer",
+     "de": "f7:grade+0.15"
+    },
+    {
+     "peca": "grade_v",
+     "faz": "aparecer",
+     "de": "f7:grade+0.3"
+    },
+    {
+     "peca": "grade_h",
+     "faz": "aparecer",
+     "de": "f7:grade+0.3"
+    },
+    {
+     "peca": "motor",
+     "faz": "transparente",
+     "de": "f8:motor",
+     "opacidade": 0.25
+    },
+    {
+     "peca": "bobina_e",
+     "faz": "aparecer",
+     "de": "f8:bobinas"
+    },
+    {
+     "peca": "bobina_d",
+     "faz": "aparecer",
+     "de": "f8:bobinas+0.15"
+    },
+    {
+     "peca": "rotor",
+     "faz": "aparecer",
+     "de": "f8:cobre"
+    },
+    {
+     "peca": "ventilador",
+     "faz": "fluxo",
+     "tipo": "eletricidade",
+     "de": "f9:eletricidade",
+     "ate": "f9:fim",
+     "caminho": [
+      [
+       0.3,
+       0.06,
+       -0.1
+      ],
+      [
+       0.15,
+       0.3,
+       -0.1
+      ],
+      [
+       0.0,
+       0.56,
+       -0.08
+      ]
+     ],
+     "quantidade": 14
+    },
+    {
+     "peca": "bobina_e",
+     "faz": "pulsar",
+     "de": "f9:imas",
+     "ate": "f9:fim",
+     "intensidade": 1.2
+    },
+    {
+     "peca": "bobina_d",
+     "faz": "pulsar",
+     "de": "f9:imas",
+     "ate": "f9:fim",
+     "intensidade": 1.2
+    },
+    {
+     "peca": "rotor",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 2.0,
+     "de": "f9:gira",
+     "ate": "f17:fim"
+    },
+    {
+     "peca": "cubo",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": 2.2,
+     "de": "f9:gira",
+     "ate": "f17:fim"
+    },
+    {
+     "peca": "motor",
+     "faz": "transparente",
+     "de": "f10",
+     "opacidade": 1
+    },
+    {
+     "peca": "ventilador",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "de": "f10:empurra",
+     "ate": "f11:fim",
+     "caminho": [
+      [
+       0,
+       0.56,
+       0.24
+      ],
+      [
+       0,
+       0.5,
+       0.45
+      ],
+      [
+       0,
+       0.42,
+       0.7
+      ]
+     ],
+     "quantidade": 14
+    },
+    {
+     "peca": "gota1",
+     "faz": "aparecer",
+     "de": "f12:suor"
+    },
+    {
+     "peca": "gota2",
+     "faz": "aparecer",
+     "de": "f12:suor+0.2"
+    },
+    {
+     "peca": "gota3",
+     "faz": "aparecer",
+     "de": "f12:suor+0.4"
+    },
+    {
+     "peca": "pele.braco",
+     "faz": "aquecer",
+     "de": "f12:pele",
+     "ate": "f12:fim",
+     "intensidade": 0.35
+    },
+    {
+     "peca": "abafado",
+     "faz": "aparecer",
+     "de": "f13:cercada"
+    },
+    {
+     "peca": "abafado",
+     "faz": "pulsar",
+     "de": "f13:cercada",
+     "ate": "f13:fim",
+     "intensidade": 0.6
+    },
+    {
+     "peca": "ventilador",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "de": "f14:vento",
+     "ate": "f15:fim",
+     "caminho": [
+      [
+       0,
+       0.56,
+       0.24
+      ],
+      [
+       0.2,
+       0.35,
+       0.36
+      ],
+      [
+       0.42,
+       0.14,
+       0.48
+      ]
+     ],
+     "quantidade": 16
+    },
+    {
+     "peca": "abafado",
+     "faz": "sumir",
+     "de": "f14:embora"
+    },
+    {
+     "peca": "gota1",
+     "faz": "sumir",
+     "de": "f14:evapora"
+    },
+    {
+     "peca": "gota2",
+     "faz": "sumir",
+     "de": "f14:evapora+0.35"
+    },
+    {
+     "peca": "gota3",
+     "faz": "sumir",
+     "de": "f14:evapora+0.7"
+    },
+    {
+     "peca": "pele.braco",
+     "faz": "esfriar",
+     "de": "f15:rouba",
+     "ate": "f15:fim"
+    },
+    {
+     "peca": "motor",
+     "faz": "aquecer",
+     "de": "f17:esquenta",
+     "ate": "f17:fim",
+     "intensidade": 0.7
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.75,
+      2.0,
+      5.9
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f7"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "grade_aro",
+     "de": "f7:grade"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "motor",
+     "de": "f8:motor"
+    },
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f9"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "pa1",
+     "de": "f10:tortas"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f11"
+    },
+    {
+     "quem": "tito",
+     "faz": "bracos_cruzados",
+     "de": "f11:frio"
+    },
+    {
+     "quem": "tito",
+     "faz": "levantar",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f12"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "pele",
+     "olhar": "maquete",
+     "de": "f12:suor"
+    },
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "de": "f13"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f15"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f16"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "motor",
+     "olhar": "maquete",
+     "de": "f17:motor"
+    },
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.75,
+      2.0,
+      5.9
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f17:saiu"
+    },
+    {
+     "quem": "tito",
+     "faz": "acenar",
+     "de": "f17:desliga"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "movimento": "arco",
+     "intensidade": 0.5,
+     "transicao": "zoom",
+     "camera": [
+      -0.75,
+      2.0,
+      5.9
+     ],
+     "alvo": [
+      -0.75,
+      1.5,
+      0.3
+     ]
+    },
+    {
+     "de": "f7:grade",
+     "tipo": "detalhe",
+     "alvo": "ventilador",
+     "lado": "frente",
+     "tamanho": 0.8,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f8:motor",
+     "tipo": "detalhe",
+     "alvo": "motor",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.5,
+     "movimento": "arco",
+     "intensidade": 0.5,
+     "transicao": "zoom"
+    },
+    {
+     "de": "f9:gira",
+     "tipo": "detalhe",
+     "alvo": "ventilador",
+     "lado": "frente",
+     "tamanho": 0.8,
+     "movimento": "travelling",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f10:tortas",
+     "tipo": "detalhe",
+     "alvo": "cubo",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.55,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f10:empurra",
+     "tipo": "detalhe",
+     "alvo": "ventilador",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 1.2,
+     "movimento": "arco",
+     "intensidade": -0.5
+    },
+    {
+     "de": "f11",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "dolly_zoom",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f12:pele",
+     "tipo": "detalhe",
+     "alvo": "pele",
+     "lado": "frente",
+     "tamanho": 0.55,
+     "movimento": "arco",
+     "intensidade": 0.5,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f13:cercada",
+     "tipo": "detalhe",
+     "alvo": "pele",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.5,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f14:vento",
+     "tipo": "detalhe",
+     "alvo": [
+      0.25,
+      1.35,
+      0.35
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 1.0,
+     "movimento": "travelling",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f14:evapora",
+     "tipo": "detalhe",
+     "alvo": "pele",
+     "lado": "frente",
+     "tamanho": 0.6,
+     "movimento": "zoom_rapido"
+    },
+    {
+     "de": "f15",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling"
+    },
+    {
+     "de": "f15:rouba",
+     "tipo": "detalhe",
+     "alvo": "pele",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.6,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f16",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f17:motor",
+     "tipo": "detalhe",
+     "alvo": "motor",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.55,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f17:saiu",
+     "tipo": "aberto",
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "camera": [
+      -0.75,
+      2.0,
+      5.9
+     ],
+     "alvo": [
+      -0.75,
+      1.5,
+      0.3
+     ]
+    }
+   ],
+   "sons": [
+    {
+     "de": "f7:grade",
+     "som": "clique",
+     "volume": 0.8
+    },
+    {
+     "de": "f7:grade+0.3",
+     "som": "pop",
+     "volume": 0.6
+    },
+    {
+     "de": "f8:bobinas",
+     "som": "pop"
+    },
+    {
+     "de": "f9:eletricidade",
+     "som": "zap",
+     "volume": 0.6
+    },
+    {
+     "de": "f9:gira",
+     "som": "engrenagem",
+     "volume": 0.6
+    },
+    {
+     "de": "f10:empurra",
+     "som": "sopro",
+     "volume": 0.6
+    },
+    {
+     "de": "f11:mas",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f12:suor",
+     "som": "pop",
+     "volume": 0.6
+    },
+    {
+     "de": "f14:vento",
+     "som": "sopro",
+     "volume": 0.7
+    },
+    {
+     "de": "f14:evapora",
+     "som": "chiado",
+     "volume": 0.4
+    },
+    {
+     "de": "f15:banho",
+     "som": "ding"
+    },
+    {
+     "de": "f17:esquenta",
+     "som": "fogo",
+     "volume": 0.35
+    },
+    {
+     "de": "f17:desliga",
+     "som": "clique",
+     "volume": 0.8
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f7:grade+0.3",
+     "ate": "f7:fim",
+     "efeito": "circular",
+     "alvo": "grade_aro"
+    },
+    {
+     "de": "f8:bobinas+0.2",
+     "ate": "f8:fim",
+     "efeito": "destacar",
+     "alvo": "bobina_d"
+    },
+    {
+     "de": "f9:gira",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f11:frio",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f12:suor+0.4",
+     "ate": "f12:fim",
+     "efeito": "circular",
+     "alvo": "gota2"
+    },
+    {
+     "de": "f14:evapora",
+     "ate": "f14:evapora+0.6",
+     "efeito": "linhas",
+     "intensidade": 0.6
+    },
+    {
+     "de": "f16:mais",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f17:desliga",
+     "efeito": "zoom_soco"
+    }
+   ]
+  }
+ ]
+}
