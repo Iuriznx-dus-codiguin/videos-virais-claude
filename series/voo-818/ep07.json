@@ -46,20 +46,20 @@
       "quem": "otavio",
       "tom": "determinado",
       "texto": "A jangada sai amanhã. Com todo mundo.",
-      "pausa_depois": 0.3
+      "pausa_depois": 0.5
     },
     {
       "id": "f8",
       "quem": "davi",
       "off": true,
       "tom": "tenso",
-      "texto": "Só que, de madrugada, a Lia some.",
-      "pausa_depois": 0.3
+      "texto": "Só que, de madrugada, some a Lia.",
+      "pausa_depois": 0.7
     },
     {
       "id": "f9",
       "quem": "otavio",
-      "tom": "medo",
+      "tom": "grito",
       "texto": "Lia! LIA!"
     },
     {
@@ -80,7 +80,7 @@
       "id": "f12",
       "quem": "davi",
       "off": true,
-      "texto": "Ou seja, a gente tem uma hora pra achar a Lia pelo chão."
+      "texto": "Ou seja, a gente tem uma hora pra achar a menina pelo chão."
     },
     {
       "id": "f13",
@@ -92,7 +92,7 @@
       "id": "f14",
       "quem": "davi",
       "off": true,
-      "texto": "E as pegadas da Lia aparecem. Pequenas, descalças."
+      "texto": "E aparecem as pegadas dela. Pequenas, descalças."
     },
     {
       "id": "f15",
@@ -130,7 +130,7 @@
       "quem": "davi",
       "off": true,
       "tom": "aliviado",
-      "texto": "Faz sentido. A gente segue a trilha, devagar, sem pressa.",
+      "texto": "Faz sentido. E na mata, a maré não apaga nada.",
       "pausa_depois": 0.5
     },
     {
@@ -147,7 +147,7 @@
       "off": true,
       "tom": "tenso",
       "texto": "No lugar delas, pegadas de BOTA.",
-      "pausa_depois": 0.3
+      "pausa_depois": 0.5
     },
     {
       "id": "f23",
@@ -155,7 +155,8 @@
       "off": true,
       "tom": "medo",
       "texto": "Alguém levou a Lia.",
-      "pausa_depois": 0.8
+      "pausa_depois": 1.0,
+      "semente": 203
     }
   ],
   "cenas": [
@@ -255,6 +256,15 @@
           ],
           "passo": 0.6,
           "escala": 0.15
+        },
+        {
+          "tipo": "particulas",
+          "em": [
+            5.2,
+            4.6
+          ],
+          "particula": "fagulhas",
+          "alt": 0.3
         }
       ],
       "acoes": [
@@ -288,8 +298,8 @@
             14.0,
             17.0
           ],
-          "movimento": "aproximar",
-          "intensidade": 0.4
+          "movimento": "arco",
+          "intensidade": 0.5
         },
         {
           "de": "f2",
@@ -304,8 +314,9 @@
             1.6,
             6.4
           ],
-          "movimento": "aproximar",
-          "intensidade": 0.3
+          "movimento": "travelling",
+          "intensidade": 0.4,
+          "transicao": "zoom"
         },
         {
           "de": "f3",
@@ -317,7 +328,7 @@
             10.99
           ],
           "movimento": "aproximar",
-          "intensidade": 0.2
+          "intensidade": 0.25
         }
       ],
       "sons": [
@@ -338,7 +349,8 @@
           "efeito": "vinheta",
           "intensidade": 0.6
         }
-      ]
+      ],
+      "filtro": "frio"
     },
     {
       "id": "ontem",
@@ -450,6 +462,15 @@
           "tipo": "sos",
           "em": "sos",
           "escala": 1.3
+        },
+        {
+          "tipo": "particulas",
+          "em": [
+            5.2,
+            4.6
+          ],
+          "particula": "fagulhas",
+          "alt": 0.3
         }
       ],
       "rotulos": [
@@ -457,8 +478,8 @@
           "alvo": "davi",
           "texto": "DAVI · MECÂNICO",
           "cor": "#FFD60A",
-          "de": "f4",
-          "ate": "f4:fim"
+          "de": "f5",
+          "ate": "f5:fim"
         },
         {
           "alvo": "cida",
@@ -478,8 +499,8 @@
           "alvo": "lia",
           "texto": "LIA · 13 ANOS",
           "cor": "#FF9BD2",
-          "de": "f8",
-          "ate": "f8:some"
+          "de": "f7:fim",
+          "ate": "f8:lia"
         }
       ],
       "acoes": [
@@ -516,18 +537,6 @@
       "planos": [
         {
           "de": "inicio",
-          "tipo": "close",
-          "alvo": "davi",
-          "camera": [
-            5.76,
-            1.9,
-            4.8
-          ],
-          "movimento": "aproximar",
-          "intensidade": 0.2
-        },
-        {
-          "de": "f5",
           "tipo": "geral",
           "alvo": [
             5.2,
@@ -539,8 +548,21 @@
             9.0,
             12.5
           ],
-          "movimento": "aproximar",
-          "intensidade": 0.2
+          "movimento": "arco",
+          "intensidade": -0.3,
+          "transicao": "desfoque"
+        },
+        {
+          "de": "f5",
+          "tipo": "close",
+          "alvo": "davi",
+          "camera": [
+            5.76,
+            1.9,
+            4.8
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.6
         },
         {
           "de": "f6",
@@ -563,11 +585,11 @@
             2.0,
             4.4
           ],
-          "movimento": "aproximar",
+          "movimento": "travelling",
           "intensidade": 0.2
         },
         {
-          "de": "f8",
+          "de": "f7:fim",
           "tipo": "close",
           "alvo": "lia",
           "camera": [
@@ -591,15 +613,21 @@
           "de": "inicio",
           "efeito": "vinheta",
           "intensidade": 0.5
+        },
+        {
+          "de": "f5:vivo",
+          "ate": "f5:fim",
+          "efeito": "linhas"
         }
-      ]
+      ],
+      "filtro": "quente"
     },
     {
       "id": "vazio",
       "cenario": "praia",
       "luz": "noite",
       "ambiente": "mar",
-      "de": "f8:some",
+      "de": "f8:lia",
       "personagens": {
         "otavio": {
           "em": [
@@ -704,8 +732,9 @@
             2.6,
             11.0
           ],
-          "movimento": "aproximar",
-          "intensidade": 0.3
+          "movimento": "afastar",
+          "intensidade": 0.3,
+          "transicao": "desfoque"
         },
         {
           "de": "f9",
@@ -716,8 +745,8 @@
             2.8,
             6.2
           ],
-          "movimento": "aproximar",
-          "intensidade": 0.2
+          "movimento": "travelling",
+          "intensidade": 0.3
         },
         {
           "de": "f10",
@@ -748,8 +777,9 @@
             1.4,
             8.4
           ],
-          "movimento": "aproximar",
-          "intensidade": 0.2
+          "movimento": "travelling",
+          "intensidade": 0.3,
+          "transicao": "chicote"
         },
         {
           "de": "f12",
@@ -770,7 +800,7 @@
       ],
       "sons": [
         {
-          "de": "f8:some",
+          "de": "f8:lia",
           "som": "impacto",
           "volume": 0.4
         },
@@ -785,6 +815,36 @@
           "de": "inicio",
           "efeito": "vinheta",
           "intensidade": 0.6
+        },
+        {
+          "de": "f8:lia",
+          "ate": "f9:fim",
+          "efeito": "letreiro",
+          "texto": "3H",
+          "altura": 0.15
+        },
+        {
+          "de": "f10:passo",
+          "ate": "f10:fim",
+          "efeito": "circular",
+          "alvo": [
+            4.0,
+            0.0,
+            7.2
+          ]
+        }
+      ],
+      "filtro": "frio",
+      "cartoes": [
+        {
+          "de": "f11",
+          "ate": "f13",
+          "grande": "# MIN",
+          "pequeno": "ATÉ A MARÉ SUBIR",
+          "contar": [
+            60,
+            52
+          ]
         }
       ]
     },
@@ -927,8 +987,8 @@
             2.2,
             9.4
           ],
-          "movimento": "aproximar",
-          "intensidade": 0.2
+          "movimento": "travelling",
+          "intensidade": 0.25
         },
         {
           "de": "f14",
@@ -959,8 +1019,8 @@
             2.6,
             13.6
           ],
-          "movimento": "aproximar",
-          "intensidade": 0.2
+          "movimento": "travelling",
+          "intensidade": 0.3
         },
         {
           "de": "f17",
@@ -987,7 +1047,7 @@
             2.2,
             6.8
           ],
-          "movimento": "aproximar",
+          "movimento": "orbitar",
           "intensidade": 0.2
         },
         {
@@ -1003,7 +1063,7 @@
             1.8,
             8.0
           ],
-          "movimento": "aproximar",
+          "movimento": "afastar",
           "intensidade": 0.3
         }
       ],
@@ -1024,8 +1084,19 @@
           "de": "inicio",
           "efeito": "vinheta",
           "intensidade": 0.6
+        },
+        {
+          "de": "f14:pequenas",
+          "ate": "f14:fim",
+          "efeito": "circular",
+          "alvo": [
+            2.6,
+            0.0,
+            8.2
+          ]
         }
-      ]
+      ],
+      "filtro": "frio"
     },
     {
       "id": "trilha",
@@ -1138,16 +1209,6 @@
             7.6
           ],
           "de": "f20+0.2"
-        },
-        {
-          "quem": "davi",
-          "faz": "erguer",
-          "para": [
-            -0.6,
-            0.0,
-            5.0
-          ],
-          "de": "f21"
         }
       ],
       "planos": [
@@ -1160,8 +1221,9 @@
             2.4,
             6.31
           ],
-          "movimento": "aproximar",
-          "intensidade": 0.2
+          "movimento": "travelling",
+          "intensidade": 0.2,
+          "transicao": "chicote"
         },
         {
           "de": "f20",
@@ -1176,11 +1238,115 @@
             3.0,
             -0.6
           ],
-          "movimento": "aproximar",
-          "intensidade": 0.2
+          "movimento": "arco",
+          "intensidade": 0.3
+        }
+      ],
+      "sons": [
+        {
+          "de": "inicio",
+          "som": "folhas",
+          "volume": 0.3
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "inicio",
+          "efeito": "vinheta",
+          "intensidade": 0.6
+        }
+      ],
+      "ate": "f21"
+    },
+    {
+      "id": "botas",
+      "cenario": "selva",
+      "luz": "noite",
+      "ambiente": "selva",
+      "de": "f21",
+      "personagens": {
+        "cida": {
+          "em": [
+            -1.9,
+            7.0
+          ],
+          "olhando": [
+            -0.6,
+            1.0,
+            5.0
+          ],
+          "expressao": "medo",
+          "segura": "lanterna"
+        },
+        "otavio": {
+          "em": [
+            0.6,
+            7.6
+          ],
+          "olhando": [
+            -0.6,
+            1.0,
+            5.0
+          ],
+          "expressao": "nervoso"
+        },
+        "davi": {
+          "em": [
+            -0.7,
+            6.6
+          ],
+          "olhando": [
+            -0.6,
+            1.0,
+            5.0
+          ],
+          "expressao": "medo",
+          "segura": "lanterna"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "pegadas_gigantes",
+          "em": [
+            -0.9,
+            8.4
+          ],
+          "ate": [
+            -0.6,
+            5.0
+          ],
+          "passo": 0.6,
+          "escala": 0.15
         },
         {
-          "de": "f21",
+          "tipo": "pegadas_gigantes",
+          "em": [
+            -0.5,
+            4.8
+          ],
+          "ate": [
+            0.2,
+            1.0
+          ],
+          "passo": 0.75,
+          "escala": 0.21
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "davi",
+          "faz": "erguer",
+          "para": [
+            -0.6,
+            0.0,
+            5.0
+          ],
+          "de": "inicio"
+        }
+      ],
+      "planos": [
+        {
+          "de": "inicio",
           "tipo": "detalhe",
           "alvo": [
             -0.6,
@@ -1192,8 +1358,8 @@
             1.7,
             4.2
           ],
-          "movimento": "aproximar",
-          "intensidade": 0.3
+          "movimento": "tremer",
+          "intensidade": 0.4
         },
         {
           "de": "f22",
@@ -1209,15 +1375,11 @@
             2.0
           ],
           "movimento": "aproximar",
-          "intensidade": 0.4
+          "intensidade": 0.4,
+          "transicao": "zoom"
         }
       ],
       "sons": [
-        {
-          "de": "inicio",
-          "som": "folhas",
-          "volume": 0.3
-        },
         {
           "de": "f21",
           "som": "tensao_sobe",
@@ -1234,8 +1396,29 @@
           "de": "inicio",
           "efeito": "vinheta",
           "intensidade": 0.6
+        },
+        {
+          "de": "inicio",
+          "ate": "fim",
+          "efeito": "barras"
+        },
+        {
+          "de": "f22",
+          "ate": "f22:fim",
+          "efeito": "destacar",
+          "alvo": [
+            -0.2,
+            0.0,
+            3.2
+          ]
+        },
+        {
+          "de": "f22:bota",
+          "ate": "f22:fim",
+          "efeito": "linhas"
         }
-      ]
+      ],
+      "filtro": "dramatico"
     },
     {
       "id": "reacao",
@@ -1308,8 +1491,8 @@
             2.5,
             3.4
           ],
-          "movimento": "aproximar",
-          "intensidade": 0.5
+          "movimento": "dolly_zoom",
+          "intensidade": 0.8
         }
       ],
       "sons": [
@@ -1326,10 +1509,12 @@
           "intensidade": 0.6
         },
         {
-          "de": "inicio+0.2",
-          "efeito": "zoom_soco"
+          "de": "inicio",
+          "ate": "f23:fim",
+          "efeito": "barras"
         }
-      ]
+      ],
+      "filtro": "dramatico"
     }
   ],
   "chamada": {
