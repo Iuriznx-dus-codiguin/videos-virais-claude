@@ -9,7 +9,7 @@ A pecinha que faz todo o trabalho do zíper
 
 COMO FUNCIONA #7
 
-Comenta "VENTI­LADOR" (e o ventilador? ele esfria o ar mesmo)
+Comenta "VENTILADOR" (e o ventilador? ele esfria o ar mesmo)
 
 #comofunciona #engenharia #curiosidades #ciencia #shorts
 
@@ -18,6 +18,6 @@ A pecinha que faz todo o trabalho do zíper
 
 COMO FUNCIONA #7
 
-Comenta "VENTI­LADOR" (e o ventilador? ele esfria o ar mesmo)
+Comenta "VENTILADOR" (e o ventilador? ele esfria o ar mesmo)
 
 #comofunciona #engenharia #curiosidades #ciencia #reels
