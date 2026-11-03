@@ -238,8 +238,8 @@
           ],
           "olhando": [
             -0.3,
-            0,
-            3
+            1.4,
+            2.0
           ],
           "expressao": "determinado",
           "segura": "lanterna"
@@ -387,9 +387,9 @@
           "de": "f4",
           "tipo": "detalhe",
           "alvo": [
-            0,
-            0,
-            3.4
+            0.3,
+            0.0,
+            3.6
           ],
           "camera": [
             1.4,
@@ -476,9 +476,9 @@
           "de": "f11",
           "tipo": "detalhe",
           "alvo": [
-            0,
-            0,
-            3.4
+            0.3,
+            0.0,
+            3.6
           ],
           "camera": [
             1.4,
@@ -522,9 +522,9 @@
           "ate": "f4:fim",
           "efeito": "circular",
           "alvo": [
-            0,
-            0,
-            3.6
+            0.43,
+            0.0,
+            3.75
           ]
         },
         {
@@ -543,12 +543,8 @@
         {
           "de": "f10",
           "ate": "f11",
-          "grande": "# MIN",
-          "pequeno": "PRO OLHO ACOSTUMAR",
-          "contar": [
-            10,
-            0
-          ]
+          "grande": "10 MIN",
+          "pequeno": "PRO OLHO ACOSTUMAR"
         }
       ]
     },
@@ -880,7 +876,8 @@
           "de": "f14",
           "ate": "f14:fim",
           "efeito": "letreiro",
-          "texto": "MIRANTE"
+          "texto": "MIRANTE",
+          "altura": 0.22
         },
         {
           "de": "f15:caixas",
