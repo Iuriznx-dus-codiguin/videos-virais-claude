@@ -12,5 +12,6 @@ Cada linha vem de uma correção do Iuri ou de uma decisão do projeto. A skill 
 - (2026-10-25) Só fatos que dá para conferir. Se a autoria é disputada, diga "um dos primeiros" ou "a história mais contada"; nunca invente data, nome ou número.
 - (2026-10-25) Simples, mas certo: nada de física errada para caber no tempo (ex.: no chuveiro, inverno = pedaço MENOR da resistência). Cada "então" e cada "por isso" tem que ser o motivo de verdade de a peça existir.
 - (2026-10-25) Segurança: nunca ensine a abrir, consertar ou mexer em eletricidade, gás ou pressão; se o tema pedir, diga para chamar um profissional.
+- (2026-11-03) Confira num quadro de frente toda peça redonda que fica de pé na maquete (grade de ventilador, roda, aro): o `toro` nasce deitado e precisa de `"giro": [90, 0, 0]` (no #8 a grade saiu deitada atravessando as pás).
 - (2026-10-25) Maquete cartoon com peças grandes e coloridas (até ~16 peças); no máximo 2 rótulos na tela ao mesmo tempo, rótulos de 1 a 2 palavras.
 - (2026-10-25) Plano parado no máximo ~4 s: alterne close do Tito, detalhe da peça e geral da maquete; use câmera com "lado" frente ou três quartos no estúdio.
