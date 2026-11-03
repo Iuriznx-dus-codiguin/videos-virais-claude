@@ -1,0 +1,1699 @@
+{
+ "serie": "como-funciona",
+ "parte": 9,
+ "titulo": "Como a torradeira sabe a hora de pular o pão?",
+ "musica": "curiosidade",
+ "personagens": {
+  "strite": {
+   "nome": "Charles Strite",
+   "papel": "mecânico de uma fábrica em Stillwater, Minnesota (EUA), cansado da torrada queimada do refeitório; pediu a patente da torradeira automática em 1919 (relógio + mola); não fala",
+   "visual": {
+    "altura": 1,
+    "corpo": "#3B5B7A",
+    "cabeca": "#F2D5BD",
+    "olhos": "redondos",
+    "sobrancelhas": "grossas",
+    "acessorios": [
+     {
+      "tipo": "cabelo_curto",
+      "cor": "#5A3A22"
+     },
+     {
+      "tipo": "bone",
+      "cor": "#2E4057"
+     },
+     {
+      "tipo": "lenco",
+      "cor": "#C0392B"
+     }
+    ]
+   }
+  }
+ },
+ "modelos": {
+  "torradeira": [
+   {
+    "id": "corpo",
+    "forma": "caixa",
+    "tam": [
+     0.5,
+     0.32,
+     0.3
+    ],
+    "pos": [
+     0,
+     0.16,
+     0
+    ],
+    "cor": "#E2463F"
+   },
+   {
+    "id": "fenda1",
+    "forma": "caixa",
+    "tam": [
+     0.36,
+     0.012,
+     0.05
+    ],
+    "pos": [
+     0,
+     0.326,
+     -0.065
+    ],
+    "cor": "#1A1D22"
+   },
+   {
+    "id": "fenda2",
+    "forma": "caixa",
+    "tam": [
+     0.36,
+     0.012,
+     0.05
+    ],
+    "pos": [
+     0,
+     0.326,
+     0.065
+    ],
+    "cor": "#1A1D22"
+   },
+   {
+    "id": "suporte",
+    "forma": "caixa",
+    "tam": [
+     0.34,
+     0.02,
+     0.2
+    ],
+    "pos": [
+     0,
+     0.07,
+     0
+    ],
+    "cor": "#9AA3AE"
+   },
+   {
+    "id": "pao1",
+    "forma": "caixa",
+    "tam": [
+     0.3,
+     0.24,
+     0.035
+    ],
+    "pos": [
+     0,
+     0.17,
+     -0.065
+    ],
+    "cor": "#D99A55",
+    "pai": "suporte"
+   },
+   {
+    "id": "pao2",
+    "forma": "caixa",
+    "tam": [
+     0.3,
+     0.24,
+     0.035
+    ],
+    "pos": [
+     0,
+     0.17,
+     0.065
+    ],
+    "cor": "#D99A55",
+    "pai": "suporte"
+   },
+   {
+    "id": "alavanca",
+    "forma": "caixa",
+    "tam": [
+     0.07,
+     0.035,
+     0.08
+    ],
+    "pos": [
+     -0.285,
+     0.01,
+     0
+    ],
+    "cor": "#2B2F36",
+    "pai": "suporte"
+   },
+   {
+    "id": "botao",
+    "forma": "cilindro",
+    "tam": [
+     0.04,
+     0.025
+    ],
+    "pos": [
+     -0.262,
+     0.07,
+     0.09
+    ],
+    "cor": "#F2F2F2",
+    "giro": [
+     0,
+     0,
+     90
+    ]
+   },
+   {
+    "id": "trava",
+    "forma": "caixa",
+    "tam": [
+     0.06,
+     0.035,
+     0.035
+    ],
+    "pos": [
+     -0.19,
+     0.12,
+     0.128
+    ],
+    "cor": "#F5B041",
+    "oculta": true
+   },
+   {
+    "id": "fio1",
+    "forma": "mola",
+    "tam": [
+     0.022,
+     0.34,
+     14,
+     0.005
+    ],
+    "pos": [
+     0,
+     0.22,
+     -0.12
+    ],
+    "cor": "#B0B6BF",
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "oculta": true
+   },
+   {
+    "id": "fio2",
+    "forma": "mola",
+    "tam": [
+     0.022,
+     0.34,
+     14,
+     0.005
+    ],
+    "pos": [
+     0,
+     0.22,
+     0
+    ],
+    "cor": "#B0B6BF",
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "oculta": true
+   },
+   {
+    "id": "fio3",
+    "forma": "mola",
+    "tam": [
+     0.022,
+     0.34,
+     14,
+     0.005
+    ],
+    "pos": [
+     0,
+     0.22,
+     0.12
+    ],
+    "cor": "#B0B6BF",
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "oculta": true
+   },
+   {
+    "id": "fio2b",
+    "forma": "mola",
+    "tam": [
+     0.022,
+     0.34,
+     14,
+     0.005
+    ],
+    "pos": [
+     0,
+     0.22,
+     0
+    ],
+    "cor": "#C9CED6",
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "oculta": true
+   },
+   {
+    "id": "lamina_pe",
+    "forma": "cilindro",
+    "tam": [
+     0.018,
+     0.02
+    ],
+    "pos": [
+     -0.08,
+     0.03,
+     0.128
+    ],
+    "cor": "#555B66",
+    "oculta": true
+   },
+   {
+    "id": "lamina_a",
+    "forma": "caixa",
+    "tam": [
+     0.012,
+     0.13,
+     0.03
+    ],
+    "pos": [
+     -0.006,
+     0.065,
+     0
+    ],
+    "cor": "#E67E22",
+    "pai": "lamina_pe"
+   },
+   {
+    "id": "lamina_b",
+    "forma": "caixa",
+    "tam": [
+     0.012,
+     0.13,
+     0.03
+    ],
+    "pos": [
+     0.006,
+     0.065,
+     0
+    ],
+    "cor": "#C0C7CF",
+    "pai": "lamina_pe"
+   },
+   {
+    "id": "mola",
+    "forma": "mola",
+    "tam": [
+     0.025,
+     0.14,
+     7,
+     0.006
+    ],
+    "pos": [
+     0.21,
+     0.11,
+     0
+    ],
+    "cor": "#7F8C8D",
+    "oculta": true
+   }
+  ],
+  "torradeira_1919": [
+   {
+    "id": "c_base",
+    "forma": "caixa",
+    "tam": [
+     0.3,
+     0.03,
+     0.2
+    ],
+    "pos": [
+     0,
+     0.015,
+     0
+    ],
+    "cor": "#6B4226"
+   },
+   {
+    "id": "c_corpo",
+    "forma": "caixa",
+    "tam": [
+     0.26,
+     0.2,
+     0.16
+    ],
+    "pos": [
+     0,
+     0.13,
+     0
+    ],
+    "cor": "#8C8C8C"
+   },
+   {
+    "id": "c_fenda",
+    "forma": "caixa",
+    "tam": [
+     0.2,
+     0.01,
+     0.04
+    ],
+    "pos": [
+     0,
+     0.235,
+     0
+    ],
+    "cor": "#212121"
+   },
+   {
+    "id": "c_pao",
+    "forma": "caixa",
+    "tam": [
+     0.17,
+     0.15,
+     0.03
+    ],
+    "pos": [
+     0,
+     0.195,
+     0
+    ],
+    "cor": "#D99A55"
+   },
+   {
+    "id": "c_relogio",
+    "forma": "cilindro",
+    "tam": [
+     0.05,
+     0.012
+    ],
+    "pos": [
+     0,
+     0.12,
+     0.086
+    ],
+    "cor": "#F5F0E1",
+    "giro": [
+     90,
+     0,
+     0
+    ]
+   },
+   {
+    "id": "c_eixo",
+    "forma": "esfera",
+    "tam": [
+     0.008
+    ],
+    "pos": [
+     0,
+     0.12,
+     0.094
+    ],
+    "cor": "#212121"
+   },
+   {
+    "id": "c_ponteiro",
+    "forma": "caixa",
+    "tam": [
+     0.007,
+     0.04,
+     0.005
+    ],
+    "pos": [
+     0,
+     0.018,
+     0
+    ],
+    "cor": "#212121",
+    "pai": "c_eixo"
+   },
+   {
+    "id": "c_fio",
+    "forma": "tubo",
+    "tam": [
+     0.008
+    ],
+    "pos": [
+     0.15,
+     0.06,
+     -0.04
+    ],
+    "caminho": [
+     [
+      -0.02,
+      0.0,
+      0
+     ],
+     [
+      0.04,
+      -0.03,
+      0
+     ],
+     [
+      0.1,
+      -0.05,
+      0.02
+     ]
+    ],
+    "cor": "#1E1E24"
+   }
+  ]
+ },
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "tito",
+   "texto": "Sua torradeira não tem olhos. Então como ela SABE a hora de pular o pão?",
+   "tom": "animado"
+  },
+  {
+   "id": "f2",
+   "quem": "tito",
+   "texto": "Em 1919, o mecânico Charles Strite cansou de comer torrada QUEIMADA no refeitório da fábrica.",
+   "off": true
+  },
+  {
+   "id": "f3",
+   "quem": "tito",
+   "texto": "Naquele tempo, alguém tinha que ficar de olho e tirar o pão na hora certa.",
+   "off": true
+  },
+  {
+   "id": "f4",
+   "quem": "tito",
+   "texto": "Então ele juntou um RELÓGIO e uma mola: deu o tempo, a mola empurra o pão para cima!",
+   "off": true,
+   "tom": "animado",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f5",
+   "quem": "tito",
+   "texto": "Hoje, em muita torradeira, quem decide a hora é OUTRA peça, escondida lá dentro."
+  },
+  {
+   "id": "f6",
+   "quem": "tito",
+   "texto": "Você abaixa a alavanca, o pão desce, e uma TRAVA segura tudo lá embaixo."
+  },
+  {
+   "id": "f7",
+   "quem": "tito",
+   "texto": "Ao mesmo tempo, a eletricidade chega nos FIOS, e eles ficam vermelhos de quente."
+  },
+  {
+   "id": "f8",
+   "quem": "tito",
+   "texto": "MAS um fio comum, nesse calor, enferruja e arrebenta rapidinho.",
+   "tom": "tenso",
+   "pausa_depois": 0.35
+  },
+  {
+   "id": "f9",
+   "quem": "tito",
+   "texto": "Por isso o fio é de NÍQUEL com cromo, que aguenta ficar vermelho sem estragar.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f10",
+   "quem": "tito",
+   "texto": "E quem decide a hora? Uma lâmina de DOIS metais grudados, bem perto do calor.",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f11",
+   "quem": "tito",
+   "texto": "Com o calor, um metal estica mais que o outro, e a lâmina ENTORTA."
+  },
+  {
+   "id": "f12",
+   "quem": "tito",
+   "texto": "Entortou o bastante, ela empurra a trava, e a MOLA joga o pão para cima!",
+   "tom": "animado",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f13",
+   "quem": "tito",
+   "texto": "E o botão de mais ou menos torrado só muda o quanto a lâmina precisa entortar."
+  },
+  {
+   "id": "f14",
+   "quem": "tito",
+   "texto": "Esse esticar com o calor tem nome: DILATAÇÃO.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f15",
+   "quem": "tito",
+   "texto": "E o mais curioso: a torradeira que pula o pão chegou nas casas ANTES do pão vendido já fatiado.",
+   "tom": "animado"
+  },
+  {
+   "id": "f16",
+   "quem": "tito",
+   "texto": "Ou seja: essa torradeira não sabe a HORA. Ela sente o calor, e um pedacinho de metal entorta.",
+   "tom": "animado"
+  }
+ ],
+ "chamada": {
+  "pergunta": "E agora, topa construir uma fechadura?",
+  "texto": "Comenta",
+  "destaque": "FECHA­DURA"
+ },
+ "postagem": {
+  "titulo": "Como funciona a torradeira? Ela não sabe a hora",
+  "descricao": "Como funciona a torradeira por dentro: alavanca, trava, fios de nicromo, lâmina de dois metais e mola. E quem decide a hora de pular o pão.",
+  "hashtags": [
+   "comofunciona",
+   "torradeira",
+   "fisica",
+   "curiosidades"
+  ],
+  "comentario": "Eu jurava que tinha um relógio aí dentro. Você também achava?",
+  "capa": "f12:cima+0.25"
+ },
+ "cenas": [
+  {
+   "id": "gancho",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "feliz"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "torradeira",
+     "em": "pedestal"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "vapor",
+     "em": [
+      0,
+      0
+     ],
+     "alt": 1.34,
+     "raio": 0.16,
+     "altura": 0.35,
+     "quantas": 28,
+     "aparece": "inicio",
+     "some": "f1:fim"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "suporte",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.13,
+      0
+     ],
+     "de": "inicio+0.15",
+     "ate": "inicio+0.45"
+    },
+    {
+     "peca": "suporte",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.13,
+      0
+     ],
+     "de": "f1:sabe",
+     "ate": "f1:sabe+0.4"
+    },
+    {
+     "peca": "suporte",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.13,
+      0
+     ],
+     "de": "f1:pular",
+     "ate": "f1:pular+0.3"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f1:sabe"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "torradeira",
+     "olhar": "maquete",
+     "expressao": "surpreso",
+     "de": "f1:pular"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "alvo": "torradeira",
+     "lado": "frente",
+     "tamanho": 0.75,
+     "movimento": "arco"
+    },
+    {
+     "de": "f1:sabe",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido"
+    },
+    {
+     "de": "f1:pular",
+     "tipo": "detalhe",
+     "alvo": "torradeira",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.8,
+     "movimento": "aproximar"
+    }
+   ],
+   "sons": [
+    {
+     "de": "inicio+0.15",
+     "som": "pop",
+     "volume": 0.9
+    },
+    {
+     "de": "f1:sabe",
+     "som": "clique",
+     "volume": 0.7
+    },
+    {
+     "de": "f1:pular",
+     "som": "pop",
+     "volume": 0.9
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f1:sabe",
+     "efeito": "zoom_soco"
+    }
+   ]
+  },
+  {
+   "id": "strite",
+   "cenario": "oficina",
+   "de": "f2",
+   "ambiente": "oficina",
+   "filtro": "sepia",
+   "personagens": {
+    "strite": {
+     "em": [
+      -1.0,
+      -0.3
+     ],
+     "olhando": [
+      1.2,
+      2.2,
+      3.0
+     ],
+     "expressao": "bravo"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "torradeira_1919",
+     "em": [
+      0,
+      -1.05
+     ],
+     "alt": 0.92,
+     "escala": 1.5
+    },
+    {
+     "tipo": "particulas",
+     "particula": "fumaca",
+     "em": [
+      0,
+      -1.05
+     ],
+     "alt": 1.3,
+     "raio": 0.12,
+     "altura": 0.5,
+     "quantas": 30,
+     "aparece": "f2:queimada",
+     "some": "f3:fim"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f2:1919",
+     "ate": "f2:fim",
+     "grande": "1919",
+     "pequeno": "Charles Strite · EUA"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "c_eixo",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -0.6,
+     "de": "f4:relogio",
+     "ate": "f4:empurra"
+    },
+    {
+     "peca": "c_pao",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.09,
+      0
+     ],
+     "de": "f4:empurra",
+     "ate": "f4:empurra+0.3"
+    },
+    {
+     "peca": "c_corpo",
+     "faz": "tremer",
+     "de": "f2:queimada",
+     "ate": "f2:fim",
+     "intensidade": 0.5
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "strite",
+     "olhar": "torradeira_1919",
+     "de": "f2:queimada"
+    },
+    {
+     "quem": "strite",
+     "faz": "maos_na_cabeca",
+     "de": "f2:queimada",
+     "ate": "f2:fim"
+    },
+    {
+     "quem": "strite",
+     "faz": "virar",
+     "para": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f3"
+    },
+    {
+     "quem": "strite",
+     "faz": "estender_mao",
+     "para": "torradeira_1919",
+     "olhar": "torradeira_1919",
+     "expressao": "determinado",
+     "de": "f4:juntou"
+    },
+    {
+     "quem": "strite",
+     "faz": "virar",
+     "para": [
+      0.3,
+      2.85,
+      2.2
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f4:cima"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "camera": [
+      0.9,
+      2.85,
+      3.9
+     ],
+     "alvo": [
+      -0.55,
+      2.25,
+      -0.7
+     ],
+     "movimento": "arco",
+     "intensidade": 0.6,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f2:queimada",
+     "tipo": "detalhe",
+     "alvo": "torradeira_1919",
+     "lado": "frente",
+     "tamanho": 0.55,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f3",
+     "tipo": "medio",
+     "camera": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "alvo": "strite",
+     "movimento": "travelling",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f4:juntou",
+     "tipo": "detalhe",
+     "alvo": "torradeira_1919",
+     "lado": "frente",
+     "tamanho": 0.5,
+     "movimento": "arco",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f4:cima",
+     "tipo": "close",
+     "camera": [
+      0.3,
+      2.85,
+      2.2
+     ],
+     "alvo": "strite",
+     "movimento": "aproximar"
+    }
+   ],
+   "sons": [
+    {
+     "de": "f2:1919",
+     "som": "pop"
+    },
+    {
+     "de": "f2:queimada",
+     "som": "fogo",
+     "volume": 0.35
+    },
+    {
+     "de": "f4:relogio",
+     "som": "engrenagem",
+     "volume": 0.5
+    },
+    {
+     "de": "f4:empurra",
+     "som": "pop",
+     "volume": 0.9
+    },
+    {
+     "de": "f4:cima",
+     "som": "ding",
+     "volume": 0.7
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f2:queimada",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f4:relogio+0.2",
+     "ate": "f4:empurra",
+     "efeito": "circular",
+     "alvo": "c_relogio"
+    }
+   ]
+  },
+  {
+   "id": "por_dentro",
+   "cenario": "estudio",
+   "de": "f5",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "feliz"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "torradeira",
+     "em": "pedestal"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "faiscas",
+     "em": [
+      0,
+      0
+     ],
+     "alt": 1.22,
+     "raio": 0.12,
+     "altura": 0.15,
+     "quantas": 30,
+     "aparece": "f8:calor",
+     "some": "f8:fim+0.2"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "vapor",
+     "em": [
+      0,
+      0
+     ],
+     "alt": 1.4,
+     "raio": 0.16,
+     "altura": 0.35,
+     "quantas": 24,
+     "aparece": "f12:cima",
+     "some": "f13:fim"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "suporte",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.13,
+      0
+     ],
+     "de": "inicio",
+     "ate": "inicio+0.05"
+    },
+    {
+     "peca": "corpo",
+     "faz": "transparente",
+     "de": "f5:dentro",
+     "opacidade": 0.25
+    },
+    {
+     "peca": "suporte",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.13,
+      0
+     ],
+     "de": "f6:abaixa",
+     "ate": "f6:desce"
+    },
+    {
+     "peca": "trava",
+     "faz": "aparecer",
+     "de": "f6:trava"
+    },
+    {
+     "peca": "fio1",
+     "faz": "aparecer",
+     "de": "f7:fios"
+    },
+    {
+     "peca": "fio2",
+     "faz": "aparecer",
+     "de": "f7:fios+0.15"
+    },
+    {
+     "peca": "fio3",
+     "faz": "aparecer",
+     "de": "f7:fios+0.3"
+    },
+    {
+     "peca": "torradeira",
+     "faz": "fluxo",
+     "tipo": "eletricidade",
+     "de": "f7:eletricidade",
+     "ate": "f7:fim",
+     "caminho": [
+      [
+       0.26,
+       0.03,
+       -0.14
+      ],
+      [
+       0.2,
+       0.15,
+       -0.13
+      ],
+      [
+       0.17,
+       0.22,
+       -0.12
+      ],
+      [
+       0,
+       0.22,
+       -0.12
+      ]
+     ],
+     "quantidade": 14
+    },
+    {
+     "peca": "fio1",
+     "faz": "aquecer",
+     "de": "f7:vermelhos",
+     "ate": "f12:cima",
+     "intensidade": 1.3
+    },
+    {
+     "peca": "fio2",
+     "faz": "aquecer",
+     "de": "f7:vermelhos",
+     "ate": "f8:arrebenta",
+     "intensidade": 1.3
+    },
+    {
+     "peca": "fio3",
+     "faz": "aquecer",
+     "de": "f7:vermelhos",
+     "ate": "f12:cima",
+     "intensidade": 1.3
+    },
+    {
+     "peca": "fio2",
+     "faz": "tremer",
+     "de": "f8:calor",
+     "ate": "f8:arrebenta",
+     "intensidade": 1.2
+    },
+    {
+     "peca": "fio2",
+     "faz": "sumir",
+     "de": "f8:arrebenta"
+    },
+    {
+     "peca": "fio2b",
+     "faz": "aparecer",
+     "de": "f9:niquel"
+    },
+    {
+     "peca": "fio2b",
+     "faz": "aquecer",
+     "de": "f9:vermelho",
+     "ate": "f12:cima",
+     "intensidade": 1.3
+    },
+    {
+     "peca": "lamina_pe",
+     "faz": "aparecer",
+     "de": "f10:lamina"
+    },
+    {
+     "peca": "lamina_a",
+     "faz": "aquecer",
+     "de": "f11:calor",
+     "ate": "f12:trava",
+     "intensidade": 0.5
+    },
+    {
+     "peca": "lamina_pe",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": 30,
+     "de": "f11:estica",
+     "ate": "f12:empurra"
+    },
+    {
+     "peca": "trava",
+     "faz": "mover",
+     "desloc": [
+      -0.04,
+      0,
+      0
+     ],
+     "de": "f12:trava",
+     "ate": "f12:trava+0.3"
+    },
+    {
+     "peca": "mola",
+     "faz": "aparecer",
+     "de": "f12:mola"
+    },
+    {
+     "peca": "suporte",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.13,
+      0
+     ],
+     "de": "f12:cima",
+     "ate": "f12:cima+0.3"
+    },
+    {
+     "peca": "fio1",
+     "faz": "esfriar",
+     "de": "f12:cima"
+    },
+    {
+     "peca": "fio2b",
+     "faz": "esfriar",
+     "de": "f12:cima"
+    },
+    {
+     "peca": "fio3",
+     "faz": "esfriar",
+     "de": "f12:cima"
+    },
+    {
+     "peca": "lamina_a",
+     "faz": "esfriar",
+     "de": "f12:cima"
+    },
+    {
+     "peca": "lamina_pe",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": -30,
+     "de": "f13",
+     "ate": "f13:muda"
+    },
+    {
+     "peca": "botao",
+     "faz": "pulsar",
+     "de": "f13:botao",
+     "ate": "f13:fim",
+     "intensidade": 1.0
+    },
+    {
+     "peca": "lamina_a",
+     "faz": "aquecer",
+     "de": "f14",
+     "ate": "f14:fim",
+     "intensidade": 0.5
+    },
+    {
+     "peca": "lamina_pe",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": 30,
+     "de": "f14:esticar",
+     "ate": "f14:dilatacao"
+    },
+    {
+     "peca": "lamina_a",
+     "faz": "esfriar",
+     "de": "f14:fim"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.75,
+      2.0,
+      5.9
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f5"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "torradeira",
+     "olhar": "maquete",
+     "de": "f5:dentro"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "trava",
+     "olhar": "maquete",
+     "de": "f6:trava"
+    },
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "de": "f7"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "nervoso",
+     "de": "f8"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "fio2b",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f9:niquel"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f10"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "lamina_a",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f10:lamina"
+    },
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "de": "f11"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "expressao": "surpreso",
+     "de": "f12:cima"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f13"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "botao",
+     "olhar": "maquete",
+     "de": "f13:botao"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "lamina_a",
+     "olhar": "maquete",
+     "de": "f14"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f15"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f16"
+    },
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.75,
+      2.0,
+      5.9
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f16:sente"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "torradeira",
+     "de": "f16:metal"
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "trava",
+     "texto": "Trava",
+     "de": "f6:trava",
+     "ate": "f6:fim",
+     "cor": "#F5B041"
+    },
+    {
+     "alvo": "fio3",
+     "texto": "Fio",
+     "de": "f7:fios",
+     "ate": "f7:fim",
+     "cor": "#FF8A5B"
+    },
+    {
+     "alvo": "fio2b",
+     "texto": "Nicromo",
+     "de": "f9:niquel",
+     "ate": "f9:fim",
+     "cor": "#FF8A5B"
+    },
+    {
+     "alvo": "lamina_a",
+     "texto": "Lâmina",
+     "de": "f10:lamina",
+     "ate": "f11:fim",
+     "cor": "#FFB46B"
+    },
+    {
+     "alvo": "mola",
+     "texto": "Mola",
+     "de": "f12:mola",
+     "ate": "f12:fim"
+    },
+    {
+     "alvo": "botao",
+     "texto": "Botão",
+     "de": "f13:botao",
+     "ate": "f13:fim"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f14:dilatacao",
+     "ate": "f14:fim+0.3",
+     "grande": "Dila­tação",
+     "pequeno": "o metal cresce com o calor"
+    },
+    {
+     "de": "f15:antes",
+     "ate": "f15:fim+0.2",
+     "grande": "1926",
+     "pequeno": "torradeira em casa; pão fatiado, só em 1928"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "camera": [
+      -0.75,
+      2.0,
+      5.9
+     ],
+     "alvo": [
+      -0.75,
+      1.5,
+      0.3
+     ],
+     "movimento": "arco",
+     "intensidade": 0.5,
+     "transicao": "zoom"
+    },
+    {
+     "de": "f5:dentro",
+     "tipo": "detalhe",
+     "alvo": "torradeira",
+     "lado": "frente",
+     "tamanho": 0.75,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f6:abaixa",
+     "tipo": "detalhe",
+     "alvo": "torradeira",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.75,
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f7:fios",
+     "tipo": "detalhe",
+     "alvo": "torradeira",
+     "lado": "frente",
+     "tamanho": 0.6,
+     "movimento": "travelling",
+     "intensidade": 0.4,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f8",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f8:calor",
+     "tipo": "detalhe",
+     "alvo": "fio2",
+     "lado": "frente",
+     "tamanho": 0.45,
+     "movimento": "tremer"
+    },
+    {
+     "de": "f9:niquel",
+     "tipo": "detalhe",
+     "alvo": "fio2b",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.5,
+     "movimento": "arco",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f10",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "dolly_zoom",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f10:lamina",
+     "tipo": "detalhe",
+     "alvo": "lamina_a",
+     "lado": "frente",
+     "tamanho": 0.35,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f11:estica",
+     "tipo": "detalhe",
+     "alvo": "lamina_a",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.4,
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f12:mola",
+     "tipo": "detalhe",
+     "alvo": "torradeira",
+     "lado": "frente",
+     "tamanho": 0.85,
+     "movimento": "subir"
+    },
+    {
+     "de": "f13",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f13:botao",
+     "tipo": "detalhe",
+     "alvo": "botao",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.35,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f14",
+     "tipo": "detalhe",
+     "alvo": "lamina_a",
+     "lado": "frente",
+     "tamanho": 0.4,
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f15",
+     "tipo": "aberto",
+     "camera": [
+      -0.75,
+      2.0,
+      5.9
+     ],
+     "alvo": [
+      -0.75,
+      1.5,
+      0.3
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f16",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido"
+    },
+    {
+     "de": "f16:sente",
+     "tipo": "aberto",
+     "camera": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "alvo": [
+      -0.9,
+      1.5,
+      0.3
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.3
+    }
+   ],
+   "sons": [
+    {
+     "de": "f5:dentro",
+     "som": "whoosh",
+     "volume": 0.5
+    },
+    {
+     "de": "f6:abaixa",
+     "som": "clique",
+     "volume": 0.8
+    },
+    {
+     "de": "f6:trava",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f7:eletricidade",
+     "som": "zap",
+     "volume": 0.6
+    },
+    {
+     "de": "f7:vermelhos",
+     "som": "fogo",
+     "volume": 0.3
+    },
+    {
+     "de": "f8",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f8:arrebenta",
+     "som": "zap",
+     "volume": 0.9
+    },
+    {
+     "de": "f9:niquel",
+     "som": "ding"
+    },
+    {
+     "de": "f10:lamina",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f11:entorta",
+     "som": "chiado",
+     "volume": 0.35
+    },
+    {
+     "de": "f12:trava",
+     "som": "clique",
+     "volume": 0.8
+    },
+    {
+     "de": "f12:cima",
+     "som": "pop",
+     "volume": 0.9
+    },
+    {
+     "de": "f13:botao",
+     "som": "clique",
+     "volume": 0.7
+    },
+    {
+     "de": "f14:dilatacao",
+     "som": "ding"
+    },
+    {
+     "de": "f15:antes",
+     "som": "pop",
+     "volume": 0.7
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f6:trava+0.2",
+     "ate": "f6:fim",
+     "efeito": "circular",
+     "alvo": "trava"
+    },
+    {
+     "de": "f8",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f8:arrebenta",
+     "ate": "f8:arrebenta+0.25",
+     "efeito": "flash"
+    },
+    {
+     "de": "f8:arrebenta",
+     "ate": "f8:arrebenta+0.5",
+     "efeito": "tremor",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f9:niquel+0.2",
+     "ate": "f9:fim",
+     "efeito": "destacar",
+     "alvo": "fio2b"
+    },
+    {
+     "de": "f10:lamina+0.2",
+     "ate": "f10:fim",
+     "efeito": "destacar",
+     "alvo": "lamina_a"
+    },
+    {
+     "de": "f11:entorta",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f12:cima",
+     "ate": "f12:cima+0.7",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f13:botao+0.2",
+     "ate": "f13:fim",
+     "efeito": "circular",
+     "alvo": "botao"
+    },
+    {
+     "de": "f15:antes",
+     "efeito": "zoom_soco"
+    }
+   ]
+  }
+ ]
+}
