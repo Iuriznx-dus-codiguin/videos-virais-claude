@@ -59,21 +59,22 @@
       "id": "f9",
       "quem": "cida",
       "tom": "calmo",
-      "texto": "Sem luz, espera dez minutos. O olho acostuma."
+      "texto": "Sem luz, espera dez minutos. O olho acostuma.",
+      "semente": 102
     },
     {
       "id": "f10",
       "quem": "davi",
       "off": true,
       "tom": "tenso",
-      "texto": "Dez minutos parado, sem saber onde ela está.",
+      "texto": "Dez minutos no escuro. E atrás do morro, uma buzina de barco.",
       "pausa_depois": 0.3
     },
     {
       "id": "f11",
       "quem": "davi",
       "off": true,
-      "texto": "Aí a trilha aparece. Só que cada passo na mata faz barulho."
+      "texto": "A trilha aparece. Só que a mata é cheia de folha seca."
     },
     {
       "id": "f12",
@@ -99,7 +100,7 @@
       "quem": "davi",
       "off": true,
       "tom": "tenso",
-      "texto": "Um barco sendo carregado de caixas, no meio da noite."
+      "texto": "Carregado de caixas. E nenhuma criança a bordo."
     },
     {
       "id": "f16",
@@ -141,7 +142,7 @@
       "id": "f21",
       "quem": "otavio",
       "tom": "medo",
-      "texto": "Isso é SOS.",
+      "texto": "É um pedido de SOCORRO.",
       "pausa_depois": 0.8
     }
   ],
@@ -178,12 +179,12 @@
           "de": "inicio",
           "tipo": "geral",
           "alvo": [
-            -3.0,
-            -28.0,
-            66.0
+            -3,
+            -28,
+            66
           ],
           "camera": [
-            1.0,
+            1,
             2.3,
             0.8
           ],
@@ -194,9 +195,9 @@
           "de": "f2",
           "tipo": "detalhe",
           "alvo": [
-            -16.0,
-            -20.0,
-            85.0
+            -16,
+            -20,
+            85
           ],
           "camera": [
             0.6,
@@ -233,25 +234,25 @@
         "davi": {
           "em": [
             -0.6,
-            7.0
+            7
           ],
           "olhando": [
             -0.3,
-            0.0,
-            3.0
+            0,
+            3
           ],
           "expressao": "determinado",
           "segura": "lanterna"
         },
         "cida": {
           "em": [
-            -3.0,
+            -3,
             9.2
           ],
           "olhando": [
             -0.6,
             2.4,
-            7.0
+            7
           ],
           "expressao": "serio"
         },
@@ -263,7 +264,7 @@
           "olhando": [
             -0.6,
             2.4,
-            7.0
+            7
           ],
           "expressao": "cansado"
         }
@@ -273,7 +274,7 @@
           "tipo": "pegadas_gigantes",
           "em": [
             -0.4,
-            6.0
+            6
           ],
           "ate": [
             0.4,
@@ -309,7 +310,7 @@
           "faz": "erguer",
           "para": [
             -0.3,
-            0.0,
+            0,
             4.4
           ],
           "de": "inicio+0.3"
@@ -338,6 +339,11 @@
           "quem": "cida",
           "expressao": "neutro",
           "de": "f9"
+        },
+        {
+          "quem": "davi",
+          "expressao": "surpreso",
+          "de": "f10:buzina"
         }
       ],
       "rotulos": [
@@ -381,8 +387,8 @@
           "de": "f4",
           "tipo": "detalhe",
           "alvo": [
-            0.0,
-            0.0,
+            0,
+            0,
             3.4
           ],
           "camera": [
@@ -470,8 +476,8 @@
           "de": "f11",
           "tipo": "detalhe",
           "alvo": [
-            0.0,
-            0.0,
+            0,
+            0,
             3.4
           ],
           "camera": [
@@ -495,9 +501,14 @@
           "volume": 0.5
         },
         {
-          "de": "f11:barulho",
+          "de": "f11:seca",
           "som": "galho",
           "volume": 0.5
+        },
+        {
+          "de": "f10:buzina",
+          "som": "buzina",
+          "volume": 0.4
         }
       ],
       "efeitos": [
@@ -511,8 +522,8 @@
           "ate": "f4:fim",
           "efeito": "circular",
           "alvo": [
-            0.0,
-            0.0,
+            0,
+            0,
             3.6
           ]
         },
@@ -551,13 +562,13 @@
       "personagens": {
         "otavio": {
           "em": [
-            0.0,
+            0,
             8.4
           ],
           "olhando": [
             0.3,
             1.5,
-            0.0
+            0
           ],
           "expressao": "determinado"
         },
@@ -567,21 +578,21 @@
             9.6
           ],
           "olhando": [
-            0.0,
+            0,
             1.5,
-            0.0
+            0
           ],
           "expressao": "serio"
         },
         "davi": {
           "em": [
-            -1.0,
+            -1,
             9.9
           ],
           "olhando": [
             -0.3,
             1.5,
-            0.0
+            0
           ],
           "expressao": "nervoso",
           "segura": "lanterna"
@@ -592,7 +603,7 @@
           "tipo": "pegadas_gigantes",
           "em": [
             -0.4,
-            6.0
+            6
           ],
           "ate": [
             0.4,
@@ -608,7 +619,7 @@
             0.3
           ],
           "ate": [
-            1.0,
+            1,
             -4.5
           ],
           "passo": 0.75,
@@ -652,7 +663,7 @@
           "camera": [
             1.2,
             2.6,
-            2.0
+            2
           ],
           "movimento": "travelling",
           "intensidade": 0.3
@@ -664,7 +675,7 @@
           "camera": [
             0.3,
             2.8,
-            -1.0
+            -1
           ],
           "movimento": "afastar",
           "intensidade": 0.2
@@ -788,14 +799,14 @@
           "de": "inicio",
           "tipo": "geral",
           "alvo": [
-            -2.0,
-            -26.0,
-            60.0
+            -2,
+            -26,
+            60
           ],
           "camera": [
             0.5,
             5.5,
-            -4.0
+            -4
           ],
           "movimento": "arco",
           "intensidade": 0.4,
@@ -805,14 +816,14 @@
           "de": "f15",
           "tipo": "detalhe",
           "alvo": [
-            9.0,
-            -34.0,
-            56.0
+            9,
+            -34,
+            56
           ],
           "camera": [
-            1.0,
+            1,
             2.3,
-            3.0
+            3
           ],
           "movimento": "aproximar",
           "intensidade": 0.3
@@ -824,7 +835,7 @@
           "camera": [
             2.6,
             2.6,
-            5.0
+            5
           ],
           "movimento": "zoom_rapido",
           "intensidade": 0.25
@@ -850,7 +861,7 @@
             2.3
           ],
           "camera": [
-            7.0,
+            7,
             1.8,
             1.6
           ],
@@ -876,9 +887,9 @@
           "ate": "f15:fim",
           "efeito": "circular",
           "alvo": [
-            9.0,
-            -34.0,
-            56.0
+            9,
+            -34,
+            56
           ]
         }
       ]
@@ -957,9 +968,9 @@
           "de": "inicio",
           "tipo": "detalhe",
           "alvo": [
-            -16.0,
-            -20.0,
-            85.0
+            -16,
+            -20,
+            85
           ],
           "camera": [
             0.6,
@@ -1082,9 +1093,9 @@
           "de": "inicio",
           "tipo": "detalhe",
           "alvo": [
-            -16.0,
-            -20.0,
-            85.0
+            -16,
+            -20,
+            85
           ],
           "camera": [
             0.6,
@@ -1101,7 +1112,7 @@
           "camera": [
             2.6,
             2.6,
-            5.0
+            5
           ],
           "movimento": "zoom_rapido",
           "intensidade": 0.25
@@ -1121,7 +1132,7 @@
       ],
       "sons": [
         {
-          "de": "f21:sos",
+          "de": "f21:socorro",
           "som": "impacto",
           "volume": 0.45
         }
@@ -1142,15 +1153,25 @@
           "ate": "f20:fim",
           "efeito": "destacar",
           "alvo": [
-            -16.0,
-            -20.0,
-            85.0
+            -16,
+            -20,
+            85
           ]
         },
         {
-          "de": "f21:sos",
+          "de": "f21:socorro",
           "ate": "f21:fim",
           "efeito": "linhas"
+        },
+        {
+          "de": "f20:piscar",
+          "ate": "f20:fim",
+          "efeito": "circular",
+          "alvo": [
+            -16,
+            -20,
+            85
+          ]
         }
       ]
     }
@@ -1159,5 +1180,17 @@
     "pergunta": "Vão até o farol agora ou esperam o sol?",
     "texto": "COMENTA",
     "destaque": "PARTE 9"
+  },
+  "postagem": {
+    "titulo": "Sobreviventes de avião sobem o morro no escuro",
+    "descricao": "Quatro pessoas sobrevivem à queda de um avião numa ilha deserta. A menina de 13 anos foi levada de madrugada, e as pegadas de bota sobem o morro no escuro.",
+    "hashtags": [
+      "ilhadeserta",
+      "sobrevivencia",
+      "suspense",
+      "animacao"
+    ],
+    "comentario": "Eu ia até o farol agora, no escuro mesmo. E você: ia ou esperava o sol?",
+    "capa": "f6+0.4"
   }
 }
