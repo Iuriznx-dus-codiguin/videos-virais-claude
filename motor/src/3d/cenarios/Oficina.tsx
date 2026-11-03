@@ -15,6 +15,25 @@ const Piso: React.FC = React.memo(() => (
 	</>
 ));
 
+// Centro da janela na parede e o vão (moldura por fora) que os tijolos não podem invadir.
+const JANELA: [number, number] = [-2.6, 1.82];
+const VAO = {x0: JANELA[0] - 0.82, x1: JANELA[0] + 0.82, y0: JANELA[1] - 0.85, y1: JANELA[1] + 0.85};
+const TIJOLO = {l: 0.68, a: 0.24};
+
+/** Pedaços do tijolo [x0, x1, y0, y1] que ficam fora do vão da janela (tijolo inteiro se não encosta nele). */
+const foraDoVao = (x0: number, x1: number, y0: number, y1: number): [number, number, number, number][] => {
+	if (x1 <= VAO.x0 || x0 >= VAO.x1 || y1 <= VAO.y0 || y0 >= VAO.y1) return [[x0, x1, y0, y1]];
+	const partes: [number, number, number, number][] = [];
+	if (x0 < VAO.x0) partes.push([x0, VAO.x0, y0, y1]);
+	if (x1 > VAO.x1) partes.push([VAO.x1, x1, y0, y1]);
+	const mx0 = Math.max(x0, VAO.x0);
+	const mx1 = Math.min(x1, VAO.x1);
+	if (y0 < VAO.y0) partes.push([mx0, mx1, y0, VAO.y0]);
+	if (y1 > VAO.y1) partes.push([mx0, mx1, VAO.y1, y1]);
+	// pedaço fino demais vira só argamassa
+	return partes.filter(([a, b, c, d]) => b - a > 0.06 && d - c > 0.06);
+};
+
 const Parede: React.FC = React.memo(() => {
 	const r = aleatorio(17);
 	const tijolos: React.ReactNode[] = [];
@@ -22,10 +41,19 @@ const Parede: React.FC = React.memo(() => {
 		for (let col = 0; col < 13; col++) {
 			const x = -4.6 + col * 0.72 + (lin % 2 ? 0.36 : 0);
 			const y = 0.14 + lin * 0.28;
-			// buraco da janela
-			if (x > -3.4 && x < -1.8 && y > 1.0 && y < 2.65) continue;
 			const tom = ['#9C5A3C', '#8E5034', '#A86444', '#874A30'][Math.floor(r() * 4)];
-			tijolos.push(<mesh key={`${lin}-${col}`} geometry={caixa(0.68, 0.24, 0.08)} material={toon(tom)} position={[x, y, -2.98]} receiveShadow />);
+			// o tijolo que encosta na janela é cortado rente à moldura (antes, o tijolo vizinho tapava parte do vidro)
+			foraDoVao(x - TIJOLO.l / 2, x + TIJOLO.l / 2, y - TIJOLO.a / 2, y + TIJOLO.a / 2).forEach(([x0, x1, y0, y1], k) =>
+				tijolos.push(
+					<mesh
+						key={`${lin}-${col}-${k}`}
+						geometry={caixa(+(x1 - x0).toFixed(3), +(y1 - y0).toFixed(3), 0.08)}
+						material={toon(tom)}
+						position={[(x0 + x1) / 2, (y0 + y1) / 2, -2.98]}
+						receiveShadow
+					/>,
+				),
+			);
 		}
 	}
 	return (
@@ -40,7 +68,7 @@ const Parede: React.FC = React.memo(() => {
 });
 
 const Janela: React.FC = React.memo(() => (
-	<group position={[-2.6, 1.82, -2.95]}>
+	<group position={[JANELA[0], JANELA[1], -2.95]}>
 		<mesh geometry={caixa(1.5, 1.55, 0.02)} material={brilho('#FFE2A6', 1.15)} />
 		<Malha g={caixa(1.62, 0.08, 0.12)} m={toon('#5A3A24')} position={[0, 0.8, 0.02]} contorno={0.012} />
 		<Malha g={caixa(1.62, 0.08, 0.12)} m={toon('#5A3A24')} position={[0, -0.8, 0.02]} contorno={0.012} />
