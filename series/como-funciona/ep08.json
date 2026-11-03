@@ -186,7 +186,12 @@
      0.56,
      0.21
     ],
-    "cor": "#C9CED6"
+    "cor": "#C9CED6",
+    "giro": [
+     90,
+     0,
+     0
+    ]
    },
    {
     "id": "grade_meio",
@@ -200,7 +205,12 @@
      0.56,
      0.215
     ],
-    "cor": "#C9CED6"
+    "cor": "#C9CED6",
+    "giro": [
+     90,
+     0,
+     0
+    ]
    },
    {
     "id": "grade_v",
@@ -229,6 +239,46 @@
      0,
      0.56,
      0.22
+    ],
+    "cor": "#C9CED6"
+   },
+   {
+    "id": "grade_d1",
+    "forma": "caixa",
+    "tam": [
+     0.58,
+     0.01,
+     0.01
+    ],
+    "pos": [
+     0,
+     0.56,
+     0.22
+    ],
+    "giro": [
+     0,
+     0,
+     45
+    ],
+    "cor": "#C9CED6"
+   },
+   {
+    "id": "grade_d2",
+    "forma": "caixa",
+    "tam": [
+     0.58,
+     0.01,
+     0.01
+    ],
+    "pos": [
+     0,
+     0.56,
+     0.22
+    ],
+    "giro": [
+     0,
+     0,
+     -45
     ],
     "cor": "#C9CED6"
    }
@@ -454,7 +504,12 @@
      0.21
     ],
     "cor": "#C9CED6",
-    "oculta": true
+    "oculta": true,
+    "giro": [
+     90,
+     0,
+     0
+    ]
    },
    {
     "id": "grade_meio",
@@ -469,7 +524,12 @@
      0.215
     ],
     "cor": "#C9CED6",
-    "oculta": true
+    "oculta": true,
+    "giro": [
+     90,
+     0,
+     0
+    ]
    },
    {
     "id": "grade_v",
@@ -499,6 +559,48 @@
      0,
      0.56,
      0.22
+    ],
+    "cor": "#C9CED6",
+    "oculta": true
+   },
+   {
+    "id": "grade_d1",
+    "forma": "caixa",
+    "tam": [
+     0.58,
+     0.01,
+     0.01
+    ],
+    "pos": [
+     0,
+     0.56,
+     0.22
+    ],
+    "giro": [
+     0,
+     0,
+     45
+    ],
+    "cor": "#C9CED6",
+    "oculta": true
+   },
+   {
+    "id": "grade_d2",
+    "forma": "caixa",
+    "tam": [
+     0.58,
+     0.01,
+     0.01
+    ],
+    "pos": [
+     0,
+     0.56,
+     0.22
+    ],
+    "giro": [
+     0,
+     0,
+     -45
     ],
     "cor": "#C9CED6",
     "oculta": true
@@ -1516,6 +1618,16 @@
      "peca": "grade_h",
      "faz": "aparecer",
      "de": "f7:grade+0.3"
+    },
+    {
+     "peca": "grade_d1",
+     "faz": "aparecer",
+     "de": "f7:grade+0.45"
+    },
+    {
+     "peca": "grade_d2",
+     "faz": "aparecer",
+     "de": "f7:grade+0.45"
     },
     {
      "peca": "motor",
