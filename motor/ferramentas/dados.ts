@@ -22,6 +22,7 @@ import {cpSync, existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, r
 import {tmpdir} from 'node:os';
 import {basename, join} from 'node:path';
 import {PASTA_SERIES, RAIZ} from './lib/caminhos.ts';
+import {VELOCIDADE_PADRAO} from './lib/velocidade.ts';
 import {textosDoEpisodio} from './publicar/texto.ts';
 import {carregarEpisodio, nomeEpisodio} from './validar.ts';
 import {textoNaTela} from '../src/roteiro/legendas.ts';
@@ -296,13 +297,13 @@ export const entregar = (serie: string, parte: number, dia: string, hora: string
 	}
 };
 
-/** Onde fica a capa no vídeo: o segundo e a palavra da legenda naquele momento (vale mesmo se o vídeo for acelerado depois). */
+/** Onde fica a capa no vídeo entregue: o segundo (já acelerado, como o Iuri vê no app) e a palavra da legenda naquele momento. */
 const ondeEstaCapa = (linha: LinhaDoTempo) => {
 	if (linha.capa === undefined) return undefined;
 	const t = linha.capa;
 	const palavras = linha.falas.flatMap((f) => f.palavras);
 	const naHora = palavras.filter((p) => p.ini <= t + 0.05).at(-1);
-	const segundos = `${t.toFixed(1).replace('.', ',')} s do render`;
+	const segundos = `${(t / VELOCIDADE_PADRAO).toFixed(1).replace('.', ',')} s do vídeo`;
 	return naHora ? `quadro de ${segundos}, quando a legenda mostra "${textoNaTela(naHora.texto)}"` : `quadro de ${segundos}`;
 };
 

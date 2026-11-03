@@ -13,6 +13,7 @@ import {renderMedia, selectComposition} from '@remotion/renderer';
 import {mkdirSync, statSync} from 'node:fs';
 import {dirname, join} from 'node:path';
 import {RAIZ} from './lib/caminhos.ts';
+import {VELOCIDADE_PADRAO} from './lib/velocidade.ts';
 import {CHROME, empacotar} from './quadro.ts';
 import {nomeEpisodio} from './validar.ts';
 
@@ -100,8 +101,6 @@ const QUALIDADES: Record<string, Qualidade> = {
 
 const AUDIO_KBPS = 128;
 
-/** Pedido do Iuri em 03/11: vídeo um pouco acelerado, mais atrativo e alguns segundos mais curto. */
-const VELOCIDADE_PADRAO = 1.1;
 /** Quadros por segundo do vídeo final (os mesmos da composição em Root.tsx). */
 const FPS_FINAL = 30;
 
