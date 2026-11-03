@@ -148,15 +148,15 @@
      0.025
     ],
     "pos": [
-     -0.262,
-     0.07,
-     0.09
+     0.15,
+     0.08,
+     0.162
     ],
     "cor": "#F2F2F2",
     "giro": [
+     90,
      0,
-     0,
-     90
+     0
     ]
    },
    {
@@ -1510,8 +1510,8 @@
      "de": "f13:botao",
      "tipo": "detalhe",
      "alvo": "botao",
-     "lado": "tres_quartos_esquerda",
-     "tamanho": 0.35,
+     "lado": "frente",
+     "tamanho": 0.4,
      "movimento": "aproximar"
     },
     {
