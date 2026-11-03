@@ -26,6 +26,12 @@ export interface PropsEpisodio extends Record<string, unknown> {
 	semAudio?: boolean;
 	/** pixels do 3D por pixel do vídeo (padrão DPR_PADRAO) */
 	dpr?: number;
+	/**
+	 * Aceleração do vídeo final (1.1 no render desde 03/11, pedido do Iuri). A composição continua no
+	 * tempo do roteiro: só passa a ter FPS / velocidade quadros por segundo, e o render reinterpreta
+	 * esses quadros a 30 fps e acelera o áudio na mesma proporção (ver ferramentas/render.ts).
+	 */
+	velocidade?: number;
 }
 
 /** Filtro CSS de cada "filtro" de cena (só no 3D: legenda e etiquetas ficam com a cor certa). */

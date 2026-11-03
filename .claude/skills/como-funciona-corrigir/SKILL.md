@@ -18,6 +18,8 @@ Separe cada correção em:
 - **números do vídeo** que o Iuri mandar do YouTube Studio ou do Instagram ("visualizaram x deslizaram", % média assistida, o segundo em que a curva cai, envios): leia como correção do roteiro. Muita gente deslizando no começo aponta para a abertura e o primeiro quadro (a maquete já fazendo a coisa?); queda na oficina, para laboratório longo; queda no meio, para falta de MAS forte entre 35 e 45 s; queda antes da chamada, para fala sobrando depois da curiosidade ou do "Parabéns!". Vira regra em `regras.md` quando o mesmo ponto cair em dois vídeos.
 Se for ambígua, escolha a leitura mais provável, aplique e diga qual usou.
 
+**Tempos do vídeo:** o vídeo entregue sai acelerado 1.1x. Quando o Iuri citar um segundo do vídeo ("aos 40 s"), multiplique por 1,1 para achar o tempo no roteiro, no `quadro` e no `enquadramento` (40 s do vídeo = 44 s do roteiro).
+
 ## 2. Aplicar no vídeo
 1. `cd motor && npm run dados -- baixar` (sessão nova) e edite `public/series/como-funciona/epNN.json`.
 2. `npm run validar -- como-funciona <n>`; se mudou fala, `bash voz/instalar.sh` (sessão nova) e `npm run vozes -- como-funciona <n>`.

@@ -79,6 +79,7 @@ Modelos (vêm com o `dados baixar`): laboratório, `ep07.json` (zíper) e `ep02.
 ## 6. Render e conferência
 1. Antes do render, com os tempos reais da voz: `npm run enquadramento -- como-funciona <n>` de novo (os planos mudam de tempo quando a voz entra) e os quadros de produção (`producao.md`, "Conferir antes do render"). Corrija o que aparecer.
 2. `npm run render -- como-funciona <n>` em segundo plano (~25 min para 1min20 em qualidade média; sai em `out/como-funciona-epNN.mp4` com 20 a 35 MB). Não use `--qualidade=alta` a não ser que o Iuri peça. Se o render avisar que o tamanho saiu da faixa, diga no aviso final.
+   O vídeo sai **acelerado 1.1x** (pedido do Iuri em 03/11): 1min20 de roteiro vira ~1min13 de vídeo, com a voz do Tito no mesmo tom. Não mude o roteiro por isso: a meta de 75 a 90 s com voz continua em tempo de roteiro, e o `quadro` e o `enquadramento` também. Não use `--velocidade=1` a não ser que o Iuri peça.
 3. `npm run quadro -- como-funciona <n> 0.1 2 20 40 60 75` e a capa (o segundo que o `validar` mostra em "postagem", com `--escala=0.5`) e olhe: primeiro quadro com a maquete já fazendo a coisa, peça certa no quadro, Tito não tapando a maquete, inventor de frente na oficina, rótulo apontando para a peça certa, cartão legível, chamada visível. Corrija e renderize de novo se precisar.
 
 ## 7. Entregar

@@ -33,4 +33,5 @@ Se uma parte do calendário já existe pronta (rodada repetida), não refaça: c
 - Tudo que muda fica no ramo `dados` (veja `ferramentas/dados.ts`). O ramo `main` só tem código.
 - Cada sessão nova precisa rodar `bash voz/instalar.sh` (a máquina não guarda nada entre sessões; ~4 min).
 - Tempos medidos (25/10, parte 1): instalar voz 4 min, criar 2 vozes 5 min (só na primeira vez), 30 falas 14,5 min. Render em qualidade média (padrão desde 01/11): ~21 min para 76 s, arquivo de ~30 MB (antes, em alta, ~55 min e ~60 MB).
+- Desde 03/11 o render sai acelerado 1.1x (pedido do Iuri): mesmo roteiro, mesmas vozes (sem mudar o tom) e mesma produção, só ~10% mais curto (80 s de roteiro → ~73 s de vídeo). As metas de duração do roteiro não mudam. `--velocidade=1` volta ao normal.
 - Produção visual (transições, câmeras, letreiros, partículas): `.claude/skills/roteirizar-episodio/producao.md`.

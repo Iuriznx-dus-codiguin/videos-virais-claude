@@ -16,6 +16,8 @@ Separe cada correção do Iuri em uma destas classes:
 - **números do vídeo** que o Iuri mandar do YouTube Studio ou do Instagram ("visualizaram x deslizaram", % média assistida, o segundo em que a curva cai, envios): leia como correção do jeito de contar. Muita gente deslizando no começo aponta para o gancho e o primeiro quadro; queda no meio, para a corrente sem re-gancho; queda antes da chamada, para frase sobrando depois da virada. Vira regra em `_historias/regras.md` quando o mesmo ponto cair em duas partes.
 Se uma correção for ambígua, escolha a leitura mais provável, aplique e diga qual leitura usou.
 
+**Tempos do vídeo:** o vídeo entregue sai acelerado 1.1x. Quando o Iuri citar um segundo do vídeo ("no segundo 20"), multiplique por 1,1 para achar o tempo no roteiro, no `quadro` e no `enquadramento` (20 s do vídeo = 22 s do roteiro).
+
 ## 2. Aplicar no episódio
 1. Sessão nova: `cd motor && npm ci && npm run dados -- baixar`. Edite `public/series/<serie>/epNN.json`.
 2. `npm run validar -- <serie> <parte>`. Se mudou fala: `bash voz/instalar.sh` (se a sessão for nova) e `npm run vozes -- <serie> <parte>`; o áudio dos episódios recentes vem do ramo `dados`, então só as falas alteradas são geradas, e a pronúncia delas é conferida com o Whisper (se ele reclamar de fala errada, use `--conferir-tudo` para conferir também as antigas). Se o Iuri disse que uma fala saiu estranha, reescreva a frase em vez de só gerar de novo.
