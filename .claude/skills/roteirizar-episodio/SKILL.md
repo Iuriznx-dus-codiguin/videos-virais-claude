@@ -59,6 +59,7 @@ Agora cada frase vira uma imagem.
 ## 6. Render e conferência
 1. Antes do render, `npm run enquadramento -- <serie> <parte>` (segundos, sem renderizar): lista os trechos com cabeça cortada na borda, nuca ou topo da cabeça virado para a câmera em quem fala, rosto tampado e câmera dentro de alguém. Corrija até sobrar só o que for falso (cabeça escondida atrás de banco ou objeto). Depois confira um quadro de cada plano nos tempos reais: `npm run quadro -- <serie> <parte> <segundos...> --escala=0.4` (rápido) e olhe as imagens em `out/quadros/`: item na mão errada, braço na frente do rosto, personagem dentro de objeto, rótulo em cima do rosto. Confira também os quadros de produção (`producao.md`, "Conferir antes do render"). Corrija antes de gastar o render.
 2. `npm run render -- <serie> <parte>` em segundo plano (~20 a 25 min para 80 s em qualidade média; sai em `out/<serie>-epNN.mp4`, com 20 a 35 MB e o volume já normalizado em -14 LUFS). Não use `--qualidade=alta` (60 MB e render bem mais lento) a não ser que o Iuri peça.
+   O vídeo sai **acelerado 1.1x** (pedido do Iuri em 03/11): 80 s de roteiro viram ~73 s de vídeo, com a voz no mesmo tom. Não mude o roteiro por isso: as metas de duração (75 a 88 s no `validar`) continuam em tempo de roteiro, e o `quadro` e o `enquadramento` também. Não use `--velocidade=1` a não ser que o Iuri peça.
 3. `npm run quadro -- <serie> <parte> 1 3 15 35 <fim-1>`: gancho visível nos primeiros 3 s, legenda legível, chamada final com fundo claro. Se algo estiver errado, corrija e renderize de novo.
 
 ## 7. Entregar

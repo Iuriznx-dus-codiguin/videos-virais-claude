@@ -16,6 +16,8 @@ Separe cada correção em:
 - **roteiro do próximo vídeo** (o que foi mandado junto com a entrega): edite o `epNN.json` dele, rode `validar` e `npm run dados -- salvar como-funciona`, sem voz nem render; a rotina de amanhã parte dessa versão.
 Se for ambígua, escolha a leitura mais provável, aplique e diga qual usou.
 
+**Tempos do vídeo:** o vídeo entregue sai acelerado 1.1x. Quando o Iuri citar um segundo do vídeo ("aos 40 s"), multiplique por 1,1 para achar o tempo no roteiro, no `quadro` e no `enquadramento` (40 s do vídeo = 44 s do roteiro).
+
 ## 2. Aplicar no vídeo
 1. `cd motor && npm run dados -- baixar` (sessão nova) e edite `public/series/como-funciona/epNN.json`.
 2. `npm run validar -- como-funciona <n>`; se mudou fala, `bash voz/instalar.sh` (sessão nova) e `npm run vozes -- como-funciona <n>`.
