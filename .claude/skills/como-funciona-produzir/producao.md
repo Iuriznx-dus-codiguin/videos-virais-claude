@@ -34,6 +34,14 @@ Tudo aqui é campo do `epNN.json`. A lista completa com o que cada um faz está 
 
 O `contar` serve para medidas (°C, volts, litros); o ano vai escrito, sem contar (o contador põe ponto de milhar: "1.893").
 
+## Ritmo, primeiro quadro e capa (pesquisa de 03/11)
+O Shorts e o Reels decidem em menos de 1 s se mostram o vídeo para mais gente (quanta gente desliza logo no começo). Então:
+- **Primeiro quadro:** o plano 1 começa em `inicio` sem transição (nada de `preto`, `iris` ou `desfoque` no começo) e já em movimento (`arco` no detalhe), com a maquete fazendo a coisa estranha da abertura no quadro 0: o vento saindo, a água esquentando, o fecho correndo. Ele também é a miniatura do vídeo no feed.
+- **Algo novo na tela a cada 2 a 3 s:** peça aparecendo, falha, rótulo, cartão, corte ou começo de movimento. Nada parado mais de ~4 s.
+- **Re-gancho no meio:** o MAS ou degrau mais forte entre 35 e 45 s leva o efeito mais forte do vídeo (`dolly_zoom`, `letreiro` vermelho ou partícula de falha).
+- **Zona segura:** os botões do Shorts e do Reels ficam na faixa da direita (~150 px) e o título e a legenda da plataforma, nos ~400 px de baixo. A maquete e o Tito não ficam colados na borda direita, e letreiro, rótulo e cartão ficam fora dessas faixas (a legenda das falas já se ajusta sozinha). Letreiro alto demais some atrás do topo: deixe entre `altura` 0,15 e 0,6.
+- **Capa (`postagem.capa`):** a maquete no momento mais curioso (a falha, a peça que resolve) ou o close do Tito surpreso com uma palavra de impacto na legenda. Nunca um quadro de transição, da oficina escura ou da chamada. Confira com `npm run quadro -- como-funciona <n> <segundo> --escala=0.5`.
+
 ## Regras de uso
 - **Movimento em todo plano:** `arco` nos detalhes da maquete, `travelling` no médio do Tito, `zoom_rapido` nos MAS/SÓ QUE, `dolly_zoom` uma vez só. Nunca mais de dois planos seguidos com o mesmo movimento (o vídeo de 31/10 tinha quase tudo `aproximar`: não repita).
 - **Transições:** no "você constrói", `varrer` em pelo menos metade dos "Então, você..." (no máximo um a cada dois cortes seguidos); no laboratório, `varrer` no máximo uma vez (no passo novo do por dentro); `zoom` para entrar no miolo da maquete; `chicote` para voltar ao Tito; o resto, corte seco. Pelo menos 3 estilos diferentes por vídeo.

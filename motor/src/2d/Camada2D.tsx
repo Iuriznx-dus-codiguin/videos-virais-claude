@@ -29,6 +29,12 @@ const carregarFontes = () => {
 carregarFontes();
 
 const AMARELO = '#FFD60A';
+/**
+ * Zona segura do Shorts e do Reels: os botões (curtir, comentar, enviar) ocupam a faixa da
+ * direita e o título/legenda da plataforma, a de baixo. Texto do vídeo fica fora delas.
+ */
+const MARGEM_ESQ = 80;
+const MARGEM_DIR = 150;
 const VERMELHO = '#FF3B30';
 
 const contornoTexto = (px: number) => ({
@@ -107,9 +113,9 @@ const Legenda: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: num
 		<div
 			style={{
 				position: 'absolute',
-				top: baixa ? '75%' : '62%',
-				left: 60,
-				right: 60,
+				top: baixa ? '72%' : '62%',
+				left: MARGEM_ESQ,
+				right: MARGEM_DIR,
 				display: 'flex',
 				flexWrap: 'wrap',
 				justifyContent: 'center',
@@ -129,7 +135,7 @@ const Legenda: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: num
 						style={{
 							fontFamily: FONTE,
 							fontWeight: 900,
-							fontSize: fonteQueCabe(textoNaTela(p.texto), p.enfase ? 148 : 112, 940),
+							fontSize: fonteQueCabe(textoNaTela(p.texto), p.enfase ? 148 : 112, 1080 - MARGEM_ESQ - MARGEM_DIR - 20),
 							lineHeight: 1.05,
 							color: falando ? (p.enfase ? VERMELHO : corFala) : '#FFFFFF',
 							display: 'inline-block',
@@ -174,7 +180,7 @@ const Chamada: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: num
 							fontWeight: 900,
 							fontSize: 64,
 							color: '#fff',
-							padding: '0 70px',
+							padding: `0 ${MARGEM_DIR}px 0 ${MARGEM_ESQ}px`,
 							marginBottom: 34,
 							opacity: entra0,
 							transform: `translateY(${(1 - entra0) * 30}px)`,
