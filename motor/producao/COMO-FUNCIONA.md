@@ -14,7 +14,7 @@ A rotina produz: seg–qui 1 vídeo; sexta 3 (sexta 18h, sábado 11h e 18h); sá
 ## Rotina e skills
 1. **Produção (3h):** rotina "Produção Como Funciona", skill `como-funciona-produzir`. Junto com a entrega vai o roteiro do vídeo seguinte (só texto, sem voz nem render), para o Iuri revisar os dois de uma vez.
 2. **Correções:** o Iuri responde na sessão da rotina até as 16h; skill `como-funciona-corrigir` corrige o vídeo e grava a regra em `como-funciona/regras.md`. Correção no roteiro do próximo vídeo vai direto no `epNN.json` dele, e a rotina do dia seguinte parte dessa versão. Sem resposta, o original vale.
-3. **Publicação: manual.** Vídeo e texto para colar em `videos/como-funciona-epNN.*` no ramo `dados`.
+3. **Publicação: manual.** Vídeo e texto para colar em `videos/como-funciona-epNN.*` no ramo `dados`. O texto sai do campo `postagem` do episódio (`.claude/skills/como-funciona-produzir/postagem.md`: título começando por "Como funciona...", para a busca) e termina em "Na hora de postar": capa, vídeo relacionado, playlist e comentário para fixar.
 
 ## Formato
 Vídeos de ~1min20 (75 a 90 s com voz) em dois frameworks, escolhidos pela ideia do tema (Iuri, 2026-11-01) e marcados no campo `framework` da pauta:

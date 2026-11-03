@@ -27,6 +27,7 @@ Antes de qualquer JSON, escreva a parte como texto corrido: uma linha por fala, 
 - A parte N continua do `resumo_ultima` e resolve o cliffhanger anterior até ~20 s, mas se entende sozinha. Não repita o já mostrado e não resolva o mistério antes da hora (o `roteiro-geral.md` diz quando).
 - A primeira palavra sai no primeiro segundo: nada de silêncio antes do gancho (no máximo ~1 s de imagem). Se a abertura é uma ação vivida por dentro (ex.: turbulência), os personagens não falam nela; o gancho vem do narrador, em off, por cima da imagem.
 - ~1min20 (75 a 88 s com a voz): 180 a 200 palavras.
+- Siga "O que segura quem rola o feed" (`estrutura.md`, pesquisa de 03/11): gancho no primeiro segundo, pista da virada à vista nos primeiros ~10 s, re-gancho entre 35 e 45 s e nada depois da virada.
 - Passe o checklist de `estrutura.md` e reescreva até passar.
 - Chamada (campo `chamada`): pergunta curta que puxa comentário, de preferência escolha A ou B, e o destaque "PARTE N+1".
 - MAIÚSCULAS viram ênfase na legenda: no máximo uma palavra por fala.
@@ -36,7 +37,7 @@ Agora cada frase vira uma imagem.
 - Se `epNN.json` já existir (rascunho revisado pelo Iuri), use-o como base: valide, confira e só corrija o que estiver errado, sem reescrever as falas sem motivo. A produção não mexe no texto: se o rascunho ainda não tem os movimentos, transições e efeitos de `producao.md` (rascunhos de antes de 01/11 não têm), acrescente-os. Modelo: `public/series/voo-818/ep01.json`.
 - Cada batida tem a sua imagem: o gancho mostra a situação grande e clara logo no primeiro quadro (de cima ou de longe); o instinto errado mostra o personagem fazendo; cada elo da corrente mostra a ação acontecendo; a virada fecha em close de quem percebe.
 - Vocabulário: `npm run catalogo` (cenários, objetos com as opções de cada um, ações, sons) ou `npm run catalogo -- <cenario>` (marcas, pontos e câmera sugerida). **Use só nomes que existem.** Se faltar cenário ou objeto, escolha o mais próximo e avise o Iuri no resumo final (é trabalho de código, numa sessão normal).
-- Âncoras de tempo sempre ligadas às falas (`"f3:fim+0.4"`), nunca segundos fixos. Alterne planos, use sons e efeitos nos sustos; nada de plano parado por mais de ~5 s.
+- Âncoras de tempo sempre ligadas às falas (`"f3:fim+0.4"`), nunca segundos fixos. Alterne planos, use sons e efeitos nos sustos; algo muda na tela a cada 2 a 3 s e nenhum plano fica igual por mais de ~4 s.
 - Som por baixo de fala: volume até 0,5. Nos primeiros 4 s a primeira fala precisa ser entendida.
 - Chamada final: fundo com close claro do protagonista reagindo (`close`, `frente`), nunca um detalhe de objeto.
 - Em cenário fechado (cabine, sala_farol, adega) use `camera` fixa; o catálogo sugere posições que não atravessam parede nem objeto.
@@ -45,6 +46,7 @@ Agora cada frase vira uma imagem.
 - **Sobrevivência na tela:** mostre a ação acontecendo. `pegar`/`largar` com `item` (garrafa, galhos, isqueiro, radio, pacote; o item troca de mão 0,5 s depois do início do gesto), `arrumar` (agachado mexendo nas coisas), `acender` (com o isqueiro na mão) e a fogueira com `acende`, `mantimentos` com `inicial`/`enche`/`cheio`, `garrafa`, `mascaras` com `cai`. Ferido: acessórios `curativo` e `tala` (com `lado`) na bíblia e ação `mancar`. Sem sangue.
 - **Sons:** nada de assovio (tom que sobe ou desce). Para susto e tensão use `impacto`, `susto`, `tensao_sobe`, `queda`, `turbulencia`: já são graves, de ronco e pancada.
 - **Produção (pedido do Iuri em 01/11):** leia `producao.md` desta skill e aplique em toda parte: movimento de câmera com intenção em cada plano, transições (chicote, zoom, desfoque), letreiro de tempo ou prazo, partículas, cor de cena e, na virada, `zoom` + `dolly_zoom` + `barras`. Um vídeo só com cortes secos e `aproximar` não passa.
+- **Postagem:** preencha o campo `postagem` (título de busca, descrição, 3 ou 4 hashtags, comentário fixado e a âncora da capa) seguindo `postagem.md` desta skill.
 - Salve em `public/series/<serie>/epNN.json`.
 
 ## 4. Validar
@@ -60,12 +62,12 @@ Agora cada frase vira uma imagem.
 1. Antes do render, `npm run enquadramento -- <serie> <parte>` (segundos, sem renderizar): lista os trechos com cabeça cortada na borda, nuca ou topo da cabeça virado para a câmera em quem fala, rosto tampado e câmera dentro de alguém. Corrija até sobrar só o que for falso (cabeça escondida atrás de banco ou objeto). Depois confira um quadro de cada plano nos tempos reais: `npm run quadro -- <serie> <parte> <segundos...> --escala=0.4` (rápido) e olhe as imagens em `out/quadros/`: item na mão errada, braço na frente do rosto, personagem dentro de objeto, rótulo em cima do rosto. Confira também os quadros de produção (`producao.md`, "Conferir antes do render"). Corrija antes de gastar o render.
 2. `npm run render -- <serie> <parte>` em segundo plano (~20 a 25 min para 80 s em qualidade média; sai em `out/<serie>-epNN.mp4`, com 20 a 35 MB e o volume já normalizado em -14 LUFS). Não use `--qualidade=alta` (60 MB e render bem mais lento) a não ser que o Iuri peça.
    O vídeo sai **acelerado 1.1x** (pedido do Iuri em 03/11): 80 s de roteiro viram ~73 s de vídeo, com a voz no mesmo tom. Não mude o roteiro por isso: as metas de duração (75 a 88 s no `validar`) continuam em tempo de roteiro, e o `quadro` e o `enquadramento` também. Não use `--velocidade=1` a não ser que o Iuri peça.
-3. `npm run quadro -- <serie> <parte> 1 3 15 35 <fim-1>`: gancho visível nos primeiros 3 s, legenda legível, chamada final com fundo claro. Se algo estiver errado, corrija e renderize de novo.
+3. `npm run quadro -- <serie> <parte> 0.1 1 3 15 35 <fim-1>`: primeiro quadro já mostrando o perigo, gancho visível nos primeiros 3 s, legenda legível, chamada final com fundo claro. Gere também a capa (o segundo que o `validar` mostra em "postagem") com `--escala=0.5`. Se algo estiver errado, corrija e renderize de novo.
 
 ## 7. Entregar
 1. Atualize `estado.json`: `proxima_parte` +1 e `resumo_ultima` (3 a 5 linhas: o que aconteceu e como terminou). Fato novo vai para `biblia.json` (`fatos`, `ganchos_abertos`).
 2. `npm run dados -- entregar <serie> <parte> --dia=AAAA-MM-DD --hora=18:00` (11:00 ou 18:00 conforme o calendário). Guarda o vídeo, o texto para postar e a série no ramo `dados`.
-3. Para o Iuri, mande o próprio mp4 do render (qualidade média, 20 a 35 MB): não precisa mais de cópia leve. Se o render avisar que o tamanho saiu fora disso, diga no aviso final.
+3. Para o Iuri, mande o próprio mp4 do render (qualidade média, 20 a 35 MB) e a imagem da capa: não precisa mais de cópia leve. Se o render avisar que o tamanho saiu fora disso, diga no aviso final.
 
 ## 8. Roteiro da próxima parte (sempre)
 O Iuri revisa a produção de hoje e o roteiro da próxima juntos, para evitar erros antes de produzir.
@@ -75,6 +77,6 @@ O Iuri revisa a produção de hoje e o roteiro da próxima juntos, para evitar e
 
 ## 9. Avisar o Iuri
 Uma mensagem só, quando tudo estiver entregue:
-- produção de hoje: título de cada parte, resumo, o que conferiu, avisos (sem voz, cenário improvisado…), onde está o vídeo e o texto de cada plataforma (ramo `dados`, `videos/`);
+- produção de hoje: título de cada parte, resumo, o que conferiu, avisos (sem voz, cenário improvisado…), onde está o vídeo e o texto de cada plataforma (ramo `dados`, `videos/`), e o título da postagem com a capa;
 - **roteiro da próxima parte**: cole a saída de `npm run roteiro -- <serie> <N>` (cenas, quem fala o quê e a chamada final);
 - que ele pode responder até as 16h com correções do vídeo de hoje e do roteiro da próxima; sem resposta, o original vale.

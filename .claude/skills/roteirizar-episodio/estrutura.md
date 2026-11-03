@@ -56,6 +56,16 @@ O alerta (3) costuma ser pago logo no instinto errado (4): o "erro bobo" é just
 - **Um passo do mistério por parte.** Não empilhe pistas: uma pista clara vale mais que três confusas.
 - **A virada abre a próxima parte.** Quando o grupo tem uma decisão a tomar, a chamada vira escolha A ou B.
 
+## O que segura quem rola o feed (pesquisa de 03/11)
+
+Pedido do Iuri em 03/11: os vídeos não passavam de mil visualizações. O Shorts mostra cada vídeo primeiro para poucas pessoas e só empurra para mais gente se quase ninguém deslizar no começo e muita gente assistir até o fim (no YouTube Studio: "Visualizaram x deslizaram" e "% média assistida"). No Instagram, o que mais leva o vídeo para quem não segue é a pessoa mandar para alguém por mensagem. Desde 31/03/2025, cada vez que o Short recomeça conta uma visualização.
+
+- **O primeiro segundo decide.** Quem desliza decide antes de 1 s. O gancho tem até ~15 palavras (como o da fazenda), a primeira sai no quadro 0 e o primeiro quadro já mostra a situação extrema, grande e clara. **Teste do mudo:** só com a imagem e a legenda dos 2 primeiros segundos, sem som, dá para entender o perigo? Muita gente vê o Reels sem som.
+- **Pista plantada.** Nos primeiros ~10 s, deixe à vista um detalhe que só a virada explica (a bota na beira da areia, a luz que pisca no fundo, o nome riscado na lista). A fala não aponta a pista: a câmera mostra, sem destacar. Quem chega na virada volta para conferir, e cada volta conta.
+- **Re-gancho no meio (35 a 45 s).** É onde a retenção costuma cair. Ponha ali o elo mais surpreendente da corrente ou uma frase que muda a ameaça ("E não era só a maré."), nunca uma explicação.
+- **Acaba na virada.** Depois da última frase só vem a chamada. Nada de resumo, "e agora?", "fim" ou despedida: o que soa como fim faz deslizar antes de o vídeo recomeçar.
+- **Dilema que dá vontade de mandar para alguém.** A escolha da chamada divide opiniões de verdade: as duas saídas têm um risco claro, e ninguém acerta "de cara". É o tipo de pergunta que a pessoa manda para um amigo com "e você?".
+
 ## Outros gêneros
 
 O esqueleto serve para qualquer história: troque "sobreviver" pelo que o personagem quer.
@@ -78,6 +88,10 @@ O esqueleto serve para qualquer história: troque "sobreviver" pelo que o person
 8. A última frase tem até 7 palavras e usa contra eles algo que parecia seguro?
 9. A chamada dá para responder com A ou B?
 10. O texto tem 180 a 200 palavras?
+11. O gancho tem até ~15 palavras e, sem som, o primeiro quadro já mostra o perigo?
+12. A pista da virada aparece na tela nos primeiros ~10 s, sem a fala apontar?
+13. Entre 35 e 45 s tem um elo que surpreende (re-gancho)?
+14. Depois da virada não sobra nenhuma frase?
 
 ## Exemplo: Voo 818, parte 3 ("A jangada")
 

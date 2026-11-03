@@ -20,7 +20,7 @@ Fluxo **separado** do de aventura: só mexa em `motor/public/series/como-funcion
 - **Framework:** o campo `framework` do item: `laboratorio` (invenção com inventor) ou `voce_constroi` (desenvolvido ao longo de anos). Sem o campo, decida pela pergunta de `estilos.md` ("dá para contar o momento em que alguém inventou isso?") e grave na pauta.
 - **Volta ao laboratório:** confira com WebSearch inventor, ano, lugar, o problema que ele queria resolver, o primeiro protótipo e o que deu errado (se a autoria é disputada, "um dos primeiros" ou "a história mais contada"). Monte em tópicos antes de escrever:
   1. a **abertura** no `estilo` do item (mito, E SE, dúvida comum ou fato impossível, até 3 s) e a frase de ponte para o laboratório;
-  2. o **laboratório** (10 a 20 s): inventor, ano, o problema e o MAS do primeiro protótipo, se houver;
+  2. o **laboratório** (10 a 15 s): inventor, ano, o problema e o MAS do primeiro protótipo, se houver;
   3. **por dentro** (35 a 45 s): as peças na ordem em que fazem sentido, com pelo menos um MAS ("funciona assim, MAS daria errado, por isso existe esta peça"). Ache o MAS antes de escrever: qual peça existe para evitar um desastre?
   4. o **conceito** com nome (cartão) e a **curiosidade** final.
 - **Você constrói:** o espectador constrói a coisa do zero. Monte a cadeia em tópicos antes de qualquer fala:
@@ -31,8 +31,15 @@ Fluxo **separado** do de aventura: só mexa em `motor/public/series/como-funcion
   Se um degrau não tem peça para mostrar na maquete, troque ou corte. Confira com WebSearch o jeito simples, o motivo de cada peça e o fato da virada.
 - Na dúvida, deixe o fato de fora; nunca invente número.
 - **Linguagem (os dois):** palavras de conversa, frases curtas, nome técnico só com a explicação na mesma frase, MAS/SÓ QUE em MAIÚSCULAS. No "você constrói", segunda pessoa e nada de inventor ou data (fato histórico só se virar problema da cadeia).
+- **Retenção (pesquisa de 03/11, pedido do Iuri: os vídeos não passavam de mil visualizações).** O Shorts mostra o vídeo primeiro para poucas pessoas e só empurra se quase ninguém deslizar no começo e muita gente for até o fim; no Instagram, o que mais leva para quem não segue é a pessoa mandar o vídeo para alguém. Por isso, nos dois frameworks:
+  - **primeiro segundo:** a primeira fala tem até ~15 palavras, sai no quadro 0, e a maquete já está fazendo a coisa estranha no primeiro quadro. Teste do mudo: sem som, só com a imagem e a legenda dos 2 primeiros segundos, dá para entender a pergunta?
+  - **pergunta aberta até o fim:** nos primeiros ~6 s fica clara a pergunta que o vídeo responde (laboratório: a dúvida ou o mito da abertura; você constrói: "dá para fazer isso funcionar?"), e a resposta completa só chega no fim.
+  - **laboratório curto:** inventor, ano e primeiro protótipo em até ~15 s; aula de história longa é onde as pessoas deslizam. Varie a frase de ponte para a oficina (o "Para descobrir, vamos voltar para onde tudo começou" saiu no #7 e no #8): conte direto o problema do inventor ("Em 1893, um inventor queria fechar uma bota de uma vez só.").
+  - **re-gancho no meio (35 a 45 s):** o MAS mais forte (ou o degrau mais surpreendente) cai nessa faixa, onde a retenção costuma cair.
+  - **fim que puxa o recomeço:** a última fala se liga à primeira, para quem assiste de novo (cada recomeço conta visualização no Shorts). Laboratório: a curiosidade final responde ou vira do avesso a abertura. Você constrói: o "Parabéns!" já está ligado ao "Se você..." do começo. Nada depois disso (sem "é isso", "gostou?" ou despedida).
+  - **fato para mandar para alguém:** a curiosidade final (ou a virada do você constrói) é o fato que a pessoa conta para outra no mesmo dia.
 - **Duração: ~1min20 com a voz real (75 a 90 s; nunca menos de 1 min).** A voz do Tito fala ~15–20% mais rápido que a estimativa do `validar` sem voz: mire em 90 a 105 s estimados (o validar avisa fora disso) e confira de novo depois do passo 5. O Tito é a única voz.
-- **Título:** laboratório, a dúvida ou o fato impossível ("Por que o fio da lâmpada não pega fogo?"); você constrói, o desafio ("Construa uma geladeira do zero").
+- **Título:** laboratório, a dúvida ou o fato impossível ("Por que o fio da lâmpada não pega fogo?"); você constrói, o desafio ("Construa uma geladeira do zero"). O título de busca da postagem é outro campo: veja `postagem.md`.
 - **Chamada:** `pergunta` sobre o próximo tema da pauta no jeito do framework DELE (laboratório: a dúvida ou o mito dele, "E o ventilador? Ele esfria o ar mesmo?"; você constrói: o desafio, "E agora, topa construir uma fechadura?"), `texto: "Comenta"`, `destaque` = campo `curto` do próximo item.
 
 ## 3. Escrever o episódio (`public/series/como-funciona/epNN.json`)
@@ -48,8 +55,9 @@ Modelos (vêm com o `dados baixar`): laboratório, `ep07.json` (zíper) e `ep02.
 - **Tubo que aparece:** dê a ele `pos` no meio do tubo e o `caminho` relativo a essa `pos`; sem isso ele cresce a partir da base da maquete e a câmera que mira nele pula. Peça que some não volta com `aparecer`: use uma cópia oculta.
 - **Animações** (`animacoes` da cena): `girar`, `girar_para`, `mover`, `aparecer`, `crescer`, `sumir`, `aquecer`, `esfriar`, `pulsar`, `transparente`, `tremer`, `explodir`/`montar` (peca = id da maquete), `fluxo` (agua, eletricidade, calor, ar, gas, luz: num `tubo` ou com `caminho`).
 - **Rótulos:** 1–2 palavras, no máximo 2 ao mesmo tempo, presos à peça. **Cartões:** laboratório, o ano com o inventor, o conceito e um número curioso; você constrói, só um conceito ou um número de susto, no máximo 3. Palavra com mais de ~8 letras no texto grande vaza da caixa: use hífen escondido (U+00AD).
-- **Câmera no estúdio:** nos detalhes da maquete use `lado` `frente` ou `tres_quartos_esquerda` (do lado direito o Tito tapa a lente) e `tamanho` = largura (m) do que precisa caber; peça atrás da maquete pede `camera` e `alvo` explícitos (veja o compressor no ep03). No médio do Tito use `lado` `tres_quartos_direita` com `olhar: camera` (com `frente`, ou com ele olhando a maquete, a maquete entra na frente da lente ou o capacete tapa o rosto). Para o Tito e a maquete juntos no fim, câmera explícita ~5,8 m à frente e `virar` o Tito para ela (veja o fim do ep03 e do ep07). Alterne detalhe da peça, close/médio do Tito e geral; nada parado mais de ~4 s. Plano que mira uma peça oculta deve começar quando ela aparece.
+- **Câmera no estúdio:** nos detalhes da maquete use `lado` `frente` ou `tres_quartos_esquerda` (do lado direito o Tito tapa a lente) e `tamanho` = largura (m) do que precisa caber; peça atrás da maquete pede `camera` e `alvo` explícitos (veja o compressor no ep03). No médio do Tito use `lado` `tres_quartos_direita` com `olhar: camera` (com `frente`, ou com ele olhando a maquete, a maquete entra na frente da lente ou o capacete tapa o rosto). Para o Tito e a maquete juntos no fim, câmera explícita ~5,8 m à frente e `virar` o Tito para ela (veja o fim do ep03 e do ep07). Alterne detalhe da peça, close/médio do Tito e geral: algo novo na tela a cada 2 a 3 s e nada parado mais de ~4 s. Plano que mira uma peça oculta deve começar quando ela aparece.
 - Âncoras sempre nas falas (`"f5:compressor"`, `"f8:fim+0.3"`).
+- **Postagem:** preencha o campo `postagem` (título de busca começando por "Como funciona...", descrição, 3 a 5 hashtags, comentário fixado e a âncora da capa) seguindo `postagem.md` desta skill.
 
 ## 4. Validar e revisar como espectador
 1. `npm run validar -- como-funciona <n>` sem avisos e `npm run enquadramento -- como-funciona <n>`.
@@ -60,6 +68,8 @@ Modelos (vêm com o `dados baixar`): laboratório, `ep07.json` (zíper) e `ep02.
    - uma criança de 10 anos entende? Toda palavra difícil vem explicada na mesma frase? A física está certa e os fatos dá para conferir?
    - cada fala tem algo novo na tela (peça, falha, plano, rótulo, cartão) a cada 3–4 s?
    - a chamada cita o próximo tema da pauta, no jeito do framework dele?
+   - a pergunta do vídeo fica clara nos primeiros ~6 s e só fecha no fim? O inventor cabe em ~15 s? Tem um MAS ou degrau forte entre 35 e 45 s? A última fala puxa o recomeço e não sobra nada depois dela?
+   - a `postagem` está completa e o título começa pelo que as pessoas buscam ("Como funciona o...")?
 3. Melhore sempre um ponto em relação ao vídeo anterior (`resumo_ultima` e `regras.md`): o resultado final deve subir de nível a cada dia.
 
 ## 5. Voz
@@ -70,12 +80,12 @@ Modelos (vêm com o `dados baixar`): laboratório, `ep07.json` (zíper) e `ep02.
 1. Antes do render, com os tempos reais da voz: `npm run enquadramento -- como-funciona <n>` de novo (os planos mudam de tempo quando a voz entra) e os quadros de produção (`producao.md`, "Conferir antes do render"). Corrija o que aparecer.
 2. `npm run render -- como-funciona <n>` em segundo plano (~25 min para 1min20 em qualidade média; sai em `out/como-funciona-epNN.mp4` com 20 a 35 MB). Não use `--qualidade=alta` a não ser que o Iuri peça. Se o render avisar que o tamanho saiu da faixa, diga no aviso final.
    O vídeo sai **acelerado 1.1x** (pedido do Iuri em 03/11): 1min20 de roteiro vira ~1min13 de vídeo, com a voz do Tito no mesmo tom. Não mude o roteiro por isso: a meta de 75 a 90 s com voz continua em tempo de roteiro, e o `quadro` e o `enquadramento` também. Não use `--velocidade=1` a não ser que o Iuri peça.
-3. `npm run quadro -- como-funciona <n> 2 20 40 60 75` e olhe: peça certa no quadro, Tito não tapando a maquete, inventor de frente na oficina, rótulo apontando para a peça certa, cartão legível, chamada visível. Corrija e renderize de novo se precisar.
+3. `npm run quadro -- como-funciona <n> 0.1 2 20 40 60 75` e a capa (o segundo que o `validar` mostra em "postagem", com `--escala=0.5`) e olhe: primeiro quadro com a maquete já fazendo a coisa, peça certa no quadro, Tito não tapando a maquete, inventor de frente na oficina, rótulo apontando para a peça certa, cartão legível, chamada visível. Corrija e renderize de novo se precisar.
 
 ## 7. Entregar
 1. `estado.json`: `proxima_parte` +1 e `resumo_ultima` (tema, framework e o caminho: laboratório, "abertura → inventor e ano → MAS → conceito → curiosidade"; você constrói, "Se você... → peça 1 → peça 2... → Parabéns"). Em `pauta.json`, marque o item: `"status": "produzido"`, `"dia": "AAAA-MM-DD"`. Fato novo que valha para outros vídeos vai em `biblia.json` > `fatos`.
 2. `npm run dados -- entregar como-funciona <n> --dia=AAAA-MM-DD --hora=18:00` (11:00 ou 18:00 conforme o calendário).
-3. Avise o Iuri: tema, título, framework, o que conferiu, avisos (sem voz, peça que faltou no motor…), onde está o vídeo e o texto (ramo `dados`, `videos/como-funciona-epNN.*`) e que ele pode responder com correções até as 16h (sem resposta, o original vale).
+3. Avise o Iuri (mande o mp4 e a imagem da capa): tema, título, título da postagem, framework, o que conferiu, avisos (sem voz, peça que faltou no motor…), onde está o vídeo e o texto (ramo `dados`, `videos/como-funciona-epNN.*`) e que ele pode responder com correções até as 16h (sem resposta, o original vale).
 4. Se o tema pediu algo que o motor não sabe fazer (forma de peça, cenário, som), anote em `public/series/como-funciona/pendencias-motor.md` com o exemplo exato; é trabalho de código numa sessão normal.
 
 ## 8. Roteiro do próximo vídeo (sempre, junto com a entrega)

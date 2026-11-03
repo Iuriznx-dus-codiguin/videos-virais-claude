@@ -7,6 +7,8 @@ import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {after, before, describe, it} from 'node:test';
 import {promisify} from 'node:util';
+import {textosDoEpisodio} from '../publicar/texto.ts';
+import {avisosDeAlcance} from '../validar.ts';
 import {resolverEpisodio} from '../../src/roteiro/resolver.ts';
 import type {Alinhamentos, Biblia, Episodio} from '../../src/roteiro/tipos.ts';
 import {subir, type Opcoes} from './servidor-falso.ts';
@@ -232,6 +234,49 @@ describe('vozes', () => {
 	});
 });
 
+describe('texto de postagem', () => {
+	const ler = <T>(arquivo: string) => JSON.parse(readFileSync(join(MOTOR, 'public', 'series', 'ilha-perdida', arquivo), 'utf8')) as T;
+
+	it('série: título de busca com a parte no fim, hashtags, comentário fixado e vídeo relacionado', () => {
+		const biblia = ler<Biblia>('biblia.json');
+		const ep = {...ler<Episodio>('ep01.json'), parte: 3};
+		ep.postagem = {titulo: 'Ele achou pegadas gigantes na areia', descricao: 'Dois amigos presos numa ilha deserta acham pegadas maiores que um carro.', hashtags: ['ilhadeserta', 'misterio', 'animacao'], comentario: 'Eu voltava pro barco. E você?', capa: 'f1:fim'};
+		const t = textosDoEpisodio(biblia, ep);
+		assert.equal(t.tituloYoutube, 'Ele achou pegadas gigantes na areia | ILHA PERDIDA parte 3');
+		assert.match(t.descricaoYoutube, /^Dois amigos presos/);
+		assert.match(t.descricaoYoutube, /Comenta "PARTE 2"/);
+		assert.match(t.descricaoYoutube, /#ilhaperdida #ilhadeserta #misterio #animacao #shorts$/);
+		assert.ok(!t.legendaInstagram.includes('Comenta "') && !t.legendaInstagram.includes('#shorts'), t.legendaInstagram);
+		assert.equal(t.relacionado, 'ILHA PERDIDA · Parte 2');
+		assert.equal(t.comentarioFixado, 'Eu voltava pro barco. E você?');
+		const linha = resolverEpisodio(ep, biblia);
+		assert.ok(linha.capa !== undefined && linha.capa > 0 && linha.capa < linha.chamada.ini);
+		assert.deepEqual(avisosDeAlcance(ep, linha), []);
+	});
+
+	it('avulso: título como escrito e pedido sem o hífen escondido', () => {
+		const biblia = {...ler<Biblia>('biblia.json'), titulo: 'COMO FUNCIONA', formato: 'avulso' as const};
+		const ep = {...ler<Episodio>('ep01.json'), parte: 8, chamada: {pergunta: 'E a torradeira?', texto: 'Comenta', destaque: 'TORRA\u00ADDEIRA'}};
+		ep.postagem = {titulo: 'Como funciona o ventilador? Ele não esfria o ar', descricao: 'Como funciona o ventilador por dentro.', hashtags: ['comofunciona', 'ventilador', 'curiosidades'], comentario: 'Você também achava?', capa: 'f1'};
+		const t = textosDoEpisodio(biblia, ep);
+		assert.equal(t.tituloYoutube, 'Como funciona o ventilador? Ele não esfria o ar');
+		assert.match(t.descricaoYoutube, /Comenta "TORRADEIRA"/);
+		assert.ok(!t.descricaoYoutube.includes('\u00AD'));
+		assert.match(t.legendaInstagram, /E a torradeira\? Segue o perfil/);
+		assert.equal(t.relacionado, 'COMO FUNCIONA #7');
+	});
+
+	it('o validar cobra a postagem e o gancho no primeiro segundo', () => {
+		const biblia = ler<Biblia>('biblia.json');
+		const ep = ler<Episodio>('ep01.json');
+		const avisos = avisosDeAlcance(ep, resolverEpisodio(ep, biblia));
+		assert.ok(avisos.some((a) => a.includes('falta "postagem"')), avisos.join('\n'));
+		ep.postagem = {titulo: 'x'.repeat(70), descricao: 'd', hashtags: ['a'], comentario: 'c', capa: 'f1'};
+		const outros = avisosDeAlcance(ep, resolverEpisodio(ep, biblia));
+		assert.ok(outros.some((a) => a.includes('até 60')) && outros.some((a) => a.includes('de 3 a 5')), outros.join('\n'));
+	});
+});
+
 describe('publicação', () => {
 	it('envia ao YouTube agendado e publica o Reel; a segunda rodada não duplica', async () => {
 		const falso = await subir({processamentosAntes: 2});
@@ -252,8 +297,10 @@ describe('publicação', () => {
 
 			const ig = falso.registro.instagramMedia[0];
 			assert.match(ig.video_url, /\/blob\/files\/ilha-perdida-ep01\.mp4$/);
-			assert.match(ig.caption, /#reels/);
 			assert.ok(!ig.caption.includes('#shorts'));
+			// Instagram: sem "comente PALAVRA" (pode tirar o Reel das recomendações); pergunta e pedido para seguir
+			assert.ok(!ig.caption.includes('Comenta "'), ig.caption);
+			assert.match(ig.caption, /Segue o perfil pra não perder a parte 2/);
 			assert.equal(falso.registro.apagados.length, 1, 'o link público é apagado depois de publicar');
 
 			const estado = JSON.parse(readFileSync(join(raiz, 'public', 'series', 'ilha-perdida', 'estado.json'), 'utf8')) as {publicados: Record<string, {youtube?: {id: string}; instagram?: {id: string}}>};
@@ -343,7 +390,8 @@ describe('entrega dos vídeos', () => {
 		assert.equal(readFileSync(join(conferir, 'videos', 'ilha-perdida-ep01.mp4')).length, 4096);
 		const texto = readFileSync(join(conferir, 'videos', 'ilha-perdida-ep01.md'), 'utf8');
 		assert.match(texto, /Postar em 26\/10\/2026 às 18:00 \(Brasília\)/);
-		assert.match(texto, /YouTube Shorts[\s\S]*Instagram Reels/);
+		assert.match(texto, /YouTube Shorts[\s\S]*Instagram Reels[\s\S]*Na hora de postar/);
+		assert.match(texto, /playlist: ILHA PERDIDA \(em ordem\)/);
 		assert.ok(existsSync(join(conferir, 'series', 'ilha-perdida', 'vozes', 'leo.pt')), 'a voz do personagem acompanha a série');
 		const cacheNoRamo = join(conferir, 'series', 'ilha-perdida', 'vozes', 'cache');
 		assert.ok(existsSync(join(cacheNoRamo, 'usada.wav')) && existsSync(join(cacheNoRamo, 'usada.json')), 'o áudio do episódio recente sobe (correção regenera só o que mudou)');

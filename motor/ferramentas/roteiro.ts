@@ -32,7 +32,7 @@ const producaoDaCena = (c: CenaTempo, nome: (id: string) => string) => {
 };
 
 export const roteiroEmTexto = (serie: string, parte: number): string => {
-	const {linha} = carregarEpisodio(serie, parte);
+	const {linha, ep} = carregarEpisodio(serie, parte);
 	const nome = (id: string) => linha.personagens[id]?.nome ?? id;
 	const linhas = [`## ${linha.tituloSerie} · Parte ${linha.parte}: ${linha.titulo}`, `Duração estimada: ${seg(linha.duracao)}`, ''];
 	linha.cenas.forEach((c, i) => {
@@ -46,7 +46,8 @@ export const roteiroEmTexto = (serie: string, parte: number): string => {
 		linhas.push('');
 	});
 	const ch = linha.chamada;
-	linhas.push(`**Chamada final:** ${[ch.pergunta, `${ch.texto ?? 'Comenta'} "${ch.destaque}"`].filter(Boolean).join(' ')}`);
+	linhas.push(`**Chamada final:** ${[ch.pergunta, `${ch.texto ?? 'Comenta'} "${ch.destaque}"`].filter(Boolean).join(' ')}`.replace(/\u00AD/g, ''));
+	if (ep.postagem?.titulo) linhas.push(`**Título da postagem:** ${ep.postagem.titulo}`);
 	return linhas.join('\n');
 };
 

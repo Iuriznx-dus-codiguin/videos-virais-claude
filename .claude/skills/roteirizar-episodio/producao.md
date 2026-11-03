@@ -17,6 +17,14 @@ Tudo aqui é campo do `epNN.json`. A lista completa com o que cada um faz está 
 | Virada | `close` de quem percebe com `dolly_zoom` (intensidade 0,7 a 0,9) | entra com `transicao: "zoom"`; `barras` da virada até o fim; `destacar` no detalhe que revela; som `impacto` ou `tensao_sobe` |
 | Chamada | close claro do protagonista | sem efeito por cima |
 
+## Ritmo, primeiro quadro e capa (pesquisa de 03/11)
+O Shorts e o Reels decidem em menos de 1 s se mostram o vídeo para mais gente (quanta gente desliza logo no começo). Então:
+- **Primeiro quadro:** o plano 1 começa em `inicio` sem transição (nada de `preto`, `iris` ou `desfoque` no começo) e já em movimento (`arco` ou `descer`), mostrando o lugar e quem está em perigo. Ele também é a miniatura do vídeo no feed.
+- **Algo muda na tela a cada 2 a 3 s:** corte, começo de um movimento, efeito ou ação de personagem. Nenhum plano igual por mais de ~4 s.
+- **Pista plantada** (`estrutura.md`): num plano aberto ou médio dos primeiros ~10 s, sem `circular` nem `destacar`; na virada, o mesmo detalhe volta em close com `circular`.
+- **Zona segura:** os botões do Shorts e do Reels ficam na faixa da direita (~150 px) e o título e a legenda da plataforma, nos ~400 px de baixo. Rosto, pista, letreiro e rótulo ficam fora delas (a legenda das falas já se ajusta sozinha). Letreiro alto demais também some atrás do topo: deixe entre `altura` 0,15 e 0,6.
+- **Capa (`postagem.capa`):** um close do personagem com expressão forte ou o quadro do gancho com o perigo bem claro, com uma palavra de impacto na legenda. Nunca o quadro da virada (estraga a surpresa), um quadro de transição ou um quadro escuro. Confira com `npm run quadro -- <serie> <parte> <segundo> --escala=0.5`.
+
 ## Regras de uso
 - **Movimento em todo plano**, escolhido pelo que a fala pede: `travelling` em quem anda ou conversa, `arco` nas aberturas e chegadas, `zoom_rapido` em susto e ênfase, `dolly_zoom` uma vez só (a virada), `aproximar` em suspense lento, `fixo` só em plano curto de reação. Nunca mais de dois planos seguidos com o mesmo movimento.
 - **Transições:** pelo menos 3 estilos diferentes por parte, mas no máximo 1 a cada 3 cortes (o resto é corte seco, que dá ritmo). Nunca dois `chicote` seguidos. Em diálogo de dois personagens, corte seco entre eles; transição só quando muda o lugar, o tempo ou o assunto.

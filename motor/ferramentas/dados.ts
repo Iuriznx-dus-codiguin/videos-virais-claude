@@ -23,8 +23,9 @@ import {tmpdir} from 'node:os';
 import {basename, join} from 'node:path';
 import {PASTA_SERIES, RAIZ} from './lib/caminhos.ts';
 import {textosDoEpisodio} from './publicar/texto.ts';
-import {nomeEpisodio} from './validar.ts';
-import type {Biblia, Episodio} from '../src/roteiro/tipos.ts';
+import {carregarEpisodio, nomeEpisodio} from './validar.ts';
+import {textoNaTela} from '../src/roteiro/legendas.ts';
+import type {Biblia, Episodio, LinhaDoTempo} from '../src/roteiro/tipos.ts';
 
 const RAMO = 'dados';
 /** Brasília não tem horário de verão desde 2019: 18h lá são 21h UTC. */
@@ -248,6 +249,7 @@ export const entregar = (serie: string, parte: number, dia: string, hora: string
 	const biblia = JSON.parse(readFileSync(join(PASTA_SERIES, serie, 'biblia.json'), 'utf8')) as Biblia;
 	const ep = JSON.parse(readFileSync(join(PASTA_SERIES, serie, `${nomeEpisodio(parte)}.json`), 'utf8')) as Episodio;
 	const t = textosDoEpisodio(biblia, ep);
+	const capa = ep.postagem?.capa !== undefined ? capaDoEpisodio(serie, parte) : undefined;
 	const pasta = abrir();
 	try {
 		conferirBase(pasta, [serie], juntei);
@@ -277,6 +279,12 @@ export const entregar = (serie: string, parte: number, dia: string, hora: string
 				'## Instagram Reels',
 				t.legendaInstagram,
 				'',
+				'## Na hora de postar',
+				`- Capa (nas duas): ${capa ?? 'escolha um close claro do personagem ou o quadro do gancho, nunca um quadro escuro ou de transição'}.`,
+				...(t.relacionado ? [`- YouTube, "Vídeo relacionado": ${t.relacionado}.`] : []),
+				`- YouTube, playlist: ${t.playlist}.`,
+				...(t.comentarioFixado ? [`- Comentário para postar e fixar nas duas, logo depois de publicar: ${t.comentarioFixado}`] : []),
+				'',
 			].join('\n'),
 		);
 		substituir(join(PASTA_SERIES, serie), join(pasta, 'series', serie));
@@ -285,6 +293,26 @@ export const entregar = (serie: string, parte: number, dia: string, hora: string
 		console.log(`entregue: ${nome} (postar ${dia} ${hora}); vídeo e texto no ramo ${RAMO}, pasta videos/`);
 	} finally {
 		rmSync(pasta, {recursive: true, force: true});
+	}
+};
+
+/** Onde fica a capa no vídeo: o segundo e a palavra da legenda naquele momento (vale mesmo se o vídeo for acelerado depois). */
+const ondeEstaCapa = (linha: LinhaDoTempo) => {
+	if (linha.capa === undefined) return undefined;
+	const t = linha.capa;
+	const palavras = linha.falas.flatMap((f) => f.palavras);
+	const naHora = palavras.filter((p) => p.ini <= t + 0.05).at(-1);
+	const segundos = `${t.toFixed(1).replace('.', ',')} s do render`;
+	return naHora ? `quadro de ${segundos}, quando a legenda mostra "${textoNaTela(naHora.texto)}"` : `quadro de ${segundos}`;
+};
+
+/** A capa é só um lembrete no texto de postagem: se o episódio não resolver, a entrega segue sem ela. */
+const capaDoEpisodio = (serie: string, parte: number) => {
+	try {
+		return ondeEstaCapa(carregarEpisodio(serie, parte).linha);
+	} catch (e) {
+		console.warn(`aviso: não deu para achar o quadro da capa (${e instanceof Error ? e.message : e})`);
+		return undefined;
 	}
 };
 
