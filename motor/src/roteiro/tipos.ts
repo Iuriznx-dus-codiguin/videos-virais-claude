@@ -251,6 +251,23 @@ export interface Chamada {
 	destaque: string;
 }
 
+/**
+ * Texto de postagem escrito pela skill de cada fluxo (título de busca, descrição, hashtags,
+ * comentário fixado e capa). O `entregar` monta com ele o texto de cada plataforma.
+ */
+export interface Postagem {
+	/** Título do YouTube, sem hashtag (nas séries o entregar acrescenta "| SÉRIE parte N"). */
+	titulo?: string;
+	/** 1 ou 2 frases com as palavras que alguém buscaria; abre a descrição e a legenda. */
+	descricao?: string;
+	/** 3 a 5 hashtags, sem "#", da mais específica para a mais ampla. */
+	hashtags?: string[];
+	/** Comentário que o Iuri posta e fixa logo depois de publicar. */
+	comentario?: string;
+	/** Quadro da capa: âncora como as outras ("f5:fim+0.2") ou segundos. */
+	capa?: Ancora;
+}
+
 export interface Episodio {
 	serie: string;
 	parte: number;
@@ -259,6 +276,7 @@ export interface Episodio {
 	falas: ItemFala[];
 	cenas: Cena[];
 	chamada: Chamada;
+	postagem?: Postagem;
 	/** Maquetes usadas pelos objetos "maquete" (campo modelo): lista de peças. */
 	modelos?: Record<string, Peca[]>;
 	/** Personagens só deste episódio (o inventor do dia), somados aos da bíblia. */
@@ -433,6 +451,8 @@ export interface LinhaDoTempo {
 	falas: FalaTempo[];
 	cenas: CenaTempo[];
 	chamada: Chamada & {ini: number};
+	/** Segundo da capa (`postagem.capa` resolvida). */
+	capa?: number;
 	personagens: Record<string, PersonagemBiblia>;
 	musica?: string;
 	avisos: string[];

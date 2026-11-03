@@ -440,6 +440,12 @@ export const resolverEpisodio = (ep: Episodio, bibliaSerie: Biblia, alinhamentos
 		if (duracao > 92) avisos.push(`duração total ${duracao.toFixed(1)}s: longa demais (alvo 75 a 88s)`);
 	}
 
+	// capa da postagem: âncora nas falas, como o resto
+	ctx.onde = 'postagem.capa';
+	ctx.cena = undefined;
+	const capa = resolverAncora(ep.postagem?.capa, ctx);
+	if (capa !== undefined && (capa < 0 || capa >= iniChamada)) avisos.push(`postagem.capa: ${capa.toFixed(1)}s fica fora do vídeo (antes da chamada, que começa em ${iniChamada.toFixed(1)}s)`);
+
 	return {
 		serie: ep.serie,
 		tituloSerie: biblia.titulo,
@@ -449,6 +455,7 @@ export const resolverEpisodio = (ep: Episodio, bibliaSerie: Biblia, alinhamentos
 		falas,
 		cenas,
 		chamada: {...ep.chamada, ini: iniChamada},
+		capa,
 		personagens: biblia.personagens,
 		musica: ep.musica,
 		avisos,

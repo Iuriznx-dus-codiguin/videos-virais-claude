@@ -12,6 +12,8 @@ Separe cada correção do Iuri em uma destas classes:
 - **só este episódio** (ex.: "troca essa fala", "a câmera cortou o Davi no segundo 20");
 - **regra da série** (ex.: "a Marina nunca grita", "mais pausas antes do susto");
 - **regra das histórias** (valem para todas as séries de histórias: ritmo, legenda, jeito de abrir o vídeo).
+- **postagem** (título, descrição, hashtags, comentário fixado ou capa): edite o campo `postagem` do episódio (`roteirizar-episodio/postagem.md`) e rode o `entregar` de novo, com o mesmo dia e hora, sobre o vídeo já entregue: não precisa de voz nem render. Numa sessão nova, traga o mp4 antes: `git fetch origin dados && git show origin/dados:videos/<serie>-epNN.mp4 > out/<serie>-epNN.mp4` (rode em `motor/`, com a pasta `out/` criada).
+- **números do vídeo** que o Iuri mandar do YouTube Studio ou do Instagram ("visualizaram x deslizaram", % média assistida, o segundo em que a curva cai, envios): leia como correção do jeito de contar. Muita gente deslizando no começo aponta para o gancho e o primeiro quadro; queda no meio, para a corrente sem re-gancho; queda antes da chamada, para frase sobrando depois da virada. Vira regra em `_historias/regras.md` quando o mesmo ponto cair em duas partes.
 Se uma correção for ambígua, escolha a leitura mais provável, aplique e diga qual leitura usou.
 
 ## 2. Aplicar no episódio
