@@ -7,9 +7,14 @@
 //
 // Uso (a partir de motor/):
 //   npx tsx ferramentas/dados.ts baixar                    copia series/ do ramo para public/series
-//   npx tsx ferramentas/dados.ts salvar <serie> [...]      copia essas pastas de public/series para o ramo e envia
+//   npx tsx ferramentas/dados.ts salvar <serie> [...]      copia essas pastas de public/series para o ramo e envia [--juntei]
 //   npx tsx ferramentas/dados.ts entregar <serie> <parte> --dia=2026-10-26 --hora=18:00
 //   npx tsx ferramentas/dados.ts entregas                  mostra os vídeos guardados
+//
+// Trava contra sobrescrita: salvar e entregar trocam a pasta inteira da série no ramo. Se outra sessão
+// salvou a mesma série depois do seu "baixar" (rodadas atrasadas que acordam juntas, uma correção feita
+// em outra conversa), eles recusam, deixam a versão do ramo em out/dados-ramo/<serie>/ e pedem para
+// juntar as duas e repetir o comando com --juntei.
 //
 // SHORTS_REMOTO troca o repositório de origem (usado pelos testes).
 import {execFileSync} from 'node:child_process';
@@ -77,6 +82,74 @@ const enviar = (pasta: string, mensagem: string) => {
 	}
 };
 
+/**
+ * O que esta sessão sabe do ramo: para cada série, o hash da pasta no ramo quando ela foi baixada (ou salva
+ * por esta sessão), e o hash da versão deixada em out/dados-ramo/ quando houve conflito.
+ */
+interface BaseDados {
+	series: Record<string, string>;
+	pendentes: Record<string, string>;
+}
+const ARQUIVO_BASE = () => join(PASTA_SERIES, '.dados-base.json');
+const lerBase = (): BaseDados => {
+	try {
+		return {series: {}, pendentes: {}, ...(JSON.parse(readFileSync(ARQUIVO_BASE(), 'utf8')) as Partial<BaseDados>)};
+	} catch {
+		return {series: {}, pendentes: {}};
+	}
+};
+const gravarBase = (base: BaseDados) => {
+	mkdirSync(PASTA_SERIES, {recursive: true});
+	writeFileSync(ARQUIVO_BASE(), `${JSON.stringify(base, null, 2)}\n`);
+};
+/** Hash da pasta series/<serie> no ramo clonado ('' se ela ainda não existe lá). */
+const hashNoRamo = (pasta: string, serie: string): string => {
+	try {
+		return git(pasta, 'rev-parse', `HEAD:series/${serie}`);
+	} catch {
+		return '';
+	}
+};
+
+/**
+ * Recusa trocar a pasta da série no ramo se ela mudou depois do baixar desta sessão (outra sessão salvou):
+ * deixa a versão do ramo em out/dados-ramo/<serie>/ para juntar. Com --juntei, passa se o ramo
+ * continua igual à versão deixada lá.
+ */
+const conferirBase = (pasta: string, series: string[], juntei: boolean) => {
+	const base = lerBase();
+	const conflitos: string[] = [];
+	for (const s of series) {
+		const atual = hashNoRamo(pasta, s);
+		if (atual === '' || atual === base.series[s] || (juntei && atual === base.pendentes[s])) continue;
+		const copia = join(RAIZ, 'out', 'dados-ramo', s);
+		rmSync(copia, {recursive: true, force: true});
+		mkdirSync(join(RAIZ, 'out', 'dados-ramo'), {recursive: true});
+		cpSync(join(pasta, 'series', s), copia, {recursive: true});
+		base.pendentes[s] = atual;
+		conflitos.push(s);
+	}
+	if (!conflitos.length) return;
+	gravarBase(base);
+	const lista = conflitos.join(', ');
+	throw new Error(
+		[
+			`PAROU para não apagar trabalho de outra sessão: ${lista} mudou no ramo ${RAMO} depois do seu "baixar" (ou esta pasta não veio do baixar).`,
+			`A versão do ramo está em out/dados-ramo/${conflitos.length === 1 ? conflitos[0] : '<serie>'}/. Junte as duas em public/series/: episódios e vozes de cada uma, estado.json com o maior proxima_parte e o resumo do episódio mais novo, pauta.json com o status de cada item, regras de cada uma.`,
+			'Depois rode o mesmo comando de novo com --juntei. Se você não mudou nada nessa pasta, rode "npm run dados -- baixar" em vez de salvar.',
+		].join('\n'),
+	);
+};
+/** Depois de enviar: a versão do ramo agora é a desta sessão. */
+const atualizarBase = (pasta: string, series: string[]) => {
+	const base = lerBase();
+	for (const s of series) {
+		base.series[s] = hashNoRamo(pasta, s);
+		delete base.pendentes[s];
+	}
+	gravarBase(base);
+};
+
 /** Episódios recentes cujo áudio de falas viaja entre sessões (correção do dia e a parte seguinte). */
 const EPISODIOS_COM_AUDIO = 3;
 
@@ -122,25 +195,31 @@ export const baixar = () => {
 		const origem = join(pasta, 'series');
 		if (!existsSync(origem)) return console.log('ramo de dados ainda sem séries; nada a baixar');
 		mkdirSync(PASTA_SERIES, {recursive: true});
-		for (const s of readdirSync(origem)) substituir(join(origem, s), join(PASTA_SERIES, s));
+		const base: BaseDados = {series: {}, pendentes: {}};
+		for (const s of readdirSync(origem)) {
+			substituir(join(origem, s), join(PASTA_SERIES, s));
+			base.series[s] = hashNoRamo(pasta, s);
+		}
+		gravarBase(base);
 		console.log(`séries baixadas: ${readdirSync(origem).join(', ')}`);
 	} finally {
 		rmSync(pasta, {recursive: true, force: true});
 	}
 };
 
-export const salvar = (series: string[]) => {
+export const salvar = (series: string[], juntei = false) => {
 	const pasta = abrir();
 	try {
 		// sem nomes, salvaria as pastas de todos os fluxos (histórias e Como Funciona) e uma sessão
 		// sobrescreveria o trabalho da outra
 		if (!series.length) throw new Error('Diga quais pastas salvar, ex.: salvar voo-818 _historias');
 		const alvo = series;
-		for (const s of alvo) {
-			if (!existsSync(join(PASTA_SERIES, s))) throw new Error(`Série ${s} não existe em public/series`);
-			substituir(join(PASTA_SERIES, s), join(pasta, 'series', s));
-		}
-		console.log(enviar(pasta, `dados: ${alvo.join(', ')}`) ? `salvo no ramo ${RAMO}: ${alvo.join(', ')}` : 'nada mudou');
+		for (const s of alvo) if (!existsSync(join(PASTA_SERIES, s))) throw new Error(`Série ${s} não existe em public/series`);
+		conferirBase(pasta, alvo, juntei);
+		for (const s of alvo) substituir(join(PASTA_SERIES, s), join(pasta, 'series', s));
+		const enviou = enviar(pasta, `dados: ${alvo.join(', ')}`);
+		atualizarBase(pasta, alvo);
+		console.log(enviou ? `salvo no ramo ${RAMO}: ${alvo.join(', ')}` : 'nada mudou');
 	} finally {
 		rmSync(pasta, {recursive: true, force: true});
 	}
@@ -160,7 +239,7 @@ const DIAS_GUARDADOS = 10;
  * Entrega um episódio pronto: guarda o vídeo e o texto de publicação no ramo de dados (pasta videos/)
  * e a série (estado, roteiro, regras). A publicação é manual: o Iuri baixa o vídeo e posta.
  */
-export const entregar = (serie: string, parte: number, dia: string, hora: string, video?: string, semVoz = false) => {
+export const entregar = (serie: string, parte: number, dia: string, hora: string, video?: string, semVoz = false, juntei = false) => {
 	if (!semVoz && !existsSync(join(PASTA_SERIES, serie, 'vozes', `${nomeEpisodio(parte)}.json`))) {
 		throw new Error(`A parte ${parte} de ${serie} ainda não tem voz (falta public/series/${serie}/vozes/${nomeEpisodio(parte)}.json). Rode npm run vozes antes, ou use --sem-voz só para teste.`);
 	}
@@ -171,6 +250,7 @@ export const entregar = (serie: string, parte: number, dia: string, hora: string
 	const t = textosDoEpisodio(biblia, ep);
 	const pasta = abrir();
 	try {
+		conferirBase(pasta, [serie], juntei);
 		const nome = `${serie}-${nomeEpisodio(parte)}`;
 		const dir = join(pasta, 'videos');
 		mkdirSync(dir, {recursive: true});
@@ -201,6 +281,7 @@ export const entregar = (serie: string, parte: number, dia: string, hora: string
 		);
 		substituir(join(PASTA_SERIES, serie), join(pasta, 'series', serie));
 		enviar(pasta, `entrega: ${nome} para ${dia} ${hora}`);
+		atualizarBase(pasta, [serie]);
 		console.log(`entregue: ${nome} (postar ${dia} ${hora}); vídeo e texto no ramo ${RAMO}, pasta videos/`);
 	} finally {
 		rmSync(pasta, {recursive: true, force: true});
@@ -225,10 +306,10 @@ if (process.argv[1] && import.meta.filename === process.argv[1]) {
 	const pos = resto.filter((a) => !a.startsWith('--'));
 	try {
 		if (comando === 'baixar') baixar();
-		else if (comando === 'salvar') salvar(pos);
+		else if (comando === 'salvar') salvar(pos, 'juntei' in opc);
 		else if (comando === 'entregar') {
-			if (pos.length < 2 || !opc.dia || !opc.hora) throw new Error('uso: entregar <serie> <parte> --dia=AAAA-MM-DD --hora=HH:MM [--video=arquivo.mp4] [--sem-voz]');
-			entregar(pos[0], Number(pos[1]), opc.dia, opc.hora, opc.video, 'sem-voz' in opc);
+			if (pos.length < 2 || !opc.dia || !opc.hora) throw new Error('uso: entregar <serie> <parte> --dia=AAAA-MM-DD --hora=HH:MM [--video=arquivo.mp4] [--sem-voz] [--juntei]');
+			entregar(pos[0], Number(pos[1]), opc.dia, opc.hora, opc.video, 'sem-voz' in opc, 'juntei' in opc);
 		} else if (comando === 'entregas') mostrarEntregas();
 		else throw new Error('comandos: baixar | salvar | entregar | entregas');
 	} catch (e) {
