@@ -38,6 +38,7 @@ if (!so) {
 	for (const [n, d] of Object.entries(PARTICULAS)) console.log(`    ${n}: ${d}`);
 	console.log(`\nMAQUETES (objeto "maquete" com "modelo"; peças em "modelos" do episódio, ver src/roteiro/tipos.ts > Peca)`);
 	console.log(`  FORMAS: ${FORMAS.join(', ')}`);
+	console.log('    toro: anel DEITADO (pneu no chão); de pé, virado para a frente (grade de ventilador, roda, aro), use "giro": [90, 0, 0]. mola: em pé (eixo y); deitada (fio de resistência), "giro": [0, 0, 90].');
 	console.log(`  FLUXOS: ${Object.keys(FLUXOS).join(', ')}`);
 	console.log('  ANIMAÇÕES (campo "animacoes" da cena):');
 	for (const [n, d] of Object.entries(ANIMACOES_PECA)) console.log(`    ${n}: ${d}`);
