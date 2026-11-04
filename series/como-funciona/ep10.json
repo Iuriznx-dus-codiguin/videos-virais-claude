@@ -1,0 +1,2001 @@
+{
+ "serie": "como-funciona",
+ "parte": 10,
+ "titulo": "Construa uma fechadura do zero",
+ "musica": "curiosidade",
+ "modelos": {
+  "fechadura": [
+   {
+    "id": "batente",
+    "forma": "caixa",
+    "tam": [
+     0.14,
+     0.56,
+     0.34
+    ],
+    "pos": [
+     -0.5,
+     0.28,
+     0
+    ],
+    "cor": "#8B5A2B"
+   },
+   {
+    "id": "carcaca",
+    "forma": "caixa",
+    "tam": [
+     0.66,
+     0.56,
+     0.3
+    ],
+    "pos": [
+     0,
+     0.28,
+     0
+    ],
+    "cor": "#B8C0CC",
+    "opacidade": 0.32
+   },
+   {
+    "id": "tranca",
+    "forma": "caixa",
+    "tam": [
+     0.2,
+     0.07,
+     0.12
+    ],
+    "pos": [
+     -0.38,
+     0.06,
+     0
+    ],
+    "cor": "#F5B041"
+   },
+   {
+    "id": "eixo",
+    "forma": "esfera",
+    "tam": [
+     0.012
+    ],
+    "pos": [
+     0,
+     0.22,
+     0
+    ],
+    "cor": "#E0B040"
+   },
+   {
+    "id": "cilindro",
+    "forma": "cilindro",
+    "tam": [
+     0.11,
+     0.6
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#E0B040",
+    "pai": "eixo",
+    "giro": [
+     0,
+     0,
+     90
+    ]
+   },
+   {
+    "id": "girador",
+    "forma": "caixa",
+    "tam": [
+     0.04,
+     0.2,
+     0.06
+    ],
+    "pos": [
+     0.33,
+     0,
+     0
+    ],
+    "cor": "#2B2F36",
+    "pai": "eixo"
+   },
+   {
+    "id": "pino_inteiro",
+    "forma": "cilindro",
+    "tam": [
+     0.022,
+     0.25
+    ],
+    "pos": [
+     0,
+     0.525,
+     0
+    ],
+    "cor": "#3FA9F5",
+    "oculta": true
+   },
+   {
+    "id": "baixo1",
+    "forma": "cilindro",
+    "tam": [
+     0.022,
+     0.1
+    ],
+    "pos": [
+     0,
+     -0.02,
+     0
+    ],
+    "cor": "#3FA9F5",
+    "pai": "eixo",
+    "oculta": true
+   },
+   {
+    "id": "cima1",
+    "forma": "cilindro",
+    "tam": [
+     0.022,
+     0.15
+    ],
+    "pos": [
+     0,
+     0.325,
+     0
+    ],
+    "cor": "#D0D5DC",
+    "oculta": true
+   },
+   {
+    "id": "mola1",
+    "forma": "mola",
+    "tam": [
+     0.03,
+     0.13,
+     6,
+     0.006
+    ],
+    "pos": [
+     0,
+     0.465,
+     0
+    ],
+    "cor": "#7F8C8D",
+    "oculta": true
+   },
+   {
+    "id": "baixo2",
+    "forma": "cilindro",
+    "tam": [
+     0.022,
+     0.07
+    ],
+    "pos": [
+     -0.15,
+     -0.035,
+     0
+    ],
+    "cor": "#3FA9F5",
+    "pai": "eixo",
+    "oculta": true
+   },
+   {
+    "id": "cima2",
+    "forma": "cilindro",
+    "tam": [
+     0.022,
+     0.15
+    ],
+    "pos": [
+     -0.15,
+     0.295,
+     0
+    ],
+    "cor": "#D0D5DC",
+    "oculta": true
+   },
+   {
+    "id": "mola2",
+    "forma": "mola",
+    "tam": [
+     0.03,
+     0.16,
+     7,
+     0.006
+    ],
+    "pos": [
+     -0.15,
+     0.45,
+     0
+    ],
+    "cor": "#7F8C8D",
+    "oculta": true
+   },
+   {
+    "id": "baixo3",
+    "forma": "cilindro",
+    "tam": [
+     0.022,
+     0.12
+    ],
+    "pos": [
+     0.15,
+     -0.01,
+     0
+    ],
+    "cor": "#3FA9F5",
+    "pai": "eixo",
+    "oculta": true
+   },
+   {
+    "id": "cima3",
+    "forma": "cilindro",
+    "tam": [
+     0.022,
+     0.15
+    ],
+    "pos": [
+     0.15,
+     0.345,
+     0
+    ],
+    "cor": "#D0D5DC",
+    "oculta": true
+   },
+   {
+    "id": "mola3",
+    "forma": "mola",
+    "tam": [
+     0.03,
+     0.11,
+     5,
+     0.006
+    ],
+    "pos": [
+     0.15,
+     0.475,
+     0
+    ],
+    "cor": "#7F8C8D",
+    "oculta": true
+   },
+   {
+    "id": "linha",
+    "forma": "caixa",
+    "tam": [
+     0.62,
+     0.008,
+     0.31
+    ],
+    "pos": [
+     0,
+     0.33,
+     0
+    ],
+    "cor": "#FFE14A",
+    "brilho": 0.6,
+    "oculta": true
+   },
+   {
+    "id": "chave",
+    "forma": "caixa",
+    "tam": [
+     0.73,
+     0.04,
+     0.045
+    ],
+    "pos": [
+     0.485,
+     -0.08,
+     0
+    ],
+    "cor": "#9FB3C8",
+    "pai": "eixo",
+    "oculta": true
+   },
+   {
+    "id": "dente_a",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.1,
+     0.045
+    ],
+    "pos": [
+     -0.235,
+     0.07,
+     0
+    ],
+    "cor": "#9FB3C8",
+    "pai": "chave"
+   },
+   {
+    "id": "dente_b",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.07,
+     0.045
+    ],
+    "pos": [
+     -0.085,
+     0.055,
+     0
+    ],
+    "cor": "#9FB3C8",
+    "pai": "chave"
+   },
+   {
+    "id": "dente_c",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.05,
+     0.045
+    ],
+    "pos": [
+     0.065,
+     0.045,
+     0
+    ],
+    "cor": "#9FB3C8",
+    "pai": "chave"
+   },
+   {
+    "id": "cabeca",
+    "forma": "toro",
+    "tam": [
+     0.07,
+     0.022
+    ],
+    "pos": [
+     0.435,
+     0,
+     0
+    ],
+    "cor": "#9FB3C8",
+    "pai": "chave",
+    "giro": [
+     90,
+     0,
+     0
+    ]
+   },
+   {
+    "id": "falsa",
+    "forma": "caixa",
+    "tam": [
+     0.73,
+     0.11,
+     0.045
+    ],
+    "pos": [
+     0.485,
+     -0.045,
+     0
+    ],
+    "cor": "#E2463F",
+    "pai": "eixo",
+    "oculta": true
+   },
+   {
+    "id": "falsa_cabeca",
+    "forma": "toro",
+    "tam": [
+     0.07,
+     0.022
+    ],
+    "pos": [
+     0.435,
+     0,
+     0
+    ],
+    "cor": "#E2463F",
+    "pai": "falsa",
+    "giro": [
+     90,
+     0,
+     0
+    ]
+   }
+  ]
+ },
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "tito",
+   "texto": "Se você prender a tranca num cilindro, é só girar e a porta abre.",
+   "tom": "animado"
+  },
+  {
+   "id": "f2",
+   "quem": "tito",
+   "texto": "MAS aí QUALQUER pessoa gira e entra na sua casa.",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f3",
+   "quem": "tito",
+   "texto": "Então, você enfia um PINO que atravessa a caixa e o cilindro. Pronto, travou!"
+  },
+  {
+   "id": "f4",
+   "quem": "tito",
+   "texto": "SÓ QUE agora nem VOCÊ consegue abrir a porta.",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f5",
+   "quem": "tito",
+   "texto": "Então, você corta o pino em DOIS e faz uma CHAVE que empurra ele para cima."
+  },
+  {
+   "id": "f6",
+   "quem": "tito",
+   "texto": "Quando o corte chega bem na borda do cilindro, nada mais segura, e ele GIRA!",
+   "tom": "animado",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f7",
+   "quem": "tito",
+   "texto": "Essa borda tem nome: LINHA de corte. É ali que tudo se decide.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f8",
+   "quem": "tito",
+   "texto": "MAS, quando a chave sai, o pino pode ficar lá em cima, e a porta fica ABERTA.",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f9",
+   "quem": "tito",
+   "texto": "Então, você coloca uma MOLA em cima, que empurra o pino de volta toda vez.",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f10",
+   "quem": "tito",
+   "texto": "SÓ QUE, com um pino só, um monte de chave diferente também abre!",
+   "tom": "tenso",
+   "pausa_depois": 0.35
+  },
+  {
+   "id": "f11",
+   "quem": "tito",
+   "texto": "Então, você coloca MAIS pinos, cada um cortado numa altura diferente."
+  },
+  {
+   "id": "f12",
+   "quem": "tito",
+   "texto": "Agora, com a chave errada, sempre sobra um pino no meio do caminho, e nada gira.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f13",
+   "quem": "tito",
+   "texto": "Com a chave certa, cada dente levanta o seu pino até a linha. Todos ao mesmo tempo!",
+   "tom": "animado",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f14",
+   "quem": "tito",
+   "texto": "Na porta da sua casa são cinco ou seis pinos, e isso já dá MILHARES de chaves diferentes."
+  },
+  {
+   "id": "f15",
+   "quem": "tito",
+   "texto": "E repara: a chave não empurra a tranca. Ela só deixa os pinos na LINHA.",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f16",
+   "quem": "tito",
+   "texto": "Quem abre a porta é o mesmo giro do começo. Só que agora, só com a SUA chave.",
+   "tom": "animado"
+  },
+  {
+   "id": "f17",
+   "quem": "tito",
+   "texto": "Parabéns! Você construiu uma FECHADURA!",
+   "tom": "animado"
+  }
+ ],
+ "chamada": {
+  "pergunta": "E a caneta? Por que a ponta dela é uma bolinha?",
+  "texto": "Comenta",
+  "destaque": "CANETA"
+ },
+ "postagem": {
+  "titulo": "Como funciona a fechadura? Construa uma do zero",
+  "descricao": "Como funciona a fechadura por dentro: cilindro, pinos cortados, molas e a chave que levanta cada pino até a linha de corte. Construa uma do zero, peça por peça.",
+  "hashtags": [
+   "comofunciona",
+   "fechadura",
+   "chave",
+   "engenharia",
+   "curiosidades"
+  ],
+  "comentario": "Eu jurava que a chave empurrava a tranca. Você também achava?",
+  "capa": "f10:abre+0.5"
+ },
+ "cenas": [
+  {
+   "id": "construcao",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "feliz"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "fechadura",
+     "em": "pedestal"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "confete",
+     "em": [
+      0,
+      0
+     ],
+     "alt": 1.5,
+     "raio": 1.4,
+     "altura": 1.2,
+     "quantas": 60,
+     "aparece": "f17:parabens"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "eixo",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 90,
+     "de": "inicio+0.1",
+     "ate": "inicio+0.55"
+    },
+    {
+     "peca": "tranca",
+     "faz": "mover",
+     "desloc": [
+      0.14,
+      0,
+      0
+     ],
+     "de": "inicio+0.1",
+     "ate": "inicio+0.55"
+    },
+    {
+     "peca": "eixo",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": -90,
+     "de": "f1:cilindro",
+     "ate": "f1:cilindro+0.35"
+    },
+    {
+     "peca": "tranca",
+     "faz": "mover",
+     "desloc": [
+      -0.14,
+      0,
+      0
+     ],
+     "de": "f1:cilindro",
+     "ate": "f1:cilindro+0.35"
+    },
+    {
+     "peca": "eixo",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 90,
+     "de": "f1:girar",
+     "ate": "f1:girar+0.45"
+    },
+    {
+     "peca": "tranca",
+     "faz": "mover",
+     "desloc": [
+      0.14,
+      0,
+      0
+     ],
+     "de": "f1:girar",
+     "ate": "f1:girar+0.45"
+    },
+    {
+     "peca": "eixo",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": -90,
+     "de": "f2",
+     "ate": "f2+0.3"
+    },
+    {
+     "peca": "tranca",
+     "faz": "mover",
+     "desloc": [
+      -0.14,
+      0,
+      0
+     ],
+     "de": "f2",
+     "ate": "f2+0.3"
+    },
+    {
+     "peca": "eixo",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 450,
+     "de": "f2:gira",
+     "ate": "f2:gira+0.8"
+    },
+    {
+     "peca": "tranca",
+     "faz": "mover",
+     "desloc": [
+      0.14,
+      0,
+      0
+     ],
+     "de": "f2:gira+0.5",
+     "ate": "f2:gira+0.8"
+    },
+    {
+     "peca": "eixo",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": -90,
+     "de": "f3",
+     "ate": "f3+0.3"
+    },
+    {
+     "peca": "tranca",
+     "faz": "mover",
+     "desloc": [
+      -0.14,
+      0,
+      0
+     ],
+     "de": "f3",
+     "ate": "f3+0.3"
+    },
+    {
+     "peca": "pino_inteiro",
+     "faz": "aparecer",
+     "de": "f3:pino"
+    },
+    {
+     "peca": "pino_inteiro",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.25,
+      0
+     ],
+     "de": "f3:pino",
+     "ate": "f3:pino+0.4"
+    },
+    {
+     "peca": "eixo",
+     "faz": "tremer",
+     "de": "f3:travou",
+     "ate": "f3:travou+0.5",
+     "intensidade": 1.0
+    },
+    {
+     "peca": "eixo",
+     "faz": "tremer",
+     "de": "f4:consegue",
+     "ate": "f4:fim",
+     "intensidade": 1.2
+    },
+    {
+     "peca": "pino_inteiro",
+     "faz": "sumir",
+     "de": "f5:dois"
+    },
+    {
+     "peca": "baixo1",
+     "faz": "aparecer",
+     "de": "f5:dois"
+    },
+    {
+     "peca": "cima1",
+     "faz": "aparecer",
+     "de": "f5:dois"
+    },
+    {
+     "peca": "girador",
+     "faz": "sumir",
+     "de": "f5:chave"
+    },
+    {
+     "peca": "chave",
+     "faz": "aparecer",
+     "de": "f5:chave"
+    },
+    {
+     "peca": "chave",
+     "faz": "mover",
+     "desloc": [
+      -0.4,
+      0,
+      0
+     ],
+     "de": "f5:empurra",
+     "ate": "f5:empurra+0.5"
+    },
+    {
+     "peca": "baixo1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.08,
+      0
+     ],
+     "de": "f5:empurra",
+     "ate": "f5:empurra+0.5"
+    },
+    {
+     "peca": "cima1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.08,
+      0
+     ],
+     "de": "f5:empurra",
+     "ate": "f5:empurra+0.5"
+    },
+    {
+     "peca": "linha",
+     "faz": "aparecer",
+     "de": "f6:borda"
+    },
+    {
+     "peca": "eixo",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 90,
+     "de": "f6:gira",
+     "ate": "f6:gira+0.5"
+    },
+    {
+     "peca": "tranca",
+     "faz": "mover",
+     "desloc": [
+      0.14,
+      0,
+      0
+     ],
+     "de": "f6:gira",
+     "ate": "f6:gira+0.5"
+    },
+    {
+     "peca": "eixo",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": -90,
+     "de": "f7:ali",
+     "ate": "f7:ali+0.4"
+    },
+    {
+     "peca": "tranca",
+     "faz": "mover",
+     "desloc": [
+      -0.14,
+      0,
+      0
+     ],
+     "de": "f7:ali",
+     "ate": "f7:ali+0.4"
+    },
+    {
+     "peca": "chave",
+     "faz": "mover",
+     "desloc": [
+      0.55,
+      0,
+      0
+     ],
+     "de": "f8:sai",
+     "ate": "f8:sai+0.45"
+    },
+    {
+     "peca": "eixo",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 90,
+     "de": "f8:porta",
+     "ate": "f8:porta+0.5"
+    },
+    {
+     "peca": "tranca",
+     "faz": "mover",
+     "desloc": [
+      0.14,
+      0,
+      0
+     ],
+     "de": "f8:porta",
+     "ate": "f8:porta+0.5"
+    },
+    {
+     "peca": "eixo",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": -90,
+     "de": "f9",
+     "ate": "f9+0.35"
+    },
+    {
+     "peca": "tranca",
+     "faz": "mover",
+     "desloc": [
+      -0.14,
+      0,
+      0
+     ],
+     "de": "f9",
+     "ate": "f9+0.35"
+    },
+    {
+     "peca": "mola1",
+     "faz": "aparecer",
+     "de": "f9:mola"
+    },
+    {
+     "peca": "baixo1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.08,
+      0
+     ],
+     "de": "f9:empurra",
+     "ate": "f9:empurra+0.35"
+    },
+    {
+     "peca": "cima1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.08,
+      0
+     ],
+     "de": "f9:empurra",
+     "ate": "f9:empurra+0.35"
+    },
+    {
+     "peca": "eixo",
+     "faz": "tremer",
+     "de": "f9:vez",
+     "ate": "f9:vez+0.5",
+     "intensidade": 0.8
+    },
+    {
+     "peca": "chave",
+     "faz": "mover",
+     "desloc": [
+      0.9,
+      0,
+      0
+     ],
+     "de": "f10",
+     "ate": "f10+0.4"
+    },
+    {
+     "peca": "falsa",
+     "faz": "aparecer",
+     "de": "f10:monte"
+    },
+    {
+     "peca": "falsa",
+     "faz": "mover",
+     "desloc": [
+      -0.4,
+      0,
+      0
+     ],
+     "de": "f10:chave",
+     "ate": "f10:chave+0.45"
+    },
+    {
+     "peca": "baixo1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.08,
+      0
+     ],
+     "de": "f10:chave",
+     "ate": "f10:chave+0.45"
+    },
+    {
+     "peca": "cima1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.08,
+      0
+     ],
+     "de": "f10:chave",
+     "ate": "f10:chave+0.45"
+    },
+    {
+     "peca": "eixo",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 90,
+     "de": "f10:abre",
+     "ate": "f10:abre+0.45"
+    },
+    {
+     "peca": "tranca",
+     "faz": "mover",
+     "desloc": [
+      0.14,
+      0,
+      0
+     ],
+     "de": "f10:abre",
+     "ate": "f10:abre+0.45"
+    },
+    {
+     "peca": "eixo",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": -90,
+     "de": "f11",
+     "ate": "f11+0.35"
+    },
+    {
+     "peca": "tranca",
+     "faz": "mover",
+     "desloc": [
+      -0.14,
+      0,
+      0
+     ],
+     "de": "f11",
+     "ate": "f11+0.35"
+    },
+    {
+     "peca": "baixo2",
+     "faz": "aparecer",
+     "de": "f11:pinos"
+    },
+    {
+     "peca": "cima2",
+     "faz": "aparecer",
+     "de": "f11:pinos"
+    },
+    {
+     "peca": "mola2",
+     "faz": "aparecer",
+     "de": "f11:pinos"
+    },
+    {
+     "peca": "baixo3",
+     "faz": "aparecer",
+     "de": "f11:pinos+0.15"
+    },
+    {
+     "peca": "cima3",
+     "faz": "aparecer",
+     "de": "f11:pinos+0.15"
+    },
+    {
+     "peca": "mola3",
+     "faz": "aparecer",
+     "de": "f11:pinos+0.15"
+    },
+    {
+     "peca": "baixo2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.08,
+      0
+     ],
+     "de": "f11:pinos+0.5",
+     "ate": "f11:pinos+0.85"
+    },
+    {
+     "peca": "cima2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.08,
+      0
+     ],
+     "de": "f11:pinos+0.5",
+     "ate": "f11:pinos+0.85"
+    },
+    {
+     "peca": "baixo3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.08,
+      0
+     ],
+     "de": "f11:pinos+0.5",
+     "ate": "f11:pinos+0.85"
+    },
+    {
+     "peca": "cima3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.08,
+      0
+     ],
+     "de": "f11:pinos+0.5",
+     "ate": "f11:pinos+0.85"
+    },
+    {
+     "peca": "eixo",
+     "faz": "tremer",
+     "de": "f12:sobra",
+     "ate": "f12:gira",
+     "intensidade": 1.2
+    },
+    {
+     "peca": "falsa",
+     "faz": "mover",
+     "desloc": [
+      0.4,
+      0,
+      0
+     ],
+     "de": "f13",
+     "ate": "f13+0.35"
+    },
+    {
+     "peca": "falsa",
+     "faz": "sumir",
+     "de": "f13+0.35"
+    },
+    {
+     "peca": "baixo1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.08,
+      0
+     ],
+     "de": "f13",
+     "ate": "f13+0.35"
+    },
+    {
+     "peca": "cima1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.08,
+      0
+     ],
+     "de": "f13",
+     "ate": "f13+0.35"
+    },
+    {
+     "peca": "baixo2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.08,
+      0
+     ],
+     "de": "f13",
+     "ate": "f13+0.35"
+    },
+    {
+     "peca": "cima2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.08,
+      0
+     ],
+     "de": "f13",
+     "ate": "f13+0.35"
+    },
+    {
+     "peca": "baixo3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.08,
+      0
+     ],
+     "de": "f13",
+     "ate": "f13+0.35"
+    },
+    {
+     "peca": "cima3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.08,
+      0
+     ],
+     "de": "f13",
+     "ate": "f13+0.35"
+    },
+    {
+     "peca": "chave",
+     "faz": "mover",
+     "desloc": [
+      -1.05,
+      0,
+      0
+     ],
+     "de": "f13+0.4",
+     "ate": "f13+0.8"
+    },
+    {
+     "peca": "chave",
+     "faz": "mover",
+     "desloc": [
+      -0.4,
+      0,
+      0
+     ],
+     "de": "f13:levanta",
+     "ate": "f13:levanta+0.45"
+    },
+    {
+     "peca": "baixo1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.08,
+      0
+     ],
+     "de": "f13:levanta",
+     "ate": "f13:levanta+0.45"
+    },
+    {
+     "peca": "cima1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.08,
+      0
+     ],
+     "de": "f13:levanta",
+     "ate": "f13:levanta+0.45"
+    },
+    {
+     "peca": "baixo2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.11,
+      0
+     ],
+     "de": "f13:levanta",
+     "ate": "f13:levanta+0.45"
+    },
+    {
+     "peca": "cima2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.11,
+      0
+     ],
+     "de": "f13:levanta",
+     "ate": "f13:levanta+0.45"
+    },
+    {
+     "peca": "baixo3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f13:levanta",
+     "ate": "f13:levanta+0.45"
+    },
+    {
+     "peca": "cima3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f13:levanta",
+     "ate": "f13:levanta+0.45"
+    },
+    {
+     "peca": "eixo",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 90,
+     "de": "f13:todos",
+     "ate": "f13:todos+0.5"
+    },
+    {
+     "peca": "tranca",
+     "faz": "mover",
+     "desloc": [
+      0.14,
+      0,
+      0
+     ],
+     "de": "f13:todos",
+     "ate": "f13:todos+0.5"
+    },
+    {
+     "peca": "eixo",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": -90,
+     "de": "f14",
+     "ate": "f14+0.35"
+    },
+    {
+     "peca": "tranca",
+     "faz": "mover",
+     "desloc": [
+      -0.14,
+      0,
+      0
+     ],
+     "de": "f14",
+     "ate": "f14+0.35"
+    },
+    {
+     "peca": "eixo",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 90,
+     "de": "f16:giro",
+     "ate": "f16:giro+0.5"
+    },
+    {
+     "peca": "tranca",
+     "faz": "mover",
+     "desloc": [
+      0.14,
+      0,
+      0
+     ],
+     "de": "f16:giro",
+     "ate": "f16:giro+0.5"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "fechadura",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f1:girar"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f2"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "pino_inteiro",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f3:pino"
+    },
+    {
+     "quem": "tito",
+     "faz": "bracos_cruzados",
+     "olhar": "camera",
+     "expressao": "bravo",
+     "de": "f4",
+     "ate": "f4:fim+0.2"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "chave",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f5:chave"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f7"
+    },
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "de": "f7:linha"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "nervoso",
+     "de": "f8"
+    },
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "de": "f8:sai"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "mola1",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f9:mola"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f10"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "maquete",
+     "expressao": "medo",
+     "de": "f10:abre"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "cima2",
+     "olhar": "maquete",
+     "expressao": "determinado",
+     "de": "f11:pinos"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "chave",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f13:dente"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f14"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "linha",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f15:pinos"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f16:agora"
+    },
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f17"
+    },
+    {
+     "quem": "tito",
+     "faz": "acenar",
+     "de": "f17:parabens+0.2"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "alvo": "fechadura",
+     "lado": "frente",
+     "tamanho": 1.0,
+     "movimento": "arco"
+    },
+    {
+     "de": "f2",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido"
+    },
+    {
+     "de": "f2:gira",
+     "tipo": "detalhe",
+     "alvo": "fechadura",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 1.0,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f3",
+     "tipo": "detalhe",
+     "alvo": "fechadura",
+     "lado": "frente",
+     "tamanho": 0.8,
+     "movimento": "arco",
+     "intensidade": 0.5,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f4",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f5",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.3,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.6,
+     "movimento": "aproximar",
+     "transicao": "zoom"
+    },
+    {
+     "de": "f5:chave",
+     "tipo": "detalhe",
+     "alvo": [
+      0.3,
+      1.27,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 1.5,
+     "movimento": "travelling",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f6",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.33,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.45,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f6:nada",
+     "tipo": "detalhe",
+     "alvo": [
+      0.05,
+      1.25,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 1.3,
+     "movimento": "arco",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f7",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": 0.4,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f7:linha",
+     "tipo": "detalhe",
+     "alvo": "linha",
+     "lado": "frente",
+     "tamanho": 0.75,
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f8",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido"
+    },
+    {
+     "de": "f8:sai",
+     "tipo": "detalhe",
+     "alvo": [
+      0.3,
+      1.27,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 1.5,
+     "movimento": "travelling",
+     "intensidade": -0.3
+    },
+    {
+     "de": "f9",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.42,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.6,
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f10",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "dolly_zoom",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f10:monte",
+     "tipo": "detalhe",
+     "alvo": [
+      0.3,
+      1.27,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 1.5,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f11",
+     "tipo": "detalhe",
+     "alvo": "fechadura",
+     "lado": "frente",
+     "tamanho": 0.9,
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f12",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.33,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.65,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f13",
+     "tipo": "detalhe",
+     "alvo": [
+      0.3,
+      1.27,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 1.5,
+     "movimento": "travelling",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f13:todos",
+     "tipo": "detalhe",
+     "alvo": [
+      0.05,
+      1.25,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 1.3,
+     "movimento": "arco",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f14",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": 0.4,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f15",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.33,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.6,
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f16",
+     "tipo": "detalhe",
+     "alvo": [
+      0.05,
+      1.25,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 1.3,
+     "movimento": "subir"
+    },
+    {
+     "de": "f16:agora",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido"
+    },
+    {
+     "de": "f17",
+     "tipo": "aberto",
+     "camera": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "alvo": [
+      -0.9,
+      1.5,
+      0.3
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    }
+   ],
+   "sons": [
+    {
+     "de": "inicio+0.1",
+     "som": "clique",
+     "volume": 0.8
+    },
+    {
+     "de": "f1:cilindro",
+     "som": "clique",
+     "volume": 0.6
+    },
+    {
+     "de": "f1:girar",
+     "som": "clique",
+     "volume": 0.9
+    },
+    {
+     "de": "f2",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f2:gira",
+     "som": "engrenagem",
+     "volume": 0.6
+    },
+    {
+     "de": "f2:gira+0.7",
+     "som": "clique",
+     "volume": 0.8
+    },
+    {
+     "de": "f3:pino",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f3:travou",
+     "som": "impacto",
+     "volume": 0.8
+    },
+    {
+     "de": "f4:voce",
+     "som": "impacto",
+     "volume": 0.7
+    },
+    {
+     "de": "f5:dois",
+     "som": "clique",
+     "volume": 0.8
+    },
+    {
+     "de": "f5:chave",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f5:empurra",
+     "som": "clique",
+     "volume": 0.7
+    },
+    {
+     "de": "f6:borda",
+     "som": "ding",
+     "volume": 0.6
+    },
+    {
+     "de": "f6:gira",
+     "som": "clique",
+     "volume": 0.9
+    },
+    {
+     "de": "f7:linha",
+     "som": "pop",
+     "volume": 0.6
+    },
+    {
+     "de": "f8",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f8:porta",
+     "som": "clique",
+     "volume": 0.9
+    },
+    {
+     "de": "f9:mola",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f9:empurra",
+     "som": "clique",
+     "volume": 0.7
+    },
+    {
+     "de": "f10",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f10:chave",
+     "som": "clique",
+     "volume": 0.7
+    },
+    {
+     "de": "f10:abre",
+     "som": "impacto",
+     "volume": 0.9
+    },
+    {
+     "de": "f11:pinos",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f11:pinos+0.15",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f12:sobra",
+     "som": "impacto",
+     "volume": 0.6
+    },
+    {
+     "de": "f13:levanta",
+     "som": "clique",
+     "volume": 0.8
+    },
+    {
+     "de": "f13:todos",
+     "som": "ding",
+     "volume": 0.9
+    },
+    {
+     "de": "f14:milhares",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f15:linha",
+     "som": "ding",
+     "volume": 0.6
+    },
+    {
+     "de": "f16:giro",
+     "som": "clique",
+     "volume": 0.8
+    },
+    {
+     "de": "f17:parabens",
+     "som": "pop",
+     "volume": 0.9
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f2:qualquer",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f3:pino+0.2",
+     "ate": "f3:travou",
+     "efeito": "circular",
+     "alvo": "pino_inteiro"
+    },
+    {
+     "de": "f3:travou",
+     "ate": "f3:travou+0.4",
+     "efeito": "tremor",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f4:voce",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f5:dois",
+     "ate": "f5:dois+0.2",
+     "efeito": "flash"
+    },
+    {
+     "de": "f5:chave+0.2",
+     "ate": "f5:empurra",
+     "efeito": "circular",
+     "alvo": "chave"
+    },
+    {
+     "de": "f6:borda+0.1",
+     "ate": "f6:nada",
+     "efeito": "destacar",
+     "alvo": "linha"
+    },
+    {
+     "de": "f8:aberta",
+     "ate": "f8:aberta+0.4",
+     "efeito": "tremor",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f9:mola+0.2",
+     "ate": "f9:fim",
+     "efeito": "circular",
+     "alvo": "mola1"
+    },
+    {
+     "de": "f10:abre",
+     "ate": "f10:fim+0.5",
+     "efeito": "letreiro",
+     "texto": "ABRIU!",
+     "cor": "#FF3B30",
+     "altura": 0.22
+    },
+    {
+     "de": "f12:sobra",
+     "ate": "f12:caminho",
+     "efeito": "circular",
+     "alvo": "cima2"
+    },
+    {
+     "de": "f12:caminho",
+     "ate": "f12:fim",
+     "efeito": "destacar",
+     "alvo": "baixo3"
+    },
+    {
+     "de": "f12:nada",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f13:todos",
+     "ate": "f13:todos+0.8",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f15:linha",
+     "ate": "f15:fim",
+     "efeito": "destacar",
+     "alvo": "linha"
+    },
+    {
+     "de": "f17:parabens",
+     "ate": "f17:fim+0.5",
+     "efeito": "linhas",
+     "intensidade": 0.6
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "tranca",
+     "texto": "Tranca",
+     "de": "f1:tranca",
+     "ate": "f1:fim",
+     "cor": "#F5B041"
+    },
+    {
+     "alvo": "cilindro",
+     "texto": "Cilindro",
+     "de": "f1:cilindro",
+     "ate": "f1:fim",
+     "cor": "#E0B040"
+    },
+    {
+     "alvo": "pino_inteiro",
+     "texto": "Pino",
+     "de": "f3:pino",
+     "ate": "f3:fim",
+     "cor": "#3FA9F5"
+    },
+    {
+     "alvo": "chave",
+     "texto": "Chave",
+     "de": "f5:chave",
+     "ate": "f5:fim"
+    },
+    {
+     "alvo": "mola1",
+     "texto": "Mola",
+     "de": "f9:mola",
+     "ate": "f9:fim"
+    },
+    {
+     "alvo": "falsa",
+     "texto": "Outra chave",
+     "de": "f10:monte",
+     "ate": "f10:abre",
+     "cor": "#FF8A80"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f7:linha",
+     "ate": "f7:fim+0.3",
+     "grande": "LINHA",
+     "pequeno": "de corte: onde o cilindro se solta"
+    },
+    {
+     "de": "f14:milhares",
+     "ate": "f14:fim+0.3",
+     "grande": "MILHA­RES",
+     "pequeno": "de chaves diferentes com 5 ou 6 pinos"
+    }
+   ]
+  }
+ ]
+}
