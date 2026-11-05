@@ -34,7 +34,8 @@
       "personalidade": "educado, cansado e perigoso; nunca levanta a voz",
       "voz": {
         "descricao": "homem brasileiro de uns 52 anos, voz grave e calma",
-        "instruct": "male, middle-aged, low pitch"
+        "instruct": "male, middle-aged, low pitch",
+        "semente": 1
       },
       "visual": {
         "altura": 1.04,
