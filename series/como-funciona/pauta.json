@@ -173,7 +173,8 @@
     "segredo da chave"
    ],
    "gancho": "Os dentes da sua chave levantam pinos até uma linha invisível.",
-   "status": "roteiro"
+   "status": "produzido",
+   "dia": "2026-11-05"
   },
   {
    "n": 11,
@@ -190,7 +191,7 @@
    ],
    "gancho": "A ponta da caneta é uma bolinha que gira, e tem um furo de propósito na tampa.",
    "estilo": "dúvida comum",
-   "status": "pendente"
+   "status": "roteiro"
   },
   {
    "n": 12,
