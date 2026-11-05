@@ -1454,6 +1454,18 @@
      "transicao": "varrer"
     },
     {
+     "de": "f3:pronto",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.3,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.6,
+     "movimento": "aproximar"
+    },
+    {
      "de": "f4",
      "tipo": "medio",
      "alvo": "tito",
@@ -1565,6 +1577,18 @@
      "transicao": "varrer"
     },
     {
+     "de": "f9:empurra",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.38,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.5,
+     "movimento": "aproximar"
+    },
+    {
      "de": "f10",
      "tipo": "medio",
      "alvo": "tito",
@@ -1595,6 +1619,19 @@
      "transicao": "varrer"
     },
     {
+     "de": "f11:altura",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.36,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.6,
+     "movimento": "travelling",
+     "intensidade": 0.3
+    },
+    {
      "de": "f12",
      "tipo": "detalhe",
      "alvo": [
@@ -1605,6 +1642,19 @@
      "lado": "tres_quartos_esquerda",
      "tamanho": 0.65,
      "movimento": "aproximar"
+    },
+    {
+     "de": "f12:caminho",
+     "tipo": "detalhe",
+     "alvo": [
+      0.15,
+      1.3,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.5,
+     "movimento": "arco",
+     "intensidade": 0.4
     },
     {
      "de": "f13",
@@ -1642,6 +1692,15 @@
      "transicao": "chicote"
     },
     {
+     "de": "f14:pinos",
+     "tipo": "detalhe",
+     "alvo": "fechadura",
+     "lado": "frente",
+     "tamanho": 0.9,
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
      "de": "f15",
      "tipo": "detalhe",
      "alvo": [
@@ -1654,6 +1713,19 @@
      "movimento": "arco",
      "intensidade": 0.4,
      "transicao": "desfoque"
+    },
+    {
+     "de": "f15:deixa",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.33,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.55,
+     "movimento": "travelling",
+     "intensidade": 0.3
     },
     {
      "de": "f16",

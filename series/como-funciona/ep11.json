@@ -1,0 +1,1995 @@
+{
+ "serie": "como-funciona",
+ "parte": 11,
+ "titulo": "Por que a ponta da caneta é uma bolinha?",
+ "musica": "curiosidade",
+ "personagens": {
+  "biro": {
+   "nome": "László Bíró",
+   "papel": "jornalista de Budapeste (Hungria); a tinta da caneta-tinteiro borrava o papel e a tinta de jornal, que secava rápido, entupia a ponta; com o irmão György, químico, trocou a ponta por uma bolinha (patente de 1938); não fala",
+   "visual": {
+    "altura": 1,
+    "corpo": "#4A4E69",
+    "cabeca": "#F2D5BD",
+    "olhos": "redondos",
+    "sobrancelhas": "grossas",
+    "acessorios": [
+     {
+      "tipo": "cabelo_curto",
+      "cor": "#2B1D14"
+     },
+     {
+      "tipo": "colete",
+      "cor": "#7A5C3E"
+     },
+     {
+      "tipo": "oculos",
+      "cor": "#2B2F36"
+     }
+    ]
+   }
+  }
+ },
+ "modelos": {
+  "caneta": [
+   {
+    "id": "papel",
+    "forma": "caixa",
+    "tam": [
+     0.8,
+     0.012,
+     0.45
+    ],
+    "pos": [
+     0.05,
+     0.006,
+     0.02
+    ],
+    "cor": "#FBF8EE"
+   },
+   {
+    "id": "corpo",
+    "forma": "cilindro",
+    "tam": [
+     0.065,
+     0.5
+    ],
+    "pos": [
+     0,
+     0.47,
+     0
+    ],
+    "cor": "#BFE0FF",
+    "opacidade": 0.3
+   },
+   {
+    "id": "topo",
+    "forma": "cilindro",
+    "tam": [
+     0.068,
+     0.05
+    ],
+    "pos": [
+     0,
+     0.275,
+     0
+    ],
+    "cor": "#1F4FD8",
+    "pai": "corpo"
+   },
+   {
+    "id": "tinta",
+    "forma": "cilindro",
+    "tam": [
+     0.028,
+     0.34
+    ],
+    "pos": [
+     0,
+     -0.08,
+     0
+    ],
+    "cor": "#1F4FD8",
+    "pai": "corpo"
+   },
+   {
+    "id": "tinta_ponta",
+    "forma": "cilindro",
+    "tam": [
+     0.012,
+     0.14
+    ],
+    "pos": [
+     0,
+     -0.32,
+     0
+    ],
+    "cor": "#1F4FD8",
+    "pai": "corpo"
+   },
+   {
+    "id": "ponteira",
+    "forma": "cone",
+    "tam": [
+     0.065,
+     0.15
+    ],
+    "pos": [
+     0,
+     -0.325,
+     0
+    ],
+    "giro": [
+     180,
+     0,
+     0
+    ],
+    "cor": "#C9CED6",
+    "pai": "corpo"
+   },
+   {
+    "id": "bolinha",
+    "forma": "esfera",
+    "tam": [
+     0.04
+    ],
+    "pos": [
+     0,
+     -0.425,
+     0
+    ],
+    "cor": "#7D8798",
+    "pai": "corpo"
+   },
+   {
+    "id": "marca1",
+    "forma": "esfera",
+    "tam": [
+     0.012
+    ],
+    "pos": [
+     0.028,
+     0,
+     0.028
+    ],
+    "cor": "#1F4FD8",
+    "pai": "bolinha",
+    "sem_contorno": true
+   },
+   {
+    "id": "marca2",
+    "forma": "esfera",
+    "tam": [
+     0.012
+    ],
+    "pos": [
+     -0.028,
+     0,
+     0.028
+    ],
+    "cor": "#1F4FD8",
+    "pai": "bolinha",
+    "sem_contorno": true
+   },
+   {
+    "id": "vazio",
+    "forma": "cilindro",
+    "tam": [
+     0.03,
+     0.11
+    ],
+    "pos": [
+     0,
+     0.15,
+     0
+    ],
+    "cor": "#FFFFFF",
+    "opacidade": 0.35,
+    "pai": "corpo",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "furinho",
+    "forma": "esfera",
+    "tam": [
+     0.014
+    ],
+    "pos": [
+     0,
+     0.17,
+     0.064
+    ],
+    "cor": "#14161A",
+    "pai": "corpo",
+    "oculta": true
+   },
+   {
+    "id": "traco1",
+    "forma": "caixa",
+    "tam": [
+     0.1,
+     0.004,
+     0.026
+    ],
+    "pos": [
+     0.05,
+     0.014,
+     0
+    ],
+    "cor": "#1F4FD8",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "traco2",
+    "forma": "caixa",
+    "tam": [
+     0.1,
+     0.004,
+     0.026
+    ],
+    "pos": [
+     0.15,
+     0.014,
+     0
+    ],
+    "cor": "#1F4FD8",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "traco3",
+    "forma": "caixa",
+    "tam": [
+     0.1,
+     0.004,
+     0.026
+    ],
+    "pos": [
+     0.25,
+     0.014,
+     0
+    ],
+    "cor": "#1F4FD8",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "borrao",
+    "forma": "cilindro",
+    "tam": [
+     0.09,
+     0.004
+    ],
+    "pos": [
+     0,
+     0.014,
+     0.02
+    ],
+    "cor": "#3A6BE8",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "tampa",
+    "forma": "cilindro",
+    "tam": [
+     0.06,
+     0.2
+    ],
+    "pos": [
+     0.3,
+     0.112,
+     0.13
+    ],
+    "cor": "#1F4FD8",
+    "oculta": true
+   },
+   {
+    "id": "furo_tampa",
+    "forma": "esfera",
+    "tam": [
+     0.02
+    ],
+    "pos": [
+     0.3,
+     0.17,
+     0.19
+    ],
+    "cor": "#0B0D10",
+    "oculta": true
+   }
+  ],
+  "caneta_1938": [
+   {
+    "id": "c_papel",
+    "forma": "caixa",
+    "tam": [
+     0.34,
+     0.006,
+     0.24
+    ],
+    "pos": [
+     0,
+     0.003,
+     0.02
+    ],
+    "cor": "#F1E9D6"
+   },
+   {
+    "id": "c_jornal",
+    "forma": "caixa",
+    "tam": [
+     0.16,
+     0.025,
+     0.12
+    ],
+    "pos": [
+     -0.11,
+     0.0125,
+     -0.07
+    ],
+    "cor": "#D6CFC0"
+   },
+   {
+    "id": "c_letras",
+    "forma": "caixa",
+    "tam": [
+     0.12,
+     0.003,
+     0.07
+    ],
+    "pos": [
+     -0.11,
+     0.026,
+     -0.07
+    ],
+    "cor": "#5C5C5C",
+    "sem_contorno": true
+   },
+   {
+    "id": "c_tinteiro",
+    "forma": "cilindro",
+    "tam": [
+     0.035,
+     0.05
+    ],
+    "pos": [
+     0.12,
+     0.025,
+     -0.07
+    ],
+    "cor": "#1B2A6B"
+   },
+   {
+    "id": "c_caneta",
+    "forma": "cilindro",
+    "tam": [
+     0.012,
+     0.18
+    ],
+    "pos": [
+     0.02,
+     0.018,
+     0.04
+    ],
+    "giro": [
+     0,
+     30,
+     90
+    ],
+    "cor": "#2B2F36"
+   },
+   {
+    "id": "c_ponta",
+    "forma": "esfera",
+    "tam": [
+     0.012
+    ],
+    "pos": [
+     -0.062,
+     0.016,
+     0.087
+    ],
+    "cor": "#D4AF37"
+   },
+   {
+    "id": "c_borrao",
+    "forma": "cilindro",
+    "tam": [
+     0.045,
+     0.003
+    ],
+    "pos": [
+     -0.09,
+     0.0075,
+     0.1
+    ],
+    "cor": "#1B2A6B",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "c_gota",
+    "forma": "esfera",
+    "tam": [
+     0.018
+    ],
+    "pos": [
+     -0.07,
+     0.02,
+     0.09
+    ],
+    "cor": "#0E1640",
+    "oculta": true
+   },
+   {
+    "id": "c_bolinha",
+    "forma": "esfera",
+    "tam": [
+     0.02
+    ],
+    "pos": [
+     -0.072,
+     0.02,
+     0.092
+    ],
+    "cor": "#C9CED6",
+    "oculta": true
+   }
+  ]
+ },
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "tito",
+   "texto": "A ponta da sua caneta é uma BOLINHA que gira. Por que não uma ponta fina?",
+   "tom": "animado"
+  },
+  {
+   "id": "f2",
+   "quem": "tito",
+   "texto": "Nos anos 1930, o jornalista húngaro László Bíró cansou da caneta que BORRAVA tudo.",
+   "off": true
+  },
+  {
+   "id": "f3",
+   "quem": "tito",
+   "texto": "Ele tentou a tinta do jornal, que seca rapidinho. MAS ela era grossa e ENTUPIA a ponta.",
+   "off": true,
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f4",
+   "quem": "tito",
+   "texto": "Então, com o irmão químico, trocou a ponta por uma BOLINHA. Em 1938, virou patente!",
+   "off": true,
+   "tom": "animado",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f5",
+   "quem": "tito",
+   "texto": "Por dentro, a tinta fica num tubinho e DESCE até a bolinha."
+  },
+  {
+   "id": "f6",
+   "quem": "tito",
+   "texto": "Ela desce pelo PESO. Por isso, de cabeça para baixo, a caneta comum falha."
+  },
+  {
+   "id": "f7",
+   "quem": "tito",
+   "texto": "Quando você escreve, a bolinha GIRA: pega tinta por dentro e passa para o papel.",
+   "tom": "animado"
+  },
+  {
+   "id": "f8",
+   "quem": "tito",
+   "texto": "MAS, se a tinta fosse rala como água, ia VAZAR em volta da bolinha e fazer borrão.",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f9",
+   "quem": "tito",
+   "texto": "Por isso a tinta é GROSSA, quase um mel, e só sai quando a bolinha gira."
+  },
+  {
+   "id": "f10",
+   "quem": "tito",
+   "texto": "E, parada, a bolinha FECHA o tubo, e a tinta lá dentro não seca.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f11",
+   "quem": "tito",
+   "texto": "MAS repara: cada gota que sai deixa um espaço VAZIO lá em cima.",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f12",
+   "quem": "tito",
+   "texto": "Se o ar não entra nesse espaço, a tinta TRAVA. É o canudinho tampado com o dedo.",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f13",
+   "quem": "tito",
+   "texto": "Por isso muita caneta tem um FURINHO no corpo: o ar entra e a tinta volta a descer.",
+   "tom": "animado"
+  },
+  {
+   "id": "f14",
+   "quem": "tito",
+   "texto": "Esse empurrão do ar tem nome: PRESSÃO. Igual dentro e fora, a tinta desce.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f15",
+   "quem": "tito",
+   "texto": "E o furo da TAMPA? Não é para a tinta: se alguém engolir a tampa, o ar ainda passa.",
+   "tom": "animado",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f16",
+   "quem": "tito",
+   "texto": "Ou seja: ponta fina entupia. A BOLINHA escreve, segura a tinta grossa e fecha a caneta.",
+   "tom": "animado"
+  }
+ ],
+ "chamada": {
+  "pergunta": "E o liquidificador? As lâminas cortam tudo sozinhas?",
+  "texto": "Comenta",
+  "destaque": "LIQUIDI­FICADOR"
+ },
+ "postagem": {
+  "titulo": "Como funciona a caneta? A bolinha que gira na ponta",
+  "descricao": "Como funciona a caneta esferográfica por dentro: a bolinha que gira na ponta, a tinta grossa, o furinho no corpo que deixa o ar entrar e o furo da tampa. E a história de László Bíró.",
+  "hashtags": [
+   "comofunciona",
+   "caneta",
+   "fisica",
+   "curiosidades"
+  ],
+  "comentario": "Eu achava que o furo da tampa era para a tinta. Você também achava?",
+  "capa": "f8:vazar+0.5"
+ },
+ "cenas": [
+  {
+   "id": "gancho",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "feliz"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "caneta",
+     "em": "pedestal"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "corpo",
+     "faz": "mover",
+     "desloc": [
+      0.3,
+      0,
+      0
+     ],
+     "de": "inicio",
+     "ate": "inicio+1.6"
+    },
+    {
+     "peca": "bolinha",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -1.6,
+     "de": "inicio",
+     "ate": "inicio+1.6"
+    },
+    {
+     "peca": "traco1",
+     "faz": "aparecer",
+     "de": "inicio+0.5"
+    },
+    {
+     "peca": "traco2",
+     "faz": "aparecer",
+     "de": "inicio+1.0"
+    },
+    {
+     "peca": "traco3",
+     "faz": "aparecer",
+     "de": "inicio+1.5"
+    },
+    {
+     "peca": "bolinha",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -0.8,
+     "de": "f1:gira",
+     "ate": "f1:fim"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "caneta",
+     "olhar": "maquete",
+     "expressao": "surpreso",
+     "de": "f1:bolinha"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f1:por"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "alvo": [
+      0.15,
+      1.12,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.6,
+     "movimento": "arco"
+    },
+    {
+     "de": "f1:por",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido"
+    }
+   ],
+   "sons": [
+    {
+     "de": "inicio+0.1",
+     "som": "chiado",
+     "volume": 0.35
+    },
+    {
+     "de": "f1:bolinha",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f1:por",
+     "som": "clique",
+     "volume": 0.7
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f1:bolinha+0.1",
+     "ate": "f1:gira+0.6",
+     "efeito": "circular",
+     "alvo": "bolinha"
+    },
+    {
+     "de": "f1:fina",
+     "efeito": "zoom_soco"
+    }
+   ],
+   "rotulos": [],
+   "cartoes": []
+  },
+  {
+   "id": "biro",
+   "cenario": "oficina",
+   "ambiente": "oficina",
+   "filtro": "sepia",
+   "personagens": {
+    "biro": {
+     "em": [
+      -1.0,
+      -0.3
+     ],
+     "olhando": [
+      1.2,
+      2.2,
+      3.0
+     ],
+     "expressao": "bravo"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "caneta_1938",
+     "em": [
+      0,
+      -1.05
+     ],
+     "alt": 0.92,
+     "escala": 1.5
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "c_borrao",
+     "faz": "aparecer",
+     "de": "f2:borrava"
+    },
+    {
+     "peca": "c_caneta",
+     "faz": "tremer",
+     "de": "f3:entupia",
+     "ate": "f3:entupia+0.6",
+     "intensidade": 1.0
+    },
+    {
+     "peca": "c_gota",
+     "faz": "aparecer",
+     "de": "f3:entupia"
+    },
+    {
+     "peca": "c_gota",
+     "faz": "sumir",
+     "de": "f4:bolinha"
+    },
+    {
+     "peca": "c_bolinha",
+     "faz": "aparecer",
+     "de": "f4:bolinha"
+    },
+    {
+     "peca": "c_bolinha",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": 1.0,
+     "de": "f4:bolinha+0.3",
+     "ate": "f4:fim"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "biro",
+     "faz": "virar",
+     "para": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "olhar": "camera",
+     "expressao": "bravo",
+     "de": "f2"
+    },
+    {
+     "quem": "biro",
+     "olhar": "caneta_1938",
+     "de": "f2:borrava"
+    },
+    {
+     "quem": "biro",
+     "faz": "maos_na_cabeca",
+     "de": "f2:borrava",
+     "ate": "f2:fim"
+    },
+    {
+     "quem": "biro",
+     "faz": "estender_mao",
+     "para": "caneta_1938",
+     "olhar": "caneta_1938",
+     "expressao": "determinado",
+     "de": "f3"
+    },
+    {
+     "quem": "biro",
+     "faz": "virar",
+     "para": [
+      0.3,
+      2.85,
+      2.2
+     ],
+     "olhar": "camera",
+     "expressao": "nervoso",
+     "de": "f3:seca"
+    },
+    {
+     "quem": "biro",
+     "faz": "susto",
+     "expressao": "surpreso",
+     "de": "f3:entupia"
+    },
+    {
+     "quem": "biro",
+     "faz": "estender_mao",
+     "para": "caneta_1938",
+     "olhar": "caneta_1938",
+     "expressao": "determinado",
+     "de": "f4:trocou"
+    },
+    {
+     "quem": "biro",
+     "faz": "virar",
+     "para": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f4:1938"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "camera": [
+      0.9,
+      2.85,
+      3.9
+     ],
+     "alvo": [
+      -0.55,
+      2.25,
+      -0.7
+     ],
+     "movimento": "arco",
+     "intensidade": 0.6,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f2:laszlo",
+     "tipo": "medio",
+     "camera": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "alvo": "biro",
+     "movimento": "travelling",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f2:borrava",
+     "tipo": "detalhe",
+     "alvo": "caneta_1938",
+     "lado": "frente",
+     "tamanho": 0.55,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f3",
+     "tipo": "detalhe",
+     "alvo": "caneta_1938",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.6,
+     "movimento": "arco",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f3:mas",
+     "tipo": "close",
+     "camera": [
+      0.3,
+      2.85,
+      2.2
+     ],
+     "alvo": "biro",
+     "movimento": "zoom_rapido"
+    },
+    {
+     "de": "f3:entupia",
+     "tipo": "detalhe",
+     "alvo": "caneta_1938",
+     "lado": "frente",
+     "tamanho": 0.4,
+     "movimento": "tremer"
+    },
+    {
+     "de": "f4",
+     "tipo": "medio",
+     "camera": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "alvo": "biro",
+     "movimento": "travelling",
+     "intensidade": -0.4
+    },
+    {
+     "de": "f4:bolinha",
+     "tipo": "detalhe",
+     "alvo": "caneta_1938",
+     "lado": "frente",
+     "tamanho": 0.45,
+     "movimento": "arco",
+     "intensidade": -0.5
+    },
+    {
+     "de": "f4:1938",
+     "tipo": "medio",
+     "camera": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "alvo": "biro",
+     "movimento": "aproximar"
+    }
+   ],
+   "sons": [
+    {
+     "de": "f2:1930",
+     "som": "pop",
+     "volume": 0.6
+    },
+    {
+     "de": "f2:borrava",
+     "som": "agua",
+     "volume": 0.4
+    },
+    {
+     "de": "f3:jornal",
+     "som": "folhas",
+     "volume": 0.5
+    },
+    {
+     "de": "f3:mas",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f3:entupia",
+     "som": "impacto",
+     "volume": 0.8
+    },
+    {
+     "de": "f4:bolinha",
+     "som": "pop",
+     "volume": 0.9
+    },
+    {
+     "de": "f4:1938",
+     "som": "ding",
+     "volume": 0.7
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f2:borrava",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f3:entupia",
+     "ate": "f3:entupia+0.4",
+     "efeito": "tremor",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f4:bolinha+0.1",
+     "ate": "f4:1938",
+     "efeito": "circular",
+     "alvo": "c_bolinha"
+    }
+   ],
+   "rotulos": [],
+   "cartoes": [
+    {
+     "de": "f4:1938",
+     "ate": "f4:fim+0.3",
+     "grande": "1938",
+     "pequeno": "László Bíró · Hungria"
+    }
+   ],
+   "de": "f2"
+  },
+  {
+   "id": "por_dentro",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "feliz"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "caneta",
+     "em": "pedestal"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "ponteira",
+     "faz": "transparente",
+     "opacidade": 0.3,
+     "de": "f5:desce",
+     "ate": "f5:desce+0.4"
+    },
+    {
+     "peca": "tinta",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "caminho": [
+      [
+       0,
+       -0.15,
+       0
+      ],
+      [
+       0,
+       -0.24,
+       0
+      ],
+      [
+       0,
+       -0.32,
+       0
+      ]
+     ],
+     "quantidade": 8,
+     "velocidade": 0.8,
+     "intensidade": 0.6,
+     "de": "f5:desce",
+     "ate": "f6:fim"
+    },
+    {
+     "peca": "corpo",
+     "faz": "mover",
+     "desloc": [
+      0.3,
+      0,
+      0
+     ],
+     "de": "f7:escreve",
+     "ate": "f7:papel+0.4"
+    },
+    {
+     "peca": "bolinha",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -1.2,
+     "de": "f7:escreve",
+     "ate": "f7:papel+0.4"
+    },
+    {
+     "peca": "traco1",
+     "faz": "aparecer",
+     "de": "f7:gira"
+    },
+    {
+     "peca": "traco2",
+     "faz": "aparecer",
+     "de": "f7:tinta"
+    },
+    {
+     "peca": "traco3",
+     "faz": "aparecer",
+     "de": "f7:papel"
+    },
+    {
+     "peca": "tinta",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "caminho": [
+      [
+       0,
+       -0.15,
+       0
+      ],
+      [
+       0,
+       -0.26,
+       0
+      ],
+      [
+       0,
+       -0.33,
+       0
+      ]
+     ],
+     "quantidade": 8,
+     "velocidade": 0.9,
+     "intensidade": 0.6,
+     "de": "f7:escreve",
+     "ate": "f7:papel+0.4"
+    },
+    {
+     "peca": "corpo",
+     "faz": "mover",
+     "desloc": [
+      -0.3,
+      0,
+      0
+     ],
+     "de": "f8",
+     "ate": "f8+0.4"
+    },
+    {
+     "peca": "borrao",
+     "faz": "aparecer",
+     "de": "f8:vazar"
+    },
+    {
+     "peca": "tinta",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "caminho": [
+      [
+       0,
+       -0.3,
+       0.02
+      ],
+      [
+       0.03,
+       -0.36,
+       0.05
+      ],
+      [
+       0.05,
+       -0.45,
+       0.06
+      ]
+     ],
+     "quantidade": 10,
+     "velocidade": 1.1,
+     "intensidade": 0.8,
+     "de": "f8:vazar",
+     "ate": "f8:fim"
+    },
+    {
+     "peca": "corpo",
+     "faz": "tremer",
+     "de": "f8:vazar",
+     "ate": "f8:vazar+0.5",
+     "intensidade": 0.6
+    },
+    {
+     "peca": "borrao",
+     "faz": "sumir",
+     "de": "f9"
+    },
+    {
+     "peca": "tinta",
+     "faz": "pulsar",
+     "de": "f9:grossa",
+     "ate": "f9:mel+0.6",
+     "intensidade": 0.6
+    },
+    {
+     "peca": "bolinha",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -1.0,
+     "de": "f9:sai",
+     "ate": "f9:fim+0.2"
+    },
+    {
+     "peca": "tinta",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "caminho": [
+      [
+       0,
+       -0.15,
+       0
+      ],
+      [
+       0,
+       -0.26,
+       0
+      ],
+      [
+       0,
+       -0.33,
+       0
+      ]
+     ],
+     "quantidade": 6,
+     "velocidade": 0.8,
+     "intensidade": 0.5,
+     "de": "f9:sai",
+     "ate": "f9:fim+0.2"
+    },
+    {
+     "peca": "vazio",
+     "faz": "aparecer",
+     "de": "f11:vazio"
+    },
+    {
+     "peca": "bolinha",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -0.6,
+     "de": "f12",
+     "ate": "f12:trava"
+    },
+    {
+     "peca": "corpo",
+     "faz": "tremer",
+     "de": "f12:trava",
+     "ate": "f12:trava+0.6",
+     "intensidade": 1.0
+    },
+    {
+     "peca": "furinho",
+     "faz": "aparecer",
+     "de": "f13:furinho"
+    },
+    {
+     "peca": "corpo",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "caminho": [
+      [
+       0,
+       0.17,
+       0.22
+      ],
+      [
+       0,
+       0.17,
+       0.08
+      ],
+      [
+       0,
+       0.15,
+       0.0
+      ],
+      [
+       0,
+       0.11,
+       0.0
+      ]
+     ],
+     "quantidade": 8,
+     "velocidade": 0.7,
+     "intensidade": 0.5,
+     "de": "f13:ar",
+     "ate": "f14:fim"
+    },
+    {
+     "peca": "bolinha",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -1.2,
+     "de": "f13:tinta",
+     "ate": "f14:fim"
+    },
+    {
+     "peca": "tinta",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "caminho": [
+      [
+       0,
+       -0.15,
+       0
+      ],
+      [
+       0,
+       -0.26,
+       0
+      ],
+      [
+       0,
+       -0.33,
+       0
+      ]
+     ],
+     "quantidade": 8,
+     "velocidade": 0.9,
+     "intensidade": 0.6,
+     "de": "f13:tinta",
+     "ate": "f14:fim"
+    },
+    {
+     "peca": "tampa",
+     "faz": "aparecer",
+     "de": "f15:furo"
+    },
+    {
+     "peca": "furo_tampa",
+     "faz": "aparecer",
+     "de": "f15:furo"
+    },
+    {
+     "peca": "caneta",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "caminho": [
+      [
+       0.3,
+       0.17,
+       0.32
+      ],
+      [
+       0.3,
+       0.17,
+       0.22
+      ],
+      [
+       0.3,
+       0.17,
+       0.13
+      ],
+      [
+       0.3,
+       0.3,
+       0.13
+      ]
+     ],
+     "quantidade": 8,
+     "velocidade": 0.7,
+     "intensidade": 0.5,
+     "de": "f15:ar",
+     "ate": "f15:fim+0.3"
+    },
+    {
+     "peca": "bolinha",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -1.0,
+     "de": "f16:escreve",
+     "ate": "f16:fim"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.75,
+      2.0,
+      5.9
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f5"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "tinta",
+     "olhar": "maquete",
+     "de": "f5:tubinho"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f6:cabeca"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "bolinha",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f7:gira"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "nervoso",
+     "de": "f8"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "maquete",
+     "expressao": "medo",
+     "de": "f8:vazar"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "tinta",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f9:grossa"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f11"
+    },
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "de": "f11:vazio"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "bravo",
+     "de": "f12:canudinho"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "furinho",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f13:furinho"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f14"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f15:engolir"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f16"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "bolinha",
+     "olhar": "maquete",
+     "de": "f16:bolinha"
+    },
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f16:fecha"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "camera": [
+      -0.75,
+      2.0,
+      5.9
+     ],
+     "alvo": [
+      -0.75,
+      1.5,
+      0.3
+     ],
+     "movimento": "arco",
+     "intensidade": 0.5,
+     "transicao": "zoom"
+    },
+    {
+     "de": "f5:tubinho",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.42,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.7,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f5:desce",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.12,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.4,
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f6:cabeca",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": 0.4,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f7",
+     "tipo": "detalhe",
+     "alvo": [
+      0.15,
+      1.1,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.6,
+     "movimento": "travelling",
+     "intensidade": 0.3,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f7:tinta",
+     "tipo": "detalhe",
+     "alvo": [
+      0.25,
+      1.06,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.35,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f8",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f8:vazar",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.06,
+      0.02
+     ],
+     "lado": "frente",
+     "tamanho": 0.4,
+     "movimento": "tremer"
+    },
+    {
+     "de": "f9",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.4,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.55,
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f9:sai",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.07,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.3,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f10:tubo",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.1,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.32,
+     "movimento": "arco",
+     "intensidade": -0.4
+    },
+    {
+     "de": "f11",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "dolly_zoom",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f11:vazio",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.62,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.4,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f12",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.1,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.45,
+     "movimento": "subir"
+    },
+    {
+     "de": "f12:canudinho",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido"
+    },
+    {
+     "de": "f13",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.62,
+      0.04
+     ],
+     "lado": "frente",
+     "tamanho": 0.4,
+     "movimento": "arco",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f13:tinta",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.3,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.75,
+     "movimento": "subir"
+    },
+    {
+     "de": "f14",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": 0.4,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f14:igual",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.4,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.9,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f15",
+     "tipo": "detalhe",
+     "alvo": [
+      0.3,
+      1.13,
+      0.13
+     ],
+     "lado": "frente",
+     "tamanho": 0.4,
+     "movimento": "aproximar",
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f15:engolir",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido"
+    },
+    {
+     "de": "f15:ar",
+     "tipo": "detalhe",
+     "alvo": [
+      0.3,
+      1.16,
+      0.15
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.4,
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f16",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": 0.4,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f16:bolinha",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.12,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.45,
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f16:fecha",
+     "tipo": "aberto",
+     "camera": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "alvo": [
+      -0.9,
+      1.5,
+      0.3
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.3
+    }
+   ],
+   "sons": [
+    {
+     "de": "f5:tubinho",
+     "som": "whoosh",
+     "volume": 0.5
+    },
+    {
+     "de": "f5:desce",
+     "som": "agua",
+     "volume": 0.4
+    },
+    {
+     "de": "f6:peso",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f7:escreve",
+     "som": "chiado",
+     "volume": 0.35
+    },
+    {
+     "de": "f7:gira",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f8",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f8:vazar",
+     "som": "agua",
+     "volume": 0.7
+    },
+    {
+     "de": "f8:borrao",
+     "som": "impacto",
+     "volume": 0.7
+    },
+    {
+     "de": "f9:grossa",
+     "som": "ding",
+     "volume": 0.8
+    },
+    {
+     "de": "f10:fecha",
+     "som": "clique",
+     "volume": 0.8
+    },
+    {
+     "de": "f11",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f11:vazio",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f12:trava",
+     "som": "impacto",
+     "volume": 0.9
+    },
+    {
+     "de": "f13:furinho",
+     "som": "pop",
+     "volume": 0.9
+    },
+    {
+     "de": "f13:ar",
+     "som": "sopro",
+     "volume": 0.5
+    },
+    {
+     "de": "f14:pressao",
+     "som": "ding",
+     "volume": 0.8
+    },
+    {
+     "de": "f15:tampa",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f15:ar",
+     "som": "sopro",
+     "volume": 0.5
+    },
+    {
+     "de": "f16:bolinha",
+     "som": "pop",
+     "volume": 0.9
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f7:gira+0.1",
+     "ate": "f7:tinta",
+     "efeito": "circular",
+     "alvo": "bolinha"
+    },
+    {
+     "de": "f8:vazar",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f8:vazar",
+     "ate": "f8:vazar+0.25",
+     "efeito": "flash"
+    },
+    {
+     "de": "f9:grossa+0.1",
+     "ate": "f9:sai",
+     "efeito": "destacar",
+     "alvo": "tinta"
+    },
+    {
+     "de": "f10:fecha+0.1",
+     "ate": "f10:fim",
+     "efeito": "circular",
+     "alvo": "bolinha"
+    },
+    {
+     "de": "f11",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f11:vazio+0.1",
+     "ate": "f11:fim+0.3",
+     "efeito": "destacar",
+     "alvo": "vazio"
+    },
+    {
+     "de": "f12:trava",
+     "ate": "f12:trava+0.5",
+     "efeito": "tremor",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f13:furinho+0.1",
+     "ate": "f13:tinta",
+     "efeito": "circular",
+     "alvo": "furinho"
+    },
+    {
+     "de": "f13:tinta",
+     "ate": "f13:tinta+0.8",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f15:tampa+0.1",
+     "ate": "f15:engolir",
+     "efeito": "circular",
+     "alvo": "furo_tampa"
+    },
+    {
+     "de": "f16:bolinha",
+     "ate": "f16:fim+0.5",
+     "efeito": "linhas",
+     "intensidade": 0.6
+    },
+    {
+     "de": "f12:trava",
+     "ate": "f12:trava+0.25",
+     "efeito": "flash"
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "tinta",
+     "texto": "Tinta",
+     "de": "f5:tubinho",
+     "ate": "f5:fim",
+     "cor": "#6E9BFF"
+    },
+    {
+     "alvo": "bolinha",
+     "texto": "Bolinha",
+     "de": "f7:gira",
+     "ate": "f7:fim"
+    },
+    {
+     "alvo": "borrao",
+     "texto": "Borrão",
+     "de": "f8:borrao",
+     "ate": "f8:fim",
+     "cor": "#FF8A80"
+    },
+    {
+     "alvo": "tinta",
+     "texto": "Tinta grossa",
+     "de": "f9:grossa",
+     "ate": "f9:sai",
+     "cor": "#6E9BFF"
+    },
+    {
+     "alvo": "vazio",
+     "texto": "Vazio",
+     "de": "f11:vazio",
+     "ate": "f11:fim+0.3"
+    },
+    {
+     "alvo": "furinho",
+     "texto": "Furinho",
+     "de": "f13:furinho",
+     "ate": "f13:fim"
+    },
+    {
+     "alvo": "furo_tampa",
+     "texto": "Furo da tampa",
+     "de": "f15:tampa",
+     "ate": "f15:engolir"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f14:pressao",
+     "ate": "f14:fim+0.3",
+     "grande": "PRESSÃO",
+     "pequeno": "do ar: igual dentro e fora da caneta"
+    }
+   ],
+   "de": "f5"
+  }
+ ]
+}
