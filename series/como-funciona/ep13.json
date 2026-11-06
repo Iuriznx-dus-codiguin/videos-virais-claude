@@ -1,0 +1,2128 @@
+{
+ "serie": "como-funciona",
+ "parte": 13,
+ "titulo": "Construa uma máquina de lavar do zero",
+ "musica": "curiosidade",
+ "modelos": {
+  "lavadora": [
+   {
+    "id": "caixote",
+    "forma": "caixa",
+    "tam": [
+     0.34,
+     0.13,
+     0.34
+    ],
+    "pos": [
+     0,
+     0.065,
+     0
+    ],
+    "cor": "#A0522D"
+   },
+   {
+    "id": "balde",
+    "forma": "cilindro",
+    "tam": [
+     0.22,
+     0.4,
+     0.25
+    ],
+    "pos": [
+     0,
+     0.33,
+     0
+    ],
+    "cor": "#DDE6EE",
+    "opacidade": 0.35
+   },
+   {
+    "id": "agua",
+    "forma": "cilindro",
+    "tam": [
+     0.21,
+     0.27,
+     0.235
+    ],
+    "pos": [
+     0,
+     -0.06,
+     0
+    ],
+    "cor": "#7FC8F8",
+    "opacidade": 0.45,
+    "pai": "balde",
+    "sem_contorno": true
+   },
+   {
+    "id": "agua_suja",
+    "forma": "cilindro",
+    "tam": [
+     0.21,
+     0.27,
+     0.235
+    ],
+    "pos": [
+     0,
+     -0.06,
+     0
+    ],
+    "cor": "#8D6E63",
+    "opacidade": 0.55,
+    "pai": "balde",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "agua_limpa",
+    "forma": "cilindro",
+    "tam": [
+     0.21,
+     0.27,
+     0.235
+    ],
+    "pos": [
+     0,
+     -0.06,
+     0
+    ],
+    "cor": "#7FC8F8",
+    "opacidade": 0.45,
+    "pai": "balde",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "giro_roupa",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     0,
+     -0.05,
+     0
+    ],
+    "cor": "#7FC8F8",
+    "pai": "balde",
+    "sem_contorno": true
+   },
+   {
+    "id": "roupa1",
+    "forma": "caixa",
+    "tam": [
+     0.13,
+     0.025,
+     0.09
+    ],
+    "pos": [
+     0.09,
+     0.03,
+     0.0
+    ],
+    "giro": [
+     20,
+     30,
+     15
+    ],
+    "cor": "#E74C3C",
+    "pai": "giro_roupa"
+   },
+   {
+    "id": "mancha",
+    "forma": "esfera",
+    "tam": [
+     0.024
+    ],
+    "pos": [
+     0.02,
+     0.016,
+     0
+    ],
+    "cor": "#5D4037",
+    "pai": "roupa1"
+   },
+   {
+    "id": "roupa2",
+    "forma": "caixa",
+    "tam": [
+     0.11,
+     0.025,
+     0.1
+    ],
+    "pos": [
+     -0.08,
+     -0.04,
+     0.05
+    ],
+    "giro": [
+     -15,
+     60,
+     -20
+    ],
+    "cor": "#F1C40F",
+    "pai": "giro_roupa"
+   },
+   {
+    "id": "agitador",
+    "forma": "cilindro",
+    "tam": [
+     0.03,
+     0.3,
+     0.022
+    ],
+    "pos": [
+     0,
+     -0.04,
+     0
+    ],
+    "cor": "#2E86C1",
+    "pai": "balde",
+    "oculta": true
+   },
+   {
+    "id": "aleta",
+    "forma": "caixa",
+    "tam": [
+     0.16,
+     0.05,
+     0.018
+    ],
+    "pos": [
+     0,
+     -0.1,
+     0
+    ],
+    "cor": "#5DADE2",
+    "pai": "agitador"
+   },
+   {
+    "id": "motor",
+    "forma": "cilindro",
+    "tam": [
+     0.08,
+     0.12
+    ],
+    "pos": [
+     0,
+     -0.265,
+     0
+    ],
+    "cor": "#C77B30",
+    "pai": "balde",
+    "oculta": true
+   },
+   {
+    "id": "bomba",
+    "forma": "cilindro",
+    "tam": [
+     0.04,
+     0.08
+    ],
+    "pos": [
+     0.2,
+     0.05,
+     0.12
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#16A085",
+    "oculta": true
+   },
+   {
+    "id": "mangueira",
+    "forma": "tubo",
+    "tam": [
+     0.016
+    ],
+    "pos": [
+     0.25,
+     0.15,
+     0.1
+    ],
+    "caminho": [
+     [
+      -0.19,
+      -0.02,
+      -0.04
+     ],
+     [
+      -0.09,
+      -0.1,
+      0.02
+     ],
+     [
+      -0.01,
+      -0.1,
+      0.02
+     ],
+     [
+      0.08,
+      0.05,
+      0.0
+     ],
+     [
+      0.13,
+      -0.1,
+      -0.02
+     ],
+     [
+      0.17,
+      -0.15,
+      -0.02
+     ]
+    ],
+    "cor": "#455A64",
+    "oculta": true
+   },
+   {
+    "id": "cesto",
+    "forma": "cilindro",
+    "tam": [
+     0.19,
+     0.34,
+     0.215
+    ],
+    "pos": [
+     0,
+     -0.01,
+     0
+    ],
+    "cor": "#B0BEC5",
+    "opacidade": 0.45,
+    "pai": "balde",
+    "oculta": true
+   },
+   {
+    "id": "furo1",
+    "forma": "esfera",
+    "tam": [
+     0.016
+    ],
+    "pos": [
+     0,
+     0.06,
+     0.205
+    ],
+    "cor": "#263238",
+    "pai": "cesto"
+   },
+   {
+    "id": "furo2",
+    "forma": "esfera",
+    "tam": [
+     0.016
+    ],
+    "pos": [
+     -0.1,
+     -0.05,
+     0.18
+    ],
+    "cor": "#263238",
+    "pai": "cesto"
+   },
+   {
+    "id": "gabinete",
+    "forma": "caixa",
+    "tam": [
+     0.6,
+     0.62,
+     0.58
+    ],
+    "pos": [
+     0,
+     0.31,
+     0
+    ],
+    "cor": "#EEF3F7",
+    "opacidade": 0.2,
+    "oculta": true
+   },
+   {
+    "id": "mola_esq",
+    "forma": "mola",
+    "tam": [
+     0.025,
+     0.26,
+     8,
+     0.006
+    ],
+    "pos": [
+     -0.265,
+     0.45,
+     0
+    ],
+    "cor": "#7F8C8D",
+    "oculta": true
+   },
+   {
+    "id": "mola_dir",
+    "forma": "mola",
+    "tam": [
+     0.025,
+     0.26,
+     8,
+     0.006
+    ],
+    "pos": [
+     0.265,
+     0.45,
+     0
+    ],
+    "cor": "#7F8C8D",
+    "oculta": true
+   },
+   {
+    "id": "valvula",
+    "forma": "caixa",
+    "tam": [
+     0.07,
+     0.05,
+     0.05
+    ],
+    "pos": [
+     0.2,
+     0.6,
+     -0.22
+    ],
+    "cor": "#8E44AD",
+    "oculta": true
+   },
+   {
+    "id": "entrada",
+    "forma": "tubo",
+    "tam": [
+     0.014
+    ],
+    "pos": [
+     0.13,
+     0.57,
+     -0.14
+    ],
+    "caminho": [
+     [
+      0.07,
+      0.03,
+      -0.08
+     ],
+     [
+      -0.01,
+      0.05,
+      0.04
+     ],
+     [
+      -0.07,
+      -0.07,
+      0.09
+     ]
+    ],
+    "cor": "#7FB3D5",
+    "oculta": true
+   },
+   {
+    "id": "tampa",
+    "forma": "caixa",
+    "tam": [
+     0.5,
+     0.025,
+     0.46
+    ],
+    "pos": [
+     0,
+     0.633,
+     0.0
+    ],
+    "cor": "#AED6F1",
+    "opacidade": 0.65,
+    "oculta": true
+   },
+   {
+    "id": "trava",
+    "forma": "caixa",
+    "tam": [
+     0.07,
+     0.04,
+     0.04
+    ],
+    "pos": [
+     0,
+     0.64,
+     0.255
+    ],
+    "cor": "#E74C3C",
+    "oculta": true
+   },
+   {
+    "id": "concreto",
+    "forma": "caixa",
+    "tam": [
+     0.24,
+     0.07,
+     0.05
+    ],
+    "pos": [
+     0,
+     0.13,
+     0.27
+    ],
+    "cor": "#95A5A6",
+    "pai": "balde",
+    "oculta": true
+   }
+  ]
+ },
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "tito",
+   "texto": "Se você jogar roupa suja num balde com água e sabão, ela só fica de MOLHO.",
+   "tom": "animado"
+  },
+  {
+   "id": "f2",
+   "quem": "tito",
+   "texto": "MAS a sujeira grudada no pano não sai sem alguém ESFREGAR.",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f3",
+   "quem": "tito",
+   "texto": "Então, você coloca um AGITADOR no meio, e um motor embaixo faz ele virar para lá e para cá."
+  },
+  {
+   "id": "f4",
+   "quem": "tito",
+   "texto": "A roupa esfrega na roupa, e a sujeira SOLTA.",
+   "tom": "animado",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f5",
+   "quem": "tito",
+   "texto": "SÓ QUE agora a água ficou SUJA, e você não vai virar esse balde na mão.",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f6",
+   "quem": "tito",
+   "texto": "Então, você coloca uma BOMBA embaixo, que puxa a água pela mangueira até o ralo."
+  },
+  {
+   "id": "f7",
+   "quem": "tito",
+   "texto": "MAS a roupa continua ENCHARCADA, pingando e pesadona.",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f8",
+   "quem": "tito",
+   "texto": "Então, você põe um CESTO cheio de furinhos dentro do balde e faz ele girar bem rápido."
+  },
+  {
+   "id": "f9",
+   "quem": "tito",
+   "texto": "A roupa gruda na parede, e a água, que quer seguir reto, escapa pelos FUROS.",
+   "tom": "animado",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f10",
+   "quem": "tito",
+   "texto": "Esse truque tem nome: CENTRIFUGAÇÃO. Ele tira a água da roupa sem calor nenhum.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f11",
+   "quem": "tito",
+   "texto": "SÓ QUE, se a roupa embola num lado só, o cesto gira torto e o balde sai PULANDO.",
+   "tom": "tenso",
+   "pausa_depois": 0.35
+  },
+  {
+   "id": "f12",
+   "quem": "tito",
+   "texto": "Então, você pendura o balde em MOLAS, como a suspensão de um carro, que seguram o tranco."
+  },
+  {
+   "id": "f13",
+   "quem": "tito",
+   "texto": "MAS a roupa ainda sai cheia de SABÃO.",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f14",
+   "quem": "tito",
+   "texto": "Então, você liga o balde na torneira com uma VÁLVULA, que enche de água limpa para enxaguar."
+  },
+  {
+   "id": "f15",
+   "quem": "tito",
+   "texto": "E SE alguém enfiar a mão com o cesto girando a mil?",
+   "tom": "tenso",
+   "pausa_depois": 0.35
+  },
+  {
+   "id": "f16",
+   "quem": "tito",
+   "texto": "Então, você coloca uma TAMPA com trava: o cesto só gira com ela fechada.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f17",
+   "quem": "tito",
+   "texto": "E tem modelo que ainda leva um bloco de CONCRETO, só para pesar e não sair andando.",
+   "tom": "animado",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f18",
+   "quem": "tito",
+   "texto": "Parabéns! Você construiu uma MÁQUINA de lavar!",
+   "tom": "animado"
+  }
+ ],
+ "chamada": {
+  "pergunta": "E o ar-condicionado? Ele nasceu para refrescar gente?",
+  "texto": "Comenta",
+  "destaque": "AR"
+ },
+ "postagem": {
+  "titulo": "Como funciona a máquina de lavar? Construa uma do zero",
+  "descricao": "Como funciona a máquina de lavar por dentro: agitador, motor, bomba, cesto com furinhos, centrifugação, molas, válvula de água e a trava da tampa. Construa uma do zero, peça por peça.",
+  "hashtags": [
+   "comofunciona",
+   "maquinadelavar",
+   "engenharia",
+   "curiosidades"
+  ],
+  "comentario": "Eu não sabia que tinha máquina com bloco de concreto dentro. A sua já saiu andando?",
+  "capa": "f9:furos+0.4"
+ },
+ "cenas": [
+  {
+   "id": "construcao",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "feliz"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "lavadora",
+     "em": "pedestal"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "bolhas",
+     "em": [
+      0,
+      0
+     ],
+     "alt": 1.2,
+     "raio": 0.17,
+     "altura": 0.22,
+     "quantas": 16,
+     "aparece": "inicio",
+     "some": "f2:sujeira"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "bolhas",
+     "em": [
+      0,
+      0
+     ],
+     "alt": 1.2,
+     "raio": 0.17,
+     "altura": 0.3,
+     "quantas": 22,
+     "aparece": "f13:sabao",
+     "some": "f14:limpa"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "confete",
+     "em": [
+      0,
+      0
+     ],
+     "alt": 1.6,
+     "raio": 1.4,
+     "altura": 1.2,
+     "quantas": 60,
+     "aparece": "f18:parabens"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "giro_roupa",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 0.12,
+     "de": "inicio",
+     "ate": "f1:fim"
+    },
+    {
+     "peca": "agitador",
+     "faz": "crescer",
+     "de": "f3:agitador",
+     "ate": "f3:agitador+0.6"
+    },
+    {
+     "peca": "caixote",
+     "faz": "sumir",
+     "de": "f3:motor"
+    },
+    {
+     "peca": "motor",
+     "faz": "aparecer",
+     "de": "f3:motor"
+    },
+    {
+     "peca": "motor",
+     "faz": "pulsar",
+     "de": "f3:virar",
+     "ate": "f4:fim",
+     "intensidade": 0.6
+    },
+    {
+     "peca": "agitador",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 1.0,
+     "de": "f3:virar+0.0",
+     "ate": "f3:virar+0.4"
+    },
+    {
+     "peca": "agitador",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": -1.0,
+     "de": "f3:virar+0.4",
+     "ate": "f3:virar+0.8"
+    },
+    {
+     "peca": "agitador",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 1.0,
+     "de": "f3:virar+0.8",
+     "ate": "f3:virar+1.2"
+    },
+    {
+     "peca": "agitador",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": -1.0,
+     "de": "f3:virar+1.2",
+     "ate": "f3:virar+1.6"
+    },
+    {
+     "peca": "agitador",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 1.0,
+     "de": "f3:virar+1.6",
+     "ate": "f3:virar+2.0"
+    },
+    {
+     "peca": "agitador",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": -1.0,
+     "de": "f3:virar+2.0",
+     "ate": "f3:virar+2.4"
+    },
+    {
+     "peca": "giro_roupa",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 0.5,
+     "de": "f3:virar+0.0",
+     "ate": "f3:virar+0.4"
+    },
+    {
+     "peca": "giro_roupa",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": -0.5,
+     "de": "f3:virar+0.4",
+     "ate": "f3:virar+0.8"
+    },
+    {
+     "peca": "giro_roupa",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 0.5,
+     "de": "f3:virar+0.8",
+     "ate": "f3:virar+1.2"
+    },
+    {
+     "peca": "giro_roupa",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": -0.5,
+     "de": "f3:virar+1.2",
+     "ate": "f3:virar+1.6"
+    },
+    {
+     "peca": "giro_roupa",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 0.5,
+     "de": "f3:virar+1.6",
+     "ate": "f3:virar+2.0"
+    },
+    {
+     "peca": "giro_roupa",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": -0.5,
+     "de": "f3:virar+2.0",
+     "ate": "f3:virar+2.4"
+    },
+    {
+     "peca": "agitador",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 1.0,
+     "de": "f4+0.0",
+     "ate": "f4+0.4"
+    },
+    {
+     "peca": "agitador",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": -1.0,
+     "de": "f4+0.4",
+     "ate": "f4+0.8"
+    },
+    {
+     "peca": "agitador",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 1.0,
+     "de": "f4+0.8",
+     "ate": "f4+1.2"
+    },
+    {
+     "peca": "agitador",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": -1.0,
+     "de": "f4+1.2",
+     "ate": "f4+1.6"
+    },
+    {
+     "peca": "agitador",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 1.0,
+     "de": "f4+1.6",
+     "ate": "f4+2.0"
+    },
+    {
+     "peca": "agitador",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": -1.0,
+     "de": "f4+2.0",
+     "ate": "f4+2.4"
+    },
+    {
+     "peca": "giro_roupa",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 0.5,
+     "de": "f4+0.0",
+     "ate": "f4+0.4"
+    },
+    {
+     "peca": "giro_roupa",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": -0.5,
+     "de": "f4+0.4",
+     "ate": "f4+0.8"
+    },
+    {
+     "peca": "giro_roupa",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 0.5,
+     "de": "f4+0.8",
+     "ate": "f4+1.2"
+    },
+    {
+     "peca": "giro_roupa",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": -0.5,
+     "de": "f4+1.2",
+     "ate": "f4+1.6"
+    },
+    {
+     "peca": "giro_roupa",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 0.5,
+     "de": "f4+1.6",
+     "ate": "f4+2.0"
+    },
+    {
+     "peca": "giro_roupa",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": -0.5,
+     "de": "f4+2.0",
+     "ate": "f4+2.4"
+    },
+    {
+     "peca": "mancha",
+     "faz": "sumir",
+     "de": "f4:solta"
+    },
+    {
+     "peca": "agua",
+     "faz": "sumir",
+     "de": "f5:suja"
+    },
+    {
+     "peca": "agua_suja",
+     "faz": "aparecer",
+     "de": "f5:suja"
+    },
+    {
+     "peca": "bomba",
+     "faz": "aparecer",
+     "de": "f6:bomba"
+    },
+    {
+     "peca": "mangueira",
+     "faz": "aparecer",
+     "de": "f6:mangueira"
+    },
+    {
+     "peca": "bomba",
+     "faz": "tremer",
+     "de": "f6:puxa",
+     "ate": "f6:fim+0.4",
+     "intensidade": 0.5
+    },
+    {
+     "peca": "mangueira",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 10,
+     "velocidade": 0.8,
+     "intensidade": 0.7,
+     "de": "f6:puxa",
+     "ate": "f6:fim+0.4"
+    },
+    {
+     "peca": "agua_suja",
+     "faz": "sumir",
+     "de": "f6:ralo"
+    },
+    {
+     "peca": "balde",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "caminho": [
+      [
+       0.08,
+       0.02,
+       0.02
+      ],
+      [
+       0.08,
+       -0.06,
+       0.02
+      ],
+      [
+       0.07,
+       -0.13,
+       0.02
+      ],
+      [
+       0.07,
+       -0.19,
+       0.02
+      ]
+     ],
+     "quantidade": 5,
+     "velocidade": 0.9,
+     "intensidade": 0.6,
+     "de": "f7:encharcada",
+     "ate": "f7:fim+0.3"
+    },
+    {
+     "peca": "roupa1",
+     "faz": "pulsar",
+     "de": "f7:encharcada",
+     "ate": "f7:fim",
+     "intensidade": 0.4
+    },
+    {
+     "peca": "cesto",
+     "faz": "aparecer",
+     "de": "f8:cesto"
+    },
+    {
+     "peca": "cesto",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 2.0,
+     "de": "f8:girar",
+     "ate": "f10:fim+0.3"
+    },
+    {
+     "peca": "giro_roupa",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 2.0,
+     "de": "f8:girar",
+     "ate": "f10:fim+0.3"
+    },
+    {
+     "peca": "balde",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "caminho": [
+      [
+       0,
+       -0.02,
+       0
+      ],
+      [
+       0.08,
+       -0.03,
+       0.05
+      ],
+      [
+       0.15,
+       -0.05,
+       -0.04
+      ],
+      [
+       0.21,
+       -0.07,
+       0.06
+      ],
+      [
+       0.28,
+       -0.1,
+       0.12
+      ]
+     ],
+     "quantidade": 10,
+     "velocidade": 1.0,
+     "intensidade": 0.7,
+     "de": "f9:agua",
+     "ate": "f10:fim"
+    },
+    {
+     "peca": "balde",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "caminho": [
+      [
+       0,
+       0.04,
+       0
+      ],
+      [
+       -0.07,
+       0.03,
+       -0.05
+      ],
+      [
+       -0.14,
+       0.01,
+       0.05
+      ],
+      [
+       -0.2,
+       -0.02,
+       0.1
+      ],
+      [
+       -0.27,
+       -0.06,
+       0.14
+      ]
+     ],
+     "quantidade": 10,
+     "velocidade": 1.0,
+     "intensidade": 0.7,
+     "de": "f9:agua+0.3",
+     "ate": "f10:fim"
+    },
+    {
+     "peca": "giro_roupa",
+     "faz": "mover",
+     "desloc": [
+      0.05,
+      0,
+      0.02
+     ],
+     "de": "f11:lado",
+     "ate": "f11:lado+0.4"
+    },
+    {
+     "peca": "cesto",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 2.0,
+     "de": "f11:cesto",
+     "ate": "f12:molas"
+    },
+    {
+     "peca": "balde",
+     "faz": "tremer",
+     "de": "f11:torto",
+     "ate": "f12:molas",
+     "intensidade": 1.4
+    },
+    {
+     "peca": "balde",
+     "faz": "mover",
+     "desloc": [
+      0.05,
+      0.05,
+      0
+     ],
+     "de": "f11:balde",
+     "ate": "f11:balde+0.2"
+    },
+    {
+     "peca": "balde",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.05,
+      0
+     ],
+     "de": "f11:balde+0.2",
+     "ate": "f11:balde+0.35"
+    },
+    {
+     "peca": "balde",
+     "faz": "mover",
+     "desloc": [
+      -0.09,
+      0.05,
+      0
+     ],
+     "de": "f11:pulando",
+     "ate": "f11:pulando+0.2"
+    },
+    {
+     "peca": "balde",
+     "faz": "mover",
+     "desloc": [
+      0.04,
+      -0.05,
+      0
+     ],
+     "de": "f11:pulando+0.2",
+     "ate": "f11:pulando+0.35"
+    },
+    {
+     "peca": "giro_roupa",
+     "faz": "mover",
+     "desloc": [
+      -0.05,
+      0,
+      -0.02
+     ],
+     "de": "f12",
+     "ate": "f12+0.3"
+    },
+    {
+     "peca": "gabinete",
+     "faz": "aparecer",
+     "de": "f12:molas"
+    },
+    {
+     "peca": "mola_esq",
+     "faz": "aparecer",
+     "de": "f12:molas"
+    },
+    {
+     "peca": "mola_dir",
+     "faz": "aparecer",
+     "de": "f12:molas"
+    },
+    {
+     "peca": "cesto",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 2.0,
+     "de": "f12:molas",
+     "ate": "f12:fim+0.3"
+    },
+    {
+     "peca": "balde",
+     "faz": "tremer",
+     "de": "f12:molas",
+     "ate": "f12:fim+0.3",
+     "intensidade": 0.25
+    },
+    {
+     "peca": "valvula",
+     "faz": "aparecer",
+     "de": "f14:valvula"
+    },
+    {
+     "peca": "entrada",
+     "faz": "aparecer",
+     "de": "f14:valvula"
+    },
+    {
+     "peca": "entrada",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 8,
+     "velocidade": 0.9,
+     "intensidade": 0.7,
+     "de": "f14:enche",
+     "ate": "f14:fim+0.5"
+    },
+    {
+     "peca": "agua_limpa",
+     "faz": "crescer",
+     "de": "f14:limpa",
+     "ate": "f14:fim+0.3"
+    },
+    {
+     "peca": "cesto",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 2.5,
+     "de": "f15:girando",
+     "ate": "f15:fim+0.4"
+    },
+    {
+     "peca": "tampa",
+     "faz": "aparecer",
+     "de": "f16:tampa"
+    },
+    {
+     "peca": "trava",
+     "faz": "aparecer",
+     "de": "f16:trava"
+    },
+    {
+     "peca": "trava",
+     "faz": "pulsar",
+     "de": "f16:fechada",
+     "ate": "f16:fim+0.3",
+     "intensidade": 0.6
+    },
+    {
+     "peca": "cesto",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 2.0,
+     "de": "f16:gira",
+     "ate": "f16:fim+0.3"
+    },
+    {
+     "peca": "concreto",
+     "faz": "aparecer",
+     "de": "f17:concreto"
+    },
+    {
+     "peca": "cesto",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 1.5,
+     "de": "f18",
+     "ate": "f18:fim+1.5"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "nervoso",
+     "de": "f2"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "agitador",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f3:agitador"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f5"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "bomba",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f6:bomba"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "nervoso",
+     "de": "f7"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "cesto",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f8:cesto"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f10"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "medo",
+     "de": "f11:sai"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "camera",
+     "expressao": "medo",
+     "de": "f11:pulando"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "mola_dir",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f12:molas"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f13"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "valvula",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f14:valvula"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "medo",
+     "de": "f15"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "tampa",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f16:tampa"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f17"
+    },
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f18"
+    },
+    {
+     "quem": "tito",
+     "faz": "acenar",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f18:parabens"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.33,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.75,
+     "movimento": "arco"
+    },
+    {
+     "de": "f1:sabao",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.3,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.45,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f2",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido"
+    },
+    {
+     "de": "f2:sujeira",
+     "tipo": "detalhe",
+     "alvo": "mancha",
+     "lado": "frente",
+     "tamanho": 0.3,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f3",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.3,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.7,
+     "movimento": "arco",
+     "intensidade": 0.5,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f3:motor",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.1,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.5,
+     "movimento": "subir"
+    },
+    {
+     "de": "f4",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.3,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.45,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f5",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f5:suja",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.28,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.6,
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f6",
+     "tipo": "detalhe",
+     "alvo": [
+      0.2,
+      1.1,
+      0.1
+     ],
+     "lado": "frente",
+     "tamanho": 0.6,
+     "movimento": "aproximar",
+     "transicao": "varrer"
+    },
+    {
+     "de": "f6:ralo",
+     "tipo": "detalhe",
+     "alvo": [
+      0.12,
+      1.2,
+      0.05
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.8,
+     "movimento": "travelling",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f7",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.3,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.45,
+     "movimento": "subir"
+    },
+    {
+     "de": "f7:pingando",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": 0.4,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f8",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.3,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.8,
+     "movimento": "arco",
+     "intensidade": 0.5,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f9",
+     "tipo": "detalhe",
+     "camera": [
+      0.15,
+      1.5,
+      1.45
+     ],
+     "alvo": [
+      0,
+      1.3,
+      0
+     ],
+     "movimento": "aproximar",
+     "transicao": "zoom"
+    },
+    {
+     "de": "f10",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": 0.4,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f10:calor",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.33,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.55,
+     "movimento": "arco",
+     "intensidade": -0.4
+    },
+    {
+     "de": "f11",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.3,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.65,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f11:torto",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.25,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.9,
+     "movimento": "tremer"
+    },
+    {
+     "de": "f11:sai",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "dolly_zoom"
+    },
+    {
+     "de": "f12",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.33,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.9,
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f12:carro",
+     "tipo": "detalhe",
+     "alvo": [
+      0.26,
+      1.45,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.45,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f13",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f13:sabao",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.38,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.55,
+     "movimento": "subir"
+    },
+    {
+     "de": "f14",
+     "tipo": "detalhe",
+     "alvo": [
+      0.15,
+      1.55,
+      -0.15
+     ],
+     "lado": "frente",
+     "tamanho": 0.6,
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f14:limpa",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.3,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.6,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f15",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f15:girando",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.35,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.6,
+     "movimento": "tremer"
+    },
+    {
+     "de": "f16",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.55,
+      0.05
+     ],
+     "lado": "frente",
+     "tamanho": 0.8,
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f16:gira",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.62,
+      0.22
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.35,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f17",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": 0.4,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f17:concreto",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.46,
+      0.27
+     ],
+     "lado": "frente",
+     "tamanho": 0.5,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f18",
+     "tipo": "aberto",
+     "camera": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "alvo": [
+      -0.9,
+      1.5,
+      0.3
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    }
+   ],
+   "sons": [
+    {
+     "de": "inicio",
+     "som": "agua",
+     "volume": 0.4
+    },
+    {
+     "de": "f2",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f2:esfregar",
+     "som": "impacto",
+     "volume": 0.6
+    },
+    {
+     "de": "f3:agitador",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f3:motor",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f3:virar",
+     "som": "engrenagem",
+     "volume": 0.5
+    },
+    {
+     "de": "f4:solta",
+     "som": "ding",
+     "volume": 0.8
+    },
+    {
+     "de": "f5",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f5:suja",
+     "som": "impacto",
+     "volume": 0.6
+    },
+    {
+     "de": "f6:bomba",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f6:puxa",
+     "som": "agua",
+     "volume": 0.6
+    },
+    {
+     "de": "f6:ralo",
+     "som": "ding",
+     "volume": 0.6
+    },
+    {
+     "de": "f7",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f7:pingando",
+     "som": "agua",
+     "volume": 0.5
+    },
+    {
+     "de": "f8:cesto",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f8:girar",
+     "som": "queda",
+     "volume": 0.35
+    },
+    {
+     "de": "f9:furos",
+     "som": "agua",
+     "volume": 0.7
+    },
+    {
+     "de": "f10:centrifugacao",
+     "som": "ding",
+     "volume": 0.8
+    },
+    {
+     "de": "f11",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f11:balde",
+     "som": "impacto",
+     "volume": 0.8
+    },
+    {
+     "de": "f11:pulando",
+     "som": "impacto",
+     "volume": 0.9
+    },
+    {
+     "de": "f12:molas",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f12:tranco",
+     "som": "ding",
+     "volume": 0.6
+    },
+    {
+     "de": "f13",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f13:sabao",
+     "som": "pop",
+     "volume": 0.6
+    },
+    {
+     "de": "f14:valvula",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f14:enche",
+     "som": "agua",
+     "volume": 0.6
+    },
+    {
+     "de": "f15",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f15:girando",
+     "som": "queda",
+     "volume": 0.4
+    },
+    {
+     "de": "f16:tampa",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f16:trava",
+     "som": "clique",
+     "volume": 0.9
+    },
+    {
+     "de": "f17:concreto",
+     "som": "impacto",
+     "volume": 0.8
+    },
+    {
+     "de": "f18:parabens",
+     "som": "ding",
+     "volume": 0.9
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f2:sujeira+0.1",
+     "ate": "f2:fim",
+     "efeito": "circular",
+     "alvo": "mancha"
+    },
+    {
+     "de": "f2:esfregar",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f3:agitador+0.1",
+     "ate": "f3:motor",
+     "efeito": "circular",
+     "alvo": "agitador"
+    },
+    {
+     "de": "f4:solta",
+     "ate": "f4:solta+0.7",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f5:suja",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f6:bomba+0.1",
+     "ate": "f6:puxa",
+     "efeito": "circular",
+     "alvo": "bomba"
+    },
+    {
+     "de": "f7:encharcada",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f8:cesto+0.1",
+     "ate": "f8:girar",
+     "efeito": "circular",
+     "alvo": "cesto"
+    },
+    {
+     "de": "f9:furos",
+     "ate": "f9:furos+0.8",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f9:furos",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f11:balde",
+     "ate": "f11:balde+0.25",
+     "efeito": "flash"
+    },
+    {
+     "de": "f11:torto",
+     "ate": "f11:sai",
+     "efeito": "tremor",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f12:molas+0.1",
+     "ate": "f12:tranco",
+     "efeito": "circular",
+     "alvo": "mola_dir"
+    },
+    {
+     "de": "f13:sabao",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f14:valvula+0.1",
+     "ate": "f14:limpa",
+     "efeito": "circular",
+     "alvo": "valvula"
+    },
+    {
+     "de": "f15:girando",
+     "ate": "f15:fim+0.3",
+     "efeito": "letreiro",
+     "texto": "PERIGO!",
+     "cor": "#FF3B30",
+     "altura": 0.22
+    },
+    {
+     "de": "f15:girando",
+     "ate": "f15:girando+0.25",
+     "efeito": "flash"
+    },
+    {
+     "de": "f16:trava+0.1",
+     "ate": "f16:fim",
+     "efeito": "circular",
+     "alvo": "trava"
+    },
+    {
+     "de": "f17:concreto",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f17:concreto+0.1",
+     "ate": "f17:fim",
+     "efeito": "circular",
+     "alvo": "concreto"
+    },
+    {
+     "de": "f18:parabens",
+     "ate": "f18:fim+0.5",
+     "efeito": "linhas",
+     "intensidade": 0.6
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "mancha",
+     "texto": "Sujeira",
+     "de": "f2:sujeira",
+     "ate": "f2:fim",
+     "cor": "#FF8A80"
+    },
+    {
+     "alvo": "agitador",
+     "texto": "Agitador",
+     "de": "f3:agitador",
+     "ate": "f3:fim"
+    },
+    {
+     "alvo": "motor",
+     "texto": "Motor",
+     "de": "f3:motor",
+     "ate": "f3:fim"
+    },
+    {
+     "alvo": "bomba",
+     "texto": "Bomba",
+     "de": "f6:bomba",
+     "ate": "f6:fim"
+    },
+    {
+     "alvo": "cesto",
+     "texto": "Cesto",
+     "de": "f8:cesto",
+     "ate": "f8:fim"
+    },
+    {
+     "alvo": "furo1",
+     "texto": "Furos",
+     "de": "f9:furos",
+     "ate": "f9:fim"
+    },
+    {
+     "alvo": "mola_dir",
+     "texto": "Molas",
+     "de": "f12:molas",
+     "ate": "f12:fim"
+    },
+    {
+     "alvo": "valvula",
+     "texto": "Válvula",
+     "de": "f14:valvula",
+     "ate": "f14:limpa"
+    },
+    {
+     "alvo": "tampa",
+     "texto": "Tampa",
+     "de": "f16:tampa",
+     "ate": "f16:trava"
+    },
+    {
+     "alvo": "trava",
+     "texto": "Trava",
+     "de": "f16:trava",
+     "ate": "f16:fim"
+    },
+    {
+     "alvo": "concreto",
+     "texto": "Concreto",
+     "de": "f17:concreto",
+     "ate": "f17:fim"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f10:centrifugacao",
+     "ate": "f10:fim+0.3",
+     "grande": "CENTRIFU­GAÇÃO",
+     "pequeno": "tira a água da roupa sem calor nenhum"
+    }
+   ]
+  }
+ ]
+}

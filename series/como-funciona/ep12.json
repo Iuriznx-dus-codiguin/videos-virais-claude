@@ -1,0 +1,2341 @@
+{
+ "serie": "como-funciona",
+ "parte": 12,
+ "titulo": "O segredo do liquidificador não está na lâmina",
+ "musica": "curiosidade",
+ "personagens": {
+  "poplawski": {
+   "nome": "Stephen Poplawski",
+   "papel": "inventor polonês-americano de Racine (Wisconsin); contratado em 1919 para criar uma batedeira automática de milk-shake de malte; em 1922 pediu a patente da máquina com a hélice no fundo do copo e o motor na base; não fala",
+   "visual": {
+    "altura": 1,
+    "corpo": "#3D5A80",
+    "cabeca": "#F2D5BD",
+    "olhos": "redondos",
+    "sobrancelhas": "grossas",
+    "acessorios": [
+     {
+      "tipo": "cabelo_curto",
+      "cor": "#5A3A22"
+     },
+     {
+      "tipo": "bigode",
+      "cor": "#5A3A22"
+     },
+     {
+      "tipo": "colete",
+      "cor": "#2F4858"
+     }
+    ]
+   }
+  }
+ },
+ "modelos": {
+  "liquidificador": [
+   {
+    "id": "base",
+    "forma": "caixa",
+    "tam": [
+     0.4,
+     0.24,
+     0.4
+    ],
+    "pos": [
+     0,
+     0.12,
+     0
+    ],
+    "cor": "#E8473E"
+   },
+   {
+    "id": "botao",
+    "forma": "cilindro",
+    "tam": [
+     0.045,
+     0.035
+    ],
+    "pos": [
+     0,
+     0.12,
+     0.21
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#FFD60A"
+   },
+   {
+    "id": "motor",
+    "forma": "cilindro",
+    "tam": [
+     0.1,
+     0.15
+    ],
+    "pos": [
+     0,
+     0.11,
+     0
+    ],
+    "cor": "#C77B30"
+   },
+   {
+    "id": "encaixe",
+    "forma": "engrenagem",
+    "tam": [
+     0.065,
+     0.03,
+     10
+    ],
+    "pos": [
+     0,
+     0.255,
+     0
+    ],
+    "cor": "#4D5560"
+   },
+   {
+    "id": "copo",
+    "forma": "cilindro",
+    "tam": [
+     0.14,
+     0.5,
+     0.17
+    ],
+    "pos": [
+     0,
+     0.53,
+     0
+    ],
+    "cor": "#BFE6FF",
+    "opacidade": 0.35
+   },
+   {
+    "id": "pe_copo",
+    "forma": "cilindro",
+    "tam": [
+     0.16,
+     0.05
+    ],
+    "pos": [
+     0,
+     -0.25,
+     0
+    ],
+    "cor": "#2B2F36",
+    "pai": "copo"
+   },
+   {
+    "id": "tampa",
+    "forma": "cilindro",
+    "tam": [
+     0.18,
+     0.04
+    ],
+    "pos": [
+     0,
+     0.27,
+     0
+    ],
+    "cor": "#2B2F36",
+    "pai": "copo"
+   },
+   {
+    "id": "liquido",
+    "forma": "cilindro",
+    "tam": [
+     0.135,
+     0.3,
+     0.15
+    ],
+    "pos": [
+     0,
+     -0.08,
+     0
+    ],
+    "cor": "#FF8FB1",
+    "opacidade": 0.5,
+    "pai": "copo",
+    "sem_contorno": true
+   },
+   {
+    "id": "funil",
+    "forma": "cone",
+    "tam": [
+     0.09,
+     0.12
+    ],
+    "pos": [
+     0,
+     0.01,
+     0
+    ],
+    "giro": [
+     180,
+     0,
+     0
+    ],
+    "cor": "#FFFFFF",
+    "opacidade": 0.55,
+    "pai": "copo",
+    "sem_contorno": true
+   },
+   {
+    "id": "cubo",
+    "forma": "cilindro",
+    "tam": [
+     0.025,
+     0.04
+    ],
+    "pos": [
+     0,
+     -0.2,
+     0
+    ],
+    "cor": "#9AA3AE",
+    "pai": "copo"
+   },
+   {
+    "id": "lamina1",
+    "forma": "caixa",
+    "tam": [
+     0.21,
+     0.01,
+     0.04
+    ],
+    "pos": [
+     0,
+     0.012,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     14
+    ],
+    "cor": "#D9DEE5",
+    "pai": "cubo"
+   },
+   {
+    "id": "lamina2",
+    "forma": "caixa",
+    "tam": [
+     0.21,
+     0.01,
+     0.04
+    ],
+    "pos": [
+     0,
+     0.0,
+     0
+    ],
+    "giro": [
+     0,
+     90,
+     -14
+    ],
+    "cor": "#D9DEE5",
+    "pai": "cubo"
+   },
+   {
+    "id": "giro_frutas",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     0,
+     -0.06,
+     0
+    ],
+    "cor": "#FF8FB1",
+    "pai": "copo",
+    "sem_contorno": true
+   },
+   {
+    "id": "fruta1",
+    "forma": "esfera",
+    "tam": [
+     0.042
+    ],
+    "pos": [
+     0.085,
+     0.0,
+     0
+    ],
+    "cor": "#E53935",
+    "pai": "giro_frutas"
+   },
+   {
+    "id": "fruta2",
+    "forma": "esfera",
+    "tam": [
+     0.036
+    ],
+    "pos": [
+     -0.075,
+     0.08,
+     0.035
+    ],
+    "cor": "#FFD54F",
+    "pai": "giro_frutas"
+   },
+   {
+    "id": "quina_esq",
+    "forma": "caixa",
+    "tam": [
+     0.03,
+     0.42,
+     0.035
+    ],
+    "pos": [
+     -0.142,
+     0.0,
+     0
+    ],
+    "cor": "#2E86C1",
+    "opacidade": 0.9,
+    "pai": "copo",
+    "oculta": true
+   },
+   {
+    "id": "quina_dir",
+    "forma": "caixa",
+    "tam": [
+     0.03,
+     0.42,
+     0.035
+    ],
+    "pos": [
+     0.142,
+     0.0,
+     0
+    ],
+    "cor": "#2E86C1",
+    "opacidade": 0.9,
+    "pai": "copo",
+    "oculta": true
+   },
+   {
+    "id": "bolha",
+    "forma": "esfera",
+    "tam": [
+     0.085
+    ],
+    "pos": [
+     0,
+     -0.19,
+     0
+    ],
+    "cor": "#FFFFFF",
+    "opacidade": 0.9,
+    "pai": "copo",
+    "oculta": true
+   },
+   {
+    "id": "massa",
+    "forma": "cilindro",
+    "tam": [
+     0.137,
+     0.3,
+     0.152
+    ],
+    "pos": [
+     0,
+     -0.08,
+     0
+    ],
+    "cor": "#4A1F5C",
+    "opacidade": 0.65,
+    "pai": "copo",
+    "oculta": true
+   },
+   {
+    "id": "liquido2",
+    "forma": "cilindro",
+    "tam": [
+     0.135,
+     0.33,
+     0.152
+    ],
+    "pos": [
+     0,
+     -0.065,
+     0
+    ],
+    "cor": "#9B4FA8",
+    "opacidade": 0.5,
+    "pai": "copo",
+    "oculta": true,
+    "sem_contorno": true
+   }
+  ],
+  "batedor_1922": [
+   {
+    "id": "h_base",
+    "forma": "caixa",
+    "tam": [
+     0.11,
+     0.02,
+     0.11
+    ],
+    "pos": [
+     -0.12,
+     0.01,
+     0
+    ],
+    "cor": "#2E5E4E"
+   },
+   {
+    "id": "h_coluna",
+    "forma": "cilindro",
+    "tam": [
+     0.013,
+     0.24
+    ],
+    "pos": [
+     -0.12,
+     0.13,
+     -0.045
+    ],
+    "cor": "#2E5E4E"
+   },
+   {
+    "id": "h_cabeca",
+    "forma": "caixa",
+    "tam": [
+     0.07,
+     0.05,
+     0.1
+    ],
+    "pos": [
+     -0.12,
+     0.265,
+     -0.01
+    ],
+    "cor": "#2E5E4E"
+   },
+   {
+    "id": "h_haste",
+    "forma": "cilindro",
+    "tam": [
+     0.006,
+     0.15
+    ],
+    "pos": [
+     -0.12,
+     0.165,
+     0.015
+    ],
+    "cor": "#C9CED6"
+   },
+   {
+    "id": "h_copo",
+    "forma": "cilindro",
+    "tam": [
+     0.035,
+     0.11,
+     0.042
+    ],
+    "pos": [
+     -0.12,
+     0.075,
+     0.015
+    ],
+    "cor": "#B8BEC8"
+   },
+   {
+    "id": "p_base",
+    "forma": "caixa",
+    "tam": [
+     0.12,
+     0.08,
+     0.12
+    ],
+    "pos": [
+     0.11,
+     0.04,
+     0.01
+    ],
+    "cor": "#8B2E2E",
+    "oculta": true
+   },
+   {
+    "id": "p_copo",
+    "forma": "cilindro",
+    "tam": [
+     0.042,
+     0.13,
+     0.05
+    ],
+    "pos": [
+     0.11,
+     0.145,
+     0.01
+    ],
+    "cor": "#9CCBEA",
+    "opacidade": 0.6,
+    "oculta": true
+   },
+   {
+    "id": "p_helice",
+    "forma": "caixa",
+    "tam": [
+     0.065,
+     0.007,
+     0.016
+    ],
+    "pos": [
+     0.11,
+     0.095,
+     0.01
+    ],
+    "cor": "#D9DEE5",
+    "oculta": true
+   }
+  ]
+ },
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "tito",
+   "texto": "As lâminas do liquidificador não correm atrás da comida. Quem traz tudo é o REDEMOINHO.",
+   "tom": "animado"
+  },
+  {
+   "id": "f2",
+   "quem": "tito",
+   "texto": "Em 1922, nos Estados Unidos, Stephen Poplawski criava uma máquina de bater MILK-SHAKE.",
+   "off": true
+  },
+  {
+   "id": "f3",
+   "quem": "tito",
+   "texto": "Nas lanchonetes, o batedor era uma haste que descia por CIMA do copo.",
+   "off": true
+  },
+  {
+   "id": "f4",
+   "quem": "tito",
+   "texto": "A sacada dele: a hélice no FUNDO do copo e o motor escondido embaixo. E pediu a patente!",
+   "off": true,
+   "tom": "animado",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f5",
+   "quem": "tito",
+   "texto": "Por dentro, o motor fica na base e gira MILHARES de vezes por minuto."
+  },
+  {
+   "id": "f6",
+   "quem": "tito",
+   "texto": "Ele nem toca no copo: um ENCAIXE dentado passa o giro, e o copo sai para lavar."
+  },
+  {
+   "id": "f7",
+   "quem": "tito",
+   "texto": "As lâminas jogam a comida na parede. Ela SOBE, cai pelo meio e volta para as lâminas.",
+   "tom": "animado",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f8",
+   "quem": "tito",
+   "texto": "MAS, num copo liso e redondo, tudo ia girar junto, feito CARROSSEL, sem chegar nas lâminas.",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f9",
+   "quem": "tito",
+   "texto": "Por isso o copo tem QUINAS por dentro: elas freiam o giro e jogam a comida para o meio."
+  },
+  {
+   "id": "f10",
+   "quem": "tito",
+   "texto": "E as lâminas são tortas, umas para CIMA e outras para baixo, para bater em várias alturas.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f11",
+   "quem": "tito",
+   "texto": "MAS açaí grosso demais faz uma BOLHA de ar nas lâminas, e elas giram no vazio.",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f12",
+   "quem": "tito",
+   "texto": "Por isso a receita pede um pouco de LÍQUIDO: ele desce e leva a comida até as lâminas."
+  },
+  {
+   "id": "f13",
+   "quem": "tito",
+   "texto": "Esse redemoinho tem nome: VÓRTICE, o mesmo da água girando no ralo da pia.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f14",
+   "quem": "tito",
+   "texto": "E, em muito liquidificador, o encaixe é feito para quebrar PRIMEIRO: se a lâmina trava, ele salva o motor.",
+   "tom": "animado",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f15",
+   "quem": "tito",
+   "texto": "Ou seja: a lâmina só corta. Quem leva a comida até ela é o REDEMOINHO.",
+   "tom": "animado"
+  }
+ ],
+ "chamada": {
+  "pergunta": "E agora, topa construir uma máquina de lavar?",
+  "texto": "Comenta",
+  "destaque": "LAVADORA"
+ },
+ "postagem": {
+  "titulo": "Como funciona o liquidificador? O segredo é o redemoinho",
+  "descricao": "Como funciona o liquidificador por dentro: o motor na base, o encaixe dentado, as lâminas tortas, as quinas do copo e o redemoinho que leva a comida até as lâminas. E a história de Stephen Poplawski.",
+  "hashtags": [
+   "comofunciona",
+   "liquidificador",
+   "cozinha",
+   "fisica",
+   "curiosidades"
+  ],
+  "comentario": "Eu achava que a lâmina fazia tudo sozinha. Seu açaí também trava no liquidificador?",
+  "capa": "f11:bolha+0.5"
+ },
+ "cenas": [
+  {
+   "id": "gancho",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "feliz"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "liquidificador",
+     "em": "pedestal"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "cubo",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 2.5,
+     "de": "inicio",
+     "ate": "f1:fim+0.3"
+    },
+    {
+     "peca": "giro_frutas",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 0.9,
+     "de": "inicio",
+     "ate": "f1:fim+0.3"
+    },
+    {
+     "peca": "copo",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "caminho": [
+      [
+       0,
+       -0.17,
+       0
+      ],
+      [
+       0.1,
+       -0.16,
+       0.03
+      ],
+      [
+       0.12,
+       -0.08,
+       -0.05
+      ],
+      [
+       0.03,
+       -0.01,
+       -0.12
+      ],
+      [
+       -0.1,
+       0.03,
+       -0.05
+      ],
+      [
+       -0.06,
+       0.05,
+       0.08
+      ],
+      [
+       0,
+       0.02,
+       0
+      ],
+      [
+       0,
+       -0.06,
+       0
+      ],
+      [
+       0,
+       -0.15,
+       0
+      ]
+     ],
+     "quantidade": 14,
+     "velocidade": 0.6,
+     "intensidade": 0.6,
+     "de": "inicio",
+     "ate": "f1:fim+0.3"
+    },
+    {
+     "peca": "base",
+     "faz": "tremer",
+     "de": "inicio",
+     "ate": "f1:fim+0.3",
+     "intensidade": 0.25
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f1:quem"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "copo",
+     "olhar": "maquete",
+     "expressao": "surpreso",
+     "de": "f1:redemoinho"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.45,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.7,
+     "movimento": "arco"
+    },
+    {
+     "de": "f1:quem",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido"
+    },
+    {
+     "de": "f1:redemoinho",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.52,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.45,
+     "movimento": "aproximar"
+    }
+   ],
+   "sons": [
+    {
+     "de": "inicio",
+     "som": "queda",
+     "volume": 0.3
+    },
+    {
+     "de": "f1:correm",
+     "som": "whoosh",
+     "volume": 0.4
+    },
+    {
+     "de": "f1:redemoinho",
+     "som": "pop",
+     "volume": 0.8
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f1:redemoinho",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f1:redemoinho+0.1",
+     "ate": "f1:fim+0.3",
+     "efeito": "circular",
+     "alvo": "funil"
+    }
+   ]
+  },
+  {
+   "id": "poplawski",
+   "cenario": "oficina",
+   "ambiente": "oficina",
+   "filtro": "sepia",
+   "de": "f2",
+   "personagens": {
+    "poplawski": {
+     "em": [
+      -1.0,
+      -0.3
+     ],
+     "olhando": [
+      1.2,
+      2.2,
+      3.0
+     ],
+     "expressao": "determinado"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "batedor_1922",
+     "em": [
+      0,
+      -1.05
+     ],
+     "alt": 0.92,
+     "escala": 1.5
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f2:1922",
+     "ate": "f2:fim+0.2",
+     "grande": "1922",
+     "pequeno": "Stephen Poplawski · EUA"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "h_cabeca",
+     "faz": "tremer",
+     "de": "f3:haste",
+     "ate": "f3:fim",
+     "intensidade": 0.6
+    },
+    {
+     "peca": "h_copo",
+     "faz": "tremer",
+     "de": "f3:haste",
+     "ate": "f3:fim",
+     "intensidade": 0.4
+    },
+    {
+     "peca": "p_base",
+     "faz": "aparecer",
+     "de": "f4:helice"
+    },
+    {
+     "peca": "p_copo",
+     "faz": "aparecer",
+     "de": "f4:helice"
+    },
+    {
+     "peca": "p_helice",
+     "faz": "aparecer",
+     "de": "f4:helice"
+    },
+    {
+     "peca": "p_helice",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 2.0,
+     "de": "f4:fundo",
+     "ate": "f4:fim+0.3"
+    },
+    {
+     "peca": "p_base",
+     "faz": "tremer",
+     "de": "f4:fundo",
+     "ate": "f4:embaixo+0.5",
+     "intensidade": 0.3
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "poplawski",
+     "faz": "virar",
+     "para": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "olhar": "camera",
+     "expressao": "determinado",
+     "de": "f2"
+    },
+    {
+     "quem": "poplawski",
+     "faz": "estender_mao",
+     "para": "batedor_1922",
+     "olhar": "batedor_1922",
+     "expressao": "desconfiado",
+     "de": "f3"
+    },
+    {
+     "quem": "poplawski",
+     "faz": "virar",
+     "para": [
+      0.3,
+      2.85,
+      2.2
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f4"
+    },
+    {
+     "quem": "poplawski",
+     "faz": "estender_mao",
+     "para": "batedor_1922",
+     "olhar": "batedor_1922",
+     "expressao": "determinado",
+     "de": "f4:helice"
+    },
+    {
+     "quem": "poplawski",
+     "faz": "virar",
+     "para": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f4:patente"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "camera": [
+      0.9,
+      2.85,
+      3.9
+     ],
+     "alvo": [
+      -0.55,
+      2.25,
+      -0.7
+     ],
+     "movimento": "arco",
+     "intensidade": 0.6,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f2:stephen",
+     "tipo": "medio",
+     "camera": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "alvo": "poplawski",
+     "movimento": "travelling",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f3",
+     "tipo": "detalhe",
+     "alvo": "batedor_1922",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.6,
+     "movimento": "arco",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f3:haste",
+     "tipo": "detalhe",
+     "alvo": "h_haste",
+     "lado": "frente",
+     "tamanho": 0.4,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f4",
+     "tipo": "close",
+     "camera": [
+      0.3,
+      2.85,
+      2.2
+     ],
+     "alvo": "poplawski",
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f4:helice",
+     "tipo": "detalhe",
+     "alvo": "p_copo",
+     "lado": "frente",
+     "tamanho": 0.55,
+     "movimento": "arco",
+     "intensidade": -0.5
+    },
+    {
+     "de": "f4:patente",
+     "tipo": "medio",
+     "camera": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "alvo": "poplawski",
+     "movimento": "aproximar"
+    }
+   ],
+   "sons": [
+    {
+     "de": "f2:1922",
+     "som": "pop",
+     "volume": 0.6
+    },
+    {
+     "de": "f3:haste",
+     "som": "engrenagem",
+     "volume": 0.5
+    },
+    {
+     "de": "f4:sacada",
+     "som": "ding",
+     "volume": 0.6
+    },
+    {
+     "de": "f4:helice",
+     "som": "pop",
+     "volume": 0.9
+    },
+    {
+     "de": "f4:fundo",
+     "som": "queda",
+     "volume": 0.25
+    },
+    {
+     "de": "f4:patente",
+     "som": "ding",
+     "volume": 0.7
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f3:haste+0.1",
+     "ate": "f3:fim",
+     "efeito": "circular",
+     "alvo": "h_haste"
+    },
+    {
+     "de": "f4:sacada",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f4:fundo",
+     "ate": "f4:embaixo+0.4",
+     "efeito": "circular",
+     "alvo": "p_helice"
+    }
+   ]
+  },
+  {
+   "id": "por_dentro",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "de": "f5",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "feliz"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "liquidificador",
+     "em": "pedestal"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "faiscas",
+     "em": [
+      0,
+      0
+     ],
+     "alt": 1.26,
+     "raio": 0.1,
+     "altura": 0.18,
+     "quantas": 18,
+     "aparece": "f14:primeiro",
+     "some": "f14:primeiro+0.9"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "base",
+     "faz": "transparente",
+     "opacidade": 0.25,
+     "de": "f5:motor",
+     "ate": "f5:motor+0.4"
+    },
+    {
+     "peca": "motor",
+     "faz": "pulsar",
+     "de": "f5:gira",
+     "ate": "f5:fim+0.3",
+     "intensidade": 0.7
+    },
+    {
+     "peca": "cubo",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 2.5,
+     "de": "f5:gira",
+     "ate": "f5:fim+0.3"
+    },
+    {
+     "peca": "base",
+     "faz": "transparente",
+     "opacidade": 1,
+     "de": "f6",
+     "ate": "f6+0.3"
+    },
+    {
+     "peca": "copo",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.18,
+      0
+     ],
+     "de": "f6:copo",
+     "ate": "f6:copo+0.6"
+    },
+    {
+     "peca": "encaixe",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 1.5,
+     "de": "f6:encaixe",
+     "ate": "f6:lavar"
+    },
+    {
+     "peca": "copo",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.18,
+      0
+     ],
+     "de": "f6:lavar+0.2",
+     "ate": "f6:fim+0.2"
+    },
+    {
+     "peca": "cubo",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 2.5,
+     "de": "f7",
+     "ate": "f7:fim+0.3"
+    },
+    {
+     "peca": "giro_frutas",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 0.9,
+     "de": "f7",
+     "ate": "f7:fim+0.3"
+    },
+    {
+     "peca": "copo",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "caminho": [
+      [
+       0,
+       -0.17,
+       0
+      ],
+      [
+       0.1,
+       -0.16,
+       0.03
+      ],
+      [
+       0.12,
+       -0.08,
+       -0.05
+      ],
+      [
+       0.03,
+       -0.01,
+       -0.12
+      ],
+      [
+       -0.1,
+       0.03,
+       -0.05
+      ],
+      [
+       -0.06,
+       0.05,
+       0.08
+      ],
+      [
+       0,
+       0.02,
+       0
+      ],
+      [
+       0,
+       -0.06,
+       0
+      ],
+      [
+       0,
+       -0.15,
+       0
+      ]
+     ],
+     "quantidade": 14,
+     "velocidade": 0.6,
+     "intensidade": 0.6,
+     "de": "f7:parede",
+     "ate": "f7:fim+0.3"
+    },
+    {
+     "peca": "cubo",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 2.5,
+     "de": "f8:junto",
+     "ate": "f8:fim+0.3"
+    },
+    {
+     "peca": "giro_frutas",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 1.3,
+     "de": "f8:junto",
+     "ate": "f8:fim+0.3"
+    },
+    {
+     "peca": "copo",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "caminho": [
+      [
+       0.1,
+       -0.02,
+       0
+      ],
+      [
+       0.07,
+       -0.02,
+       0.07
+      ],
+      [
+       0,
+       -0.02,
+       0.1
+      ],
+      [
+       -0.07,
+       -0.02,
+       0.07
+      ],
+      [
+       -0.1,
+       -0.02,
+       0
+      ],
+      [
+       -0.07,
+       -0.02,
+       -0.07
+      ],
+      [
+       0,
+       -0.02,
+       -0.1
+      ],
+      [
+       0.07,
+       -0.02,
+       -0.07
+      ],
+      [
+       0.1,
+       -0.02,
+       0
+      ]
+     ],
+     "quantidade": 12,
+     "velocidade": 1.0,
+     "intensidade": 0.6,
+     "de": "f8:junto",
+     "ate": "f8:fim+0.3"
+    },
+    {
+     "peca": "quina_esq",
+     "faz": "aparecer",
+     "de": "f9:quinas"
+    },
+    {
+     "peca": "quina_dir",
+     "faz": "aparecer",
+     "de": "f9:quinas"
+    },
+    {
+     "peca": "cubo",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 2.5,
+     "de": "f9:freiam",
+     "ate": "f9:fim+0.3"
+    },
+    {
+     "peca": "copo",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "caminho": [
+      [
+       0,
+       -0.17,
+       0
+      ],
+      [
+       0.1,
+       -0.16,
+       0.03
+      ],
+      [
+       0.12,
+       -0.08,
+       -0.05
+      ],
+      [
+       0.03,
+       -0.01,
+       -0.12
+      ],
+      [
+       -0.1,
+       0.03,
+       -0.05
+      ],
+      [
+       -0.06,
+       0.05,
+       0.08
+      ],
+      [
+       0,
+       0.02,
+       0
+      ],
+      [
+       0,
+       -0.06,
+       0
+      ],
+      [
+       0,
+       -0.15,
+       0
+      ]
+     ],
+     "quantidade": 14,
+     "velocidade": 0.6,
+     "intensidade": 0.6,
+     "de": "f9:jogam",
+     "ate": "f9:fim+0.3"
+    },
+    {
+     "peca": "giro_frutas",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.08,
+      0
+     ],
+     "de": "f9:jogam",
+     "ate": "f9:meio"
+    },
+    {
+     "peca": "fruta1",
+     "faz": "sumir",
+     "de": "f9:meio"
+    },
+    {
+     "peca": "fruta2",
+     "faz": "sumir",
+     "de": "f9:meio+0.4"
+    },
+    {
+     "peca": "cubo",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 0.25,
+     "de": "f10:cima",
+     "ate": "f10:fim+0.3"
+    },
+    {
+     "peca": "liquido",
+     "faz": "sumir",
+     "de": "f11:acai"
+    },
+    {
+     "peca": "funil",
+     "faz": "sumir",
+     "de": "f11:acai"
+    },
+    {
+     "peca": "massa",
+     "faz": "aparecer",
+     "de": "f11:acai"
+    },
+    {
+     "peca": "bolha",
+     "faz": "aparecer",
+     "de": "f11:bolha"
+    },
+    {
+     "peca": "cubo",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 3.0,
+     "de": "f11:bolha",
+     "ate": "f12:desce"
+    },
+    {
+     "peca": "base",
+     "faz": "tremer",
+     "de": "f11:vazio",
+     "ate": "f11:fim+0.3",
+     "intensidade": 0.6
+    },
+    {
+     "peca": "copo",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "caminho": [
+      [
+       0.06,
+       0.22,
+       0.02
+      ],
+      [
+       0.04,
+       0.12,
+       0.02
+      ],
+      [
+       0.02,
+       0.02,
+       0.01
+      ],
+      [
+       0,
+       -0.08,
+       0
+      ],
+      [
+       0,
+       -0.16,
+       0
+      ]
+     ],
+     "quantidade": 10,
+     "velocidade": 0.9,
+     "intensidade": 0.7,
+     "de": "f12:liquido",
+     "ate": "f12:desce+0.6"
+    },
+    {
+     "peca": "bolha",
+     "faz": "sumir",
+     "de": "f12:desce"
+    },
+    {
+     "peca": "massa",
+     "faz": "sumir",
+     "de": "f12:leva"
+    },
+    {
+     "peca": "liquido2",
+     "faz": "aparecer",
+     "de": "f12:leva"
+    },
+    {
+     "peca": "cubo",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 2.5,
+     "de": "f12:leva",
+     "ate": "f13:fim+0.3"
+    },
+    {
+     "peca": "copo",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "caminho": [
+      [
+       0,
+       -0.17,
+       0
+      ],
+      [
+       0.1,
+       -0.16,
+       0.03
+      ],
+      [
+       0.12,
+       -0.08,
+       -0.05
+      ],
+      [
+       0.03,
+       -0.01,
+       -0.12
+      ],
+      [
+       -0.1,
+       0.03,
+       -0.05
+      ],
+      [
+       -0.06,
+       0.05,
+       0.08
+      ],
+      [
+       0,
+       0.02,
+       0
+      ],
+      [
+       0,
+       -0.06,
+       0
+      ],
+      [
+       0,
+       -0.15,
+       0
+      ]
+     ],
+     "quantidade": 14,
+     "velocidade": 0.6,
+     "intensidade": 0.6,
+     "de": "f12:leva",
+     "ate": "f13:fim+0.3"
+    },
+    {
+     "peca": "copo",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.18,
+      0
+     ],
+     "de": "f14:encaixe",
+     "ate": "f14:encaixe+0.5"
+    },
+    {
+     "peca": "encaixe",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 1.5,
+     "de": "f14:encaixe",
+     "ate": "f14:primeiro"
+    },
+    {
+     "peca": "encaixe",
+     "faz": "tremer",
+     "de": "f14:primeiro",
+     "ate": "f14:primeiro+0.7",
+     "intensidade": 1.0
+    },
+    {
+     "peca": "base",
+     "faz": "transparente",
+     "opacidade": 0.25,
+     "de": "f14:salva",
+     "ate": "f14:salva+0.3"
+    },
+    {
+     "peca": "motor",
+     "faz": "pulsar",
+     "de": "f14:motor",
+     "ate": "f14:fim+0.3",
+     "intensidade": 0.6
+    },
+    {
+     "peca": "base",
+     "faz": "transparente",
+     "opacidade": 1,
+     "de": "f15",
+     "ate": "f15+0.3"
+    },
+    {
+     "peca": "copo",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.18,
+      0
+     ],
+     "de": "f15",
+     "ate": "f15+0.4"
+    },
+    {
+     "peca": "cubo",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 2.5,
+     "de": "f15:quem",
+     "ate": "f15:fim+1.5"
+    },
+    {
+     "peca": "copo",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "caminho": [
+      [
+       0,
+       -0.17,
+       0
+      ],
+      [
+       0.1,
+       -0.16,
+       0.03
+      ],
+      [
+       0.12,
+       -0.08,
+       -0.05
+      ],
+      [
+       0.03,
+       -0.01,
+       -0.12
+      ],
+      [
+       -0.1,
+       0.03,
+       -0.05
+      ],
+      [
+       -0.06,
+       0.05,
+       0.08
+      ],
+      [
+       0,
+       0.02,
+       0
+      ],
+      [
+       0,
+       -0.06,
+       0
+      ],
+      [
+       0,
+       -0.15,
+       0
+      ]
+     ],
+     "quantidade": 14,
+     "velocidade": 0.6,
+     "intensidade": 0.6,
+     "de": "f15:quem",
+     "ate": "f15:fim+1.5"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.75,
+      2.0,
+      5.9
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f5"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "base",
+     "olhar": "maquete",
+     "de": "f5:motor"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "encaixe",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f6:encaixe"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "nervoso",
+     "de": "f8"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "copo",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f9:quinas"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f10"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "cubo",
+     "olhar": "maquete",
+     "de": "f10:cima"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "bravo",
+     "de": "f11:vazio"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "copo",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f12:liquido"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f13"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f14:trava"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f15"
+    },
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f15:redemoinho"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "camera": [
+      -0.75,
+      2.0,
+      5.9
+     ],
+     "alvo": [
+      -0.75,
+      1.5,
+      0.3
+     ],
+     "movimento": "arco",
+     "intensidade": 0.5,
+     "transicao": "zoom"
+    },
+    {
+     "de": "f5:motor",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.12,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.55,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f6",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.32,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.7,
+     "movimento": "subir"
+    },
+    {
+     "de": "f6:passa",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.27,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.35,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f7",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.45,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.55,
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f7:sobe",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.52,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.45,
+     "movimento": "subir"
+    },
+    {
+     "de": "f8",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "dolly_zoom",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f8:junto",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.48,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.5,
+     "movimento": "orbitar"
+    },
+    {
+     "de": "f9",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.5,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.6,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f9:jogam",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.42,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.45,
+     "movimento": "arco",
+     "intensidade": -0.4
+    },
+    {
+     "de": "f10",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": 0.4,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f10:cima",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.34,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.3,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f11",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.45,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.55,
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f11:bolha",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.35,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.35,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f11:vazio",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido"
+    },
+    {
+     "de": "f12",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.5,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.6,
+     "movimento": "subir"
+    },
+    {
+     "de": "f12:leva",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.42,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.45,
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f13",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": 0.4,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f13:mesmo",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.5,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.5,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f14",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.3,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.4,
+     "movimento": "subir",
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f14:trava",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido"
+    },
+    {
+     "de": "f14:salva",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.14,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.55,
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f15",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": 0.4,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f15:quem",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.45,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.6,
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f15:redemoinho",
+     "tipo": "aberto",
+     "camera": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "alvo": [
+      -0.9,
+      1.5,
+      0.3
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.3
+    }
+   ],
+   "sons": [
+    {
+     "de": "f5:motor",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f5:gira",
+     "som": "queda",
+     "volume": 0.3
+    },
+    {
+     "de": "f6:copo",
+     "som": "whoosh",
+     "volume": 0.4
+    },
+    {
+     "de": "f6:encaixe",
+     "som": "engrenagem",
+     "volume": 0.6
+    },
+    {
+     "de": "f6:lavar",
+     "som": "clique",
+     "volume": 0.7
+    },
+    {
+     "de": "f7:parede",
+     "som": "agua",
+     "volume": 0.5
+    },
+    {
+     "de": "f7:sobe",
+     "som": "whoosh",
+     "volume": 0.4
+    },
+    {
+     "de": "f8",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f8:carrossel",
+     "som": "impacto",
+     "volume": 0.7
+    },
+    {
+     "de": "f9:quinas",
+     "som": "ding",
+     "volume": 0.8
+    },
+    {
+     "de": "f9:meio",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f10:cima",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f11",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f11:bolha",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f11:vazio",
+     "som": "impacto",
+     "volume": 0.8
+    },
+    {
+     "de": "f12:liquido",
+     "som": "agua",
+     "volume": 0.7
+    },
+    {
+     "de": "f12:leva",
+     "som": "ding",
+     "volume": 0.7
+    },
+    {
+     "de": "f13:vortice",
+     "som": "ding",
+     "volume": 0.8
+    },
+    {
+     "de": "f14:encaixe",
+     "som": "engrenagem",
+     "volume": 0.5
+    },
+    {
+     "de": "f14:primeiro",
+     "som": "impacto",
+     "volume": 0.9
+    },
+    {
+     "de": "f14:salva",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f15:redemoinho",
+     "som": "whoosh",
+     "volume": 0.5
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f5:motor+0.1",
+     "ate": "f5:gira",
+     "efeito": "circular",
+     "alvo": "motor"
+    },
+    {
+     "de": "f6:encaixe+0.1",
+     "ate": "f6:lavar",
+     "efeito": "circular",
+     "alvo": "encaixe"
+    },
+    {
+     "de": "f7+0.1",
+     "ate": "f7:parede",
+     "efeito": "circular",
+     "alvo": "lamina1"
+    },
+    {
+     "de": "f8",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f8:carrossel",
+     "ate": "f8:carrossel+0.25",
+     "efeito": "flash"
+    },
+    {
+     "de": "f9:quinas+0.1",
+     "ate": "f9:jogam",
+     "efeito": "circular",
+     "alvo": "quina_dir"
+    },
+    {
+     "de": "f10:cima+0.1",
+     "ate": "f10:alturas",
+     "efeito": "circular",
+     "alvo": "lamina1"
+    },
+    {
+     "de": "f11:bolha",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f11:bolha+0.1",
+     "ate": "f11:vazio",
+     "efeito": "destacar",
+     "alvo": "bolha"
+    },
+    {
+     "de": "f11:vazio",
+     "ate": "f11:vazio+0.5",
+     "efeito": "tremor",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f12:leva",
+     "ate": "f12:leva+0.8",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f14:primeiro",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f14:primeiro",
+     "ate": "f14:primeiro+0.25",
+     "efeito": "flash"
+    },
+    {
+     "de": "f14:salva+0.1",
+     "ate": "f14:fim",
+     "efeito": "circular",
+     "alvo": "motor"
+    },
+    {
+     "de": "f15:redemoinho",
+     "ate": "f15:fim+0.5",
+     "efeito": "linhas",
+     "intensidade": 0.6
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "motor",
+     "texto": "Motor",
+     "de": "f5:motor",
+     "ate": "f5:fim"
+    },
+    {
+     "alvo": "encaixe",
+     "texto": "Encaixe",
+     "de": "f6:encaixe",
+     "ate": "f6:fim"
+    },
+    {
+     "alvo": "lamina1",
+     "texto": "Lâminas",
+     "de": "f7",
+     "ate": "f7:sobe"
+    },
+    {
+     "alvo": "quina_dir",
+     "texto": "Quinas",
+     "de": "f9:quinas",
+     "ate": "f9:fim"
+    },
+    {
+     "alvo": "lamina1",
+     "texto": "Lâmina torta",
+     "de": "f10:cima",
+     "ate": "f10:fim"
+    },
+    {
+     "alvo": "bolha",
+     "texto": "Bolha de ar",
+     "de": "f11:bolha",
+     "ate": "f11:vazio",
+     "cor": "#FF8A80"
+    },
+    {
+     "alvo": [
+      0.05,
+      1.68,
+      0
+     ],
+     "texto": "Líquido",
+     "de": "f12:liquido",
+     "ate": "f12:leva",
+     "cor": "#6E9BFF"
+    },
+    {
+     "alvo": "encaixe",
+     "texto": "Quebra primeiro",
+     "de": "f14:primeiro",
+     "ate": "f14:salva",
+     "cor": "#FF8A80"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f13:vortice",
+     "ate": "f13:fim+0.3",
+     "grande": "VÓRTICE",
+     "pequeno": "o redemoinho que puxa tudo para o meio"
+    }
+   ]
+  }
+ ]
+}
