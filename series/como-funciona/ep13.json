@@ -1412,7 +1412,7 @@
      "movimento": "zoom_rapido"
     },
     {
-     "de": "f2:sujeira",
+     "de": "f2:pano",
      "tipo": "detalhe",
      "alvo": "mancha",
      "lado": "frente",
@@ -1492,7 +1492,7 @@
      "transicao": "varrer"
     },
     {
-     "de": "f6:ralo",
+     "de": "f6:pela",
      "tipo": "detalhe",
      "alvo": [
       0.12,
@@ -1590,7 +1590,7 @@
      "movimento": "aproximar"
     },
     {
-     "de": "f11:torto",
+     "de": "f11:cesto",
      "tipo": "detalhe",
      "alvo": [
       0,
@@ -1643,7 +1643,7 @@
      "transicao": "chicote"
     },
     {
-     "de": "f13:sabao",
+     "de": "f13:cheia",
      "tipo": "detalhe",
      "alvo": [
       0,
@@ -1932,7 +1932,7 @@
    ],
    "efeitos": [
     {
-     "de": "f2:sujeira+0.1",
+     "de": "f2:pano+0.1",
      "ate": "f2:fim",
      "efeito": "circular",
      "alvo": "mancha"
@@ -2050,7 +2050,7 @@
     {
      "alvo": "mancha",
      "texto": "Sujeira",
-     "de": "f2:sujeira",
+     "de": "f2:pano",
      "ate": "f2:fim",
      "cor": "#FF8A80"
     },
