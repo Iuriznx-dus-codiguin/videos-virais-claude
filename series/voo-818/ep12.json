@@ -1,0 +1,1486 @@
+{
+ "serie": "voo-818",
+ "parte": 12,
+ "titulo": "A adega",
+ "musica": "tensao",
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "davi",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Se te trancarem num porão cheio de gente dormindo, não acorde ninguém."
+  },
+  {
+   "id": "f2",
+   "quem": "davi",
+   "off": true,
+   "texto": "Porque, no meio de quem dorme, ninguém repara em mais um."
+  },
+  {
+   "id": "f3",
+   "quem": "davi",
+   "off": true,
+   "texto": "Mas só se você não fizer barulho."
+  },
+  {
+   "id": "f4",
+   "quem": "davi",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Cento e quarenta e três passageiros do meu voo. VIVOS."
+  },
+  {
+   "id": "f5",
+   "quem": "davi",
+   "off": true,
+   "tom": "determinado",
+   "texto": "Eu exigi ver a menina antes de assinar."
+  },
+  {
+   "id": "f6",
+   "quem": "davi",
+   "off": true,
+   "texto": "Então o Ramos me jogou aqui."
+  },
+  {
+   "id": "f7",
+   "quem": "davi",
+   "off": true,
+   "texto": "Meu primeiro instinto é gritar o nome dela."
+  },
+  {
+   "id": "f8",
+   "quem": "davi",
+   "off": true,
+   "tom": "determinado",
+   "texto": "Não. Grito aqui embaixo sobe a escada inteira."
+  },
+  {
+   "id": "f9",
+   "quem": "davi",
+   "off": true,
+   "texto": "De hora em hora, um deles desce pra contar cabeça. Faltam dez minutos."
+  },
+  {
+   "id": "f10",
+   "quem": "davi",
+   "off": true,
+   "texto": "Primeiro, achar uma menina no meio de todo mundo."
+  },
+  {
+   "id": "f11",
+   "quem": "davi",
+   "off": true,
+   "texto": "Lá atrás, encostada no barril... é a Lia."
+  },
+  {
+   "id": "f12",
+   "quem": "davi",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Só que ela não acorda. Respira devagar, igual aos outros."
+  },
+  {
+   "id": "f13",
+   "quem": "davi",
+   "off": true,
+   "tom": "tenso",
+   "texto": "E aí eu sinto o cheiro. O ar daqui de baixo é DOCE."
+  },
+  {
+   "id": "f14",
+   "quem": "davi",
+   "off": true,
+   "texto": "Ou seja, ainda tem gás aqui. E eu já estou com sono."
+  },
+  {
+   "id": "f15",
+   "quem": "davi",
+   "off": true,
+   "texto": "Ar limpo só entra por um lugar: a fresta da porta."
+  },
+  {
+   "id": "f16",
+   "quem": "davi",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Mas é exatamente por essa porta que a contagem desce."
+  },
+  {
+   "id": "f17",
+   "quem": "davi",
+   "off": true,
+   "texto": "Então eu sento no chão, fecho os olhos e respiro pela fresta."
+  },
+  {
+   "id": "f18",
+   "quem": "davi",
+   "off": true,
+   "tom": "aliviado",
+   "texto": "A lanterna passa no meu rosto, conta cento e quarenta e quatro e sobe. Passou."
+  },
+  {
+   "id": "f19",
+   "quem": "davi",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Só que a pessoa do meu lado falou sem abrir o olho."
+  },
+  {
+   "id": "f20",
+   "quem": "lia",
+   "tom": "sussurro",
+   "texto": "Fui eu que pisquei o farol, Davi."
+  },
+  {
+   "id": "f21",
+   "quem": "lia",
+   "tom": "determinado",
+   "texto": "Dessa vez, o mundo inteiro vai ver."
+  }
+ ],
+ "cenas": [
+  {
+   "id": "gancho",
+   "cenario": "adega",
+   "luz": "noite",
+   "filtro": "frio",
+   "personagens": {
+    "davi": {
+     "em": [
+      0.6,
+      -1.6
+     ],
+     "olhando": [
+      0.9,
+      1.6,
+      4.0
+     ],
+     "expressao": "nervoso",
+     "escala": 0.6
+    },
+    "lia": {
+     "em": [
+      -1.45,
+      -4.3
+     ],
+     "olhando": [
+      0.5,
+      0.9,
+      -2.5
+     ],
+     "expressao": "neutro",
+     "pose": "sentado",
+     "escala": 0.6,
+     "olhos_fechados": true
+    }
+   },
+   "objetos": [],
+   "acoes": [
+    {
+     "quem": "davi",
+     "faz": "olhar_em_volta",
+     "de": "inicio+0.2"
+    },
+    {
+     "quem": "lia",
+     "faz": "abrir_olhos",
+     "de": "f2:quem"
+    },
+    {
+     "quem": "lia",
+     "faz": "fechar_olhos",
+     "de": "f2:fim"
+    },
+    {
+     "quem": "davi",
+     "expressao": "medo",
+     "de": "f3"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "geral",
+     "alvo": [
+      0.0,
+      0.9,
+      -2.2
+     ],
+     "camera": [
+      0.5,
+      2.7,
+      6.2
+     ],
+     "movimento": "arco",
+     "intensidade": 0.12
+    },
+    {
+     "de": "f2",
+     "tipo": "medio",
+     "alvo": [
+      -1.6,
+      0.8,
+      -3.4
+     ],
+     "camera": [
+      0.5,
+      1.35,
+      -0.2
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.2
+    },
+    {
+     "de": "f3",
+     "tipo": "close",
+     "alvo": "davi",
+     "camera": [
+      0.85,
+      1.6,
+      0.2
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.15
+    }
+   ],
+   "sons": [
+    {
+     "de": "inicio",
+     "som": "tensao_sobe",
+     "volume": 0.25
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "inicio",
+     "efeito": "vinheta",
+     "intensidade": 0.3
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "davi",
+     "texto": "DAVI · MECÂNICO",
+     "cor": "#FFD60A",
+     "de": "f3",
+     "ate": "f3:fim"
+    }
+   ]
+  },
+  {
+   "id": "vivos",
+   "cenario": "adega",
+   "luz": "noite",
+   "de": "f4",
+   "filtro": "frio",
+   "personagens": {
+    "davi": {
+     "em": [
+      0.6,
+      -1.6
+     ],
+     "olhando": [
+      0.9,
+      1.6,
+      4.0
+     ],
+     "expressao": "medo",
+     "escala": 0.6
+    },
+    "lia": {
+     "em": [
+      -1.45,
+      -4.3
+     ],
+     "olhando": [
+      0.5,
+      0.9,
+      -2.5
+     ],
+     "expressao": "neutro",
+     "pose": "sentado",
+     "escala": 0.6,
+     "olhos_fechados": true
+    }
+   },
+   "objetos": [],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "alvo": [
+      2.4,
+      0.8,
+      -1.4
+     ],
+     "camera": [
+      1.0,
+      1.55,
+      3.6
+     ],
+     "movimento": "travelling",
+     "intensidade": -0.2
+    },
+    {
+     "de": "f4:VIVOS",
+     "tipo": "detalhe",
+     "alvo": [
+      2.45,
+      1.05,
+      -0.04
+     ],
+     "camera": [
+      1.2,
+      1.2,
+      0.15
+     ],
+     "movimento": "zoom_rapido",
+     "intensidade": 0.25
+    }
+   ],
+   "sons": [
+    {
+     "de": "f4:VIVOS",
+     "som": "impacto",
+     "volume": 0.35
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "inicio",
+     "efeito": "vinheta",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f4:VIVOS",
+     "ate": "f4:fim",
+     "efeito": "linhas"
+    }
+   ]
+  },
+  {
+   "id": "lembranca",
+   "cenario": "ilhota_farol",
+   "luz": "noite",
+   "ambiente": "mar",
+   "de": "f5",
+   "filtro": "sepia",
+   "personagens": {
+    "ramos": {
+     "em": [
+      -0.8,
+      -1.0
+     ],
+     "olhando": [
+      1.0,
+      2.6,
+      0.4
+     ],
+     "expressao": "serio"
+    },
+    "davi": {
+     "em": [
+      1.0,
+      0.4
+     ],
+     "olhando": [
+      -0.8,
+      2.7,
+      -1.0
+     ],
+     "expressao": "determinado"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "farol",
+     "em": [
+      0,
+      -4
+     ],
+     "ilhota": false,
+     "modo": "apagado"
+    },
+    {
+     "tipo": "barco",
+     "em": [
+      3,
+      17
+     ],
+     "giro": 90
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      0.1,
+      -0.3
+     ],
+     "giro": 20
+    },
+    {
+     "tipo": "prancheta",
+     "em": [
+      -0.14,
+      -0.02
+     ],
+     "alt": 0.81,
+     "escala": 2.2,
+     "circulados": 2,
+     "giro": -40
+    },
+    {
+     "tipo": "lanternas_mata",
+     "em": [
+      2.0,
+      -1.4
+     ],
+     "giro": 135,
+     "quantas": 1,
+     "largura": 1
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "davi",
+     "faz": "bracos_cruzados",
+     "de": "inicio+0.3"
+    },
+    {
+     "quem": "ramos",
+     "faz": "apontar",
+     "para": "porta",
+     "de": "f5:assinar"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "medio",
+     "alvo": [
+      0.1,
+      2.1,
+      -0.3
+     ],
+     "camera": [
+      -4.78,
+      2.6,
+      6.02
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.2,
+     "transicao": "desfoque"
+    }
+   ],
+   "sons": [],
+   "efeitos": [
+    {
+     "de": "inicio",
+     "efeito": "vinheta",
+     "intensidade": 0.35
+    }
+   ]
+  },
+  {
+   "id": "empurrao",
+   "cenario": "adega",
+   "luz": "noite",
+   "de": "f6",
+   "filtro": "frio",
+   "personagens": {
+    "davi": {
+     "em": [
+      0.0,
+      -5.0
+     ],
+     "olhando": [
+      0.5,
+      1.6,
+      0.0
+     ],
+     "expressao": "medo",
+     "escala": 0.6
+    },
+    "lia": {
+     "em": [
+      -1.45,
+      -4.3
+     ],
+     "olhando": [
+      0.5,
+      0.9,
+      -2.5
+     ],
+     "expressao": "neutro",
+     "pose": "sentado",
+     "escala": 0.6,
+     "olhos_fechados": true
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "feixe_luz",
+     "de": [
+      0,
+      2.0,
+      -5.9
+     ],
+     "em": [
+      0.3,
+      -3.2
+     ],
+     "largura": 0.9,
+     "intensidade": 0.25,
+     "some": "f6:fim"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "davi",
+     "faz": "correr",
+     "para": [
+      0.45,
+      -2.4
+     ],
+     "de": "inicio+0.1",
+     "velocidade": 1.3
+    },
+    {
+     "quem": "davi",
+     "faz": "susto",
+     "de": "f6:jogou"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "medio",
+     "alvo": [
+      0.2,
+      1.1,
+      -3.6
+     ],
+     "camera": [
+      0.6,
+      1.5,
+      -0.4
+     ],
+     "movimento": "tremer",
+     "intensidade": 0.25,
+     "transicao": "desfoque"
+    }
+   ],
+   "sons": [
+    {
+     "de": "f6:jogou",
+     "som": "queda",
+     "volume": 0.4
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "inicio",
+     "efeito": "vinheta",
+     "intensidade": 0.3
+    }
+   ]
+  },
+  {
+   "id": "instinto",
+   "cenario": "adega",
+   "luz": "noite",
+   "de": "f7",
+   "filtro": "frio",
+   "personagens": {
+    "davi": {
+     "em": [
+      0.45,
+      -2.4
+     ],
+     "olhando": [
+      -1.5,
+      1.3,
+      -0.4
+     ],
+     "expressao": "bravo",
+     "escala": 0.6
+    },
+    "lia": {
+     "em": [
+      -1.45,
+      -4.3
+     ],
+     "olhando": [
+      0.5,
+      0.9,
+      -2.5
+     ],
+     "expressao": "neutro",
+     "pose": "sentado",
+     "escala": 0.6,
+     "olhos_fechados": true
+    }
+   },
+   "objetos": [],
+   "acoes": [
+    {
+     "quem": "davi",
+     "expressao": "determinado",
+     "de": "f8"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "close",
+     "alvo": "davi",
+     "camera": [
+      -0.55,
+      1.6,
+      -0.95
+     ],
+     "movimento": "zoom_rapido",
+     "intensidade": 0.2,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f8",
+     "tipo": "baixo",
+     "alvo": [
+      0.0,
+      1.2,
+      -5.85
+     ],
+     "camera": [
+      0.35,
+      0.45,
+      -3.0
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.2
+    }
+   ],
+   "sons": [
+    {
+     "de": "f8",
+     "som": "tensao_sobe",
+     "volume": 0.3
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "inicio",
+     "efeito": "vinheta",
+     "intensidade": 0.3
+    }
+   ]
+  },
+  {
+   "id": "relogio",
+   "cenario": "adega",
+   "luz": "noite",
+   "de": "f9",
+   "filtro": "frio",
+   "personagens": {
+    "davi": {
+     "em": [
+      0.45,
+      -2.4
+     ],
+     "olhando": [
+      0.6,
+      1.6,
+      3.0
+     ],
+     "expressao": "serio",
+     "escala": 0.6
+    },
+    "lia": {
+     "em": [
+      -1.45,
+      -4.3
+     ],
+     "olhando": [
+      0.5,
+      0.9,
+      -2.5
+     ],
+     "expressao": "neutro",
+     "pose": "sentado",
+     "escala": 0.6,
+     "olhos_fechados": true
+    }
+   },
+   "objetos": [],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "alvo": [
+      -0.4,
+      0.9,
+      -4.0
+     ],
+     "camera": [
+      0.9,
+      2.6,
+      2.4
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.2
+    }
+   ],
+   "sons": [],
+   "efeitos": [
+    {
+     "de": "inicio",
+     "efeito": "vinheta",
+     "intensidade": 0.3
+    },
+    {
+     "de": "inicio",
+     "ate": "f9:fim",
+     "efeito": "letreiro",
+     "texto": "5H45",
+     "altura": 0.22
+    }
+   ]
+  },
+  {
+   "id": "busca",
+   "cenario": "adega",
+   "luz": "noite",
+   "de": "f10",
+   "filtro": "frio",
+   "personagens": {
+    "davi": {
+     "em": [
+      0.45,
+      -2.4
+     ],
+     "olhando": [
+      0.6,
+      1.6,
+      4.0
+     ],
+     "expressao": "nervoso",
+     "escala": 0.6
+    },
+    "lia": {
+     "em": [
+      -1.45,
+      -4.3
+     ],
+     "olhando": [
+      0.5,
+      0.9,
+      -2.5
+     ],
+     "expressao": "neutro",
+     "pose": "sentado",
+     "escala": 0.6,
+     "olhos_fechados": true
+    }
+   },
+   "objetos": [],
+   "acoes": [
+    {
+     "quem": "davi",
+     "faz": "andar",
+     "para": [
+      0.6,
+      2.2
+     ],
+     "de": "inicio+0.2",
+     "velocidade": 1.2
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "medio",
+     "alvo": "davi",
+     "camera": [
+      1.0,
+      1.7,
+      5.0
+     ],
+     "movimento": "acompanhar",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f11",
+     "tipo": "close",
+     "alvo": "lia",
+     "camera": [
+      -0.45,
+      1.05,
+      -2.8
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.15,
+     "transicao": "chicote"
+    }
+   ],
+   "sons": [],
+   "efeitos": [
+    {
+     "de": "inicio",
+     "efeito": "vinheta",
+     "intensidade": 0.3
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "lia",
+     "texto": "LIA · 13 ANOS",
+     "cor": "#FF9BD2",
+     "de": "f11:barril",
+     "ate": "f11:fim+0.2"
+    }
+   ]
+  },
+  {
+   "id": "nao_acorda",
+   "cenario": "adega",
+   "luz": "noite",
+   "de": "f12",
+   "filtro": "frio",
+   "personagens": {
+    "davi": {
+     "em": [
+      -0.75,
+      -4.6
+     ],
+     "olhando": [
+      -1.45,
+      0.8,
+      -4.3
+     ],
+     "expressao": "nervoso",
+     "escala": 0.6,
+     "pose": "agachado"
+    },
+    "lia": {
+     "em": [
+      -1.45,
+      -4.3
+     ],
+     "olhando": [
+      0.5,
+      0.9,
+      -2.5
+     ],
+     "expressao": "neutro",
+     "pose": "sentado",
+     "escala": 0.6,
+     "olhos_fechados": true
+    }
+   },
+   "objetos": [],
+   "acoes": [
+    {
+     "quem": "davi",
+     "faz": "estender_mao",
+     "para": [
+      -1.45,
+      0.75,
+      -4.3
+     ],
+     "de": "inicio+0.3"
+    },
+    {
+     "quem": "davi",
+     "expressao": "triste",
+     "de": "f12:devagar"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "medio",
+     "alvo": [
+      -1.05,
+      0.85,
+      -4.45
+     ],
+     "camera": [
+      0.6,
+      1.35,
+      -1.6
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.15
+    }
+   ],
+   "sons": [],
+   "efeitos": [
+    {
+     "de": "inicio",
+     "efeito": "vinheta",
+     "intensidade": 0.3
+    }
+   ]
+  },
+  {
+   "id": "cheiro",
+   "cenario": "adega",
+   "luz": "noite",
+   "de": "f13",
+   "filtro": "frio",
+   "personagens": {
+    "davi": {
+     "em": [
+      0.0,
+      -3.3
+     ],
+     "olhando": [
+      0.3,
+      2.2,
+      0.5
+     ],
+     "expressao": "desconfiado",
+     "escala": 0.6
+    },
+    "lia": {
+     "em": [
+      -1.45,
+      -4.3
+     ],
+     "olhando": [
+      0.5,
+      0.9,
+      -2.5
+     ],
+     "expressao": "neutro",
+     "pose": "sentado",
+     "escala": 0.6,
+     "olhos_fechados": true
+    }
+   },
+   "objetos": [],
+   "acoes": [
+    {
+     "quem": "davi",
+     "expressao": "medo",
+     "de": "f13:DOCE"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "close",
+     "alvo": "davi",
+     "camera": [
+      0.3,
+      1.55,
+      -1.5
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.15
+    },
+    {
+     "de": "f13:DOCE",
+     "tipo": "close",
+     "alvo": "davi",
+     "camera": [
+      0.25,
+      1.55,
+      -1.35
+     ],
+     "movimento": "zoom_rapido",
+     "intensidade": 0.25
+    }
+   ],
+   "sons": [
+    {
+     "de": "f13:DOCE",
+     "som": "susto",
+     "volume": 0.35
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "inicio",
+     "efeito": "vinheta",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f13:DOCE",
+     "ate": "f13:fim",
+     "efeito": "linhas"
+    }
+   ]
+  },
+  {
+   "id": "sono",
+   "cenario": "adega",
+   "luz": "noite",
+   "de": "f14",
+   "filtro": "sonho",
+   "personagens": {
+    "lia": {
+     "em": [
+      -1.45,
+      -4.3
+     ],
+     "olhando": [
+      0.5,
+      0.9,
+      -2.5
+     ],
+     "expressao": "neutro",
+     "pose": "sentado",
+     "escala": 0.6,
+     "olhos_fechados": true
+    }
+   },
+   "objetos": [],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "pov",
+     "alvo": "lampada",
+     "camera": [
+      -0.7,
+      1.15,
+      -3.6
+     ],
+     "movimento": "tremer",
+     "intensidade": 0.3,
+     "transicao": "desfoque"
+    }
+   ],
+   "sons": [],
+   "efeitos": [
+    {
+     "de": "inicio",
+     "efeito": "vinheta",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f14:sono",
+     "ate": "f14:sono+0.5",
+     "efeito": "preto",
+     "intensidade": 0.8
+    },
+    {
+     "de": "f14:fim",
+     "ate": "f14:fim+0.6",
+     "efeito": "preto",
+     "intensidade": 0.9
+    }
+   ]
+  },
+  {
+   "id": "fresta",
+   "cenario": "adega",
+   "luz": "noite",
+   "de": "f15",
+   "filtro": "frio",
+   "personagens": {
+    "lia": {
+     "em": [
+      -1.45,
+      -4.3
+     ],
+     "olhando": [
+      0.5,
+      0.9,
+      -2.5
+     ],
+     "expressao": "neutro",
+     "pose": "sentado",
+     "escala": 0.6,
+     "olhos_fechados": true
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "feixe_luz",
+     "de": [
+      0,
+      0.68,
+      -5.95
+     ],
+     "em": [
+      0.1,
+      -4.7
+     ],
+     "largura": 0.45,
+     "intensidade": 0.25
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "alvo": [
+      0.0,
+      0.7,
+      -5.8
+     ],
+     "camera": [
+      0.35,
+      1.0,
+      -4.2
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.25,
+     "transicao": "zoom"
+    },
+    {
+     "de": "f16",
+     "tipo": "baixo",
+     "alvo": [
+      0.0,
+      1.2,
+      -5.85
+     ],
+     "camera": [
+      0.55,
+      0.35,
+      -3.5
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.2
+    }
+   ],
+   "sons": [
+    {
+     "de": "f16",
+     "som": "tensao_sobe",
+     "volume": 0.3
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "inicio",
+     "efeito": "vinheta",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f15:fresta",
+     "ate": "f15:fim+0.3",
+     "efeito": "circular",
+     "alvo": [
+      0.0,
+      0.7,
+      -5.8
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fingir",
+   "cenario": "adega",
+   "luz": "noite",
+   "de": "f17",
+   "filtro": "frio",
+   "personagens": {
+    "davi": {
+     "em": [
+      -0.6,
+      -4.7
+     ],
+     "olhando": [
+      0.5,
+      1.0,
+      -1.5
+     ],
+     "expressao": "cansado",
+     "escala": 0.6
+    },
+    "lia": {
+     "em": [
+      -1.45,
+      -4.3
+     ],
+     "olhando": [
+      0.5,
+      0.9,
+      -2.5
+     ],
+     "expressao": "neutro",
+     "pose": "sentado",
+     "escala": 0.6,
+     "olhos_fechados": true
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "lanternas_mata",
+     "em": [
+      0.15,
+      -5.15
+     ],
+     "giro": 0,
+     "quantas": 1,
+     "largura": 0.4,
+     "aparece": "f18",
+     "some": "f18:sobe"
+    },
+    {
+     "tipo": "feixe_luz",
+     "de": [
+      0.35,
+      1.3,
+      -5.0
+     ],
+     "em": [
+      -1.0,
+      -4.5
+     ],
+     "alt": 0.8,
+     "largura": 0.6,
+     "intensidade": 0.3,
+     "varrer": 25,
+     "aparece": "f18",
+     "some": "f18:sobe"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "davi",
+     "faz": "sentar",
+     "de": "f17:sento"
+    },
+    {
+     "quem": "davi",
+     "faz": "fechar_olhos",
+     "de": "f17:olhos"
+    },
+    {
+     "quem": "davi",
+     "expressao": "aliviado",
+     "de": "f18:Passou"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "medio",
+     "alvo": [
+      -0.95,
+      1.0,
+      -4.5
+     ],
+     "camera": [
+      1.2,
+      1.5,
+      -1.8
+     ],
+     "movimento": "travelling",
+     "intensidade": -0.15,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f18",
+     "tipo": "aberto",
+     "alvo": [
+      -0.3,
+      1.0,
+      -4.9
+     ],
+     "camera": [
+      0.7,
+      1.9,
+      -1.2
+     ],
+     "movimento": "fixo"
+    },
+    {
+     "de": "f18:Passou",
+     "tipo": "close",
+     "alvo": "davi",
+     "camera": [
+      0.1,
+      1.0,
+      -3.1
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.15
+    }
+   ],
+   "sons": [
+    {
+     "de": "f18",
+     "som": "passo_gigante",
+     "volume": 0.2
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "inicio",
+     "efeito": "vinheta",
+     "intensidade": 0.3
+    },
+    {
+     "de": "inicio",
+     "ate": "f17:fim",
+     "efeito": "letreiro",
+     "texto": "5H55",
+     "altura": 0.22
+    }
+   ]
+  },
+  {
+   "id": "virada",
+   "cenario": "adega",
+   "luz": "noite",
+   "de": "f19",
+   "filtro": "dramatico",
+   "personagens": {
+    "davi": {
+     "em": [
+      -0.6,
+      -4.7
+     ],
+     "olhando": [
+      0.5,
+      1.0,
+      -1.5
+     ],
+     "expressao": "aliviado",
+     "escala": 0.6,
+     "pose": "sentado",
+     "olhos_fechados": true
+    },
+    "lia": {
+     "em": [
+      -1.45,
+      -4.3
+     ],
+     "olhando": [
+      0.5,
+      0.9,
+      -2.5
+     ],
+     "expressao": "neutro",
+     "pose": "sentado",
+     "escala": 0.6,
+     "olhos_fechados": true
+    }
+   },
+   "objetos": [],
+   "acoes": [
+    {
+     "quem": "davi",
+     "faz": "abrir_olhos",
+     "de": "f19:falou"
+    },
+    {
+     "quem": "davi",
+     "expressao": "surpreso",
+     "de": "f19:falou"
+    },
+    {
+     "quem": "davi",
+     "olhar": [
+      -1.45,
+      0.9,
+      -4.3
+     ],
+     "de": "f19:lado"
+    },
+    {
+     "quem": "lia",
+     "faz": "abrir_olhos",
+     "de": "f21"
+    },
+    {
+     "quem": "lia",
+     "expressao": "determinado",
+     "de": "f21"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "close",
+     "alvo": "davi",
+     "camera": [
+      0.05,
+      1.0,
+      -3.15
+     ],
+     "movimento": "dolly_zoom",
+     "intensidade": 0.8,
+     "transicao": "zoom"
+    },
+    {
+     "de": "f20",
+     "tipo": "close",
+     "alvo": "lia",
+     "camera": [
+      -0.45,
+      1.05,
+      -2.8
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.2
+    },
+    {
+     "de": "f21:fim+0.2",
+     "tipo": "close",
+     "alvo": "davi",
+     "camera": [
+      0.05,
+      1.0,
+      -3.15
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.1
+    }
+   ],
+   "sons": [
+    {
+     "de": "inicio",
+     "som": "tensao_sobe",
+     "volume": 0.35
+    },
+    {
+     "de": "f20:farol",
+     "som": "impacto",
+     "volume": 0.45
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "inicio",
+     "efeito": "vinheta",
+     "intensidade": 0.3
+    },
+    {
+     "de": "inicio",
+     "ate": "fim",
+     "efeito": "barras"
+    },
+    {
+     "de": "f20",
+     "ate": "f21:fim",
+     "efeito": "destacar",
+     "alvo": "lia"
+    }
+   ]
+  }
+ ],
+ "chamada": {
+  "pergunta": "Você subia o farol com a menina ou esperava o Otávio?",
+  "texto": "COMENTA",
+  "destaque": "PARTE 13"
+ },
+ "postagem": {
+  "titulo": "Os 143 passageiros do avião estavam num porão",
+  "descricao": "Quatro sobreviventes de um avião que caiu numa ilha deserta. Jogado num porão embaixo do farol, o mecânico encontra os 143 passageiros que tinham sumido, todos dormindo.",
+  "hashtags": [
+   "ilhadeserta",
+   "misterio",
+   "suspense",
+   "animacao"
+  ],
+  "comentario": "Eu subia agora, antes de o sol nascer. E você: subia com a Lia ou esperava o Otávio?",
+  "capa": "f4:VIVOS+0.4"
+ }
+}
