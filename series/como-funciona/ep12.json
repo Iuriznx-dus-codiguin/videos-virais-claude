@@ -2017,13 +2017,6 @@
      "transicao": "desfoque"
     },
     {
-     "de": "f14:trava",
-     "tipo": "medio",
-     "alvo": "tito",
-     "lado": "tres_quartos_direita",
-     "movimento": "zoom_rapido"
-    },
-    {
      "de": "f14:salva",
      "tipo": "detalhe",
      "alvo": [
