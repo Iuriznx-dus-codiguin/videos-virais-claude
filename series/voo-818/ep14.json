@@ -1237,9 +1237,9 @@
      "tipo": "close",
      "alvo": "ramos",
      "camera": [
-      -0.2,
+      -0.55,
       1.1,
-      1.05
+      1.25
      ],
      "movimento": "aproximar",
      "intensidade": 0.2
