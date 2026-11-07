@@ -1,1953 +1,1954 @@
 {
- "serie": "como-funciona",
- "parte": 14,
- "titulo": "O ar-condicionado não foi feito para refrescar gente",
- "musica": "curiosidade",
- "personagens": {
-  "carrier": {
-   "nome": "Willis Carrier",
-   "papel": "engenheiro americano de 25 anos; em 1902, numa gráfica do Brooklyn (Nova York), a umidade fazia o papel mudar de tamanho e as cores saírem fora do lugar; fez o ar passar por canos gelados, a umidade virou gotas e o ar saiu seco; não fala",
-   "visual": {
-    "altura": 1,
-    "corpo": "#2C3E50",
-    "cabeca": "#F2D5BD",
-    "olhos": "redondos",
-    "sobrancelhas": "grossas",
-    "acessorios": [
-     {
-      "tipo": "cabelo_curto",
-      "cor": "#3B2A1E"
-     },
-     {
-      "tipo": "oculos",
-      "cor": "#2B2F36"
-     },
-     {
-      "tipo": "lenco",
-      "cor": "#8E2C2C"
-     }
-    ]
-   }
-  }
- },
- "modelos": {
-  "split": [
-   {
-    "id": "piso_sala",
-    "forma": "caixa",
-    "tam": [
-     0.42,
-     0.012,
-     0.32
-    ],
-    "pos": [
-     -0.21,
-     0.006,
-     0
-    ],
-    "cor": "#C49A6C"
-   },
-   {
-    "id": "grama",
-    "forma": "caixa",
-    "tam": [
-     0.42,
-     0.012,
-     0.32
-    ],
-    "pos": [
-     0.21,
-     0.006,
-     0
-    ],
-    "cor": "#7DCE82"
-   },
-   {
-    "id": "parede",
-    "forma": "caixa",
-    "tam": [
-     0.04,
-     0.62,
-     0.3
-    ],
-    "pos": [
-     0,
-     0.31,
-     0
-    ],
-    "cor": "#F3E0C0"
-   },
-   {
-    "id": "evaporadora",
-    "forma": "caixa",
-    "tam": [
-     0.3,
-     0.1,
-     0.09
-    ],
-    "pos": [
-     -0.19,
-     0.5,
-     0.0
-    ],
-    "cor": "#FDFEFE"
-   },
-   {
-    "id": "serpentina",
-    "forma": "mola",
-    "tam": [
-     0.03,
-     0.24,
-     10,
-     0.007
-    ],
-    "pos": [
-     -0.19,
-     0.5,
-     0.0
-    ],
-    "giro": [
-     0,
-     0,
-     90
-    ],
-    "cor": "#3498DB"
-   },
-   {
-    "id": "condensadora",
-    "forma": "caixa",
-    "tam": [
-     0.26,
-     0.2,
-     0.13
-    ],
-    "pos": [
-     0.18,
-     0.11,
-     0
-    ],
-    "cor": "#ECF0F1"
-   },
-   {
-    "id": "grade",
-    "forma": "toro",
-    "tam": [
-     0.065,
-     0.008
-    ],
-    "pos": [
-     0.22,
-     0.11,
-     0.07
-    ],
-    "giro": [
-     90,
-     0,
-     0
-    ],
-    "cor": "#7F8C8D"
-   },
-   {
-    "id": "helice",
-    "forma": "esfera",
-    "tam": [
-     0.012
-    ],
-    "pos": [
-     0.22,
-     0.11,
-     0.072
-    ],
-    "cor": "#566573"
-   },
-   {
-    "id": "pa1",
-    "forma": "caixa",
-    "tam": [
-     0.11,
-     0.022,
-     0.006
-    ],
-    "pos": [
-     0,
-     0,
-     0
-    ],
-    "cor": "#566573",
-    "pai": "helice"
-   },
-   {
-    "id": "pa2",
-    "forma": "caixa",
-    "tam": [
-     0.11,
-     0.022,
-     0.006
-    ],
-    "pos": [
-     0,
-     0,
-     0
-    ],
-    "giro": [
-     0,
-     0,
-     90
-    ],
-    "cor": "#566573",
-    "pai": "helice"
-   },
-   {
-    "id": "compressor",
-    "forma": "capsula",
-    "tam": [
-     0.035,
-     0.05
-    ],
-    "pos": [
-     0.11,
-     0.09,
-     0
-    ],
-    "cor": "#C0392B"
-   },
-   {
-    "id": "cano_gas",
-    "forma": "tubo",
-    "tam": [
-     0.01
-    ],
-    "pos": [
-     0.06,
-     0.38,
-     0.03
-    ],
-    "caminho": [
-     [
-      -0.11,
-      0.12,
-      0.0
-     ],
-     [
-      -0.02,
-      0.1,
-      0.0
-     ],
-     [
-      0.04,
-      0.0,
-      0.0
-     ],
-     [
-      0.05,
-      -0.18,
-      0.0
-     ]
-    ],
-    "cor": "#B87333"
-   },
-   {
-    "id": "cano_liq",
-    "forma": "tubo",
-    "tam": [
-     0.008
-    ],
-    "pos": [
-     0.06,
-     0.36,
-     -0.03
-    ],
-    "caminho": [
-     [
-      0.09,
-      -0.16,
-      0.0
-     ],
-     [
-      0.08,
-      -0.01,
-      0.0
-     ],
-     [
-      0.0,
-      0.11,
-      0.0
-     ],
-     [
-      -0.11,
-      0.13,
-      0.0
-     ]
-    ],
-    "cor": "#D4A373"
-   },
-   {
-    "id": "valvula",
-    "forma": "esfera",
-    "tam": [
-     0.022
-    ],
-    "pos": [
-     0.115,
-     0.4,
-     -0.03
-    ],
-    "cor": "#E67E22",
-    "oculta": true
-   },
-   {
-    "id": "dreno",
-    "forma": "tubo",
-    "tam": [
-     0.007
-    ],
-    "pos": [
-     0.04,
-     0.41,
-     0.06
-    ],
-    "caminho": [
-     [
-      -0.12,
-      0.04,
-      0.0
-     ],
-     [
-      -0.01,
-      0.02,
-      0.0
-     ],
-     [
-      0.035,
-      -0.01,
-      0.0
-     ],
-     [
-      0.045,
-      -0.07,
-      0.0
-     ]
-    ],
-    "cor": "#BDC3C7"
-   }
-  ],
-  "grafica_1902": [
-   {
-    "id": "c_prensa",
-    "forma": "caixa",
-    "tam": [
-     0.15,
-     0.09,
-     0.1
-    ],
-    "pos": [
-     -0.1,
-     0.045,
-     -0.01
-    ],
-    "cor": "#4E342E"
-   },
-   {
-    "id": "c_rolo",
-    "forma": "cilindro",
-    "tam": [
-     0.025,
-     0.13
-    ],
-    "pos": [
-     -0.1,
-     0.115,
-     -0.01
-    ],
-    "giro": [
-     90,
-     0,
-     0
-    ],
-    "cor": "#2C3E50"
-   },
-   {
-    "id": "c_papel",
-    "forma": "caixa",
-    "tam": [
-     0.12,
-     0.004,
-     0.09
-    ],
-    "pos": [
-     0.07,
-     0.003,
-     0.04
-    ],
-    "cor": "#FDF6E3"
-   },
-   {
-    "id": "c_cor1",
-    "forma": "caixa",
-    "tam": [
-     0.04,
-     0.003,
-     0.04
-    ],
-    "pos": [
-     0.06,
-     0.007,
-     0.035
-    ],
-    "cor": "#E74C3C",
-    "sem_contorno": true
-   },
-   {
-    "id": "c_cor2",
-    "forma": "caixa",
-    "tam": [
-     0.04,
-     0.003,
-     0.04
-    ],
-    "pos": [
-     0.075,
-     0.008,
-     0.05
-    ],
-    "cor": "#2E86C1",
-    "opacidade": 0.8,
-    "sem_contorno": true
-   },
-   {
-    "id": "c_serpentina",
-    "forma": "mola",
-    "tam": [
-     0.025,
-     0.15,
-     7,
-     0.006
-    ],
-    "pos": [
-     0.06,
-     0.15,
-     -0.05
-    ],
-    "giro": [
-     0,
-     0,
-     90
-    ],
-    "cor": "#5DADE2",
-    "oculta": true
-   },
-   {
-    "id": "c_bandeja",
-    "forma": "caixa",
-    "tam": [
-     0.16,
-     0.01,
-     0.05
-    ],
-    "pos": [
-     0.06,
-     0.09,
-     -0.05
-    ],
-    "cor": "#95A5A6",
-    "oculta": true
-   }
-  ]
- },
- "falas": [
-  {
-   "id": "f1",
-   "quem": "tito",
-   "texto": "O ar-condicionado não foi inventado para refrescar gente. Ele nasceu numa GRÁFICA.",
-   "tom": "animado"
-  },
-  {
-   "id": "f2",
-   "quem": "tito",
-   "texto": "Em 1902, em Nova York, o engenheiro Willis Carrier tinha um inimigo: o ar ÚMIDO da gráfica.",
-   "off": true
-  },
-  {
-   "id": "f3",
-   "quem": "tito",
-   "texto": "Com a umidade, o papel mudava de tamanho, e as cores saíam fora do LUGAR.",
-   "off": true,
-   "tom": "tenso"
-  },
-  {
-   "id": "f4",
-   "quem": "tito",
-   "texto": "Então, ele fez o ar passar por canos GELADOS. A água do ar virou gotinha, e o ar saiu seco!",
-   "off": true,
-   "tom": "animado",
-   "pausa_depois": 0.3
-  },
-  {
-   "id": "f5",
-   "quem": "tito",
-   "texto": "Hoje é igual: a parte de dentro tem canos gelados, e um ventilador sopra o ar da sala neles."
-  },
-  {
-   "id": "f6",
-   "quem": "tito",
-   "texto": "Nos canos corre um GÁS que evapora e rouba o calor do ar. É o friozinho do álcool na mão."
-  },
-  {
-   "id": "f7",
-   "quem": "tito",
-   "texto": "MAS esse calor não some. Ele precisa ir para algum LUGAR.",
-   "tom": "tenso",
-   "pausa_depois": 0.3
-  },
-  {
-   "id": "f8",
-   "quem": "tito",
-   "texto": "Por isso o gás vai lá para fora, e um COMPRESSOR aperta ele até ficar bem quente."
-  },
-  {
-   "id": "f9",
-   "quem": "tito",
-   "texto": "E a caixa de fora sopra esse calor para a rua. Por isso ela solta ar QUENTE.",
-   "pausa_depois": 0.3
-  },
-  {
-   "id": "f10",
-   "quem": "tito",
-   "texto": "MAS gás apertado e quente não gela nada lá dentro.",
-   "tom": "tenso",
-   "pausa_depois": 0.3
-  },
-  {
-   "id": "f11",
-   "quem": "tito",
-   "texto": "Por isso, na volta, ele passa por um furinho ESTREITO: a pressão cai, e ele sai gelado de novo."
-  },
-  {
-   "id": "f12",
-   "quem": "tito",
-   "texto": "É o mesmo friozinho da lata de desodorante quando o spray SAI.",
-   "pausa_depois": 0.3
-  },
-  {
-   "id": "f13",
-   "quem": "tito",
-   "texto": "Esse vai e volta tem nome: CICLO de refrigeração. Ele não cria frio, ele leva o calor embora.",
-   "pausa_depois": 0.3
-  },
-  {
-   "id": "f14",
-   "quem": "tito",
-   "texto": "E quem deixou ele famoso por refrescar GENTE? Os cinemas, nos anos 1920.",
-   "tom": "animado",
-   "pausa_depois": 0.3
-  },
-  {
-   "id": "f15",
-   "quem": "tito",
-   "texto": "E aquela água que pinga lá fora? É a umidade que ele tira do ar. O trabalho da GRÁFICA, até hoje.",
-   "tom": "animado"
-  }
- ],
- "chamada": {
-  "pergunta": "E agora, topa construir um motor elétrico?",
-  "texto": "Comenta",
-  "destaque": "MOTOR"
- },
- "postagem": {
-  "titulo": "Como funciona o ar-condicionado? Ele nasceu numa gráfica",
-  "descricao": "Como funciona o ar-condicionado por dentro: evaporadora, gás refrigerante, compressor, condensadora e a válvula que gela o gás. E por que ele pinga água: a história de Willis Carrier, em 1902.",
-  "hashtags": [
-   "comofunciona",
-   "arcondicionado",
-   "fisica",
-   "curiosidades"
-  ],
-  "comentario": "Eu achava que essa água pingando era defeito. Você também achava?",
-  "capa": "f9:quente+0.3"
- },
- "cenas": [
-  {
-   "id": "gancho",
-   "cenario": "estudio",
-   "ambiente": "estudio",
-   "filtro": "vivo",
-   "personagens": {
-    "tito": {
-     "em": "apresentador",
-     "olhando": "maquete",
-     "expressao": "feliz"
-    }
-   },
-   "objetos": [
-    {
-     "tipo": "maquete",
-     "modelo": "split",
-     "em": "pedestal"
-    }
-   ],
-   "animacoes": [
-    {
-     "peca": "split",
-     "faz": "fluxo",
-     "tipo": "ar",
-     "caminho": [
-      [
-       -0.2,
-       0.44,
-       0.06
-      ],
-      [
-       -0.23,
-       0.36,
-       0.16
-      ],
-      [
-       -0.27,
-       0.27,
-       0.27
-      ]
-     ],
-     "quantidade": 10,
-     "velocidade": 0.7,
-     "intensidade": 0.8,
-     "de": "inicio",
-     "ate": "f1:fim+0.3"
-    },
-    {
-     "peca": "split",
-     "faz": "fluxo",
-     "tipo": "agua",
-     "caminho": [
-      [
-       0.085,
-       0.33,
-       0.06
-      ],
-      [
-       0.085,
-       0.2,
-       0.06
-      ],
-      [
-       0.085,
-       0.04,
-       0.06
-      ]
-     ],
-     "quantidade": 3,
-     "velocidade": 0.8,
-     "intensidade": 0.6,
-     "de": "inicio",
-     "ate": "f1:fim+0.3"
-    },
-    {
-     "peca": "helice",
-     "faz": "girar",
-     "eixo": "z",
-     "voltas": 2.0,
-     "de": "inicio",
-     "ate": "f1:fim+0.3"
-    }
-   ],
-   "acoes": [
-    {
-     "quem": "tito",
-     "olhar": "camera",
-     "expressao": "desconfiado",
-     "de": "f1:refrescar"
-    },
-    {
-     "quem": "tito",
-     "faz": "apontar",
-     "para": "evaporadora",
-     "olhar": "maquete",
-     "expressao": "surpreso",
-     "de": "f1:grafica"
-    }
-   ],
-   "planos": [
-    {
-     "de": "inicio",
-     "tipo": "detalhe",
-     "alvo": [
-      0,
-      1.3,
-      0
-     ],
-     "lado": "frente",
-     "tamanho": 0.85,
-     "movimento": "arco"
-    },
-    {
-     "de": "f1:refrescar",
-     "tipo": "medio",
-     "alvo": "tito",
-     "lado": "tres_quartos_direita",
-     "movimento": "zoom_rapido"
-    },
-    {
-     "de": "f1:grafica",
-     "tipo": "detalhe",
-     "alvo": [
-      -0.19,
-      1.47,
-      0
-     ],
-     "lado": "tres_quartos_esquerda",
-     "tamanho": 0.45,
-     "movimento": "aproximar"
-    }
-   ],
-   "sons": [
-    {
-     "de": "inicio",
-     "som": "sopro",
-     "volume": 0.4
-    },
-    {
-     "de": "f1:refrescar",
-     "som": "whoosh",
-     "volume": 0.4
-    },
-    {
-     "de": "f1:grafica",
-     "som": "pop",
-     "volume": 0.8
-    }
-   ],
-   "efeitos": [
-    {
-     "de": "f1:grafica",
-     "efeito": "zoom_soco"
-    }
-   ]
-  },
-  {
-   "id": "carrier",
-   "cenario": "oficina",
-   "ambiente": "oficina",
-   "filtro": "sepia",
-   "de": "f2",
-   "personagens": {
+  "serie": "como-funciona",
+  "parte": 14,
+  "titulo": "O ar-condicionado não foi feito para refrescar gente",
+  "musica": "curiosidade",
+  "personagens": {
     "carrier": {
-     "em": [
-      -1.0,
-      -0.3
-     ],
-     "olhando": [
-      1.2,
-      2.2,
-      3.0
-     ],
-     "expressao": "nervoso"
+      "nome": "Willis Carrier",
+      "papel": "engenheiro americano de 25 anos; em 1902, numa gráfica do Brooklyn (Nova York), a umidade fazia o papel mudar de tamanho e as cores saírem fora do lugar; fez o ar passar por canos gelados, a umidade virou gotas e o ar saiu seco; não fala",
+      "visual": {
+        "altura": 1,
+        "corpo": "#2C3E50",
+        "cabeca": "#F2D5BD",
+        "olhos": "redondos",
+        "sobrancelhas": "grossas",
+        "acessorios": [
+          {
+            "tipo": "cabelo_curto",
+            "cor": "#3B2A1E"
+          },
+          {
+            "tipo": "oculos",
+            "cor": "#2B2F36"
+          },
+          {
+            "tipo": "lenco",
+            "cor": "#8E2C2C"
+          }
+        ]
+      }
     }
-   },
-   "objetos": [
-    {
-     "tipo": "maquete",
-     "modelo": "grafica_1902",
-     "em": [
-      0,
-      -1.05
-     ],
-     "alt": 0.92,
-     "escala": 1.5
-    },
-    {
-     "tipo": "particulas",
-     "particula": "vapor",
-     "em": [
-      0.1,
-      -1.05
-     ],
-     "alt": 1.0,
-     "raio": 0.2,
-     "altura": 0.3,
-     "quantas": 20,
-     "cor": "#DDE6EE",
-     "aparece": "f2:umido",
-     "some": "f4:gelados"
-    }
-   ],
-   "cartoes": [
-    {
-     "de": "f2:1902",
-     "ate": "f2:willis",
-     "grande": "1902",
-     "pequeno": "Willis Carrier · EUA"
-    }
-   ],
-   "animacoes": [
-    {
-     "peca": "c_rolo",
-     "faz": "girar",
-     "eixo": "y",
-     "voltas": 1.0,
-     "de": "f2",
-     "ate": "f3:fim"
-    },
-    {
-     "peca": "c_papel",
-     "faz": "tremer",
-     "de": "f3:tamanho",
-     "ate": "f3:fim",
-     "intensidade": 0.6
-    },
-    {
-     "peca": "c_cor2",
-     "faz": "mover",
-     "desloc": [
-      0.02,
-      0,
-      0.015
-     ],
-     "de": "f3:cores",
-     "ate": "f3:lugar"
-    },
-    {
-     "peca": "c_serpentina",
-     "faz": "aparecer",
-     "de": "f4:canos"
-    },
-    {
-     "peca": "c_bandeja",
-     "faz": "aparecer",
-     "de": "f4:canos"
-    },
-    {
-     "peca": "grafica_1902",
-     "faz": "fluxo",
-     "tipo": "ar",
-     "caminho": [
-      [
-       -0.06,
-       0.15,
-       -0.05
-      ],
-      [
-       0.06,
-       0.15,
-       -0.05
-      ],
-      [
-       0.18,
-       0.15,
-       -0.05
-      ]
-     ],
-     "quantidade": 8,
-     "velocidade": 0.7,
-     "intensidade": 0.6,
-     "de": "f4:ar",
-     "ate": "f4:fim+0.3"
-    },
-    {
-     "peca": "grafica_1902",
-     "faz": "fluxo",
-     "tipo": "agua",
-     "caminho": [
-      [
-       0.06,
-       0.14,
-       -0.05
-      ],
-      [
-       0.06,
-       0.12,
-       -0.05
-      ],
-      [
-       0.06,
-       0.095,
-       -0.05
-      ]
-     ],
-     "quantidade": 4,
-     "velocidade": 0.9,
-     "intensidade": 0.4,
-     "de": "f4:gotinha",
-     "ate": "f4:fim+0.3"
-    },
-    {
-     "peca": "c_cor2",
-     "faz": "mover",
-     "desloc": [
-      -0.02,
-      0,
-      -0.015
-     ],
-     "de": "f4:seco",
-     "ate": "f4:seco+0.4"
-    }
-   ],
-   "acoes": [
-    {
-     "quem": "carrier",
-     "faz": "virar",
-     "para": [
-      0.45,
-      2.75,
-      3.3
-     ],
-     "olhar": "camera",
-     "expressao": "nervoso",
-     "de": "f2"
-    },
-    {
-     "quem": "carrier",
-     "faz": "estender_mao",
-     "para": "grafica_1902",
-     "olhar": "grafica_1902",
-     "expressao": "bravo",
-     "de": "f3"
-    },
-    {
-     "quem": "carrier",
-     "faz": "virar",
-     "para": [
-      0.3,
-      2.85,
-      2.2
-     ],
-     "olhar": "camera",
-     "expressao": "determinado",
-     "de": "f4-0.4"
-    },
-    {
-     "quem": "carrier",
-     "faz": "estender_mao",
-     "para": "grafica_1902",
-     "olhar": "grafica_1902",
-     "expressao": "determinado",
-     "de": "f4:canos"
-    },
-    {
-     "quem": "carrier",
-     "faz": "virar",
-     "para": [
-      0.45,
-      2.75,
-      3.3
-     ],
-     "olhar": "camera",
-     "expressao": "feliz",
-     "de": "f4:seco-0.5"
-    }
-   ],
-   "planos": [
-    {
-     "de": "inicio",
-     "tipo": "aberto",
-     "camera": [
-      0.9,
-      2.85,
-      3.9
-     ],
-     "alvo": [
-      -0.55,
-      2.25,
-      -0.7
-     ],
-     "movimento": "arco",
-     "intensidade": 0.6,
-     "transicao": "desfoque"
-    },
-    {
-     "de": "f2:willis",
-     "tipo": "medio",
-     "camera": [
-      0.45,
-      2.75,
-      3.3
-     ],
-     "alvo": "carrier",
-     "movimento": "travelling",
-     "intensidade": 0.4
-    },
-    {
-     "de": "f3",
-     "tipo": "detalhe",
-     "alvo": "grafica_1902",
-     "lado": "tres_quartos_esquerda",
-     "tamanho": 0.6,
-     "movimento": "arco",
-     "intensidade": 0.5
-    },
-    {
-     "de": "f3:cores",
-     "tipo": "detalhe",
-     "alvo": "c_papel",
-     "lado": "frente",
-     "tamanho": 0.3,
-     "movimento": "aproximar"
-    },
-    {
-     "de": "f4",
-     "tipo": "close",
-     "camera": [
-      0.3,
-      2.85,
-      2.2
-     ],
-     "alvo": "carrier",
-     "movimento": "aproximar"
-    },
-    {
-     "de": "f4:canos",
-     "tipo": "detalhe",
-     "alvo": "c_serpentina",
-     "lado": "frente",
-     "tamanho": 0.45,
-     "movimento": "arco",
-     "intensidade": -0.5
-    },
-    {
-     "de": "f4:seco",
-     "tipo": "medio",
-     "camera": [
-      0.45,
-      2.75,
-      3.3
-     ],
-     "alvo": "carrier",
-     "movimento": "aproximar"
-    }
-   ],
-   "sons": [
-    {
-     "de": "f2:1902",
-     "som": "pop",
-     "volume": 0.6
-    },
-    {
-     "de": "f2:umido",
-     "som": "tensao_sobe",
-     "volume": 0.4
-    },
-    {
-     "de": "f3:lugar",
-     "som": "impacto",
-     "volume": 0.7
-    },
-    {
-     "de": "f4:canos",
-     "som": "pop",
-     "volume": 0.9
-    },
-    {
-     "de": "f4:gotinha",
-     "som": "agua",
-     "volume": 0.5
-    },
-    {
-     "de": "f4:seco",
-     "som": "ding",
-     "volume": 0.7
-    }
-   ],
-   "efeitos": [
-    {
-     "de": "f3:lugar",
-     "efeito": "zoom_soco"
-    },
-    {
-     "de": "f3:cores+0.1",
-     "ate": "f3:fim",
-     "efeito": "circular",
-     "alvo": "c_cor2"
-    },
-    {
-     "de": "f4:canos+0.1",
-     "ate": "f4:gotinha",
-     "efeito": "circular",
-     "alvo": "c_serpentina"
-    }
-   ]
   },
-  {
-   "id": "por_dentro",
-   "cenario": "estudio",
-   "ambiente": "estudio",
-   "filtro": "vivo",
-   "de": "f5",
-   "personagens": {
-    "tito": {
-     "em": "apresentador",
-     "olhando": "maquete",
-     "expressao": "feliz"
-    }
-   },
-   "objetos": [
+  "modelos": {
+    "split": [
+      {
+        "id": "piso_sala",
+        "forma": "caixa",
+        "tam": [
+          0.42,
+          0.012,
+          0.32
+        ],
+        "pos": [
+          -0.21,
+          0.006,
+          0
+        ],
+        "cor": "#C49A6C"
+      },
+      {
+        "id": "grama",
+        "forma": "caixa",
+        "tam": [
+          0.42,
+          0.012,
+          0.32
+        ],
+        "pos": [
+          0.21,
+          0.006,
+          0
+        ],
+        "cor": "#7DCE82"
+      },
+      {
+        "id": "parede",
+        "forma": "caixa",
+        "tam": [
+          0.04,
+          0.62,
+          0.3
+        ],
+        "pos": [
+          0,
+          0.31,
+          0
+        ],
+        "cor": "#F3E0C0"
+      },
+      {
+        "id": "evaporadora",
+        "forma": "caixa",
+        "tam": [
+          0.3,
+          0.1,
+          0.09
+        ],
+        "pos": [
+          -0.19,
+          0.5,
+          0
+        ],
+        "cor": "#FDFEFE"
+      },
+      {
+        "id": "serpentina",
+        "forma": "mola",
+        "tam": [
+          0.03,
+          0.24,
+          10,
+          0.007
+        ],
+        "pos": [
+          -0.19,
+          0.5,
+          0
+        ],
+        "giro": [
+          0,
+          0,
+          90
+        ],
+        "cor": "#3498DB"
+      },
+      {
+        "id": "condensadora",
+        "forma": "caixa",
+        "tam": [
+          0.26,
+          0.2,
+          0.13
+        ],
+        "pos": [
+          0.18,
+          0.11,
+          0
+        ],
+        "cor": "#ECF0F1"
+      },
+      {
+        "id": "grade",
+        "forma": "toro",
+        "tam": [
+          0.065,
+          0.008
+        ],
+        "pos": [
+          0.22,
+          0.11,
+          0.07
+        ],
+        "giro": [
+          90,
+          0,
+          0
+        ],
+        "cor": "#7F8C8D"
+      },
+      {
+        "id": "helice",
+        "forma": "esfera",
+        "tam": [
+          0.012
+        ],
+        "pos": [
+          0.22,
+          0.11,
+          0.072
+        ],
+        "cor": "#566573"
+      },
+      {
+        "id": "pa1",
+        "forma": "caixa",
+        "tam": [
+          0.11,
+          0.022,
+          0.006
+        ],
+        "pos": [
+          0,
+          0,
+          0
+        ],
+        "cor": "#566573",
+        "pai": "helice"
+      },
+      {
+        "id": "pa2",
+        "forma": "caixa",
+        "tam": [
+          0.11,
+          0.022,
+          0.006
+        ],
+        "pos": [
+          0,
+          0,
+          0
+        ],
+        "giro": [
+          0,
+          0,
+          90
+        ],
+        "cor": "#566573",
+        "pai": "helice"
+      },
+      {
+        "id": "compressor",
+        "forma": "capsula",
+        "tam": [
+          0.035,
+          0.05
+        ],
+        "pos": [
+          0.11,
+          0.09,
+          0
+        ],
+        "cor": "#C0392B"
+      },
+      {
+        "id": "cano_gas",
+        "forma": "tubo",
+        "tam": [
+          0.01
+        ],
+        "pos": [
+          0.06,
+          0.38,
+          0.03
+        ],
+        "caminho": [
+          [
+            -0.11,
+            0.12,
+            0
+          ],
+          [
+            -0.02,
+            0.1,
+            0
+          ],
+          [
+            0.04,
+            0,
+            0
+          ],
+          [
+            0.05,
+            -0.18,
+            0
+          ]
+        ],
+        "cor": "#B87333"
+      },
+      {
+        "id": "cano_liq",
+        "forma": "tubo",
+        "tam": [
+          0.008
+        ],
+        "pos": [
+          0.06,
+          0.36,
+          -0.03
+        ],
+        "caminho": [
+          [
+            0.09,
+            -0.16,
+            0
+          ],
+          [
+            0.08,
+            -0.01,
+            0
+          ],
+          [
+            0,
+            0.11,
+            0
+          ],
+          [
+            -0.11,
+            0.13,
+            0
+          ]
+        ],
+        "cor": "#D4A373"
+      },
+      {
+        "id": "valvula",
+        "forma": "esfera",
+        "tam": [
+          0.022
+        ],
+        "pos": [
+          0.115,
+          0.4,
+          -0.03
+        ],
+        "cor": "#E67E22",
+        "oculta": true
+      },
+      {
+        "id": "dreno",
+        "forma": "tubo",
+        "tam": [
+          0.007
+        ],
+        "pos": [
+          0.04,
+          0.41,
+          0.06
+        ],
+        "caminho": [
+          [
+            -0.12,
+            0.04,
+            0
+          ],
+          [
+            -0.01,
+            0.02,
+            0
+          ],
+          [
+            0.035,
+            -0.01,
+            0
+          ],
+          [
+            0.045,
+            -0.07,
+            0
+          ]
+        ],
+        "cor": "#BDC3C7"
+      }
+    ],
+    "grafica_1902": [
+      {
+        "id": "c_prensa",
+        "forma": "caixa",
+        "tam": [
+          0.15,
+          0.09,
+          0.1
+        ],
+        "pos": [
+          -0.1,
+          0.045,
+          -0.01
+        ],
+        "cor": "#4E342E"
+      },
+      {
+        "id": "c_rolo",
+        "forma": "cilindro",
+        "tam": [
+          0.025,
+          0.13
+        ],
+        "pos": [
+          -0.1,
+          0.115,
+          -0.01
+        ],
+        "giro": [
+          90,
+          0,
+          0
+        ],
+        "cor": "#2C3E50"
+      },
+      {
+        "id": "c_papel",
+        "forma": "caixa",
+        "tam": [
+          0.12,
+          0.004,
+          0.09
+        ],
+        "pos": [
+          0.07,
+          0.003,
+          0.04
+        ],
+        "cor": "#FDF6E3"
+      },
+      {
+        "id": "c_cor1",
+        "forma": "caixa",
+        "tam": [
+          0.04,
+          0.003,
+          0.04
+        ],
+        "pos": [
+          0.06,
+          0.007,
+          0.035
+        ],
+        "cor": "#E74C3C",
+        "sem_contorno": true
+      },
+      {
+        "id": "c_cor2",
+        "forma": "caixa",
+        "tam": [
+          0.04,
+          0.003,
+          0.04
+        ],
+        "pos": [
+          0.075,
+          0.008,
+          0.05
+        ],
+        "cor": "#2E86C1",
+        "opacidade": 0.8,
+        "sem_contorno": true
+      },
+      {
+        "id": "c_serpentina",
+        "forma": "mola",
+        "tam": [
+          0.025,
+          0.15,
+          7,
+          0.006
+        ],
+        "pos": [
+          0.06,
+          0.15,
+          -0.05
+        ],
+        "giro": [
+          0,
+          0,
+          90
+        ],
+        "cor": "#5DADE2",
+        "oculta": true
+      },
+      {
+        "id": "c_bandeja",
+        "forma": "caixa",
+        "tam": [
+          0.16,
+          0.01,
+          0.05
+        ],
+        "pos": [
+          0.06,
+          0.09,
+          -0.05
+        ],
+        "cor": "#95A5A6",
+        "oculta": true
+      }
+    ]
+  },
+  "falas": [
     {
-     "tipo": "maquete",
-     "modelo": "split",
-     "em": "pedestal"
-    }
-   ],
-   "animacoes": [
-    {
-     "peca": "evaporadora",
-     "faz": "transparente",
-     "opacidade": 0.25,
-     "de": "f5:canos",
-     "ate": "f5:canos+0.4"
+      "id": "f1",
+      "quem": "tito",
+      "texto": "O ar-condicionado não foi inventado para refrescar gente. Ele nasceu numa GRÁFICA.",
+      "tom": "animado"
     },
     {
-     "peca": "serpentina",
-     "faz": "pulsar",
-     "de": "f5:canos",
-     "ate": "f5:fim",
-     "intensidade": 0.5
+      "id": "f2",
+      "quem": "tito",
+      "texto": "Em 1902, em Nova York, o engenheiro Willis Carrier tinha um inimigo: o ar ÚMIDO da gráfica.",
+      "off": true,
+      "semente": 204
     },
     {
-     "peca": "split",
-     "faz": "fluxo",
-     "tipo": "ar",
-     "caminho": [
-      [
-       -0.19,
-       0.62,
-       0.15
+      "id": "f3",
+      "quem": "tito",
+      "texto": "Com a umidade, o papel mudava de tamanho, e as cores saíam fora do LUGAR.",
+      "off": true,
+      "tom": "tenso"
+    },
+    {
+      "id": "f4",
+      "quem": "tito",
+      "texto": "Então, ele fez o ar passar por canos GELADOS. A água do ar virou gotinha, e o ar saiu seco!",
+      "off": true,
+      "tom": "animado",
+      "pausa_depois": 0.3
+    },
+    {
+      "id": "f5",
+      "quem": "tito",
+      "texto": "Hoje é igual: a parte de dentro tem canos gelados, e um ventilador sopra o ar da sala neles."
+    },
+    {
+      "id": "f6",
+      "quem": "tito",
+      "texto": "Nos canos corre um líquido que vira GÁS e rouba o calor do ar. É o friozinho do álcool na mão."
+    },
+    {
+      "id": "f7",
+      "quem": "tito",
+      "texto": "MAS esse calor não some. Ele precisa ir para algum LUGAR.",
+      "tom": "tenso",
+      "pausa_depois": 0.3
+    },
+    {
+      "id": "f8",
+      "quem": "tito",
+      "texto": "Por isso o gás vai lá para fora, e um COMPRESSOR aperta ele até ficar bem quente."
+    },
+    {
+      "id": "f9",
+      "quem": "tito",
+      "texto": "E a caixa de fora sopra esse calor para a rua. Por isso ela solta ar QUENTE.",
+      "pausa_depois": 0.3
+    },
+    {
+      "id": "f10",
+      "quem": "tito",
+      "texto": "MAS gás apertado e quente não gela nada lá dentro.",
+      "tom": "tenso",
+      "pausa_depois": 0.3
+    },
+    {
+      "id": "f11",
+      "quem": "tito",
+      "texto": "Por isso, na volta, ele passa por um furinho ESTREITO: a pressão cai, e ele sai gelado de novo."
+    },
+    {
+      "id": "f12",
+      "quem": "tito",
+      "texto": "É o mesmo friozinho da lata de desodorante quando o spray SAI.",
+      "pausa_depois": 0.3
+    },
+    {
+      "id": "f13",
+      "quem": "tito",
+      "texto": "Esse vai e volta tem nome: CICLO de refrigeração. Ele não cria frio, ele leva o calor embora.",
+      "pausa_depois": 0.3
+    },
+    {
+      "id": "f14",
+      "quem": "tito",
+      "texto": "E quem deixou ele famoso por refrescar GENTE? Os cinemas, nos anos 1920.",
+      "tom": "animado",
+      "pausa_depois": 0.3
+    },
+    {
+      "id": "f15",
+      "quem": "tito",
+      "texto": "E aquela água que pinga lá fora? É a umidade que ele tira do ar. O trabalho da GRÁFICA, até hoje.",
+      "tom": "animado"
+    }
+  ],
+  "chamada": {
+    "pergunta": "E agora, topa construir um motor elétrico?",
+    "texto": "Comenta",
+    "destaque": "MOTOR"
+  },
+  "postagem": {
+    "titulo": "Como funciona o ar-condicionado? Ele nasceu numa gráfica",
+    "descricao": "Como funciona o ar-condicionado por dentro: evaporadora, gás refrigerante, compressor, condensadora e a válvula que gela o gás. E por que ele pinga água: a história de Willis Carrier, em 1902.",
+    "hashtags": [
+      "comofunciona",
+      "arcondicionado",
+      "fisica",
+      "curiosidades"
+    ],
+    "comentario": "Eu achava que essa água pingando era defeito. Você também achava?",
+    "capa": "f9:quente+0.3"
+  },
+  "cenas": [
+    {
+      "id": "gancho",
+      "cenario": "estudio",
+      "ambiente": "estudio",
+      "filtro": "vivo",
+      "personagens": {
+        "tito": {
+          "em": "apresentador",
+          "olhando": "maquete",
+          "expressao": "feliz"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "maquete",
+          "modelo": "split",
+          "em": "pedestal"
+        }
       ],
-      [
-       -0.19,
-       0.55,
-       0.06
+      "animacoes": [
+        {
+          "peca": "split",
+          "faz": "fluxo",
+          "tipo": "ar",
+          "caminho": [
+            [
+              -0.2,
+              0.44,
+              0.06
+            ],
+            [
+              -0.23,
+              0.36,
+              0.16
+            ],
+            [
+              -0.27,
+              0.27,
+              0.27
+            ]
+          ],
+          "quantidade": 10,
+          "velocidade": 0.7,
+          "intensidade": 0.8,
+          "de": "inicio",
+          "ate": "f1:fim+0.3"
+        },
+        {
+          "peca": "split",
+          "faz": "fluxo",
+          "tipo": "agua",
+          "caminho": [
+            [
+              0.085,
+              0.33,
+              0.06
+            ],
+            [
+              0.085,
+              0.2,
+              0.06
+            ],
+            [
+              0.085,
+              0.04,
+              0.06
+            ]
+          ],
+          "quantidade": 3,
+          "velocidade": 0.8,
+          "intensidade": 0.6,
+          "de": "inicio",
+          "ate": "f1:fim+0.3"
+        },
+        {
+          "peca": "helice",
+          "faz": "girar",
+          "eixo": "z",
+          "voltas": 2,
+          "de": "inicio",
+          "ate": "f1:fim+0.3"
+        }
       ],
-      [
-       -0.19,
-       0.48,
-       0.02
+      "acoes": [
+        {
+          "quem": "tito",
+          "olhar": "camera",
+          "expressao": "desconfiado",
+          "de": "f1:refrescar"
+        },
+        {
+          "quem": "tito",
+          "faz": "apontar",
+          "para": "evaporadora",
+          "olhar": "maquete",
+          "expressao": "surpreso",
+          "de": "f1:grafica"
+        }
       ],
-      [
-       -0.22,
-       0.4,
-       0.12
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "detalhe",
+          "alvo": [
+            0,
+            1.3,
+            0
+          ],
+          "lado": "frente",
+          "tamanho": 0.85,
+          "movimento": "arco"
+        },
+        {
+          "de": "f1:refrescar",
+          "tipo": "medio",
+          "alvo": "tito",
+          "lado": "tres_quartos_direita",
+          "movimento": "zoom_rapido"
+        },
+        {
+          "de": "f1:grafica",
+          "tipo": "detalhe",
+          "alvo": [
+            -0.19,
+            1.47,
+            0
+          ],
+          "lado": "tres_quartos_esquerda",
+          "tamanho": 0.45,
+          "movimento": "aproximar"
+        }
       ],
-      [
-       -0.27,
-       0.3,
-       0.25
+      "sons": [
+        {
+          "de": "inicio",
+          "som": "sopro",
+          "volume": 0.4
+        },
+        {
+          "de": "f1:refrescar",
+          "som": "whoosh",
+          "volume": 0.4
+        },
+        {
+          "de": "f1:grafica",
+          "som": "pop",
+          "volume": 0.8
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "f1:grafica",
+          "efeito": "zoom_soco"
+        }
       ]
-     ],
-     "quantidade": 10,
-     "velocidade": 0.7,
-     "intensidade": 0.8,
-     "de": "f5:ventilador",
-     "ate": "f6:fim"
     },
     {
-     "peca": "split",
-     "faz": "fluxo",
-     "tipo": "gas",
-     "caminho": [
-      [
-       -0.3,
-       0.47,
-       0.05
+      "id": "carrier",
+      "cenario": "oficina",
+      "ambiente": "oficina",
+      "filtro": "sepia",
+      "de": "f2",
+      "personagens": {
+        "carrier": {
+          "em": [
+            -1,
+            -0.3
+          ],
+          "olhando": [
+            1.2,
+            2.2,
+            3
+          ],
+          "expressao": "nervoso"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "maquete",
+          "modelo": "grafica_1902",
+          "em": [
+            0,
+            -1.05
+          ],
+          "alt": 0.92,
+          "escala": 1.5
+        },
+        {
+          "tipo": "particulas",
+          "particula": "vapor",
+          "em": [
+            0.1,
+            -1.05
+          ],
+          "alt": 1,
+          "raio": 0.2,
+          "altura": 0.3,
+          "quantas": 20,
+          "cor": "#DDE6EE",
+          "aparece": "f2:umido",
+          "some": "f4:gelados"
+        }
       ],
-      [
-       -0.19,
-       0.46,
-       0.05
+      "cartoes": [
+        {
+          "de": "f2:1902",
+          "ate": "f2:willis",
+          "grande": "1902",
+          "pequeno": "Willis Carrier · EUA"
+        }
       ],
-      [
-       -0.08,
-       0.455,
-       0.05
+      "animacoes": [
+        {
+          "peca": "c_rolo",
+          "faz": "girar",
+          "eixo": "y",
+          "voltas": 1,
+          "de": "f2",
+          "ate": "f3:fim"
+        },
+        {
+          "peca": "c_papel",
+          "faz": "tremer",
+          "de": "f3:tamanho",
+          "ate": "f3:fim",
+          "intensidade": 0.6
+        },
+        {
+          "peca": "c_cor2",
+          "faz": "mover",
+          "desloc": [
+            0.02,
+            0,
+            0.015
+          ],
+          "de": "f3:cores",
+          "ate": "f3:lugar"
+        },
+        {
+          "peca": "c_serpentina",
+          "faz": "aparecer",
+          "de": "f4:canos"
+        },
+        {
+          "peca": "c_bandeja",
+          "faz": "aparecer",
+          "de": "f4:canos"
+        },
+        {
+          "peca": "grafica_1902",
+          "faz": "fluxo",
+          "tipo": "ar",
+          "caminho": [
+            [
+              -0.06,
+              0.15,
+              -0.05
+            ],
+            [
+              0.06,
+              0.15,
+              -0.05
+            ],
+            [
+              0.18,
+              0.15,
+              -0.05
+            ]
+          ],
+          "quantidade": 8,
+          "velocidade": 0.7,
+          "intensidade": 0.6,
+          "de": "f4:ar",
+          "ate": "f4:fim+0.3"
+        },
+        {
+          "peca": "grafica_1902",
+          "faz": "fluxo",
+          "tipo": "agua",
+          "caminho": [
+            [
+              0.06,
+              0.14,
+              -0.05
+            ],
+            [
+              0.06,
+              0.12,
+              -0.05
+            ],
+            [
+              0.06,
+              0.095,
+              -0.05
+            ]
+          ],
+          "quantidade": 4,
+          "velocidade": 0.9,
+          "intensidade": 0.4,
+          "de": "f4:gotinha",
+          "ate": "f4:fim+0.3"
+        },
+        {
+          "peca": "c_cor2",
+          "faz": "mover",
+          "desloc": [
+            -0.02,
+            0,
+            -0.015
+          ],
+          "de": "f4:seco",
+          "ate": "f4:seco+0.4"
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "carrier",
+          "faz": "virar",
+          "para": [
+            0.45,
+            2.75,
+            3.3
+          ],
+          "olhar": "camera",
+          "expressao": "nervoso",
+          "de": "f2"
+        },
+        {
+          "quem": "carrier",
+          "faz": "estender_mao",
+          "para": "grafica_1902",
+          "olhar": "grafica_1902",
+          "expressao": "bravo",
+          "de": "f3"
+        },
+        {
+          "quem": "carrier",
+          "faz": "virar",
+          "para": [
+            0.3,
+            2.85,
+            2.2
+          ],
+          "olhar": "camera",
+          "expressao": "determinado",
+          "de": "f4-0.4"
+        },
+        {
+          "quem": "carrier",
+          "faz": "estender_mao",
+          "para": "grafica_1902",
+          "olhar": "grafica_1902",
+          "expressao": "determinado",
+          "de": "f4:canos"
+        },
+        {
+          "quem": "carrier",
+          "faz": "virar",
+          "para": [
+            0.45,
+            2.75,
+            3.3
+          ],
+          "olhar": "camera",
+          "expressao": "feliz",
+          "de": "f4:seco-0.5"
+        }
+      ],
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "aberto",
+          "camera": [
+            0.9,
+            2.85,
+            3.9
+          ],
+          "alvo": [
+            -0.55,
+            2.25,
+            -0.7
+          ],
+          "movimento": "arco",
+          "intensidade": 0.6,
+          "transicao": "desfoque"
+        },
+        {
+          "de": "f2:willis",
+          "tipo": "medio",
+          "camera": [
+            0.45,
+            2.75,
+            3.3
+          ],
+          "alvo": "carrier",
+          "movimento": "travelling",
+          "intensidade": 0.4
+        },
+        {
+          "de": "f3",
+          "tipo": "detalhe",
+          "alvo": "grafica_1902",
+          "lado": "tres_quartos_esquerda",
+          "tamanho": 0.6,
+          "movimento": "arco",
+          "intensidade": 0.5
+        },
+        {
+          "de": "f3:cores",
+          "tipo": "detalhe",
+          "alvo": "c_papel",
+          "lado": "frente",
+          "tamanho": 0.3,
+          "movimento": "aproximar"
+        },
+        {
+          "de": "f4",
+          "tipo": "close",
+          "camera": [
+            0.3,
+            2.85,
+            2.2
+          ],
+          "alvo": "carrier",
+          "movimento": "aproximar"
+        },
+        {
+          "de": "f4:canos",
+          "tipo": "detalhe",
+          "alvo": "c_serpentina",
+          "lado": "frente",
+          "tamanho": 0.45,
+          "movimento": "arco",
+          "intensidade": -0.5
+        },
+        {
+          "de": "f4:seco",
+          "tipo": "medio",
+          "camera": [
+            0.45,
+            2.75,
+            3.3
+          ],
+          "alvo": "carrier",
+          "movimento": "aproximar"
+        }
+      ],
+      "sons": [
+        {
+          "de": "f2:1902",
+          "som": "pop",
+          "volume": 0.6
+        },
+        {
+          "de": "f2:umido",
+          "som": "tensao_sobe",
+          "volume": 0.4
+        },
+        {
+          "de": "f3:lugar",
+          "som": "impacto",
+          "volume": 0.7
+        },
+        {
+          "de": "f4:canos",
+          "som": "pop",
+          "volume": 0.9
+        },
+        {
+          "de": "f4:gotinha",
+          "som": "agua",
+          "volume": 0.5
+        },
+        {
+          "de": "f4:seco",
+          "som": "ding",
+          "volume": 0.7
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "f3:lugar",
+          "efeito": "zoom_soco"
+        },
+        {
+          "de": "f3:cores+0.1",
+          "ate": "f3:fim",
+          "efeito": "circular",
+          "alvo": "c_cor2"
+        },
+        {
+          "de": "f4:canos+0.1",
+          "ate": "f4:gotinha",
+          "efeito": "circular",
+          "alvo": "c_serpentina"
+        }
       ]
-     ],
-     "quantidade": 8,
-     "velocidade": 0.8,
-     "intensidade": 0.6,
-     "de": "f6:gas",
-     "ate": "f6:fim+0.3"
     },
     {
-     "peca": "split",
-     "faz": "fluxo",
-     "tipo": "calor",
-     "caminho": [
-      [
-       -0.25,
-       0.42,
-       0.2
+      "id": "por_dentro",
+      "cenario": "estudio",
+      "ambiente": "estudio",
+      "filtro": "vivo",
+      "de": "f5",
+      "personagens": {
+        "tito": {
+          "em": "apresentador",
+          "olhando": "maquete",
+          "expressao": "feliz"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "maquete",
+          "modelo": "split",
+          "em": "pedestal"
+        }
       ],
-      [
-       -0.22,
-       0.46,
-       0.1
+      "animacoes": [
+        {
+          "peca": "evaporadora",
+          "faz": "transparente",
+          "opacidade": 0.25,
+          "de": "f5:canos",
+          "ate": "f5:canos+0.4"
+        },
+        {
+          "peca": "serpentina",
+          "faz": "pulsar",
+          "de": "f5:canos",
+          "ate": "f5:fim",
+          "intensidade": 0.5
+        },
+        {
+          "peca": "split",
+          "faz": "fluxo",
+          "tipo": "ar",
+          "caminho": [
+            [
+              -0.19,
+              0.62,
+              0.15
+            ],
+            [
+              -0.19,
+              0.55,
+              0.06
+            ],
+            [
+              -0.19,
+              0.48,
+              0.02
+            ],
+            [
+              -0.22,
+              0.4,
+              0.12
+            ],
+            [
+              -0.27,
+              0.3,
+              0.25
+            ]
+          ],
+          "quantidade": 10,
+          "velocidade": 0.7,
+          "intensidade": 0.8,
+          "de": "f5:ventilador",
+          "ate": "f6:fim"
+        },
+        {
+          "peca": "split",
+          "faz": "fluxo",
+          "tipo": "gas",
+          "caminho": [
+            [
+              -0.3,
+              0.47,
+              0.05
+            ],
+            [
+              -0.19,
+              0.46,
+              0.05
+            ],
+            [
+              -0.08,
+              0.455,
+              0.05
+            ]
+          ],
+          "quantidade": 8,
+          "velocidade": 0.8,
+          "intensidade": 0.6,
+          "de": "f6:gas",
+          "ate": "f6:fim+0.3"
+        },
+        {
+          "peca": "split",
+          "faz": "fluxo",
+          "tipo": "calor",
+          "caminho": [
+            [
+              -0.25,
+              0.42,
+              0.2
+            ],
+            [
+              -0.22,
+              0.46,
+              0.1
+            ],
+            [
+              -0.19,
+              0.49,
+              0.02
+            ]
+          ],
+          "quantidade": 6,
+          "velocidade": 0.8,
+          "intensidade": 0.6,
+          "de": "f6:rouba",
+          "ate": "f6:fim+0.3"
+        },
+        {
+          "peca": "evaporadora",
+          "faz": "transparente",
+          "opacidade": 1,
+          "de": "f7",
+          "ate": "f7+0.3"
+        },
+        {
+          "peca": "cano_gas",
+          "faz": "fluxo",
+          "tipo": "calor",
+          "quantidade": 8,
+          "velocidade": 0.7,
+          "intensidade": 0.7,
+          "de": "f7:lugar",
+          "ate": "f9:fim+0.3"
+        },
+        {
+          "peca": "condensadora",
+          "faz": "transparente",
+          "opacidade": 0.3,
+          "de": "f8:compressor",
+          "ate": "f8:compressor+0.4"
+        },
+        {
+          "peca": "compressor",
+          "faz": "tremer",
+          "de": "f8:aperta",
+          "ate": "f9:fim+0.3",
+          "intensidade": 0.6
+        },
+        {
+          "peca": "compressor",
+          "faz": "aquecer",
+          "de": "f8:aperta",
+          "ate": "f8:quente",
+          "intensidade": 0.9
+        },
+        {
+          "peca": "helice",
+          "faz": "girar",
+          "eixo": "z",
+          "voltas": 2.5,
+          "de": "f9",
+          "ate": "f9:fim+0.5"
+        },
+        {
+          "peca": "split",
+          "faz": "fluxo",
+          "tipo": "calor",
+          "caminho": [
+            [
+              0.22,
+              0.11,
+              0.08
+            ],
+            [
+              0.24,
+              0.13,
+              0.2
+            ],
+            [
+              0.27,
+              0.15,
+              0.33
+            ]
+          ],
+          "quantidade": 10,
+          "velocidade": 0.8,
+          "intensidade": 0.8,
+          "de": "f9:sopra",
+          "ate": "f9:fim+0.5"
+        },
+        {
+          "peca": "compressor",
+          "faz": "esfriar",
+          "de": "f10",
+          "ate": "f10+0.3"
+        },
+        {
+          "peca": "condensadora",
+          "faz": "transparente",
+          "opacidade": 1,
+          "de": "f10",
+          "ate": "f10+0.3"
+        },
+        {
+          "peca": "valvula",
+          "faz": "aparecer",
+          "de": "f11:furinho"
+        },
+        {
+          "peca": "cano_liq",
+          "faz": "fluxo",
+          "tipo": "agua",
+          "quantidade": 8,
+          "velocidade": 0.7,
+          "intensidade": 0.6,
+          "de": "f11:pressao",
+          "ate": "f13:fim+0.3"
+        },
+        {
+          "peca": "cano_gas",
+          "faz": "fluxo",
+          "tipo": "calor",
+          "quantidade": 8,
+          "velocidade": 0.7,
+          "intensidade": 0.7,
+          "de": "f13",
+          "ate": "f13:fim+0.3"
+        },
+        {
+          "peca": "helice",
+          "faz": "girar",
+          "eixo": "z",
+          "voltas": 2.5,
+          "de": "f13",
+          "ate": "f15:fim+1.5"
+        },
+        {
+          "peca": "split",
+          "faz": "fluxo",
+          "tipo": "ar",
+          "caminho": [
+            [
+              -0.2,
+              0.44,
+              0.06
+            ],
+            [
+              -0.23,
+              0.36,
+              0.16
+            ],
+            [
+              -0.27,
+              0.27,
+              0.27
+            ]
+          ],
+          "quantidade": 10,
+          "velocidade": 0.7,
+          "intensidade": 0.8,
+          "de": "f13",
+          "ate": "f15:fim+1.5"
+        },
+        {
+          "peca": "split",
+          "faz": "fluxo",
+          "tipo": "agua",
+          "caminho": [
+            [
+              -0.3,
+              0.47,
+              0.05
+            ],
+            [
+              -0.19,
+              0.46,
+              0.05
+            ],
+            [
+              -0.08,
+              0.455,
+              0.05
+            ]
+          ],
+          "quantidade": 6,
+          "velocidade": 0.6,
+          "intensidade": 0.5,
+          "de": "f15:umidade",
+          "ate": "f15:fim+0.3"
+        },
+        {
+          "peca": "dreno",
+          "faz": "fluxo",
+          "tipo": "agua",
+          "quantidade": 6,
+          "velocidade": 0.8,
+          "intensidade": 0.6,
+          "de": "f15:umidade",
+          "ate": "f15:fim+1.5"
+        },
+        {
+          "peca": "split",
+          "faz": "fluxo",
+          "tipo": "agua",
+          "caminho": [
+            [
+              0.085,
+              0.33,
+              0.06
+            ],
+            [
+              0.085,
+              0.2,
+              0.06
+            ],
+            [
+              0.085,
+              0.04,
+              0.06
+            ]
+          ],
+          "quantidade": 3,
+          "velocidade": 0.8,
+          "intensidade": 0.6,
+          "de": "f15:pinga",
+          "ate": "f15:fim+1.5"
+        }
       ],
-      [
-       -0.19,
-       0.49,
-       0.02
+      "acoes": [
+        {
+          "quem": "tito",
+          "faz": "virar",
+          "para": [
+            -0.75,
+            2,
+            5.9
+          ],
+          "olhar": "camera",
+          "expressao": "feliz",
+          "de": "f5"
+        },
+        {
+          "quem": "tito",
+          "faz": "apontar",
+          "para": "evaporadora",
+          "olhar": "maquete",
+          "de": "f5:canos"
+        },
+        {
+          "quem": "tito",
+          "olhar": "camera",
+          "expressao": "feliz",
+          "de": "f6:friozinho"
+        },
+        {
+          "quem": "tito",
+          "olhar": "camera",
+          "expressao": "nervoso",
+          "de": "f7"
+        },
+        {
+          "quem": "tito",
+          "faz": "apontar",
+          "para": "compressor",
+          "olhar": "maquete",
+          "expressao": "feliz",
+          "de": "f8:compressor"
+        },
+        {
+          "quem": "tito",
+          "olhar": "camera",
+          "expressao": "desconfiado",
+          "de": "f10"
+        },
+        {
+          "quem": "tito",
+          "faz": "apontar",
+          "para": "valvula",
+          "olhar": "maquete",
+          "expressao": "feliz",
+          "de": "f11:furinho"
+        },
+        {
+          "quem": "tito",
+          "olhar": "camera",
+          "expressao": "feliz",
+          "de": "f13"
+        },
+        {
+          "quem": "tito",
+          "olhar": "camera",
+          "expressao": "feliz",
+          "de": "f14"
+        },
+        {
+          "quem": "tito",
+          "olhar": "camera",
+          "expressao": "surpreso",
+          "de": "f15"
+        },
+        {
+          "quem": "tito",
+          "faz": "virar",
+          "para": [
+            -0.9,
+            2,
+            5.8
+          ],
+          "olhar": "camera",
+          "expressao": "feliz",
+          "de": "f15:trabalho"
+        }
+      ],
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "aberto",
+          "camera": [
+            -0.75,
+            2,
+            5.9
+          ],
+          "alvo": [
+            -0.75,
+            1.5,
+            0.3
+          ],
+          "movimento": "arco",
+          "intensidade": 0.5,
+          "transicao": "zoom"
+        },
+        {
+          "de": "f5:canos",
+          "tipo": "detalhe",
+          "alvo": [
+            -0.19,
+            1.5,
+            0
+          ],
+          "lado": "frente",
+          "tamanho": 0.45,
+          "movimento": "aproximar"
+        },
+        {
+          "de": "f5:ventilador",
+          "tipo": "detalhe",
+          "alvo": [
+            -0.2,
+            1.42,
+            0.05
+          ],
+          "lado": "tres_quartos_esquerda",
+          "tamanho": 0.55,
+          "movimento": "arco",
+          "intensidade": 0.4
+        },
+        {
+          "de": "f6",
+          "tipo": "detalhe",
+          "alvo": [
+            -0.19,
+            1.48,
+            0.02
+          ],
+          "lado": "frente",
+          "tamanho": 0.4,
+          "movimento": "subir",
+          "transicao": "varrer"
+        },
+        {
+          "de": "f6:friozinho",
+          "tipo": "medio",
+          "alvo": "tito",
+          "lado": "tres_quartos_direita",
+          "movimento": "travelling",
+          "intensidade": 0.4,
+          "transicao": "chicote"
+        },
+        {
+          "de": "f7",
+          "tipo": "medio",
+          "alvo": "tito",
+          "lado": "tres_quartos_direita",
+          "movimento": "zoom_rapido"
+        },
+        {
+          "de": "f7:lugar",
+          "tipo": "detalhe",
+          "alvo": [
+            0.06,
+            1.35,
+            0.02
+          ],
+          "lado": "frente",
+          "tamanho": 0.65,
+          "movimento": "arco",
+          "intensidade": 0.4
+        },
+        {
+          "de": "f8:compressor",
+          "tipo": "detalhe",
+          "alvo": [
+            0.15,
+            1.1,
+            0
+          ],
+          "lado": "frente",
+          "tamanho": 0.45,
+          "movimento": "aproximar"
+        },
+        {
+          "de": "f9",
+          "tipo": "detalhe",
+          "alvo": [
+            0.22,
+            1.13,
+            0.1
+          ],
+          "lado": "tres_quartos_esquerda",
+          "tamanho": 0.5,
+          "movimento": "arco",
+          "intensidade": -0.4
+        },
+        {
+          "de": "f9:quente",
+          "tipo": "detalhe",
+          "alvo": [
+            0.24,
+            1.14,
+            0.18
+          ],
+          "lado": "frente",
+          "tamanho": 0.45,
+          "movimento": "aproximar"
+        },
+        {
+          "de": "f10",
+          "tipo": "medio",
+          "alvo": "tito",
+          "lado": "tres_quartos_direita",
+          "movimento": "dolly_zoom",
+          "transicao": "chicote"
+        },
+        {
+          "de": "f11",
+          "tipo": "detalhe",
+          "alvo": [
+            0.1,
+            1.4,
+            -0.03
+          ],
+          "lado": "frente",
+          "tamanho": 0.4,
+          "movimento": "aproximar",
+          "transicao": "zoom"
+        },
+        {
+          "de": "f11:pressao",
+          "tipo": "detalhe",
+          "alvo": [
+            0,
+            1.38,
+            0
+          ],
+          "lado": "tres_quartos_esquerda",
+          "tamanho": 0.65,
+          "movimento": "subir"
+        },
+        {
+          "de": "f12",
+          "tipo": "detalhe",
+          "alvo": [
+            0.1,
+            1.4,
+            -0.03
+          ],
+          "lado": "tres_quartos_esquerda",
+          "tamanho": 0.35,
+          "movimento": "arco",
+          "intensidade": 0.4
+        },
+        {
+          "de": "f13",
+          "tipo": "medio",
+          "alvo": "tito",
+          "lado": "tres_quartos_direita",
+          "movimento": "travelling",
+          "intensidade": 0.4,
+          "transicao": "chicote"
+        },
+        {
+          "de": "f13:leva",
+          "tipo": "detalhe",
+          "alvo": [
+            0,
+            1.3,
+            0
+          ],
+          "lado": "frente",
+          "tamanho": 0.85,
+          "movimento": "arco",
+          "intensidade": 0.4
+        },
+        {
+          "de": "f14",
+          "tipo": "medio",
+          "alvo": "tito",
+          "lado": "tres_quartos_direita",
+          "movimento": "aproximar",
+          "transicao": "chicote"
+        },
+        {
+          "de": "f15",
+          "tipo": "detalhe",
+          "alvo": [
+            0.06,
+            1.3,
+            0.05
+          ],
+          "lado": "frente",
+          "tamanho": 0.5,
+          "movimento": "aproximar",
+          "transicao": "desfoque"
+        },
+        {
+          "de": "f15:umidade",
+          "tipo": "detalhe",
+          "alvo": [
+            -0.05,
+            1.42,
+            0.05
+          ],
+          "lado": "tres_quartos_esquerda",
+          "tamanho": 0.55,
+          "movimento": "arco",
+          "intensidade": 0.4
+        },
+        {
+          "de": "f15:trabalho",
+          "tipo": "aberto",
+          "camera": [
+            -0.9,
+            2,
+            5.8
+          ],
+          "alvo": [
+            -0.9,
+            1.5,
+            0.3
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.3
+        }
+      ],
+      "sons": [
+        {
+          "de": "f5:canos",
+          "som": "pop",
+          "volume": 0.7
+        },
+        {
+          "de": "f5:ventilador",
+          "som": "sopro",
+          "volume": 0.5
+        },
+        {
+          "de": "f6:gas",
+          "som": "chiado",
+          "volume": 0.4
+        },
+        {
+          "de": "f6:rouba",
+          "som": "whoosh",
+          "volume": 0.5
+        },
+        {
+          "de": "f7",
+          "som": "tensao_sobe",
+          "volume": 0.6
+        },
+        {
+          "de": "f7:lugar",
+          "som": "whoosh",
+          "volume": 0.5
+        },
+        {
+          "de": "f8:compressor",
+          "som": "pop",
+          "volume": 0.8
+        },
+        {
+          "de": "f8:aperta",
+          "som": "engrenagem",
+          "volume": 0.5
+        },
+        {
+          "de": "f9:sopra",
+          "som": "sopro",
+          "volume": 0.6
+        },
+        {
+          "de": "f9:quente",
+          "som": "fogo",
+          "volume": 0.4
+        },
+        {
+          "de": "f10",
+          "som": "tensao_sobe",
+          "volume": 0.6
+        },
+        {
+          "de": "f10:nada",
+          "som": "impacto",
+          "volume": 0.7
+        },
+        {
+          "de": "f11:furinho",
+          "som": "pop",
+          "volume": 0.9
+        },
+        {
+          "de": "f11:pressao",
+          "som": "chiado",
+          "volume": 0.5
+        },
+        {
+          "de": "f11:gelado",
+          "som": "ding",
+          "volume": 0.7
+        },
+        {
+          "de": "f13:ciclo",
+          "som": "ding",
+          "volume": 0.8
+        },
+        {
+          "de": "f12:spray",
+          "som": "chiado",
+          "volume": 0.5
+        },
+        {
+          "de": "f14:gente",
+          "som": "pop",
+          "volume": 0.7
+        },
+        {
+          "de": "f14:cinemas",
+          "som": "ding",
+          "volume": 0.8
+        },
+        {
+          "de": "f15:pinga",
+          "som": "agua",
+          "volume": 0.6
+        },
+        {
+          "de": "f15:grafica",
+          "som": "pop",
+          "volume": 0.8
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "f5:canos+0.1",
+          "ate": "f5:ventilador",
+          "efeito": "circular",
+          "alvo": "serpentina"
+        },
+        {
+          "de": "f6:gas+0.1",
+          "ate": "f6:friozinho",
+          "efeito": "destacar",
+          "alvo": "serpentina"
+        },
+        {
+          "de": "f7",
+          "efeito": "zoom_soco"
+        },
+        {
+          "de": "f8:compressor+0.1",
+          "ate": "f8:fim",
+          "efeito": "circular",
+          "alvo": "compressor"
+        },
+        {
+          "de": "f9:quente",
+          "ate": "f9:quente+0.8",
+          "efeito": "linhas",
+          "cor": "#FF7A2A"
+        },
+        {
+          "de": "f10",
+          "efeito": "zoom_soco"
+        },
+        {
+          "de": "f11:furinho+0.1",
+          "ate": "f11:pressao",
+          "efeito": "circular",
+          "alvo": "valvula"
+        },
+        {
+          "de": "f11:gelado",
+          "ate": "f11:gelado+0.7",
+          "efeito": "linhas",
+          "cor": "#7FDBFF"
+        },
+        {
+          "de": "f15:pinga",
+          "ate": "f15:umidade",
+          "efeito": "circular",
+          "alvo": "dreno"
+        },
+        {
+          "de": "f15:trabalho",
+          "ate": "f15:fim+0.5",
+          "efeito": "linhas",
+          "intensidade": 0.6
+        }
+      ],
+      "rotulos": [
+        {
+          "alvo": "serpentina",
+          "texto": "Canos gelados",
+          "de": "f5:canos",
+          "ate": "f5:fim",
+          "cor": "#7FDBFF"
+        },
+        {
+          "alvo": "serpentina",
+          "texto": "Gás",
+          "de": "f6:gas",
+          "ate": "f6:friozinho",
+          "cor": "#7CE07A"
+        },
+        {
+          "alvo": "compressor",
+          "texto": "Compressor",
+          "de": "f8:compressor",
+          "ate": "f8:fim"
+        },
+        {
+          "alvo": "grade",
+          "texto": "Ar quente",
+          "de": "f9:quente",
+          "ate": "f9:fim",
+          "cor": "#FF8A65"
+        },
+        {
+          "alvo": "valvula",
+          "texto": "Furinho",
+          "de": "f11:furinho",
+          "ate": "f11:fim"
+        },
+        {
+          "alvo": "dreno",
+          "texto": "Umidade",
+          "de": "f15:umidade",
+          "ate": "f15:trabalho",
+          "cor": "#6E9BFF"
+        }
+      ],
+      "cartoes": [
+        {
+          "de": "f13:ciclo",
+          "ate": "f13:leva",
+          "grande": "CICLO",
+          "pequeno": "de refrigeração: o gás leva o calor de dentro para fora"
+        },
+        {
+          "de": "f14:cinemas",
+          "ate": "f14:fim+0.3",
+          "grande": "CINEMA",
+          "pequeno": "anos 1920: o ar gelado vira atração"
+        }
       ]
-     ],
-     "quantidade": 6,
-     "velocidade": 0.8,
-     "intensidade": 0.6,
-     "de": "f6:rouba",
-     "ate": "f6:fim+0.3"
-    },
-    {
-     "peca": "evaporadora",
-     "faz": "transparente",
-     "opacidade": 1,
-     "de": "f7",
-     "ate": "f7+0.3"
-    },
-    {
-     "peca": "cano_gas",
-     "faz": "fluxo",
-     "tipo": "calor",
-     "quantidade": 8,
-     "velocidade": 0.7,
-     "intensidade": 0.7,
-     "de": "f7:lugar",
-     "ate": "f9:fim+0.3"
-    },
-    {
-     "peca": "condensadora",
-     "faz": "transparente",
-     "opacidade": 0.3,
-     "de": "f8:compressor",
-     "ate": "f8:compressor+0.4"
-    },
-    {
-     "peca": "compressor",
-     "faz": "tremer",
-     "de": "f8:aperta",
-     "ate": "f9:fim+0.3",
-     "intensidade": 0.6
-    },
-    {
-     "peca": "compressor",
-     "faz": "aquecer",
-     "de": "f8:aperta",
-     "ate": "f8:quente",
-     "intensidade": 0.9
-    },
-    {
-     "peca": "helice",
-     "faz": "girar",
-     "eixo": "z",
-     "voltas": 2.5,
-     "de": "f9",
-     "ate": "f9:fim+0.5"
-    },
-    {
-     "peca": "split",
-     "faz": "fluxo",
-     "tipo": "calor",
-     "caminho": [
-      [
-       0.22,
-       0.11,
-       0.08
-      ],
-      [
-       0.24,
-       0.13,
-       0.2
-      ],
-      [
-       0.27,
-       0.15,
-       0.33
-      ]
-     ],
-     "quantidade": 10,
-     "velocidade": 0.8,
-     "intensidade": 0.8,
-     "de": "f9:sopra",
-     "ate": "f9:fim+0.5"
-    },
-    {
-     "peca": "compressor",
-     "faz": "esfriar",
-     "de": "f10",
-     "ate": "f10+0.3"
-    },
-    {
-     "peca": "condensadora",
-     "faz": "transparente",
-     "opacidade": 1,
-     "de": "f10",
-     "ate": "f10+0.3"
-    },
-    {
-     "peca": "valvula",
-     "faz": "aparecer",
-     "de": "f11:furinho"
-    },
-    {
-     "peca": "cano_liq",
-     "faz": "fluxo",
-     "tipo": "agua",
-     "quantidade": 8,
-     "velocidade": 0.7,
-     "intensidade": 0.6,
-     "de": "f11:pressao",
-     "ate": "f13:fim+0.3"
-    },
-    {
-     "peca": "cano_gas",
-     "faz": "fluxo",
-     "tipo": "calor",
-     "quantidade": 8,
-     "velocidade": 0.7,
-     "intensidade": 0.7,
-     "de": "f13",
-     "ate": "f13:fim+0.3"
-    },
-    {
-     "peca": "helice",
-     "faz": "girar",
-     "eixo": "z",
-     "voltas": 2.5,
-     "de": "f13",
-     "ate": "f15:fim+1.5"
-    },
-    {
-     "peca": "split",
-     "faz": "fluxo",
-     "tipo": "ar",
-     "caminho": [
-      [
-       -0.2,
-       0.44,
-       0.06
-      ],
-      [
-       -0.23,
-       0.36,
-       0.16
-      ],
-      [
-       -0.27,
-       0.27,
-       0.27
-      ]
-     ],
-     "quantidade": 10,
-     "velocidade": 0.7,
-     "intensidade": 0.8,
-     "de": "f13",
-     "ate": "f15:fim+1.5"
-    },
-    {
-     "peca": "split",
-     "faz": "fluxo",
-     "tipo": "agua",
-     "caminho": [
-      [
-       -0.3,
-       0.47,
-       0.05
-      ],
-      [
-       -0.19,
-       0.46,
-       0.05
-      ],
-      [
-       -0.08,
-       0.455,
-       0.05
-      ]
-     ],
-     "quantidade": 6,
-     "velocidade": 0.6,
-     "intensidade": 0.5,
-     "de": "f15:umidade",
-     "ate": "f15:fim+0.3"
-    },
-    {
-     "peca": "dreno",
-     "faz": "fluxo",
-     "tipo": "agua",
-     "quantidade": 6,
-     "velocidade": 0.8,
-     "intensidade": 0.6,
-     "de": "f15:umidade",
-     "ate": "f15:fim+1.5"
-    },
-    {
-     "peca": "split",
-     "faz": "fluxo",
-     "tipo": "agua",
-     "caminho": [
-      [
-       0.085,
-       0.33,
-       0.06
-      ],
-      [
-       0.085,
-       0.2,
-       0.06
-      ],
-      [
-       0.085,
-       0.04,
-       0.06
-      ]
-     ],
-     "quantidade": 3,
-     "velocidade": 0.8,
-     "intensidade": 0.6,
-     "de": "f15:pinga",
-     "ate": "f15:fim+1.5"
     }
-   ],
-   "acoes": [
-    {
-     "quem": "tito",
-     "faz": "virar",
-     "para": [
-      -0.75,
-      2.0,
-      5.9
-     ],
-     "olhar": "camera",
-     "expressao": "feliz",
-     "de": "f5"
-    },
-    {
-     "quem": "tito",
-     "faz": "apontar",
-     "para": "evaporadora",
-     "olhar": "maquete",
-     "de": "f5:canos"
-    },
-    {
-     "quem": "tito",
-     "olhar": "camera",
-     "expressao": "feliz",
-     "de": "f6:friozinho"
-    },
-    {
-     "quem": "tito",
-     "olhar": "camera",
-     "expressao": "nervoso",
-     "de": "f7"
-    },
-    {
-     "quem": "tito",
-     "faz": "apontar",
-     "para": "compressor",
-     "olhar": "maquete",
-     "expressao": "feliz",
-     "de": "f8:compressor"
-    },
-    {
-     "quem": "tito",
-     "olhar": "camera",
-     "expressao": "desconfiado",
-     "de": "f10"
-    },
-    {
-     "quem": "tito",
-     "faz": "apontar",
-     "para": "valvula",
-     "olhar": "maquete",
-     "expressao": "feliz",
-     "de": "f11:furinho"
-    },
-    {
-     "quem": "tito",
-     "olhar": "camera",
-     "expressao": "feliz",
-     "de": "f13"
-    },
-    {
-     "quem": "tito",
-     "olhar": "camera",
-     "expressao": "feliz",
-     "de": "f14"
-    },
-    {
-     "quem": "tito",
-     "olhar": "camera",
-     "expressao": "surpreso",
-     "de": "f15"
-    },
-    {
-     "quem": "tito",
-     "faz": "virar",
-     "para": [
-      -0.9,
-      2.0,
-      5.8
-     ],
-     "olhar": "camera",
-     "expressao": "feliz",
-     "de": "f15:trabalho"
-    }
-   ],
-   "planos": [
-    {
-     "de": "inicio",
-     "tipo": "aberto",
-     "camera": [
-      -0.75,
-      2.0,
-      5.9
-     ],
-     "alvo": [
-      -0.75,
-      1.5,
-      0.3
-     ],
-     "movimento": "arco",
-     "intensidade": 0.5,
-     "transicao": "zoom"
-    },
-    {
-     "de": "f5:canos",
-     "tipo": "detalhe",
-     "alvo": [
-      -0.19,
-      1.5,
-      0
-     ],
-     "lado": "frente",
-     "tamanho": 0.45,
-     "movimento": "aproximar"
-    },
-    {
-     "de": "f5:ventilador",
-     "tipo": "detalhe",
-     "alvo": [
-      -0.2,
-      1.42,
-      0.05
-     ],
-     "lado": "tres_quartos_esquerda",
-     "tamanho": 0.55,
-     "movimento": "arco",
-     "intensidade": 0.4
-    },
-    {
-     "de": "f6",
-     "tipo": "detalhe",
-     "alvo": [
-      -0.19,
-      1.48,
-      0.02
-     ],
-     "lado": "frente",
-     "tamanho": 0.4,
-     "movimento": "subir",
-     "transicao": "varrer"
-    },
-    {
-     "de": "f6:friozinho",
-     "tipo": "medio",
-     "alvo": "tito",
-     "lado": "tres_quartos_direita",
-     "movimento": "travelling",
-     "intensidade": 0.4,
-     "transicao": "chicote"
-    },
-    {
-     "de": "f7",
-     "tipo": "medio",
-     "alvo": "tito",
-     "lado": "tres_quartos_direita",
-     "movimento": "zoom_rapido"
-    },
-    {
-     "de": "f7:lugar",
-     "tipo": "detalhe",
-     "alvo": [
-      0.06,
-      1.35,
-      0.02
-     ],
-     "lado": "frente",
-     "tamanho": 0.65,
-     "movimento": "arco",
-     "intensidade": 0.4
-    },
-    {
-     "de": "f8:compressor",
-     "tipo": "detalhe",
-     "alvo": [
-      0.15,
-      1.1,
-      0
-     ],
-     "lado": "frente",
-     "tamanho": 0.45,
-     "movimento": "aproximar"
-    },
-    {
-     "de": "f9",
-     "tipo": "detalhe",
-     "alvo": [
-      0.22,
-      1.13,
-      0.1
-     ],
-     "lado": "tres_quartos_esquerda",
-     "tamanho": 0.5,
-     "movimento": "arco",
-     "intensidade": -0.4
-    },
-    {
-     "de": "f9:quente",
-     "tipo": "detalhe",
-     "alvo": [
-      0.24,
-      1.14,
-      0.18
-     ],
-     "lado": "frente",
-     "tamanho": 0.45,
-     "movimento": "aproximar"
-    },
-    {
-     "de": "f10",
-     "tipo": "medio",
-     "alvo": "tito",
-     "lado": "tres_quartos_direita",
-     "movimento": "dolly_zoom",
-     "transicao": "chicote"
-    },
-    {
-     "de": "f11",
-     "tipo": "detalhe",
-     "alvo": [
-      0.1,
-      1.4,
-      -0.03
-     ],
-     "lado": "frente",
-     "tamanho": 0.4,
-     "movimento": "aproximar",
-     "transicao": "zoom"
-    },
-    {
-     "de": "f11:pressao",
-     "tipo": "detalhe",
-     "alvo": [
-      0.0,
-      1.38,
-      0
-     ],
-     "lado": "tres_quartos_esquerda",
-     "tamanho": 0.65,
-     "movimento": "subir"
-    },
-    {
-     "de": "f12",
-     "tipo": "detalhe",
-     "alvo": [
-      0.1,
-      1.4,
-      -0.03
-     ],
-     "lado": "tres_quartos_esquerda",
-     "tamanho": 0.35,
-     "movimento": "arco",
-     "intensidade": 0.4
-    },
-    {
-     "de": "f13",
-     "tipo": "medio",
-     "alvo": "tito",
-     "lado": "tres_quartos_direita",
-     "movimento": "travelling",
-     "intensidade": 0.4,
-     "transicao": "chicote"
-    },
-    {
-     "de": "f13:leva",
-     "tipo": "detalhe",
-     "alvo": [
-      0,
-      1.3,
-      0
-     ],
-     "lado": "frente",
-     "tamanho": 0.85,
-     "movimento": "arco",
-     "intensidade": 0.4
-    },
-    {
-     "de": "f14",
-     "tipo": "medio",
-     "alvo": "tito",
-     "lado": "tres_quartos_direita",
-     "movimento": "aproximar",
-     "transicao": "chicote"
-    },
-    {
-     "de": "f15",
-     "tipo": "detalhe",
-     "alvo": [
-      0.06,
-      1.3,
-      0.05
-     ],
-     "lado": "frente",
-     "tamanho": 0.5,
-     "movimento": "aproximar",
-     "transicao": "desfoque"
-    },
-    {
-     "de": "f15:umidade",
-     "tipo": "detalhe",
-     "alvo": [
-      -0.05,
-      1.42,
-      0.05
-     ],
-     "lado": "tres_quartos_esquerda",
-     "tamanho": 0.55,
-     "movimento": "arco",
-     "intensidade": 0.4
-    },
-    {
-     "de": "f15:trabalho",
-     "tipo": "aberto",
-     "camera": [
-      -0.9,
-      2.0,
-      5.8
-     ],
-     "alvo": [
-      -0.9,
-      1.5,
-      0.3
-     ],
-     "movimento": "travelling",
-     "intensidade": 0.3
-    }
-   ],
-   "sons": [
-    {
-     "de": "f5:canos",
-     "som": "pop",
-     "volume": 0.7
-    },
-    {
-     "de": "f5:ventilador",
-     "som": "sopro",
-     "volume": 0.5
-    },
-    {
-     "de": "f6:gas",
-     "som": "chiado",
-     "volume": 0.4
-    },
-    {
-     "de": "f6:rouba",
-     "som": "whoosh",
-     "volume": 0.5
-    },
-    {
-     "de": "f7",
-     "som": "tensao_sobe",
-     "volume": 0.6
-    },
-    {
-     "de": "f7:lugar",
-     "som": "whoosh",
-     "volume": 0.5
-    },
-    {
-     "de": "f8:compressor",
-     "som": "pop",
-     "volume": 0.8
-    },
-    {
-     "de": "f8:aperta",
-     "som": "engrenagem",
-     "volume": 0.5
-    },
-    {
-     "de": "f9:sopra",
-     "som": "sopro",
-     "volume": 0.6
-    },
-    {
-     "de": "f9:quente",
-     "som": "fogo",
-     "volume": 0.4
-    },
-    {
-     "de": "f10",
-     "som": "tensao_sobe",
-     "volume": 0.6
-    },
-    {
-     "de": "f10:nada",
-     "som": "impacto",
-     "volume": 0.7
-    },
-    {
-     "de": "f11:furinho",
-     "som": "pop",
-     "volume": 0.9
-    },
-    {
-     "de": "f11:pressao",
-     "som": "chiado",
-     "volume": 0.5
-    },
-    {
-     "de": "f11:gelado",
-     "som": "ding",
-     "volume": 0.7
-    },
-    {
-     "de": "f13:ciclo",
-     "som": "ding",
-     "volume": 0.8
-    },
-    {
-     "de": "f12:spray",
-     "som": "chiado",
-     "volume": 0.5
-    },
-    {
-     "de": "f14:gente",
-     "som": "pop",
-     "volume": 0.7
-    },
-    {
-     "de": "f14:cinemas",
-     "som": "ding",
-     "volume": 0.8
-    },
-    {
-     "de": "f15:pinga",
-     "som": "agua",
-     "volume": 0.6
-    },
-    {
-     "de": "f15:grafica",
-     "som": "pop",
-     "volume": 0.8
-    }
-   ],
-   "efeitos": [
-    {
-     "de": "f5:canos+0.1",
-     "ate": "f5:ventilador",
-     "efeito": "circular",
-     "alvo": "serpentina"
-    },
-    {
-     "de": "f6:gas+0.1",
-     "ate": "f6:friozinho",
-     "efeito": "destacar",
-     "alvo": "serpentina"
-    },
-    {
-     "de": "f7",
-     "efeito": "zoom_soco"
-    },
-    {
-     "de": "f8:compressor+0.1",
-     "ate": "f8:fim",
-     "efeito": "circular",
-     "alvo": "compressor"
-    },
-    {
-     "de": "f9:quente",
-     "ate": "f9:quente+0.8",
-     "efeito": "linhas",
-     "cor": "#FF7A2A"
-    },
-    {
-     "de": "f10",
-     "efeito": "zoom_soco"
-    },
-    {
-     "de": "f11:furinho+0.1",
-     "ate": "f11:pressao",
-     "efeito": "circular",
-     "alvo": "valvula"
-    },
-    {
-     "de": "f11:gelado",
-     "ate": "f11:gelado+0.7",
-     "efeito": "linhas",
-     "cor": "#7FDBFF"
-    },
-    {
-     "de": "f15:pinga",
-     "ate": "f15:umidade",
-     "efeito": "circular",
-     "alvo": "dreno"
-    },
-    {
-     "de": "f15:trabalho",
-     "ate": "f15:fim+0.5",
-     "efeito": "linhas",
-     "intensidade": 0.6
-    }
-   ],
-   "rotulos": [
-    {
-     "alvo": "serpentina",
-     "texto": "Canos gelados",
-     "de": "f5:canos",
-     "ate": "f5:fim",
-     "cor": "#7FDBFF"
-    },
-    {
-     "alvo": "serpentina",
-     "texto": "Gás",
-     "de": "f6:gas",
-     "ate": "f6:friozinho",
-     "cor": "#7CE07A"
-    },
-    {
-     "alvo": "compressor",
-     "texto": "Compressor",
-     "de": "f8:compressor",
-     "ate": "f8:fim"
-    },
-    {
-     "alvo": "grade",
-     "texto": "Ar quente",
-     "de": "f9:quente",
-     "ate": "f9:fim",
-     "cor": "#FF8A65"
-    },
-    {
-     "alvo": "valvula",
-     "texto": "Furinho",
-     "de": "f11:furinho",
-     "ate": "f11:fim"
-    },
-    {
-     "alvo": "dreno",
-     "texto": "Umidade",
-     "de": "f15:umidade",
-     "ate": "f15:trabalho",
-     "cor": "#6E9BFF"
-    }
-   ],
-   "cartoes": [
-    {
-     "de": "f13:ciclo",
-     "ate": "f13:leva",
-     "grande": "CICLO",
-     "pequeno": "de refrigeração: o gás leva o calor de dentro para fora"
-    },
-    {
-     "de": "f14:cinemas",
-     "ate": "f14:fim+0.3",
-     "grande": "CINEMA",
-     "pequeno": "anos 1920: o ar gelado vira atração"
-    }
-   ]
-  }
- ]
+  ]
 }

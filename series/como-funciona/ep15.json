@@ -1,0 +1,2005 @@
+{
+ "serie": "como-funciona",
+ "parte": 15,
+ "titulo": "Construa um motor elétrico do zero",
+ "musica": "curiosidade",
+ "modelos": {
+  "motor": [
+   {
+    "id": "base",
+    "forma": "caixa",
+    "tam": [
+     0.8,
+     0.04,
+     0.45
+    ],
+    "pos": [
+     0,
+     0.02,
+     0
+    ],
+    "cor": "#A0522D"
+   },
+   {
+    "id": "pilha",
+    "forma": "cilindro",
+    "tam": [
+     0.045,
+     0.17,
+     0.045
+    ],
+    "pos": [
+     -0.32,
+     0.125,
+     0.14
+    ],
+    "cor": "#263238"
+   },
+   {
+    "id": "pilha_topo",
+    "forma": "cilindro",
+    "tam": [
+     0.047,
+     0.06,
+     0.047
+    ],
+    "pos": [
+     -0.32,
+     0.18,
+     0.14
+    ],
+    "cor": "#F1C40F"
+   },
+   {
+    "id": "pilha_polo",
+    "forma": "cilindro",
+    "tam": [
+     0.015,
+     0.02,
+     0.015
+    ],
+    "pos": [
+     -0.32,
+     0.22,
+     0.14
+    ],
+    "cor": "#BDC3C7"
+   },
+   {
+    "id": "fio",
+    "forma": "tubo",
+    "tam": [
+     0.009
+    ],
+    "pos": [
+     -0.195,
+     0.35,
+     0.085
+    ],
+    "caminho": [
+     [
+      -0.125,
+      -0.13,
+      0.055
+     ],
+     [
+      -0.105,
+      0.05,
+      0.035
+     ],
+     [
+      0.075,
+      0.09,
+      -0.025
+     ],
+     [
+      0.155,
+      -0.01,
+      -0.065
+     ]
+    ],
+    "cor": "#E74C3C"
+   },
+   {
+    "id": "fio_preto",
+    "forma": "tubo",
+    "tam": [
+     0.009
+    ],
+    "pos": [
+     -0.115,
+     0.125,
+     0.1
+    ],
+    "caminho": [
+     [
+      -0.165,
+      -0.065,
+      0.07
+     ],
+     [
+      -0.005,
+      -0.075,
+      0.06
+     ],
+     [
+      0.08,
+      0.025,
+      -0.05
+     ],
+     [
+      0.09,
+      0.115,
+      -0.08
+     ]
+    ],
+    "cor": "#263238"
+   },
+   {
+    "id": "clipe1",
+    "forma": "caixa",
+    "tam": [
+     0.065,
+     0.012,
+     0.024
+    ],
+    "pos": [
+     -0.035,
+     0.048,
+     0.0
+    ],
+    "giro": [
+     0,
+     25,
+     0
+    ],
+    "cor": "#BDC3C7"
+   },
+   {
+    "id": "clipe2",
+    "forma": "caixa",
+    "tam": [
+     0.065,
+     0.012,
+     0.024
+    ],
+    "pos": [
+     0.0,
+     0.048,
+     0.03
+    ],
+    "giro": [
+     0,
+     -40,
+     0
+    ],
+    "cor": "#BDC3C7"
+   },
+   {
+    "id": "clipe3",
+    "forma": "caixa",
+    "tam": [
+     0.065,
+     0.012,
+     0.024
+    ],
+    "pos": [
+     0.035,
+     0.048,
+     -0.01
+    ],
+    "giro": [
+     0,
+     70,
+     0
+    ],
+    "cor": "#BDC3C7"
+   },
+   {
+    "id": "rotor",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     0,
+     0.3,
+     0
+    ],
+    "cor": "#95A5A6",
+    "sem_contorno": true
+   },
+   {
+    "id": "barra",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.26,
+     0.05
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#7F8C8D",
+    "pai": "rotor"
+   },
+   {
+    "id": "bobina",
+    "forma": "mola",
+    "tam": [
+     0.037,
+     0.16,
+     11,
+     0.008
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#B5651D",
+    "pai": "rotor"
+   },
+   {
+    "id": "ponta_n",
+    "forma": "caixa",
+    "tam": [
+     0.056,
+     0.03,
+     0.056
+    ],
+    "pos": [
+     0,
+     0.13,
+     0
+    ],
+    "cor": "#E74C3C",
+    "pai": "rotor",
+    "oculta": true
+   },
+   {
+    "id": "ponta_s",
+    "forma": "caixa",
+    "tam": [
+     0.056,
+     0.03,
+     0.056
+    ],
+    "pos": [
+     0,
+     -0.13,
+     0
+    ],
+    "cor": "#2E86C1",
+    "pai": "rotor",
+    "oculta": true
+   },
+   {
+    "id": "barra2",
+    "forma": "caixa",
+    "tam": [
+     0.26,
+     0.045,
+     0.045
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#7F8C8D",
+    "pai": "rotor",
+    "oculta": true
+   },
+   {
+    "id": "bobina2",
+    "forma": "mola",
+    "tam": [
+     0.035,
+     0.16,
+     11,
+     0.008
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#C27A2C",
+    "pai": "rotor",
+    "oculta": true
+   },
+   {
+    "id": "comutador",
+    "forma": "cilindro",
+    "tam": [
+     0.028,
+     0.04,
+     0.028
+    ],
+    "pos": [
+     0,
+     0,
+     0.11
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#D35400",
+    "pai": "rotor",
+    "oculta": true
+   },
+   {
+    "id": "fenda",
+    "forma": "caixa",
+    "tam": [
+     0.062,
+     0.007,
+     0.042
+    ],
+    "pos": [
+     0,
+     0,
+     0.11
+    ],
+    "cor": "#1B1B1B",
+    "pai": "rotor",
+    "oculta": true
+   },
+   {
+    "id": "ventoinha",
+    "forma": "cilindro",
+    "tam": [
+     0.025,
+     0.03,
+     0.025
+    ],
+    "pos": [
+     0,
+     0,
+     0.175
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#34495E",
+    "pai": "rotor",
+    "oculta": true
+   },
+   {
+    "id": "pa1",
+    "forma": "caixa",
+    "tam": [
+     0.24,
+     0.045,
+     0.01
+    ],
+    "pos": [
+     0,
+     0,
+     0.175
+    ],
+    "giro": [
+     20,
+     0,
+     0
+    ],
+    "cor": "#5DADE2",
+    "pai": "rotor",
+    "oculta": true
+   },
+   {
+    "id": "pa2",
+    "forma": "caixa",
+    "tam": [
+     0.045,
+     0.24,
+     0.01
+    ],
+    "pos": [
+     0,
+     0,
+     0.175
+    ],
+    "giro": [
+     0,
+     20,
+     0
+    ],
+    "cor": "#5DADE2",
+    "pai": "rotor",
+    "oculta": true
+   },
+   {
+    "id": "eixo",
+    "forma": "cilindro",
+    "tam": [
+     0.009,
+     0.4,
+     0.009
+    ],
+    "pos": [
+     0,
+     0.3,
+     -0.01
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#95A5A6",
+    "oculta": true
+   },
+   {
+    "id": "sup_frente",
+    "forma": "caixa",
+    "tam": [
+     0.03,
+     0.27,
+     0.02
+    ],
+    "pos": [
+     0,
+     0.165,
+     0.075
+    ],
+    "cor": "#8D6E63",
+    "oculta": true
+   },
+   {
+    "id": "sup_tras",
+    "forma": "caixa",
+    "tam": [
+     0.03,
+     0.27,
+     0.02
+    ],
+    "pos": [
+     0,
+     0.165,
+     -0.075
+    ],
+    "cor": "#8D6E63",
+    "oculta": true
+   },
+   {
+    "id": "ima_esq",
+    "forma": "caixa",
+    "tam": [
+     0.07,
+     0.3,
+     0.12
+    ],
+    "pos": [
+     -0.215,
+     0.19,
+     0
+    ],
+    "cor": "#2E86C1",
+    "oculta": true
+   },
+   {
+    "id": "ima_dir",
+    "forma": "caixa",
+    "tam": [
+     0.07,
+     0.3,
+     0.12
+    ],
+    "pos": [
+     0.215,
+     0.19,
+     0
+    ],
+    "cor": "#E74C3C",
+    "oculta": true
+   },
+   {
+    "id": "escova_cima",
+    "forma": "caixa",
+    "tam": [
+     0.022,
+     0.03,
+     0.026
+    ],
+    "pos": [
+     0,
+     0.343,
+     0.11
+    ],
+    "cor": "#37474F",
+    "oculta": true
+   },
+   {
+    "id": "escova_baixo",
+    "forma": "caixa",
+    "tam": [
+     0.022,
+     0.03,
+     0.026
+    ],
+    "pos": [
+     0,
+     0.257,
+     0.11
+    ],
+    "cor": "#37474F",
+    "oculta": true
+   },
+   {
+    "id": "fio2",
+    "forma": "tubo",
+    "tam": [
+     0.009
+    ],
+    "pos": [
+     -0.17,
+     0.355,
+     0.1325
+    ],
+    "caminho": [
+     [
+      -0.15,
+      -0.135,
+      0.0075
+     ],
+     [
+      -0.11,
+      0.065,
+      0.0175
+     ],
+     [
+      0.09,
+      0.065,
+      -0.0025
+     ],
+     [
+      0.17,
+      0.005,
+      -0.0225
+     ]
+    ],
+    "cor": "#E74C3C",
+    "oculta": true
+   },
+   {
+    "id": "fio2_preto",
+    "forma": "tubo",
+    "tam": [
+     0.009
+    ],
+    "pos": [
+     -0.1025,
+     0.118,
+     0.145
+    ],
+    "caminho": [
+     [
+      -0.1775,
+      -0.058,
+      0.025
+     ],
+     [
+      -0.0175,
+      -0.068,
+      0.025
+     ],
+     [
+      0.0925,
+      0.002,
+      -0.015
+     ],
+     [
+      0.1025,
+      0.124,
+      -0.035
+     ]
+    ],
+    "cor": "#263238",
+    "oculta": true
+   },
+   {
+    "id": "lampada_base",
+    "forma": "cilindro",
+    "tam": [
+     0.03,
+     0.05,
+     0.03
+    ],
+    "pos": [
+     -0.32,
+     0.065,
+     0.14
+    ],
+    "cor": "#7F8C8D",
+    "oculta": true
+   },
+   {
+    "id": "lampada",
+    "forma": "esfera",
+    "tam": [
+     0.055
+    ],
+    "pos": [
+     -0.32,
+     0.14,
+     0.14
+    ],
+    "cor": "#FFE14A",
+    "brilho": 1.0,
+    "oculta": true
+   }
+  ]
+ },
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "tito",
+   "texto": "Se você enrolar fio de cobre num prego e ligar na pilha, ele vira um ÍMÃ.",
+   "tom": "animado"
+  },
+  {
+   "id": "f2",
+   "quem": "tito",
+   "texto": "MAS ímã só puxa e empurra. Como fazer ele GIRAR sem parar?",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f3",
+   "quem": "tito",
+   "texto": "Então, você espeta o prego num EIXO, entre dois ímãs de verdade."
+  },
+  {
+   "id": "f4",
+   "quem": "tito",
+   "texto": "Os opostos se puxam, e o prego VIRA!",
+   "tom": "animado",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f5",
+   "quem": "tito",
+   "texto": "SÓ QUE ele para de cara com o ímã, e fica TRAVADO ali.",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f6",
+   "quem": "tito",
+   "texto": "Então, você põe no eixo um anel cortado ao meio, o COMUTADOR."
+  },
+  {
+   "id": "f7",
+   "quem": "tito",
+   "texto": "A cada meia volta, ele troca a corrente de lado, e o prego troca de POLO."
+  },
+  {
+   "id": "f8",
+   "quem": "tito",
+   "texto": "Agora o ímã que puxava EMPURRA, e o eixo gira sem parar!",
+   "tom": "animado",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f9",
+   "quem": "tito",
+   "texto": "MAS, com o eixo girando, os fios da pilha vão se ENROLAR todos.",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f10",
+   "quem": "tito",
+   "texto": "Então, você usa ESCOVAS: dois carvõezinhos que só encostam no anel e passam a corrente."
+  },
+  {
+   "id": "f11",
+   "quem": "tito",
+   "texto": "SÓ QUE a corrente esquenta o fio de cobre, e se o calor não sai, o motor QUEIMA.",
+   "tom": "tenso",
+   "pausa_depois": 0.35
+  },
+  {
+   "id": "f12",
+   "quem": "tito",
+   "texto": "Então, você prende uma VENTOINHA no próprio eixo: o motor gira e se refresca sozinho.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f13",
+   "quem": "tito",
+   "texto": "MAS ainda existe outro problema: se o prego para no ponto errado, o motor nem PEGA.",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f14",
+   "quem": "tito",
+   "texto": "Então, você coloca mais BOBINAS, mais pregos enrolados, cada um empurrando na sua vez.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f15",
+   "quem": "tito",
+   "texto": "E o mais doido: gire esse eixo com a mão, e ele vira um GERADOR de eletricidade.",
+   "tom": "animado",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f16",
+   "quem": "tito",
+   "texto": "Ímã e fio de cobre giram quase tudo na sua casa: ventilador, liquidificador, lavadora.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f17",
+   "quem": "tito",
+   "texto": "Parabéns! Você construiu um MOTOR elétrico!",
+   "tom": "animado"
+  }
+ ],
+ "chamada": {
+  "pergunta": "E agora, topa construir uma bicicleta?",
+  "texto": "Comenta",
+  "destaque": "BICI­CLETA"
+ },
+ "postagem": {
+  "titulo": "Como funciona o motor elétrico? Construa um do zero",
+  "descricao": "Como funciona o motor elétrico por dentro: eletroímã, ímãs, eixo, comutador, escovas de carvão, ventoinha e bobinas. Construa um do zero, peça por peça, e veja por que ele também vira gerador.",
+  "hashtags": [
+   "comofunciona",
+   "motoreletrico",
+   "eletricidade",
+   "fisica",
+   "curiosidades"
+  ],
+  "comentario": "Eu não sabia que girar um motor com a mão acende uma lâmpada. Você sabia?",
+  "capa": "f11:queima+0.3"
+ },
+ "cenas": [
+  {
+   "id": "construcao",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "feliz"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "motor",
+     "em": "pedestal"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "fumaca",
+     "em": [
+      0,
+      -0.04
+     ],
+     "alt": 1.36,
+     "raio": 0.05,
+     "altura": 0.3,
+     "quantas": 10,
+     "aparece": "f11:queima",
+     "some": "f12"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "confete",
+     "em": [
+      0,
+      0
+     ],
+     "alt": 1.6,
+     "raio": 1.4,
+     "altura": 1.2,
+     "quantas": 60,
+     "aparece": "f17:parabens"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "barra",
+     "faz": "pulsar",
+     "de": "inicio",
+     "ate": "f2:fim",
+     "intensidade": 0.5
+    },
+    {
+     "peca": "fio",
+     "faz": "fluxo",
+     "de": "inicio",
+     "ate": "f10:escovas",
+     "tipo": "eletricidade",
+     "quantidade": 10,
+     "velocidade": 0.8,
+     "intensidade": 0.7
+    },
+    {
+     "peca": "fio_preto",
+     "faz": "fluxo",
+     "de": "inicio",
+     "ate": "f10:escovas",
+     "tipo": "eletricidade",
+     "quantidade": 8,
+     "velocidade": 0.8,
+     "intensidade": 0.6
+    },
+    {
+     "peca": "clipe1",
+     "faz": "mover",
+     "de": "inicio+0.15",
+     "ate": "inicio+0.45",
+     "desloc": [
+      0.02,
+      0.105,
+      0.0
+     ]
+    },
+    {
+     "peca": "clipe2",
+     "faz": "mover",
+     "de": "inicio+0.35",
+     "ate": "inicio+0.65",
+     "desloc": [
+      0.0,
+      0.105,
+      -0.02
+     ]
+    },
+    {
+     "peca": "clipe3",
+     "faz": "mover",
+     "de": "inicio+0.55",
+     "ate": "inicio+0.85",
+     "desloc": [
+      -0.02,
+      0.105,
+      0.01
+     ]
+    },
+    {
+     "peca": "ponta_n",
+     "faz": "aparecer",
+     "de": "f1:ima"
+    },
+    {
+     "peca": "ponta_s",
+     "faz": "aparecer",
+     "de": "f1:ima"
+    },
+    {
+     "peca": "clipe1",
+     "faz": "sumir",
+     "de": "f3:eixo"
+    },
+    {
+     "peca": "clipe2",
+     "faz": "sumir",
+     "de": "f3:eixo"
+    },
+    {
+     "peca": "clipe3",
+     "faz": "sumir",
+     "de": "f3:eixo"
+    },
+    {
+     "peca": "eixo",
+     "faz": "aparecer",
+     "de": "f3:eixo"
+    },
+    {
+     "peca": "sup_frente",
+     "faz": "aparecer",
+     "de": "f3:eixo"
+    },
+    {
+     "peca": "sup_tras",
+     "faz": "aparecer",
+     "de": "f3:eixo"
+    },
+    {
+     "peca": "ima_esq",
+     "faz": "aparecer",
+     "de": "f3:imas"
+    },
+    {
+     "peca": "ima_dir",
+     "faz": "aparecer",
+     "de": "f3:imas+0.15"
+    },
+    {
+     "peca": "rotor",
+     "faz": "girar_para",
+     "de": "f4:vira",
+     "ate": "f4:vira+0.45",
+     "eixo": "z",
+     "angulo": 90
+    },
+    {
+     "peca": "rotor",
+     "faz": "tremer",
+     "de": "f5:para",
+     "ate": "f6:anel",
+     "intensidade": 0.4
+    },
+    {
+     "peca": "comutador",
+     "faz": "aparecer",
+     "de": "f6:anel"
+    },
+    {
+     "peca": "fenda",
+     "faz": "aparecer",
+     "de": "f6:anel"
+    },
+    {
+     "peca": "comutador",
+     "faz": "pulsar",
+     "de": "f7:troca",
+     "ate": "f7:fim",
+     "intensidade": 0.6
+    },
+    {
+     "peca": "rotor",
+     "faz": "girar",
+     "de": "f8:empurra",
+     "ate": "f13:ponto",
+     "eixo": "z",
+     "voltas": 1.2
+    },
+    {
+     "peca": "bobina",
+     "faz": "pulsar",
+     "de": "f8:empurra",
+     "ate": "f8:fim",
+     "intensidade": 0.5
+    },
+    {
+     "peca": "fio",
+     "faz": "tremer",
+     "de": "f9:enrolar",
+     "ate": "f10:escovas",
+     "intensidade": 0.9
+    },
+    {
+     "peca": "fio",
+     "faz": "pulsar",
+     "de": "f9:fios",
+     "ate": "f10:escovas",
+     "intensidade": 0.7
+    },
+    {
+     "peca": "fio",
+     "faz": "sumir",
+     "de": "f10:escovas"
+    },
+    {
+     "peca": "fio_preto",
+     "faz": "sumir",
+     "de": "f10:escovas"
+    },
+    {
+     "peca": "escova_cima",
+     "faz": "aparecer",
+     "de": "f10:escovas"
+    },
+    {
+     "peca": "escova_baixo",
+     "faz": "aparecer",
+     "de": "f10:escovas+0.15"
+    },
+    {
+     "peca": "fio2",
+     "faz": "aparecer",
+     "de": "f10:escovas+0.2"
+    },
+    {
+     "peca": "fio2_preto",
+     "faz": "aparecer",
+     "de": "f10:escovas+0.3"
+    },
+    {
+     "peca": "fio2",
+     "faz": "fluxo",
+     "de": "f10:corrente",
+     "ate": "f15:gerador",
+     "tipo": "eletricidade",
+     "quantidade": 10,
+     "velocidade": 0.9,
+     "intensidade": 0.7
+    },
+    {
+     "peca": "fio2_preto",
+     "faz": "fluxo",
+     "de": "f10:corrente",
+     "ate": "f15:gerador",
+     "tipo": "eletricidade",
+     "quantidade": 8,
+     "velocidade": 0.9,
+     "intensidade": 0.6
+    },
+    {
+     "peca": "bobina",
+     "faz": "aquecer",
+     "de": "f11:esquenta",
+     "ate": "f11:queima",
+     "intensidade": 1.3
+    },
+    {
+     "peca": "rotor",
+     "faz": "tremer",
+     "de": "f11:queima",
+     "ate": "f12:ventoinha",
+     "intensidade": 0.3
+    },
+    {
+     "peca": "ventoinha",
+     "faz": "aparecer",
+     "de": "f12:ventoinha"
+    },
+    {
+     "peca": "pa1",
+     "faz": "aparecer",
+     "de": "f12:ventoinha"
+    },
+    {
+     "peca": "pa2",
+     "faz": "aparecer",
+     "de": "f12:ventoinha"
+    },
+    {
+     "peca": "bobina",
+     "faz": "esfriar",
+     "de": "f12:refresca",
+     "ate": "f12:fim+0.3"
+    },
+    {
+     "peca": "base",
+     "faz": "fluxo",
+     "de": "f12:refresca",
+     "ate": "f13:ponto",
+     "tipo": "ar",
+     "caminho": [
+      [
+       -0.06,
+       0.3,
+       0.42
+      ],
+      [
+       -0.06,
+       0.3,
+       0.22
+      ],
+      [
+       -0.09,
+       0.33,
+       0.0
+      ],
+      [
+       -0.12,
+       0.36,
+       -0.22
+      ]
+     ],
+     "quantidade": 10,
+     "velocidade": 0.9,
+     "intensidade": 0.8
+    },
+    {
+     "peca": "base",
+     "faz": "fluxo",
+     "de": "f12:refresca",
+     "ate": "f13:ponto",
+     "tipo": "ar",
+     "caminho": [
+      [
+       0.06,
+       0.27,
+       0.42
+      ],
+      [
+       0.06,
+       0.27,
+       0.22
+      ],
+      [
+       0.09,
+       0.25,
+       0.0
+      ],
+      [
+       0.12,
+       0.23,
+       -0.22
+      ]
+     ],
+     "quantidade": 10,
+     "velocidade": 0.9,
+     "intensidade": 0.8
+    },
+    {
+     "peca": "rotor",
+     "faz": "tremer",
+     "de": "f13:pega",
+     "ate": "f14:bobinas",
+     "intensidade": 0.5
+    },
+    {
+     "peca": "barra2",
+     "faz": "aparecer",
+     "de": "f14:bobinas"
+    },
+    {
+     "peca": "bobina2",
+     "faz": "aparecer",
+     "de": "f14:bobinas"
+    },
+    {
+     "peca": "rotor",
+     "faz": "girar",
+     "de": "f14:vez",
+     "ate": "f15:gire",
+     "eixo": "z",
+     "voltas": 1.7
+    },
+    {
+     "peca": "bobina2",
+     "faz": "pulsar",
+     "de": "f14:vez",
+     "ate": "f14:fim+0.3",
+     "intensidade": 0.5
+    },
+    {
+     "peca": "rotor",
+     "faz": "girar",
+     "de": "f15:gire",
+     "ate": "f17:fim+2",
+     "eixo": "z",
+     "voltas": 0.7
+    },
+    {
+     "peca": "pilha",
+     "faz": "sumir",
+     "de": "f15:gerador"
+    },
+    {
+     "peca": "pilha_topo",
+     "faz": "sumir",
+     "de": "f15:gerador"
+    },
+    {
+     "peca": "pilha_polo",
+     "faz": "sumir",
+     "de": "f15:gerador"
+    },
+    {
+     "peca": "lampada_base",
+     "faz": "aparecer",
+     "de": "f15:gerador"
+    },
+    {
+     "peca": "lampada",
+     "faz": "aparecer",
+     "de": "f15:gerador+0.1"
+    },
+    {
+     "peca": "lampada",
+     "faz": "pulsar",
+     "de": "f15:gerador+0.3",
+     "ate": "f17:fim+2",
+     "intensidade": 0.8
+    },
+    {
+     "peca": "fio2",
+     "faz": "fluxo",
+     "de": "f15:gerador",
+     "ate": "f17:fim+2",
+     "tipo": "eletricidade",
+     "caminho": [
+      [
+       0.17,
+       0.005,
+       -0.0225
+      ],
+      [
+       0.09,
+       0.065,
+       -0.0025
+      ],
+      [
+       -0.11,
+       0.065,
+       0.0175
+      ],
+      [
+       -0.15,
+       -0.135,
+       0.0075
+      ]
+     ],
+     "quantidade": 10,
+     "velocidade": 0.7,
+     "intensidade": 0.7
+    },
+    {
+     "peca": "fio2_preto",
+     "faz": "fluxo",
+     "de": "f15:gerador",
+     "ate": "f17:fim+2",
+     "tipo": "eletricidade",
+     "caminho": [
+      [
+       0.1025,
+       0.124,
+       -0.035
+      ],
+      [
+       0.0925,
+       0.002,
+       -0.015
+      ],
+      [
+       -0.0175,
+       -0.068,
+       0.025
+      ],
+      [
+       -0.1775,
+       -0.058,
+       0.025
+      ]
+     ],
+     "quantidade": 8,
+     "velocidade": 0.7,
+     "intensidade": 0.6
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f2"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "eixo",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f3:eixo"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "nervoso",
+     "de": "f5"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "comutador",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f6:anel"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "nervoso",
+     "de": "f9"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "escova_cima",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f10:escovas"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "medo",
+     "de": "f11"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "camera",
+     "expressao": "medo",
+     "de": "f11:queima"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "ventoinha",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f12:ventoinha"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f13"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "rotor",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f14:bobinas"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f15"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f16"
+    },
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f17"
+    },
+    {
+     "quem": "tito",
+     "faz": "acenar",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f17:parabens"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "alvo": [
+      -0.08,
+      1.24,
+      0.04
+     ],
+     "lado": "frente",
+     "tamanho": 0.75,
+     "movimento": "arco"
+    },
+    {
+     "de": "f1:ima",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.2,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.4,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f2",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido"
+    },
+    {
+     "de": "f3",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.28,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.8,
+     "movimento": "arco",
+     "intensidade": 0.5,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f4",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.32,
+      0.04
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.6,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f5",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f5:travado",
+     "tipo": "detalhe",
+     "alvo": [
+      -0.13,
+      1.32,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.45,
+     "movimento": "tremer"
+    },
+    {
+     "de": "f6",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.32,
+      0.1
+     ],
+     "lado": "frente",
+     "tamanho": 0.4,
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "zoom"
+    },
+    {
+     "de": "f7",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.32,
+      0.05
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.6,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f8",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.3,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.9,
+     "movimento": "arco",
+     "intensidade": -0.4
+    },
+    {
+     "de": "f9",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f9:pilha",
+     "tipo": "detalhe",
+     "alvo": [
+      -0.16,
+      1.34,
+      0.08
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.6,
+     "movimento": "tremer"
+    },
+    {
+     "de": "f10",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.31,
+      0.11
+     ],
+     "lado": "frente",
+     "tamanho": 0.35,
+     "movimento": "aproximar",
+     "transicao": "varrer"
+    },
+    {
+     "de": "f10:encostam",
+     "tipo": "detalhe",
+     "camera": [
+      -0.35,
+      1.5,
+      0.6
+     ],
+     "alvo": [
+      0,
+      1.3,
+      0.1
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f11",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.32,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.5,
+     "movimento": "subir"
+    },
+    {
+     "de": "f11:queima",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "dolly_zoom"
+    },
+    {
+     "de": "f12",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.3,
+      0.17
+     ],
+     "lado": "frente",
+     "tamanho": 0.5,
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f12:refresca",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.3,
+      0.05
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.8,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f13",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f13:ponto",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.32,
+      0.05
+     ],
+     "lado": "frente",
+     "tamanho": 0.5,
+     "movimento": "tremer"
+    },
+    {
+     "de": "f14",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.3,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.8,
+     "movimento": "arco",
+     "intensidade": 0.5,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f14:vez",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.32,
+      0.03
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.55,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f15",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": 0.4,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f15:gerador",
+     "tipo": "detalhe",
+     "alvo": [
+      -0.2,
+      1.2,
+      0.1
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.65,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f16",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.25,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 1.1,
+     "movimento": "arco",
+     "intensidade": 0.5,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f17",
+     "tipo": "aberto",
+     "camera": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "alvo": [
+      -0.9,
+      1.5,
+      0.3
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    }
+   ],
+   "sons": [
+    {
+     "de": "inicio",
+     "som": "zap",
+     "volume": 0.35
+    },
+    {
+     "de": "inicio+0.15",
+     "som": "clique",
+     "volume": 0.6
+    },
+    {
+     "de": "inicio+0.55",
+     "som": "clique",
+     "volume": 0.6
+    },
+    {
+     "de": "f1:ima",
+     "som": "ding",
+     "volume": 0.7
+    },
+    {
+     "de": "f2",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f3:eixo",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f3:imas",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f4:vira",
+     "som": "whoosh",
+     "volume": 0.5
+    },
+    {
+     "de": "f4:vira+0.45",
+     "som": "clique",
+     "volume": 0.9
+    },
+    {
+     "de": "f5",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f5:travado",
+     "som": "impacto",
+     "volume": 0.7
+    },
+    {
+     "de": "f6:anel",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f7:troca",
+     "som": "zap",
+     "volume": 0.6
+    },
+    {
+     "de": "f8:empurra",
+     "som": "engrenagem",
+     "volume": 0.6
+    },
+    {
+     "de": "f8:gira",
+     "som": "ding",
+     "volume": 0.8
+    },
+    {
+     "de": "f9",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f9:enrolar",
+     "som": "impacto",
+     "volume": 0.7
+    },
+    {
+     "de": "f10:escovas",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f10:corrente",
+     "som": "zap",
+     "volume": 0.6
+    },
+    {
+     "de": "f11",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f11:queima",
+     "som": "impacto",
+     "volume": 0.9
+    },
+    {
+     "de": "f11:queima+0.2",
+     "som": "chiado",
+     "volume": 0.5
+    },
+    {
+     "de": "f12:ventoinha",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f12:refresca",
+     "som": "sopro",
+     "volume": 0.6
+    },
+    {
+     "de": "f13",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f13:pega",
+     "som": "impacto",
+     "volume": 0.7
+    },
+    {
+     "de": "f14:bobinas",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f14:vez",
+     "som": "engrenagem",
+     "volume": 0.6
+    },
+    {
+     "de": "f15:gerador",
+     "som": "ding",
+     "volume": 0.8
+    },
+    {
+     "de": "f17:parabens",
+     "som": "ding",
+     "volume": 0.9
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f1:ima",
+     "efeito": "linhas",
+     "ate": "f1:ima+0.7",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f3:eixo+0.1",
+     "efeito": "circular",
+     "ate": "f3:imas",
+     "alvo": "eixo"
+    },
+    {
+     "de": "f4:vira+0.45",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f5:travado",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f6:anel+0.1",
+     "efeito": "circular",
+     "ate": "f7",
+     "alvo": "comutador"
+    },
+    {
+     "de": "f8:gira",
+     "efeito": "linhas",
+     "ate": "f8:gira+0.8",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f9:enrolar",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f10:escovas+0.1",
+     "efeito": "circular",
+     "ate": "f10:corrente",
+     "alvo": "escova_cima"
+    },
+    {
+     "de": "f11:queima",
+     "efeito": "flash",
+     "ate": "f11:queima+0.25"
+    },
+    {
+     "de": "f11:queima",
+     "efeito": "letreiro",
+     "ate": "f11:fim+0.3",
+     "texto": "PERIGO!",
+     "cor": "#FF3B30",
+     "altura": 0.22
+    },
+    {
+     "de": "f12:ventoinha+0.1",
+     "efeito": "circular",
+     "ate": "f12:refresca",
+     "alvo": "ventoinha"
+    },
+    {
+     "de": "f13:pega",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f13:pega",
+     "efeito": "tremor",
+     "ate": "f13:fim",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f14:bobinas+0.1",
+     "efeito": "destacar",
+     "ate": "f14:vez",
+     "alvo": "bobina2"
+    },
+    {
+     "de": "f15:gerador+0.2",
+     "efeito": "circular",
+     "ate": "f15:fim",
+     "alvo": "lampada"
+    },
+    {
+     "de": "f17:parabens",
+     "efeito": "linhas",
+     "ate": "f17:fim+0.5",
+     "intensidade": 0.6
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "barra",
+     "texto": "Ímã",
+     "de": "f1:ima",
+     "ate": "f1:fim"
+    },
+    {
+     "alvo": "eixo",
+     "texto": "Eixo",
+     "de": "f3:eixo",
+     "ate": "f3:fim"
+    },
+    {
+     "alvo": "ima_dir",
+     "texto": "Ímãs",
+     "de": "f3:imas",
+     "ate": "f3:fim"
+    },
+    {
+     "alvo": "comutador",
+     "texto": "Comutador",
+     "de": "f6:comutador",
+     "ate": "f6:fim"
+    },
+    {
+     "alvo": "escova_cima",
+     "texto": "Escovas",
+     "de": "f10:escovas",
+     "ate": "f10:fim"
+    },
+    {
+     "alvo": "ventoinha",
+     "texto": "Ventoinha",
+     "de": "f12:ventoinha",
+     "ate": "f12:fim"
+    },
+    {
+     "alvo": "rotor",
+     "texto": "Bobinas",
+     "de": "f14:bobinas",
+     "ate": "f14:fim"
+    },
+    {
+     "alvo": "lampada",
+     "texto": "Lâmpada",
+     "de": "f15:gerador",
+     "ate": "f15:fim"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f7:troca",
+     "ate": "f7:fim+0.3",
+     "grande": "COMU­TADOR",
+     "pequeno": "troca a corrente a cada meia volta"
+    },
+    {
+     "de": "f15:gerador",
+     "ate": "f15:fim+0.3",
+     "grande": "GERADOR",
+     "pequeno": "o motor ao contrário faz eletricidade"
+    }
+   ]
+  }
+ ]
+}
