@@ -261,7 +261,8 @@
         "força de Lorentz"
       ],
       "gancho": "Ímãs e fio de cobre fazem quase tudo que gira na sua casa.",
-      "status": "pendente"
+      "status": "produzido",
+      "dia": "2026-11-08"
     },
     {
       "n": 16,
@@ -277,7 +278,7 @@
         "rolamento"
       ],
       "gancho": "A primeira bicicleta não tinha pedal.",
-      "status": "pendente"
+      "status": "roteiro"
     },
     {
       "n": 17,
