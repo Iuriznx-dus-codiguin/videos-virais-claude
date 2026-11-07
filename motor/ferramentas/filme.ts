@@ -72,7 +72,7 @@ const main = () => {
 	const semVoz = partes.filter((p) => !existsSync(join(pastaSerie, 'vozes', `${nomeEpisodio(p)}.json`)));
 	if (semVoz.length) {
 		throw new Error(
-			`As partes ${semVoz.join(', ')} ainda não têm voz (rascunho?). O filme junta só partes prontas: produza-as antes ou escolha as partes com --partes=${partes[0]}-${Math.min(...semVoz) - 1}.`,
+			`${semVoz.length === 1 ? `A parte ${semVoz[0]} ainda não tem voz` : `As partes ${semVoz.join(', ')} ainda não têm voz`} (rascunho?). O filme junta só partes prontas: produza antes ou escolha as partes com --partes=${partes[0]}-${Math.min(...semVoz) - 1}.`,
 		);
 	}
 
