@@ -45,10 +45,10 @@ const CameraCena: React.FC<{c: Camera; nomeClima: string}> = ({c, nomeClima}) =>
 	);
 };
 
-export const Mundo: React.FC<{linha: LinhaDoTempo; t: number}> = ({linha, t}) => {
+export const Mundo: React.FC<{linha: LinhaDoTempo; t: number; aspecto?: number}> = ({linha, t, aspecto}) => {
 	const cena = cenaNoTempo(linha, t);
 	const sim = simulacao(linha, cena);
-	const cam = cameraNoTempo(cena, sim, t);
+	const cam = cameraNoTempo(cena, sim, t, aspecto);
 	const nomeClima = cena.luz;
 	// a sombra acompanha a região que a câmera enxerga
 	const foco = lerp3(cam.alvo, cam.pos, 0.3);

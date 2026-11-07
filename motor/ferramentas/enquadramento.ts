@@ -4,8 +4,10 @@
 // de outro boneco e câmera dentro de alguém. Objetos, bancos e braços não entram na conta (uma
 // cabeça escondida atrás de um encosto ainda aparece como cortada): confira os quadros
 // (npm run quadro) dos planos que o relatório apontar.
-// Uso: npm run enquadramento -- <serie> <parte> [--passo=0.2]
-import {cameraNoTempo, type Camera} from '../src/animacao/camera.ts';
+// Uso: npm run enquadramento -- <serie> <parte> [--passo=0.2] [--formato=filme]
+// --formato=filme confere o quadro 16:9 do filme do fim da minissérie (histórias).
+import {ASPECTO_VERTICAL, cameraNoTempo, type Camera} from '../src/animacao/camera.ts';
+import {LARGURA_FILME, ALTURA_FILME, paraFilme} from '../src/filme.ts';
 import {MEDIDAS} from '../src/animacao/pose.ts';
 import {cabecaMundo, matrizTronco} from '../src/animacao/rig.ts';
 import {cenaNoTempo, simulacao} from '../src/animacao/simulacao.ts';
@@ -13,7 +15,6 @@ import type {LinhaDoTempo} from '../src/roteiro/tipos.ts';
 import {norm3, sub3, type V3} from '../src/util/mat.ts';
 import {carregarEpisodio} from './validar.ts';
 
-const ASPECTO = 9 / 16;
 const dot = (a: V3, b: V3) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
 const cross = (a: V3, b: V3): V3 => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
 
@@ -39,10 +40,14 @@ export interface CabecaNaTela {
 }
 
 /** Projeta a cabeça de cada boneco da cena na tela da câmera. */
+/** Largura / altura do quadro: 16:9 no filme (linha.filme), 9:16 nos shorts. */
+const aspectoDe = (linha: LinhaDoTempo) => (linha.filme ? LARGURA_FILME / ALTURA_FILME : ASPECTO_VERTICAL);
+
 export const cabecasNaTela = (linha: LinhaDoTempo, t: number) => {
+	const ASPECTO = aspectoDe(linha);
 	const cena = cenaNoTempo(linha, t);
 	const sim = simulacao(linha, cena);
-	const cam: Camera = cameraNoTempo(cena, sim, t);
+	const cam: Camera = cameraNoTempo(cena, sim, t, ASPECTO);
 	const f = norm3(sub3(cam.alvo, cam.pos));
 	const r = norm3(cross(f, [0, 1, 0]));
 	const u = cross(r, f);
@@ -77,6 +82,7 @@ export const cabecasNaTela = (linha: LinhaDoTempo, t: number) => {
 
 /** Problemas de enquadramento num instante, em frases curtas. */
 export const problemasNoInstante = (linha: LinhaDoTempo, t: number): string[] => {
+	const ASPECTO = aspectoDe(linha);
 	const {cena, cam, cabecas} = cabecasNaTela(linha, t);
 	const plano = cena.planos.find((p) => t >= p.ini && t < p.fim) ?? cena.planos[0];
 	const fala = linha.falas.find((fl) => t >= fl.ini && t < fl.fim && !fl.off);
@@ -138,10 +144,11 @@ const main = () => {
 	const opcoes = Object.fromEntries(args.filter((a) => a.startsWith('--')).map((a) => a.slice(2).split('=')));
 	const [serie, parte] = args.filter((a) => !a.startsWith('--'));
 	if (!serie || !parte) {
-		console.error('uso: npm run enquadramento -- <serie> <parte> [--passo=0.2]');
+		console.error('uso: npm run enquadramento -- <serie> <parte> [--passo=0.2] [--formato=filme]');
 		process.exit(2);
 	}
-	const {linha} = carregarEpisodio(serie, Number(parte));
+	const carregada = carregarEpisodio(serie, Number(parte)).linha;
+	const linha = opcoes.formato === 'filme' ? paraFilme(carregada) : carregada;
 	const trechos = conferirEnquadramento(linha, Number(opcoes.passo ?? 0.2));
 	if (!trechos.length) {
 		console.log('enquadramento sem problemas');

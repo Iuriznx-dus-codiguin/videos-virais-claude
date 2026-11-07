@@ -29,7 +29,7 @@ Antes de qualquer JSON, escreva a parte como texto corrido: uma linha por fala, 
 - ~1min20 (75 a 88 s com a voz): 180 a 200 palavras.
 - Siga "O que segura quem rola o feed" (`estrutura.md`, pesquisa de 03/11): gancho no primeiro segundo, pista da virada à vista nos primeiros ~10 s, re-gancho entre 35 e 45 s e nada depois da virada.
 - Passe o checklist de `estrutura.md` e reescreva até passar.
-- Chamada (campo `chamada`): pergunta curta que puxa comentário, de preferência escolha A ou B, e o destaque "PARTE N+1".
+- Chamada (campo `chamada`): pergunta curta que puxa comentário, de preferência escolha A ou B, e o destaque "PARTE N+1". Ela fica só na tela: nenhuma fala pede comentário nem cita a próxima parte (no fim da minissérie o filme 16:9 corta a chamada, e uma fala assim ficaria sobrando).
 - MAIÚSCULAS viram ênfase na legenda: no máximo uma palavra por fala.
 
 ## 3. Montar as cenas (JSON)
@@ -69,14 +69,15 @@ Agora cada frase vira uma imagem.
 2. `npm run dados -- entregar <serie> <parte> --dia=AAAA-MM-DD --hora=18:00` (11:00 ou 18:00 conforme o calendário). Guarda o vídeo, o texto para postar e a série no ramo `dados`.
 3. Para o Iuri, mande o próprio mp4 do render (qualidade média, 20 a 35 MB) e a imagem da capa: não precisa mais de cópia leve. Se o render avisar que o tamanho saiu fora disso, diga no aviso final.
 
-## 8. Roteiro da próxima parte (sempre)
+## 8. Roteiro da próxima parte (sempre, menos na última parte)
 O Iuri revisa a produção de hoje e o roteiro da próxima juntos, para evitar erros antes de produzir.
 1. Depois de entregar todas as partes do dia, escreva o `epNN.json` da próxima parte (`proxima_parte` do estado, já atualizado), seguindo o `roteiro-geral.md` e os passos 2 a 4. Não gere voz nem renderize: é um rascunho para revisão.
 2. `npm run validar -- <serie> <N>` sem avisos e `npm run dados -- salvar <serie> _historias`.
 3. A rotina seguinte usa esse arquivo como base (passo 3: "se já existir, use-o"), já com as correções que o Iuri mandar.
+4. Se a parte entregue hoje é a **última** da minissérie (a última linha da tabela "As N partes" do `roteiro-geral.md`), não há próxima parte: depois do aviso do passo 9, use a skill `filme-da-minisserie` (todas as partes juntas num filme 16:9, sem as chamadas).
 
 ## 9. Avisar o Iuri
 Uma mensagem só, quando tudo estiver entregue:
 - produção de hoje: título de cada parte, resumo, o que conferiu, avisos (sem voz, cenário improvisado…), onde está o vídeo e o texto de cada plataforma (ramo `dados`, `videos/`), e o título da postagem com a capa;
-- **roteiro da próxima parte**: cole a saída de `npm run roteiro -- <serie> <N>` (cenas, quem fala o quê e a chamada final);
+- **roteiro da próxima parte**: cole a saída de `npm run roteiro -- <serie> <N>` (cenas, quem fala o quê e a chamada final); na última parte da minissérie, diga em vez disso que o filme completo em 16:9 começou a ser montado e chega numa segunda mensagem;
 - que ele pode responder até as 16h com correções do vídeo de hoje e do roteiro da próxima; sem resposta, o original vale.

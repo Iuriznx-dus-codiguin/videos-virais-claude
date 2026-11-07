@@ -84,8 +84,11 @@ export const Trilha: React.FC<{linha: LinhaDoTempo}> = ({linha}) => {
 						loop
 						volume={(f) => {
 							const t = f / fps;
-							const base = t >= linha.chamada.ini ? 0.42 : falando(t) ? 0.16 : 0.28;
-							return base * clamp(t / 0.4) * (1 - smoothstep(linha.duracao - 0.5, linha.duracao, t));
+							// filme (src/filme.ts): sem a chamada, a música não sobe no fim; no cartão "FIM" ela vai sumindo
+							const chamada = !linha.filme && t >= linha.chamada.ini;
+							const base = chamada ? 0.42 : falando(t) ? 0.16 : 0.28;
+							const saida = linha.filme?.ultima ? 2.4 : 0.5;
+							return base * clamp(t / 0.4) * (1 - smoothstep(linha.duracao - saida, linha.duracao, t));
 						}}
 					/>
 				</Sequence>

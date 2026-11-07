@@ -14,6 +14,7 @@
     "quadro": "tsx ferramentas/quadro.ts",
     "enquadramento": "tsx ferramentas/enquadramento.ts",
     "render": "tsx ferramentas/render.ts",
+    "filme": "tsx ferramentas/filme.ts",
     "vozes": "tsx ferramentas/vozes.ts",
     "tipos": "tsc --noEmit -p .",
     "testar": "tsx --test ferramentas/testes/conexoes.test.ts",

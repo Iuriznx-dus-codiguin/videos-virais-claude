@@ -10,6 +10,9 @@
 //   npx tsx ferramentas/dados.ts salvar <serie> [...]      copia essas pastas de public/series para o ramo e envia [--juntei]
 //   npx tsx ferramentas/dados.ts entregar <serie> <parte> --dia=2026-10-26 --hora=18:00
 //   npx tsx ferramentas/dados.ts entregas                  mostra os vídeos guardados
+//   npx tsx ferramentas/dados.ts recuperar-vozes <serie> [1-18]
+//       traz do histórico do ramo o áudio das falas de partes antigas (o ramo só leva o dos 3 episódios
+//       mais recentes); usado pelo filme do fim da minissérie (ferramentas/filme.ts)
 //
 // Trava contra sobrescrita: salvar e entregar trocam a pasta inteira da série no ramo. Se outra sessão
 // salvou a mesma série depois do seu "baixar" (rodadas atrasadas que acordam juntas, uma correção feita
@@ -317,6 +320,71 @@ const capaDoEpisodio = (serie: string, parte: number) => {
 	}
 };
 
+/**
+ * Áudio das falas de partes antigas. O ramo leva só o áudio dos episódios recentes (EPISODIOS_COM_AUDIO),
+ * mas o histórico dele guarda todos: cada arquivo do cache saiu num commit e está inteiro no commit
+ * anterior. Clona o ramo sem conteúdo (só a lista de arquivos de cada commit, rápido), acha onde cada
+ * arquivo que falta estava e baixa só esses, de uma vez. São os mesmos arquivos do vídeo entregue:
+ * nada é gerado de novo. Devolve o que não achou.
+ */
+export const recuperarVozes = (serie: string, partes: number[]): {recuperados: number; faltando: string[]} => {
+	const publico = join(PASTA_SERIES, '..');
+	const faltam = new Set<string>();
+	for (const p of partes) {
+		const arq = join(PASTA_SERIES, serie, 'vozes', `${nomeEpisodio(p)}.json`);
+		if (!existsSync(arq)) continue;
+		const al = JSON.parse(readFileSync(arq, 'utf8')) as Record<string, {audio?: string}>;
+		for (const f of Object.values(al)) {
+			if (!f.audio) continue;
+			for (const rel of [f.audio, f.audio.replace(/\.wav$/, '.json')]) if (!existsSync(join(publico, rel))) faltam.add(rel);
+		}
+	}
+	if (!faltam.size) return {recuperados: 0, faltando: []};
+	const pasta = mkdtempSync(join(tmpdir(), 'shorts-historico-'));
+	try {
+		execFileSync('git', ['clone', '--quiet', '--filter=blob:none', '--no-checkout', '--single-branch', '--branch', RAMO, remoto(), pasta], {stdio: 'pipe'});
+		// commits que apagaram arquivos do cache (do mais novo para o mais velho): o arquivo está no pai
+		const apagadoEm = new Map<string, string>();
+		let commit = '';
+		for (const l of git(pasta, 'log', '--format=>%H', '--name-only', '--diff-filter=D', '--', `series/${serie}/vozes/cache/`).split('\n')) {
+			if (l.startsWith('>')) commit = l.slice(1);
+			else if (l.trim() && !apagadoEm.has(l.trim())) apagadoEm.set(l.trim(), commit);
+		}
+		const objetos = new Map<string, string>();
+		for (const rel of faltam) {
+			const onde = apagadoEm.has(rel) ? `${apagadoEm.get(rel)}^` : 'HEAD';
+			try {
+				objetos.set(rel, git(pasta, 'rev-parse', '--verify', '--quiet', `${onde}:${rel}`));
+			} catch {
+				// nunca esteve no ramo (voz gerada e não salva): fica na lista do que falta
+			}
+		}
+		const ids = [...new Set(objetos.values())];
+		for (let i = 0; i < ids.length; i += 200) {
+			execFileSync('git', ['-c', 'fetch.negotiationAlgorithm=noop', 'fetch', '--quiet', '--no-tags', '--no-write-fetch-head', '--filter=blob:none', 'origin', ...ids.slice(i, i + 200)], {cwd: pasta, stdio: 'pipe'});
+		}
+		for (const [rel, id] of objetos) {
+			const destino = join(publico, rel);
+			mkdirSync(join(destino, '..'), {recursive: true});
+			writeFileSync(destino, execFileSync('git', ['cat-file', 'blob', id], {cwd: pasta, maxBuffer: 256 * 1024 * 1024}));
+		}
+		return {recuperados: objetos.size, faltando: [...faltam].filter((rel) => !objetos.has(rel))};
+	} finally {
+		rmSync(pasta, {recursive: true, force: true});
+	}
+};
+
+/** "1-18", "3,5,7-9" → [1, 2, ...]. */
+export const lerPartes = (texto: string): number[] => {
+	const partes = new Set<number>();
+	for (const pedaco of texto.split(',')) {
+		const [a, b] = pedaco.split('-').map((x) => Number(x.trim()));
+		if (!Number.isInteger(a) || (b !== undefined && !Number.isInteger(b))) throw new Error(`partes "${texto}" inválidas (use 1-18 ou 1,2,5)`);
+		for (let p = a; p <= (b ?? a); p++) partes.add(p);
+	}
+	return [...partes].sort((x, y) => x - y);
+};
+
 export const mostrarEntregas = () => {
 	const pasta = abrir();
 	try {
@@ -340,7 +408,13 @@ if (process.argv[1] && import.meta.filename === process.argv[1]) {
 			if (pos.length < 2 || !opc.dia || !opc.hora) throw new Error('uso: entregar <serie> <parte> --dia=AAAA-MM-DD --hora=HH:MM [--video=arquivo.mp4] [--sem-voz] [--juntei]');
 			entregar(pos[0], Number(pos[1]), opc.dia, opc.hora, opc.video, 'sem-voz' in opc, 'juntei' in opc);
 		} else if (comando === 'entregas') mostrarEntregas();
-		else throw new Error('comandos: baixar | salvar | entregar | entregas');
+		else if (comando === 'recuperar-vozes') {
+			if (!pos[0]) throw new Error('uso: recuperar-vozes <serie> [partes, ex.: 1-18]');
+			const todas = readdirSync(join(PASTA_SERIES, pos[0])).map((n) => /^ep(\d+)\.json$/.exec(n)?.[1]).filter((n): n is string => !!n).map(Number);
+			const r = recuperarVozes(pos[0], pos[1] ? lerPartes(pos[1]) : todas);
+			console.log(`áudios recuperados do histórico: ${r.recuperados}`);
+			if (r.faltando.length) console.log(`não estão no histórico (${r.faltando.length}): ${r.faltando.slice(0, 8).join(', ')}${r.faltando.length > 8 ? '...' : ''}`);
+		} else throw new Error('comandos: baixar | salvar | entregar | entregas | recuperar-vozes');
 	} catch (e) {
 		console.error(e instanceof Error ? e.message : e);
 		process.exit(1);

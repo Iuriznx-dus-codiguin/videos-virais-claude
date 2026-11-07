@@ -1,5 +1,9 @@
 // Renderiza um episódio em MP4 vertical (1080x1920, 30 fps) com a voz e os sons da trilha.
 // Uso: npm run render -- <serie> <parte> [--saida=caminho.mp4] [--qualidade=media|alta] [--crf=N] [--velocidade=1.1]
+//                       [--formato=filme [--primeira] [--ultima] [--sem-legenda]]
+//
+// --formato=filme: a parte em 16:9 (1920x1080) para o filme do fim da minissérie de histórias (src/filme.ts),
+// sem a chamada e com o som entrando e saindo suave; quem junta as partes é ferramentas/filme.ts.
 //
 // Qualidade média (padrão desde 01/11, pedido do Iuri): 3D sem supersampling, crf 24 e um teto de
 // bitrate calculado pela duração, para o arquivo ficar entre ~20 e ~35 MB num vídeo de 1min20.
@@ -41,12 +45,23 @@ const main = async () => {
 		process.exit(2);
 	}
 	const parte = Number(parteTxt);
-	const saida = opc.saida ?? join(RAIZ, 'out', `${serie}-${nomeEpisodio(parte)}.mp4`);
+	const filme = opc.formato === 'filme';
+	if (opc.formato && !filme && opc.formato !== 'vertical') {
+		console.error(`formato "${opc.formato}" não existe (vertical, filme)`);
+		process.exit(2);
+	}
+	const saida = opc.saida ?? (filme ? join(RAIZ, 'out', 'filme', serie, `${serie}-filme-${nomeEpisodio(parte)}.mp4`) : join(RAIZ, 'out', `${serie}-${nomeEpisodio(parte)}.mp4`));
 	mkdirSync(dirname(saida), {recursive: true});
 
 	await gerarSons();
 	const servir = await empacotar();
-	const inputProps = {serie, parte, dpr: q.dpr, velocidade};
+	const inputProps = {
+		serie,
+		parte,
+		dpr: q.dpr,
+		velocidade,
+		...(filme ? {formato: 'filme', primeiraDoFilme: 'primeira' in opc, ultimaDoFilme: 'ultima' in opc, semLegenda: 'sem-legenda' in opc} : {}),
+	};
 	const comp = await selectComposition({serveUrl: servir, id: 'Episodio', inputProps, browserExecutable: CHROME, chromiumOptions: {gl: 'swangle'}});
 	const semVoz = (comp.props as {semVoz?: boolean}).semVoz;
 	if (semVoz) console.warn('AVISO: sem voz (rode npm run vozes antes); o vídeo sai só com sons e música.');
@@ -54,7 +69,7 @@ const main = async () => {
 	const duracao = comp.durationInFrames / comp.fps;
 	const teto = q.tetoMB ? tetoDeBitrate(duracao, q.tetoMB) : null;
 	const crf = Number(opc.crf ?? q.crf);
-	console.log(`qualidade ${opc.qualidade ?? 'media'}: crf ${crf}, 3D ${q.dpr}x${teto ? `, teto ${teto} (≤ ${q.tetoMB} MB em ${duracao.toFixed(0)} s)` : ''}`);
+	console.log(`${filme ? `filme 16:9 (${comp.width}x${comp.height}), ` : ''}qualidade ${opc.qualidade ?? 'media'}: crf ${crf}, 3D ${q.dpr}x${teto ? `, teto ${teto} (≤ ${q.tetoMB} MB em ${duracao.toFixed(0)} s)` : ''}`);
 	if (velocidade !== 1) console.log(`velocidade ${velocidade}x: ${duracao.toFixed(1)} s de roteiro → ${(duracao / velocidade).toFixed(1)} s de vídeo`);
 	const inicio = Date.now();
 	let ultimo = -1;
@@ -77,10 +92,13 @@ const main = async () => {
 			}
 		},
 	});
-	await finalizar(saida, velocidade);
+	// filme: o som entra e sai suave em cada parte, junto com o escurecimento entre elas
+	const fades = filme ? {entrada: 0.25, saida: 'ultima' in opc ? 2.2 : 0.5, duracao: duracao / velocidade} : undefined;
+	await finalizar(saida, velocidade, fades);
 	const mb = statSync(saida).size / 1e6;
 	console.log(`tamanho: ${mb.toFixed(1)} MB`);
-	if (q.tetoMB && (mb < 15 || mb > 36)) console.warn(`AVISO: ${mb.toFixed(1)} MB está fora do esperado (20 a 35 MB para ~1min20).`);
+	// a parte do filme acaba antes da chamada (~3 s mais curta): o piso é um pouco menor
+	if (q.tetoMB && (mb < (filme ? 12 : 15) || mb > 36)) console.warn(`AVISO: ${mb.toFixed(1)} MB está fora do esperado (20 a 35 MB para ~1min20).`);
 	console.log(`pronto: ${saida} (${Math.round((Date.now() - inicio) / 1000)} s)`);
 };
 
@@ -121,10 +139,14 @@ const ALVO_LUFS = -14;
  *   1/velocidade (-itsscale) e o cabeçalho do H.264 passa a dizer 30 fps. Nenhum quadro é descartado.
  * - Áudio: atempo acelera sem mudar o tom; depois loudnorm em duas passadas (mede e corrige linear).
  */
-const finalizar = async (arquivo: string, velocidade: number) => {
+const finalizar = async (arquivo: string, velocidade: number, fades?: {entrada: number; saida: number; duracao: number}) => {
 	const {spawnSync} = await import('node:child_process');
 	const {renameSync} = await import('node:fs');
 	const acelerar = velocidade !== 1 ? `atempo=${velocidade},` : '';
+	// filme: entrada e saída suaves (em segundos do vídeo final, já acelerado), depois do volume
+	const suave = fades
+		? `,afade=t=in:st=0:d=${fades.entrada},afade=t=out:st=${Math.max(0, fades.duracao - fades.saida).toFixed(3)}:d=${fades.saida}`
+		: '';
 	const base = `loudnorm=I=${ALVO_LUFS}:TP=-1.5:LRA=11`;
 	// o ffmpeg escreve a medição em JSON no stderr, no fim da saída (medida já no áudio acelerado)
 	const medida = spawnSync('ffmpeg', ['-hide_banner', '-nostats', '-i', arquivo, '-af', `${acelerar}${base}:print_format=json`, '-f', 'null', '-'], {encoding: 'utf8'});
@@ -132,11 +154,11 @@ const finalizar = async (arquivo: string, velocidade: number) => {
 	const m = json ? (JSON.parse(json[0]) as Record<string, string>) : null;
 	if (!m) {
 		console.warn('AVISO: não consegui medir o volume; o vídeo fica sem normalizar.');
-		if (velocidade === 1) return;
+		if (velocidade === 1 && !fades) return;
 	}
 	const filtro = m
-		? `${acelerar}${base}:measured_I=${m.input_i}:measured_TP=${m.input_tp}:measured_LRA=${m.input_lra}:measured_thresh=${m.input_thresh}:offset=${m.target_offset}:linear=true`
-		: acelerar.slice(0, -1);
+		? `${acelerar}${base}:measured_I=${m.input_i}:measured_TP=${m.input_tp}:measured_LRA=${m.input_lra}:measured_thresh=${m.input_thresh}:offset=${m.target_offset}:linear=true${suave}`
+		: `${acelerar.slice(0, -1)}${suave}`.replace(/^,/, '') || 'anull';
 	const video =
 		velocidade !== 1
 			? ['-itsscale', String(1 / velocidade), '-i', arquivo, '-i', arquivo, '-map', '0:v:0', '-map', '1:a:0', '-c:v', 'copy', '-bsf:v', `h264_metadata=tick_rate=${FPS_FINAL * 2}/1`]
