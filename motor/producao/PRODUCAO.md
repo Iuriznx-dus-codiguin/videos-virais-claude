@@ -24,6 +24,9 @@ Se uma parte do calendário já existe pronta (rodada repetida), não refaça: c
 2. **Correções (sem rotina).** Cada entrega traz o vídeo do dia e o roteiro da próxima parte (já escrito e validado, sem voz). O Iuri responde na própria sessão de produção até as 16h, corrigindo um ou outro. A sessão usa a skill `aplicar-correcoes`. Sem resposta, o original vale.
 3. **Publicação: manual.** O vídeo e o texto para colar (título, descrição, legenda) ficam no ramo `dados`, pasta `videos/`, e no `out/` da sessão. O texto sai do campo `postagem` do episódio (`.claude/skills/roteirizar-episodio/postagem.md`) e termina em "Na hora de postar": capa, vídeo relacionado, playlist da série em ordem e comentário para fixar.
 
+## Fim da minissérie: o filme 16:9
+Pedido do Iuri (07/11, só para as histórias; o Como Funciona não tem filme): quando a última parte da minissérie (última linha da tabela "As N partes" do `roteiro-geral.md`) é entregue, a mesma rotina junta todas as partes num filme 16:9, sem as chamadas "COMENTA PARTE N", com a skill `filme-da-minisserie` (`npm run filme`). Mesmo roteiro, vozes e produção; câmera reenquadrada para o quadro deitado; um capítulo por parte, título da série no começo e "FIM" no fim. Leva ~16 a 20 min por parte e é retomável: as partes prontas ficam em `/mnt/project-files/<serie>/filme/partes/` e o filme em `/mnt/project-files/<serie>/filme/` (grande demais para o ramo `dados`). Correção numa parte depois do filme refaz só aquela parte e junta de novo.
+
 ## Estado
 - Jeito de contar cada parte (as 8 batidas, a linguagem e o checklist): `.claude/skills/roteirizar-episodio/estrutura.md`, com os vídeos que viralizaram em `modelos.md`. Fica na skill (ramo `main`), porque o `baixar` substitui as pastas de `public/series/`.
 - Regras gerais das histórias: `public/series/_historias/regras.md`; de cada série: `public/series/<serie>/regras.md`.

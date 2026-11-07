@@ -458,4 +458,21 @@ export interface LinhaDoTempo {
 	avisos: string[];
 	modelos: Record<string, Peca[]>;
 	formato: 'serie' | 'avulso';
+	/** Só no filme 16:9 do fim da minissérie (src/filme.ts): onde a parte acaba e o que muda na tela. */
+	filme?: InfoFilme;
+}
+
+/**
+ * Parte renderizada para o filme (16:9, todas as partes juntas no fim de uma minissérie de histórias):
+ * acaba logo depois da última fala, sem a chamada "COMENTA PARTE N".
+ */
+export interface InfoFilme {
+	/** Segundo (de roteiro) em que a parte acaba e escurece para a próxima. */
+	corte: number;
+	/** Primeira parte do filme: abre com o título da série. */
+	primeira: boolean;
+	/** Última parte do filme: depois do corte vem o cartão "FIM". */
+	ultima: boolean;
+	/** Sem as legendas palavra por palavra. */
+	semLegenda: boolean;
 }
