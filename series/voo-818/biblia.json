@@ -1,295 +1,295 @@
 {
-  "serie": "voo-818",
-  "titulo": "VOO 818",
-  "sinopse": "O Voo 818 cai numa ilha sem nome. Só quatro pessoas sobrevivem: Davi, a menina Lia, o copiloto Otávio e Dona Cida. Os outros 143 passageiros sumiram. Para sair vivos, eles precisam decidir juntos, e nem todo mundo conta tudo o que sabe.",
-  "narrador": "davi",
-  "personagens": {
-    "davi": {
-      "nome": "Davi",
-      "papel": "protagonista e narrador em primeira pessoa, técnico de manutenção de aviões",
-      "personalidade": "teimoso, faz piada quando está com medo, nunca desiste de entender como as coisas funcionam",
-      "voz": {
-        "descricao": "homem brasileiro de uns 29 anos, voz jovem e expressiva, bom para narração de suspense",
-        "instruct": "male, young adult, moderate pitch",
-        "semente": 1
-      },
-      "visual": {
-        "altura": 1,
-        "corpo": "#2B3A55",
-        "cabeca": "#FFFFFF",
-        "olhos": "redondos",
-        "sobrancelhas": "grossas",
-        "acessorios": [
-          {
-            "tipo": "cabelo_curto",
-            "cor": "#3B2A20"
-          }
-        ]
-      },
-      "cor_legenda": "#FFD60A"
-    },
-    "ramos": {
-      "nome": "Capitão Ramos",
-      "papel": "piloto do Voo 818, o homem que pousou de propósito",
-      "personalidade": "educado, cansado e perigoso; nunca levanta a voz",
-      "voz": {
-        "descricao": "homem brasileiro de uns 52 anos, voz grave e calma",
-        "instruct": "male, middle-aged, low pitch",
-        "semente": 1
-      },
-      "visual": {
-        "altura": 1.04,
-        "corpo": "#1A1F2B",
-        "cabeca": "#F2D5BD",
-        "olhos": "sonolentos",
-        "sobrancelhas": "grossas",
-        "acessorios": [
-          {
-            "tipo": "bone",
-            "cor": "#1A1F2B"
-          }
-        ]
-      },
-      "cor_legenda": "#FF9F7A"
-    },
-    "valeria": {
-      "nome": "Valéria",
-      "papel": "diretora da companhia aérea; voz do rádio, só aparece na parte 17",
-      "personalidade": "doce, calma, nunca erra a hora de sorrir",
-      "voz": {
-        "descricao": "mulher brasileira de uns 48 anos, voz calma, doce e firme",
-        "instruct": "female, middle-aged, moderate pitch",
-        "semente": 1
-      },
-      "visual": {
-        "altura": 0.98,
-        "corpo": "#3A1F4A",
-        "cabeca": "#FFE7D1",
-        "olhos": "ovais",
-        "sobrancelhas": "finas",
-        "cilios": true,
-        "acessorios": [
-          {
-            "tipo": "lenco",
-            "cor": "#EDE7F6"
-          }
-        ]
-      },
-      "cor_legenda": "#E0B3FF"
-    },
-    "laranja1": {
-      "nome": "Homem de Laranja",
-      "papel": "equipe de Ramos, nunca fala",
-      "voz": {
-        "descricao": "sem fala"
-      },
-      "visual": {
-        "altura": 1.02,
-        "corpo": "#E8641E",
-        "cabeca": "#2A2A30",
-        "olhos": "sonolentos",
-        "sobrancelhas": "nenhuma",
-        "acessorios": [
-          {
-            "tipo": "colete",
-            "cor": "#FF7A1A"
-          }
-        ]
-      }
-    },
-    "laranja2": {
-      "nome": "Homem de Laranja",
-      "papel": "equipe de Ramos, nunca fala",
-      "voz": {
-        "descricao": "sem fala"
-      },
-      "visual": {
-        "altura": 1.1,
-        "corpo": "#E8641E",
-        "cabeca": "#2A2A30",
-        "olhos": "sonolentos",
-        "sobrancelhas": "nenhuma",
-        "acessorios": [
-          {
-            "tipo": "colete",
-            "cor": "#FF7A1A"
-          }
-        ]
-      }
-    },
-    "pax1": {
-      "nome": "Passageiro",
-      "papel": "adormecido",
-      "visual": {
-        "altura": 1,
-        "corpo": "#6B8E5A",
-        "cabeca": "#FFE2C4",
-        "olhos": "sonolentos"
-      }
-    },
-    "pax2": {
-      "nome": "Passageira",
-      "papel": "adormecida",
-      "visual": {
-        "altura": 0.93,
-        "corpo": "#B65A7A",
-        "cabeca": "#F2D5BD",
-        "olhos": "sonolentos",
-        "cilios": true,
-        "acessorios": [
-          {
-            "tipo": "rabo_de_cavalo",
-            "cor": "#5A3A24"
-          }
-        ]
-      }
-    },
-    "pax3": {
-      "nome": "Passageiro",
-      "papel": "adormecido",
-      "visual": {
-        "altura": 1.05,
-        "corpo": "#5A7AA8",
-        "cabeca": "#E9C9A8",
-        "olhos": "sonolentos"
-      }
-    },
-    "pax4": {
-      "nome": "Passageira",
-      "papel": "adormecida",
-      "visual": {
-        "altura": 0.9,
-        "corpo": "#C9A04A",
-        "cabeca": "#FFE7D1",
-        "olhos": "sonolentos",
-        "cilios": true,
-        "acessorios": [
-          {
-            "tipo": "lenco",
-            "cor": "#8A5AA8"
-          }
-        ]
-      }
-    },
-    "lia": {
-      "nome": "Lia",
-      "papel": "menina de 13 anos, sobrevivente; viajava sozinha para ver o pai",
-      "personalidade": "esperta e teimosa, morre de medo do mar e de tubarões, fala o que pensa",
-      "voz": {
-        "descricao": "menina brasileira de 13 anos, voz aguda e rápida",
-        "instruct": "female, teenager, high pitch",
-        "semente": 1
-      },
-      "visual": {
-        "altura": 0.8,
-        "corpo": "#7A4FB5",
-        "cabeca": "#FFE2C4",
-        "olhos": "redondos",
-        "sobrancelhas": "finas",
-        "cilios": true,
-        "bochechas": "#F4A7A3",
-        "acessorios": [
-          {
-            "tipo": "rabo_de_cavalo",
-            "cor": "#2A1A12"
-          }
-        ]
-      },
-      "cor_legenda": "#FF9BD2"
-    },
-    "otavio": {
-      "nome": "Otávio",
-      "papel": "copiloto do Voo 818, sobrevivente",
-      "personalidade": "seguro de si, quer sair da ilha de qualquer jeito, esconde alguma coisa",
-      "voz": {
-        "descricao": "homem brasileiro de uns 45 anos, voz grave e firme",
-        "instruct": "male, middle-aged, low pitch",
-        "semente": 1
-      },
-      "visual": {
-        "altura": 1.05,
-        "corpo": "#E8ECF2",
-        "cabeca": "#E9C9A8",
-        "olhos": "ovais",
-        "sobrancelhas": "grossas",
-        "acessorios": [
-          {
-            "tipo": "bone",
-            "cor": "#1F2A44"
-          },
-          {
-            "tipo": "bigode",
-            "cor": "#3B2A20"
-          },
-          {
-            "tipo": "curativo"
-          },
-          {
-            "tipo": "tala",
-            "lado": "D"
-          }
-        ]
-      },
-      "cor_legenda": "#8FD3FF"
-    },
-    "cida": {
-      "nome": "Dona Cida",
-      "papel": "senhora de 79 anos, sobrevivente; ex-enfermeira",
-      "personalidade": "calma, prática, cuida de todo mundo e já viu de tudo",
-      "voz": {
-        "descricao": "senhora brasileira de 79 anos, voz calma e doce",
-        "instruct": "female, elderly, moderate pitch",
-        "semente": 1
-      },
-      "visual": {
-        "altura": 0.86,
-        "corpo": "#4F8A7A",
-        "cabeca": "#F2D5BD",
-        "olhos": "sonolentos",
-        "sobrancelhas": "finas",
-        "acessorios": [
-          {
-            "tipo": "cabelo_curto",
-            "cor": "#D8D8DE"
-          },
-          {
-            "tipo": "oculos",
-            "cor": "#6B4A2E"
-          }
-        ]
-      },
-      "cor_legenda": "#B8F28A"
-    }
+ "serie": "voo-818",
+ "titulo": "VOO 818",
+ "sinopse": "O Voo 818 cai numa ilha sem nome. Só quatro pessoas sobrevivem: Davi, a menina Lia, o copiloto Otávio e Dona Cida. Os outros 143 passageiros sumiram. Para sair vivos, eles precisam decidir juntos, e nem todo mundo conta tudo o que sabe.",
+ "narrador": "davi",
+ "personagens": {
+  "davi": {
+   "nome": "Davi",
+   "papel": "protagonista e narrador em primeira pessoa, técnico de manutenção de aviões",
+   "personalidade": "teimoso, faz piada quando está com medo, nunca desiste de entender como as coisas funcionam",
+   "voz": {
+    "descricao": "homem brasileiro de uns 29 anos, voz jovem e expressiva, bom para narração de suspense",
+    "instruct": "male, young adult, moderate pitch",
+    "semente": 1
+   },
+   "visual": {
+    "altura": 1,
+    "corpo": "#2B3A55",
+    "cabeca": "#FFFFFF",
+    "olhos": "redondos",
+    "sobrancelhas": "grossas",
+    "acessorios": [
+     {
+      "tipo": "cabelo_curto",
+      "cor": "#3B2A20"
+     }
+    ]
+   },
+   "cor_legenda": "#FFD60A"
   },
-  "fatos": [
-    "Parte 2: os 147 cintos do avião estão abertos (alguém soltou depois da queda) e os celulares nos bancos tocaram todos ao mesmo tempo.",
-    "Parte 2: no manifesto, todos os nomes estão riscados de laranja, menos os quatro sobreviventes, circulados de vermelho.",
-    "Parte 2: Otávio proibiu mexer no rádio; o grupo mantém fogo aceso à noite com um vigia por vez.",
-    "Parte 3: Dona Cida fez um SOS de pedras na areia; Davi mantém uma fogueira de sinal.",
-    "Parte 3: Otávio começou uma jangada usando os 147 cintos como corda; Lia, com medo de tubarão, quer fazer a sua própria, que não vira.",
-    "Parte 3: à noite, luzes apareceram vindo de DENTRO da ilha (da mata).",
-    "Parte 4: as luzes eram três homens com lanternas e coletes LARANJA (a mesma cor que riscou a lista); vieram da mata e voltaram para ela.",
-    "Parte 4: Davi apagou a fogueira com areia; o grupo se esconde nas raízes de uma árvore enorme na mata.",
-    "Parte 4: o último homem parou nas raízes e contou os quatro: eles sabem quantos sobreviveram.",
-    "Parte 5: água doce cavando atrás da areia seca (meio metro); fervem com galho seco para não fazer fumaça; têm seis garrafas.",
-    "Parte 5: à noite vigiam em dupla; Lia viu um farol girando no mar, e Otávio garante que nenhum mapa tem farol nessa ilha.",
-    "Parte 6: Otávio foi trancado fora da cabine 5 minutos antes da queda (a porta só tranca por dentro) e ouviu o capitão falando com a voz do rádio; Davi e Otávio viraram aliados.",
-    "Parte 6: o capitão pousou de propósito e pediu para deixar o MECÂNICO (Davi) vivo; a jangada fica pronta em dois dias.",
-    "Parte 7: de madrugada a Lia sumiu; as pegadas descalças dela iam até a jangada dela (metade pronta) e voltavam para a mata, onde paravam e viravam pegadas de BOTA: alguém levou a Lia.",
-    "Parte 8: do mirante, de madrugada (~4h30, sol às 6h), viram um farol, um cais e um barco carregado de caixas, sem criança a bordo; ouviram uma buzina de barco; a luz do farol parou de girar e piscou SOS (pedido de socorro).",
-    "Parte 9: o farol piscou um L (Lia viva no farol) e apagou no meio da letra seguinte; Cida ficou no mirante com a jangada e deu o rádio desligado a Davi; Davi e Otávio desceram pela beira da água (sem deixar rastro) e se esconderam atrás de uma pedra na ponta da praia; o rádio acendeu sozinho e a Valéria disse 'Ótimo. Achei vocês.'",
-    "Parte 10: o rádio entrega onde está mesmo desligado; Davi se entregou com o rádio aceso para o Otávio (de tala) fugir no escuro, prometendo voltar; na porta do farol (~5h40), o Capitão Ramos recebeu Davi, deu água, jurou que a Lia está dormindo e não perguntou do Otávio.",
-    "Parte 11: o relatório do Ramos culpa o mecânico (a assinatura seria igual à da última inspeção do Davi); a carga são barras de ouro no porão, fora do manifesto; querem o mecânico vivo porque culpado morto não confessa; o papel tem DOIS nomes circulados; o Ramos ameaça: 'Você vai assinar. Ou a menina não sai da ilha.'",
-    "Parte 12: os 143 passageiros estão vivos, dormindo sentados na adega embaixo do farol; o ar tem gás doce e ar limpo só entra pela fresta da porta; um guarda desce de hora em hora para contar (5h55: 144 com o Davi); a Lia está acordada fingindo dormir e foi ela quem piscou o farol (o SOS e o L).",
-    "Parte 13: a Lia abre a tranca velha da adega; o Otávio voltou com a Dona Cida e tirou uma peça do barco (sem barco ninguém sai da ilha, nem o ouro, e o Ramos fica preso com eles); plano: o Davi segura a alavanca do farol e a Lia vigia a escada; a escada tem 112 degraus; às 6h o Ramos achou a porta da adega aberta e o alarme disparou.",
-    "Parte 14: Davi e Lia subiram os 112 degraus no escuro, sem luz (no escuro quem tem lanterna aparece); as lanternas pararam no meio porque a voz do rádio (Valéria) mandou 'Deixa ele subir'; passaram de joelhos sob a janela da torre; às 6h05 a sala da lâmpada parecia vazia, mas o Ramos esperava do outro lado da lente, com um isqueiro: 'Eu sabia que você vinha.'",
-    "Parte 15: na sala da lâmpada, Ramos a um passo da alavanca e seis homens subindo (um minuto); Davi fez o Ramos falar ('Por que deixaram a gente subir?' / 'Porque daqui de cima não tem pra onde fugir'); um raio no mar e no clarão a Lia correu por trás da lente; Ramos foi atrás dela e Davi puxou a alavanca: SOS em código (três curtas, três longas, três curtas) pro mar inteiro; as botas pararam; um raio caiu no farol e tudo apagou."
-  ],
-  "ganchos_abertos": [
-    "Quem circulou os quatro nomes no manifesto, e por quê?",
-    "Por que os celulares tocaram todos juntos no avião vazio?",
-    "De quem é o segundo nome circulado no relatório?",
-    "Os 143 passageiros vão acordar antes de o barco levar todo mundo?",
-    "Quem viu o pedido de SOCORRO do farol antes do raio?"
-  ]
+  "ramos": {
+   "nome": "Capitão Ramos",
+   "papel": "piloto do Voo 818, o homem que pousou de propósito",
+   "personalidade": "educado, cansado e perigoso; nunca levanta a voz",
+   "voz": {
+    "descricao": "homem brasileiro de uns 52 anos, voz grave e calma",
+    "instruct": "male, middle-aged, low pitch",
+    "semente": 1
+   },
+   "visual": {
+    "altura": 1.04,
+    "corpo": "#1A1F2B",
+    "cabeca": "#F2D5BD",
+    "olhos": "sonolentos",
+    "sobrancelhas": "grossas",
+    "acessorios": [
+     {
+      "tipo": "bone",
+      "cor": "#1A1F2B"
+     }
+    ]
+   },
+   "cor_legenda": "#FF9F7A"
+  },
+  "valeria": {
+   "nome": "Valéria",
+   "papel": "diretora da companhia aérea; voz do rádio, só aparece na parte 17",
+   "personalidade": "doce, calma, nunca erra a hora de sorrir",
+   "voz": {
+    "descricao": "mulher brasileira de uns 48 anos, voz calma, doce e firme",
+    "instruct": "female, middle-aged, moderate pitch",
+    "semente": 1
+   },
+   "visual": {
+    "altura": 0.98,
+    "corpo": "#3A1F4A",
+    "cabeca": "#FFE7D1",
+    "olhos": "ovais",
+    "sobrancelhas": "finas",
+    "cilios": true,
+    "acessorios": [
+     {
+      "tipo": "lenco",
+      "cor": "#EDE7F6"
+     }
+    ]
+   },
+   "cor_legenda": "#E0B3FF"
+  },
+  "laranja1": {
+   "nome": "Homem de Laranja",
+   "papel": "equipe de Ramos, nunca fala",
+   "voz": {
+    "descricao": "sem fala"
+   },
+   "visual": {
+    "altura": 1.02,
+    "corpo": "#E8641E",
+    "cabeca": "#2A2A30",
+    "olhos": "sonolentos",
+    "sobrancelhas": "nenhuma",
+    "acessorios": [
+     {
+      "tipo": "colete",
+      "cor": "#FF7A1A"
+     }
+    ]
+   }
+  },
+  "laranja2": {
+   "nome": "Homem de Laranja",
+   "papel": "equipe de Ramos, nunca fala",
+   "voz": {
+    "descricao": "sem fala"
+   },
+   "visual": {
+    "altura": 1.1,
+    "corpo": "#E8641E",
+    "cabeca": "#2A2A30",
+    "olhos": "sonolentos",
+    "sobrancelhas": "nenhuma",
+    "acessorios": [
+     {
+      "tipo": "colete",
+      "cor": "#FF7A1A"
+     }
+    ]
+   }
+  },
+  "pax1": {
+   "nome": "Passageiro",
+   "papel": "adormecido",
+   "visual": {
+    "altura": 1,
+    "corpo": "#6B8E5A",
+    "cabeca": "#FFE2C4",
+    "olhos": "sonolentos"
+   }
+  },
+  "pax2": {
+   "nome": "Passageira",
+   "papel": "adormecida",
+   "visual": {
+    "altura": 0.93,
+    "corpo": "#B65A7A",
+    "cabeca": "#F2D5BD",
+    "olhos": "sonolentos",
+    "cilios": true,
+    "acessorios": [
+     {
+      "tipo": "rabo_de_cavalo",
+      "cor": "#5A3A24"
+     }
+    ]
+   }
+  },
+  "pax3": {
+   "nome": "Passageiro",
+   "papel": "adormecido",
+   "visual": {
+    "altura": 1.05,
+    "corpo": "#5A7AA8",
+    "cabeca": "#E9C9A8",
+    "olhos": "sonolentos"
+   }
+  },
+  "pax4": {
+   "nome": "Passageira",
+   "papel": "adormecida",
+   "visual": {
+    "altura": 0.9,
+    "corpo": "#C9A04A",
+    "cabeca": "#FFE7D1",
+    "olhos": "sonolentos",
+    "cilios": true,
+    "acessorios": [
+     {
+      "tipo": "lenco",
+      "cor": "#8A5AA8"
+     }
+    ]
+   }
+  },
+  "lia": {
+   "nome": "Lia",
+   "papel": "menina de 13 anos, sobrevivente; viajava sozinha para ver o pai",
+   "personalidade": "esperta e teimosa, morre de medo do mar e de tubarões, fala o que pensa",
+   "voz": {
+    "descricao": "menina brasileira de 13 anos, voz aguda e rápida",
+    "instruct": "female, teenager, high pitch",
+    "semente": 1
+   },
+   "visual": {
+    "altura": 0.8,
+    "corpo": "#7A4FB5",
+    "cabeca": "#FFE2C4",
+    "olhos": "redondos",
+    "sobrancelhas": "finas",
+    "cilios": true,
+    "bochechas": "#F4A7A3",
+    "acessorios": [
+     {
+      "tipo": "rabo_de_cavalo",
+      "cor": "#2A1A12"
+     }
+    ]
+   },
+   "cor_legenda": "#FF9BD2"
+  },
+  "otavio": {
+   "nome": "Otávio",
+   "papel": "copiloto do Voo 818, sobrevivente",
+   "personalidade": "seguro de si, quer sair da ilha de qualquer jeito, esconde alguma coisa",
+   "voz": {
+    "descricao": "homem brasileiro de uns 45 anos, voz grave e firme",
+    "instruct": "male, middle-aged, low pitch",
+    "semente": 1
+   },
+   "visual": {
+    "altura": 1.05,
+    "corpo": "#E8ECF2",
+    "cabeca": "#E9C9A8",
+    "olhos": "ovais",
+    "sobrancelhas": "grossas",
+    "acessorios": [
+     {
+      "tipo": "bone",
+      "cor": "#1F2A44"
+     },
+     {
+      "tipo": "bigode",
+      "cor": "#3B2A20"
+     },
+     {
+      "tipo": "curativo"
+     },
+     {
+      "tipo": "tala",
+      "lado": "D"
+     }
+    ]
+   },
+   "cor_legenda": "#8FD3FF"
+  },
+  "cida": {
+   "nome": "Dona Cida",
+   "papel": "senhora de 79 anos, sobrevivente; ex-enfermeira",
+   "personalidade": "calma, prática, cuida de todo mundo e já viu de tudo",
+   "voz": {
+    "descricao": "senhora brasileira de 79 anos, voz calma e doce",
+    "instruct": "female, elderly, moderate pitch",
+    "semente": 1
+   },
+   "visual": {
+    "altura": 0.86,
+    "corpo": "#4F8A7A",
+    "cabeca": "#F2D5BD",
+    "olhos": "sonolentos",
+    "sobrancelhas": "finas",
+    "acessorios": [
+     {
+      "tipo": "cabelo_curto",
+      "cor": "#D8D8DE"
+     },
+     {
+      "tipo": "oculos",
+      "cor": "#6B4A2E"
+     }
+    ]
+   },
+   "cor_legenda": "#B8F28A"
+  }
+ },
+ "fatos": [
+  "Parte 2: os 147 cintos do avião estão abertos (alguém soltou depois da queda) e os celulares nos bancos tocaram todos ao mesmo tempo.",
+  "Parte 2: no manifesto, todos os nomes estão riscados de laranja, menos os quatro sobreviventes, circulados de vermelho.",
+  "Parte 2: Otávio proibiu mexer no rádio; o grupo mantém fogo aceso à noite com um vigia por vez.",
+  "Parte 3: Dona Cida fez um SOS de pedras na areia; Davi mantém uma fogueira de sinal.",
+  "Parte 3: Otávio começou uma jangada usando os 147 cintos como corda; Lia, com medo de tubarão, quer fazer a sua própria, que não vira.",
+  "Parte 3: à noite, luzes apareceram vindo de DENTRO da ilha (da mata).",
+  "Parte 4: as luzes eram três homens com lanternas e coletes LARANJA (a mesma cor que riscou a lista); vieram da mata e voltaram para ela.",
+  "Parte 4: Davi apagou a fogueira com areia; o grupo se esconde nas raízes de uma árvore enorme na mata.",
+  "Parte 4: o último homem parou nas raízes e contou os quatro: eles sabem quantos sobreviveram.",
+  "Parte 5: água doce cavando atrás da areia seca (meio metro); fervem com galho seco para não fazer fumaça; têm seis garrafas.",
+  "Parte 5: à noite vigiam em dupla; Lia viu um farol girando no mar, e Otávio garante que nenhum mapa tem farol nessa ilha.",
+  "Parte 6: Otávio foi trancado fora da cabine 5 minutos antes da queda (a porta só tranca por dentro) e ouviu o capitão falando com a voz do rádio; Davi e Otávio viraram aliados.",
+  "Parte 6: o capitão pousou de propósito e pediu para deixar o MECÂNICO (Davi) vivo; a jangada fica pronta em dois dias.",
+  "Parte 7: de madrugada a Lia sumiu; as pegadas descalças dela iam até a jangada dela (metade pronta) e voltavam para a mata, onde paravam e viravam pegadas de BOTA: alguém levou a Lia.",
+  "Parte 8: do mirante, de madrugada (~4h30, sol às 6h), viram um farol, um cais e um barco carregado de caixas, sem criança a bordo; ouviram uma buzina de barco; a luz do farol parou de girar e piscou SOS (pedido de socorro).",
+  "Parte 9: o farol piscou um L (Lia viva no farol) e apagou no meio da letra seguinte; Cida ficou no mirante com a jangada e deu o rádio desligado a Davi; Davi e Otávio desceram pela beira da água (sem deixar rastro) e se esconderam atrás de uma pedra na ponta da praia; o rádio acendeu sozinho e a Valéria disse 'Ótimo. Achei vocês.'",
+  "Parte 10: o rádio entrega onde está mesmo desligado; Davi se entregou com o rádio aceso para o Otávio (de tala) fugir no escuro, prometendo voltar; na porta do farol (~5h40), o Capitão Ramos recebeu Davi, deu água, jurou que a Lia está dormindo e não perguntou do Otávio.",
+  "Parte 11: o relatório do Ramos culpa o mecânico (a assinatura seria igual à da última inspeção do Davi); a carga são barras de ouro no porão, fora do manifesto; querem o mecânico vivo porque culpado morto não confessa; o papel tem DOIS nomes circulados; o Ramos ameaça: 'Você vai assinar. Ou a menina não sai da ilha.'",
+  "Parte 12: os 143 passageiros estão vivos, dormindo sentados na adega embaixo do farol; o ar tem gás doce e ar limpo só entra pela fresta da porta; um guarda desce de hora em hora para contar (5h55: 144 com o Davi); a Lia está acordada fingindo dormir e foi ela quem piscou o farol (o SOS e o L).",
+  "Parte 13: a Lia abre a tranca velha da adega; o Otávio voltou com a Dona Cida e tirou uma peça do barco (sem barco ninguém sai da ilha, nem o ouro, e o Ramos fica preso com eles); plano: o Davi segura a alavanca do farol e a Lia vigia a escada; a escada tem 112 degraus; às 6h o Ramos achou a porta da adega aberta e o alarme disparou.",
+  "Parte 14: Davi e Lia subiram os 112 degraus no escuro, sem luz (no escuro quem tem lanterna aparece); as lanternas pararam no meio porque a voz do rádio (Valéria) mandou 'Deixa ele subir'; passaram de joelhos sob a janela da torre; às 6h05 a sala da lâmpada parecia vazia, mas o Ramos esperava do outro lado da lente, com um isqueiro: 'Eu sabia que você vinha.'",
+  "Parte 15: na sala da lâmpada, Ramos a um passo da alavanca e seis homens subindo (um minuto); Davi fez o Ramos falar ('Por que deixaram a gente subir?' / 'Porque daqui de cima não tem pra onde fugir'); um raio no mar e no clarão a Lia correu por trás da lente; Ramos foi atrás dela e Davi puxou a alavanca: SOS em código (três curtas, três longas, três curtas) pro mar inteiro; as botas pararam; um raio caiu no farol e tudo apagou."
+ ],
+ "ganchos_abertos": [
+  "Quem circulou os quatro nomes no manifesto, e por quê?",
+  "Por que os celulares tocaram todos juntos no avião vazio?",
+  "De quem é o segundo nome circulado no relatório?",
+  "Os 143 passageiros vão acordar antes de o barco levar todo mundo?",
+  "Quem viu o pedido de SOCORRO do farol antes do raio?"
+ ]
 }
