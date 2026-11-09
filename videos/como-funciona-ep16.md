@@ -23,7 +23,7 @@ E agora, topa construir um relógio? Segue o perfil pra ver o próximo.
 #comofunciona #bicicleta #engenharia #curiosidades
 
 ## Na hora de postar
-- Capa (nas duas): quadro de 22,7 s do vídeo, quando a legenda mostra "CABEÇA".
+- Capa (nas duas): quadro de 26,9 s do vídeo, quando a legenda mostra "CABEÇA".
 - YouTube, "Vídeo relacionado": COMO FUNCIONA #15.
 - YouTube, playlist: COMO FUNCIONA.
 - Comentário para postar e fixar nas duas, logo depois de publicar: Eu nunca tinha pensado que o tec-tec-tec da bicicleta era uma peça trabalhando. Você sabia?
