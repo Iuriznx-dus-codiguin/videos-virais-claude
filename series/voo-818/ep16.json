@@ -243,11 +243,15 @@
     {
      "de": "inicio",
      "tipo": "geral",
-     "alvo": "cauda",
+     "alvo": [
+      -11.0,
+      2.8,
+      -0.3
+     ],
      "camera": [
-      -6.5,
-      2.6,
-      6.5
+      -13.5,
+      2.8,
+      7.0
      ],
      "movimento": "arco",
      "intensidade": 0.15,
@@ -939,10 +943,14 @@
     {
      "de": "inicio",
      "tipo": "geral",
-     "alvo": "cauda",
+     "alvo": [
+      -11.0,
+      2.8,
+      -0.3
+     ],
      "camera": [
-      -7.0,
-      3.0,
+      -14.5,
+      3.2,
       6.0
      ],
      "movimento": "aproximar",
@@ -982,7 +990,11 @@
      "de": "f11:cauda",
      "ate": "f11:fim",
      "efeito": "circular",
-     "alvo": "cauda"
+     "alvo": [
+      -11.0,
+      2.8,
+      -0.3
+     ]
     }
    ]
   },
@@ -1270,14 +1282,14 @@
      "de": "inicio",
      "tipo": "aberto",
      "alvo": [
-      -10.5,
+      -11.5,
       1.8,
-      1.6
+      0.8
      ],
      "camera": [
-      -5.5,
+      -13.5,
       3.0,
-      9.5
+      8.5
      ],
      "movimento": "aproximar",
      "intensidade": 0.2
@@ -1303,7 +1315,6 @@
    "luz": "noite",
    "ambiente": "mar",
    "de": "f17",
-   "filtro": "frio",
    "personagens": {
     "davi": {
      "em": [
@@ -1330,6 +1341,22 @@
       0.9
      ],
      "giro": 30
+    },
+    {
+     "tipo": "feixe_luz",
+     "de": [
+      -11.3,
+      4.2,
+      1.8
+     ],
+     "em": [
+      -11.6,
+      0.9
+     ],
+     "alt": 0.15,
+     "largura": 0.9,
+     "intensidade": 0.5,
+     "cor": "#FFD9A0"
     }
    ],
    "acoes": [
@@ -1416,6 +1443,16 @@
      "de": "f18:laranja",
      "ate": "f18:fim+0.3",
      "efeito": "circular",
+     "alvo": [
+      -11.6,
+      0.2,
+      0.9
+     ]
+    },
+    {
+     "de": "f17:apita",
+     "ate": "f17:fim+0.2",
+     "efeito": "destacar",
      "alvo": [
       -11.6,
       0.2,
