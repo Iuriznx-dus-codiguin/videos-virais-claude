@@ -1526,103 +1526,108 @@
   {
    "id": "f1",
    "quem": "tito",
-   "texto": "Se você sentar numa barra com duas rodas e empurrar o chão com os pés, você ANDA.",
+   "texto": "Com uma barra de madeira e duas rodas, dá para ir mais rápido que CORRENDO?",
    "tom": "animado"
   },
   {
    "id": "f2",
    "quem": "tito",
-   "texto": "MAS empurrar o chão cansa, e você vai bem DEVAGAR.",
-   "tom": "tenso",
-   "pausa_depois": 0.3
+   "texto": "Se você sentar nela e empurrar o chão com os pés, ela sai ROLANDO."
   },
   {
    "id": "f3",
    "quem": "tito",
-   "texto": "Então, você prende PEDAIS na roda da frente: cada pedalada gira a roda."
+   "texto": "MAS empurrar o chão cansa, e você vai mais DEVAGAR que correndo.",
+   "tom": "tenso",
+   "pausa_depois": 0.3
   },
   {
    "id": "f4",
+   "quem": "tito",
+   "texto": "Então, você prende PEDAIS na roda da frente: cada pedalada gira a roda."
+  },
+  {
+   "id": "f5",
    "quem": "tito",
    "texto": "SÓ QUE uma pedalada é uma volta só da roda. Isso anda POUCO.",
    "tom": "tenso",
    "pausa_depois": 0.3
   },
   {
-   "id": "f5",
+   "id": "f6",
    "quem": "tito",
    "texto": "Então, você faz a roda da frente GIGANTE: cada volta te leva muito mais longe."
   },
   {
-   "id": "f6",
+   "id": "f7",
    "quem": "tito",
    "texto": "MAS lá de cima, qualquer pedrinha te joga de CABEÇA no chão!",
    "tom": "tenso",
    "pausa_depois": 0.4
   },
   {
-   "id": "f7",
+   "id": "f8",
    "quem": "tito",
    "texto": "Então, você volta para rodas iguais e liga o pedal na roda de trás com uma CORRENTE."
   },
   {
-   "id": "f8",
+   "id": "f9",
    "quem": "tito",
    "texto": "Na frente, uma coroa GRANDE. Atrás, uma catraca pequena. Uma pedalada vira várias voltas da roda.",
    "pausa_depois": 0.3
   },
   {
-   "id": "f9",
+   "id": "f10",
    "quem": "tito",
    "texto": "SÓ QUE cada buraco da rua chacoalha você INTEIRO.",
    "tom": "tenso",
    "pausa_depois": 0.3
   },
   {
-   "id": "f10",
+   "id": "f11",
    "quem": "tito",
    "texto": "Então, você coloca PNEUS cheios de ar, que amortecem o tranco como uma almofada."
   },
   {
-   "id": "f11",
+   "id": "f12",
    "quem": "tito",
    "texto": "MAS na subida, a pedalada fica PESADA demais.",
    "tom": "tenso",
    "pausa_depois": 0.3
   },
   {
-   "id": "f12",
+   "id": "f13",
    "quem": "tito",
    "texto": "Então, você coloca MARCHAS: catracas de vários tamanhos. A maior deixa a subida leve.",
    "pausa_depois": 0.3
   },
   {
-   "id": "f13",
+   "id": "f14",
    "quem": "tito",
    "texto": "E SE você parar de pedalar na descida? Os pedais iam girar sozinhos e bater na sua PERNA.",
    "tom": "tenso",
    "pausa_depois": 0.3
   },
   {
-   "id": "f14",
+   "id": "f15",
    "quem": "tito",
    "texto": "Então, você coloca uma RODA LIVRE: a roda continua girando, e o pedal pode ficar parado."
   },
   {
-   "id": "f15",
+   "id": "f16",
    "quem": "tito",
    "texto": "Sabe aquele tec-tec-tec quando você para de pedalar? É ELA trabalhando.",
    "tom": "animado",
    "pausa_depois": 0.3
   },
   {
-   "id": "f16",
+   "id": "f17",
    "quem": "tito",
    "texto": "E repara: a primeira bicicleta da história era igual à do começo, SEM pedal nenhum.",
    "pausa_depois": 0.3
   },
   {
-   "id": "f17",
+   "id": "f18",
    "quem": "tito",
    "texto": "Parabéns! Você construiu uma BICICLETA!",
    "tom": "animado"
@@ -1643,7 +1648,7 @@
    "curiosidades"
   ],
   "comentario": "Eu nunca tinha pensado que o tec-tec-tec da bicicleta era uma peça trabalhando. Você sabia?",
-  "capa": "f6:cabeca+0.3"
+  "capa": "f7:cabeca+0.3"
  },
  "cenas": [
   {
@@ -1668,6 +1673,20 @@
      "tipo": "particulas",
      "particula": "poeira",
      "em": [
+      -0.3,
+      0
+     ],
+     "alt": 1.0,
+     "raio": 0.07,
+     "altura": 0.12,
+     "quantas": 12,
+     "aparece": "inicio",
+     "some": "f3:devagar"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "poeira",
+     "em": [
       0.5,
       0
      ],
@@ -1675,8 +1694,8 @@
      "raio": 0.18,
      "altura": 0.25,
      "quantas": 18,
-     "aparece": "f6:chao",
-     "some": "f7:iguais"
+     "aparece": "f7:chao",
+     "some": "f8:iguais"
     },
     {
      "tipo": "particulas",
@@ -1689,7 +1708,7 @@
      "raio": 1.4,
      "altura": 1.2,
      "quantas": 60,
-     "aparece": "f17:parabens"
+     "aparece": "f18:parabens"
     }
    ],
    "animacoes": [
@@ -1697,754 +1716,760 @@
      "peca": "rt1",
      "faz": "girar",
      "de": "inicio",
-     "ate": "f2:devagar",
+     "ate": "f3:devagar",
      "eixo": "z",
-     "voltas": -0.5
+     "voltas": -0.9
     },
     {
      "peca": "rf1",
      "faz": "girar",
      "de": "inicio",
-     "ate": "f2:devagar",
+     "ate": "f3:devagar",
      "eixo": "z",
-     "voltas": -0.5
+     "voltas": -0.9
     },
     {
      "peca": "rt1",
      "faz": "girar",
-     "de": "f2:devagar",
-     "ate": "f3:pedais",
+     "de": "f3:devagar",
+     "ate": "f4:pedais",
      "eixo": "z",
      "voltas": -0.15
     },
     {
      "peca": "rf1",
      "faz": "girar",
-     "de": "f2:devagar",
-     "ate": "f3:pedais",
+     "de": "f3:devagar",
+     "ate": "f4:pedais",
      "eixo": "z",
      "voltas": -0.15
     },
     {
      "peca": "pedivela1",
      "faz": "aparecer",
-     "de": "f3:pedais"
+     "de": "f4:pedais"
     },
     {
      "peca": "pedal1",
      "faz": "aparecer",
-     "de": "f3:pedais"
+     "de": "f4:pedais"
     },
     {
      "peca": "rf1",
      "faz": "girar",
-     "de": "f3:pedalada",
-     "ate": "f4",
+     "de": "f4:pedalada",
+     "ate": "f5",
      "eixo": "z",
      "voltas": -0.5
     },
     {
      "peca": "rt1",
      "faz": "girar",
-     "de": "f3:pedalada",
-     "ate": "f4",
+     "de": "f4:pedalada",
+     "ate": "f5",
      "eixo": "z",
      "voltas": -0.5
     },
     {
      "peca": "rf1",
      "faz": "girar_para",
-     "de": "f4:volta",
-     "ate": "f4:volta+1.4",
+     "de": "f5:volta",
+     "ate": "f5:volta+1.4",
      "eixo": "z",
      "angulo": -360
     },
     {
      "peca": "rt1",
      "faz": "girar_para",
-     "de": "f4:volta",
-     "ate": "f4:volta+1.4",
+     "de": "f5:volta",
+     "ate": "f5:volta+1.4",
      "eixo": "z",
      "angulo": -360
     },
     {
      "peca": "rt1",
      "faz": "sumir",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "rt1_aro",
      "faz": "sumir",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "rt1_cubo",
      "faz": "sumir",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "rt1_raio0",
      "faz": "sumir",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "rt1_raio1",
      "faz": "sumir",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "rt1_raio2",
      "faz": "sumir",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "rf1",
      "faz": "sumir",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "rf1_aro",
      "faz": "sumir",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "rf1_cubo",
      "faz": "sumir",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "rf1_raio0",
      "faz": "sumir",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "rf1_raio1",
      "faz": "sumir",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "rf1_raio2",
      "faz": "sumir",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "viga1",
      "faz": "sumir",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "garfo_t1",
      "faz": "sumir",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "garfo_f1",
      "faz": "sumir",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "selim1",
      "faz": "sumir",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "haste1",
      "faz": "sumir",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "guidao1",
      "faz": "sumir",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "pedivela1",
      "faz": "sumir",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "pedal1",
      "faz": "sumir",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "v2",
      "faz": "aparecer",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "rg2",
      "faz": "aparecer",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "rg2_aro",
      "faz": "aparecer",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "rg2_cubo",
      "faz": "aparecer",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "rg2_raio0",
      "faz": "aparecer",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "rg2_raio1",
      "faz": "aparecer",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "rg2_raio2",
      "faz": "aparecer",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "rt2",
      "faz": "aparecer",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "rt2_aro",
      "faz": "aparecer",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "rt2_cubo",
      "faz": "aparecer",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "rt2_raio0",
      "faz": "aparecer",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "rt2_raio1",
      "faz": "aparecer",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "rt2_raio2",
      "faz": "aparecer",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "pedivela2",
      "faz": "aparecer",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "pedal2",
      "faz": "aparecer",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "garfo2",
      "faz": "aparecer",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "guidao2",
      "faz": "aparecer",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "selim2",
      "faz": "aparecer",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "espinha2",
      "faz": "aparecer",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "peca": "rg2",
      "faz": "girar",
-     "de": "f5:volta",
-     "ate": "f6:cabeca",
+     "de": "f6:volta",
+     "ate": "f7:cabeca",
      "eixo": "z",
      "voltas": -0.3
     },
     {
      "peca": "rt2",
      "faz": "girar",
-     "de": "f5:volta",
-     "ate": "f6:cabeca",
+     "de": "f6:volta",
+     "ate": "f7:cabeca",
      "eixo": "z",
      "voltas": -0.75
     },
     {
      "peca": "pedra_a",
      "faz": "aparecer",
-     "de": "f6:pedrinha"
+     "de": "f7:pedrinha"
     },
     {
      "peca": "v2",
      "faz": "tremer",
-     "de": "f6:pedrinha",
-     "ate": "f6:cabeca",
+     "de": "f7:pedrinha",
+     "ate": "f7:cabeca",
      "intensidade": 0.8
     },
     {
      "peca": "v2",
      "faz": "girar_para",
-     "de": "f6:cabeca",
-     "ate": "f6:cabeca+0.4",
+     "de": "f7:cabeca",
+     "ate": "f7:cabeca+0.4",
      "eixo": "z",
      "angulo": -38
     },
     {
      "peca": "pedra_a",
      "faz": "sumir",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "rg2",
      "faz": "sumir",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "rg2_aro",
      "faz": "sumir",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "rg2_cubo",
      "faz": "sumir",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "rg2_raio0",
      "faz": "sumir",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "rg2_raio1",
      "faz": "sumir",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "rg2_raio2",
      "faz": "sumir",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "rt2",
      "faz": "sumir",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "rt2_aro",
      "faz": "sumir",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "rt2_cubo",
      "faz": "sumir",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "rt2_raio0",
      "faz": "sumir",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "rt2_raio1",
      "faz": "sumir",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "rt2_raio2",
      "faz": "sumir",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "pedivela2",
      "faz": "sumir",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "pedal2",
      "faz": "sumir",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "garfo2",
      "faz": "sumir",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "guidao2",
      "faz": "sumir",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "selim2",
      "faz": "sumir",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "espinha2",
      "faz": "sumir",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "v3",
      "faz": "aparecer",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "rt3",
      "faz": "aparecer",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "rt3_aro",
      "faz": "aparecer",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "rt3_cubo",
      "faz": "aparecer",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "rt3_raio0",
      "faz": "aparecer",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "rt3_raio1",
      "faz": "aparecer",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "rt3_raio2",
      "faz": "aparecer",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "rf3",
      "faz": "aparecer",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "rf3_aro",
      "faz": "aparecer",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "rf3_cubo",
      "faz": "aparecer",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "rf3_raio0",
      "faz": "aparecer",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "rf3_raio1",
      "faz": "aparecer",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "rf3_raio2",
      "faz": "aparecer",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "catraca",
      "faz": "aparecer",
-     "de": "f7:corrente"
+     "de": "f8:corrente"
     },
     {
      "peca": "pd3",
      "faz": "aparecer",
-     "de": "f7:corrente"
+     "de": "f8:corrente"
     },
     {
      "peca": "coroa",
      "faz": "aparecer",
-     "de": "f7:corrente"
+     "de": "f8:corrente"
     },
     {
      "peca": "pedivela3",
      "faz": "aparecer",
-     "de": "f7:corrente"
+     "de": "f8:corrente"
     },
     {
      "peca": "pedal3",
      "faz": "aparecer",
-     "de": "f7:corrente"
+     "de": "f8:corrente"
     },
     {
      "peca": "corrente",
      "faz": "aparecer",
-     "de": "f7:corrente"
+     "de": "f8:corrente"
     },
     {
      "peca": "quadro_topo",
      "faz": "aparecer",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "quadro_baixo",
      "faz": "aparecer",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "quadro_selim",
      "faz": "aparecer",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "quadro_tras1",
      "faz": "aparecer",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "quadro_tras2",
      "faz": "aparecer",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "garfo3",
      "faz": "aparecer",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "haste3",
      "faz": "aparecer",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "guidao3",
      "faz": "aparecer",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "selim3",
      "faz": "aparecer",
-     "de": "f7:iguais"
+     "de": "f8:iguais"
     },
     {
      "peca": "pd3",
      "faz": "girar",
-     "de": "f8:pedalada",
-     "ate": "f9",
+     "de": "f9:pedalada",
+     "ate": "f10",
      "eixo": "z",
      "voltas": -0.45
     },
     {
      "peca": "rt3",
      "faz": "girar",
-     "de": "f8:pedalada",
-     "ate": "f9",
+     "de": "f9:pedalada",
+     "ate": "f10",
      "eixo": "z",
      "voltas": -1.4
     },
     {
      "peca": "rf3",
      "faz": "girar",
-     "de": "f8:pedalada",
-     "ate": "f9",
+     "de": "f9:pedalada",
+     "ate": "f10",
      "eixo": "z",
      "voltas": -1.4
     },
     {
      "peca": "coroa",
      "faz": "pulsar",
-     "de": "f8:grande",
-     "ate": "f8:atras",
+     "de": "f9:grande",
+     "ate": "f9:atras",
      "intensidade": 0.5
     },
     {
      "peca": "catraca",
      "faz": "pulsar",
-     "de": "f8:pequena",
-     "ate": "f8:pedalada",
+     "de": "f9:pequena",
+     "ate": "f9:pedalada",
      "intensidade": 0.5
     },
     {
      "peca": "pedra_b",
      "faz": "aparecer",
-     "de": "f9:buraco"
+     "de": "f10:buraco"
     },
     {
      "peca": "rt3",
      "faz": "girar",
-     "de": "f9",
-     "ate": "f10:pneus",
+     "de": "f10",
+     "ate": "f11:pneus",
      "eixo": "z",
      "voltas": -0.8
     },
     {
      "peca": "rf3",
      "faz": "girar",
-     "de": "f9",
-     "ate": "f10:pneus",
+     "de": "f10",
+     "ate": "f11:pneus",
      "eixo": "z",
      "voltas": -0.8
     },
     {
      "peca": "v3",
      "faz": "tremer",
-     "de": "f9:chacoalha",
-     "ate": "f10:pneus",
+     "de": "f10:chacoalha",
+     "ate": "f11:pneus",
      "intensidade": 1.3
     },
     {
      "peca": "pneu_t",
      "faz": "aparecer",
-     "de": "f10:pneus"
+     "de": "f11:pneus"
     },
     {
      "peca": "pneu_f",
      "faz": "aparecer",
-     "de": "f10:pneus+0.15"
+     "de": "f11:pneus+0.15"
     },
     {
      "peca": "pedra_b",
      "faz": "sumir",
-     "de": "f10:amortecem"
+     "de": "f11:amortecem"
     },
     {
      "peca": "rt3",
      "faz": "girar",
-     "de": "f10:amortecem",
-     "ate": "f11",
+     "de": "f11:amortecem",
+     "ate": "f12",
      "eixo": "z",
      "voltas": -0.9
     },
     {
      "peca": "rf3",
      "faz": "girar",
-     "de": "f10:amortecem",
-     "ate": "f11",
+     "de": "f11:amortecem",
+     "ate": "f12",
      "eixo": "z",
      "voltas": -0.9
     },
     {
      "peca": "pd3",
      "faz": "girar",
-     "de": "f10:amortecem",
-     "ate": "f11",
+     "de": "f11:amortecem",
+     "ate": "f12",
      "eixo": "z",
      "voltas": -0.3
     },
     {
      "peca": "pd3",
      "faz": "girar",
-     "de": "f11:subida",
-     "ate": "f12:marchas",
+     "de": "f12:subida",
+     "ate": "f13:marchas",
      "eixo": "z",
      "voltas": -0.1
     },
     {
      "peca": "pedal3",
      "faz": "tremer",
-     "de": "f11:pesada",
-     "ate": "f12:marchas",
+     "de": "f12:pesada",
+     "ate": "f13:marchas",
      "intensidade": 0.8
     },
     {
      "peca": "pedivela3",
      "faz": "aquecer",
-     "de": "f11:pesada",
-     "ate": "f12:marchas",
+     "de": "f12:pesada",
+     "ate": "f13:marchas",
      "intensidade": 0.6
     },
     {
      "peca": "pedivela3",
      "faz": "esfriar",
-     "de": "f12:marchas",
-     "ate": "f12:marchas+0.4"
+     "de": "f13:marchas",
+     "ate": "f13:marchas+0.4"
     },
     {
      "peca": "catraca2",
      "faz": "aparecer",
-     "de": "f12:marchas"
+     "de": "f13:marchas"
     },
     {
      "peca": "catraca3",
      "faz": "aparecer",
-     "de": "f12:marchas+0.2"
+     "de": "f13:marchas+0.2"
     },
     {
      "peca": "catraca3",
      "faz": "pulsar",
-     "de": "f12:maior",
-     "ate": "f12:fim+0.3",
+     "de": "f13:maior",
+     "ate": "f13:fim+0.3",
      "intensidade": 0.6
     },
     {
      "peca": "pd3",
      "faz": "girar",
-     "de": "f12:maior",
-     "ate": "f13",
+     "de": "f13:maior",
+     "ate": "f14",
      "eixo": "z",
      "voltas": -0.5
     },
     {
      "peca": "rt3",
      "faz": "girar",
-     "de": "f12:maior",
-     "ate": "f13",
+     "de": "f13:maior",
+     "ate": "f14",
      "eixo": "z",
      "voltas": -0.5
     },
     {
      "peca": "rf3",
      "faz": "girar",
-     "de": "f12:maior",
-     "ate": "f13",
+     "de": "f13:maior",
+     "ate": "f14",
      "eixo": "z",
      "voltas": -0.5
     },
     {
      "peca": "rt3",
      "faz": "girar",
-     "de": "f13:descida",
-     "ate": "f17:fim+2",
+     "de": "f14:descida",
+     "ate": "f18:fim+2",
      "eixo": "z",
      "voltas": -2.0
     },
     {
      "peca": "rf3",
      "faz": "girar",
-     "de": "f13:descida",
-     "ate": "f17:fim+2",
+     "de": "f14:descida",
+     "ate": "f18:fim+2",
      "eixo": "z",
      "voltas": -2.0
     },
     {
      "peca": "pd3",
      "faz": "girar",
-     "de": "f13:pedais",
-     "ate": "f14:livre",
+     "de": "f14:pedais",
+     "ate": "f15:livre",
      "eixo": "z",
      "voltas": -1.6
     },
     {
      "peca": "catraca",
      "faz": "pulsar",
-     "de": "f14:livre",
-     "ate": "f15:fim",
+     "de": "f15:livre",
+     "ate": "f16:fim",
      "intensidade": 0.7
     }
    ],
    "acoes": [
     {
      "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "desconfiado",
+     "de": "f1"
+    },
+    {
+     "quem": "tito",
      "olhar": "camera",
      "expressao": "cansado",
-     "de": "f2"
+     "de": "f3"
     },
     {
      "quem": "tito",
@@ -2452,13 +2477,13 @@
      "para": "pedal1",
      "olhar": "maquete",
      "expressao": "feliz",
-     "de": "f3:pedais"
+     "de": "f4:pedais"
     },
     {
      "quem": "tito",
      "olhar": "camera",
      "expressao": "desconfiado",
-     "de": "f4"
+     "de": "f5"
     },
     {
      "quem": "tito",
@@ -2466,14 +2491,14 @@
      "para": "rg2_cubo",
      "olhar": "maquete",
      "expressao": "feliz",
-     "de": "f5:gigante"
+     "de": "f6:gigante"
     },
     {
      "quem": "tito",
      "faz": "susto",
      "olhar": "camera",
      "expressao": "medo",
-     "de": "f6"
+     "de": "f7"
     },
     {
      "quem": "tito",
@@ -2481,13 +2506,13 @@
      "para": "coroa",
      "olhar": "maquete",
      "expressao": "feliz",
-     "de": "f7:corrente"
+     "de": "f8:corrente"
     },
     {
      "quem": "tito",
      "olhar": "camera",
      "expressao": "nervoso",
-     "de": "f9"
+     "de": "f10"
     },
     {
      "quem": "tito",
@@ -2495,13 +2520,13 @@
      "para": "rt3_cubo",
      "olhar": "maquete",
      "expressao": "feliz",
-     "de": "f10:pneus"
+     "de": "f11:pneus"
     },
     {
      "quem": "tito",
      "olhar": "camera",
      "expressao": "cansado",
-     "de": "f11"
+     "de": "f12"
     },
     {
      "quem": "tito",
@@ -2509,13 +2534,13 @@
      "para": "catraca3",
      "olhar": "maquete",
      "expressao": "feliz",
-     "de": "f12:marchas"
+     "de": "f13:marchas"
     },
     {
      "quem": "tito",
      "olhar": "camera",
      "expressao": "medo",
-     "de": "f13"
+     "de": "f14"
     },
     {
      "quem": "tito",
@@ -2523,19 +2548,19 @@
      "para": "catraca",
      "olhar": "maquete",
      "expressao": "feliz",
-     "de": "f14:livre"
+     "de": "f15:livre"
     },
     {
      "quem": "tito",
      "olhar": "camera",
      "expressao": "feliz",
-     "de": "f15"
+     "de": "f16"
     },
     {
      "quem": "tito",
      "olhar": "camera",
      "expressao": "surpreso",
-     "de": "f16"
+     "de": "f17"
     },
     {
      "quem": "tito",
@@ -2547,14 +2572,14 @@
      ],
      "olhar": "camera",
      "expressao": "feliz",
-     "de": "f17"
+     "de": "f18"
     },
     {
      "quem": "tito",
      "faz": "acenar",
      "olhar": "camera",
      "expressao": "feliz",
-     "de": "f17:parabens"
+     "de": "f18:parabens"
     }
    ],
    "planos": [
@@ -2568,10 +2593,24 @@
      ],
      "lado": "frente",
      "tamanho": 0.95,
-     "movimento": "arco"
+     "movimento": "travelling",
+     "intensidade": 0.6
     },
     {
-     "de": "f1:empurrar",
+     "de": "f2",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.22,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.85,
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f2:empurrar",
      "tipo": "detalhe",
      "alvo": [
       0.2,
@@ -2583,14 +2622,14 @@
      "movimento": "aproximar"
     },
     {
-     "de": "f2",
+     "de": "f3",
      "tipo": "medio",
      "alvo": "tito",
      "lado": "tres_quartos_direita",
      "movimento": "zoom_rapido"
     },
     {
-     "de": "f3",
+     "de": "f4",
      "tipo": "detalhe",
      "alvo": [
       0.22,
@@ -2604,7 +2643,7 @@
      "transicao": "varrer"
     },
     {
-     "de": "f4",
+     "de": "f5",
      "tipo": "detalhe",
      "alvo": [
       0.22,
@@ -2616,7 +2655,7 @@
      "movimento": "subir"
     },
     {
-     "de": "f4:pouco",
+     "de": "f5:pouco",
      "tipo": "medio",
      "alvo": "tito",
      "lado": "tres_quartos_direita",
@@ -2625,7 +2664,7 @@
      "transicao": "chicote"
     },
     {
-     "de": "f5",
+     "de": "f6",
      "tipo": "detalhe",
      "alvo": [
       0.0,
@@ -2639,7 +2678,7 @@
      "transicao": "varrer"
     },
     {
-     "de": "f6",
+     "de": "f7",
      "tipo": "medio",
      "alvo": "tito",
      "lado": "tres_quartos_direita",
@@ -2647,7 +2686,7 @@
      "transicao": "chicote"
     },
     {
-     "de": "f6:pedrinha",
+     "de": "f7:pedrinha",
      "tipo": "detalhe",
      "alvo": [
       0.1,
@@ -2659,7 +2698,7 @@
      "movimento": "tremer"
     },
     {
-     "de": "f7",
+     "de": "f8",
      "tipo": "detalhe",
      "alvo": [
       0,
@@ -2673,7 +2712,7 @@
      "transicao": "varrer"
     },
     {
-     "de": "f7:corrente",
+     "de": "f8:corrente",
      "tipo": "detalhe",
      "alvo": [
       -0.13,
@@ -2685,7 +2724,7 @@
      "movimento": "aproximar"
     },
     {
-     "de": "f8",
+     "de": "f9",
      "tipo": "detalhe",
      "alvo": [
       -0.02,
@@ -2698,7 +2737,7 @@
      "intensidade": 0.3
     },
     {
-     "de": "f8:atras",
+     "de": "f9:atras",
      "tipo": "detalhe",
      "alvo": [
       -0.24,
@@ -2710,7 +2749,7 @@
      "movimento": "aproximar"
     },
     {
-     "de": "f8:pedalada",
+     "de": "f9:pedalada",
      "tipo": "detalhe",
      "alvo": [
       -0.05,
@@ -2723,7 +2762,7 @@
      "intensidade": 0.3
     },
     {
-     "de": "f9",
+     "de": "f10",
      "tipo": "medio",
      "alvo": "tito",
      "lado": "tres_quartos_direita",
@@ -2731,7 +2770,7 @@
      "transicao": "chicote"
     },
     {
-     "de": "f9:rua",
+     "de": "f10:rua",
      "tipo": "detalhe",
      "alvo": [
       0.05,
@@ -2743,7 +2782,7 @@
      "movimento": "tremer"
     },
     {
-     "de": "f10",
+     "de": "f11",
      "tipo": "detalhe",
      "alvo": [
       -0.24,
@@ -2757,7 +2796,7 @@
      "transicao": "varrer"
     },
     {
-     "de": "f10:amortecem",
+     "de": "f11:amortecem",
      "tipo": "detalhe",
      "alvo": [
       0,
@@ -2769,7 +2808,7 @@
      "movimento": "aproximar"
     },
     {
-     "de": "f11",
+     "de": "f12",
      "tipo": "medio",
      "alvo": "tito",
      "lado": "tres_quartos_direita",
@@ -2777,7 +2816,7 @@
      "transicao": "chicote"
     },
     {
-     "de": "f11:pedalada",
+     "de": "f12:pedalada",
      "tipo": "detalhe",
      "alvo": [
       -0.02,
@@ -2789,7 +2828,7 @@
      "movimento": "subir"
     },
     {
-     "de": "f12",
+     "de": "f13",
      "tipo": "detalhe",
      "alvo": [
       -0.24,
@@ -2802,7 +2841,7 @@
      "transicao": "zoom"
     },
     {
-     "de": "f12:maior",
+     "de": "f13:maior",
      "tipo": "detalhe",
      "alvo": [
       -0.2,
@@ -2815,7 +2854,7 @@
      "intensidade": 0.4
     },
     {
-     "de": "f13",
+     "de": "f14",
      "tipo": "medio",
      "alvo": "tito",
      "lado": "tres_quartos_direita",
@@ -2823,7 +2862,7 @@
      "transicao": "chicote"
     },
     {
-     "de": "f13:pedais",
+     "de": "f14:pedais",
      "tipo": "detalhe",
      "alvo": [
       -0.02,
@@ -2835,7 +2874,7 @@
      "movimento": "tremer"
     },
     {
-     "de": "f14",
+     "de": "f15",
      "tipo": "detalhe",
      "alvo": [
       -0.24,
@@ -2848,7 +2887,7 @@
      "intensidade": 0.4
     },
     {
-     "de": "f14:parado",
+     "de": "f15:parado",
      "tipo": "detalhe",
      "alvo": [
       -0.1,
@@ -2860,7 +2899,7 @@
      "movimento": "aproximar"
     },
     {
-     "de": "f15",
+     "de": "f16",
      "tipo": "medio",
      "alvo": "tito",
      "lado": "tres_quartos_direita",
@@ -2869,7 +2908,7 @@
      "transicao": "chicote"
     },
     {
-     "de": "f15:ela",
+     "de": "f16:ela",
      "tipo": "detalhe",
      "alvo": [
       -0.24,
@@ -2881,7 +2920,7 @@
      "movimento": "aproximar"
     },
     {
-     "de": "f16",
+     "de": "f17",
      "tipo": "detalhe",
      "alvo": [
       0,
@@ -2895,7 +2934,7 @@
      "transicao": "desfoque"
     },
     {
-     "de": "f17",
+     "de": "f18",
      "tipo": "aberto",
      "camera": [
       -0.9,
@@ -2918,270 +2957,281 @@
      "volume": 0.4
     },
     {
-     "de": "f1:anda",
+     "de": "f2:rolando",
      "som": "ding",
      "volume": 0.7
     },
     {
-     "de": "f2",
+     "de": "f3",
      "som": "tensao_sobe",
      "volume": 0.5
     },
     {
-     "de": "f3:pedais",
+     "de": "f4:pedais",
      "som": "pop",
      "volume": 0.8
     },
     {
-     "de": "f3:pedalada",
+     "de": "f4:pedalada",
      "som": "engrenagem",
      "volume": 0.5
     },
     {
-     "de": "f4",
+     "de": "f5",
      "som": "tensao_sobe",
      "volume": 0.5
     },
     {
-     "de": "f4:pouco",
+     "de": "f5:pouco",
      "som": "impacto",
      "volume": 0.6
     },
     {
-     "de": "f5:gigante",
+     "de": "f6:gigante",
      "som": "pop",
      "volume": 0.9
     },
     {
-     "de": "f6",
+     "de": "f7",
      "som": "tensao_sobe",
      "volume": 0.6
     },
     {
-     "de": "f6:pedrinha",
+     "de": "f7:pedrinha",
      "som": "clique",
      "volume": 0.7
     },
     {
-     "de": "f6:cabeca",
+     "de": "f7:cabeca",
      "som": "queda",
      "volume": 0.8
     },
     {
-     "de": "f6:chao",
+     "de": "f7:chao",
      "som": "impacto",
      "volume": 0.9
     },
     {
-     "de": "f7:iguais",
+     "de": "f8:iguais",
      "som": "pop",
      "volume": 0.8
     },
     {
-     "de": "f7:corrente",
+     "de": "f8:corrente",
      "som": "pop",
      "volume": 0.8
     },
     {
-     "de": "f8:pedalada",
+     "de": "f9:pedalada",
      "som": "engrenagem",
      "volume": 0.6
     },
     {
-     "de": "f8:voltas",
+     "de": "f9:voltas",
      "som": "ding",
      "volume": 0.8
     },
     {
-     "de": "f9",
+     "de": "f10",
      "som": "tensao_sobe",
      "volume": 0.5
     },
     {
-     "de": "f9:buraco",
+     "de": "f10:buraco",
      "som": "impacto",
      "volume": 0.8
     },
     {
-     "de": "f9:chacoalha",
+     "de": "f10:chacoalha",
      "som": "impacto",
      "volume": 0.7
     },
     {
-     "de": "f10:pneus",
+     "de": "f11:pneus",
      "som": "pop",
      "volume": 0.8
     },
     {
-     "de": "f10:ar",
+     "de": "f11:ar",
      "som": "sopro",
      "volume": 0.6
     },
     {
-     "de": "f11",
+     "de": "f12",
      "som": "tensao_sobe",
      "volume": 0.5
     },
     {
-     "de": "f11:pesada",
+     "de": "f12:pesada",
      "som": "impacto",
      "volume": 0.6
     },
     {
-     "de": "f12:marchas",
+     "de": "f13:marchas",
      "som": "pop",
      "volume": 0.8
     },
     {
-     "de": "f12:maior",
+     "de": "f13:maior",
      "som": "clique",
      "volume": 0.8
     },
     {
-     "de": "f13",
+     "de": "f14",
      "som": "tensao_sobe",
      "volume": 0.6
     },
     {
-     "de": "f13:perna",
+     "de": "f14:perna",
      "som": "impacto",
      "volume": 0.8
     },
     {
-     "de": "f14:livre",
+     "de": "f15:livre",
      "som": "pop",
      "volume": 0.8
     },
     {
-     "de": "f15:sabe",
+     "de": "f16:sabe",
      "som": "clique",
      "volume": 0.7
     },
     {
-     "de": "f15:sabe+0.25",
+     "de": "f16:sabe+0.25",
      "som": "clique",
      "volume": 0.7
     },
     {
-     "de": "f15:sabe+0.5",
+     "de": "f16:sabe+0.5",
      "som": "clique",
      "volume": 0.7
     },
     {
-     "de": "f15:sabe+0.75",
+     "de": "f16:sabe+0.75",
      "som": "clique",
      "volume": 0.7
     },
     {
-     "de": "f15:ela",
+     "de": "f16:ela",
      "som": "ding",
      "volume": 0.8
     },
     {
-     "de": "f16:sem",
+     "de": "f17:sem",
      "som": "ding",
      "volume": 0.7
     },
     {
-     "de": "f17:parabens",
+     "de": "f18:parabens",
      "som": "ding",
      "volume": 0.9
+    },
+    {
+     "de": "f1:correndo",
+     "som": "whoosh",
+     "volume": 0.6
     }
    ],
    "efeitos": [
     {
-     "de": "f1:anda",
+     "de": "f1:correndo",
      "efeito": "linhas",
-     "ate": "f1:anda+0.6",
+     "ate": "f1:correndo+0.7",
      "cor": "#FFE14A"
     },
     {
-     "de": "f3:pedais+0.1",
+     "de": "f2:rolando",
+     "efeito": "linhas",
+     "ate": "f2:rolando+0.6",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f4:pedais+0.1",
      "efeito": "circular",
-     "ate": "f3:fim",
+     "ate": "f4:fim",
      "alvo": "pedal1"
     },
     {
-     "de": "f4:pouco",
+     "de": "f5:pouco",
      "efeito": "zoom_soco"
     },
     {
-     "de": "f5:gigante+0.1",
+     "de": "f6:gigante+0.1",
      "efeito": "circular",
-     "ate": "f5:fim",
+     "ate": "f6:fim",
      "alvo": "rg2_aro"
     },
     {
-     "de": "f6:cabeca",
+     "de": "f7:cabeca",
      "efeito": "flash",
-     "ate": "f6:cabeca+0.25"
+     "ate": "f7:cabeca+0.25"
     },
     {
-     "de": "f6:cabeca",
+     "de": "f7:cabeca",
      "efeito": "letreiro",
-     "ate": "f6:fim+0.4",
+     "ate": "f7:fim+0.4",
      "texto": "CUIDADO!",
      "cor": "#FF3B30",
      "altura": 0.2
     },
     {
-     "de": "f7:corrente+0.1",
+     "de": "f8:corrente+0.1",
      "efeito": "circular",
-     "ate": "f8",
+     "ate": "f9",
      "alvo": "coroa"
     },
     {
-     "de": "f8:voltas",
+     "de": "f9:voltas",
      "efeito": "linhas",
-     "ate": "f8:voltas+0.7",
+     "ate": "f9:voltas+0.7",
      "cor": "#FFE14A"
     },
     {
-     "de": "f9:chacoalha",
+     "de": "f10:chacoalha",
      "efeito": "zoom_soco"
     },
     {
-     "de": "f9:chacoalha",
+     "de": "f10:chacoalha",
      "efeito": "tremor",
-     "ate": "f9:fim",
+     "ate": "f10:fim",
      "intensidade": 0.5
     },
     {
-     "de": "f10:pneus+0.1",
+     "de": "f11:pneus+0.1",
      "efeito": "circular",
-     "ate": "f10:amortecem",
+     "ate": "f11:amortecem",
      "alvo": "pneu_t"
     },
     {
-     "de": "f11:pesada",
+     "de": "f12:pesada",
      "efeito": "zoom_soco"
     },
     {
-     "de": "f12:marchas+0.3",
+     "de": "f13:marchas+0.3",
      "efeito": "circular",
-     "ate": "f12:fim",
+     "ate": "f13:fim",
      "alvo": "catraca3"
     },
     {
-     "de": "f13:perna",
+     "de": "f14:perna",
      "efeito": "zoom_soco"
     },
     {
-     "de": "f14:livre+0.1",
+     "de": "f15:livre+0.1",
      "efeito": "circular",
-     "ate": "f14:fim",
+     "ate": "f15:fim",
      "alvo": "catraca"
     },
     {
-     "de": "f15:sabe",
+     "de": "f16:sabe",
      "efeito": "linhas",
-     "ate": "f15:sabe+0.9",
+     "ate": "f16:sabe+0.9",
      "cor": "#FFE14A"
     },
     {
-     "de": "f17:parabens",
+     "de": "f18:parabens",
      "efeito": "linhas",
-     "ate": "f17:fim+0.5",
+     "ate": "f18:fim+0.5",
      "intensidade": 0.6
     }
    ],
@@ -3189,62 +3239,62 @@
     {
      "alvo": "pedal1",
      "texto": "Pedal",
-     "de": "f3:pedais",
-     "ate": "f3:fim"
+     "de": "f4:pedais",
+     "ate": "f4:fim"
     },
     {
      "alvo": "rg2_cubo",
      "texto": "Roda gigante",
-     "de": "f5:gigante",
-     "ate": "f5:fim"
+     "de": "f6:gigante",
+     "ate": "f6:fim"
     },
     {
      "alvo": "corrente",
      "texto": "Corrente",
-     "de": "f7:corrente",
-     "ate": "f7:fim"
+     "de": "f8:corrente",
+     "ate": "f8:fim"
     },
     {
      "alvo": "coroa",
      "texto": "Coroa",
-     "de": "f8:coroa",
-     "ate": "f8:atras"
+     "de": "f9:coroa",
+     "ate": "f9:atras"
     },
     {
      "alvo": "catraca",
      "texto": "Catraca",
-     "de": "f8:catraca",
-     "ate": "f8:pedalada"
+     "de": "f9:catraca",
+     "ate": "f9:pedalada"
     },
     {
      "alvo": "pneu_t",
      "texto": "Pneu",
-     "de": "f10:pneus",
-     "ate": "f10:fim"
+     "de": "f11:pneus",
+     "ate": "f11:fim"
     },
     {
      "alvo": "catraca3",
      "texto": "Marchas",
-     "de": "f12:marchas",
-     "ate": "f12:fim"
+     "de": "f13:marchas",
+     "ate": "f13:fim"
     },
     {
      "alvo": "catraca",
      "texto": "Roda livre",
-     "de": "f14:livre",
-     "ate": "f14:fim"
+     "de": "f15:livre",
+     "ate": "f15:fim"
     }
    ],
    "cartoes": [
     {
-     "de": "f8:pedalada",
-     "ate": "f8:fim+0.3",
+     "de": "f9:pedalada",
+     "ate": "f9:fim+0.3",
      "grande": "TRANS­MISSÃO",
      "pequeno": "a corrente leva a força do pedal até a roda"
     },
     {
-     "de": "f16:primeira",
-     "ate": "f16:fim+0.3",
+     "de": "f17:primeira",
+     "ate": "f17:fim+0.3",
      "grande": "SEM PEDAL",
      "pequeno": "a primeira bicicleta andava empurrando o chão"
     }
