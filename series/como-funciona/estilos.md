@@ -62,7 +62,8 @@ Quem assiste constrói a coisa do zero. Começa pelo jeito mais simples que qual
 - **O fim é recompensa.** A coisa inteira aparece pronta e quem assistiu leva o crédito.
 
 ### O esqueleto (~1min20 com a voz)
-1. **"Se você..." (até 5 s).** A versão mais simples possível: uma ação concreta e o que acontece logo depois. Sem nome técnico, sem data.
+0. **Pergunta-desafio (primeira fala, até ~15 palavras; Iuri, 09/11).** O material da maquete e o desafio que o vídeo responde, com a maquete já fazendo a coisa no quadro 0: "Com uma barra de madeira e duas rodas, dá para ir mais rápido que CORRENDO?", "Uma mola e um ponteiro. Dá para fazer isso marcar a hora CERTINHA?". Sem dizer o nome do objeto.
+1. **"Se você..." (até 5 s, logo depois da pergunta).** A versão mais simples possível: uma ação concreta e o que acontece logo depois, algo que a maquete faz e que não é óbvio. Sem nome técnico, sem data.
    - "Se você construir uma parede no meio de um rio, a água vai começar a se acumular atrás dela."
    - "Se você cavar um buraco no quintal e pular dentro quando a bomba cair, você tem um bunker."
 2. **Degraus (4 a 6).** Cada degrau tem duas partes, com uma ou duas falas curtas cada:

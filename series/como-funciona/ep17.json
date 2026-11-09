@@ -1565,108 +1565,113 @@
   {
    "id": "f1",
    "quem": "tito",
-   "texto": "Se você enrolar uma mola bem apertada, ela gira um ponteiro e marca o tempo.",
+   "texto": "Uma mola e um ponteiro. Dá para fazer isso marcar a hora CERTINHA?",
    "tom": "animado"
   },
   {
    "id": "f2",
+   "quem": "tito",
+   "texto": "Se você enrolar a mola bem apertada e soltar, ela gira o ponteiro."
+  },
+  {
+   "id": "f3",
    "quem": "tito",
    "texto": "MAS ela solta tudo de uma vez: o ponteiro DISPARA, e em segundos acabou.",
    "tom": "tenso",
    "pausa_depois": 0.3
   },
   {
-   "id": "f3",
+   "id": "f4",
    "quem": "tito",
    "texto": "Então, você coloca um ESCAPE: uma roda de dentes e uma âncora que trava a roda."
   },
   {
-   "id": "f4",
+   "id": "f5",
    "quem": "tito",
    "texto": "A âncora balança, solta um dente e trava o próximo. É o TIQUE-TAQUE!",
    "tom": "animado",
    "pausa_depois": 0.3
   },
   {
-   "id": "f5",
+   "id": "f6",
    "quem": "tito",
    "texto": "SÓ QUE a âncora sozinha não tem ritmo. Com a mola cheia, o ponteiro CORRE.",
    "tom": "tenso"
   },
   {
-   "id": "f6",
+   "id": "f7",
    "quem": "tito",
    "texto": "Com a mola fraca, ele se ARRASTA.",
    "pausa_depois": 0.3
   },
   {
-   "id": "f7",
+   "id": "f8",
    "quem": "tito",
    "texto": "Então, você coloca um BALANÇO: uma rodinha presa numa mola fininha, que vai e volta."
   },
   {
-   "id": "f8",
+   "id": "f9",
    "quem": "tito",
    "texto": "Cada ida e volta leva SEMPRE o mesmo tempo, e é ele que manda a âncora soltar.",
    "pausa_depois": 0.3
   },
   {
-   "id": "f9",
+   "id": "f10",
    "quem": "tito",
    "texto": "MAS ele vai e volta o dia inteiro, e o esfrega-esfrega GASTA os furinhos dos eixos.",
    "tom": "tenso",
    "pausa_depois": 0.3
   },
   {
-   "id": "f10",
+   "id": "f11",
    "quem": "tito",
    "texto": "Então, você coloca RUBIS nos furos: pedrinhas tão duras e lisas que quase não gastam."
   },
   {
-   "id": "f11",
+   "id": "f12",
    "quem": "tito",
    "texto": "Sim, rubi de VERDADE, só que feito em laboratório.",
    "tom": "animado",
    "pausa_depois": 0.3
   },
   {
-   "id": "f12",
+   "id": "f13",
    "quem": "tito",
    "texto": "SÓ QUE um ponteiro só não mostra a hora E os minutos.",
    "tom": "tenso"
   },
   {
-   "id": "f13",
+   "id": "f14",
    "quem": "tito",
    "texto": "Então, você coloca ENGRENAGENS e um ponteiro curto."
   },
   {
-   "id": "f14",
+   "id": "f15",
    "quem": "tito",
    "texto": "Enquanto o comprido dá doze voltas, o curto dá só UMA.",
    "pausa_depois": 0.3
   },
   {
-   "id": "f15",
+   "id": "f16",
    "quem": "tito",
    "texto": "E SE ninguém der corda? A mola acaba e o ponteiro PARA.",
    "tom": "tenso",
    "pausa_depois": 0.3
   },
   {
-   "id": "f16",
+   "id": "f17",
    "quem": "tito",
    "texto": "Então, você coloca um peso que gira quando você mexe o braço, e ele dá corda SOZINHO.",
    "pausa_depois": 0.3
   },
   {
-   "id": "f17",
+   "id": "f18",
    "quem": "tito",
    "texto": "E aquele tique-taque? É a mola do começo sendo solta, um dentinho de cada vez.",
    "pausa_depois": 0.3
   },
   {
-   "id": "f18",
+   "id": "f19",
    "quem": "tito",
    "texto": "Parabéns! Você construiu um RELÓGIO!",
    "tom": "animado"
@@ -1687,7 +1692,7 @@
    "curiosidades"
   ],
   "comentario": "Eu achava que rubi de relógio era só enfeite. Você sabia que ele está lá para as peças não gastarem?",
-  "capa": "f4:tiquetaque+0.2"
+  "capa": "f5:tiquetaque+0.2"
  },
  "cenas": [
   {
@@ -1720,8 +1725,8 @@
      "raio": 0.04,
      "altura": 0.15,
      "quantas": 8,
-     "aparece": "f9:gasta",
-     "some": "f10:rubis"
+     "aparece": "f10:gasta",
+     "some": "f11:rubis"
     },
     {
      "tipo": "particulas",
@@ -1734,7 +1739,7 @@
      "raio": 1.4,
      "altura": 1.2,
      "quantas": 60,
-     "aparece": "f18:parabens"
+     "aparece": "f19:parabens"
     }
    ],
    "animacoes": [
@@ -1742,7 +1747,7 @@
      "peca": "piv_min",
      "faz": "girar_para",
      "de": "inicio-1.5",
-     "ate": "f2:dispara",
+     "ate": "f3:dispara",
      "eixo": "z",
      "angulo": -360
     },
@@ -1750,619 +1755,547 @@
      "peca": "piv_mola",
      "faz": "girar",
      "de": "inicio",
-     "ate": "f2:dispara",
+     "ate": "f3:dispara",
      "eixo": "z",
      "voltas": 0.18
     },
     {
      "peca": "piv_min",
      "faz": "girar_para",
-     "de": "f2:dispara",
-     "ate": "f2:acabou",
+     "de": "f3:dispara",
+     "ate": "f3:acabou",
      "eixo": "z",
      "angulo": -2160
     },
     {
      "peca": "piv_mola",
      "faz": "girar",
-     "de": "f2:dispara",
-     "ate": "f2:acabou",
+     "de": "f3:dispara",
+     "ate": "f3:acabou",
      "eixo": "z",
      "voltas": 1.8
     },
     {
      "peca": "mola_espiral",
      "faz": "tremer",
-     "de": "f2:dispara",
-     "ate": "f2:acabou",
+     "de": "f3:dispara",
+     "ate": "f3:acabou",
      "intensidade": 0.6
     },
     {
      "peca": "piv_esc",
      "faz": "aparecer",
-     "de": "f3:escape"
+     "de": "f4:escape"
     },
     {
      "peca": "roda_esc",
      "faz": "aparecer",
-     "de": "f3:escape"
+     "de": "f4:escape"
     },
     {
      "peca": "piv_anc",
      "faz": "aparecer",
-     "de": "f3:ancora"
+     "de": "f4:ancora"
     },
     {
      "peca": "ancora",
      "faz": "aparecer",
-     "de": "f3:ancora"
+     "de": "f4:ancora"
     },
     {
      "peca": "ancora_e",
      "faz": "aparecer",
-     "de": "f3:ancora"
+     "de": "f4:ancora"
     },
     {
      "peca": "ancora_d",
      "faz": "aparecer",
-     "de": "f3:ancora"
+     "de": "f4:ancora"
     },
     {
      "peca": "ancora_haste",
      "faz": "aparecer",
-     "de": "f3:ancora"
+     "de": "f4:ancora"
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f3:trava",
-     "ate": "f3:trava+0.15",
+     "de": "f4:trava",
+     "ate": "f4:trava+0.15",
      "eixo": "z",
      "angulo": 10
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f3:fim",
-     "ate": "f3:fim+0.15",
+     "de": "f4:fim",
+     "ate": "f4:fim+0.15",
      "eixo": "z",
      "angulo": -10
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f4:balanca",
-     "ate": "f4:balanca+0.10",
+     "de": "f5:balanca",
+     "ate": "f5:balanca+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f4:balanca+0.03",
-     "ate": "f4:balanca+0.13",
+     "de": "f5:balanca+0.03",
+     "ate": "f5:balanca+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f4:solta",
-     "ate": "f4:solta+0.10",
+     "de": "f5:solta",
+     "ate": "f5:solta+0.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f4:solta+0.03",
-     "ate": "f4:solta+0.13",
+     "de": "f5:solta+0.03",
+     "ate": "f5:solta+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f4:um",
-     "ate": "f4:um+0.10",
+     "de": "f5:um",
+     "ate": "f5:um+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f4:um+0.03",
-     "ate": "f4:um+0.13",
+     "de": "f5:um+0.03",
+     "ate": "f5:um+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f4:dente",
-     "ate": "f4:dente+0.10",
+     "de": "f5:dente",
+     "ate": "f5:dente+0.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f4:dente+0.03",
-     "ate": "f4:dente+0.13",
+     "de": "f5:dente+0.03",
+     "ate": "f5:dente+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f4:e",
-     "ate": "f4:e+0.10",
+     "de": "f5:e",
+     "ate": "f5:e+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f4:e+0.03",
-     "ate": "f4:e+0.13",
+     "de": "f5:e+0.03",
+     "ate": "f5:e+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f4:trava",
-     "ate": "f4:trava+0.10",
+     "de": "f5:trava",
+     "ate": "f5:trava+0.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f4:trava+0.03",
-     "ate": "f4:trava+0.13",
+     "de": "f5:trava+0.03",
+     "ate": "f5:trava+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f4:o",
-     "ate": "f4:o+0.10",
+     "de": "f5:o",
+     "ate": "f5:o+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f4:o+0.03",
-     "ate": "f4:o+0.13",
+     "de": "f5:o+0.03",
+     "ate": "f5:o+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f4:proximo",
-     "ate": "f4:proximo+0.10",
+     "de": "f5:proximo",
+     "ate": "f5:proximo+0.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f4:proximo+0.03",
-     "ate": "f4:proximo+0.13",
+     "de": "f5:proximo+0.03",
+     "ate": "f5:proximo+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_mola",
      "faz": "girar",
-     "de": "f4:balanca",
-     "ate": "f5",
+     "de": "f5:balanca",
+     "ate": "f6",
      "eixo": "z",
      "voltas": 0.03
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f5:corre+0.00",
-     "ate": "f5:corre+0.10",
+     "de": "f6:corre+0.00",
+     "ate": "f6:corre+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f5:corre+0.03",
-     "ate": "f5:corre+0.13",
+     "de": "f6:corre+0.03",
+     "ate": "f6:corre+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f5:corre+0.11",
-     "ate": "f5:corre+0.21",
+     "de": "f6:corre+0.11",
+     "ate": "f6:corre+0.21",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f5:corre+0.14",
-     "ate": "f5:corre+0.24",
+     "de": "f6:corre+0.14",
+     "ate": "f6:corre+0.24",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f5:corre+0.22",
-     "ate": "f5:corre+0.32",
+     "de": "f6:corre+0.22",
+     "ate": "f6:corre+0.32",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f5:corre+0.25",
-     "ate": "f5:corre+0.35",
+     "de": "f6:corre+0.25",
+     "ate": "f6:corre+0.35",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f5:corre+0.33",
-     "ate": "f5:corre+0.43",
+     "de": "f6:corre+0.33",
+     "ate": "f6:corre+0.43",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f5:corre+0.36",
-     "ate": "f5:corre+0.46",
+     "de": "f6:corre+0.36",
+     "ate": "f6:corre+0.46",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f5:corre+0.44",
-     "ate": "f5:corre+0.54",
+     "de": "f6:corre+0.44",
+     "ate": "f6:corre+0.54",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f5:corre+0.47",
-     "ate": "f5:corre+0.57",
+     "de": "f6:corre+0.47",
+     "ate": "f6:corre+0.57",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f5:corre+0.55",
-     "ate": "f5:corre+0.65",
+     "de": "f6:corre+0.55",
+     "ate": "f6:corre+0.65",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f5:corre+0.58",
-     "ate": "f5:corre+0.68",
+     "de": "f6:corre+0.58",
+     "ate": "f6:corre+0.68",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f5:corre+0.66",
-     "ate": "f5:corre+0.76",
+     "de": "f6:corre+0.66",
+     "ate": "f6:corre+0.76",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f5:corre+0.69",
-     "ate": "f5:corre+0.79",
+     "de": "f6:corre+0.69",
+     "ate": "f6:corre+0.79",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f5:corre+0.77",
-     "ate": "f5:corre+0.87",
+     "de": "f6:corre+0.77",
+     "ate": "f6:corre+0.87",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f5:corre+0.80",
-     "ate": "f5:corre+0.90",
+     "de": "f6:corre+0.80",
+     "ate": "f6:corre+0.90",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f5:corre+0.88",
-     "ate": "f5:corre+0.98",
+     "de": "f6:corre+0.88",
+     "ate": "f6:corre+0.98",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f5:corre+0.91",
-     "ate": "f5:corre+1.01",
+     "de": "f6:corre+0.91",
+     "ate": "f6:corre+1.01",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f5:corre+0.99",
-     "ate": "f5:corre+1.09",
+     "de": "f6:corre+0.99",
+     "ate": "f6:corre+1.09",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f5:corre+1.02",
-     "ate": "f5:corre+1.12",
+     "de": "f6:corre+1.02",
+     "ate": "f6:corre+1.12",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f5:corre+1.10",
-     "ate": "f5:corre+1.20",
+     "de": "f6:corre+1.10",
+     "ate": "f6:corre+1.20",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f5:corre+1.13",
-     "ate": "f5:corre+1.23",
+     "de": "f6:corre+1.13",
+     "ate": "f6:corre+1.23",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f5:corre+1.21",
-     "ate": "f5:corre+1.31",
+     "de": "f6:corre+1.21",
+     "ate": "f6:corre+1.31",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f5:corre+1.24",
-     "ate": "f5:corre+1.34",
+     "de": "f6:corre+1.24",
+     "ate": "f6:corre+1.34",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_min",
      "faz": "girar_para",
-     "de": "f5:corre",
-     "ate": "f5:corre+1.3",
+     "de": "f6:corre",
+     "ate": "f6:corre+1.3",
      "eixo": "z",
      "angulo": -360
     },
     {
      "peca": "piv_anc",
      "faz": "tremer",
-     "de": "f5:sozinha",
-     "ate": "f5:corre",
+     "de": "f6:sozinha",
+     "ate": "f6:corre",
      "intensidade": 0.5
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f6:fraca",
-     "ate": "f6:fraca+0.10",
+     "de": "f7:fraca",
+     "ate": "f7:fraca+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f6:fraca+0.03",
-     "ate": "f6:fraca+0.13",
+     "de": "f7:fraca+0.03",
+     "ate": "f7:fraca+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f6:fraca+0.75",
-     "ate": "f6:fraca+0.85",
+     "de": "f7:fraca+0.75",
+     "ate": "f7:fraca+0.85",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f6:fraca+0.78",
-     "ate": "f6:fraca+0.88",
+     "de": "f7:fraca+0.78",
+     "ate": "f7:fraca+0.88",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f6:arrasta+0.3",
-     "ate": "f6:arrasta+0.40",
+     "de": "f7:arrasta+0.3",
+     "ate": "f7:arrasta+0.40",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f6:arrasta+0.33",
-     "ate": "f6:arrasta+0.43",
+     "de": "f7:arrasta+0.33",
+     "ate": "f7:arrasta+0.43",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f6:arrasta+1.0",
-     "ate": "f6:arrasta+1.10",
+     "de": "f7:arrasta+1.0",
+     "ate": "f7:arrasta+1.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f6:arrasta+1.03",
-     "ate": "f6:arrasta+1.13",
+     "de": "f7:arrasta+1.03",
+     "ate": "f7:arrasta+1.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_min",
      "faz": "girar_para",
-     "de": "f6:fraca",
-     "ate": "f7",
+     "de": "f7:fraca",
+     "ate": "f8",
      "eixo": "z",
      "angulo": -25
     },
     {
      "peca": "piv_bal",
      "faz": "aparecer",
-     "de": "f7:balanco"
+     "de": "f8:balanco"
     },
     {
      "peca": "balanco",
      "faz": "aparecer",
-     "de": "f7:balanco"
+     "de": "f8:balanco"
     },
     {
      "peca": "bal_raio1",
      "faz": "aparecer",
-     "de": "f7:balanco"
+     "de": "f8:balanco"
     },
     {
      "peca": "bal_raio2",
      "faz": "aparecer",
-     "de": "f7:balanco"
+     "de": "f8:balanco"
     },
     {
      "peca": "cabelo",
      "faz": "aparecer",
-     "de": "f7:mola"
+     "de": "f8:mola"
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f7:vai",
-     "ate": "f7:vai+0.10",
+     "de": "f8:vai",
+     "ate": "f8:vai+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f7:vai+0.03",
-     "ate": "f7:vai+0.13",
+     "de": "f8:vai+0.03",
+     "ate": "f8:vai+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f7:vai",
-     "ate": "f7:e",
-     "eixo": "z",
-     "angulo": 200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f7:e",
-     "ate": "f7:e+0.10",
-     "eixo": "z",
-     "angulo": -12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f7:e+0.03",
-     "ate": "f7:e+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f7:e",
-     "ate": "f8",
-     "eixo": "z",
-     "angulo": -200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f8:cada",
-     "ate": "f8:cada+0.10",
-     "eixo": "z",
-     "angulo": 12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f8:cada+0.03",
-     "ate": "f8:cada+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f8:cada",
-     "ate": "f8:ida",
-     "eixo": "z",
-     "angulo": 200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f8:ida",
-     "ate": "f8:ida+0.10",
-     "eixo": "z",
-     "angulo": -12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f8:ida+0.03",
-     "ate": "f8:ida+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f8:ida",
+     "de": "f8:vai",
      "ate": "f8:e",
      "eixo": "z",
-     "angulo": -200
+     "angulo": 200
     },
     {
      "peca": "piv_anc",
@@ -2370,7 +2303,7 @@
      "de": "f8:e",
      "ate": "f8:e+0.10",
      "eixo": "z",
-     "angulo": 12
+     "angulo": -12
     },
     {
      "peca": "piv_esc",
@@ -2384,294 +2317,222 @@
      "peca": "piv_bal",
      "faz": "girar_para",
      "de": "f8:e",
-     "ate": "f8:volta",
-     "eixo": "z",
-     "angulo": 200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f8:volta",
-     "ate": "f8:volta+0.10",
-     "eixo": "z",
-     "angulo": -12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f8:volta+0.03",
-     "ate": "f8:volta+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f8:volta",
-     "ate": "f8:leva",
+     "ate": "f9",
      "eixo": "z",
      "angulo": -200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f8:leva",
-     "ate": "f8:leva+0.10",
+     "de": "f9:cada",
+     "ate": "f9:cada+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f8:leva+0.03",
-     "ate": "f8:leva+0.13",
+     "de": "f9:cada+0.03",
+     "ate": "f9:cada+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f8:leva",
-     "ate": "f8:sempre",
+     "de": "f9:cada",
+     "ate": "f9:ida",
      "eixo": "z",
      "angulo": 200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f8:sempre",
-     "ate": "f8:sempre+0.10",
+     "de": "f9:ida",
+     "ate": "f9:ida+0.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f8:sempre+0.03",
-     "ate": "f8:sempre+0.13",
+     "de": "f9:ida+0.03",
+     "ate": "f9:ida+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f8:sempre",
-     "ate": "f8:o",
+     "de": "f9:ida",
+     "ate": "f9:e",
      "eixo": "z",
      "angulo": -200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f8:o",
-     "ate": "f8:o+0.10",
+     "de": "f9:e",
+     "ate": "f9:e+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f8:o+0.03",
-     "ate": "f8:o+0.13",
+     "de": "f9:e+0.03",
+     "ate": "f9:e+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f8:o",
-     "ate": "f8:mesmo",
+     "de": "f9:e",
+     "ate": "f9:volta",
      "eixo": "z",
      "angulo": 200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f8:mesmo",
-     "ate": "f8:mesmo+0.10",
+     "de": "f9:volta",
+     "ate": "f9:volta+0.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f8:mesmo+0.03",
-     "ate": "f8:mesmo+0.13",
+     "de": "f9:volta+0.03",
+     "ate": "f9:volta+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f8:mesmo",
-     "ate": "f8:tempo",
+     "de": "f9:volta",
+     "ate": "f9:leva",
      "eixo": "z",
      "angulo": -200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f8:tempo",
-     "ate": "f8:tempo+0.10",
+     "de": "f9:leva",
+     "ate": "f9:leva+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f8:tempo+0.03",
-     "ate": "f8:tempo+0.13",
+     "de": "f9:leva+0.03",
+     "ate": "f9:leva+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f8:tempo",
-     "ate": "f8:ele",
+     "de": "f9:leva",
+     "ate": "f9:sempre",
      "eixo": "z",
      "angulo": 200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f8:ele",
-     "ate": "f8:ele+0.10",
+     "de": "f9:sempre",
+     "ate": "f9:sempre+0.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f8:ele+0.03",
-     "ate": "f8:ele+0.13",
+     "de": "f9:sempre+0.03",
+     "ate": "f9:sempre+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f8:ele",
-     "ate": "f8:que",
+     "de": "f9:sempre",
+     "ate": "f9:o",
      "eixo": "z",
      "angulo": -200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f8:que",
-     "ate": "f8:que+0.10",
+     "de": "f9:o",
+     "ate": "f9:o+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f8:que+0.03",
-     "ate": "f8:que+0.13",
+     "de": "f9:o+0.03",
+     "ate": "f9:o+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f8:que",
-     "ate": "f8:manda",
+     "de": "f9:o",
+     "ate": "f9:mesmo",
      "eixo": "z",
      "angulo": 200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f8:manda",
-     "ate": "f8:manda+0.10",
+     "de": "f9:mesmo",
+     "ate": "f9:mesmo+0.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f8:manda+0.03",
-     "ate": "f8:manda+0.13",
+     "de": "f9:mesmo+0.03",
+     "ate": "f9:mesmo+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f8:manda",
-     "ate": "f8:a",
+     "de": "f9:mesmo",
+     "ate": "f9:tempo",
      "eixo": "z",
      "angulo": -200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f8:a",
-     "ate": "f8:a+0.10",
+     "de": "f9:tempo",
+     "ate": "f9:tempo+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f8:a+0.03",
-     "ate": "f8:a+0.13",
+     "de": "f9:tempo+0.03",
+     "ate": "f9:tempo+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f8:a",
-     "ate": "f8:ancora",
-     "eixo": "z",
-     "angulo": 200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f8:ancora",
-     "ate": "f8:ancora+0.10",
-     "eixo": "z",
-     "angulo": -12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f8:ancora+0.03",
-     "ate": "f8:ancora+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f8:ancora",
-     "ate": "f8:fim+0.25",
-     "eixo": "z",
-     "angulo": -200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f9:mas",
-     "ate": "f9:mas+0.10",
-     "eixo": "z",
-     "angulo": 12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f9:mas+0.03",
-     "ate": "f9:mas+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f9:mas",
+     "de": "f9:tempo",
      "ate": "f9:ele",
      "eixo": "z",
      "angulo": 200
@@ -2696,294 +2557,102 @@
      "peca": "piv_bal",
      "faz": "girar_para",
      "de": "f9:ele",
-     "ate": "f9:vai",
+     "ate": "f9:que",
      "eixo": "z",
      "angulo": -200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f9:vai",
-     "ate": "f9:vai+0.10",
+     "de": "f9:que",
+     "ate": "f9:que+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f9:vai+0.03",
-     "ate": "f9:vai+0.13",
+     "de": "f9:que+0.03",
+     "ate": "f9:que+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f9:vai",
-     "ate": "f9:e",
+     "de": "f9:que",
+     "ate": "f9:manda",
      "eixo": "z",
      "angulo": 200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f9:e",
-     "ate": "f9:e+0.10",
+     "de": "f9:manda",
+     "ate": "f9:manda+0.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f9:e+0.03",
-     "ate": "f9:e+0.13",
+     "de": "f9:manda+0.03",
+     "ate": "f9:manda+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f9:e",
-     "ate": "f9:volta",
+     "de": "f9:manda",
+     "ate": "f9:a",
      "eixo": "z",
      "angulo": -200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f9:volta",
-     "ate": "f9:volta+0.10",
+     "de": "f9:a",
+     "ate": "f9:a+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f9:volta+0.03",
-     "ate": "f9:volta+0.13",
+     "de": "f9:a+0.03",
+     "ate": "f9:a+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f9:volta",
-     "ate": "f9:o",
+     "de": "f9:a",
+     "ate": "f9:ancora",
      "eixo": "z",
      "angulo": 200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f9:o",
-     "ate": "f9:o+0.10",
+     "de": "f9:ancora",
+     "ate": "f9:ancora+0.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f9:o+0.03",
-     "ate": "f9:o+0.13",
+     "de": "f9:ancora+0.03",
+     "ate": "f9:ancora+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f9:o",
-     "ate": "f9:dia",
-     "eixo": "z",
-     "angulo": -200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f9:dia",
-     "ate": "f9:dia+0.10",
-     "eixo": "z",
-     "angulo": 12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f9:dia+0.03",
-     "ate": "f9:dia+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f9:dia",
-     "ate": "f9:inteiro",
-     "eixo": "z",
-     "angulo": 200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f9:inteiro",
-     "ate": "f9:inteiro+0.10",
-     "eixo": "z",
-     "angulo": -12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f9:inteiro+0.03",
-     "ate": "f9:inteiro+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f9:inteiro",
-     "ate": "f9:esfregaesfrega",
-     "eixo": "z",
-     "angulo": -200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f9:esfregaesfrega",
-     "ate": "f9:esfregaesfrega+0.10",
-     "eixo": "z",
-     "angulo": 12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f9:esfregaesfrega+0.03",
-     "ate": "f9:esfregaesfrega+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f9:esfregaesfrega",
-     "ate": "f9:gasta",
-     "eixo": "z",
-     "angulo": 200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f9:gasta",
-     "ate": "f9:gasta+0.10",
-     "eixo": "z",
-     "angulo": -12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f9:gasta+0.03",
-     "ate": "f9:gasta+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f9:gasta",
-     "ate": "f9:os",
-     "eixo": "z",
-     "angulo": -200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f9:os",
-     "ate": "f9:os+0.10",
-     "eixo": "z",
-     "angulo": 12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f9:os+0.03",
-     "ate": "f9:os+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f9:os",
-     "ate": "f9:furinhos",
-     "eixo": "z",
-     "angulo": 200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f9:furinhos",
-     "ate": "f9:furinhos+0.10",
-     "eixo": "z",
-     "angulo": -12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f9:furinhos+0.03",
-     "ate": "f9:furinhos+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f9:furinhos",
-     "ate": "f9:dos",
-     "eixo": "z",
-     "angulo": -200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f9:dos",
-     "ate": "f9:dos+0.10",
-     "eixo": "z",
-     "angulo": 12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f9:dos+0.03",
-     "ate": "f9:dos+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f9:dos",
-     "ate": "f9:eixos",
-     "eixo": "z",
-     "angulo": 200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f9:eixos",
-     "ate": "f9:eixos+0.10",
-     "eixo": "z",
-     "angulo": -12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f9:eixos+0.03",
-     "ate": "f9:eixos+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f9:eixos",
+     "de": "f9:ancora",
      "ate": "f9:fim+0.25",
      "eixo": "z",
      "angulo": -200
@@ -2991,215 +2660,71 @@
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f10:entao",
-     "ate": "f10:entao+0.10",
+     "de": "f10:mas",
+     "ate": "f10:mas+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f10:entao+0.03",
-     "ate": "f10:entao+0.13",
+     "de": "f10:mas+0.03",
+     "ate": "f10:mas+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f10:entao",
-     "ate": "f10:voce",
+     "de": "f10:mas",
+     "ate": "f10:ele",
      "eixo": "z",
      "angulo": 200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f10:voce",
-     "ate": "f10:voce+0.10",
+     "de": "f10:ele",
+     "ate": "f10:ele+0.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f10:voce+0.03",
-     "ate": "f10:voce+0.13",
+     "de": "f10:ele+0.03",
+     "ate": "f10:ele+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f10:voce",
-     "ate": "f10:coloca",
+     "de": "f10:ele",
+     "ate": "f10:vai",
      "eixo": "z",
      "angulo": -200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f10:coloca",
-     "ate": "f10:coloca+0.10",
+     "de": "f10:vai",
+     "ate": "f10:vai+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f10:coloca+0.03",
-     "ate": "f10:coloca+0.13",
+     "de": "f10:vai+0.03",
+     "ate": "f10:vai+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f10:coloca",
-     "ate": "f10:rubis",
-     "eixo": "z",
-     "angulo": 200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f10:rubis",
-     "ate": "f10:rubis+0.10",
-     "eixo": "z",
-     "angulo": -12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f10:rubis+0.03",
-     "ate": "f10:rubis+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f10:rubis",
-     "ate": "f10:nos",
-     "eixo": "z",
-     "angulo": -200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f10:nos",
-     "ate": "f10:nos+0.10",
-     "eixo": "z",
-     "angulo": 12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f10:nos+0.03",
-     "ate": "f10:nos+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f10:nos",
-     "ate": "f10:furos",
-     "eixo": "z",
-     "angulo": 200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f10:furos",
-     "ate": "f10:furos+0.10",
-     "eixo": "z",
-     "angulo": -12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f10:furos+0.03",
-     "ate": "f10:furos+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f10:furos",
-     "ate": "f10:pedrinhas",
-     "eixo": "z",
-     "angulo": -200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f10:pedrinhas",
-     "ate": "f10:pedrinhas+0.10",
-     "eixo": "z",
-     "angulo": 12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f10:pedrinhas+0.03",
-     "ate": "f10:pedrinhas+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f10:pedrinhas",
-     "ate": "f10:tao",
-     "eixo": "z",
-     "angulo": 200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f10:tao",
-     "ate": "f10:tao+0.10",
-     "eixo": "z",
-     "angulo": -12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f10:tao+0.03",
-     "ate": "f10:tao+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f10:tao",
-     "ate": "f10:duras",
-     "eixo": "z",
-     "angulo": -200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f10:duras",
-     "ate": "f10:duras+0.10",
-     "eixo": "z",
-     "angulo": 12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f10:duras+0.03",
-     "ate": "f10:duras+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f10:duras",
+     "de": "f10:vai",
      "ate": "f10:e",
      "eixo": "z",
      "angulo": 200
@@ -3224,102 +2749,246 @@
      "peca": "piv_bal",
      "faz": "girar_para",
      "de": "f10:e",
-     "ate": "f10:lisas",
+     "ate": "f10:volta",
      "eixo": "z",
      "angulo": -200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f10:lisas",
-     "ate": "f10:lisas+0.10",
+     "de": "f10:volta",
+     "ate": "f10:volta+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f10:lisas+0.03",
-     "ate": "f10:lisas+0.13",
+     "de": "f10:volta+0.03",
+     "ate": "f10:volta+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f10:lisas",
-     "ate": "f10:que",
+     "de": "f10:volta",
+     "ate": "f10:o",
      "eixo": "z",
      "angulo": 200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f10:que",
-     "ate": "f10:que+0.10",
+     "de": "f10:o",
+     "ate": "f10:o+0.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f10:que+0.03",
-     "ate": "f10:que+0.13",
+     "de": "f10:o+0.03",
+     "ate": "f10:o+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f10:que",
-     "ate": "f10:quase",
+     "de": "f10:o",
+     "ate": "f10:dia",
      "eixo": "z",
      "angulo": -200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f10:quase",
-     "ate": "f10:quase+0.10",
+     "de": "f10:dia",
+     "ate": "f10:dia+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f10:quase+0.03",
-     "ate": "f10:quase+0.13",
+     "de": "f10:dia+0.03",
+     "ate": "f10:dia+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f10:quase",
-     "ate": "f10:nao",
+     "de": "f10:dia",
+     "ate": "f10:inteiro",
      "eixo": "z",
      "angulo": 200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f10:nao",
-     "ate": "f10:nao+0.10",
+     "de": "f10:inteiro",
+     "ate": "f10:inteiro+0.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f10:nao+0.03",
-     "ate": "f10:nao+0.13",
+     "de": "f10:inteiro+0.03",
+     "ate": "f10:inteiro+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f10:nao",
+     "de": "f10:inteiro",
+     "ate": "f10:esfregaesfrega",
+     "eixo": "z",
+     "angulo": -200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f10:esfregaesfrega",
+     "ate": "f10:esfregaesfrega+0.10",
+     "eixo": "z",
+     "angulo": 12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f10:esfregaesfrega+0.03",
+     "ate": "f10:esfregaesfrega+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f10:esfregaesfrega",
+     "ate": "f10:gasta",
+     "eixo": "z",
+     "angulo": 200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f10:gasta",
+     "ate": "f10:gasta+0.10",
+     "eixo": "z",
+     "angulo": -12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f10:gasta+0.03",
+     "ate": "f10:gasta+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f10:gasta",
+     "ate": "f10:os",
+     "eixo": "z",
+     "angulo": -200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f10:os",
+     "ate": "f10:os+0.10",
+     "eixo": "z",
+     "angulo": 12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f10:os+0.03",
+     "ate": "f10:os+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f10:os",
+     "ate": "f10:furinhos",
+     "eixo": "z",
+     "angulo": 200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f10:furinhos",
+     "ate": "f10:furinhos+0.10",
+     "eixo": "z",
+     "angulo": -12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f10:furinhos+0.03",
+     "ate": "f10:furinhos+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f10:furinhos",
+     "ate": "f10:dos",
+     "eixo": "z",
+     "angulo": -200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f10:dos",
+     "ate": "f10:dos+0.10",
+     "eixo": "z",
+     "angulo": 12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f10:dos+0.03",
+     "ate": "f10:dos+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f10:dos",
+     "ate": "f10:eixos",
+     "eixo": "z",
+     "angulo": 200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f10:eixos",
+     "ate": "f10:eixos+0.10",
+     "eixo": "z",
+     "angulo": -12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f10:eixos+0.03",
+     "ate": "f10:eixos+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f10:eixos",
      "ate": "f10:fim+0.25",
      "eixo": "z",
      "angulo": -200
@@ -3327,119 +2996,263 @@
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f11:sim",
-     "ate": "f11:sim+0.10",
+     "de": "f11:entao",
+     "ate": "f11:entao+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f11:sim+0.03",
-     "ate": "f11:sim+0.13",
+     "de": "f11:entao+0.03",
+     "ate": "f11:entao+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f11:sim",
-     "ate": "f11:rubi",
+     "de": "f11:entao",
+     "ate": "f11:voce",
      "eixo": "z",
      "angulo": 200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f11:rubi",
-     "ate": "f11:rubi+0.10",
+     "de": "f11:voce",
+     "ate": "f11:voce+0.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f11:rubi+0.03",
-     "ate": "f11:rubi+0.13",
+     "de": "f11:voce+0.03",
+     "ate": "f11:voce+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f11:rubi",
-     "ate": "f11:de",
+     "de": "f11:voce",
+     "ate": "f11:coloca",
      "eixo": "z",
      "angulo": -200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f11:de",
-     "ate": "f11:de+0.10",
+     "de": "f11:coloca",
+     "ate": "f11:coloca+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f11:de+0.03",
-     "ate": "f11:de+0.13",
+     "de": "f11:coloca+0.03",
+     "ate": "f11:coloca+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f11:de",
-     "ate": "f11:verdade",
+     "de": "f11:coloca",
+     "ate": "f11:rubis",
      "eixo": "z",
      "angulo": 200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f11:verdade",
-     "ate": "f11:verdade+0.10",
+     "de": "f11:rubis",
+     "ate": "f11:rubis+0.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f11:verdade+0.03",
-     "ate": "f11:verdade+0.13",
+     "de": "f11:rubis+0.03",
+     "ate": "f11:rubis+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f11:verdade",
-     "ate": "f11:so",
+     "de": "f11:rubis",
+     "ate": "f11:nos",
      "eixo": "z",
      "angulo": -200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f11:so",
-     "ate": "f11:so+0.10",
+     "de": "f11:nos",
+     "ate": "f11:nos+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f11:so+0.03",
-     "ate": "f11:so+0.13",
+     "de": "f11:nos+0.03",
+     "ate": "f11:nos+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f11:so",
+     "de": "f11:nos",
+     "ate": "f11:furos",
+     "eixo": "z",
+     "angulo": 200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f11:furos",
+     "ate": "f11:furos+0.10",
+     "eixo": "z",
+     "angulo": -12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f11:furos+0.03",
+     "ate": "f11:furos+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f11:furos",
+     "ate": "f11:pedrinhas",
+     "eixo": "z",
+     "angulo": -200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f11:pedrinhas",
+     "ate": "f11:pedrinhas+0.10",
+     "eixo": "z",
+     "angulo": 12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f11:pedrinhas+0.03",
+     "ate": "f11:pedrinhas+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f11:pedrinhas",
+     "ate": "f11:tao",
+     "eixo": "z",
+     "angulo": 200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f11:tao",
+     "ate": "f11:tao+0.10",
+     "eixo": "z",
+     "angulo": -12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f11:tao+0.03",
+     "ate": "f11:tao+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f11:tao",
+     "ate": "f11:duras",
+     "eixo": "z",
+     "angulo": -200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f11:duras",
+     "ate": "f11:duras+0.10",
+     "eixo": "z",
+     "angulo": 12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f11:duras+0.03",
+     "ate": "f11:duras+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f11:duras",
+     "ate": "f11:e",
+     "eixo": "z",
+     "angulo": 200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f11:e",
+     "ate": "f11:e+0.10",
+     "eixo": "z",
+     "angulo": -12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f11:e+0.03",
+     "ate": "f11:e+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f11:e",
+     "ate": "f11:lisas",
+     "eixo": "z",
+     "angulo": -200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f11:lisas",
+     "ate": "f11:lisas+0.10",
+     "eixo": "z",
+     "angulo": 12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f11:lisas+0.03",
+     "ate": "f11:lisas+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f11:lisas",
      "ate": "f11:que",
      "eixo": "z",
      "angulo": 200
@@ -3464,55 +3277,151 @@
      "peca": "piv_bal",
      "faz": "girar_para",
      "de": "f11:que",
-     "ate": "f11:feito",
+     "ate": "f11:quase",
      "eixo": "z",
      "angulo": -200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f11:feito",
-     "ate": "f11:feito+0.10",
+     "de": "f11:quase",
+     "ate": "f11:quase+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f11:feito+0.03",
-     "ate": "f11:feito+0.13",
+     "de": "f11:quase+0.03",
+     "ate": "f11:quase+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f11:feito",
-     "ate": "f11:em",
+     "de": "f11:quase",
+     "ate": "f11:nao",
      "eixo": "z",
      "angulo": 200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f11:em",
-     "ate": "f11:em+0.10",
+     "de": "f11:nao",
+     "ate": "f11:nao+0.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f11:em+0.03",
-     "ate": "f11:em+0.13",
+     "de": "f11:nao+0.03",
+     "ate": "f11:nao+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f11:em",
+     "de": "f11:nao",
      "ate": "f11:fim+0.25",
+     "eixo": "z",
+     "angulo": -200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f12:sim",
+     "ate": "f12:sim+0.10",
+     "eixo": "z",
+     "angulo": 12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f12:sim+0.03",
+     "ate": "f12:sim+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f12:sim",
+     "ate": "f12:rubi",
+     "eixo": "z",
+     "angulo": 200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f12:rubi",
+     "ate": "f12:rubi+0.10",
+     "eixo": "z",
+     "angulo": -12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f12:rubi+0.03",
+     "ate": "f12:rubi+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f12:rubi",
+     "ate": "f12:de",
+     "eixo": "z",
+     "angulo": -200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f12:de",
+     "ate": "f12:de+0.10",
+     "eixo": "z",
+     "angulo": 12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f12:de+0.03",
+     "ate": "f12:de+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f12:de",
+     "ate": "f12:verdade",
+     "eixo": "z",
+     "angulo": 200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f12:verdade",
+     "ate": "f12:verdade+0.10",
+     "eixo": "z",
+     "angulo": -12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f12:verdade+0.03",
+     "ate": "f12:verdade+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f12:verdade",
+     "ate": "f12:so",
      "eixo": "z",
      "angulo": -200
     },
@@ -3560,198 +3469,54 @@
      "peca": "piv_bal",
      "faz": "girar_para",
      "de": "f12:que",
-     "ate": "f12:um",
+     "ate": "f12:feito",
      "eixo": "z",
      "angulo": -200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f12:um",
-     "ate": "f12:um+0.10",
+     "de": "f12:feito",
+     "ate": "f12:feito+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f12:um+0.03",
-     "ate": "f12:um+0.13",
+     "de": "f12:feito+0.03",
+     "ate": "f12:feito+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f12:um",
-     "ate": "f12:ponteiro",
+     "de": "f12:feito",
+     "ate": "f12:em",
      "eixo": "z",
      "angulo": 200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f12:ponteiro",
-     "ate": "f12:ponteiro+0.10",
+     "de": "f12:em",
+     "ate": "f12:em+0.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f12:ponteiro+0.03",
-     "ate": "f12:ponteiro+0.13",
+     "de": "f12:em+0.03",
+     "ate": "f12:em+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f12:ponteiro",
-     "ate": "f12:nao",
-     "eixo": "z",
-     "angulo": -200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f12:nao",
-     "ate": "f12:nao+0.10",
-     "eixo": "z",
-     "angulo": 12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f12:nao+0.03",
-     "ate": "f12:nao+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f12:nao",
-     "ate": "f12:mostra",
-     "eixo": "z",
-     "angulo": 200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f12:mostra",
-     "ate": "f12:mostra+0.10",
-     "eixo": "z",
-     "angulo": -12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f12:mostra+0.03",
-     "ate": "f12:mostra+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f12:mostra",
-     "ate": "f12:a",
-     "eixo": "z",
-     "angulo": -200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f12:a",
-     "ate": "f12:a+0.10",
-     "eixo": "z",
-     "angulo": 12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f12:a+0.03",
-     "ate": "f12:a+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f12:a",
-     "ate": "f12:hora",
-     "eixo": "z",
-     "angulo": 200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f12:hora",
-     "ate": "f12:hora+0.10",
-     "eixo": "z",
-     "angulo": -12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f12:hora+0.03",
-     "ate": "f12:hora+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f12:hora",
-     "ate": "f12:e",
-     "eixo": "z",
-     "angulo": -200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f12:e",
-     "ate": "f12:e+0.10",
-     "eixo": "z",
-     "angulo": 12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f12:e+0.03",
-     "ate": "f12:e+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f12:e",
-     "ate": "f12:os",
-     "eixo": "z",
-     "angulo": 200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f12:os",
-     "ate": "f12:os+0.10",
-     "eixo": "z",
-     "angulo": -12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f12:os+0.03",
-     "ate": "f12:os+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f12:os",
+     "de": "f12:em",
      "ate": "f12:fim+0.25",
      "eixo": "z",
      "angulo": -200
@@ -3759,95 +3524,191 @@
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f13:entao",
-     "ate": "f13:entao+0.10",
+     "de": "f13:so",
+     "ate": "f13:so+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f13:entao+0.03",
-     "ate": "f13:entao+0.13",
+     "de": "f13:so+0.03",
+     "ate": "f13:so+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f13:entao",
-     "ate": "f13:voce",
+     "de": "f13:so",
+     "ate": "f13:que",
      "eixo": "z",
      "angulo": 200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f13:voce",
-     "ate": "f13:voce+0.10",
+     "de": "f13:que",
+     "ate": "f13:que+0.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f13:voce+0.03",
-     "ate": "f13:voce+0.13",
+     "de": "f13:que+0.03",
+     "ate": "f13:que+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f13:voce",
-     "ate": "f13:coloca",
+     "de": "f13:que",
+     "ate": "f13:um",
      "eixo": "z",
      "angulo": -200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f13:coloca",
-     "ate": "f13:coloca+0.10",
+     "de": "f13:um",
+     "ate": "f13:um+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f13:coloca+0.03",
-     "ate": "f13:coloca+0.13",
+     "de": "f13:um+0.03",
+     "ate": "f13:um+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f13:coloca",
-     "ate": "f13:engrenagens",
+     "de": "f13:um",
+     "ate": "f13:ponteiro",
      "eixo": "z",
      "angulo": 200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f13:engrenagens",
-     "ate": "f13:engrenagens+0.10",
+     "de": "f13:ponteiro",
+     "ate": "f13:ponteiro+0.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f13:engrenagens+0.03",
-     "ate": "f13:engrenagens+0.13",
+     "de": "f13:ponteiro+0.03",
+     "ate": "f13:ponteiro+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f13:engrenagens",
+     "de": "f13:ponteiro",
+     "ate": "f13:nao",
+     "eixo": "z",
+     "angulo": -200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f13:nao",
+     "ate": "f13:nao+0.10",
+     "eixo": "z",
+     "angulo": 12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f13:nao+0.03",
+     "ate": "f13:nao+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f13:nao",
+     "ate": "f13:mostra",
+     "eixo": "z",
+     "angulo": 200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f13:mostra",
+     "ate": "f13:mostra+0.10",
+     "eixo": "z",
+     "angulo": -12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f13:mostra+0.03",
+     "ate": "f13:mostra+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f13:mostra",
+     "ate": "f13:a",
+     "eixo": "z",
+     "angulo": -200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f13:a",
+     "ate": "f13:a+0.10",
+     "eixo": "z",
+     "angulo": 12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f13:a+0.03",
+     "ate": "f13:a+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f13:a",
+     "ate": "f13:hora",
+     "eixo": "z",
+     "angulo": 200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f13:hora",
+     "ate": "f13:hora+0.10",
+     "eixo": "z",
+     "angulo": -12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f13:hora+0.03",
+     "ate": "f13:hora+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f13:hora",
      "ate": "f13:e",
      "eixo": "z",
      "angulo": -200
@@ -3872,78 +3733,30 @@
      "peca": "piv_bal",
      "faz": "girar_para",
      "de": "f13:e",
-     "ate": "f13:um",
+     "ate": "f13:os",
      "eixo": "z",
      "angulo": 200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f13:um",
-     "ate": "f13:um+0.10",
+     "de": "f13:os",
+     "ate": "f13:os+0.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f13:um+0.03",
-     "ate": "f13:um+0.13",
+     "de": "f13:os+0.03",
+     "ate": "f13:os+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f13:um",
-     "ate": "f13:ponteiro",
-     "eixo": "z",
-     "angulo": -200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f13:ponteiro",
-     "ate": "f13:ponteiro+0.10",
-     "eixo": "z",
-     "angulo": 12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f13:ponteiro+0.03",
-     "ate": "f13:ponteiro+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f13:ponteiro",
-     "ate": "f13:curto",
-     "eixo": "z",
-     "angulo": 200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f13:curto",
-     "ate": "f13:curto+0.10",
-     "eixo": "z",
-     "angulo": -12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f13:curto+0.03",
-     "ate": "f13:curto+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f13:curto",
+     "de": "f13:os",
      "ate": "f13:fim+0.25",
      "eixo": "z",
      "angulo": -200
@@ -3951,146 +3764,170 @@
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f14:enquanto",
-     "ate": "f14:enquanto+0.10",
+     "de": "f14:entao",
+     "ate": "f14:entao+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f14:enquanto+0.03",
-     "ate": "f14:enquanto+0.13",
+     "de": "f14:entao+0.03",
+     "ate": "f14:entao+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f14:enquanto",
-     "ate": "f14:o",
+     "de": "f14:entao",
+     "ate": "f14:voce",
      "eixo": "z",
      "angulo": 200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f14:o",
-     "ate": "f14:o+0.10",
+     "de": "f14:voce",
+     "ate": "f14:voce+0.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f14:o+0.03",
-     "ate": "f14:o+0.13",
+     "de": "f14:voce+0.03",
+     "ate": "f14:voce+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f14:o",
-     "ate": "f14:comprido",
+     "de": "f14:voce",
+     "ate": "f14:coloca",
      "eixo": "z",
      "angulo": -200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f14:comprido",
-     "ate": "f14:comprido+0.10",
+     "de": "f14:coloca",
+     "ate": "f14:coloca+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f14:comprido+0.03",
-     "ate": "f14:comprido+0.13",
+     "de": "f14:coloca+0.03",
+     "ate": "f14:coloca+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f14:comprido",
-     "ate": "f14:da",
+     "de": "f14:coloca",
+     "ate": "f14:engrenagens",
      "eixo": "z",
      "angulo": 200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f14:da",
-     "ate": "f14:da+0.10",
+     "de": "f14:engrenagens",
+     "ate": "f14:engrenagens+0.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f14:da+0.03",
-     "ate": "f14:da+0.13",
+     "de": "f14:engrenagens+0.03",
+     "ate": "f14:engrenagens+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f14:da",
-     "ate": "f14:doze",
+     "de": "f14:engrenagens",
+     "ate": "f14:e",
      "eixo": "z",
      "angulo": -200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f14:doze",
-     "ate": "f14:doze+0.10",
+     "de": "f14:e",
+     "ate": "f14:e+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f14:doze+0.03",
-     "ate": "f14:doze+0.13",
+     "de": "f14:e+0.03",
+     "ate": "f14:e+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f14:doze",
-     "ate": "f14:voltas",
+     "de": "f14:e",
+     "ate": "f14:um",
      "eixo": "z",
      "angulo": 200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f14:voltas",
-     "ate": "f14:voltas+0.10",
+     "de": "f14:um",
+     "ate": "f14:um+0.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f14:voltas+0.03",
-     "ate": "f14:voltas+0.13",
+     "de": "f14:um+0.03",
+     "ate": "f14:um+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f14:voltas",
+     "de": "f14:um",
+     "ate": "f14:ponteiro",
+     "eixo": "z",
+     "angulo": -200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f14:ponteiro",
+     "ate": "f14:ponteiro+0.10",
+     "eixo": "z",
+     "angulo": 12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f14:ponteiro+0.03",
+     "ate": "f14:ponteiro+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f14:ponteiro",
      "ate": "f14:curto",
      "eixo": "z",
-     "angulo": -200
+     "angulo": 200
     },
     {
      "peca": "piv_anc",
@@ -4098,7 +3935,7 @@
      "de": "f14:curto",
      "ate": "f14:curto+0.10",
      "eixo": "z",
-     "angulo": 12
+     "angulo": -12
     },
     {
      "peca": "piv_esc",
@@ -4112,30 +3949,6 @@
      "peca": "piv_bal",
      "faz": "girar_para",
      "de": "f14:curto",
-     "ate": "f14:so",
-     "eixo": "z",
-     "angulo": 200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f14:so",
-     "ate": "f14:so+0.10",
-     "eixo": "z",
-     "angulo": -12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f14:so+0.03",
-     "ate": "f14:so+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f14:so",
      "ate": "f14:fim+0.25",
      "eixo": "z",
      "angulo": -200
@@ -4143,194 +3956,26 @@
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f15:e",
-     "ate": "f15:e+0.10",
+     "de": "f15:enquanto",
+     "ate": "f15:enquanto+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f15:e+0.03",
-     "ate": "f15:e+0.13",
+     "de": "f15:enquanto+0.03",
+     "ate": "f15:enquanto+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f15:e",
-     "ate": "f15:se",
-     "eixo": "z",
-     "angulo": 200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f15:se",
-     "ate": "f15:se+0.10",
-     "eixo": "z",
-     "angulo": -12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f15:se+0.03",
-     "ate": "f15:se+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f15:se",
-     "ate": "f15:ninguem",
-     "eixo": "z",
-     "angulo": -200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f15:ninguem",
-     "ate": "f15:ninguem+0.10",
-     "eixo": "z",
-     "angulo": 12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f15:ninguem+0.03",
-     "ate": "f15:ninguem+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f15:ninguem",
-     "ate": "f15:der",
-     "eixo": "z",
-     "angulo": 200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f15:der",
-     "ate": "f15:der+0.10",
-     "eixo": "z",
-     "angulo": -12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f15:der+0.03",
-     "ate": "f15:der+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f15:der",
-     "ate": "f15:corda",
-     "eixo": "z",
-     "angulo": -200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f15:corda",
-     "ate": "f15:corda+0.10",
-     "eixo": "z",
-     "angulo": 12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f15:corda+0.03",
-     "ate": "f15:corda+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f15:corda",
-     "ate": "f15:a",
-     "eixo": "z",
-     "angulo": 200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f15:a",
-     "ate": "f15:a+0.10",
-     "eixo": "z",
-     "angulo": -12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f15:a+0.03",
-     "ate": "f15:a+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f15:a",
-     "ate": "f15:mola",
-     "eixo": "z",
-     "angulo": -200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f15:mola",
-     "ate": "f15:mola+0.10",
-     "eixo": "z",
-     "angulo": 12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f15:mola+0.03",
-     "ate": "f15:mola+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f15:mola",
-     "ate": "f15:acaba",
-     "eixo": "z",
-     "angulo": 200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f15:acaba",
-     "ate": "f15:acaba+0.10",
-     "eixo": "z",
-     "angulo": -12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f15:acaba+0.03",
-     "ate": "f15:acaba+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f15:acaba",
+     "de": "f15:enquanto",
      "ate": "f15:o",
      "eixo": "z",
-     "angulo": -200
+     "angulo": 200
     },
     {
      "peca": "piv_anc",
@@ -4338,7 +3983,7 @@
      "de": "f15:o",
      "ate": "f15:o+0.10",
      "eixo": "z",
-     "angulo": 12
+     "angulo": -12
     },
     {
      "peca": "piv_esc",
@@ -4352,746 +3997,899 @@
      "peca": "piv_bal",
      "faz": "girar_para",
      "de": "f15:o",
-     "ate": "f15:ponteiro",
+     "ate": "f15:comprido",
      "eixo": "z",
-     "angulo": 200
+     "angulo": -200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f15:ponteiro",
-     "ate": "f15:ponteiro+0.10",
+     "de": "f15:comprido",
+     "ate": "f15:comprido+0.10",
      "eixo": "z",
-     "angulo": -12
+     "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f15:ponteiro+0.03",
-     "ate": "f15:ponteiro+0.13",
+     "de": "f15:comprido+0.03",
+     "ate": "f15:comprido+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f15:ponteiro",
-     "ate": "f15:para",
+     "de": "f15:comprido",
+     "ate": "f15:da",
+     "eixo": "z",
+     "angulo": 200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f15:da",
+     "ate": "f15:da+0.10",
+     "eixo": "z",
+     "angulo": -12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f15:da+0.03",
+     "ate": "f15:da+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f15:da",
+     "ate": "f15:doze",
+     "eixo": "z",
+     "angulo": -200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f15:doze",
+     "ate": "f15:doze+0.10",
+     "eixo": "z",
+     "angulo": 12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f15:doze+0.03",
+     "ate": "f15:doze+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f15:doze",
+     "ate": "f15:voltas",
+     "eixo": "z",
+     "angulo": 200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f15:voltas",
+     "ate": "f15:voltas+0.10",
+     "eixo": "z",
+     "angulo": -12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f15:voltas+0.03",
+     "ate": "f15:voltas+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f15:voltas",
+     "ate": "f15:curto",
+     "eixo": "z",
+     "angulo": -200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f15:curto",
+     "ate": "f15:curto+0.10",
+     "eixo": "z",
+     "angulo": 12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f15:curto+0.03",
+     "ate": "f15:curto+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f15:curto",
+     "ate": "f15:so",
+     "eixo": "z",
+     "angulo": 200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f15:so",
+     "ate": "f15:so+0.10",
+     "eixo": "z",
+     "angulo": -12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f15:so+0.03",
+     "ate": "f15:so+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f15:so",
+     "ate": "f15:fim+0.25",
+     "eixo": "z",
+     "angulo": -200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f16:e",
+     "ate": "f16:e+0.10",
+     "eixo": "z",
+     "angulo": 12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f16:e+0.03",
+     "ate": "f16:e+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f16:e",
+     "ate": "f16:se",
+     "eixo": "z",
+     "angulo": 200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f16:se",
+     "ate": "f16:se+0.10",
+     "eixo": "z",
+     "angulo": -12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f16:se+0.03",
+     "ate": "f16:se+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f16:se",
+     "ate": "f16:ninguem",
+     "eixo": "z",
+     "angulo": -200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f16:ninguem",
+     "ate": "f16:ninguem+0.10",
+     "eixo": "z",
+     "angulo": 12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f16:ninguem+0.03",
+     "ate": "f16:ninguem+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f16:ninguem",
+     "ate": "f16:der",
+     "eixo": "z",
+     "angulo": 200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f16:der",
+     "ate": "f16:der+0.10",
+     "eixo": "z",
+     "angulo": -12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f16:der+0.03",
+     "ate": "f16:der+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f16:der",
+     "ate": "f16:corda",
+     "eixo": "z",
+     "angulo": -200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f16:corda",
+     "ate": "f16:corda+0.10",
+     "eixo": "z",
+     "angulo": 12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f16:corda+0.03",
+     "ate": "f16:corda+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f16:corda",
+     "ate": "f16:a",
+     "eixo": "z",
+     "angulo": 200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f16:a",
+     "ate": "f16:a+0.10",
+     "eixo": "z",
+     "angulo": -12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f16:a+0.03",
+     "ate": "f16:a+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f16:a",
+     "ate": "f16:mola",
+     "eixo": "z",
+     "angulo": -200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f16:mola",
+     "ate": "f16:mola+0.10",
+     "eixo": "z",
+     "angulo": 12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f16:mola+0.03",
+     "ate": "f16:mola+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f16:mola",
+     "ate": "f16:acaba",
+     "eixo": "z",
+     "angulo": 200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f16:acaba",
+     "ate": "f16:acaba+0.10",
+     "eixo": "z",
+     "angulo": -12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f16:acaba+0.03",
+     "ate": "f16:acaba+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f16:acaba",
+     "ate": "f16:o",
+     "eixo": "z",
+     "angulo": -200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f16:o",
+     "ate": "f16:o+0.10",
+     "eixo": "z",
+     "angulo": 12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f16:o+0.03",
+     "ate": "f16:o+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f16:o",
+     "ate": "f16:ponteiro",
+     "eixo": "z",
+     "angulo": 200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f16:ponteiro",
+     "ate": "f16:ponteiro+0.10",
+     "eixo": "z",
+     "angulo": -12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f16:ponteiro+0.03",
+     "ate": "f16:ponteiro+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f16:ponteiro",
+     "ate": "f16:para",
      "eixo": "z",
      "angulo": -200
     },
     {
      "peca": "piv_mola",
      "faz": "girar",
-     "de": "f8",
-     "ate": "f15:para",
+     "de": "f9",
+     "ate": "f16:para",
      "eixo": "z",
      "voltas": 0.02
     },
     {
      "peca": "eixo_m",
      "faz": "aquecer",
-     "de": "f9:esfregaesfrega",
-     "ate": "f10:rubis",
+     "de": "f10:esfregaesfrega",
+     "ate": "f11:rubis",
      "intensidade": 1.0
     },
     {
      "peca": "eixo_m",
      "faz": "esfriar",
-     "de": "f10:rubis",
-     "ate": "f10:rubis+0.6"
+     "de": "f11:rubis",
+     "ate": "f11:rubis+0.6"
     },
     {
      "peca": "eixo_e",
      "faz": "aquecer",
-     "de": "f9:esfregaesfrega",
-     "ate": "f10:rubis",
+     "de": "f10:esfregaesfrega",
+     "ate": "f11:rubis",
      "intensidade": 1.0
     },
     {
      "peca": "eixo_e",
      "faz": "esfriar",
-     "de": "f10:rubis",
-     "ate": "f10:rubis+0.6"
+     "de": "f11:rubis",
+     "ate": "f11:rubis+0.6"
     },
     {
      "peca": "eixo_a",
      "faz": "aquecer",
-     "de": "f9:esfregaesfrega",
-     "ate": "f10:rubis",
+     "de": "f10:esfregaesfrega",
+     "ate": "f11:rubis",
      "intensidade": 1.0
     },
     {
      "peca": "eixo_a",
      "faz": "esfriar",
-     "de": "f10:rubis",
-     "ate": "f10:rubis+0.6"
+     "de": "f11:rubis",
+     "ate": "f11:rubis+0.6"
     },
     {
      "peca": "eixo_b",
      "faz": "aquecer",
-     "de": "f9:esfregaesfrega",
-     "ate": "f10:rubis",
+     "de": "f10:esfregaesfrega",
+     "ate": "f11:rubis",
      "intensidade": 1.0
     },
     {
      "peca": "eixo_b",
      "faz": "esfriar",
-     "de": "f10:rubis",
-     "ate": "f10:rubis+0.6"
+     "de": "f11:rubis",
+     "ate": "f11:rubis+0.6"
     },
     {
      "peca": "piv_esc",
      "faz": "tremer",
-     "de": "f9:gasta",
-     "ate": "f10:rubis",
+     "de": "f10:gasta",
+     "ate": "f11:rubis",
      "intensidade": 0.5
     },
     {
      "peca": "piv_bal",
      "faz": "tremer",
-     "de": "f9:gasta",
-     "ate": "f10:rubis",
+     "de": "f10:gasta",
+     "ate": "f11:rubis",
      "intensidade": 0.5
     },
     {
      "peca": "rubi_e",
      "faz": "aparecer",
-     "de": "f10:rubis+0.00"
+     "de": "f11:rubis+0.00"
     },
     {
      "peca": "rubi_a",
      "faz": "aparecer",
-     "de": "f10:rubis+0.12"
+     "de": "f11:rubis+0.12"
     },
     {
      "peca": "rubi_b",
      "faz": "aparecer",
-     "de": "f10:rubis+0.24"
+     "de": "f11:rubis+0.24"
     },
     {
      "peca": "rubi_m",
      "faz": "aparecer",
-     "de": "f10:rubis+0.36"
+     "de": "f11:rubis+0.36"
     },
     {
      "peca": "piv_meio",
      "faz": "aparecer",
-     "de": "f13:engrenagens"
+     "de": "f14:engrenagens"
     },
     {
      "peca": "roda_meio",
      "faz": "aparecer",
-     "de": "f13:engrenagens"
+     "de": "f14:engrenagens"
     },
     {
      "peca": "piv_hora",
      "faz": "aparecer",
-     "de": "f13:engrenagens+0.15"
+     "de": "f14:engrenagens+0.15"
     },
     {
      "peca": "roda_horas",
      "faz": "aparecer",
-     "de": "f13:engrenagens+0.15"
+     "de": "f14:engrenagens+0.15"
     },
     {
      "peca": "ponteiro_h",
      "faz": "aparecer",
-     "de": "f13:curto"
+     "de": "f14:curto"
     },
     {
      "peca": "piv_min",
      "faz": "girar_para",
-     "de": "f14:enquanto",
-     "ate": "f14:uma",
+     "de": "f15:enquanto",
+     "ate": "f15:uma",
      "eixo": "z",
      "angulo": -4320
     },
     {
      "peca": "piv_hora",
      "faz": "girar_para",
-     "de": "f14:enquanto",
-     "ate": "f14:uma",
+     "de": "f15:enquanto",
+     "ate": "f15:uma",
      "eixo": "z",
      "angulo": -360
     },
     {
      "peca": "piv_meio",
      "faz": "girar_para",
-     "de": "f14:enquanto",
-     "ate": "f14:uma",
+     "de": "f15:enquanto",
+     "ate": "f15:uma",
      "eixo": "z",
      "angulo": 617
     },
     {
      "peca": "piv_min",
      "faz": "girar_para",
-     "de": "f15:mola",
-     "ate": "f15:para",
+     "de": "f16:mola",
+     "ate": "f16:para",
      "eixo": "z",
      "angulo": -10
     },
     {
      "peca": "piv_rotor",
      "faz": "aparecer",
-     "de": "f16:peso"
+     "de": "f17:peso"
     },
     {
      "peca": "rotor_braco",
      "faz": "aparecer",
-     "de": "f16:peso"
+     "de": "f17:peso"
     },
     {
      "peca": "rotor_peso",
      "faz": "aparecer",
-     "de": "f16:peso"
+     "de": "f17:peso"
     },
     {
      "peca": "rel",
      "faz": "girar_para",
-     "de": "f16:mexe",
-     "ate": "f16:mexe+0.40",
+     "de": "f17:mexe",
+     "ate": "f17:mexe+0.40",
      "eixo": "z",
      "angulo": 9
     },
     {
      "peca": "piv_rotor",
      "faz": "girar_para",
-     "de": "f16:mexe+0.05",
-     "ate": "f16:mexe+0.45",
+     "de": "f17:mexe+0.05",
+     "ate": "f17:mexe+0.45",
      "eixo": "z",
      "angulo": -27
     },
     {
      "peca": "rel",
      "faz": "girar_para",
-     "de": "f16:mexe+0.45",
-     "ate": "f16:mexe+0.85",
+     "de": "f17:mexe+0.45",
+     "ate": "f17:mexe+0.85",
      "eixo": "z",
      "angulo": -18
     },
     {
      "peca": "piv_rotor",
      "faz": "girar_para",
-     "de": "f16:mexe+0.50",
-     "ate": "f16:mexe+0.90",
+     "de": "f17:mexe+0.50",
+     "ate": "f17:mexe+0.90",
      "eixo": "z",
      "angulo": 54
     },
     {
      "peca": "rel",
      "faz": "girar_para",
-     "de": "f16:mexe+0.9",
-     "ate": "f16:mexe+1.30",
+     "de": "f17:mexe+0.9",
+     "ate": "f17:mexe+1.30",
      "eixo": "z",
      "angulo": 18
     },
     {
      "peca": "piv_rotor",
      "faz": "girar_para",
-     "de": "f16:mexe+0.95",
-     "ate": "f16:mexe+1.35",
+     "de": "f17:mexe+0.95",
+     "ate": "f17:mexe+1.35",
      "eixo": "z",
      "angulo": -54
     },
     {
      "peca": "rel",
      "faz": "girar_para",
-     "de": "f16:mexe+1.35",
-     "ate": "f16:mexe+1.75",
+     "de": "f17:mexe+1.35",
+     "ate": "f17:mexe+1.75",
      "eixo": "z",
      "angulo": -9
     },
     {
      "peca": "piv_rotor",
      "faz": "girar_para",
-     "de": "f16:mexe+1.40",
-     "ate": "f16:mexe+1.80",
+     "de": "f17:mexe+1.40",
+     "ate": "f17:mexe+1.80",
      "eixo": "z",
      "angulo": 27
     },
     {
      "peca": "piv_mola",
      "faz": "girar",
-     "de": "f16:corda",
-     "ate": "f16:fim+0.3",
+     "de": "f17:corda",
+     "ate": "f17:fim+0.3",
      "eixo": "z",
      "voltas": -0.5
     },
     {
      "peca": "mola_espiral",
      "faz": "pulsar",
-     "de": "f16:corda",
-     "ate": "f16:fim+0.3",
+     "de": "f17:corda",
+     "ate": "f17:fim+0.3",
      "intensidade": 0.8
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f16:sozinho",
-     "ate": "f16:sozinho+0.10",
+     "de": "f17:sozinho",
+     "ate": "f17:sozinho+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f16:sozinho+0.03",
-     "ate": "f16:sozinho+0.13",
+     "de": "f17:sozinho+0.03",
+     "ate": "f17:sozinho+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f16:sozinho",
-     "ate": "f16:sozinho+0.35",
+     "de": "f17:sozinho",
+     "ate": "f17:sozinho+0.35",
      "eixo": "z",
      "angulo": 200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f16:sozinho+0.35",
-     "ate": "f16:sozinho+0.45",
+     "de": "f17:sozinho+0.35",
+     "ate": "f17:sozinho+0.45",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f16:sozinho+0.38",
-     "ate": "f16:sozinho+0.48",
+     "de": "f17:sozinho+0.38",
+     "ate": "f17:sozinho+0.48",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f16:sozinho+0.35",
-     "ate": "f16:fim+0.3",
+     "de": "f17:sozinho+0.35",
+     "ate": "f17:fim+0.3",
      "eixo": "z",
      "angulo": -200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f17:e",
-     "ate": "f17:e+0.10",
+     "de": "f18:e",
+     "ate": "f18:e+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f17:e+0.03",
-     "ate": "f17:e+0.13",
+     "de": "f18:e+0.03",
+     "ate": "f18:e+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f17:e",
-     "ate": "f17:aquele",
+     "de": "f18:e",
+     "ate": "f18:aquele",
      "eixo": "z",
      "angulo": 200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f17:aquele",
-     "ate": "f17:aquele+0.10",
+     "de": "f18:aquele",
+     "ate": "f18:aquele+0.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f17:aquele+0.03",
-     "ate": "f17:aquele+0.13",
+     "de": "f18:aquele+0.03",
+     "ate": "f18:aquele+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f17:aquele",
-     "ate": "f17:tiquetaque",
+     "de": "f18:aquele",
+     "ate": "f18:tiquetaque",
      "eixo": "z",
      "angulo": -200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f17:tiquetaque",
-     "ate": "f17:tiquetaque+0.10",
+     "de": "f18:tiquetaque",
+     "ate": "f18:tiquetaque+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f17:tiquetaque+0.03",
-     "ate": "f17:tiquetaque+0.13",
+     "de": "f18:tiquetaque+0.03",
+     "ate": "f18:tiquetaque+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f17:tiquetaque",
-     "ate": "f17:a",
+     "de": "f18:tiquetaque",
+     "ate": "f18:a",
      "eixo": "z",
      "angulo": 200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f17:a",
-     "ate": "f17:a+0.10",
+     "de": "f18:a",
+     "ate": "f18:a+0.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f17:a+0.03",
-     "ate": "f17:a+0.13",
+     "de": "f18:a+0.03",
+     "ate": "f18:a+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f17:a",
-     "ate": "f17:mola",
+     "de": "f18:a",
+     "ate": "f18:mola",
      "eixo": "z",
      "angulo": -200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f17:mola",
-     "ate": "f17:mola+0.10",
+     "de": "f18:mola",
+     "ate": "f18:mola+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f17:mola+0.03",
-     "ate": "f17:mola+0.13",
+     "de": "f18:mola+0.03",
+     "ate": "f18:mola+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f17:mola",
-     "ate": "f17:do",
+     "de": "f18:mola",
+     "ate": "f18:do",
      "eixo": "z",
      "angulo": 200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f17:do",
-     "ate": "f17:do+0.10",
+     "de": "f18:do",
+     "ate": "f18:do+0.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f17:do+0.03",
-     "ate": "f17:do+0.13",
+     "de": "f18:do+0.03",
+     "ate": "f18:do+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f17:do",
-     "ate": "f17:comeco",
+     "de": "f18:do",
+     "ate": "f18:comeco",
      "eixo": "z",
      "angulo": -200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f17:comeco",
-     "ate": "f17:comeco+0.10",
+     "de": "f18:comeco",
+     "ate": "f18:comeco+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f17:comeco+0.03",
-     "ate": "f17:comeco+0.13",
+     "de": "f18:comeco+0.03",
+     "ate": "f18:comeco+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f17:comeco",
-     "ate": "f17:sendo",
+     "de": "f18:comeco",
+     "ate": "f18:sendo",
      "eixo": "z",
      "angulo": 200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f17:sendo",
-     "ate": "f17:sendo+0.10",
+     "de": "f18:sendo",
+     "ate": "f18:sendo+0.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f17:sendo+0.03",
-     "ate": "f17:sendo+0.13",
+     "de": "f18:sendo+0.03",
+     "ate": "f18:sendo+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f17:sendo",
-     "ate": "f17:solta",
+     "de": "f18:sendo",
+     "ate": "f18:solta",
      "eixo": "z",
      "angulo": -200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f17:solta",
-     "ate": "f17:solta+0.10",
+     "de": "f18:solta",
+     "ate": "f18:solta+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f17:solta+0.03",
-     "ate": "f17:solta+0.13",
+     "de": "f18:solta+0.03",
+     "ate": "f18:solta+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f17:solta",
-     "ate": "f17:um",
-     "eixo": "z",
-     "angulo": 200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f17:um",
-     "ate": "f17:um+0.10",
-     "eixo": "z",
-     "angulo": -12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f17:um+0.03",
-     "ate": "f17:um+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f17:um",
-     "ate": "f17:dentinho",
-     "eixo": "z",
-     "angulo": -200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f17:dentinho",
-     "ate": "f17:dentinho+0.10",
-     "eixo": "z",
-     "angulo": 12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f17:dentinho+0.03",
-     "ate": "f17:dentinho+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f17:dentinho",
-     "ate": "f17:de",
-     "eixo": "z",
-     "angulo": 200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f17:de",
-     "ate": "f17:de+0.10",
-     "eixo": "z",
-     "angulo": -12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f17:de+0.03",
-     "ate": "f17:de+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f17:de",
-     "ate": "f17:cada",
-     "eixo": "z",
-     "angulo": -200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f17:cada",
-     "ate": "f17:cada+0.10",
-     "eixo": "z",
-     "angulo": 12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f17:cada+0.03",
-     "ate": "f17:cada+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f17:cada",
-     "ate": "f17:vez",
-     "eixo": "z",
-     "angulo": 200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f17:vez",
-     "ate": "f17:vez+0.10",
-     "eixo": "z",
-     "angulo": -12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f17:vez+0.03",
-     "ate": "f17:vez+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f17:vez",
-     "ate": "f17:fim+0.25",
-     "eixo": "z",
-     "angulo": -200
-    },
-    {
-     "peca": "piv_mola",
-     "faz": "girar",
-     "de": "f17:mola",
-     "ate": "f17:fim",
-     "eixo": "z",
-     "voltas": 0.03
-    },
-    {
-     "peca": "mola_espiral",
-     "faz": "pulsar",
-     "de": "f17:mola",
-     "ate": "f17:comeco+0.6",
-     "intensidade": 0.7
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f18:parabens",
-     "ate": "f18:parabens+0.10",
-     "eixo": "z",
-     "angulo": 12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f18:parabens+0.03",
-     "ate": "f18:parabens+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f18:parabens",
-     "ate": "f18:voce",
-     "eixo": "z",
-     "angulo": 200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f18:voce",
-     "ate": "f18:voce+0.10",
-     "eixo": "z",
-     "angulo": -12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f18:voce+0.03",
-     "ate": "f18:voce+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f18:voce",
-     "ate": "f18:construiu",
-     "eixo": "z",
-     "angulo": -200
-    },
-    {
-     "peca": "piv_anc",
-     "faz": "girar_para",
-     "de": "f18:construiu",
-     "ate": "f18:construiu+0.10",
-     "eixo": "z",
-     "angulo": 12
-    },
-    {
-     "peca": "piv_esc",
-     "faz": "girar_para",
-     "de": "f18:construiu+0.03",
-     "ate": "f18:construiu+0.13",
-     "eixo": "z",
-     "angulo": -24
-    },
-    {
-     "peca": "piv_bal",
-     "faz": "girar_para",
-     "de": "f18:construiu",
+     "de": "f18:solta",
      "ate": "f18:um",
      "eixo": "z",
      "angulo": 200
@@ -5116,103 +4914,310 @@
      "peca": "piv_bal",
      "faz": "girar_para",
      "de": "f18:um",
-     "ate": "f18:relogio",
+     "ate": "f18:dentinho",
      "eixo": "z",
      "angulo": -200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f18:relogio",
-     "ate": "f18:relogio+0.10",
+     "de": "f18:dentinho",
+     "ate": "f18:dentinho+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f18:relogio+0.03",
-     "ate": "f18:relogio+0.13",
+     "de": "f18:dentinho+0.03",
+     "ate": "f18:dentinho+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f18:relogio",
-     "ate": "f18:fim+0.35",
+     "de": "f18:dentinho",
+     "ate": "f18:de",
      "eixo": "z",
      "angulo": 200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f18:fim+0.35",
-     "ate": "f18:fim+0.45",
+     "de": "f18:de",
+     "ate": "f18:de+0.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f18:fim+0.38",
-     "ate": "f18:fim+0.48",
+     "de": "f18:de+0.03",
+     "ate": "f18:de+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f18:fim+0.35",
-     "ate": "f18:fim+0.7",
+     "de": "f18:de",
+     "ate": "f18:cada",
      "eixo": "z",
      "angulo": -200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f18:fim+0.7",
-     "ate": "f18:fim+0.80",
+     "de": "f18:cada",
+     "ate": "f18:cada+0.10",
      "eixo": "z",
      "angulo": 12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f18:fim+0.73",
-     "ate": "f18:fim+0.83",
+     "de": "f18:cada+0.03",
+     "ate": "f18:cada+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f18:fim+0.7",
-     "ate": "f18:fim+1.05",
+     "de": "f18:cada",
+     "ate": "f18:vez",
      "eixo": "z",
      "angulo": 200
     },
     {
      "peca": "piv_anc",
      "faz": "girar_para",
-     "de": "f18:fim+1.05",
-     "ate": "f18:fim+1.15",
+     "de": "f18:vez",
+     "ate": "f18:vez+0.10",
      "eixo": "z",
      "angulo": -12
     },
     {
      "peca": "piv_esc",
      "faz": "girar_para",
-     "de": "f18:fim+1.08",
-     "ate": "f18:fim+1.18",
+     "de": "f18:vez+0.03",
+     "ate": "f18:vez+0.13",
      "eixo": "z",
      "angulo": -24
     },
     {
      "peca": "piv_bal",
      "faz": "girar_para",
-     "de": "f18:fim+1.05",
-     "ate": "f18:fim+1.4",
+     "de": "f18:vez",
+     "ate": "f18:fim+0.25",
+     "eixo": "z",
+     "angulo": -200
+    },
+    {
+     "peca": "piv_mola",
+     "faz": "girar",
+     "de": "f18:mola",
+     "ate": "f18:fim",
+     "eixo": "z",
+     "voltas": 0.03
+    },
+    {
+     "peca": "mola_espiral",
+     "faz": "pulsar",
+     "de": "f18:mola",
+     "ate": "f18:comeco+0.6",
+     "intensidade": 0.7
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f19:parabens",
+     "ate": "f19:parabens+0.10",
+     "eixo": "z",
+     "angulo": 12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f19:parabens+0.03",
+     "ate": "f19:parabens+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f19:parabens",
+     "ate": "f19:voce",
+     "eixo": "z",
+     "angulo": 200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f19:voce",
+     "ate": "f19:voce+0.10",
+     "eixo": "z",
+     "angulo": -12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f19:voce+0.03",
+     "ate": "f19:voce+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f19:voce",
+     "ate": "f19:construiu",
+     "eixo": "z",
+     "angulo": -200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f19:construiu",
+     "ate": "f19:construiu+0.10",
+     "eixo": "z",
+     "angulo": 12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f19:construiu+0.03",
+     "ate": "f19:construiu+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f19:construiu",
+     "ate": "f19:um",
+     "eixo": "z",
+     "angulo": 200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f19:um",
+     "ate": "f19:um+0.10",
+     "eixo": "z",
+     "angulo": -12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f19:um+0.03",
+     "ate": "f19:um+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f19:um",
+     "ate": "f19:relogio",
+     "eixo": "z",
+     "angulo": -200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f19:relogio",
+     "ate": "f19:relogio+0.10",
+     "eixo": "z",
+     "angulo": 12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f19:relogio+0.03",
+     "ate": "f19:relogio+0.13",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f19:relogio",
+     "ate": "f19:fim+0.35",
+     "eixo": "z",
+     "angulo": 200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f19:fim+0.35",
+     "ate": "f19:fim+0.45",
+     "eixo": "z",
+     "angulo": -12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f19:fim+0.38",
+     "ate": "f19:fim+0.48",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f19:fim+0.35",
+     "ate": "f19:fim+0.7",
+     "eixo": "z",
+     "angulo": -200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f19:fim+0.7",
+     "ate": "f19:fim+0.80",
+     "eixo": "z",
+     "angulo": 12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f19:fim+0.73",
+     "ate": "f19:fim+0.83",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f19:fim+0.7",
+     "ate": "f19:fim+1.05",
+     "eixo": "z",
+     "angulo": 200
+    },
+    {
+     "peca": "piv_anc",
+     "faz": "girar_para",
+     "de": "f19:fim+1.05",
+     "ate": "f19:fim+1.15",
+     "eixo": "z",
+     "angulo": -12
+    },
+    {
+     "peca": "piv_esc",
+     "faz": "girar_para",
+     "de": "f19:fim+1.08",
+     "ate": "f19:fim+1.18",
+     "eixo": "z",
+     "angulo": -24
+    },
+    {
+     "peca": "piv_bal",
+     "faz": "girar_para",
+     "de": "f19:fim+1.05",
+     "ate": "f19:fim+1.4",
      "eixo": "z",
      "angulo": -200
     }
@@ -5224,14 +5229,14 @@
      "para": "mola_espiral",
      "olhar": "maquete",
      "expressao": "feliz",
-     "de": "f1:mola"
+     "de": "f2:mola"
     },
     {
      "quem": "tito",
      "faz": "susto",
      "olhar": "camera",
      "expressao": "surpreso",
-     "de": "f2"
+     "de": "f3"
     },
     {
      "quem": "tito",
@@ -5239,19 +5244,19 @@
      "para": "roda_esc",
      "olhar": "maquete",
      "expressao": "feliz",
-     "de": "f3:escape"
+     "de": "f4:escape"
     },
     {
      "quem": "tito",
      "olhar": "camera",
      "expressao": "desconfiado",
-     "de": "f5"
+     "de": "f6"
     },
     {
      "quem": "tito",
      "olhar": "maquete",
      "expressao": "cansado",
-     "de": "f6"
+     "de": "f7"
     },
     {
      "quem": "tito",
@@ -5259,14 +5264,14 @@
      "para": "balanco",
      "olhar": "maquete",
      "expressao": "feliz",
-     "de": "f7:balanco"
+     "de": "f8:balanco"
     },
     {
      "quem": "tito",
      "faz": "susto",
      "olhar": "camera",
      "expressao": "nervoso",
-     "de": "f9"
+     "de": "f10"
     },
     {
      "quem": "tito",
@@ -5274,13 +5279,13 @@
      "para": "rubi_e",
      "olhar": "maquete",
      "expressao": "feliz",
-     "de": "f10:rubis"
+     "de": "f11:rubis"
     },
     {
      "quem": "tito",
      "olhar": "camera",
      "expressao": "desconfiado",
-     "de": "f12"
+     "de": "f13"
     },
     {
      "quem": "tito",
@@ -5288,13 +5293,13 @@
      "para": "roda_horas",
      "olhar": "maquete",
      "expressao": "feliz",
-     "de": "f13:engrenagens"
+     "de": "f14:engrenagens"
     },
     {
      "quem": "tito",
      "olhar": "camera",
      "expressao": "medo",
-     "de": "f15"
+     "de": "f16"
     },
     {
      "quem": "tito",
@@ -5302,13 +5307,13 @@
      "para": "rotor_peso",
      "olhar": "maquete",
      "expressao": "feliz",
-     "de": "f16:peso"
+     "de": "f17:peso"
     },
     {
      "quem": "tito",
      "olhar": "maquete",
      "expressao": "feliz",
-     "de": "f17"
+     "de": "f18"
     },
     {
      "quem": "tito",
@@ -5320,14 +5325,14 @@
      ],
      "olhar": "camera",
      "expressao": "feliz",
-     "de": "f18"
+     "de": "f19"
     },
     {
      "quem": "tito",
      "faz": "acenar",
      "olhar": "camera",
      "expressao": "feliz",
-     "de": "f18:parabens"
+     "de": "f19:parabens"
     }
    ],
    "planos": [
@@ -5344,7 +5349,20 @@
      "movimento": "arco"
     },
     {
-     "de": "f1:ponteiro",
+     "de": "f2",
+     "tipo": "detalhe",
+     "alvo": [
+      0.0,
+      1.475,
+      0.0
+     ],
+     "lado": "frente",
+     "tamanho": 0.775,
+     "movimento": "travelling",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f2:ponteiro",
      "tipo": "detalhe",
      "alvo": [
       0.0,
@@ -5356,7 +5374,7 @@
      "movimento": "aproximar"
     },
     {
-     "de": "f2",
+     "de": "f3",
      "tipo": "medio",
      "alvo": "tito",
      "lado": "tres_quartos_direita",
@@ -5364,7 +5382,7 @@
      "transicao": "chicote"
     },
     {
-     "de": "f2:dispara",
+     "de": "f3:dispara",
      "tipo": "detalhe",
      "alvo": [
       0.0,
@@ -5376,7 +5394,7 @@
      "movimento": "tremer"
     },
     {
-     "de": "f3",
+     "de": "f4",
      "tipo": "detalhe",
      "alvo": [
       0.106,
@@ -5390,7 +5408,7 @@
      "transicao": "varrer"
     },
     {
-     "de": "f4",
+     "de": "f5",
      "tipo": "detalhe",
      "alvo": [
       0.106,
@@ -5402,7 +5420,7 @@
      "movimento": "aproximar"
     },
     {
-     "de": "f5",
+     "de": "f6",
      "tipo": "medio",
      "alvo": "tito",
      "lado": "tres_quartos_direita",
@@ -5410,7 +5428,7 @@
      "transicao": "chicote"
     },
     {
-     "de": "f5:cheia",
+     "de": "f6:cheia",
      "tipo": "detalhe",
      "alvo": [
       0.037,
@@ -5423,7 +5441,7 @@
      "intensidade": 0.3
     },
     {
-     "de": "f6",
+     "de": "f7",
      "tipo": "detalhe",
      "alvo": [
       0.106,
@@ -5435,7 +5453,7 @@
      "movimento": "subir"
     },
     {
-     "de": "f7",
+     "de": "f8",
      "tipo": "detalhe",
      "alvo": [
       0.125,
@@ -5449,7 +5467,7 @@
      "transicao": "varrer"
     },
     {
-     "de": "f8",
+     "de": "f9",
      "tipo": "detalhe",
      "alvo": [
       0.112,
@@ -5461,7 +5479,7 @@
      "movimento": "aproximar"
     },
     {
-     "de": "f8:manda",
+     "de": "f9:manda",
      "tipo": "detalhe",
      "alvo": [
       0.075,
@@ -5473,7 +5491,7 @@
      "movimento": "subir"
     },
     {
-     "de": "f9",
+     "de": "f10",
      "tipo": "medio",
      "alvo": "tito",
      "lado": "tres_quartos_direita",
@@ -5481,7 +5499,7 @@
      "transicao": "chicote"
     },
     {
-     "de": "f9:esfregaesfrega",
+     "de": "f10:esfregaesfrega",
      "tipo": "detalhe",
      "alvo": [
       0.106,
@@ -5493,7 +5511,7 @@
      "movimento": "tremer"
     },
     {
-     "de": "f10",
+     "de": "f11",
      "tipo": "detalhe",
      "alvo": [
       0.037,
@@ -5507,7 +5525,7 @@
      "transicao": "varrer"
     },
     {
-     "de": "f11",
+     "de": "f12",
      "tipo": "detalhe",
      "alvo": [
       0.037,
@@ -5519,7 +5537,7 @@
      "movimento": "aproximar"
     },
     {
-     "de": "f12",
+     "de": "f13",
      "tipo": "medio",
      "alvo": "tito",
      "lado": "tres_quartos_direita",
@@ -5527,7 +5545,7 @@
      "transicao": "chicote"
     },
     {
-     "de": "f13",
+     "de": "f14",
      "tipo": "detalhe",
      "alvo": [
       -0.037,
@@ -5541,7 +5559,7 @@
      "transicao": "zoom"
     },
     {
-     "de": "f14",
+     "de": "f15",
      "tipo": "detalhe",
      "alvo": [
       0.0,
@@ -5554,7 +5572,7 @@
      "intensidade": 0.3
     },
     {
-     "de": "f15",
+     "de": "f16",
      "tipo": "medio",
      "alvo": "tito",
      "lado": "tres_quartos_direita",
@@ -5562,7 +5580,7 @@
      "transicao": "chicote"
     },
     {
-     "de": "f15:mola",
+     "de": "f16:mola",
      "tipo": "detalhe",
      "alvo": [
       0.0,
@@ -5574,7 +5592,7 @@
      "movimento": "aproximar"
     },
     {
-     "de": "f16",
+     "de": "f17",
      "tipo": "detalhe",
      "alvo": [
       0.0,
@@ -5588,7 +5606,7 @@
      "transicao": "varrer"
     },
     {
-     "de": "f17",
+     "de": "f18",
      "tipo": "detalhe",
      "alvo": [
       0.106,
@@ -5601,7 +5619,7 @@
      "transicao": "desfoque"
     },
     {
-     "de": "f17:mola",
+     "de": "f18:mola",
      "tipo": "detalhe",
      "alvo": [
       -0.144,
@@ -5614,7 +5632,7 @@
      "intensidade": 0.4
     },
     {
-     "de": "f17:dentinho",
+     "de": "f18:dentinho",
      "tipo": "detalhe",
      "alvo": [
       0.106,
@@ -5626,7 +5644,7 @@
      "movimento": "subir"
     },
     {
-     "de": "f18",
+     "de": "f19",
      "tipo": "aberto",
      "camera": [
       -0.9,
@@ -5649,360 +5667,371 @@
      "volume": 0.4
     },
     {
-     "de": "f1:mola",
+     "de": "f2:mola",
      "som": "engrenagem",
      "volume": 0.5
     },
     {
-     "de": "f1:tempo",
+     "de": "f1:certinha",
+     "som": "whoosh",
+     "volume": 0.6
+    },
+    {
+     "de": "f2:gira",
      "som": "ding",
      "volume": 0.7
     },
     {
-     "de": "f2",
+     "de": "f3",
      "som": "tensao_sobe",
      "volume": 0.5
     },
     {
-     "de": "f2:dispara",
+     "de": "f3:dispara",
      "som": "engrenagem",
      "volume": 0.8
     },
     {
-     "de": "f2:acabou",
+     "de": "f3:acabou",
      "som": "impacto",
      "volume": 0.7
     },
     {
-     "de": "f3:escape",
+     "de": "f4:escape",
      "som": "pop",
      "volume": 0.8
     },
     {
-     "de": "f3:ancora",
+     "de": "f4:ancora",
      "som": "pop",
      "volume": 0.8
     },
     {
-     "de": "f4:tiquetaque",
+     "de": "f5:tiquetaque",
      "som": "ding",
      "volume": 0.7
     },
     {
-     "de": "f5",
+     "de": "f6",
      "som": "tensao_sobe",
      "volume": 0.5
     },
     {
-     "de": "f5:corre",
+     "de": "f6:corre",
      "som": "engrenagem",
      "volume": 0.7
     },
     {
-     "de": "f6:arrasta",
+     "de": "f7:arrasta",
      "som": "queda",
      "volume": 0.5
     },
     {
-     "de": "f7:balanco",
+     "de": "f8:balanco",
      "som": "pop",
      "volume": 0.8
     },
     {
-     "de": "f7:mola",
+     "de": "f8:mola",
      "som": "pop",
      "volume": 0.6
     },
     {
-     "de": "f8:sempre",
+     "de": "f9:sempre",
      "som": "ding",
      "volume": 0.7
     },
     {
-     "de": "f9",
+     "de": "f10",
      "som": "tensao_sobe",
      "volume": 0.6
     },
     {
-     "de": "f9:esfregaesfrega",
+     "de": "f10:esfregaesfrega",
      "som": "chiado",
      "volume": 0.6
     },
     {
-     "de": "f9:gasta",
+     "de": "f10:gasta",
      "som": "impacto",
      "volume": 0.8
     },
     {
-     "de": "f10:rubis",
+     "de": "f11:rubis",
      "som": "pop",
      "volume": 0.8
     },
     {
-     "de": "f11:verdade",
+     "de": "f12:verdade",
      "som": "ding",
      "volume": 0.8
     },
     {
-     "de": "f12",
+     "de": "f13",
      "som": "tensao_sobe",
      "volume": 0.5
     },
     {
-     "de": "f13:engrenagens",
+     "de": "f14:engrenagens",
      "som": "pop",
      "volume": 0.8
     },
     {
-     "de": "f13:curto",
+     "de": "f14:curto",
      "som": "pop",
      "volume": 0.7
     },
     {
-     "de": "f14:enquanto",
+     "de": "f15:enquanto",
      "som": "engrenagem",
      "volume": 0.6
     },
     {
-     "de": "f14:uma",
+     "de": "f15:uma",
      "som": "ding",
      "volume": 0.8
     },
     {
-     "de": "f15",
+     "de": "f16",
      "som": "tensao_sobe",
      "volume": 0.6
     },
     {
-     "de": "f15:para",
+     "de": "f16:para",
      "som": "impacto",
      "volume": 0.8
     },
     {
-     "de": "f16:peso",
+     "de": "f17:peso",
      "som": "pop",
      "volume": 0.8
     },
     {
-     "de": "f16:mexe",
+     "de": "f17:mexe",
      "som": "whoosh",
      "volume": 0.5
     },
     {
-     "de": "f16:sozinho",
+     "de": "f17:sozinho",
      "som": "ding",
      "volume": 0.8
     },
     {
-     "de": "f18:parabens",
+     "de": "f19:parabens",
      "som": "ding",
      "volume": 0.9
     },
     {
-     "de": "f4:balanca",
+     "de": "f5:balanca",
      "som": "clique",
      "volume": 0.55
     },
     {
-     "de": "f4:solta",
+     "de": "f5:solta",
      "som": "clique",
      "volume": 0.55
     },
     {
-     "de": "f4:um",
+     "de": "f5:um",
      "som": "clique",
      "volume": 0.55
     },
     {
-     "de": "f4:dente",
+     "de": "f5:dente",
      "som": "clique",
      "volume": 0.55
     },
     {
-     "de": "f4:e",
+     "de": "f5:e",
      "som": "clique",
      "volume": 0.55
     },
     {
-     "de": "f4:trava",
+     "de": "f5:trava",
      "som": "clique",
      "volume": 0.55
     },
     {
-     "de": "f4:o",
+     "de": "f5:o",
      "som": "clique",
      "volume": 0.55
     },
     {
-     "de": "f4:proximo",
+     "de": "f5:proximo",
      "som": "clique",
      "volume": 0.55
     },
     {
-     "de": "f17:e",
+     "de": "f18:e",
      "som": "clique",
      "volume": 0.55
     },
     {
-     "de": "f17:aquele",
+     "de": "f18:aquele",
      "som": "clique",
      "volume": 0.55
     },
     {
-     "de": "f17:tiquetaque",
+     "de": "f18:tiquetaque",
      "som": "clique",
      "volume": 0.55
     },
     {
-     "de": "f17:a",
+     "de": "f18:a",
      "som": "clique",
      "volume": 0.55
     },
     {
-     "de": "f17:mola",
+     "de": "f18:mola",
      "som": "clique",
      "volume": 0.55
     },
     {
-     "de": "f17:do",
+     "de": "f18:do",
      "som": "clique",
      "volume": 0.55
     },
     {
-     "de": "f17:comeco",
+     "de": "f18:comeco",
      "som": "clique",
      "volume": 0.55
     },
     {
-     "de": "f17:sendo",
+     "de": "f18:sendo",
      "som": "clique",
      "volume": 0.55
     },
     {
-     "de": "f17:solta",
+     "de": "f18:solta",
      "som": "clique",
      "volume": 0.55
     },
     {
-     "de": "f17:um",
+     "de": "f18:um",
      "som": "clique",
      "volume": 0.55
     },
     {
-     "de": "f17:dentinho",
+     "de": "f18:dentinho",
      "som": "clique",
      "volume": 0.55
     },
     {
-     "de": "f17:de",
+     "de": "f18:de",
      "som": "clique",
      "volume": 0.55
     },
     {
-     "de": "f17:cada",
+     "de": "f18:cada",
      "som": "clique",
      "volume": 0.55
     },
     {
-     "de": "f17:vez",
+     "de": "f18:vez",
      "som": "clique",
      "volume": 0.55
     }
    ],
    "efeitos": [
     {
-     "de": "f1:tempo",
+     "de": "f1:certinha",
      "efeito": "linhas",
-     "ate": "f1:tempo+0.6",
+     "ate": "f1:certinha+0.7",
      "cor": "#FFE14A"
     },
     {
-     "de": "f2:dispara",
+     "de": "f2:gira",
      "efeito": "linhas",
-     "ate": "f2:dispara+0.8",
+     "ate": "f2:gira+0.6",
      "cor": "#FFE14A"
     },
     {
-     "de": "f2:acabou",
+     "de": "f3:dispara",
+     "efeito": "linhas",
+     "ate": "f3:dispara+0.8",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f3:acabou",
      "efeito": "zoom_soco"
     },
     {
-     "de": "f3:escape+0.1",
+     "de": "f4:escape+0.1",
      "efeito": "circular",
-     "ate": "f3:ancora",
+     "ate": "f4:ancora",
      "alvo": "roda_esc"
     },
     {
-     "de": "f3:ancora+0.1",
+     "de": "f4:ancora+0.1",
      "efeito": "circular",
-     "ate": "f3:fim",
+     "ate": "f4:fim",
      "alvo": "ancora"
     },
     {
-     "de": "f4:tiquetaque",
+     "de": "f5:tiquetaque",
      "efeito": "linhas",
-     "ate": "f4:tiquetaque+0.8",
+     "ate": "f5:tiquetaque+0.8",
      "cor": "#FFE14A"
     },
     {
-     "de": "f5:corre",
+     "de": "f6:corre",
      "efeito": "zoom_soco"
     },
     {
-     "de": "f7:balanco+0.1",
+     "de": "f8:balanco+0.1",
      "efeito": "circular",
-     "ate": "f7:fim",
+     "ate": "f8:fim",
      "alvo": "balanco"
     },
     {
-     "de": "f9:gasta",
+     "de": "f10:gasta",
      "efeito": "zoom_soco"
     },
     {
-     "de": "f9:gasta",
+     "de": "f10:gasta",
      "efeito": "tremor",
-     "ate": "f9:fim",
+     "ate": "f10:fim",
      "intensidade": 0.4
     },
     {
-     "de": "f10:rubis+0.1",
+     "de": "f11:rubis+0.1",
      "efeito": "circular",
-     "ate": "f10:fim",
+     "ate": "f11:fim",
      "alvo": "rubi_e"
     },
     {
-     "de": "f13:engrenagens+0.2",
+     "de": "f14:engrenagens+0.2",
      "efeito": "circular",
-     "ate": "f13:curto",
+     "ate": "f14:curto",
      "alvo": "roda_horas"
     },
     {
-     "de": "f14:uma",
+     "de": "f15:uma",
      "efeito": "linhas",
-     "ate": "f14:uma+0.7",
+     "ate": "f15:uma+0.7",
      "cor": "#FFE14A"
     },
     {
-     "de": "f15:para",
+     "de": "f16:para",
      "efeito": "zoom_soco"
     },
     {
-     "de": "f15:para",
+     "de": "f16:para",
      "efeito": "letreiro",
-     "ate": "f15:fim+0.4",
+     "ate": "f16:fim+0.4",
      "texto": "PAROU!",
      "altura": 0.2
     },
     {
-     "de": "f16:peso+0.1",
+     "de": "f17:peso+0.1",
      "efeito": "circular",
-     "ate": "f16:mexe",
+     "ate": "f17:mexe",
      "alvo": "rotor_peso"
     },
     {
-     "de": "f18:parabens",
+     "de": "f19:parabens",
      "efeito": "linhas",
-     "ate": "f18:fim+0.5",
+     "ate": "f19:fim+0.5",
      "intensidade": 0.6
     }
    ],
@@ -6010,68 +6039,68 @@
     {
      "alvo": "mola_espiral",
      "texto": "Mola",
-     "de": "f1:mola",
-     "ate": "f1:ponteiro"
+     "de": "f2:mola",
+     "ate": "f2:ponteiro"
     },
     {
      "alvo": "roda_esc",
      "texto": "Escape",
-     "de": "f3:escape",
-     "ate": "f3:fim"
+     "de": "f4:escape",
+     "ate": "f4:fim"
     },
     {
      "alvo": "ancora",
      "texto": "Âncora",
-     "de": "f3:ancora",
-     "ate": "f4:fim"
+     "de": "f4:ancora",
+     "ate": "f5:fim"
     },
     {
      "alvo": "balanco",
      "texto": "Balanço",
-     "de": "f7:balanco",
-     "ate": "f8:fim"
+     "de": "f8:balanco",
+     "ate": "f9:fim"
     },
     {
      "alvo": "rubi_e",
      "texto": "Rubi",
-     "de": "f10:rubis",
-     "ate": "f10:fim"
+     "de": "f11:rubis",
+     "ate": "f11:fim"
     },
     {
      "alvo": "roda_meio",
      "texto": "Engrenagens",
-     "de": "f13:engrenagens",
-     "ate": "f13:fim"
+     "de": "f14:engrenagens",
+     "ate": "f14:fim"
     },
     {
      "alvo": "ponteiro_h",
      "texto": "Horas",
-     "de": "f13:curto",
-     "ate": "f14:fim"
+     "de": "f14:curto",
+     "ate": "f15:fim"
     },
     {
      "alvo": "rotor_peso",
      "texto": "Rotor",
-     "de": "f16:peso",
-     "ate": "f16:fim"
+     "de": "f17:peso",
+     "ate": "f17:fim"
     }
    ],
    "cartoes": [
     {
-     "de": "f8:sempre",
-     "ate": "f8:fim+0.3",
+     "de": "f9:sempre",
+     "ate": "f9:fim+0.3",
      "grande": "MESMO TEMPO",
      "pequeno": "cada ida e volta do balanço"
     },
     {
-     "de": "f11:rubi",
-     "ate": "f11:fim+0.3",
+     "de": "f12:rubi",
+     "ate": "f12:fim+0.3",
      "grande": "RUBI",
      "pequeno": "a mesma pedra da joia, feita em laboratório"
     },
     {
-     "de": "f14:enquanto",
-     "ate": "f14:fim+0.3",
+     "de": "f15:enquanto",
+     "ate": "f15:fim+0.3",
      "grande": "# VOLTAS",
      "contar": [
       0,

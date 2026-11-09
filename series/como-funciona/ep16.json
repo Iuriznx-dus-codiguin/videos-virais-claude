@@ -1673,11 +1673,11 @@
      "tipo": "particulas",
      "particula": "poeira",
      "em": [
-      -0.3,
+      -0.35,
       0
      ],
      "alt": 1.0,
-     "raio": 0.07,
+     "raio": 0.12,
      "altura": 0.12,
      "quantas": 12,
      "aparece": "inicio",
@@ -1712,6 +1712,28 @@
     }
    ],
    "animacoes": [
+    {
+     "peca": "v1",
+     "faz": "mover",
+     "de": "inicio-1",
+     "ate": "inicio-0.95",
+     "desloc": [
+      -0.25,
+      0,
+      0
+     ]
+    },
+    {
+     "peca": "v1",
+     "faz": "mover",
+     "de": "inicio",
+     "ate": "f1:correndo",
+     "desloc": [
+      0.25,
+      0,
+      0
+     ]
+    },
     {
      "peca": "rt1",
      "faz": "girar",
@@ -2610,7 +2632,7 @@
      "intensidade": 0.4
     },
     {
-     "de": "f2:empurrar",
+     "de": "f2:pes",
      "tipo": "detalhe",
      "alvo": [
       0.2,
