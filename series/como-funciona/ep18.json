@@ -1,0 +1,2471 @@
+{
+ "serie": "como-funciona",
+ "parte": 18,
+ "titulo": "Por que a primeira foto levou HORAS?",
+ "musica": "curiosidade",
+ "personagens": {
+  "niepce": {
+   "nome": "Nicéphore Niépce",
+   "papel": "inventor francês; lá por 1826, na casa dele (Le Gras, Saint-Loup-de-Varennes), não sabia desenhar e quis que a luz desenhasse: placa de estanho com betume (asfalto) numa câmara escura virada para a janela; ficou pelo menos 8 horas pegando sol; não fala",
+   "visual": {
+    "altura": 1,
+    "corpo": "#3E4A3D",
+    "cabeca": "#F2D5BD",
+    "olhos": "redondos",
+    "sobrancelhas": "grossas",
+    "acessorios": [
+     {
+      "tipo": "cabelo_curto",
+      "cor": "#D5D8DC"
+     },
+     {
+      "tipo": "lenco",
+      "cor": "#F4F1E8"
+     },
+     {
+      "tipo": "colete",
+      "cor": "#7B5E3B"
+     }
+    ]
+   }
+  }
+ },
+ "modelos": {
+  "camera": [
+   {
+    "id": "tronco",
+    "forma": "cilindro",
+    "tam": [
+     0.016,
+     0.09
+    ],
+    "pos": [
+     -0.34,
+     0.045,
+     0
+    ],
+    "cor": "#8D5524"
+   },
+   {
+    "id": "copa",
+    "forma": "cone",
+    "tam": [
+     0.075,
+     0.16
+    ],
+    "pos": [
+     -0.34,
+     0.17,
+     0
+    ],
+    "cor": "#27AE60"
+   },
+   {
+    "id": "corpo",
+    "forma": "caixa",
+    "tam": [
+     0.28,
+     0.24,
+     0.18
+    ],
+    "pos": [
+     0.13,
+     0.12,
+     0
+    ],
+    "cor": "#E4572E"
+   },
+   {
+    "id": "visor",
+    "forma": "caixa",
+    "tam": [
+     0.09,
+     0.045,
+     0.11
+    ],
+    "pos": [
+     0.16,
+     0.262,
+     0
+    ],
+    "cor": "#34495E"
+   },
+   {
+    "id": "lente",
+    "forma": "cilindro",
+    "tam": [
+     0.07,
+     0.07
+    ],
+    "pos": [
+     -0.045,
+     0.15,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#4FA3D9"
+   },
+   {
+    "id": "furo",
+    "forma": "cilindro",
+    "tam": [
+     0.013,
+     0.012
+    ],
+    "pos": [
+     -0.013,
+     0.15,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#111111"
+   },
+   {
+    "id": "furo_grande",
+    "forma": "cilindro",
+    "tam": [
+     0.045,
+     0.012
+    ],
+    "pos": [
+     -0.014,
+     0.15,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#111111",
+    "oculta": true
+   },
+   {
+    "id": "lente_b",
+    "forma": "cilindro",
+    "tam": [
+     0.07,
+     0.07
+    ],
+    "pos": [
+     -0.045,
+     0.15,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#4FA3D9",
+    "oculta": true
+   },
+   {
+    "id": "copa_img",
+    "forma": "cone",
+    "tam": [
+     0.05,
+     0.12
+    ],
+    "pos": [
+     0.232,
+     0.139,
+     0
+    ],
+    "giro": [
+     180,
+     0,
+     0
+    ],
+    "cor": "#27AE60",
+    "oculta": true
+   },
+   {
+    "id": "tronco_img",
+    "forma": "cilindro",
+    "tam": [
+     0.011,
+     0.035
+    ],
+    "pos": [
+     0.232,
+     0.216,
+     0
+    ],
+    "cor": "#8D5524",
+    "oculta": true
+   },
+   {
+    "id": "borrao",
+    "forma": "esfera",
+    "tam": [
+     0.075
+    ],
+    "pos": [
+     0.225,
+     0.14,
+     0
+    ],
+    "cor": "#58D68D",
+    "opacidade": 0.5,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "sensor",
+    "forma": "caixa",
+    "tam": [
+     0.014,
+     0.2,
+     0.15
+    ],
+    "pos": [
+     0.255,
+     0.12,
+     0
+    ],
+    "cor": "#2ECC71",
+    "oculta": true
+   },
+   {
+    "id": "obturador",
+    "forma": "caixa",
+    "tam": [
+     0.01,
+     0.2,
+     0.15
+    ],
+    "pos": [
+     0.212,
+     0.12,
+     0
+    ],
+    "cor": "#1B2631",
+    "oculta": true
+   },
+   {
+    "id": "sol_pivo",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     0,
+     0.02,
+     -0.12
+    ],
+    "giro": [
+     0,
+     0,
+     165
+    ],
+    "cor": "#FFD54A"
+   },
+   {
+    "id": "sol",
+    "forma": "esfera",
+    "tam": [
+     0.055
+    ],
+    "pos": [
+     0.5,
+     0,
+     0
+    ],
+    "cor": "#FFD54A",
+    "brilho": 0.5,
+    "pai": "sol_pivo"
+   },
+   {
+    "id": "p1",
+    "forma": "capsula",
+    "tam": [
+     0.022,
+     0.05
+    ],
+    "pos": [
+     -0.22,
+     0.05,
+     0.1
+    ],
+    "cor": "#E67E22",
+    "oculta": true
+   },
+   {
+    "id": "p1_cabeca",
+    "forma": "esfera",
+    "tam": [
+     0.019
+    ],
+    "pos": [
+     0,
+     0.058,
+     0
+    ],
+    "cor": "#F2D5BD",
+    "pai": "p1"
+   },
+   {
+    "id": "p2",
+    "forma": "capsula",
+    "tam": [
+     0.022,
+     0.05
+    ],
+    "pos": [
+     -0.27,
+     0.05,
+     -0.1
+    ],
+    "cor": "#8E44AD",
+    "oculta": true
+   },
+   {
+    "id": "p2_cabeca",
+    "forma": "esfera",
+    "tam": [
+     0.019
+    ],
+    "pos": [
+     0,
+     0.058,
+     0
+    ],
+    "cor": "#F2D5BD",
+    "pai": "p2"
+   },
+   {
+    "id": "homem",
+    "forma": "capsula",
+    "tam": [
+     0.022,
+     0.05
+    ],
+    "pos": [
+     -0.2,
+     0.05,
+     -0.03
+    ],
+    "cor": "#2C3E50",
+    "oculta": true
+   },
+   {
+    "id": "homem_cabeca",
+    "forma": "esfera",
+    "tam": [
+     0.019
+    ],
+    "pos": [
+     0,
+     0.058,
+     0
+    ],
+    "cor": "#F2D5BD",
+    "pai": "homem"
+   }
+  ],
+  "camara_1826": [
+   {
+    "id": "c_caixa",
+    "forma": "caixa",
+    "tam": [
+     0.2,
+     0.13,
+     0.14
+    ],
+    "pos": [
+     0.02,
+     0.065,
+     0
+    ],
+    "cor": "#8D6E63"
+   },
+   {
+    "id": "c_tubo",
+    "forma": "cilindro",
+    "tam": [
+     0.032,
+     0.06
+    ],
+    "pos": [
+     -0.11,
+     0.07,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#5D4037"
+   },
+   {
+    "id": "c_vidro",
+    "forma": "cilindro",
+    "tam": [
+     0.026,
+     0.006
+    ],
+    "pos": [
+     -0.142,
+     0.07,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#AED6F1",
+    "sem_contorno": true
+   },
+   {
+    "id": "c_placa",
+    "forma": "caixa",
+    "tam": [
+     0.012,
+     0.115,
+     0.125
+    ],
+    "pos": [
+     0.112,
+     0.068,
+     0
+    ],
+    "cor": "#A6ACAF"
+   },
+   {
+    "id": "c_asfalto",
+    "forma": "caixa",
+    "tam": [
+     0.005,
+     0.1,
+     0.11
+    ],
+    "pos": [
+     0.104,
+     0.068,
+     0
+    ],
+    "cor": "#3E2723",
+    "oculta": true
+   },
+   {
+    "id": "c_desenho",
+    "forma": "caixa",
+    "tam": [
+     0.004,
+     0.06,
+     0.08
+    ],
+    "pos": [
+     0.1,
+     0.06,
+     0
+    ],
+    "cor": "#E8DCC8",
+    "oculta": true
+   }
+  ]
+ },
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "tito",
+   "texto": "E SE, para tirar uma foto, você tivesse que ficar parado por HORAS?",
+   "tom": "animado"
+  },
+  {
+   "id": "f2",
+   "quem": "tito",
+   "texto": "Lá por 1826, na França, um inventor que não sabia desenhar quis que a LUZ desenhasse por ele.",
+   "off": true
+  },
+  {
+   "id": "f3",
+   "quem": "tito",
+   "texto": "Ele pôs uma placa com ASFALTO numa caixa escura. Onde a luz batia, o asfalto endurecia.",
+   "off": true
+  },
+  {
+   "id": "f4",
+   "quem": "tito",
+   "texto": "MAS o asfalto era lento DEMAIS: a placa ficou pelo menos oito horas pegando sol.",
+   "off": true,
+   "tom": "tenso"
+  },
+  {
+   "id": "f5",
+   "quem": "tito",
+   "texto": "Tanto tempo que, nessa foto, as casas têm sol dos DOIS lados.",
+   "off": true,
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f6",
+   "quem": "tito",
+   "texto": "A câmera de hoje faz isso num instante. Por dentro, ela ainda é uma caixa ESCURA."
+  },
+  {
+   "id": "f7",
+   "quem": "tito",
+   "texto": "A luz entra por um furinho e desenha a imagem lá no fundo, de CABEÇA para baixo!",
+   "tom": "animado",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f8",
+   "quem": "tito",
+   "texto": "MAS um furinho deixa entrar pouca luz, e a foto sai ESCURA.",
+   "tom": "tenso"
+  },
+  {
+   "id": "f9",
+   "quem": "tito",
+   "texto": "E furo grande espalha cada ponto numa mancha: a foto sai BORRADA.",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f10",
+   "quem": "tito",
+   "texto": "Por isso existe a LENTE: um vidro curvo que junta a luz num ponto só. Clara e nítida!",
+   "tom": "animado",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f11",
+   "quem": "tito",
+   "texto": "No lugar do asfalto, hoje fica o SENSOR: milhões de quadradinhos que medem a luz."
+  },
+  {
+   "id": "f12",
+   "quem": "tito",
+   "texto": "Cada quadradinho é um PIXEL: um pontinho colorido da foto.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f13",
+   "quem": "tito",
+   "texto": "SÓ QUE, se a luz bater muito tempo, a foto sai BRANCA, e o que se mexe vira borrão.",
+   "tom": "tenso"
+  },
+  {
+   "id": "f14",
+   "quem": "tito",
+   "texto": "Por isso existe o OBTURADOR: uma portinha que abre e fecha mais rápido que um piscar.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f15",
+   "quem": "tito",
+   "texto": "Esse tempo tem nome: EXPOSIÇÃO. A do inventor durou horas; a da câmera, um milésimo de segundo.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f16",
+   "quem": "tito",
+   "texto": "Numa das primeiras fotos de rua, em Paris, a rua cheia de gente saiu VAZIA.",
+   "tom": "animado"
+  },
+  {
+   "id": "f17",
+   "quem": "tito",
+   "texto": "Quem andava sumiu. Só ficou um homem que parou para ENGRAXAR o sapato: a primeira pessoa numa foto.",
+   "tom": "animado"
+  }
+ ],
+ "chamada": {
+  "pergunta": "E a tomada? Para que serve aquele terceiro furinho?",
+  "texto": "Comenta",
+  "destaque": "TOMADA"
+ },
+ "postagem": {
+  "titulo": "Como funciona a câmera? A primeira foto levou horas",
+  "descricao": "Como funciona a câmera fotográfica por dentro: câmara escura, lente, sensor com pixels e obturador. E por que a primeira foto da história levou horas: a placa de asfalto de Niépce, lá por 1826.",
+  "hashtags": [
+   "comofunciona",
+   "camera",
+   "fotografia",
+   "fisica",
+   "curiosidades"
+  ],
+  "comentario": "Eu não sabia que a imagem dentro da câmera fica de cabeça para baixo. Você sabia?",
+  "capa": "f7:cabeca+0.4"
+ },
+ "cenas": [
+  {
+   "id": "gancho",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "feliz"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "camera",
+     "em": "pedestal"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "sol_pivo",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": -150,
+     "de": "inicio",
+     "ate": "f1:fim"
+    },
+    {
+     "peca": "camera",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "caminho": [
+      [
+       -0.34,
+       0.2,
+       0
+      ],
+      [
+       -0.2,
+       0.17,
+       0
+      ],
+      [
+       -0.085,
+       0.15,
+       0
+      ]
+     ],
+     "quantidade": 6,
+     "velocidade": 0.6,
+     "intensidade": 0.7,
+     "de": "inicio",
+     "ate": "f1:fim+0.3"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f1:foto"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f1:horas"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "alvo": [
+      0,
+      1.24,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 1.05,
+     "movimento": "arco"
+    },
+    {
+     "de": "f1:parado",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido"
+    }
+   ],
+   "sons": [
+    {
+     "de": "inicio",
+     "som": "clique",
+     "volume": 0.6
+    },
+    {
+     "de": "f1:parado",
+     "som": "whoosh",
+     "volume": 0.4
+    },
+    {
+     "de": "f1:horas",
+     "som": "impacto",
+     "volume": 0.6
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f1:horas",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f1:horas",
+     "ate": "f1:horas+0.7",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    }
+   ]
+  },
+  {
+   "id": "niepce",
+   "cenario": "oficina",
+   "ambiente": "oficina",
+   "filtro": "sepia",
+   "de": "f2",
+   "personagens": {
+    "niepce": {
+     "em": [
+      -1.0,
+      -0.3
+     ],
+     "olhando": [
+      1.2,
+      2.2,
+      3.0
+     ],
+     "expressao": "cansado"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "camara_1826",
+     "em": [
+      0,
+      -1.05
+     ],
+     "alt": 0.92,
+     "escala": 1.5
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f2:1826",
+     "ate": "f2:desenhar",
+     "grande": "1826",
+     "pequeno": "Nicéphore Niépce · França"
+    },
+    {
+     "de": "f4:oito",
+     "ate": "f4:fim+0.4",
+     "grande": "# HORAS",
+     "contar": [
+      1,
+      8
+     ],
+     "pequeno": "no mínimo, pegando sol"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "c_caixa",
+     "faz": "transparente",
+     "opacidade": 0.3,
+     "de": "f3+0.1",
+     "ate": "f3+0.6"
+    },
+    {
+     "peca": "c_asfalto",
+     "faz": "aparecer",
+     "de": "f3:asfalto"
+    },
+    {
+     "peca": "camara_1826",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "caminho": [
+      [
+       -0.34,
+       0.12,
+       0
+      ],
+      [
+       -0.15,
+       0.07,
+       0
+      ],
+      [
+       0.1,
+       0.065,
+       0
+      ]
+     ],
+     "quantidade": 8,
+     "velocidade": 0.6,
+     "intensidade": 0.7,
+     "de": "f3:luz",
+     "ate": "f5:fim+0.3"
+    },
+    {
+     "peca": "c_desenho",
+     "faz": "crescer",
+     "de": "f3:endurecia",
+     "ate": "f4:fim"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "niepce",
+     "faz": "virar",
+     "para": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "olhar": "camera",
+     "expressao": "cansado",
+     "de": "f2"
+    },
+    {
+     "quem": "niepce",
+     "faz": "estender_mao",
+     "para": "camara_1826",
+     "olhar": "camara_1826",
+     "expressao": "determinado",
+     "de": "f2:luz"
+    },
+    {
+     "quem": "niepce",
+     "faz": "virar",
+     "para": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "olhar": "camera",
+     "expressao": "cansado",
+     "de": "f4-0.4"
+    },
+    {
+     "quem": "niepce",
+     "faz": "bracos_cruzados",
+     "olhar": "camera",
+     "expressao": "cansado",
+     "de": "f4:demais"
+    },
+    {
+     "quem": "niepce",
+     "faz": "virar",
+     "para": [
+      0.3,
+      2.85,
+      2.2
+     ],
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f5:dois-0.5"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "camera": [
+      0.9,
+      2.85,
+      3.9
+     ],
+     "alvo": [
+      -0.55,
+      2.25,
+      -0.7
+     ],
+     "movimento": "arco",
+     "intensidade": 0.6,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f2:desenhar",
+     "tipo": "medio",
+     "camera": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "alvo": "niepce",
+     "movimento": "travelling",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f3",
+     "tipo": "detalhe",
+     "alvo": "camara_1826",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.6,
+     "movimento": "arco",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f3:onde",
+     "tipo": "detalhe",
+     "alvo": "c_placa",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.32,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f4",
+     "tipo": "medio",
+     "camera": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "alvo": "niepce",
+     "movimento": "zoom_rapido"
+    },
+    {
+     "de": "f4:oito",
+     "tipo": "detalhe",
+     "alvo": "camara_1826",
+     "lado": "frente",
+     "tamanho": 0.7,
+     "movimento": "subir"
+    },
+    {
+     "de": "f5",
+     "tipo": "detalhe",
+     "alvo": "c_desenho",
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.25,
+     "movimento": "arco",
+     "intensidade": -0.5
+    },
+    {
+     "de": "f5:dois",
+     "tipo": "close",
+     "camera": [
+      0.3,
+      2.85,
+      2.2
+     ],
+     "alvo": "niepce",
+     "movimento": "aproximar"
+    }
+   ],
+   "sons": [
+    {
+     "de": "f2:1826",
+     "som": "pop",
+     "volume": 0.6
+    },
+    {
+     "de": "f2:luz",
+     "som": "ding",
+     "volume": 0.5
+    },
+    {
+     "de": "f3:asfalto",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f3:endurecia",
+     "som": "chiado",
+     "volume": 0.3
+    },
+    {
+     "de": "f4",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f4:demais",
+     "som": "impacto",
+     "volume": 0.6
+    },
+    {
+     "de": "f4:oito",
+     "som": "engrenagem",
+     "volume": 0.5
+    },
+    {
+     "de": "f5:dois",
+     "som": "ding",
+     "volume": 0.7
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f3:asfalto+0.1",
+     "ate": "f3:onde",
+     "efeito": "circular",
+     "alvo": "c_asfalto"
+    },
+    {
+     "de": "f4:demais",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f5+0.1",
+     "ate": "f5:dois",
+     "efeito": "circular",
+     "alvo": "c_desenho"
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "c_asfalto",
+     "texto": "Asfalto",
+     "de": "f3:asfalto",
+     "ate": "f3:onde"
+    },
+    {
+     "alvo": "c_desenho",
+     "texto": "A foto",
+     "de": "f5",
+     "ate": "f5:dois"
+    }
+   ]
+  },
+  {
+   "id": "por_dentro",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "de": "f6",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "feliz"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "camera",
+     "em": "pedestal"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "sol_pivo",
+     "faz": "sumir",
+     "de": "inicio"
+    },
+    {
+     "peca": "corpo",
+     "faz": "transparente",
+     "opacidade": 0.25,
+     "de": "f6:dentro",
+     "ate": "f6:dentro+0.5"
+    },
+    {
+     "peca": "visor",
+     "faz": "transparente",
+     "opacidade": 0.25,
+     "de": "f6:dentro",
+     "ate": "f6:dentro+0.5"
+    },
+    {
+     "peca": "lente",
+     "faz": "sumir",
+     "de": "f7:luz"
+    },
+    {
+     "peca": "camera",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "caminho": [
+      [
+       -0.34,
+       0.24,
+       0
+      ],
+      [
+       -0.013,
+       0.15,
+       0
+      ],
+      [
+       0.24,
+       0.08,
+       0
+      ]
+     ],
+     "quantidade": 6,
+     "velocidade": 0.8,
+     "intensidade": 0.8,
+     "de": "f7:entra",
+     "ate": "f7:fim+0.3"
+    },
+    {
+     "peca": "camera",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "caminho": [
+      [
+       -0.34,
+       0.06,
+       0
+      ],
+      [
+       -0.013,
+       0.15,
+       0
+      ],
+      [
+       0.24,
+       0.22,
+       0
+      ]
+     ],
+     "quantidade": 6,
+     "velocidade": 0.8,
+     "intensidade": 0.8,
+     "de": "f7:entra",
+     "ate": "f7:fim+0.3"
+    },
+    {
+     "peca": "copa_img",
+     "faz": "aparecer",
+     "de": "f7:cabeca"
+    },
+    {
+     "peca": "tronco_img",
+     "faz": "aparecer",
+     "de": "f7:cabeca"
+    },
+    {
+     "peca": "camera",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "caminho": [
+      [
+       -0.34,
+       0.24,
+       0
+      ],
+      [
+       -0.013,
+       0.15,
+       0
+      ],
+      [
+       0.24,
+       0.08,
+       0
+      ]
+     ],
+     "quantidade": 2,
+     "velocidade": 0.8,
+     "intensidade": 0.45,
+     "de": "f8",
+     "ate": "f8:fim+0.2"
+    },
+    {
+     "peca": "camera",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "caminho": [
+      [
+       -0.34,
+       0.06,
+       0
+      ],
+      [
+       -0.013,
+       0.15,
+       0
+      ],
+      [
+       0.24,
+       0.22,
+       0
+      ]
+     ],
+     "quantidade": 2,
+     "velocidade": 0.8,
+     "intensidade": 0.45,
+     "de": "f8",
+     "ate": "f8:fim+0.2"
+    },
+    {
+     "peca": "copa_img",
+     "faz": "transparente",
+     "opacidade": 0.2,
+     "de": "f8:pouca",
+     "ate": "f8:escura"
+    },
+    {
+     "peca": "tronco_img",
+     "faz": "transparente",
+     "opacidade": 0.2,
+     "de": "f8:pouca",
+     "ate": "f8:escura"
+    },
+    {
+     "peca": "furo_grande",
+     "faz": "aparecer",
+     "de": "f9:grande"
+    },
+    {
+     "peca": "camera",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "caminho": [
+      [
+       -0.34,
+       0.24,
+       0
+      ],
+      [
+       -0.014,
+       0.19,
+       0
+      ],
+      [
+       0.24,
+       0.15,
+       0
+      ]
+     ],
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.8,
+     "de": "f9:grande",
+     "ate": "f9:fim+0.3"
+    },
+    {
+     "peca": "camera",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "caminho": [
+      [
+       -0.34,
+       0.24,
+       0
+      ],
+      [
+       -0.014,
+       0.11,
+       0
+      ],
+      [
+       0.24,
+       0.01,
+       0
+      ]
+     ],
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.8,
+     "de": "f9:grande",
+     "ate": "f9:fim+0.3"
+    },
+    {
+     "peca": "camera",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "caminho": [
+      [
+       -0.34,
+       0.06,
+       0
+      ],
+      [
+       -0.014,
+       0.19,
+       0
+      ],
+      [
+       0.24,
+       0.23,
+       0
+      ]
+     ],
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.8,
+     "de": "f9:grande",
+     "ate": "f9:fim+0.3"
+    },
+    {
+     "peca": "camera",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "caminho": [
+      [
+       -0.34,
+       0.06,
+       0
+      ],
+      [
+       -0.014,
+       0.11,
+       0
+      ],
+      [
+       0.24,
+       0.08,
+       0
+      ]
+     ],
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.8,
+     "de": "f9:grande",
+     "ate": "f9:fim+0.3"
+    },
+    {
+     "peca": "borrao",
+     "faz": "aparecer",
+     "de": "f9:mancha"
+    },
+    {
+     "peca": "lente_b",
+     "faz": "aparecer",
+     "de": "f10:lente"
+    },
+    {
+     "peca": "furo_grande",
+     "faz": "sumir",
+     "de": "f10:lente"
+    },
+    {
+     "peca": "camera",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "caminho": [
+      [
+       -0.34,
+       0.24,
+       0
+      ],
+      [
+       -0.05,
+       0.2,
+       0
+      ],
+      [
+       0.24,
+       0.08,
+       0
+      ]
+     ],
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.8,
+     "de": "f10:junta",
+     "ate": "f10:fim+0.4"
+    },
+    {
+     "peca": "camera",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "caminho": [
+      [
+       -0.34,
+       0.24,
+       0
+      ],
+      [
+       -0.05,
+       0.1,
+       0
+      ],
+      [
+       0.24,
+       0.08,
+       0
+      ]
+     ],
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.8,
+     "de": "f10:junta",
+     "ate": "f10:fim+0.4"
+    },
+    {
+     "peca": "camera",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "caminho": [
+      [
+       -0.34,
+       0.06,
+       0
+      ],
+      [
+       -0.05,
+       0.2,
+       0
+      ],
+      [
+       0.24,
+       0.22,
+       0
+      ]
+     ],
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.8,
+     "de": "f10:junta",
+     "ate": "f10:fim+0.4"
+    },
+    {
+     "peca": "camera",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "caminho": [
+      [
+       -0.34,
+       0.06,
+       0
+      ],
+      [
+       -0.05,
+       0.1,
+       0
+      ],
+      [
+       0.24,
+       0.22,
+       0
+      ]
+     ],
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.8,
+     "de": "f10:junta",
+     "ate": "f10:fim+0.4"
+    },
+    {
+     "peca": "borrao",
+     "faz": "sumir",
+     "de": "f10:ponto"
+    },
+    {
+     "peca": "copa_img",
+     "faz": "transparente",
+     "opacidade": 1,
+     "de": "f10:ponto",
+     "ate": "f10:clara"
+    },
+    {
+     "peca": "tronco_img",
+     "faz": "transparente",
+     "opacidade": 1,
+     "de": "f10:ponto",
+     "ate": "f10:clara"
+    },
+    {
+     "peca": "sensor",
+     "faz": "aparecer",
+     "de": "f11:sensor"
+    },
+    {
+     "peca": "sensor",
+     "faz": "pulsar",
+     "de": "f11:medem",
+     "ate": "f12:fim",
+     "intensidade": 0.6
+    },
+    {
+     "peca": "camera",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "caminho": [
+      [
+       -0.34,
+       0.24,
+       0
+      ],
+      [
+       -0.05,
+       0.2,
+       0
+      ],
+      [
+       0.24,
+       0.08,
+       0
+      ]
+     ],
+     "quantidade": 4,
+     "velocidade": 0.8,
+     "intensidade": 0.6,
+     "de": "f11:medem",
+     "ate": "f12:fim"
+    },
+    {
+     "peca": "camera",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "caminho": [
+      [
+       -0.34,
+       0.06,
+       0
+      ],
+      [
+       -0.05,
+       0.1,
+       0
+      ],
+      [
+       0.24,
+       0.22,
+       0
+      ]
+     ],
+     "quantidade": 4,
+     "velocidade": 0.8,
+     "intensidade": 0.6,
+     "de": "f11:medem",
+     "ate": "f12:fim"
+    },
+    {
+     "peca": "camera",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "caminho": [
+      [
+       -0.34,
+       0.24,
+       0
+      ],
+      [
+       -0.05,
+       0.2,
+       0
+      ],
+      [
+       0.24,
+       0.08,
+       0
+      ]
+     ],
+     "quantidade": 10,
+     "velocidade": 1.2,
+     "intensidade": 1.0,
+     "de": "f13:luz",
+     "ate": "f13:fim"
+    },
+    {
+     "peca": "camera",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "caminho": [
+      [
+       -0.34,
+       0.24,
+       0
+      ],
+      [
+       -0.05,
+       0.1,
+       0
+      ],
+      [
+       0.24,
+       0.08,
+       0
+      ]
+     ],
+     "quantidade": 10,
+     "velocidade": 1.2,
+     "intensidade": 1.0,
+     "de": "f13:luz",
+     "ate": "f13:fim"
+    },
+    {
+     "peca": "camera",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "caminho": [
+      [
+       -0.34,
+       0.06,
+       0
+      ],
+      [
+       -0.05,
+       0.2,
+       0
+      ],
+      [
+       0.24,
+       0.22,
+       0
+      ]
+     ],
+     "quantidade": 10,
+     "velocidade": 1.2,
+     "intensidade": 1.0,
+     "de": "f13:luz",
+     "ate": "f13:fim"
+    },
+    {
+     "peca": "camera",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "caminho": [
+      [
+       -0.34,
+       0.06,
+       0
+      ],
+      [
+       -0.05,
+       0.1,
+       0
+      ],
+      [
+       0.24,
+       0.22,
+       0
+      ]
+     ],
+     "quantidade": 10,
+     "velocidade": 1.2,
+     "intensidade": 1.0,
+     "de": "f13:luz",
+     "ate": "f13:fim"
+    },
+    {
+     "peca": "sensor",
+     "faz": "aquecer",
+     "de": "f13:luz",
+     "ate": "f13:branca",
+     "intensidade": 0.5
+    },
+    {
+     "peca": "copa",
+     "faz": "tremer",
+     "de": "f13:mexe",
+     "ate": "f13:fim+0.2",
+     "intensidade": 0.8
+    },
+    {
+     "peca": "copa_img",
+     "faz": "tremer",
+     "de": "f13:mexe",
+     "ate": "f13:fim+0.2",
+     "intensidade": 0.8
+    },
+    {
+     "peca": "sensor",
+     "faz": "esfriar",
+     "de": "f14",
+     "ate": "f14+0.3"
+    },
+    {
+     "peca": "obturador",
+     "faz": "aparecer",
+     "de": "f14:obturador"
+    },
+    {
+     "peca": "obturador",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.2,
+      0
+     ],
+     "de": "f14:abre",
+     "ate": "f14:abre+0.12"
+    },
+    {
+     "peca": "camera",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "caminho": [
+      [
+       -0.34,
+       0.24,
+       0
+      ],
+      [
+       -0.05,
+       0.2,
+       0
+      ],
+      [
+       0.24,
+       0.08,
+       0
+      ]
+     ],
+     "quantidade": 3,
+     "velocidade": 1.4,
+     "intensidade": 0.8,
+     "de": "f14:abre",
+     "ate": "f14:fecha"
+    },
+    {
+     "peca": "camera",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "caminho": [
+      [
+       -0.34,
+       0.06,
+       0
+      ],
+      [
+       -0.05,
+       0.1,
+       0
+      ],
+      [
+       0.24,
+       0.22,
+       0
+      ]
+     ],
+     "quantidade": 3,
+     "velocidade": 1.4,
+     "intensidade": 0.8,
+     "de": "f14:abre",
+     "ate": "f14:fecha"
+    },
+    {
+     "peca": "obturador",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.2,
+      0
+     ],
+     "de": "f14:fecha",
+     "ate": "f14:fecha+0.12"
+    },
+    {
+     "peca": "obturador",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.2,
+      0
+     ],
+     "de": "f15:exposicao",
+     "ate": "f15:exposicao+0.12"
+    },
+    {
+     "peca": "obturador",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.2,
+      0
+     ],
+     "de": "f15:camera",
+     "ate": "f15:camera+0.12"
+    },
+    {
+     "peca": "p1",
+     "faz": "aparecer",
+     "de": "f16:rua"
+    },
+    {
+     "peca": "p2",
+     "faz": "aparecer",
+     "de": "f16:rua"
+    },
+    {
+     "peca": "p1",
+     "faz": "mover",
+     "desloc": [
+      0.02,
+      0,
+      -0.17
+     ],
+     "de": "f16:rua+0.4",
+     "ate": "f16:vazia"
+    },
+    {
+     "peca": "p2",
+     "faz": "mover",
+     "desloc": [
+      0.03,
+      0,
+      0.17
+     ],
+     "de": "f16:rua+0.4",
+     "ate": "f16:vazia"
+    },
+    {
+     "peca": "p1",
+     "faz": "tremer",
+     "de": "f16:rua+0.4",
+     "ate": "f16:vazia",
+     "intensidade": 0.5
+    },
+    {
+     "peca": "p2",
+     "faz": "tremer",
+     "de": "f16:rua+0.4",
+     "ate": "f16:vazia",
+     "intensidade": 0.5
+    },
+    {
+     "peca": "p1",
+     "faz": "sumir",
+     "de": "f16:vazia"
+    },
+    {
+     "peca": "p2",
+     "faz": "sumir",
+     "de": "f16:vazia"
+    },
+    {
+     "peca": "homem",
+     "faz": "aparecer",
+     "de": "f17:homem"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.75,
+      2,
+      5.9
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f6"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "corpo",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f6:dentro"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "copa_img",
+     "olhar": "maquete",
+     "expressao": "surpreso",
+     "de": "f7:cabeca"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "nervoso",
+     "de": "f8"
+    },
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "desconfiado",
+     "de": "f9"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "lente_b",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f10:lente"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f10:clara"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "sensor",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f11:sensor"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "nervoso",
+     "de": "f13"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "obturador",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f14:obturador"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f15"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f17"
+    },
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f17:primeira-0.3"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "camera": [
+      -0.75,
+      2,
+      5.9
+     ],
+     "alvo": [
+      -0.75,
+      1.5,
+      0.3
+     ],
+     "movimento": "arco",
+     "intensidade": 0.5,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f6:dentro",
+     "tipo": "detalhe",
+     "alvo": [
+      0.08,
+      1.14,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.8,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f7",
+     "tipo": "detalhe",
+     "alvo": [
+      -0.05,
+      1.15,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.85,
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f7:cabeca",
+     "tipo": "detalhe",
+     "alvo": [
+      0.23,
+      1.15,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.32,
+     "movimento": "aproximar",
+     "transicao": "zoom"
+    },
+    {
+     "de": "f8",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "dolly_zoom",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f8:escura",
+     "tipo": "detalhe",
+     "alvo": [
+      0.23,
+      1.15,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.4,
+     "movimento": "subir"
+    },
+    {
+     "de": "f9",
+     "tipo": "detalhe",
+     "alvo": [
+      -0.02,
+      1.15,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.35,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f9:mancha",
+     "tipo": "detalhe",
+     "alvo": [
+      0.1,
+      1.14,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.65,
+     "movimento": "arco",
+     "intensidade": -0.4
+    },
+    {
+     "de": "f10",
+     "tipo": "detalhe",
+     "alvo": [
+      -0.04,
+      1.15,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.4,
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f10:junta",
+     "tipo": "detalhe",
+     "alvo": [
+      0.05,
+      1.14,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.8,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f10:clara",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": 0.4,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f11",
+     "tipo": "detalhe",
+     "alvo": [
+      0.22,
+      1.13,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.45,
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f12",
+     "tipo": "detalhe",
+     "alvo": [
+      0.25,
+      1.13,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.3,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f13",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f13:branca",
+     "tipo": "detalhe",
+     "alvo": [
+      -0.05,
+      1.15,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.85,
+     "movimento": "tremer"
+    },
+    {
+     "de": "f14",
+     "tipo": "detalhe",
+     "alvo": [
+      0.22,
+      1.13,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.4,
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f14:abre",
+     "tipo": "detalhe",
+     "alvo": [
+      0.2,
+      1.17,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.5,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f15",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": 0.4,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f15:camera",
+     "tipo": "detalhe",
+     "alvo": [
+      0.12,
+      1.15,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.55,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f16",
+     "tipo": "detalhe",
+     "alvo": [
+      -0.25,
+      1.1,
+      0
+     ],
+     "lado": "frente",
+     "tamanho": 0.6,
+     "movimento": "arco",
+     "intensidade": 0.5,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f17",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": -0.4,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f17:homem",
+     "tipo": "detalhe",
+     "alvo": [
+      -0.22,
+      1.08,
+      0
+     ],
+     "lado": "tres_quartos_esquerda",
+     "tamanho": 0.35,
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f17:primeira",
+     "tipo": "aberto",
+     "camera": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "alvo": [
+      -0.9,
+      1.5,
+      0.3
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.3
+    }
+   ],
+   "sons": [
+    {
+     "de": "f6:dentro",
+     "som": "whoosh",
+     "volume": 0.4
+    },
+    {
+     "de": "f7:furinho",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f7:cabeca",
+     "som": "ding",
+     "volume": 0.8
+    },
+    {
+     "de": "f8",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f8:escura",
+     "som": "impacto",
+     "volume": 0.6
+    },
+    {
+     "de": "f9:grande",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f9:borrada",
+     "som": "impacto",
+     "volume": 0.7
+    },
+    {
+     "de": "f10:lente",
+     "som": "pop",
+     "volume": 0.9
+    },
+    {
+     "de": "f10:clara",
+     "som": "ding",
+     "volume": 0.8
+    },
+    {
+     "de": "f11:sensor",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f11:medem",
+     "som": "bip",
+     "volume": 0.4
+    },
+    {
+     "de": "f12:pixel",
+     "som": "ding",
+     "volume": 0.6
+    },
+    {
+     "de": "f12:pontinho",
+     "som": "bip",
+     "volume": 0.4
+    },
+    {
+     "de": "f13",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f13:branca",
+     "som": "impacto",
+     "volume": 0.7
+    },
+    {
+     "de": "f14:obturador",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f14:fecha",
+     "som": "clique",
+     "volume": 0.9
+    },
+    {
+     "de": "f15:exposicao",
+     "som": "clique",
+     "volume": 0.6
+    },
+    {
+     "de": "f15:camera",
+     "som": "clique",
+     "volume": 0.7
+    },
+    {
+     "de": "f16:rua",
+     "som": "pop",
+     "volume": 0.6
+    },
+    {
+     "de": "f16:vazia",
+     "som": "sopro",
+     "volume": 0.6
+    },
+    {
+     "de": "f17:homem",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f17:primeira",
+     "som": "ding",
+     "volume": 0.8
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f7:furinho+0.1",
+     "ate": "f7:imagem",
+     "efeito": "circular",
+     "alvo": "furo"
+    },
+    {
+     "de": "f7:cabeca+0.1",
+     "ate": "f7:fim+0.3",
+     "efeito": "circular",
+     "alvo": "copa_img"
+    },
+    {
+     "de": "f8",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f9:mancha+0.1",
+     "ate": "f9:fim+0.3",
+     "efeito": "circular",
+     "alvo": "borrao"
+    },
+    {
+     "de": "f10:lente+0.1",
+     "ate": "f10:junta",
+     "efeito": "circular",
+     "alvo": "lente_b"
+    },
+    {
+     "de": "f11:sensor+0.1",
+     "ate": "f11:fim",
+     "efeito": "destacar",
+     "alvo": "sensor"
+    },
+    {
+     "de": "f12:pixel",
+     "ate": "f12:fim",
+     "efeito": "circular",
+     "alvo": "sensor"
+    },
+    {
+     "de": "f13:branca",
+     "efeito": "flash"
+    },
+    {
+     "de": "f13:mexe",
+     "ate": "f13:fim",
+     "efeito": "tremor"
+    },
+    {
+     "de": "f14:obturador+0.1",
+     "ate": "f14:abre",
+     "efeito": "circular",
+     "alvo": "obturador"
+    },
+    {
+     "de": "f16:vazia",
+     "ate": "f16:vazia+0.7",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f17:homem+0.1",
+     "ate": "f17:primeira",
+     "efeito": "circular",
+     "alvo": "homem"
+    },
+    {
+     "de": "f17:primeira",
+     "ate": "f17:fim+0.5",
+     "efeito": "linhas",
+     "intensidade": 0.6
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "furo",
+     "texto": "Furinho",
+     "de": "f7:furinho",
+     "ate": "f7:cabeca"
+    },
+    {
+     "alvo": "copa_img",
+     "texto": "Imagem",
+     "de": "f7:cabeca",
+     "ate": "f7:fim+0.3"
+    },
+    {
+     "alvo": "borrao",
+     "texto": "Borrão",
+     "de": "f9:mancha",
+     "ate": "f9:fim+0.3",
+     "cor": "#FF8A65"
+    },
+    {
+     "alvo": "lente_b",
+     "texto": "Lente",
+     "de": "f10:lente",
+     "ate": "f10:clara"
+    },
+    {
+     "alvo": "sensor",
+     "texto": "Sensor",
+     "de": "f11:sensor",
+     "ate": "f11:fim"
+    },
+    {
+     "alvo": "sensor",
+     "texto": "Pixels",
+     "de": "f12:pixel",
+     "ate": "f12:fim",
+     "cor": "#7CE07A"
+    },
+    {
+     "alvo": "obturador",
+     "texto": "Obturador",
+     "de": "f14:obturador",
+     "ate": "f14:fim"
+    },
+    {
+     "alvo": "homem",
+     "texto": "Parado",
+     "de": "f17:homem",
+     "ate": "f17:primeira"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f15:exposicao",
+     "ate": "f15:camera",
+     "grande": "EXPO­SIÇÃO",
+     "pequeno": "quanto tempo a luz bate no sensor"
+    }
+   ]
+  }
+ ]
+}
