@@ -293,7 +293,7 @@
     "giro": [
      0,
      0,
-     165
+     125
     ],
     "cor": "#FFD54A"
    },
@@ -655,7 +655,7 @@
      "peca": "sol_pivo",
      "faz": "girar_para",
      "eixo": "z",
-     "angulo": -150,
+     "angulo": -90,
      "de": "inicio",
      "ate": "f1:fim"
     },
@@ -840,9 +840,9 @@
        0
       ]
      ],
-     "quantidade": 8,
+     "quantidade": 6,
      "velocidade": 0.6,
-     "intensidade": 0.7,
+     "intensidade": 0.4,
      "de": "f3:luz",
      "ate": "f5:fim+0.3"
     },
@@ -983,8 +983,8 @@
      "tipo": "detalhe",
      "camera": [
       0.03,
-      1.28,
-      -0.2
+      1.36,
+      -0.02
      ],
      "alvo": [
       0.03,
@@ -2019,12 +2019,12 @@
      "de": "f6:dentro",
      "tipo": "detalhe",
      "camera": [
-      -0.08,
+      -0.06,
       1.75,
-      2.75
+      2.95
      ],
      "alvo": [
-      -0.08,
+      -0.06,
       1.42,
       0
      ],
@@ -2255,12 +2255,12 @@
      "de": "f15:camera",
      "tipo": "detalhe",
      "camera": [
-      -0.08,
+      -0.06,
       1.75,
-      2.75
+      2.95
      ],
      "alvo": [
-      -0.08,
+      -0.06,
       1.42,
       0
      ],
