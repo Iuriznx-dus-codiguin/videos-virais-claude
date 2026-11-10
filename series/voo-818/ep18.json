@@ -1,0 +1,1720 @@
+{
+ "serie": "voo-818",
+ "parte": 18,
+ "titulo": "Resgate",
+ "musica": "tensao",
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "davi",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Se quem derrubou o seu avião perguntar quantos sobreviveram, não diga a verdade."
+  },
+  {
+   "id": "f2",
+   "quem": "davi",
+   "off": true,
+   "texto": "Porque esse número decide quem volta pra casa."
+  },
+  {
+   "id": "f3",
+   "quem": "davi",
+   "off": true,
+   "texto": "E na lista da Valéria, só o MECÂNICO precisa voltar vivo."
+  },
+  {
+   "id": "f4",
+   "quem": "valeria",
+   "tom": "calmo",
+   "texto": "Quantos, Davi?"
+  },
+  {
+   "id": "f5",
+   "quem": "davi",
+   "off": true,
+   "texto": "Meu primeiro instinto é dizer: só eu sobrevivi."
+  },
+  {
+   "id": "f6",
+   "quem": "davi",
+   "off": true,
+   "tom": "determinado",
+   "texto": "Não. Se for só eu, ninguém procura os outros."
+  },
+  {
+   "id": "f7",
+   "quem": "davi",
+   "tom": "determinado",
+   "texto": "Cento e quarenta e sete. Todo mundo vivo."
+  },
+  {
+   "id": "f8",
+   "quem": "valeria",
+   "tom": "calmo",
+   "texto": "Ninguém acredita num mecânico, Davi."
+  },
+  {
+   "id": "f9",
+   "quem": "davi",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Só que a prova está enterrada a dois passos do meu pé."
+  },
+  {
+   "id": "f10",
+   "quem": "davi",
+   "off": true,
+   "texto": "E os homens dela já reviram a areia com lanterna."
+  },
+  {
+   "id": "f11",
+   "quem": "davi",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Em dez minutos clareia. Com luz, eles acham a caixa."
+  },
+  {
+   "id": "f12",
+   "quem": "davi",
+   "off": true,
+   "texto": "Se eu olhar pro chão, eu entrego. Eu olho pro mar."
+  },
+  {
+   "id": "f13",
+   "quem": "davi",
+   "off": true,
+   "texto": "Lá longe, uma luz enorme vem pelo mar. É a MARINHA."
+  },
+  {
+   "id": "f14",
+   "quem": "valeria",
+   "tom": "bravo",
+   "texto": "Isso não acabou."
+  },
+  {
+   "id": "f15",
+   "quem": "davi",
+   "off": true,
+   "texto": "Ela corre pro barco e some."
+  },
+  {
+   "id": "f16",
+   "quem": "davi",
+   "off": true,
+   "texto": "No farol, o Capitão Ramos sai com as mãos na cabeça."
+  },
+  {
+   "id": "f17",
+   "quem": "davi",
+   "off": true,
+   "texto": "A Dona Cida abre a adega, e entra ar fresco."
+  },
+  {
+   "id": "f18",
+   "quem": "davi",
+   "off": true,
+   "tom": "aliviado",
+   "texto": "Cento e quarenta e três pessoas abrem os olhos."
+  },
+  {
+   "id": "f19",
+   "quem": "lia",
+   "tom": "feliz",
+   "texto": "Davi! A gente vai pra casa!"
+  },
+  {
+   "id": "f20",
+   "quem": "davi",
+   "off": true,
+   "texto": "Três meses depois, a caixa preta prendeu o Ramos. Só ele."
+  },
+  {
+   "id": "f21",
+   "quem": "davi",
+   "off": true,
+   "texto": "No hangar, eu vejo a Valéria no jornal. Como heroína."
+  },
+  {
+   "id": "f22",
+   "quem": "valeria",
+   "tom": "calmo",
+   "texto": "Eu nunca desisti daqueles passageiros."
+  },
+  {
+   "id": "f23",
+   "quem": "davi",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Ela sorriu pra câmera. E mandou uma mensagem só pra mim."
+  }
+ ],
+ "cenas": [
+  {
+   "id": "pergunta",
+   "cenario": "praia",
+   "luz": "noite",
+   "ambiente": "mar",
+   "filtro": "frio",
+   "personagens": {
+    "davi": {
+     "em": [
+      -11.6,
+      2.4
+     ],
+     "olhando": [
+      -10.4,
+      2.6,
+      4.9
+     ],
+     "expressao": "medo"
+    },
+    "valeria": {
+     "em": [
+      -10.4,
+      4.9
+     ],
+     "olhando": [
+      -11.6,
+      2.6,
+      2.4
+     ],
+     "expressao": "feliz",
+     "segura": "radio"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "destrocos",
+     "em": "destrocos"
+    },
+    {
+     "tipo": "barco",
+     "em": [
+      -5,
+      15
+     ],
+     "giro": 90
+    },
+    {
+     "tipo": "lanternas_mata",
+     "em": [
+      -6.0,
+      12.2
+     ],
+     "giro": 180,
+     "quantas": 2,
+     "largura": 3
+    },
+    {
+     "tipo": "farol",
+     "em": [
+      -20,
+      90
+     ],
+     "modo": "apagado"
+    },
+    {
+     "tipo": "feixe_luz",
+     "de": [
+      -5.5,
+      2.6,
+      13.5
+     ],
+     "em": [
+      -10.9,
+      3.6
+     ],
+     "largura": 2.0,
+     "intensidade": 0.25,
+     "varrer": 8
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "geral",
+     "alvo": [
+      -11.0,
+      1.3,
+      3.5
+     ],
+     "camera": [
+      -13.5,
+      5.5,
+      12.0
+     ],
+     "movimento": "descer",
+     "intensidade": 0.25
+    },
+    {
+     "de": "f2",
+     "tipo": "close",
+     "alvo": "davi",
+     "camera": [
+      -12.1,
+      2.7,
+      5.36
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.15
+    },
+    {
+     "de": "f3",
+     "tipo": "medio",
+     "alvo": "valeria",
+     "camera": [
+      -12.8,
+      2.6,
+      3.3
+     ],
+     "movimento": "arco",
+     "intensidade": 0.12
+    },
+    {
+     "de": "f4",
+     "tipo": "close",
+     "alvo": "valeria",
+     "camera": [
+      -13.1,
+      2.6,
+      3.6
+     ],
+     "movimento": "zoom_rapido",
+     "intensidade": 0.2
+    }
+   ],
+   "sons": [
+    {
+     "de": "inicio",
+     "som": "agua",
+     "volume": 0.25
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "inicio",
+     "efeito": "vinheta",
+     "intensidade": 0.3
+    },
+    {
+     "de": "inicio",
+     "efeito": "chuva",
+     "intensidade": 0.15
+    },
+    {
+     "de": "f3:MECÂNICO",
+     "ate": "f3:MECÂNICO+0.8",
+     "efeito": "linhas"
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "davi",
+     "texto": "DAVI · MECÂNICO",
+     "cor": "#FFD60A",
+     "de": "f2",
+     "ate": "f2:fim"
+    },
+    {
+     "alvo": "valeria",
+     "texto": "VALÉRIA · DIRETORA",
+     "cor": "#E0B3FF",
+     "de": "f3",
+     "ate": "f3:fim"
+    }
+   ]
+  },
+  {
+   "id": "instinto",
+   "cenario": "praia",
+   "luz": "noite",
+   "ambiente": "mar",
+   "filtro": "frio",
+   "de": "f5",
+   "personagens": {
+    "davi": {
+     "em": [
+      -11.6,
+      2.4
+     ],
+     "olhando": [
+      -10.4,
+      2.6,
+      4.9
+     ],
+     "expressao": "nervoso"
+    },
+    "valeria": {
+     "em": [
+      -10.4,
+      4.9
+     ],
+     "olhando": [
+      -11.6,
+      2.6,
+      2.4
+     ],
+     "expressao": "feliz",
+     "segura": "radio"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "destrocos",
+     "em": "destrocos"
+    },
+    {
+     "tipo": "barco",
+     "em": [
+      -5,
+      15
+     ],
+     "giro": 90
+    },
+    {
+     "tipo": "lanternas_mata",
+     "em": [
+      -6.0,
+      12.2
+     ],
+     "giro": 180,
+     "quantas": 2,
+     "largura": 3
+    },
+    {
+     "tipo": "farol",
+     "em": [
+      -20,
+      90
+     ],
+     "modo": "apagado"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "close",
+     "alvo": "davi",
+     "camera": [
+      -12.6,
+      2.7,
+      5.1
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.15
+    },
+    {
+     "de": "f6",
+     "tipo": "detalhe",
+     "alvo": [
+      -20.0,
+      7.0,
+      90.0
+     ],
+     "camera": [
+      -12.5,
+      2.4,
+      6.0
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.2,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f7",
+     "tipo": "close",
+     "alvo": "davi",
+     "camera": [
+      -12.1,
+      2.7,
+      5.36
+     ],
+     "movimento": "orbitar",
+     "intensidade": 0.1
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "davi",
+     "olhar": [
+      -13.5,
+      2.0,
+      5.5
+     ],
+     "de": "f5:dizer"
+    },
+    {
+     "quem": "davi",
+     "olhar": [
+      -10.4,
+      2.6,
+      4.9
+     ],
+     "expressao": "determinado",
+     "de": "f7"
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "inicio",
+     "efeito": "vinheta",
+     "intensidade": 0.3
+    },
+    {
+     "de": "inicio",
+     "efeito": "chuva",
+     "intensidade": 0.15
+    }
+   ]
+  },
+  {
+   "id": "mecanico",
+   "cenario": "praia",
+   "luz": "noite",
+   "ambiente": "mar",
+   "filtro": "frio",
+   "de": "f8",
+   "personagens": {
+    "davi": {
+     "em": [
+      -11.6,
+      2.4
+     ],
+     "olhando": [
+      -10.4,
+      2.6,
+      4.9
+     ],
+     "expressao": "determinado"
+    },
+    "valeria": {
+     "em": [
+      -10.4,
+      4.9
+     ],
+     "olhando": [
+      -11.6,
+      2.6,
+      2.4
+     ],
+     "expressao": "serio",
+     "segura": "radio"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "destrocos",
+     "em": "destrocos"
+    },
+    {
+     "tipo": "barco",
+     "em": [
+      -5,
+      15
+     ],
+     "giro": 90
+    },
+    {
+     "tipo": "lanternas_mata",
+     "em": [
+      -6.0,
+      12.2
+     ],
+     "giro": 180,
+     "quantas": 2,
+     "largura": 3
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "alvo": [
+      -11.0,
+      1.8,
+      3.65
+     ],
+     "camera": [
+      -17.7,
+      2.8,
+      6.9
+     ],
+     "movimento": "arco",
+     "intensidade": 0.12
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "inicio",
+     "efeito": "vinheta",
+     "intensidade": 0.3
+    },
+    {
+     "de": "inicio",
+     "efeito": "chuva",
+     "intensidade": 0.15
+    }
+   ]
+  },
+  {
+   "id": "prova",
+   "cenario": "praia",
+   "luz": "noite",
+   "ambiente": "mar",
+   "filtro": "frio",
+   "de": "f9",
+   "personagens": {
+    "davi": {
+     "em": [
+      -11.6,
+      2.4
+     ],
+     "olhando": [
+      -10.4,
+      2.6,
+      4.9
+     ],
+     "expressao": "nervoso"
+    },
+    "valeria": {
+     "em": [
+      -10.4,
+      4.9
+     ],
+     "olhando": [
+      -11.6,
+      2.6,
+      2.4
+     ],
+     "expressao": "serio",
+     "segura": "radio"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "destrocos",
+     "em": "destrocos"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "alvo": [
+      -11.6,
+      0.15,
+      3.3
+     ],
+     "camera": [
+      -12.7,
+      1.3,
+      5.0
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.2,
+     "transicao": "zoom"
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "inicio",
+     "efeito": "vinheta",
+     "intensidade": 0.3
+    },
+    {
+     "de": "inicio",
+     "efeito": "chuva",
+     "intensidade": 0.15
+    },
+    {
+     "de": "f9:enterrada",
+     "ate": "f9:fim+0.2",
+     "efeito": "circular",
+     "alvo": [
+      -11.6,
+      0.1,
+      3.3
+     ]
+    }
+   ]
+  },
+  {
+   "id": "lanternas",
+   "cenario": "praia",
+   "luz": "noite",
+   "ambiente": "mar",
+   "filtro": "frio",
+   "de": "f10",
+   "personagens": {
+    "davi": {
+     "em": [
+      -11.6,
+      2.4
+     ],
+     "olhando": [
+      -10.4,
+      2.6,
+      4.9
+     ],
+     "expressao": "nervoso"
+    },
+    "valeria": {
+     "em": [
+      -10.4,
+      4.9
+     ],
+     "olhando": [
+      -11.6,
+      2.6,
+      2.4
+     ],
+     "expressao": "serio",
+     "segura": "radio"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "destrocos",
+     "em": "destrocos"
+    },
+    {
+     "tipo": "barco",
+     "em": [
+      -5,
+      15
+     ],
+     "giro": 90
+    },
+    {
+     "tipo": "lanternas_mata",
+     "em": [
+      -8.0,
+      9.5
+     ],
+     "giro": 200,
+     "quantas": 3,
+     "largura": 5
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "geral",
+     "alvo": [
+      -9.0,
+      1.2,
+      8.5
+     ],
+     "camera": [
+      -16.0,
+      3.4,
+      4.5
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.15
+    },
+    {
+     "de": "f11",
+     "tipo": "medio",
+     "alvo": "davi",
+     "camera": [
+      -13.6,
+      2.6,
+      5.6
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.15
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "inicio",
+     "efeito": "vinheta",
+     "intensidade": 0.3
+    },
+    {
+     "de": "inicio",
+     "efeito": "chuva",
+     "intensidade": 0.15
+    },
+    {
+     "de": "f11",
+     "ate": "f11:fim",
+     "efeito": "letreiro",
+     "texto": "6H22",
+     "altura": 0.22
+    }
+   ]
+  },
+  {
+   "id": "marinha",
+   "cenario": "praia",
+   "luz": "noite",
+   "ambiente": "mar",
+   "filtro": "frio",
+   "de": "f12",
+   "personagens": {
+    "davi": {
+     "em": [
+      -11.6,
+      2.4
+     ],
+     "olhando": [
+      -10.4,
+      2.6,
+      4.9
+     ],
+     "expressao": "nervoso"
+    },
+    "valeria": {
+     "em": [
+      -10.4,
+      4.9
+     ],
+     "olhando": [
+      -11.6,
+      2.6,
+      2.4
+     ],
+     "expressao": "serio",
+     "segura": "radio"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "destrocos",
+     "em": "destrocos"
+    },
+    {
+     "tipo": "barco",
+     "em": [
+      -5,
+      15
+     ],
+     "giro": 90
+    },
+    {
+     "tipo": "lanternas_mata",
+     "em": [
+      -6.0,
+      12.2
+     ],
+     "giro": 180,
+     "quantas": 2,
+     "largura": 3
+    },
+    {
+     "tipo": "barco",
+     "em": [
+      -26,
+      58
+     ],
+     "giro": 0,
+     "caixas": false
+    },
+    {
+     "tipo": "feixe_luz",
+     "de": [
+      -26.0,
+      4.0,
+      56.0
+     ],
+     "em": [
+      -13.0,
+      6.5
+     ],
+     "largura": 3.0,
+     "intensidade": 0.3,
+     "varrer": 14
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "close",
+     "alvo": "davi",
+     "camera": [
+      -12.1,
+      2.7,
+      5.36
+     ],
+     "movimento": "travelling",
+     "intensidade": -0.15
+    },
+    {
+     "de": "f13",
+     "tipo": "detalhe",
+     "alvo": [
+      -26.0,
+      2.0,
+      58.0
+     ],
+     "camera": [
+      -12.0,
+      2.3,
+      6.5
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.25,
+     "transicao": "chicote"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "davi",
+     "olhar": [
+      -26.0,
+      2.4,
+      58.0
+     ],
+     "de": "f12:mar"
+    },
+    {
+     "quem": "davi",
+     "expressao": "surpreso",
+     "de": "f12:mar"
+    }
+   ],
+   "sons": [
+    {
+     "de": "f13:luz",
+     "som": "buzina",
+     "volume": 0.4
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "inicio",
+     "efeito": "vinheta",
+     "intensidade": 0.3
+    },
+    {
+     "de": "inicio",
+     "efeito": "chuva",
+     "intensidade": 0.15
+    },
+    {
+     "de": "f13:MARINHA",
+     "ate": "f13:MARINHA+0.8",
+     "efeito": "linhas"
+    }
+   ]
+  },
+  {
+   "id": "foge",
+   "cenario": "praia",
+   "luz": "noite",
+   "ambiente": "mar",
+   "filtro": "frio",
+   "de": "f14",
+   "personagens": {
+    "davi": {
+     "em": [
+      -11.6,
+      2.4
+     ],
+     "olhando": [
+      -10.4,
+      2.6,
+      4.9
+     ],
+     "expressao": "surpreso"
+    },
+    "valeria": {
+     "em": [
+      -10.4,
+      4.9
+     ],
+     "olhando": [
+      -11.6,
+      2.6,
+      2.4
+     ],
+     "expressao": "bravo",
+     "segura": "radio"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "destrocos",
+     "em": "destrocos"
+    },
+    {
+     "tipo": "barco",
+     "em": [
+      -5,
+      15
+     ],
+     "giro": 90
+    },
+    {
+     "tipo": "barco",
+     "em": [
+      -26,
+      58
+     ],
+     "giro": 0,
+     "caixas": false
+    },
+    {
+     "tipo": "feixe_luz",
+     "de": [
+      -26.0,
+      4.0,
+      56.0
+     ],
+     "em": [
+      -13.0,
+      6.5
+     ],
+     "largura": 3.0,
+     "intensidade": 0.3,
+     "varrer": 14
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "close",
+     "alvo": "valeria",
+     "camera": [
+      -13.1,
+      2.6,
+      3.6
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.2
+    },
+    {
+     "de": "f15",
+     "tipo": "aberto",
+     "alvo": "valeria",
+     "camera": [
+      -15.5,
+      3.4,
+      3.0
+     ],
+     "movimento": "acompanhar",
+     "intensidade": 0.2
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "valeria",
+     "faz": "correr",
+     "para": [
+      -5.8,
+      12.6
+     ],
+     "de": "f15"
+    },
+    {
+     "quem": "davi",
+     "olhar": "valeria",
+     "de": "f15"
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "inicio",
+     "efeito": "vinheta",
+     "intensidade": 0.3
+    },
+    {
+     "de": "inicio",
+     "efeito": "chuva",
+     "intensidade": 0.15
+    }
+   ]
+  },
+  {
+   "id": "ramos",
+   "cenario": "ilhota_farol",
+   "luz": "por_do_sol",
+   "ambiente": "mar",
+   "de": "f16",
+   "transicao": "chicote",
+   "personagens": {
+    "ramos": {
+     "em": [
+      0.2,
+      0.8
+     ],
+     "olhando": [
+      1.6,
+      2.7,
+      5.2
+     ],
+     "expressao": "cansado"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "farol",
+     "em": "farol",
+     "ilhota": false,
+     "modo": "apagado"
+    },
+    {
+     "tipo": "barco",
+     "em": [
+      3,
+      17
+     ],
+     "giro": 90,
+     "luzes": false
+    },
+    {
+     "tipo": "feixe_luz",
+     "de": [
+      -10.0,
+      5.0,
+      30.0
+     ],
+     "em": [
+      0.2,
+      0.8
+     ],
+     "largura": 1.6,
+     "intensidade": 0.25
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "medio",
+     "alvo": "ramos",
+     "camera": [
+      1.6,
+      2.7,
+      5.2
+     ],
+     "movimento": "arco",
+     "intensidade": 0.12
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "ramos",
+     "faz": "maos_na_cabeca",
+     "de": "inicio"
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "inicio",
+     "efeito": "vinheta",
+     "intensidade": 0.25
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "ramos",
+     "texto": "CAPITÃO RAMOS · PILOTO",
+     "cor": "#FF9F7A",
+     "de": "f16:Capitão",
+     "ate": "f16:fim"
+    }
+   ]
+  },
+  {
+   "id": "adega",
+   "cenario": "adega",
+   "luz": "noite",
+   "de": "f17",
+   "personagens": {
+    "cida": {
+     "em": [
+      0.0,
+      -4.4
+     ],
+     "olhando": [
+      0.3,
+      1.5,
+      -1.6
+     ],
+     "expressao": "determinado",
+     "escala": 0.6
+    },
+    "pax1": {
+     "em": [
+      -1.55,
+      3.4
+     ],
+     "olhando": [
+      0.4,
+      0.8,
+      7.0
+     ],
+     "pose": "sentado",
+     "escala": 0.6,
+     "olhos_fechados": true,
+     "expressao": "cansado"
+    },
+    "pax2": {
+     "em": [
+      1.6,
+      3.9
+     ],
+     "olhando": [
+      -0.4,
+      0.8,
+      7.0
+     ],
+     "pose": "sentado",
+     "escala": 0.6,
+     "olhos_fechados": true,
+     "expressao": "cansado"
+    },
+    "pax4": {
+     "em": [
+      -1.6,
+      4.5
+     ],
+     "olhando": [
+      0.4,
+      0.8,
+      7.5
+     ],
+     "pose": "sentado",
+     "escala": 0.6,
+     "olhos_fechados": true,
+     "expressao": "cansado"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "feixe_luz",
+     "de": [
+      0.0,
+      2.8,
+      -5.8
+     ],
+     "em": [
+      0.0,
+      0.5
+     ],
+     "largura": 1.4,
+     "cor": "#FFD9A0",
+     "intensidade": 0.35,
+     "aparece": "f17:abre"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "medio",
+     "alvo": "cida",
+     "camera": [
+      0.3,
+      1.5,
+      -1.6
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.15
+    },
+    {
+     "de": "f18",
+     "tipo": "medio",
+     "alvo": [
+      0.0,
+      0.7,
+      3.9
+     ],
+     "camera": [
+      0.2,
+      1.5,
+      6.8
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.12
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "pax1",
+     "faz": "abrir_olhos",
+     "de": "f18:abrem"
+    },
+    {
+     "quem": "pax2",
+     "faz": "abrir_olhos",
+     "de": "f18:abrem+0.2"
+    },
+    {
+     "quem": "pax4",
+     "faz": "abrir_olhos",
+     "de": "f18:abrem+0.4"
+    },
+    {
+     "quem": "pax1",
+     "expressao": "surpreso",
+     "de": "f18:abrem"
+    },
+    {
+     "quem": "pax2",
+     "expressao": "surpreso",
+     "de": "f18:abrem+0.2"
+    },
+    {
+     "quem": "pax4",
+     "expressao": "surpreso",
+     "de": "f18:abrem+0.4"
+    }
+   ],
+   "sons": [
+    {
+     "de": "f17:abre",
+     "som": "clique",
+     "volume": 0.35
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "inicio",
+     "efeito": "vinheta",
+     "intensidade": 0.3
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "cida",
+     "texto": "DONA CIDA · 79 ANOS",
+     "cor": "#B8F28A",
+     "de": "f17",
+     "ate": "f17:fim"
+    }
+   ]
+  },
+  {
+   "id": "lia",
+   "cenario": "praia",
+   "luz": "por_do_sol",
+   "ambiente": "mar",
+   "filtro": "quente",
+   "de": "f19",
+   "personagens": {
+    "davi": {
+     "em": [
+      -11.6,
+      2.4
+     ],
+     "olhando": [
+      -9.0,
+      2.4,
+      1.0
+     ],
+     "expressao": "feliz"
+    },
+    "lia": {
+     "em": [
+      -6.6,
+      -1.2
+     ],
+     "olhando": [
+      -7.6,
+      2.0,
+      6.0
+     ],
+     "expressao": "feliz"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "destrocos",
+     "em": "destrocos"
+    },
+    {
+     "tipo": "barco",
+     "em": [
+      -26,
+      58
+     ],
+     "giro": 0,
+     "caixas": false
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "medio",
+     "alvo": "lia",
+     "camera": [
+      -7.6,
+      2.4,
+      6.0
+     ],
+     "movimento": "acompanhar",
+     "intensidade": 0.2
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "lia",
+     "faz": "correr",
+     "para": [
+      -9.2,
+      1.4
+     ],
+     "de": "inicio"
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "inicio",
+     "efeito": "vinheta",
+     "intensidade": 0.25
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "lia",
+     "texto": "LIA · 13 ANOS",
+     "cor": "#FF9BD2",
+     "de": "f19",
+     "ate": "f19:fim"
+    }
+   ]
+  },
+  {
+   "id": "meses",
+   "cenario": "ilhota_farol",
+   "luz": "dia",
+   "ambiente": "mar",
+   "de": "f20",
+   "transicao": "desfoque",
+   "objetos": [
+    {
+     "tipo": "farol",
+     "em": "farol",
+     "ilhota": false,
+     "modo": "apagado"
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      1.4,
+      1.2
+     ]
+    },
+    {
+     "tipo": "caixa_preta",
+     "em": [
+      1.4,
+      1.2
+     ],
+     "alt": 0.8,
+     "giro": 25
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "alvo": [
+      1.4,
+      1.0,
+      1.2
+     ],
+     "camera": [
+      2.6,
+      1.7,
+      3.4
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.2
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "inicio",
+     "efeito": "vinheta",
+     "intensidade": 0.25
+    },
+    {
+     "de": "f20",
+     "ate": "f20:caixa",
+     "efeito": "letreiro",
+     "texto": "FEVEREIRO",
+     "altura": 0.22
+    },
+    {
+     "de": "f20:Ramos",
+     "ate": "f20:fim+0.2",
+     "efeito": "destacar",
+     "alvo": [
+      1.4,
+      1.0,
+      1.2
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hangar",
+   "cenario": "cabine",
+   "luz": "entardecer",
+   "de": "f21",
+   "personagens": {
+    "davi": {
+     "em": [
+      0.0,
+      3.0
+     ],
+     "olhando": [
+      0.62,
+      0.8,
+      4.0
+     ],
+     "expressao": "serio",
+     "escala": 0.55
+    }
+   },
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "close",
+     "alvo": "davi",
+     "camera": [
+      0.0,
+      1.45,
+      4.7
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.12
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "inicio",
+     "efeito": "vinheta",
+     "intensidade": 0.3
+    }
+   ]
+  },
+  {
+   "id": "jornal",
+   "cenario": "ilhota_farol",
+   "luz": "dia",
+   "ambiente": "mar",
+   "filtro": "vivo",
+   "de": "f22",
+   "personagens": {
+    "valeria": {
+     "em": [
+      0.0,
+      3.2
+     ],
+     "olhando": [
+      0.9,
+      2.6,
+      7.6
+     ],
+     "expressao": "feliz",
+     "segura": "radio"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "farol",
+     "em": "farol",
+     "ilhota": false,
+     "modo": "apagado"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "medio",
+     "alvo": "valeria",
+     "camera": [
+      0.9,
+      2.6,
+      7.6
+     ],
+     "movimento": "arco",
+     "intensidade": 0.1
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "inicio",
+     "efeito": "vinheta",
+     "intensidade": 0.2
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "valeria",
+     "texto": "VALÉRIA MENEZES · DIRETORA",
+     "cor": "#E0B3FF",
+     "de": "f22",
+     "ate": "f22:fim"
+    }
+   ]
+  },
+  {
+   "id": "virada",
+   "cenario": "ilhota_farol",
+   "luz": "dia",
+   "ambiente": "mar",
+   "filtro": "dramatico",
+   "de": "f23",
+   "transicao": "zoom",
+   "personagens": {
+    "valeria": {
+     "em": [
+      0.0,
+      3.2
+     ],
+     "olhando": [
+      0.6,
+      2.6,
+      6.2
+     ],
+     "expressao": "feliz",
+     "segura": "radio"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "farol",
+     "em": "farol",
+     "ilhota": false,
+     "modo": "apagado"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "close",
+     "alvo": "valeria",
+     "camera": [
+      0.6,
+      2.6,
+      6.2
+     ],
+     "movimento": "dolly_zoom",
+     "intensidade": 0.8
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "valeria",
+     "faz": "erguer",
+     "para": [
+      0.6,
+      2.6,
+      6.2
+     ],
+     "de": "f23:mensagem"
+    },
+    {
+     "quem": "valeria",
+     "faz": "acender",
+     "de": "f23:mensagem+0.6"
+    }
+   ],
+   "sons": [
+    {
+     "de": "f23",
+     "som": "tensao_sobe",
+     "volume": 0.35
+    },
+    {
+     "de": "f23:mensagem+0.6",
+     "som": "chiado",
+     "volume": 0.3
+    },
+    {
+     "de": "f23:mim",
+     "som": "impacto",
+     "volume": 0.45
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "inicio",
+     "efeito": "vinheta",
+     "intensidade": 0.3
+    },
+    {
+     "de": "inicio",
+     "ate": "fim",
+     "efeito": "barras"
+    },
+    {
+     "de": "f23:mensagem",
+     "ate": "f23:fim+0.3",
+     "efeito": "destacar",
+     "alvo": "valeria"
+    }
+   ]
+  },
+  {
+   "id": "fim",
+   "cenario": "cabine",
+   "luz": "entardecer",
+   "de": "f23:fim+0.1",
+   "personagens": {
+    "davi": {
+     "em": [
+      0.0,
+      3.0
+     ],
+     "olhando": [
+      0.0,
+      1.45,
+      4.7
+     ],
+     "expressao": "medo",
+     "escala": 0.55
+    }
+   },
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "close",
+     "alvo": "davi",
+     "camera": [
+      0.0,
+      1.45,
+      4.7
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.1
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "inicio",
+     "efeito": "vinheta",
+     "intensidade": 0.3
+    },
+    {
+     "de": "inicio",
+     "ate": "fim",
+     "efeito": "barras"
+    }
+   ]
+  }
+ ],
+ "chamada": {
+  "pergunta": "Ela vem atrás do Davi ou da Lia?",
+  "texto": "COMENTA",
+  "destaque": "TEMPORADA 2"
+ },
+ "postagem": {
+  "titulo": "O resgate chegou na ilha onde o avião caiu",
+  "descricao": "Quatro sobreviventes de um avião que caiu numa ilha deserta. No fim da temporada, a diretora da companhia aérea encurrala o mecânico na praia e pergunta quantos sobreviveram.",
+  "hashtags": [
+   "resgate",
+   "ilhadeserta",
+   "suspense",
+   "animacao"
+  ],
+  "comentario": "Eu acho que ela vai atrás da Lia. E você: o Davi ou a Lia?",
+  "capa": "f4+0.3"
+ }
+}
