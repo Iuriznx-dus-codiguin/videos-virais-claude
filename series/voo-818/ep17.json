@@ -72,20 +72,23 @@
    "id": "f11",
    "quem": "davi",
    "off": true,
-   "texto": "Não é o Capitão Ramos. É uma mulher de lenço."
+   "texto": "Não é o Capitão Ramos. É uma mulher de lenço.",
+   "pausa_depois": 0.7
   },
   {
    "id": "f12",
    "quem": "valeria",
    "tom": "calmo",
-   "texto": "Davi Rocha... é você?"
+   "texto": "Davi Rocha... é você?",
+   "pausa_depois": 0.8
   },
   {
    "id": "f13",
    "quem": "davi",
    "off": true,
    "tom": "tenso",
-   "texto": "Eu conheço essa voz. É a voz do rádio."
+   "texto": "Eu conheço essa voz. É a voz do rádio.",
+   "pausa_depois": 0.5
   },
   {
    "id": "f14",
@@ -103,7 +106,8 @@
    "id": "f16",
    "quem": "davi",
    "tom": "determinado",
-   "texto": "Tarde demais. A Marinha viu o pedido de SOCORRO."
+   "texto": "Tarde demais. A Marinha viu o pedido de SOCORRO.",
+   "pausa_depois": 0.6
   },
   {
    "id": "f17",
@@ -122,7 +126,8 @@
    "quem": "davi",
    "off": true,
    "tom": "aliviado",
-   "texto": "Por um segundo, eu acho que o blefe colou."
+   "texto": "Por um segundo, eu acho que o blefe colou.",
+   "pausa_depois": 0.7
   },
   {
    "id": "f20",
