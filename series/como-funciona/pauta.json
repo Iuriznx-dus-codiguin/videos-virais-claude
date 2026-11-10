@@ -295,7 +295,8 @@
         "engrenagens"
       ],
       "gancho": "O tique-taque é uma peça segurando e soltando as engrenagens.",
-      "status": "roteiro"
+      "status": "produzido",
+      "dia": "2026-11-10"
     },
     {
       "n": 18,
@@ -312,7 +313,7 @@
       ],
       "gancho": "A primeira foto da história levou horas para ficar pronta.",
       "estilo": "E SE",
-      "status": "pendente"
+      "status": "roteiro"
     },
     {
       "n": 19,
