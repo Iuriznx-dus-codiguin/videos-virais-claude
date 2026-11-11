@@ -313,7 +313,8 @@
       ],
       "gancho": "A primeira foto da história levou horas para ficar pronta.",
       "estilo": "E SE",
-      "status": "roteiro"
+      "status": "produzido",
+      "dia": "2026-11-11"
     },
     {
       "n": 19,
@@ -330,7 +331,7 @@
       ],
       "gancho": "Apertar o interruptor só fecha uma porta para a eletricidade.",
       "estilo": "dúvida comum",
-      "status": "pendente"
+      "status": "roteiro"
     },
     {
       "n": 20,

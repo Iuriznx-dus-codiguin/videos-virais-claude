@@ -452,24 +452,29 @@
      0.007
     ],
     "pos": [
-     0.06,
-     0.155,
+     0.02,
+     0.16,
      -0.07
     ],
     "caminho": [
      [
-      0,
-      0.057,
+      0.04,
+      0.052,
       0
      ],
      [
-      0,
-      -0.025,
+      0.01,
+      0.04,
       0
      ],
      [
-      0,
-      -0.055,
+      -0.02,
+      0.0,
+      0
+     ],
+     [
+      -0.02,
+      -0.06,
       0
      ]
     ],
@@ -480,11 +485,11 @@
     "id": "haste",
     "forma": "cilindro",
     "tam": [
-     0.009,
+     0.01,
      0.1
     ],
     "pos": [
-     0.06,
+     0.0,
      0.05,
      -0.07
     ],
@@ -643,9 +648,9 @@
      0.03
     ],
     "pos": [
-     0.06,
-     0.22,
-     0.02
+     0.11,
+     0.17,
+     0.08
     ],
     "cor": "#263238"
    },
@@ -1214,7 +1219,7 @@
    "curiosidades"
   ],
   "comentario": "Eu achava que o terceiro furinho também levava eletricidade. Você sabia que ele só trabalha quando dá problema?",
-  "capa": "f14:barra+0.8"
+  "capa": "f12:choque+0.5"
  },
  "cenas": [
   {
@@ -1242,9 +1247,9 @@
      "peca": "plugue",
      "faz": "mover",
      "desloc": [
-      0,
-      0,
-      -0.022
+      -0.02,
+      0.02,
+      -0.04
      ],
      "de": "inicio",
      "ate": "f1:para"
@@ -1277,14 +1282,14 @@
      "de": "inicio",
      "tipo": "detalhe",
      "camera": [
-      0.32,
-      1.38,
-      0.6
+      -0.15,
+      1.42,
+      0.88
      ],
      "alvo": [
-      0.084,
-      1.308,
-      -0.049
+      0.126,
+      1.28,
+      0.0
      ],
      "movimento": "arco",
      "intensidade": 0.6
@@ -1609,14 +1614,18 @@
      "intensidade": -0.5
     },
     {
-     "de": "f3:faisca",
-     "tipo": "close",
+     "de": "f3:torcia",
+     "tipo": "detalhe",
      "camera": [
-      0.3,
-      2.85,
-      2.2
+      -0.22,
+      1.32,
+      -0.55
      ],
-     "alvo": "hubbell",
+     "alvo": [
+      0.0,
+      1.22,
+      -1.05
+     ],
      "movimento": "zoom_rapido"
     },
     {
@@ -1739,7 +1748,7 @@
    "rotulos": [
     {
      "alvo": "rosca",
-     "texto": "No lugar da lâmpada",
+     "texto": "No bocal",
      "de": "f3:rosqueava+0.2",
      "ate": "f3:torcia"
     },
@@ -1782,13 +1791,13 @@
      "tipo": "particulas",
      "particula": "faiscas",
      "em": [
-      0.455,
+      0.466,
       -0.028
      ],
-     "alt": 1.378,
-     "raio": 0.04,
-     "altura": 0.08,
-     "quantas": 8,
+     "alt": 1.35,
+     "raio": 0.03,
+     "altura": 0.04,
+     "quantas": 6,
      "aparece": "f10:lataria",
      "some": "f11:inteira"
     },
@@ -1812,9 +1821,9 @@
      "peca": "plugue",
      "faz": "mover",
      "desloc": [
-      0,
-      0,
-      -0.04
+      -0.05,
+      0.05,
+      -0.1
      ],
      "de": "inicio",
      "ate": "inicio+0.05"
@@ -1832,7 +1841,7 @@
      "tipo": "eletricidade",
      "quantidade": 8,
      "velocidade": 0.7,
-     "intensidade": 0.9,
+     "intensidade": 0.4,
      "de": "f6:ida",
      "ate": "f6:fim+0.3"
     },
@@ -1842,7 +1851,7 @@
      "tipo": "eletricidade",
      "quantidade": 8,
      "velocidade": 0.7,
-     "intensidade": 0.9,
+     "intensidade": 0.4,
      "de": "f6:volta",
      "ate": "f6:fim+0.3",
      "caminho": [
@@ -1869,7 +1878,7 @@
      "tipo": "eletricidade",
      "quantidade": 6,
      "velocidade": 0.7,
-     "intensidade": 0.9,
+     "intensidade": 0.4,
      "de": "f7:chega",
      "ate": "f9:para"
     },
@@ -1879,7 +1888,7 @@
      "tipo": "eletricidade",
      "quantidade": 7,
      "velocidade": 0.7,
-     "intensidade": 0.9,
+     "intensidade": 0.4,
      "de": "f7:chega+0.4",
      "ate": "f9:para"
     },
@@ -1889,7 +1898,7 @@
      "tipo": "eletricidade",
      "quantidade": 7,
      "velocidade": 0.7,
-     "intensidade": 0.9,
+     "intensidade": 0.4,
      "de": "f7:volta",
      "ate": "f9:para",
      "caminho": [
@@ -1926,6 +1935,20 @@
      "intensidade": 0.8,
      "de": "f7:acende",
      "ate": "f7:volta"
+    },
+    {
+     "peca": "espelho_i",
+     "faz": "transparente",
+     "opacidade": 0.25,
+     "de": "f8:afasta",
+     "ate": "f8:afasta+0.4"
+    },
+    {
+     "peca": "tecla",
+     "faz": "transparente",
+     "opacidade": 0.25,
+     "de": "f8:afasta",
+     "ate": "f8:afasta+0.4"
     },
     {
      "peca": "lamina_pivo",
@@ -1979,9 +2002,9 @@
      "peca": "tomada",
      "faz": "fluxo",
      "tipo": "eletricidade",
-     "quantidade": 12,
+     "quantidade": 14,
      "velocidade": 0.6,
-     "intensidade": 0.9,
+     "intensidade": 0.35,
      "de": "f11:inteira",
      "ate": "f12:fim+0.3",
      "caminho": [
@@ -2034,7 +2057,7 @@
      "tipo": "eletricidade",
      "quantidade": 8,
      "velocidade": 0.9,
-     "intensidade": 0.9,
+     "intensidade": 0.45,
      "de": "f12:caminho",
      "ate": "f12:fim+0.3",
      "caminho": [
@@ -2076,9 +2099,9 @@
      "peca": "plugue",
      "faz": "mover",
      "desloc": [
-      0,
-      0,
-      0.04
+      0.05,
+      -0.05,
+      0.1
      ],
      "de": "f13",
      "ate": "f13+0.4"
@@ -2094,9 +2117,9 @@
      "peca": "plugue",
      "faz": "mover",
      "desloc": [
-      0,
-      0,
-      -0.04
+      -0.05,
+      0.05,
+      -0.1
      ],
      "de": "f14",
      "ate": "f14+0.4"
@@ -2122,9 +2145,9 @@
      "peca": "tomada",
      "faz": "fluxo",
      "tipo": "eletricidade",
-     "quantidade": 14,
+     "quantidade": 16,
      "velocidade": 0.55,
-     "intensidade": 0.9,
+     "intensidade": 0.45,
      "de": "f15:foge",
      "ate": "f16:fim+0.3",
      "caminho": [
@@ -2170,16 +2193,26 @@
       ],
       [
        0.06,
+       0.212,
+       -0.07
+      ],
+      [
+       0.03,
        0.2,
        -0.07
       ],
       [
-       0.06,
-       0.12,
+       0.0,
+       0.16,
        -0.07
       ],
       [
-       0.06,
+       0.0,
+       0.1,
+       -0.07
+      ],
+      [
+       0.0,
        0.01,
        -0.07
       ]
@@ -2206,7 +2239,7 @@
      "tipo": "eletricidade",
      "quantidade": 8,
      "velocidade": 0.7,
-     "intensidade": 0.9,
+     "intensidade": 0.4,
      "de": "f17:repara",
      "ate": "f18:fim+0.5"
     },
@@ -2216,7 +2249,7 @@
      "tipo": "eletricidade",
      "quantidade": 8,
      "velocidade": 0.7,
-     "intensidade": 0.9,
+     "intensidade": 0.4,
      "de": "f17:repara",
      "ate": "f18:fim+0.5",
      "caminho": [
@@ -2341,14 +2374,14 @@
      "de": "f6:eletricidade",
      "tipo": "detalhe",
      "camera": [
-      0.11,
-      1.34,
-      0.5
+      -0.2,
+      1.38,
+      1.05
      ],
      "alvo": [
-      0.084,
-      1.308,
-      -0.049
+      0.0,
+      1.252,
+      -0.098
      ],
      "movimento": "aproximar"
     },
@@ -2356,14 +2389,14 @@
      "de": "f7",
      "tipo": "detalhe",
      "camera": [
-      0.02,
-      1.52,
-      0.85
+      0.0,
+      1.62,
+      1.15
      ],
      "alvo": [
-      -0.224,
+      -0.252,
       1.518,
-      -0.056
+      -0.07
      ],
      "movimento": "arco",
      "intensidade": 0.4
@@ -2381,14 +2414,14 @@
      "de": "f8",
      "tipo": "detalhe",
      "camera": [
-      0.02,
-      1.52,
-      0.85
+      0.0,
+      1.62,
+      1.15
      ],
      "alvo": [
-      -0.224,
+      -0.252,
       1.518,
-      -0.056
+      -0.07
      ],
      "movimento": "aproximar"
     },
@@ -2396,14 +2429,14 @@
      "de": "f8:afasta",
      "tipo": "detalhe",
      "camera": [
-      -0.06,
-      1.44,
-      0.45
+      -0.1,
+      1.48,
+      0.55
      ],
      "alvo": [
       -0.224,
       1.42,
-      -0.098
+      -0.084
      ],
      "movimento": "arco",
      "intensidade": 0.4,
@@ -2413,14 +2446,14 @@
      "de": "f9",
      "tipo": "detalhe",
      "camera": [
-      0.02,
-      1.52,
-      0.85
+      0.0,
+      1.62,
+      1.15
      ],
      "alvo": [
-      -0.224,
+      -0.252,
       1.518,
-      -0.056
+      -0.07
      ],
      "movimento": "arco",
      "intensidade": -0.4
@@ -2453,9 +2486,9 @@
      "de": "f11",
      "tipo": "detalhe",
      "camera": [
-      0.42,
+      0.45,
       1.42,
-      0.95
+      1.15
      ],
      "alvo": [
       0.357,
@@ -2468,12 +2501,12 @@
      "de": "f12",
      "tipo": "detalhe",
      "camera": [
-      0.5,
-      1.42,
-      1.05
+      0.6,
+      1.45,
+      1.35
      ],
      "alvo": [
-      0.448,
+      0.434,
       1.35,
       0.028
      ],
@@ -2481,32 +2514,17 @@
      "intensidade": -0.4
     },
     {
-     "de": "f12:choque",
-     "tipo": "detalhe",
-     "camera": [
-      0.5,
-      1.42,
-      1.05
-     ],
-     "alvo": [
-      0.448,
-      1.35,
-      0.028
-     ],
-     "movimento": "zoom_rapido"
-    },
-    {
      "de": "f13",
      "tipo": "detalhe",
      "camera": [
-      0.32,
-      1.38,
-      0.6
+      -0.15,
+      1.42,
+      0.88
      ],
      "alvo": [
-      0.084,
-      1.308,
-      -0.049
+      0.126,
+      1.28,
+      0.0
      ],
      "movimento": "aproximar",
      "transicao": "varrer"
@@ -2515,13 +2533,13 @@
      "de": "f14",
      "tipo": "detalhe",
      "camera": [
-      0.36,
-      1.26,
-      0.78
+      0.12,
+      1.12,
+      0.85
      ],
      "alvo": [
-      0.084,
-      1.168,
+      0.028,
+      1.14,
       -0.07
      ],
      "movimento": "arco",
@@ -2531,12 +2549,12 @@
      "de": "f15",
      "tipo": "detalhe",
      "camera": [
-      0.48,
-      1.42,
-      1.4
+      0.4,
+      1.4,
+      1.3
      ],
      "alvo": [
-      0.238,
+      0.224,
       1.28,
       0.0
      ],
@@ -2556,13 +2574,13 @@
      "de": "f16",
      "tipo": "detalhe",
      "camera": [
-      0.36,
-      1.26,
-      0.78
+      0.12,
+      1.12,
+      0.85
      ],
      "alvo": [
-      0.084,
-      1.168,
+      0.028,
+      1.14,
       -0.07
      ],
      "movimento": "aproximar"
@@ -2571,14 +2589,14 @@
      "de": "f17",
      "tipo": "detalhe",
      "camera": [
-      0.11,
-      1.34,
-      0.5
+      -0.2,
+      1.38,
+      1.05
      ],
      "alvo": [
-      0.084,
-      1.308,
-      -0.049
+      0.0,
+      1.252,
+      -0.098
      ],
      "movimento": "arco",
      "intensidade": 0.4,
