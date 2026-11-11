@@ -285,7 +285,8 @@ export const Portaria: React.FC<{t: number; nomeClima: string; objetos?: Objeto[
 			{/* rua: postes, carro estacionado, árvores na calçada */}
 			<Poste x={-10} z={7.3} />
 			<Poste x={5.5} z={7.3} />
-			<Carro x={-3.5} z={9.6} cor="#5A3A3A" />
+			{/* fora da linha da guarita: câmeras da rua (e o recuo do dolly_zoom) passam livres */}
+			<Carro x={-10.5} z={9.6} cor="#5A3A3A" />
 			<Carro x={12} z={9.6} cor="#3A4A6A" />
 			{[-12.5, 11.5].map((x) => (
 				<group key={x} position={[x, 0, 6.3]}>

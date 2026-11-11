@@ -37,6 +37,7 @@ Pedido do Iuri em 11/11: mais profissional e que prenda até o fim. Estes recurs
   - `cctv`: por cima da imagem 3D, como câmera de segurança (cinza, chuvisco, ● REC, `titulo` "CAM 4 · GARAGEM" e `hora` correndo). Ponha o plano 3D de cima e de longe, como câmera de parede.
   Pelo menos uma por parte; a de diálogo (celular, interfone, rádio) fica no máximo ~4 s sem trocar de imagem.
 - **Etiqueta da voz** (`etiqueta` do personagem na bíblia): aparece acima da legenda só quando ele fala em off (interfone, rádio, telefone).
+- **Voz pelo alto-falante:** fala que chega pelo interfone, rádio ou telefone leva `"tom": "interfone"` (som de alto-falante, comprimido). Não use voz de sussurro (`whisper` no `instruct` da bíblia): sai só chiado, o Whisper ouve "tchau tchau tchau" e nenhuma semente salva (11/11).
 - **Selo com contador:** `partes` (total) e `rotulo_parte` ("NOITE", "DIA") na bíblia fazem o selo dizer "APARTAMENTO 0 • NOITE 1/7".
 - **Voz do narrador com presença:** `"realce": true` na `voz` do narrador (bíblia) passa a voz por compressão e brilho, para ela não soar "morta". Muda o áudio de todas as falas dele (são regeneradas na próxima rodada de `vozes`).
 - **Câmera colada em objeto pequeno não funciona** (monitor, interfone, livro viram mancha sem detalhe): mostre o objeto com uma inserção e deixe o 3D para pessoas e lugares.

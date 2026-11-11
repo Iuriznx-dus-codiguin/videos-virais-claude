@@ -197,6 +197,8 @@ export interface AjusteTom {
 
 export const TONS: Record<string, AjusteTom> = {
 	sussurro: {velocidade: 0.92, filtro: 'highpass=f=150,lowpass=f=6000,volume=0.55'},
+	// voz que chega pelo interfone, rádio ou telefone: só a faixa do alto-falante, comprimida (o vulto do Apartamento 0)
+	interfone: {velocidade: 0.94, filtro: 'highpass=f=350,lowpass=f=3300,acompressor=threshold=-24dB:ratio=5:attack=3:release=80:makeup=3,volume=0.9'},
 	grito: {velocidade: 1.06, filtro: 'acompressor=threshold=-20dB:ratio=4,volume=1.35'},
 	nervoso: {velocidade: 1.05},
 	medo: {velocidade: 1.04},
