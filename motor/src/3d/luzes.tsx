@@ -63,6 +63,21 @@ export const CLIMAS: Record<string, Clima> = {
 		mar: ['#16405A', '#0F2E4A', '#13254A', '#1B2E57', '#2B4170'],
 		nuvem: '#2A3A62',
 	},
+	// noite na cidade (portaria): azul-marinho como a noite, mas bem mais legível (luz dos postes e
+	// das janelas rebatendo); pedido do Iuri em 11/11: cenas de noite não podem virar borrão escuro
+	noite_cidade: {
+		ambiente: [0.15, 0.17, 0.3],
+		sol: [0.42, 0.46, 0.62],
+		solDir: [7, 12, 9],
+		contra: {cor: '#FFB070', dir: [4, 5, 12], intensidade: 0.5},
+		ceu: {cores: ['#5A4A6E', '#33406E', '#1F2C55', '#131D3D', '#0A1128'], paradas: [0, 0.1, 0.3, 0.62, 1]},
+		astro: {cor: '#EEF3FF', dir: [0.4, 0.5, -0.77], graus: 2.6, halo: 0.3},
+		estrelas: 0.35,
+		neblina: {cor: '#1A2342', perto: 26, longe: 90},
+		reforcoRosto: [0.24, 0.24, 0.28],
+		mar: ['#16405A', '#0F2E4A', '#13254A', '#1B2E57', '#2B4170'],
+		nuvem: '#3A4670',
+	},
 	dia: {
 		ambiente: [0.32, 0.36, 0.5],
 		sol: [0.68, 0.64, 0.5],

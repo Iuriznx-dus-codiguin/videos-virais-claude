@@ -162,6 +162,27 @@ const Bone: React.FC<{cor: string}> = ({cor}) => (
 	</group>
 );
 
+/** Capuz de moletom: cobre o alto, a nuca e os lados da cabeça e deixa o rosto aberto (vulto, suspeito). */
+const geoCapuz = geo('capuz', () => new THREE.SphereGeometry(RC * 1.13, 28, 16, Math.PI * 0.8, Math.PI * 1.4, 0, Math.PI * 0.68));
+const Capuz: React.FC<{cor: string}> = ({cor}) => {
+	const m = memoCapuz(cor);
+	return (
+		<group position={[0, MEDIDAS.pescocoCabeca + RC * 0.04, -RC * 0.05]}>
+			<mesh geometry={geoCapuz} material={m} />
+			<Malha g={toro(RC * 0.98, RC * 0.09, 32, 8, Math.PI * 1.2)} m={toon(cor)} position={[0, RC * 0.12, RC * 0.2]} rotation={[-0.35, 0, -Math.PI * 0.1]} contorno={0.012} />
+		</group>
+	);
+};
+const capuzes = new Map<string, THREE.Material>();
+const memoCapuz = (cor: string) => {
+	if (!capuzes.has(cor)) {
+		const m = toon(cor).clone();
+		m.side = THREE.DoubleSide;
+		capuzes.set(cor, m);
+	}
+	return capuzes.get(cor)!;
+};
+
 /** Colete refletivo de resgate: colete colorido com duas faixas claras. */
 const Colete: React.FC<{cor: string}> = ({cor}) => (
 	<>
@@ -268,6 +289,7 @@ const AcessoriosCabeca: React.FC<{lista: Acessorio[]; p: Pose}> = ({lista, p}) =
 			if (a.tipo === 'rabo_de_cavalo') return <RaboDeCavalo key={i} cor={cor} p={p} />;
 			if (a.tipo === 'cabelo_curto') return <CabeloCurto key={i} cor={cor} />;
 			if (a.tipo === 'bone') return <Bone key={i} cor={cor} />;
+			if (a.tipo === 'capuz') return <Capuz key={i} cor={cor} />;
 			if (a.tipo === 'capacete') return <Capacete key={i} cor={cor} />;
 			if (a.tipo === 'cartola') return <Cartola key={i} cor={cor} />;
 			if (a.tipo === 'oculos') return <Oculos key={i} cor={cor} />;
@@ -377,7 +399,9 @@ export const Boneco: React.FC<{e: EstadoPalito; nomeClima: string}> = ({e, nomeC
 	const p = e.pose;
 	const v: VisualPersonagem = e.bib.visual ?? {corpo: '#22232A', cabeca: '#FFFFFF'};
 	const corpo = toon(v.corpo);
-	const cabeca = toon(v.cabeca, clima(nomeClima).reforcoRosto);
+	// rosto escuro (vulto, sombra) não recebe o reforço de luz do rosto, senão fica cinza claro
+	const escuro = new THREE.Color(v.cabeca).getHSL({h: 0, s: 0, l: 0}).l < 0.18;
+	const cabeca = toon(v.cabeca, escuro ? undefined : clima(nomeClima).reforcoRosto);
 	const pernas = pernasDaPose(p);
 	const acess = v.acessorios ?? [];
 	return (

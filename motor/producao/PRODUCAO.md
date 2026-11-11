@@ -2,7 +2,7 @@
 
 Este é o fluxo de **histórias** (séries em partes, ex.: voo-818). O Como Funciona tem o próprio calendário (`COMO-FUNCIONA.md`) e as próprias skills: os dois fluxos só compartilham o motor e as ferramentas, nunca regras, roteiros ou estado.
 
-Todos os horários são de Brasília. Uma rotina de produção por série, para cada sessão ler só o que é dela. **A publicação é manual**: o Iuri baixa o vídeo e posta no YouTube Shorts e no Instagram Reels.
+Todos os horários são de Brasília. Uma rotina de produção só para todas as minisséries de histórias, uma depois da outra (ordem em `public/series/_historias/series.json`); cada sessão lê só a série da vez. **A publicação é manual**: o Iuri baixa o vídeo e posta no YouTube Shorts e no Instagram Reels.
 
 ## Quando cada parte é publicada
 | Dia da semana | Partes | Horários | Produzido |
@@ -20,11 +20,13 @@ Cada rotina produz o que o **calendário** manda para o dia, olhando `estado.jso
 Se uma parte do calendário já existe pronta (rodada repetida), não refaça: confira `npm run dados -- entregas`.
 
 ## Rotinas
-1. **Produção (3h, por série).** Prompt: "Use a skill roteirizar-episodio para a série X e produza as partes de hoje conforme motor/producao/PRODUCAO.md." O ambiente é o "Shorts" (rede liberada para huggingface.co, hf.co, download.pytorch.org e download-r2.pytorch.org).
+1. **Produção (3h, "Produção Histórias").** Prompt: "Use a skill roteirizar-episodio e produza as partes de hoje da minissérie em andamento (a primeira de public/series/_historias/series.json que não terminou), conforme motor/producao/PRODUCAO.md. Se a série acabou, não invente parte nova: siga as skills nova-minisserie e filme-da-minisserie." O ambiente é o "Shorts" (rede liberada para huggingface.co, hf.co, download.pytorch.org e download-r2.pytorch.org). Uma rotina antiga com o nome de uma série (ex.: "Produção Voo 818") faz a mesma coisa: a skill troca para a série da vez quando a nomeada já terminou.
 2. **Correções (sem rotina).** Cada entrega traz o vídeo do dia e o roteiro da próxima parte (já escrito e validado, sem voz). O Iuri responde na própria sessão de produção até as 16h, corrigindo um ou outro. A sessão usa a skill `aplicar-correcoes`. Sem resposta, o original vale.
 3. **Publicação: manual.** O vídeo e o texto para colar (título, descrição, legenda) ficam no ramo `dados`, pasta `videos/`, e no `out/` da sessão. O texto sai do campo `postagem` do episódio (`.claude/skills/roteirizar-episodio/postagem.md`) e termina em "Na hora de postar": capa, vídeo relacionado, playlist da série em ordem e comentário para fixar.
 
-## Fim da minissérie: o filme 16:9
+## Fim da minissérie: série nova e filme 16:9
+Decisão do Iuri (11/11): **toda minissérie tem episódio final com o desfecho** (5 a 7 partes nas séries novas; o Voo 818 teve 18). A última parte é a última linha da tabela "As N partes" do `roteiro-geral.md`; depois dela nunca se inventa outra. No mesmo dia a rotina cria a série seguinte (skill `nova-minisserie`, gênero diferente da anterior) com o roteiro da parte 1 para o Iuri revisar, e a parte 1 sai no dia seguinte, no horário do calendário.
+
 Pedido do Iuri (07/11, só para as histórias; o Como Funciona não tem filme): quando a última parte da minissérie (última linha da tabela "As N partes" do `roteiro-geral.md`) é entregue, a mesma rotina junta todas as partes num filme 16:9, sem as chamadas "COMENTA PARTE N", com a skill `filme-da-minisserie` (`npm run filme`). Mesmo roteiro, vozes e produção; câmera reenquadrada para o quadro deitado; um capítulo por parte, título da série no começo e "FIM" no fim. Leva ~16 a 20 min por parte e é retomável: as partes prontas ficam em `/mnt/project-files/<serie>/filme/partes/` e o filme em `/mnt/project-files/<serie>/filme/` (grande demais para o ramo `dados`). Correção numa parte depois do filme refaz só aquela parte e junta de novo.
 
 ## Estado

@@ -14,7 +14,7 @@ Pedido do Iuri (07/11): ao finalizar uma minissérie, todos os episódios são r
 - Tamanho: ~20 a 30 MB por parte (18 partes dão ~400 a 500 MB). Tempo: ~16 a 20 min de render por parte (medido em 07/11; 18 partes, ~5 a 6 h).
 
 ## Quando
-- **Rotina da última parte:** a última parte é a última linha da tabela "As N partes" do `roteiro-geral.md` da série. Nesse dia, produza e entregue a parte normalmente e mande ao Iuri o aviso de sempre (passo 9 da `roteirizar-episodio`, dizendo que o filme começou). Não há roteiro da próxima parte (o passo 8 vira este filme). Depois siga os passos abaixo.
+- **Rotina da última parte:** a última parte é a última linha da tabela "As N partes" do `roteiro-geral.md` da série. Nesse dia, produza e entregue a parte normalmente e mande ao Iuri o aviso de sempre (passo 9 da `roteirizar-episodio`, dizendo que o filme começou). Não há parte seguinte desta série (nunca se inventa uma): antes do filme, a rotina cria a série seguinte com a skill `nova-minisserie` e escreve o rascunho da parte 1 dela (passo 8 da `roteirizar-episodio`). Depois siga os passos abaixo.
 - **Pedido do Iuri** ("monte o filme da série X"): os mesmos passos, numa sessão nova.
 - **Correção depois do filme:** se o Iuri corrigir uma parte depois que o filme saiu, a skill `aplicar-correcoes` refaz a parte vertical e roda o filme de novo: só a parte que mudou é renderizada, o resto é juntado de novo.
 

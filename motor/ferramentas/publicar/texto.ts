@@ -54,16 +54,32 @@ export const textosDoEpisodio = (biblia: Biblia, ep: Episodio): Textos => {
 	const p = ep.postagem ?? {};
 	const proxima = limpo(ep.chamada?.destaque ?? `PARTE ${ep.parte + 1}`);
 	const pergunta = ep.chamada?.pergunta ?? '';
+	// última parte da minissérie: não existe "parte N+1", a próxima é uma série nova
+	const ultima = (biblia.partes ? ep.parte >= biblia.partes : false) || proxima.toUpperCase() === 'FIM';
+	const rotulo = (biblia.rotulo_parte ?? 'Parte').toLowerCase().replace(/^./, (c) => c.toUpperCase());
 	const tags = p.hashtags?.length ? p.hashtags : ['historia', 'suspense'];
 	const hashtags = semDuplicadas([hashtag(biblia.titulo), ...tags.map(hashtag)]);
-	const nomeParte = `${biblia.titulo} · Parte ${ep.parte}: ${ep.titulo}`;
+	const nomeParte = `${biblia.titulo} · ${rotulo} ${ep.parte}${biblia.partes ? `/${biblia.partes}` : ''}${ultima ? ' (final)' : ''}: ${ep.titulo}`;
 	// título: a manchete da parte primeiro (é o que aparece no feed), a série e a parte no fim
-	const titulo = p.titulo ? `${p.titulo} | ${biblia.titulo} parte ${ep.parte}` : `${nomeParte} #shorts`;
+	const titulo = p.titulo ? `${p.titulo} | ${biblia.titulo} ${rotulo.toLowerCase()} ${ep.parte}` : `${nomeParte} #shorts`;
 	const abertura = p.descricao ? [p.descricao, nomeParte] : [nomeParte];
 	return {
 		tituloYoutube: titulo.slice(0, 100),
-		descricaoYoutube: [...abertura, pergunta, `Comenta "${proxima}" que eu continuo a história!`, [...hashtags, '#shorts'].join(' ')].filter(Boolean).join('\n\n'),
-		legendaInstagram: [...abertura, pedidoInstagram(pergunta, `Segue o perfil pra não perder a parte ${ep.parte + 1}.`), hashtags.join(' ')].filter(Boolean).join('\n\n'),
+		descricaoYoutube: [
+			...abertura,
+			pergunta,
+			ultima ? 'Último episódio! Comenta o que você achou do final. Amanhã começa uma história nova.' : `Comenta "${proxima}" que eu continuo a história!`,
+			[...hashtags, '#shorts'].join(' '),
+		]
+			.filter(Boolean)
+			.join('\n\n'),
+		legendaInstagram: [
+			...abertura,
+			pedidoInstagram(pergunta, ultima ? 'Segue o perfil pra ver a próxima história.' : `Segue o perfil pra não perder a ${rotulo.toLowerCase()} ${ep.parte + 1}.`),
+			hashtags.join(' '),
+		]
+			.filter(Boolean)
+			.join('\n\n'),
 		tags: semDuplicadas(['shorts', biblia.titulo, ...tags, 'animação']),
 		comentarioFixado: p.comentario,
 		relacionado: ep.parte > 1 ? `${biblia.titulo} · Parte ${ep.parte - 1}` : undefined,

@@ -157,6 +157,62 @@ export interface Cena {
 	filtro?: string;
 	/** false tira a vida própria do cenário (poeira, folhas, vaga-lumes, feixes de luz que ele já traz). */
 	atmosfera?: boolean;
+	/** Manchete fixa no alto da tela, como num vídeo editado ("AS LUZES ESTÃO *SE APAGANDO*"). */
+	manchetes?: Manchete[];
+	/** Relógio digital no canto de cima (hora da história); com "ate_hora" ele corre. */
+	relogio?: Relogio;
+	/** Objeto em tela cheia por cima do 3D (celular, bilhete, rádio) ou moldura de câmera de segurança. */
+	insercoes?: Insercao[];
+}
+
+/**
+ * Manchete do alto da tela: resume a batida em poucas palavras e fica parada enquanto a legenda corre
+ * embaixo. Palavras entre asteriscos saem coloridas ("REGRA 1 — *APAGUE AS LUZES*").
+ */
+export interface Manchete {
+	de?: Ancora;
+	ate?: Ancora;
+	texto: string;
+	/** Cor das palavras entre asteriscos (padrão vermelho). */
+	cor?: string;
+}
+
+/** Relógio digital do canto ("03:00"); com "ate_hora" os minutos correm de "hora" até lá. */
+export interface Relogio {
+	de?: Ancora;
+	ate?: Ancora;
+	hora: string;
+	ate_hora?: string;
+}
+
+/** Mensagem de uma conversa no celular (grupo do prédio, mensagem de alguém). */
+export interface MensagemCelular {
+	de: string;
+	texto: string;
+	/** Mensagem de quem segura o celular (balão verde à direita). */
+	eu?: boolean;
+}
+
+/**
+ * Inserção em tela cheia (o objeto importante grande e legível, como na referência 2D):
+ * - celular: alerta (titulo + linhas) ou conversa (titulo = nome do grupo + mensagens), seguro por duas mãos;
+ * - bilhete: papel com as linhas escritas à mão;
+ * - radio: rádio/interfone com a onda mexendo enquanto "quem" fala;
+ * - cctv: NÃO cobre o 3D: põe a moldura de câmera de segurança (REC, "titulo", hora, chiado, sem cor) por cima do plano.
+ */
+export interface Insercao {
+	de: Ancora;
+	ate?: Ancora;
+	tipo: string;
+	titulo?: string;
+	linhas?: string[];
+	mensagens?: MensagemCelular[];
+	/** radio: personagem cuja fala mexe a onda (padrão: qualquer fala). */
+	quem?: string;
+	/** cctv: hora mostrada no canto ("03:11"). */
+	hora?: string;
+	/** Cor de destaque (alerta vermelho, papel amarelado...). */
+	cor?: string;
 }
 
 // --- maquetes (objetos explicados peça por peça) -------------------------------------
@@ -313,6 +369,8 @@ export interface Voz {
 	amostra?: string;
 	/** Semente da voz escolhida (guardada pela ferramenta escolher-voz). */
 	semente?: number;
+	/** Narrador: compressão e presença de voz de YouTube em todas as falas (desde 11/11). */
+	realce?: boolean;
 }
 
 export interface PersonagemBiblia {
@@ -325,6 +383,8 @@ export interface PersonagemBiblia {
 	visual?: VisualPersonagem;
 	/** Cor da palavra falada na legenda. */
 	cor_legenda?: string;
+	/** Etiqueta pequena perto da legenda quando ele fala sem aparecer ("RÁDIO", "VOZ LÁ FORA", "INTERFONE"). */
+	etiqueta?: string;
 }
 
 export interface Biblia {
@@ -341,6 +401,10 @@ export interface Biblia {
 	formato?: 'serie' | 'avulso';
 	/** Hashtags fixas das publicações (formato avulso), sem o #. */
 	hashtags?: string[];
+	/** Número total de partes da minissérie: o selo mostra "PARTE 3/7" (série sabe onde acaba). */
+	partes?: number;
+	/** Nome de cada parte no selo: PARTE (padrão), NOITE, DIA, ESTAÇÃO... */
+	rotulo_parte?: string;
 }
 
 // --- alinhamento das vozes (saída do OmniVoice) ------------------------------
@@ -425,6 +489,24 @@ export interface CenaTempo {
 	cartoes: CartaoTempo[];
 	filtro?: string;
 	atmosfera: boolean;
+	manchetes: MancheteTempo[];
+	relogio?: RelogioTempo;
+	insercoes: InsercaoTempo[];
+}
+
+export interface MancheteTempo extends Manchete {
+	ini: number;
+	fim: number;
+}
+
+export interface RelogioTempo extends Relogio {
+	ini: number;
+	fim: number;
+}
+
+export interface InsercaoTempo extends Insercao {
+	ini: number;
+	fim: number;
 }
 
 export interface AnimacaoTempo extends AnimacaoPeca {
@@ -458,6 +540,10 @@ export interface LinhaDoTempo {
 	avisos: string[];
 	modelos: Record<string, Peca[]>;
 	formato: 'serie' | 'avulso';
+	/** Total de partes da minissérie (selo "PARTE 3/7"). */
+	totalPartes?: number;
+	/** Nome de cada parte no selo (PARTE, NOITE, DIA...). */
+	rotuloParte?: string;
 	/** Só no filme 16:9 do fim da minissérie (src/filme.ts): onde a parte acaba e o que muda na tela. */
 	filme?: InfoFilme;
 }

@@ -24,6 +24,7 @@ import {Mirante} from './cenarios/Mirante';
 import {Adega} from './cenarios/Adega';
 import {SalaFarol} from './cenarios/SalaFarol';
 import {IlhotaFarol} from './cenarios/IlhotaFarol';
+import {Portaria} from './cenarios/Portaria';
 
 const CameraCena: React.FC<{c: Camera; nomeClima: string}> = ({c, nomeClima}) => {
 	const ref = useRef<THREE.PerspectiveCamera>(null);
@@ -70,6 +71,7 @@ export const Mundo: React.FC<{linha: LinhaDoTempo; t: number; aspecto?: number}>
 			{cena.cenario === 'cabine' ? <Cabine t={t} nomeClima={nomeClima} /> : null}
 			{cena.cenario === 'estudio' ? <Estudio t={t} nomeClima={nomeClima} /> : null}
 			{cena.cenario === 'oficina' ? <Oficina t={t} nomeClima={nomeClima} /> : null}
+			{cena.cenario === 'portaria' ? <Portaria t={t} nomeClima={nomeClima} objetos={cena.objetos} /> : null}
 			<Objetos lista={cena.objetos} cenario={cena.cenario} t={t} />
 			<Atmosfera cena={cena} t={t} />
 			<Maquetes cena={cena} linha={linha} t={t} />

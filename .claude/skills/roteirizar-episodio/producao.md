@@ -25,6 +25,23 @@ O Shorts e o Reels decidem em menos de 1 s se mostram o vídeo para mais gente (
 - **Zona segura:** os botões do Shorts e do Reels ficam na faixa da direita (~150 px) e o título e a legenda da plataforma, nos ~400 px de baixo. Rosto, pista, letreiro e rótulo ficam fora delas (a legenda das falas já se ajusta sozinha). Letreiro alto demais também some atrás do topo: deixe entre `altura` 0,15 e 0,6.
 - **Capa (`postagem.capa`):** um close do personagem com expressão forte ou o quadro do gancho com o perigo bem claro, com uma palavra de impacto na legenda. Nunca o quadro da virada (estraga a surpresa), um quadro de transição ou um quadro escuro. Confira com `npm run quadro -- <serie> <parte> <segundo> --escala=0.5`.
 
+## Narração na tela (11/11)
+Pedido do Iuri em 11/11: mais profissional e que prenda até o fim. Estes recursos vieram da referência 2D (`estrutura.md`, formato "regras e contradição") e valem para qualquer série de histórias. Os nomes e opções estão em `npm run catalogo` (MANCHETE, RELÓGIO, INSERÇÕES, SÉRIE).
+- **Manchete** (`manchetes` na cena: `{"de", "ate", "texto", "cor"}`): frase curta no alto (até ~40 letras), a palavra-chave entre asteriscos sai colorida (`"SEU JORGE *SUMIU* HÁ 7 DIAS"`, vermelho por padrão; `"cor": "#2FD27A"` para boa notícia). Uma por batida, trocando a cada 3 a 6 s. Não repete a legenda palavra por palavra: resume a batida ("REGRA 1 — *O PORTÃO NÃO ABRE*").
+- **Relógio** (`relogio` na cena: `{"de", "hora": "03:00", "ate_hora": "03:11"}`): relógio digital no canto de cima; com `ate_hora` os minutos correm durante a cena. Use a partir da hora do perigo, com horas quebradas.
+- **Inserções em tela cheia** (`insercoes` na cena: `{"de", "ate", "tipo", ...}`), o objeto ocupa a tela com um leve balanço:
+  - `celular`: `titulo` (nome do grupo ou contato) e `mensagens` (`[{"de", "texto", "eu"}]`, aparecem uma a uma) ou `linhas` (notificação);
+  - `bilhete`: `titulo` e `linhas` (papel pautado, linha a linha);
+  - `radio`: rádio comunicador com a onda de quem fala (`quem`);
+  - `interfone`: visor com `titulo` ("APTO 0"), "CHAMANDO" piscando até `quem` falar e a onda da voz; com `linhas`, as teclas do interfone (a última pisca em vermelho: "o botão a mais"); sem `quem`, interfone parado ("PORTARIA");
+  - `cctv`: por cima da imagem 3D, como câmera de segurança (cinza, chuvisco, ● REC, `titulo` "CAM 4 · GARAGEM" e `hora` correndo). Ponha o plano 3D de cima e de longe, como câmera de parede.
+  Pelo menos uma por parte; a de diálogo (celular, interfone, rádio) fica no máximo ~4 s sem trocar de imagem.
+- **Etiqueta da voz** (`etiqueta` do personagem na bíblia): aparece acima da legenda só quando ele fala em off (interfone, rádio, telefone).
+- **Selo com contador:** `partes` (total) e `rotulo_parte` ("NOITE", "DIA") na bíblia fazem o selo dizer "APARTAMENTO 0 • NOITE 1/7".
+- **Voz do narrador com presença:** `"realce": true` na `voz` do narrador (bíblia) passa a voz por compressão e brilho, para ela não soar "morta". Muda o áudio de todas as falas dele (são regeneradas na próxima rodada de `vozes`).
+- **Câmera colada em objeto pequeno não funciona** (monitor, interfone, livro viram mancha sem detalhe): mostre o objeto com uma inserção e deixe o 3D para pessoas e lugares.
+- **Vulto e suspeito:** cabeça escura (`cabeca` bem escura na bíblia) não recebe a luz do rosto e vira silhueta; o acessório `capuz` cobre a cabeça e deixa o rosto no escuro.
+
 ## Regras de uso
 - **Movimento em todo plano**, escolhido pelo que a fala pede: `travelling` em quem anda ou conversa, `arco` nas aberturas e chegadas, `zoom_rapido` em susto e ênfase, `dolly_zoom` uma vez só (a virada), `aproximar` em suspense lento, `fixo` só em plano curto de reação. Nunca mais de dois planos seguidos com o mesmo movimento.
 - **Transições:** pelo menos 3 estilos diferentes por parte, mas no máximo 1 a cada 3 cortes (o resto é corte seco, que dá ritmo). Nunca dois `chicote` seguidos. Em diálogo de dois personagens, corte seco entre eles; transição só quando muda o lugar, o tempo ou o assunto.

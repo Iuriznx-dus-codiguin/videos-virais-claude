@@ -14,6 +14,7 @@ import {CAPITULO_FILME, CLAREIA_FILME, ESCURECE_FILME} from '../filme';
 import {GrupoLegenda, gruposDeLegenda, textoNaTela} from '../roteiro/legendas';
 import type {LinhaDoTempo} from '../roteiro/tipos';
 import {aleatorio, clamp, easeInOut, easeOut, lerp, smoothstep} from '../util/mat';
+import {EtiquetaVoz, Insercoes, Manchete, Relogio, textoParte} from './Narrativa2D';
 
 const FONTE = 'Montserrat';
 const carregarFontes = () => {
@@ -79,7 +80,7 @@ const Selo: React.FC<{linha: LinhaDoTempo}> = ({linha}) => (
 				padding: '12px 34px',
 			}}
 		>
-			{linha.tituloSerie} <span style={{color: AMARELO}}>• {linha.formato === 'avulso' ? `#${linha.parte}` : `PARTE ${linha.parte}`}</span>
+			{linha.tituloSerie} <span style={{color: AMARELO}}>• {textoParte(linha)}</span>
 		</div>
 	</div>
 );
@@ -680,10 +681,14 @@ export const Camada2D: React.FC<{linha: LinhaDoTempo; t: number; frame: number; 
 			<Efeitos linha={linha} t={t} tela={tela} />
 			<EfeitosDeProducao linha={linha} t={t} frame={frame} fps={fps} tela={tela} />
 			<Rotulos linha={linha} t={t} frame={frame} fps={fps} tela={tela} />
+			<Insercoes linha={linha} t={t} frame={frame} fps={fps} tela={tela} />
 			{filme ? <Capitulo linha={linha} t={t} frame={frame} fps={fps} /> : <Selo linha={linha} />}
+			<Relogio linha={linha} t={t} frame={frame} fps={fps} tela={tela} />
+			<Manchete linha={linha} t={t} frame={frame} fps={fps} tela={tela} />
 			{semVoz ? <AvisoPrevia tela={tela} /> : null}
 			<Cartoes linha={linha} t={t} frame={frame} fps={fps} tela={tela} />
 			{filme && linha.filme?.semLegenda ? null : <Legenda linha={linha} t={t} frame={frame} fps={fps} tela={tela} />}
+			{filme && linha.filme?.semLegenda ? null : <EtiquetaVoz linha={linha} t={t} tela={tela} />}
 			{filme ? null : <Chamada linha={linha} t={t} frame={frame} fps={fps} />}
 			<Transicao2D linha={linha} t={t} />
 			{filme ? <MolduraFilme linha={linha} t={t} /> : null}

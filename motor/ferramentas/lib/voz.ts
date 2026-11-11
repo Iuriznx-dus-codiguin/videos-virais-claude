@@ -211,9 +211,16 @@ export const TONS: Record<string, AjusteTom> = {
 };
 
 /** Mesmo volume para todas as falas, depois o ajuste do tom. Grava um .wav mono 24 kHz. */
-export const tratarAudio = async (entrada: string, saida: string, tom?: string) => {
+/**
+ * Realce de narrador (voz.realce na bíblia; pedido do Iuri em 11/11, "a voz está morta"): compressão
+ * que traz as sílabas fracas para a frente, presença em ~3 kHz e um pouco de corpo nos graves, como
+ * a voz de quem narra vídeo no YouTube. Vem antes do loudnorm para o volume final continuar igual.
+ */
+export const FILTRO_REALCE = 'acompressor=threshold=-22dB:ratio=3.5:attack=4:release=90:makeup=2,equalizer=f=3200:t=q:w=1.2:g=3.5,equalizer=f=150:t=q:w=1:g=2,highpass=f=70';
+
+export const tratarAudio = async (entrada: string, saida: string, tom?: string, realce?: boolean) => {
 	mkdirSync(join(saida, '..'), {recursive: true});
-	const filtros = ['loudnorm=I=-17:TP=-1.5:LRA=7'];
+	const filtros = realce ? [FILTRO_REALCE, 'loudnorm=I=-17:TP=-1.5:LRA=7'] : ['loudnorm=I=-17:TP=-1.5:LRA=7'];
 	const f = tom ? TONS[tom]?.filtro : undefined;
 	if (f) filtros.push(f);
 	await exec('ffmpeg', ['-y', '-v', 'error', '-i', entrada, '-af', filtros.join(','), '-ar', '24000', '-ac', '1', saida]);
