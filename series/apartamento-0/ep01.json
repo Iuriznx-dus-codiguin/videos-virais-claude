@@ -1,0 +1,1092 @@
+{
+ "serie": "apartamento-0",
+ "parte": 1,
+ "titulo": "Apartamento 0",
+ "musica": "tensao",
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Se o interfone tocar de um apartamento que NÃO existe, nunca diga o seu nome."
+  },
+  {
+   "id": "f2",
+   "quem": "narrador",
+   "off": true,
+   "texto": "Hoje é a sua primeira noite como porteiro do Edifício Aurora."
+  },
+  {
+   "id": "f3",
+   "quem": "narrador",
+   "off": true,
+   "texto": "Doze andares, quarenta e oito apartamentos. E só você acordado."
+  },
+  {
+   "id": "f4",
+   "quem": "narrador",
+   "off": true,
+   "tom": "serio",
+   "texto": "O porteiro antigo, o Seu Jorge, sumiu faz sete dias. Sem avisar ninguém."
+  },
+  {
+   "id": "f5",
+   "quem": "narrador",
+   "off": true,
+   "texto": "Às dez da noite, a síndica manda as regras no grupo do prédio."
+  },
+  {
+   "id": "f6",
+   "quem": "narrador",
+   "off": true,
+   "tom": "serio",
+   "texto": "Regra um: depois da meia-noite, o portão não abre pra ninguém."
+  },
+  {
+   "id": "f7",
+   "quem": "narrador",
+   "off": true,
+   "tom": "serio",
+   "texto": "Regra dois: você NUNCA sai da guarita."
+  },
+  {
+   "id": "f8",
+   "quem": "narrador",
+   "off": true,
+   "tom": "animado",
+   "texto": "A boa notícia é que tem câmera em tudo."
+  },
+  {
+   "id": "f9",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "A má notícia é que o interfone tem um botão a mais. O zero."
+  },
+  {
+   "id": "f10",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Às três da manhã, as luzes do prédio começam a apagar. Andar por andar."
+  },
+  {
+   "id": "f11",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "De cima pra baixo, até chegar no térreo."
+  },
+  {
+   "id": "f12",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Então, o interfone toca. No visor: apartamento ZERO."
+  },
+  {
+   "id": "f13",
+   "quem": "porteiro",
+   "tom": "nervoso",
+   "texto": "Portaria, boa noite?"
+  },
+  {
+   "id": "f14",
+   "quem": "vulto",
+   "off": true,
+   "tom": "interfone",
+   "texto": "Abre a garagem. Rápido, por favor."
+  },
+  {
+   "id": "f15",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Na câmera quatro, tem alguém parado na garagem. Olhando pra você."
+  },
+  {
+   "id": "f16",
+   "quem": "narrador",
+   "off": true,
+   "texto": "Você abre o livro da portaria. Última página, letra do Seu Jorge:"
+  },
+  {
+   "id": "f17",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Se o zero ligar, não diga seu nome. ELA está ouvindo."
+  },
+  {
+   "id": "f18",
+   "quem": "vulto",
+   "off": true,
+   "tom": "interfone",
+   "pausa_depois": 0.5,
+   "texto": "Você não é o Jorge. Qual é o seu nome?"
+  }
+ ],
+ "cenas": [
+  {
+   "id": "gancho",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "inicio",
+   "ate": "f1:fim+0.1",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -5.0,
+      1.6,
+      9.0
+     ],
+     "expressao": "serio",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.6,
+     "semente": 3
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "geral",
+     "alvo": [
+      0,
+      14,
+      -6
+     ],
+     "camera": [
+      3,
+      1.6,
+      9.5
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.2
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "inicio",
+     "ate": "f1:fim+0.1",
+     "tipo": "interfone",
+     "titulo": "APTO 0",
+     "quem": "vulto"
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "inicio",
+     "texto": "APARTAMENTO 0 *NÃO EXISTE*"
+    }
+   ],
+   "sons": [
+    {
+     "de": "inicio",
+     "som": "ding",
+     "volume": 0.35
+    },
+    {
+     "de": "f1:apartamento",
+     "som": "ding",
+     "volume": 0.3
+    },
+    {
+     "de": "f1:nome",
+     "som": "impacto",
+     "volume": 0.4
+    }
+   ]
+  },
+  {
+   "id": "predio",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f2",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -5.0,
+      1.6,
+      9.0
+     ],
+     "expressao": "serio",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.6,
+     "semente": 3
+    }
+   ],
+   "planos": [
+    {
+     "de": "f2",
+     "tipo": "geral",
+     "alvo": [
+      0,
+      15,
+      -6
+     ],
+     "camera": [
+      4,
+      1.4,
+      10.5
+     ],
+     "movimento": "subir",
+     "intensidade": 0.35,
+     "transicao": "zoom"
+    },
+    {
+     "de": "f3",
+     "tipo": "medio",
+     "alvo": "porteiro",
+     "camera": [
+      -4.4,
+      1.6,
+      8.3
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.35,
+     "transicao": "chicote"
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "porteiro",
+     "texto": "VOCÊ · PORTEIRO DA NOITE",
+     "de": "f3:andares",
+     "ate": "f3:fim"
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f2",
+     "ate": "f3",
+     "texto": "PRIMEIRA NOITE NO *EDIFÍCIO AURORA*"
+    },
+    {
+     "de": "f3:acordado",
+     "texto": "SÓ VOCÊ *ACORDADO*"
+    }
+   ]
+  },
+  {
+   "id": "jorge",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f4",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -4.0,
+      0.9,
+      5.5
+     ],
+     "expressao": "desconfiado",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.6,
+     "semente": 3
+    }
+   ],
+   "planos": [
+    {
+     "de": "f4",
+     "tipo": "aberto",
+     "alvo": [
+      -5.0,
+      1.3,
+      4.6
+     ],
+     "camera": [
+      -1.6,
+      1.7,
+      10.5
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.35,
+     "transicao": "desfoque"
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f4",
+     "texto": "SEU JORGE *SUMIU* HÁ 7 DIAS"
+    }
+   ],
+   "sons": [
+    {
+     "de": "f4:sumiu",
+     "som": "tensao_sobe",
+     "volume": 0.3
+    }
+   ]
+  },
+  {
+   "id": "regras",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f5",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -5.0,
+      1.6,
+      9.0
+     ],
+     "expressao": "serio",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.6,
+     "semente": 3
+    }
+   ],
+   "planos": [
+    {
+     "de": "f5",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      -4.6,
+      1.4,
+      7.2
+     ],
+     "movimento": "fixo"
+    },
+    {
+     "de": "f6",
+     "tipo": "aberto",
+     "alvo": [
+      -0.8,
+      1.3,
+      5.0
+     ],
+     "camera": [
+      -1.4,
+      1.7,
+      0.6
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.3,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f7",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      -4.35,
+      1.45,
+      5.55
+     ],
+     "movimento": "zoom_rapido",
+     "intensidade": 0.25,
+     "transicao": "chicote"
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f5",
+     "ate": "f6-0.05",
+     "tipo": "celular",
+     "titulo": "Moradores Ed. Aurora",
+     "mensagens": [
+      {
+       "de": "Dona Marta (síndica)",
+       "texto": "Porteiro novo, as regras da noite:"
+      },
+      {
+       "de": "Dona Marta (síndica)",
+       "texto": "1. Depois da meia-noite o portão NÃO abre."
+      },
+      {
+       "de": "Dona Marta (síndica)",
+       "texto": "2. Você NUNCA sai da guarita."
+      },
+      {
+       "de": "Rafa 302",
+       "texto": "boa sorte kkkk"
+      }
+     ]
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f5",
+     "ate": "f6",
+     "texto": "AS REGRAS DA *SÍNDICA*"
+    },
+    {
+     "de": "f6",
+     "ate": "f7",
+     "texto": "REGRA 1 — *O PORTÃO NÃO ABRE*"
+    },
+    {
+     "de": "f7",
+     "texto": "REGRA 2 — *NUNCA SAIA DA GUARITA*"
+    }
+   ],
+   "sons": [
+    {
+     "de": "f5+0.2",
+     "som": "pop",
+     "volume": 0.35
+    },
+    {
+     "de": "f6",
+     "som": "clique",
+     "volume": 0.4
+    },
+    {
+     "de": "f7:nunca",
+     "som": "impacto",
+     "volume": 0.35
+    }
+   ]
+  },
+  {
+   "id": "noticias",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f8",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -4.75,
+      1.6,
+      9
+     ],
+     "expressao": "serio",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.6,
+     "semente": 3,
+     "vulto_monitor": false
+    }
+   ],
+   "planos": [
+    {
+     "de": "f8",
+     "tipo": "aberto",
+     "alvo": [
+      -0.8,
+      1.0,
+      5.0
+     ],
+     "camera": [
+      2.6,
+      3.3,
+      1.6
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.2,
+     "transicao": "flash"
+    },
+    {
+     "de": "f8:tudo-0.3",
+     "tipo": "aberto",
+     "alvo": [
+      0,
+      1.0,
+      -6
+     ],
+     "camera": [
+      3.2,
+      3.3,
+      -1.8
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.2
+    },
+    {
+     "de": "f9",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      -4.35,
+      1.45,
+      5.55
+     ],
+     "movimento": "fixo"
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f8",
+     "ate": "f9",
+     "texto": "A BOA: *CÂMERA EM TUDO*",
+     "cor": "#2FD27A"
+    },
+    {
+     "de": "f9",
+     "texto": "A MÁ: UM BOTÃO *A MAIS*"
+    }
+   ],
+   "sons": [
+    {
+     "de": "f9:zero",
+     "som": "impacto",
+     "volume": 0.4
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f8",
+     "ate": "f8:tudo-0.3",
+     "tipo": "cctv",
+     "titulo": "CAM 1 · PORTÃO",
+     "hora": "00:41"
+    },
+    {
+     "de": "f8:tudo-0.3",
+     "ate": "f9-0.05",
+     "tipo": "cctv",
+     "titulo": "CAM 2 · HALL",
+     "hora": "00:41"
+    },
+    {
+     "de": "f9",
+     "ate": "f9:fim+0.2",
+     "tipo": "interfone",
+     "titulo": "48 APTOS",
+     "linhas": [
+      "1201",
+      "1202",
+      "1203",
+      "1204",
+      "...",
+      "0"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "apagao",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f10",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -5.0,
+      1.6,
+      9.0
+     ],
+     "expressao": "serio",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.6,
+     "semente": 3,
+     "apagam": "f10:apagar"
+    }
+   ],
+   "planos": [
+    {
+     "de": "f10",
+     "tipo": "geral",
+     "alvo": [
+      0,
+      24,
+      -6
+     ],
+     "camera": [
+      4,
+      1.4,
+      10.5
+     ],
+     "movimento": "descer",
+     "intensidade": 0.6,
+     "transicao": "flash"
+    },
+    {
+     "de": "f11:térreo-0.6",
+     "tipo": "aberto",
+     "alvo": [
+      0,
+      1.6,
+      -6
+     ],
+     "camera": [
+      2.5,
+      1.8,
+      3.5
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.3
+    }
+   ],
+   "relogio": {
+    "de": "f10",
+    "hora": "03:00"
+   },
+   "manchetes": [
+    {
+     "de": "f10:apagar",
+     "ate": "f11",
+     "texto": "AS LUZES *APAGAM*"
+    },
+    {
+     "de": "f11",
+     "texto": "ANDAR POR *ANDAR*"
+    }
+   ],
+   "sons": [
+    {
+     "de": "f10:apagar",
+     "som": "clique",
+     "volume": 0.4
+    },
+    {
+     "de": "f10:apagar+0.9",
+     "som": "clique",
+     "volume": 0.35
+    },
+    {
+     "de": "f10:apagar+1.8",
+     "som": "clique",
+     "volume": 0.35
+    },
+    {
+     "de": "f11:térreo",
+     "som": "queda",
+     "volume": 0.4
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f11:térreo",
+     "ate": "f11:fim+0.2",
+     "efeito": "vinheta",
+     "intensidade": 0.55
+    }
+   ]
+  },
+  {
+   "id": "interfone",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f12",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -4.9,
+      1.6,
+      9.0
+     ],
+     "expressao": "nervoso",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0,
+     "semente": 3
+    }
+   ],
+   "planos": [
+    {
+     "de": "f12",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      -4.6,
+      1.4,
+      7.2
+     ],
+     "movimento": "fixo"
+    },
+    {
+     "de": "f13",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      -4.35,
+      1.45,
+      5.55
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.3,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f14",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      -4.35,
+      1.45,
+      5.55
+     ],
+     "movimento": "tremer",
+     "intensidade": 0.4
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f12",
+     "ate": "f13-0.05",
+     "tipo": "interfone",
+     "titulo": "APTO 0",
+     "quem": "vulto"
+    },
+    {
+     "de": "f14",
+     "ate": "f14:fim+0.15",
+     "tipo": "interfone",
+     "titulo": "APTO 0",
+     "quem": "vulto"
+    }
+   ],
+   "relogio": {
+    "de": "f12",
+    "hora": "03:00",
+    "ate_hora": "03:11"
+   },
+   "manchetes": [
+    {
+     "de": "f12:visor",
+     "ate": "f13",
+     "texto": "APARTAMENTO *ZERO*"
+    },
+    {
+     "de": "f14",
+     "texto": "*ABRE A GARAGEM*"
+    }
+   ],
+   "sons": [
+    {
+     "de": "f12:toca",
+     "som": "ding",
+     "volume": 0.45
+    },
+    {
+     "de": "f12:toca+0.7",
+     "som": "ding",
+     "volume": 0.45
+    },
+    {
+     "de": "f14",
+     "som": "chiado",
+     "volume": 0.25
+    }
+   ]
+  },
+  {
+   "id": "camera4",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f15",
+   "personagens": {
+    "vulto": {
+     "em": [
+      7.0,
+      -4.3
+     ],
+     "olhando": [
+      3.5,
+      3.4,
+      -1.5
+     ],
+     "expressao": "neutro",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0,
+     "semente": 3
+    }
+   ],
+   "planos": [
+    {
+     "de": "f15",
+     "tipo": "aberto",
+     "alvo": "vulto",
+     "camera": [
+      3.6,
+      3.3,
+      -1.2
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.5,
+     "transicao": "flash"
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f15",
+     "ate": "fim",
+     "tipo": "cctv",
+     "titulo": "CAM 4 · GARAGEM",
+     "hora": "03:11"
+    }
+   ],
+   "relogio": {
+    "de": "f15",
+    "hora": "03:11"
+   },
+   "manchetes": [
+    {
+     "de": "f15:parado",
+     "texto": "ALGUÉM *NA GARAGEM*"
+    }
+   ],
+   "sons": [
+    {
+     "de": "f15:olhando",
+     "som": "susto",
+     "volume": 0.4
+    }
+   ]
+  },
+  {
+   "id": "livro",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f16",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.45,
+      4.75
+     ],
+     "olhando": [
+      -4.05,
+      0.84,
+      5.52
+     ],
+     "expressao": "medo",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0,
+     "semente": 3
+    }
+   ],
+   "planos": [
+    {
+     "de": "f16",
+     "tipo": "medio",
+     "alvo": "porteiro",
+     "camera": [
+      -2.5,
+      1.5,
+      4.9
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.3,
+     "transicao": "desfoque"
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f16:livro",
+     "ate": "f17:fim+0.2",
+     "tipo": "bilhete",
+     "titulo": "Livro da portaria — Jorge",
+     "linhas": [
+      "SE O 0 LIGAR,",
+      "NÃO DIGA SEU NOME.",
+      "ELA ESTÁ OUVINDO."
+     ]
+    }
+   ],
+   "relogio": {
+    "de": "f16",
+    "hora": "03:12"
+   },
+   "manchetes": [
+    {
+     "de": "f16",
+     "ate": "f17",
+     "texto": "A LETRA DO *SEU JORGE*"
+    },
+    {
+     "de": "f17:ouvindo",
+     "texto": "*ELA* QUEM?"
+    }
+   ],
+   "sons": [
+    {
+     "de": "f16:abre",
+     "som": "folhas",
+     "volume": 0.35
+    },
+    {
+     "de": "f17:ouvindo",
+     "som": "tensao_sobe",
+     "volume": 0.35
+    }
+   ]
+  },
+  {
+   "id": "virada",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f18",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -4.9,
+      1.6,
+      9.0
+     ],
+     "expressao": "medo",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0,
+     "semente": 3
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "porteiro",
+     "faz": "tremer",
+     "de": "f18:nome"
+    }
+   ],
+   "planos": [
+    {
+     "de": "f18",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      -4.6,
+      1.4,
+      7.2
+     ],
+     "movimento": "dolly_zoom",
+     "intensidade": 0.8,
+     "transicao": "zoom"
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f18",
+     "ate": "fim",
+     "efeito": "barras"
+    },
+    {
+     "de": "f18:nome",
+     "ate": "f18:fim+0.3",
+     "efeito": "destacar",
+     "alvo": "porteiro"
+    }
+   ],
+   "relogio": {
+    "de": "f18",
+    "hora": "03:13"
+   },
+   "manchetes": [
+    {
+     "de": "f18:nome-0.5",
+     "texto": "QUAL É O *SEU NOME*?"
+    }
+   ],
+   "sons": [
+    {
+     "de": "f18",
+     "som": "chiado",
+     "volume": 0.25
+    },
+    {
+     "de": "f18:nome",
+     "som": "impacto",
+     "volume": 0.5
+    }
+   ]
+  }
+ ],
+ "chamada": {
+  "pergunta": "Você falaria o seu nome ou desligaria?",
+  "texto": "COMENTA",
+  "destaque": "NOITE 2"
+ },
+ "postagem": {
+  "titulo": "O interfone tocou do apartamento que não existe",
+  "descricao": "Primeira noite como porteiro: às 3 da manhã as luzes do prédio apagam andar por andar e o interfone toca do apartamento 0.",
+  "hashtags": [
+   "porteiro",
+   "historiadeterror",
+   "suspense",
+   "animacao"
+  ],
+  "comentario": "Eu desligava na hora. E você: falaria o seu nome?",
+  "capa": "f12:visor+0.4"
+ }
+}

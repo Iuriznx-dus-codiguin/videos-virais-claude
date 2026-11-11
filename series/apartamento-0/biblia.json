@@ -1,0 +1,167 @@
+{
+  "serie": "apartamento-0",
+  "titulo": "APARTAMENTO 0",
+  "genero": "mistério/terror (regras e contradição)",
+  "partes": 7,
+  "rotulo_parte": "NOITE",
+  "sinopse": "Você começa como porteiro da noite do Edifício Aurora, 12 andares e 48 apartamentos. O porteiro antigo, Seu Jorge, sumiu há sete dias. Às três da manhã as luzes do prédio apagam andar por andar e o interfone toca do apartamento 0, que não existe. Sete noites para descobrir o que tem embaixo do prédio, sem quebrar as regras da síndica (ou quebrando na hora certa).",
+  "narrador": "narrador",
+  "personagens": {
+    "narrador": {
+      "nome": "Narrador",
+      "papel": "voz em off que conta a história falando com quem assiste: VOCÊ é o porteiro",
+      "personalidade": "direto, tenso, com opinião; fala como quem conta um causo de terror pra um amigo",
+      "voz": {
+        "descricao": "homem brasileiro de uns 30 anos, voz firme e cheia de energia, de narrador de vídeo de suspense",
+        "instruct": "male, young adult, moderate pitch",
+        "amostra": "Imagine que são três da manhã e você está sozinho. De repente, o interfone toca. Só que ninguém mora naquele apartamento!",
+        "realce": true,
+        "semente": 1
+      },
+      "visual": {
+        "corpo": "#2B3A67",
+        "cabeca": "#F2EEE6",
+        "olhos": "redondos",
+        "sobrancelhas": "finas"
+      },
+      "cor_legenda": "#FFD60A"
+    },
+    "porteiro": {
+      "nome": "Você",
+      "papel": "protagonista: o porteiro novo da noite (quem assiste se põe no lugar dele); fala pouco",
+      "personalidade": "cuidadoso, curioso, tem medo mas não foge",
+      "voz": {
+        "descricao": "homem brasileiro de uns 25 anos, voz jovem e um pouco insegura",
+        "instruct": "male, young adult, low pitch",
+        "semente": 3
+      },
+      "visual": {
+        "corpo": "#2B3A67",
+        "cabeca": "#F2EEE6",
+        "olhos": "redondos",
+        "sobrancelhas": "finas",
+        "acessorios": [
+          {
+            "tipo": "bone",
+            "cor": "#1E2A4A"
+          }
+        ]
+      },
+      "cor_legenda": "#7CC4FF"
+    },
+    "vulto": {
+      "nome": "Voz do apartamento 0",
+      "papel": "quem liga do interfone do apartamento 0 e fica parado na garagem olhando pra câmera; na noite 5 descobre-se que é o Caio, sobrinho da síndica",
+      "personalidade": "calmo demais, educado demais, nunca grita",
+      "voz": {
+        "descricao": "homem jovem de voz grave, lenta e calma demais (no vídeo vem filtrada pelo interfone)",
+        "instruct": "male, young adult, low pitch",
+        "semente": 3
+      },
+      "visual": {
+        "corpo": "#2C2C36",
+        "cabeca": "#0A0A0E",
+        "olhos": "redondos",
+        "sobrancelhas": "nenhuma",
+        "acessorios": [
+          {
+            "tipo": "capuz",
+            "cor": "#3C3C48"
+          }
+        ]
+      },
+      "cor_legenda": "#7CFFB2",
+      "etiqueta": "INTERFONE · APTO 0"
+    },
+    "jorge": {
+      "nome": "Seu Jorge",
+      "papel": "porteiro antigo, 30 anos de prédio; sumiu há sete dias (está preso no apartamento 0, no subsolo); deixou avisos no livro da portaria",
+      "personalidade": "cuidadoso, pai de todo mundo do prédio, anota tudo",
+      "voz": {
+        "descricao": "senhor brasileiro de uns 65 anos, voz grave e cansada",
+        "instruct": "male, elderly, low pitch",
+        "semente": 1
+      },
+      "visual": {
+        "corpo": "#2B3A67",
+        "cabeca": "#EADFCB",
+        "olhos": "ovais",
+        "sobrancelhas": "grossas",
+        "acessorios": [
+          {
+            "tipo": "bigode",
+            "cor": "#D8D8D8"
+          },
+          {
+            "tipo": "bone",
+            "cor": "#1E2A4A"
+          }
+        ]
+      },
+      "cor_legenda": "#FFB020"
+    },
+    "marta": {
+      "nome": "Dona Marta",
+      "papel": "síndica do Edifício Aurora; manda as regras no grupo do prédio; esconde o que acontece no apartamento 0",
+      "personalidade": "simpática na frente de todo mundo, controla tudo",
+      "voz": {
+        "descricao": "mulher brasileira de uns 58 anos, voz doce e firme",
+        "instruct": "female, middle-aged, moderate pitch",
+        "semente": 1
+      },
+      "visual": {
+        "corpo": "#7A2E4A",
+        "cabeca": "#F2EEE6",
+        "olhos": "ovais",
+        "sobrancelhas": "finas",
+        "cilios": true,
+        "acessorios": [
+          {
+            "tipo": "rabo_de_cavalo",
+            "cor": "#9A9A9A"
+          },
+          {
+            "tipo": "oculos",
+            "cor": "#222"
+          }
+        ]
+      },
+      "cor_legenda": "#FF8FB1"
+    },
+    "rafa": {
+      "nome": "Rafa",
+      "papel": "motoboy de 19 anos, mora no 3º andar, chega de madrugada; vira o aliado do porteiro a partir da noite 3",
+      "personalidade": "rápido, engraçado, não tem medo de nada (diz ele)",
+      "voz": {
+        "descricao": "rapaz brasileiro de 19 anos, voz animada e rápida",
+        "instruct": "male, teenager, moderate pitch",
+        "semente": 1
+      },
+      "visual": {
+        "corpo": "#E5B830",
+        "cabeca": "#F2EEE6",
+        "olhos": "redondos",
+        "sobrancelhas": "grossas",
+        "acessorios": [
+          {
+            "tipo": "capacete",
+            "cor": "#D63030"
+          }
+        ]
+      },
+      "cor_legenda": "#FF9E40"
+    }
+  },
+  "fatos": [
+    "Edifício Aurora: 12 andares, 48 apartamentos, uma guarita na frente, garagem no subsolo.",
+    "O porteiro antigo, Seu Jorge, sumiu há sete dias sem avisar.",
+    "Regras da síndica (grupo do prédio): 1) depois da meia-noite o portão não abre pra ninguém; 2) o porteiro nunca sai da guarita.",
+    "O interfone tem um botão a mais: o 0. Não existe apartamento 0."
+  ],
+  "ganchos_abertos": [
+    "Quem liga do apartamento 0 e por que quer a garagem aberta às 3h?",
+    "Por que as luzes do prédio apagam andar por andar às 3h?",
+    "Quem é 'ELA', que está ouvindo (aviso do Seu Jorge no livro)?",
+    "Onde está o Seu Jorge?"
+  ]
+}

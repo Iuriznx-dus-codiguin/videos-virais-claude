@@ -1,0 +1,927 @@
+{
+ "serie": "apartamento-0",
+ "parte": 2,
+ "titulo": "Não saia da guarita",
+ "musica": "tensao",
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Se alguém pedir socorro no prédio e a síndica mandar você ficar parado, desconfie dela."
+  },
+  {
+   "id": "f2",
+   "quem": "narrador",
+   "off": true,
+   "texto": "Três e doze da manhã. Você desliga o interfone sem dizer o seu nome."
+  },
+  {
+   "id": "f3",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Silêncio. Na câmera quatro, a garagem agora está vazia."
+  },
+  {
+   "id": "f4",
+   "quem": "narrador",
+   "off": true,
+   "texto": "Aí o celular vibra. É a Dona Cleide, do sétimo andar."
+  },
+  {
+   "id": "f5",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Tem alguém andando no corredor dela. Batendo de porta em porta."
+  },
+  {
+   "id": "f6",
+   "quem": "narrador",
+   "off": true,
+   "texto": "Em menos de dez segundos, a síndica responde."
+  },
+  {
+   "id": "f7",
+   "quem": "narrador",
+   "off": true,
+   "tom": "serio",
+   "texto": "Porteiro, NÃO saia da guarita. E Cleide, volta a dormir."
+  },
+  {
+   "id": "f8",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "A síndica estava acordada às três da manhã. Esperando o quê?"
+  },
+  {
+   "id": "f9",
+   "quem": "narrador",
+   "off": true,
+   "tom": "animado",
+   "texto": "A boa notícia é que o prédio tem câmera em todos os andares."
+  },
+  {
+   "id": "f10",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "A má notícia é que a do sétimo está desligada desde ontem."
+  },
+  {
+   "id": "f11",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Então o interfone toca de novo. Apartamento ZERO."
+  },
+  {
+   "id": "f12",
+   "quem": "vulto",
+   "off": true,
+   "tom": "interfone",
+   "texto": "Não sobe. Olha a câmera dois."
+  },
+  {
+   "id": "f13",
+   "quem": "narrador",
+   "off": true,
+   "texto": "Câmera dois, o hall. A porta do elevador abre."
+  },
+  {
+   "id": "f14",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Uma mulher de roupão atravessa o hall e vai pra garagem."
+  },
+  {
+   "id": "f15",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Três e vinte da manhã. É a Dona Marta. A síndica."
+  },
+  {
+   "id": "f16",
+   "quem": "porteiro",
+   "tom": "nervoso",
+   "texto": "O que ela tá fazendo lá embaixo?"
+  },
+  {
+   "id": "f17",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Na frente da garagem, ela para. E olha direto pra câmera."
+  },
+  {
+   "id": "f18",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Depois vira o rosto, bem devagar. Pra guarita."
+  },
+  {
+   "id": "f19",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "pausa_depois": 0.5,
+   "texto": "Ela sabe que você viu."
+  }
+ ],
+ "cenas": [
+  {
+   "id": "gancho",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "inicio",
+   "ate": "f1:fim+0.1",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -4.75,
+      1.6,
+      9.0
+     ],
+     "expressao": "serio",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.04,
+     "semente": 5,
+     "acende": "f1:socorro",
+     "andar": 6,
+     "coluna": 2
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "geral",
+     "alvo": [
+      0,
+      14,
+      -6
+     ],
+     "camera": [
+      3,
+      1.6,
+      9.5
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "inicio",
+     "texto": "ALGUÉM PEDIU *SOCORRO*"
+    },
+    {
+     "de": "f1:síndica",
+     "texto": "E A SÍNDICA: *FICA PARADO*"
+    }
+   ],
+   "relogio": {
+    "de": "inicio",
+    "hora": "03:12"
+   },
+   "sons": [
+    {
+     "de": "f1:socorro",
+     "som": "impacto",
+     "volume": 0.35
+    }
+   ]
+  },
+  {
+   "id": "desliga",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f2",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -4.75,
+      1.6,
+      9.0
+     ],
+     "expressao": "medo",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.04,
+     "semente": 5
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "porteiro",
+     "faz": "tremer",
+     "de": "f2"
+    }
+   ],
+   "planos": [
+    {
+     "de": "f2",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      -4.35,
+      1.45,
+      5.55
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.3,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f3",
+     "tipo": "aberto",
+     "alvo": [
+      7.0,
+      1.0,
+      -5.6
+     ],
+     "camera": [
+      3.6,
+      3.3,
+      -1.2
+     ],
+     "movimento": "fixo"
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f2",
+     "ate": "f2:nome+0.6",
+     "tipo": "interfone",
+     "titulo": "APTO 0"
+    },
+    {
+     "de": "f3",
+     "ate": "f4-0.05",
+     "tipo": "cctv",
+     "titulo": "CAM 4 · GARAGEM",
+     "hora": "03:12"
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f2:nome-0.4",
+     "ate": "f3",
+     "texto": "VOCÊ *NÃO DISSE* O NOME"
+    },
+    {
+     "de": "f3:vazia-0.3",
+     "texto": "A GARAGEM *VAZIA*"
+    }
+   ],
+   "relogio": {
+    "de": "f2",
+    "hora": "03:12"
+   },
+   "sons": [
+    {
+     "de": "f2:desliga",
+     "som": "clique",
+     "volume": 0.4
+    }
+   ]
+  },
+  {
+   "id": "grupo",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f4",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -4.75,
+      1.6,
+      9.0
+     ],
+     "expressao": "desconfiado",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.04,
+     "semente": 5
+    }
+   ],
+   "planos": [
+    {
+     "de": "f4",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      -4.6,
+      1.4,
+      7.2
+     ],
+     "movimento": "fixo"
+    },
+    {
+     "de": "f8",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      -4.35,
+      1.45,
+      5.55
+     ],
+     "movimento": "zoom_rapido",
+     "intensidade": 0.3,
+     "transicao": "chicote"
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f4:vibra",
+     "ate": "f8-0.05",
+     "tipo": "celular",
+     "titulo": "Moradores Ed. Aurora",
+     "mensagens": [
+      {
+       "de": "Cleide 704",
+       "texto": "tem alguém andando no meu corredor"
+      },
+      {
+       "de": "Cleide 704",
+       "texto": "tá batendo de porta em porta 😰"
+      },
+      {
+       "de": "Dona Marta (síndica)",
+       "texto": "Porteiro, NÃO saia da guarita."
+      },
+      {
+       "de": "Dona Marta (síndica)",
+       "texto": "Cleide, volta a dormir."
+      }
+     ]
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f4",
+     "ate": "f6",
+     "texto": "ALGUÉM NO *7º ANDAR*"
+    },
+    {
+     "de": "f6",
+     "ate": "f8",
+     "texto": "A SÍNDICA EM *10 SEGUNDOS*"
+    },
+    {
+     "de": "f8",
+     "texto": "ACORDADA ÀS *3 DA MANHÃ*?"
+    }
+   ],
+   "relogio": {
+    "de": "f4",
+    "hora": "03:14"
+   },
+   "sons": [
+    {
+     "de": "f4:vibra",
+     "som": "pop",
+     "volume": 0.35
+    },
+    {
+     "de": "f8:acordada",
+     "som": "tensao_sobe",
+     "volume": 0.3
+    }
+   ]
+  },
+  {
+   "id": "noticias",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f9",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -4.75,
+      1.6,
+      9.0
+     ],
+     "expressao": "serio",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.04,
+     "semente": 5
+    }
+   ],
+   "planos": [
+    {
+     "de": "f9",
+     "tipo": "aberto",
+     "alvo": [
+      0,
+      1.2,
+      -6
+     ],
+     "camera": [
+      3.2,
+      3.3,
+      -1.8
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.2,
+     "transicao": "zoom"
+    },
+    {
+     "de": "f10",
+     "tipo": "geral",
+     "alvo": [
+      0,
+      22,
+      -6
+     ],
+     "camera": [
+      4,
+      1.4,
+      10.5
+     ],
+     "movimento": "subir",
+     "intensidade": 0.4,
+     "transicao": "chicote"
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f9",
+     "ate": "f10-0.05",
+     "tipo": "cctv",
+     "titulo": "CAM 2 · HALL",
+     "hora": "03:15"
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f9",
+     "ate": "f10",
+     "texto": "A BOA: *CÂMERA EM TODO ANDAR*",
+     "cor": "#2FD27A"
+    },
+    {
+     "de": "f10",
+     "texto": "A MÁ: A DO 7º *DESLIGADA*"
+    }
+   ],
+   "relogio": {
+    "de": "f9",
+    "hora": "03:15"
+   }
+  },
+  {
+   "id": "interfone",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f11",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -4.75,
+      1.6,
+      9.0
+     ],
+     "expressao": "nervoso",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.04,
+     "semente": 5
+    }
+   ],
+   "planos": [
+    {
+     "de": "f11",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      -4.35,
+      1.45,
+      5.55
+     ],
+     "movimento": "tremer",
+     "intensidade": 0.3
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f11:toca",
+     "ate": "f12:fim+0.15",
+     "tipo": "interfone",
+     "titulo": "APTO 0",
+     "quem": "vulto"
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f11",
+     "ate": "f12",
+     "texto": "O *ZERO* DE NOVO"
+    },
+    {
+     "de": "f12",
+     "texto": "*OLHA A CÂMERA DOIS*"
+    }
+   ],
+   "relogio": {
+    "de": "f11",
+    "hora": "03:19"
+   },
+   "sons": [
+    {
+     "de": "f11:toca",
+     "som": "ding",
+     "volume": 0.45
+    },
+    {
+     "de": "f11:toca+0.7",
+     "som": "ding",
+     "volume": 0.45
+    },
+    {
+     "de": "f12",
+     "som": "chiado",
+     "volume": 0.25
+    }
+   ]
+  },
+  {
+   "id": "camera2",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f13",
+   "personagens": {
+    "marta": {
+     "em": [
+      0,
+      -5.0
+     ],
+     "olhando": [
+      5.5,
+      1,
+      -4.6
+     ],
+     "expressao": "serio",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.04,
+     "semente": 5
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "marta",
+     "faz": "andar",
+     "de": "f14",
+     "para": [
+      6.0,
+      -4.5
+     ]
+    }
+   ],
+   "planos": [
+    {
+     "de": "f13",
+     "tipo": "aberto",
+     "alvo": [
+      2.5,
+      1.0,
+      -5.0
+     ],
+     "camera": [
+      3.2,
+      3.4,
+      -0.6
+     ],
+     "movimento": "fixo",
+     "transicao": "flash"
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f13",
+     "ate": "f16-0.05",
+     "tipo": "cctv",
+     "titulo": "CAM 2 · HALL",
+     "hora": "03:20"
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f14:roupão",
+     "ate": "f15",
+     "texto": "UMA MULHER *DE ROUPÃO*"
+    },
+    {
+     "de": "f15:síndica-0.6",
+     "texto": "É A *SÍNDICA*"
+    }
+   ],
+   "relogio": {
+    "de": "f13",
+    "hora": "03:20"
+   },
+   "sons": [
+    {
+     "de": "f15:síndica",
+     "som": "impacto",
+     "volume": 0.4
+    }
+   ]
+  },
+  {
+   "id": "reacao",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f16",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -4.75,
+      1.6,
+      9.0
+     ],
+     "expressao": "medo",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.04,
+     "semente": 5
+    }
+   ],
+   "planos": [
+    {
+     "de": "f16",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      -4.6,
+      1.4,
+      7.2
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.35,
+     "transicao": "chicote"
+    }
+   ],
+   "relogio": {
+    "de": "f16",
+    "hora": "03:20"
+   }
+  },
+  {
+   "id": "olhar",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f17",
+   "personagens": {
+    "marta": {
+     "em": [
+      6.0,
+      -4.5
+     ],
+     "olhando": [
+      3.4,
+      3.3,
+      -1.4
+     ],
+     "expressao": "neutro",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.04,
+     "semente": 5
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "marta",
+     "faz": "virar",
+     "de": "f18:rosto",
+     "para": [
+      -4.75,
+      1.0,
+      4.3
+     ]
+    }
+   ],
+   "planos": [
+    {
+     "de": "f17",
+     "tipo": "medio",
+     "alvo": "marta",
+     "camera": [
+      3.4,
+      3.3,
+      -1.4
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.6
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f17",
+     "ate": "f19-0.05",
+     "tipo": "cctv",
+     "titulo": "CAM 4 · GARAGEM",
+     "hora": "03:21"
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f17:câmera-0.4",
+     "ate": "f18",
+     "texto": "ELA OLHA *PRA CÂMERA*"
+    },
+    {
+     "de": "f18:guarita-0.5",
+     "texto": "DEPOIS *PRA GUARITA*"
+    }
+   ],
+   "relogio": {
+    "de": "f17",
+    "hora": "03:21"
+   },
+   "sons": [
+    {
+     "de": "f17:câmera",
+     "som": "susto",
+     "volume": 0.4
+    },
+    {
+     "de": "f18:guarita",
+     "som": "tensao_sobe",
+     "volume": 0.35
+    }
+   ]
+  },
+  {
+   "id": "virada",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f19",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -4.75,
+      1.6,
+      9.0
+     ],
+     "expressao": "medo",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.04,
+     "semente": 5
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "porteiro",
+     "faz": "tremer",
+     "de": "f19"
+    }
+   ],
+   "planos": [
+    {
+     "de": "f19",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      -4.6,
+      1.4,
+      7.2
+     ],
+     "movimento": "dolly_zoom",
+     "intensidade": 0.8,
+     "transicao": "zoom"
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f19",
+     "ate": "fim",
+     "efeito": "barras"
+    },
+    {
+     "de": "f19:viu",
+     "ate": "f19:fim+0.3",
+     "efeito": "destacar",
+     "alvo": "porteiro"
+    }
+   ],
+   "relogio": {
+    "de": "f19",
+    "hora": "03:21"
+   },
+   "manchetes": [
+    {
+     "de": "f19:sabe-0.3",
+     "texto": "ELA SABE QUE *VOCÊ VIU*"
+    }
+   ],
+   "sons": [
+    {
+     "de": "f19:viu",
+     "som": "impacto",
+     "volume": 0.5
+    }
+   ]
+  }
+ ],
+ "chamada": {
+  "pergunta": "Você conta pro grupo ou finge que não viu?",
+  "texto": "COMENTA",
+  "destaque": "NOITE 3"
+ },
+ "postagem": {
+  "titulo": "A síndica desceu pra garagem às 3h20 da manhã",
+  "descricao": "Segunda noite no Edifício Aurora: alguém bate de porta em porta no 7º andar, a síndica responde em 10 segundos e a câmera mostra pra onde ela vai às 3h20.",
+  "hashtags": [
+   "porteiro",
+   "historiadeterror",
+   "suspense",
+   "animacao"
+  ],
+  "comentario": "Eu fingia que não vi e pedia demissão de manhã kkkk. E você?",
+  "capa": "f15:síndica+0.4"
+ }
+}
