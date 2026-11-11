@@ -90,7 +90,7 @@ Modelo pronto: `exemplo-caixa-dagua.py` desta skill (o script que gerou o vídeo
 
 ## 6. Render e conferência
 1. Antes do render, com os tempos reais da voz, gere de novo os quadros dos degraus (os planos mudam de tempo quando a voz entra) e corrija o que aparecer. O `enquadramento` só serve para a oficina (inventor).
-2. `npm run render -- como-funciona <n>` em segundo plano (~25 min para 1min20 em qualidade média; sai em `out/como-funciona-epNN.mp4` com 20 a 35 MB). Não use `--qualidade=alta` a não ser que o Iuri peça. Se o render avisar que o tamanho saiu da faixa, diga no aviso final.
+2. `npm run render -- como-funciona <n>` em segundo plano (~50 min para 1min20 no visual limpo, em qualidade média; a voz leva mais ~17 min; sai em `out/como-funciona-epNN.mp4` com 20 a 35 MB). Não use `--qualidade=alta` a não ser que o Iuri peça. Se o render avisar que o tamanho saiu da faixa, diga no aviso final.
    O vídeo sai **acelerado 1.1x** (pedido do Iuri em 03/11). A meta de 75 a 90 s com voz continua em tempo de roteiro, e o `quadro` também. Não use `--velocidade=1` a não ser que o Iuri peça.
 3. `npm run quadro -- como-funciona <n> 0.1 2 20 40 60 75` e a capa (o segundo que o `validar` mostra em "postagem", com `--escala=0.5`) e olhe: primeiro quadro com a coisa já fazendo o estranho, peça certa no quadro, rótulo apontando para a peça certa, cartão legível, chamada visível. Corrija e renderize de novo se precisar.
 
