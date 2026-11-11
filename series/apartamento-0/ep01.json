@@ -24,6 +24,13 @@
    "texto": "Doze andares, quarenta e oito apartamentos. E só você acordado."
   },
   {
+   "id": "f3b",
+   "quem": "narrador",
+   "off": true,
+   "tom": "serio",
+   "texto": "O salário é o dobro. Mesmo assim, ninguém quis a vaga."
+  },
+  {
    "id": "f4",
    "quem": "narrador",
    "off": true,
@@ -65,6 +72,13 @@
    "texto": "A má notícia é que o interfone tem um botão a mais. O zero."
   },
   {
+   "id": "f9b",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Quarenta e oito apartamentos. E quarenta e nove botões."
+  },
+  {
    "id": "f10",
    "quem": "narrador",
    "off": true,
@@ -83,13 +97,15 @@
    "quem": "narrador",
    "off": true,
    "tom": "tenso",
-   "texto": "Então, o interfone toca. No visor: apartamento ZERO."
+   "texto": "Então, o interfone toca. No visor: apartamento ZERO.",
+   "pausa_depois": 0.4
   },
   {
    "id": "f13",
    "quem": "porteiro",
    "tom": "nervoso",
-   "texto": "Portaria, boa noite?"
+   "texto": "Portaria, boa noite?",
+   "pausa_depois": 0.7
   },
   {
    "id": "f14",
@@ -106,6 +122,13 @@
    "texto": "Na câmera quatro, tem alguém parado na garagem. Olhando pra você."
   },
   {
+   "id": "f15b",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Só que a garagem está trancada desde a meia-noite."
+  },
+  {
    "id": "f16",
    "quem": "narrador",
    "off": true,
@@ -116,7 +139,8 @@
    "quem": "narrador",
    "off": true,
    "tom": "tenso",
-   "texto": "Se o zero ligar, não diga seu nome. ELA está ouvindo."
+   "texto": "Se o zero ligar, não diga seu nome. ELA está ouvindo.",
+   "pausa_depois": 0.4
   },
   {
    "id": "f18",
@@ -266,6 +290,18 @@
      "movimento": "aproximar",
      "intensidade": 0.35,
      "transicao": "chicote"
+    },
+    {
+     "de": "f3b",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      -4.6,
+      1.4,
+      7.2
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.3
     }
    ],
    "rotulos": [
@@ -284,7 +320,12 @@
     },
     {
      "de": "f3:acordado",
-     "texto": "SÓ VOCÊ *ACORDADO*"
+     "texto": "SÓ VOCÊ *ACORDADO*",
+     "ate": "f3b"
+    },
+    {
+     "de": "f3b",
+     "texto": "SALÁRIO EM *DOBRO*"
     }
    ]
   },
@@ -564,7 +605,12 @@
     },
     {
      "de": "f9",
-     "texto": "A MÁ: UM BOTÃO *A MAIS*"
+     "texto": "A MÁ: UM BOTÃO *A MAIS*",
+     "ate": "f9b"
+    },
+    {
+     "de": "f9b",
+     "texto": "48 APTOS. *49 BOTÕES*"
     }
    ],
    "sons": [
@@ -572,6 +618,11 @@
      "de": "f9:zero",
      "som": "impacto",
      "volume": 0.4
+    },
+    {
+     "de": "f9b:botões",
+     "som": "impacto",
+     "volume": 0.35
     }
    ],
    "insercoes": [
@@ -591,7 +642,7 @@
     },
     {
      "de": "f9",
-     "ate": "f9:fim+0.2",
+     "ate": "f9b:fim+0.2",
      "tipo": "interfone",
      "titulo": "48 APTOS",
      "linhas": [
@@ -872,6 +923,18 @@
      "movimento": "aproximar",
      "intensidade": 0.5,
      "transicao": "flash"
+    },
+    {
+     "de": "f15b",
+     "tipo": "medio",
+     "alvo": "vulto",
+     "camera": [
+      4.6,
+      2.9,
+      -2.2
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.4
     }
    ],
    "insercoes": [
@@ -890,7 +953,12 @@
    "manchetes": [
     {
      "de": "f15:parado",
-     "texto": "ALGUÉM *NA GARAGEM*"
+     "texto": "ALGUÉM *NA GARAGEM*",
+     "ate": "f15b"
+    },
+    {
+     "de": "f15b",
+     "texto": "A GARAGEM *ESTAVA TRANCADA*"
     }
    ],
    "sons": [
