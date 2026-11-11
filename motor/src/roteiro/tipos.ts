@@ -166,7 +166,10 @@ export interface Cena {
  * tam por forma: caixa [x, y, z] · cilindro [raio, altura, raioTopo?] · esfera [raio] ·
  * cone [raio, altura] · capsula [raio, comprimento] · toro [raio, raioTubo] ·
  * mola [raio, altura, voltas, raioFio] · engrenagem [raio, espessura, dentes] ·
- * seta [comprimento, grossura] · tubo [raioTubo] (com "caminho") · placa [largura, altura]
+ * seta [comprimento, grossura] · tubo [raioTubo] (com "caminho") · placa [largura, altura] ·
+ * torno (com "perfil") · extrusao [espessura] (com "contorno") · rachadura [comprimento, largura, ramos] ·
+ * terreno [largura, altura, profundidade] (com "camadas") · helice [raio, larguraPa, pas] ·
+ * roda [raio, largura, raios] · casa [largura, alturaParede, profundidade] · arvore [altura]
  */
 export interface Peca {
 	id: string;
@@ -190,6 +193,22 @@ export interface Peca {
 	oculta?: boolean;
 	/** Sem contorno preto (peças finas ou de vidro). */
 	sem_contorno?: boolean;
+	/** Visual limpo: do que a peça é feita (plastico, metal, vidro, agua, concreto, tijolo, terra...; ver MATERIAIS). */
+	material?: string;
+	/** torno: perfil [[raio, altura], ...] de baixo para cima, girado em volta do eixo y. */
+	perfil?: [number, number][];
+	/** extrusao: contorno [[x, y], ...] no plano da frente (z = espessura). */
+	contorno?: [number, number][];
+	/** rachadura: sorteio do desenho (outro número, outro traço). */
+	semente?: number;
+	/** terreno: camadas de cima para baixo ({material: grama|terra|areia|pedra|concreto, altura relativa, cor?}). */
+	camadas?: {material: string; altura: number; cor?: string}[];
+	/** Cor da segunda parte de peças compostas (pneu da roda, telhado da casa, cubo da hélice). */
+	cor_detalhe?: string;
+	/** casa: sem o telhado (laje aberta para pôr a caixa d'água, a placa solar...). */
+	sem_telhado?: boolean;
+	/** Visual limpo: false tira a luz que a peça com brilho joga em volta. */
+	luz?: boolean;
 }
 
 export interface AnimacaoPeca {
@@ -216,8 +235,12 @@ export interface AnimacaoPeca {
 	/** fluxo: bolinhas e velocidade (voltas no caminho por segundo). */
 	quantidade?: number;
 	velocidade?: number;
-	/** aquecer, pulsar, tremer: força (padrão 1). */
+	/** aquecer, pulsar, tremer: força (padrão 1); cortar: de quão longe (m) o corte começa (padrão 1.2); empurrar: distância (m). */
 	intensidade?: number;
+	/** cortar: onde o corte para, em metros a partir do apoio no "eixo" (padrão 0, o meio). */
+	posicao?: number;
+	/** cortar: abre também o chão do cenário (campo, rua) na frente do corte, para ver o terreno de lado. */
+	solo?: boolean;
 }
 
 export interface Rotulo {
@@ -313,6 +336,10 @@ export interface Voz {
 	amostra?: string;
 	/** Semente da voz escolhida (guardada pela ferramenta escolher-voz). */
 	semente?: number;
+	/** Multiplica a velocidade de todas as falas deste personagem (0.9 = 10% mais devagar). */
+	velocidade?: number;
+	/** "locutor": áudio tratado como narração de vídeo viral (voz mais perto e presente). */
+	tratamento?: 'locutor';
 }
 
 export interface PersonagemBiblia {
@@ -341,6 +368,8 @@ export interface Biblia {
 	formato?: 'serie' | 'avulso';
 	/** Hashtags fixas das publicações (formato avulso), sem o #. */
 	hashtags?: string[];
+	/** "limpa": legenda de tamanho único com a palavra-chave em amarelo (Como Funciona); padrão: a de histórias. */
+	legenda?: 'limpa';
 }
 
 // --- alinhamento das vozes (saída do OmniVoice) ------------------------------
@@ -458,4 +487,5 @@ export interface LinhaDoTempo {
 	avisos: string[];
 	modelos: Record<string, Peca[]>;
 	formato: 'serie' | 'avulso';
+	legenda?: 'limpa';
 }

@@ -6,7 +6,7 @@ import * as THREE from 'three';
 import {Camera, cameraNoTempo} from '../animacao/camera';
 import {cenaNoTempo, simulacao} from '../animacao/simulacao';
 import type {LinhaDoTempo} from '../roteiro/tipos';
-import {lerp3} from '../util/mat';
+import {len3, lerp3, sub3} from '../util/mat';
 import {Boneco} from './Boneco';
 import {Gigante} from './Gigante';
 import {Ceu, Iluminacao} from './luzes';
@@ -19,11 +19,13 @@ import {Montanha} from './cenarios/Montanha';
 import {Cabine} from './cenarios/Cabine';
 import {Estudio} from './cenarios/Estudio';
 import {Oficina} from './cenarios/Oficina';
-import {Maquetes} from './Maquete';
+import {Maquetes, corteDoSolo} from './Maquete';
 import {Mirante} from './cenarios/Mirante';
 import {Adega} from './cenarios/Adega';
 import {SalaFarol} from './cenarios/SalaFarol';
 import {IlhotaFarol} from './cenarios/IlhotaFarol';
+import {Campo, Cozinha, Rua, Vitrine} from './cenarios/Limpos';
+import {PrepararLimpo, ehLimpo} from './limpo';
 
 const CameraCena: React.FC<{c: Camera; nomeClima: string}> = ({c, nomeClima}) => {
 	const ref = useRef<THREE.PerspectiveCamera>(null);
@@ -50,6 +52,7 @@ export const Mundo: React.FC<{linha: LinhaDoTempo; t: number}> = ({linha, t}) =>
 	const sim = simulacao(linha, cena);
 	const cam = cameraNoTempo(cena, sim, t);
 	const nomeClima = cena.luz;
+	const limpo = ehLimpo(cena.cenario);
 	// a sombra acompanha a região que a câmera enxerga
 	const foco = lerp3(cam.alvo, cam.pos, 0.3);
 	const estados = Object.keys(cena.personagens)
@@ -58,7 +61,14 @@ export const Mundo: React.FC<{linha: LinhaDoTempo; t: number}> = ({linha, t}) =>
 	return (
 		<>
 			<CameraCena c={cam} nomeClima={nomeClima} />
-			<Iluminacao nome={nomeClima} foco={[foco[0], 0, foco[2]]} alcanceSombra={cena.cenario === 'montanha' ? 60 : cena.cenario === 'mirante' ? 24 : 18} alcanceNeblina={cena.cenario === 'mirante' ? 3.5 : 1} />
+			<PrepararLimpo />
+			<Iluminacao
+				nome={nomeClima}
+				foco={[foco[0], 0, foco[2]]}
+				alcanceSombra={cena.cenario === 'montanha' ? 60 : cena.cenario === 'mirante' ? 24 : limpo ? Math.min(40, Math.max(4, len3(sub3(cam.alvo, cam.pos)) * 1.4)) : 18}
+				alcanceNeblina={cena.cenario === 'mirante' ? 3.5 : 1}
+				limpo={limpo}
+			/>
 			{cena.cenario === 'praia' ? <Praia t={t} nomeClima={nomeClima} /> : null}
 			{cena.cenario === 'selva' ? <Selva t={t} nomeClima={nomeClima} /> : null}
 			{cena.cenario === 'raizes' ? <Raizes t={t} nomeClima={nomeClima} /> : null}
@@ -70,6 +80,10 @@ export const Mundo: React.FC<{linha: LinhaDoTempo; t: number}> = ({linha, t}) =>
 			{cena.cenario === 'cabine' ? <Cabine t={t} nomeClima={nomeClima} /> : null}
 			{cena.cenario === 'estudio' ? <Estudio t={t} nomeClima={nomeClima} /> : null}
 			{cena.cenario === 'oficina' ? <Oficina t={t} nomeClima={nomeClima} /> : null}
+			{cena.cenario === 'vitrine' ? <Vitrine t={t} nomeClima={nomeClima} /> : null}
+			{cena.cenario === 'cozinha' ? <Cozinha t={t} nomeClima={nomeClima} /> : null}
+			{cena.cenario === 'campo' ? <Campo t={t} nomeClima={nomeClima} corte={corteDoSolo(cena, linha, t)} /> : null}
+			{cena.cenario === 'rua' ? <Rua t={t} nomeClima={nomeClima} corte={corteDoSolo(cena, linha, t)} /> : null}
 			<Objetos lista={cena.objetos} cenario={cena.cenario} t={t} />
 			<Atmosfera cena={cena} t={t} />
 			<Maquetes cena={cena} linha={linha} t={t} />

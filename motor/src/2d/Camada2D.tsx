@@ -101,10 +101,64 @@ const grupos = (linha: LinhaDoTempo) => {
 	return g;
 };
 
+/**
+ * Legenda "limpa" (Como Funciona desde 11/11, no jeito dos vídeos de engenharia que viralizaram):
+ * de 1 a 3 palavras, todas do mesmo tamanho, brancas com contorno, a palavra-chave (MAIÚSCULA no
+ * roteiro) em amarelo, na altura do terço de baixo; cada palavra entra quando é falada.
+ */
+const LegendaLimpa: React.FC<{g: GrupoLegenda; t: number; frame: number; fps: number}> = ({g, t, frame, fps}) => {
+	const largura = 1080 - MARGEM_ESQ - MARGEM_DIR - 20;
+	const total = g.palavras.map((p) => textoNaTela(p.texto)).join(' ');
+	// o grupo inteiro numa linha sempre que couber (fonte única para todas as palavras)
+	const fonte = Math.min(92, Math.floor(largura / (Math.max(6, total.replace(/\u00AD/g, '').length) * 0.7)), fonteQueCabe(total, 92, largura));
+	return (
+		<div
+			style={{
+				position: 'absolute',
+				top: '67%',
+				left: MARGEM_ESQ,
+				right: MARGEM_DIR,
+				display: 'flex',
+				flexWrap: 'wrap',
+				justifyContent: 'center',
+				alignItems: 'baseline',
+				columnGap: Math.round(fonte * 0.3),
+				transform: 'translateY(-50%)',
+			}}
+		>
+			{g.palavras.map((p, i) => {
+				const visivel = t >= p.ini - 0.02;
+				const pop = spring({frame: frame - Math.round(p.ini * fps), fps, config: {damping: 14, stiffness: 260, mass: 0.5}});
+				return (
+					<span
+						key={i}
+						style={{
+							fontFamily: FONTE,
+							fontWeight: 900,
+							fontSize: fonte,
+							lineHeight: 1.08,
+							color: p.enfase ? AMARELO : '#FFFFFF',
+							display: 'inline-block',
+							opacity: visivel ? 1 : 0,
+							transform: `scale(${visivel ? 0.82 + 0.18 * pop : 0.82})`,
+							WebkitTextStroke: `${Math.round(fonte * 0.12)}px #000`,
+							paintOrder: 'stroke fill',
+							textShadow: `0 ${Math.round(fonte * 0.06)}px 0 rgba(0,0,0,0.9)`,
+						}}
+					>
+						{textoNaTela(p.texto)}
+					</span>
+				);
+			})}
+		</div>
+	);
+};
+
 const Legenda: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: number}> = ({linha, t, frame, fps}) => {
 	if (t >= linha.chamada.ini) return null;
 	const g = grupos(linha).find((x) => t >= x.ini && t < x.fim);
 	if (!g) return null;
+	if (linha.legenda === 'limpa') return <LegendaLimpa g={g} t={t} frame={frame} fps={fps} />;
 	const cena = cenaNoTempo(linha, t);
 	const tipo = tipoDoPlano(cena, t);
 	const baixa = tipo === 'close' || tipo === 'detalhe' || tipo === 'nuca' || tipo === 'ombro';
@@ -120,7 +174,8 @@ const Legenda: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: num
 				flexWrap: 'wrap',
 				justifyContent: 'center',
 				alignItems: 'baseline',
-				columnGap: 24,
+				// o contorno grosso come metade do vão: com 24 px as palavras pareciam grudadas ("AMOLA", "ARODA")
+				columnGap: 40,
 				rowGap: 0,
 				transform: 'translateY(-50%)',
 			}}

@@ -34,7 +34,7 @@ Preencha o campo `postagem` do `epNN.json` junto com o roteiro (passo 3 da skill
 
 ## Capa: `capa`
 - Âncora como as do roteiro (`"f1:fim"`, `"f9:mas"`): o quadro que vira capa no perfil do Instagram e na lista de Shorts do canal.
-- A maquete no momento mais curioso (a coisa estranha da abertura, a falha, a peça que resolve) ou o close do Tito surpreso, com uma palavra de impacto na legenda. Nunca um quadro de transição, a oficina escura ou a chamada.
+- A coisa em corte no momento mais curioso (a coisa estranha da abertura, a falha, a peça que resolve), com uma palavra de impacto na legenda. O Tito não aparece na tela (11/11). Nunca um quadro de transição, a oficina escura ou a chamada.
 - Confira com `npm run quadro -- como-funciona <n> <segundo da capa> --escala=0.5` (o `validar` mostra o segundo) e mande a imagem junto com o vídeo para o Iuri.
 
 ## O que o Iuri faz à mão (o .md de postagem lembra)

@@ -1,6 +1,7 @@
 // Transforma o roteiro (âncoras nas falas) em uma linha do tempo com segundos absolutos.
 // Sem áudio, a duração de cada fala é estimada pelo texto; com o alinhamento do OmniVoice,
 // usa o tempo real de cada letra. O resto do roteiro não muda entre um caso e outro.
+import {MATERIAIS} from '../materiais';
 import {ACOES, ANCORAS_OBJETO, ANIMACOES_PECA, CENARIOS, EFEITOS, EFEITOS_COM_ALVO, EFEITOS_COM_TEXTO, ENCERRA_ESTADO, EXPRESSOES, FILTROS, FLUXOS, FORMAS, ITENS_MAO, LADOS, MOVIMENTOS, OBJETOS, PARTICULAS, PLANOS, TRANSICOES} from '../catalogo';
 import {
 	Alinhamentos,
@@ -200,6 +201,9 @@ const conferirModelos = (modelos: Record<string, Peca[]>, avisos: string[]) => {
 			ids.add(p.id);
 			if (!(FORMAS as readonly string[]).includes(p.forma)) avisos.push(`${onde}: forma "${p.forma}" desconhecida (formas: ${FORMAS.join(', ')})`);
 			if (p.forma === 'tubo' && !(p.caminho && p.caminho.length >= 2)) avisos.push(`${onde}: tubo precisa de "caminho" com 2 pontos ou mais`);
+			if (p.forma === 'torno' && !(p.perfil && p.perfil.length >= 2)) avisos.push(`${onde}: torno precisa de "perfil" [[raio, altura], ...] com 2 pontos ou mais`);
+			if (p.forma === 'extrusao' && !(p.contorno && p.contorno.length >= 3)) avisos.push(`${onde}: extrusao precisa de "contorno" [[x, y], ...] com 3 pontos ou mais`);
+			if (p.material && !(p.material in MATERIAIS)) avisos.push(`${onde}: material "${p.material}" desconhecido (${Object.keys(MATERIAIS).join(', ')})`);
 		}
 		for (const p of pecas) if (p.pai && !ids.has(p.pai)) avisos.push(`modelo ${nome}, peça ${p.id}: mãe "${p.pai}" não existe`);
 	}
@@ -368,7 +372,7 @@ export const resolverEpisodio = (ep: Episodio, bibliaSerie: Biblia, alinhamentos
 		const animacoes: AnimacaoTempo[] = (c.animacoes ?? []).map((a, k) => {
 			ctx.onde = `cena ${c.id}, animação ${k + 1}`;
 			if (!(a.faz in ANIMACOES_PECA)) avisos.push(`${ctx.onde}: animação "${a.faz}" desconhecida`);
-			const deMaquete = a.faz === 'explodir' || a.faz === 'montar' || (a.faz === 'fluxo' && nomes.maquetes.has(a.peca));
+			const deMaquete = a.faz === 'explodir' || a.faz === 'montar' || ((a.faz === 'fluxo' || a.faz === 'cortar') && nomes.maquetes.has(a.peca));
 			if (deMaquete ? !nomes.maquetes.has(a.peca) && !nomes.pecas.has(a.peca) : !nomes.pecas.has(a.peca)) avisos.push(`${ctx.onde}: peça "${a.peca}" não existe nas maquetes da cena`);
 			if (a.faz === 'fluxo' && a.tipo && !(a.tipo in FLUXOS)) avisos.push(`${ctx.onde}: fluxo "${a.tipo}" desconhecido (${Object.keys(FLUXOS).join(', ')})`);
 			const aIni = resolverAncora(a.de, ctx) ?? ini;
@@ -461,5 +465,7 @@ export const resolverEpisodio = (ep: Episodio, bibliaSerie: Biblia, alinhamentos
 		avisos,
 		modelos,
 		formato: biblia.formato ?? 'serie',
+		// legenda limpa quando o vídeo usa os cenários de visual limpo (ou a bíblia pede)
+		legenda: biblia.legenda ?? (cenas.some((c) => CENARIOS[c.cenario]?.visual === 'limpo') ? 'limpa' : undefined),
 	};
 };

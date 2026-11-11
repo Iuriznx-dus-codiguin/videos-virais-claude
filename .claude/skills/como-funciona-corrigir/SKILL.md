@@ -9,8 +9,8 @@ Só mexa em `motor/public/series/como-funciona/`. Nunca grave regra em `_histori
 
 ## 1. Entender o pedido
 Separe cada correção em:
-- **só este vídeo** (troca de fala, peça errada, câmera cortando o Tito);
-- **regra do Como Funciona** (vale para os próximos: ritmo, jeito de explicar, cores da maquete, tamanho dos rótulos, tom do Tito, tipo de tema na pauta);
+- **só este vídeo** (troca de fala, peça errada ou fora do lugar, câmera que não mostra a peça);
+- **regra do Como Funciona** (vale para os próximos: ritmo, jeito de explicar, cenário e materiais da maquete, corte por dentro, tamanho dos rótulos, tom da voz do Tito, tipo de tema na pauta);
 - **framework** (`estilos.md`: "volta ao laboratório" para invenções, "você constrói" para o que foi desenvolvido ao longo de anos, e a regra de escolha entre os dois): um vídeo validado que ele mandou, um trecho ou degrau difícil de entender, um jeito novo de abrir ou fechar, ou um tema que deve ir para o outro framework. Acrescente o exemplo dele no framework certo de `estilos.md` sem apagar os validados; para trocar o framework de um tema, mude o campo `framework` dele na pauta (e, se for o roteiro do próximo vídeo, reescreva o `epNN.json` no outro framework); mude um esqueleto ou a regra de escolha só se o pedido mudar isso, e diga ao Iuri o que mudou;
 - **pauta** (trocar, tirar ou adiantar temas): edite `pauta.json` mantendo `n` em ordem para os pendentes, com `framework` em todo tema (e `estilo` nos do laboratório) e sem mais de 3 seguidos no mesmo framework.
 - **roteiro do próximo vídeo** (o que foi mandado junto com a entrega): edite o `epNN.json` dele, rode `validar` e `npm run dados -- salvar como-funciona`, sem voz nem render; a rotina de amanhã parte dessa versão.
@@ -18,12 +18,12 @@ Separe cada correção em:
 - **números do vídeo** que o Iuri mandar do YouTube Studio ou do Instagram ("visualizaram x deslizaram", % média assistida, o segundo em que a curva cai, envios): leia como correção do roteiro. Muita gente deslizando no começo aponta para a abertura e o primeiro quadro (a maquete já fazendo a coisa?); queda na oficina, para laboratório longo; queda no meio, para falta de MAS forte entre 35 e 45 s; queda antes da chamada, para fala sobrando depois da curiosidade ou do "Parabéns!". Vira regra em `regras.md` quando o mesmo ponto cair em dois vídeos.
 Se for ambígua, escolha a leitura mais provável, aplique e diga qual usou.
 
-**Tempos do vídeo:** o vídeo entregue sai acelerado 1.1x. Quando o Iuri citar um segundo do vídeo ("aos 40 s"), multiplique por 1,1 para achar o tempo no roteiro, no `quadro` e no `enquadramento` (40 s do vídeo = 44 s do roteiro).
+**Tempos do vídeo:** o vídeo entregue sai acelerado 1.1x. Quando o Iuri citar um segundo do vídeo ("aos 40 s"), multiplique por 1,1 para achar o tempo no roteiro e no `quadro` (40 s do vídeo = 44 s do roteiro).
 
 ## 2. Aplicar no vídeo
 1. `cd motor && npm run dados -- baixar` (sessão nova) e edite `public/series/como-funciona/epNN.json`.
 2. `npm run validar -- como-funciona <n>`; se mudou fala, `bash voz/instalar.sh` (sessão nova) e `npm run vozes -- como-funciona <n>`.
-3. `npm run render -- como-funciona <n>` (qualidade média, 20 a 35 MB; mande o próprio mp4) e confira com `npm run quadro`. Correção de produção (transição, câmera, partícula, círculo, letreiro) segue `como-funciona-produzir/producao.md`.
+3. `npm run render -- como-funciona <n>` (qualidade média, 20 a 35 MB; mande o próprio mp4) e confira com `npm run quadro`. Correção de produção (cenário, material, corte, câmera, transição, partícula, círculo, letreiro) segue `como-funciona-produzir/producao.md` (visual limpo de 11/11). Vídeo antigo de estúdio que o Iuri pedir para refazer passa para o cenário limpo do tema.
 4. `npm run dados -- entregar como-funciona <n> --dia=... --hora=...` com o mesmo dia e hora de antes. Se já passou do horário, avise que ele talvez já tenha postado o original.
 
 ## 3. Virar regra
