@@ -146,7 +146,7 @@
    "quem": "davi",
    "off": true,
    "tom": "tenso",
-   "texto": "Ela sorriu pra câmera. E mandou uma mensagem só pra mim."
+   "texto": "Ela sorriu pra câmera. Mas a caixa preta também gravou a voz dela."
   }
  ],
  "cenas": [
@@ -1615,12 +1615,12 @@
       1.8,
       6.0
      ],
-     "de": "f23:mensagem"
+     "de": "f23:caixa"
     },
     {
      "quem": "valeria",
      "faz": "acender",
-     "de": "f23:mensagem+0.6"
+     "de": "f23:caixa+0.6"
     }
    ],
    "sons": [
@@ -1630,12 +1630,12 @@
      "volume": 0.35
     },
     {
-     "de": "f23:mensagem+0.6",
+     "de": "f23:caixa+0.6",
      "som": "chiado",
      "volume": 0.3
     },
     {
-     "de": "f23:mim",
+     "de": "f23:dela",
      "som": "impacto",
      "volume": 0.45
     }
@@ -1652,7 +1652,7 @@
      "efeito": "barras"
     },
     {
-     "de": "f23:mensagem",
+     "de": "f23:caixa",
      "ate": "f23:fim+0.3",
      "efeito": "destacar",
      "alvo": "valeria"
@@ -1708,9 +1708,9 @@
   }
  ],
  "chamada": {
-  "pergunta": "Ela vem atrás do Davi ou da Lia?",
+  "pergunta": "Quem foi o pior: o Ramos ou a Valéria?",
   "texto": "COMENTA",
-  "destaque": "TEMPORADA 2"
+  "destaque": "FIM"
  },
  "postagem": {
   "titulo": "O resgate chegou na ilha onde o avião caiu",
@@ -1721,7 +1721,7 @@
    "suspense",
    "animacao"
   ],
-  "comentario": "Eu acho que ela vai atrás da Lia. E você: o Davi ou a Lia?",
+  "comentario": "Fim do Voo 818! Pra mim a pior foi a Valéria. E pra você: o Ramos ou a Valéria?",
   "capa": "f4+0.3"
  }
 }

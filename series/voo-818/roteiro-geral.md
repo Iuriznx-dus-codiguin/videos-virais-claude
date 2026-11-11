@@ -45,7 +45,7 @@ Segunda a sexta uma parte, sábado e domingo duas (11h e 18h). A parte 1 vai ao 
 | 15 | A tempestade (sáb 11h) | Chuva e raios. Disputa pela alavanca. Davi liga o SOS giratório. | O farol apaga. A tempestade derrubou a luz. |
 | 16 | A caixa preta (sáb 18h) | Otávio lembra: a caixa preta gravou Ramos combinando o pouso. Davi corre aos destroços no escuro e a encontra. | Faróis de um barco chegam à praia: "Não é a Marinha." |
 | 17 | A voz (dom 11h) | Valéria desce do barco. Davi reconhece a voz do rádio. Ela exige a caixa preta; ele blefa que o SOS já foi ouvido. | "Quantos sobreviventes, Davi?" |
-| 18 | Resgate (dom 18h) | A Marinha chega pelo SOS. Ramos é preso, Valéria foge, os passageiros acordam. Meses depois, Valéria aparece na TV como heroína. | "Ela sorriu pra câmera. E mandou uma mensagem só pra mim." Comente "TEMPORADA 2". |
+| 18 | Resgate (ÚLTIMA PARTE: desfecho) | A Marinha chega pelo SOS. Ramos é preso, Valéria foge, os passageiros acordam. Meses depois, Valéria aparece na TV como heroína. | "Ela sorriu pra câmera. Mas a caixa preta também gravou a voz dela." Chamada: "Quem foi o pior: o Ramos ou a Valéria?" COMENTA "FIM". Depois da 18 a série acaba: filme 16:9 e série nova. |
 
 ## Estilo de cada episódio
 - ~1min20, nas 8 batidas de `.claude/skills/roteirizar-episodio/estrutura.md`. Cada parte abre com o Davi falando com quem assiste sobre o problema daquela parte ("Se o seu avião cair numa ilha, não tente fugir pelo mar.") e se entende sozinha.
