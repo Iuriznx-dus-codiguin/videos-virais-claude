@@ -15,3 +15,5 @@ Cada linha vem de uma correção do Iuri ou de uma decisão do projeto. A skill 
 - (2026-10-26) O final planta dúvida: uma revelação e uma pergunta que fica sem resposta antes da chamada.
 - (2026-10-26) Nada de efeito sonoro de assovio (tons que sobem ou descem): impacto e tensão são ronco, pancada e ruído grave.
 - (2026-10-26) Entregue o mp4 em alta qualidade; se passar do limite de pré-visualização, mande junto uma cópia leve só para assistir.
+- (2026-11-11) Toda minissérie tem episódio final com o desfecho da história (as novas têm 5 a 7 partes). Depois da última linha do `roteiro-geral.md` nunca se inventa parte nova: no mesmo dia nasce a série seguinte (skill `nova-minisserie`, gênero diferente) e o filme 16:9 da que acabou.
+- (2026-11-11) Mais profissional e que prenda até o fim: manchete no alto em cada batida, relógio na tela quando a hora importa, objeto em tela cheia (celular, bilhete, interfone, câmera de segurança) e voz do narrador com `realce` (sem voz "morta"). Detalhes em `producao.md` da skill, "Narração na tela".
