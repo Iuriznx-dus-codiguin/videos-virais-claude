@@ -72,6 +72,13 @@
    "texto": "A má notícia é que a do sétimo está desligada desde ontem."
   },
   {
+   "id": "f10b",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Desligada por quem? Só a síndica tem a senha das câmeras."
+  },
+  {
    "id": "f11",
    "quem": "narrador",
    "off": true,
@@ -83,7 +90,8 @@
    "quem": "vulto",
    "off": true,
    "tom": "interfone",
-   "texto": "Não sobe. Olha a câmera dois."
+   "texto": "Não sobe. Olha a câmera dois.",
+   "pausa_depois": 0.4
   },
   {
    "id": "f13",
@@ -99,6 +107,13 @@
    "texto": "Uma mulher de roupão atravessa o hall e vai pra garagem."
   },
   {
+   "id": "f14b",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Ela aperta um controle, e o portão da garagem abre sozinho."
+  },
+  {
    "id": "f15",
    "quem": "narrador",
    "off": true,
@@ -109,7 +124,8 @@
    "id": "f16",
    "quem": "porteiro",
    "tom": "nervoso",
-   "texto": "O que ela tá fazendo lá embaixo?"
+   "texto": "O que ela tá fazendo lá embaixo?",
+   "pausa_depois": 0.5
   },
   {
    "id": "f17",
@@ -123,7 +139,8 @@
    "quem": "narrador",
    "off": true,
    "tom": "tenso",
-   "texto": "Depois vira o rosto, bem devagar. Pra guarita."
+   "texto": "Depois vira o rosto, bem devagar. Pra guarita.",
+   "pausa_depois": 0.4
   },
   {
    "id": "f19",
@@ -485,6 +502,19 @@
      "movimento": "subir",
      "intensidade": 0.4,
      "transicao": "chicote"
+    },
+    {
+     "de": "f10b",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      -4.35,
+      1.45,
+      5.55
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.3,
+     "transicao": "desfoque"
     }
    ],
    "insercoes": [
@@ -505,7 +535,12 @@
     },
     {
      "de": "f10",
-     "texto": "A MÁ: A DO 7º *DESLIGADA*"
+     "texto": "A MÁ: A DO 7º *DESLIGADA*",
+     "ate": "f10b"
+    },
+    {
+     "de": "f10b",
+     "texto": "SÓ A SÍNDICA TEM *A SENHA*"
     }
    ],
    "relogio": {
@@ -666,8 +701,13 @@
    "manchetes": [
     {
      "de": "f14:roupão",
-     "ate": "f15",
+     "ate": "f14b",
      "texto": "UMA MULHER *DE ROUPÃO*"
+    },
+    {
+     "de": "f14b",
+     "ate": "f15",
+     "texto": "REGRA 1? ELA *ABRE O PORTÃO*"
     },
     {
      "de": "f15:síndica-0.6",
@@ -682,6 +722,11 @@
     {
      "de": "f15:síndica",
      "som": "impacto",
+     "volume": 0.4
+    },
+    {
+     "de": "f14b:abre",
+     "som": "clique",
      "volume": 0.4
     }
    ]
