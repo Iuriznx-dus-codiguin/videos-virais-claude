@@ -15,6 +15,8 @@ export interface DefCenario {
 	tamanhos?: Record<string, number>;
 	/** Altura (m) em que um objeto colocado na marca fica apoiado (tampo da bancada, pedestal). */
 	alturas?: Record<string, number>;
+	/** "limpo": maquetes com material de verdade (metal, vidro, concreto...), sem contorno preto e com corte. */
+	visual?: 'limpo';
 }
 
 export const CENARIOS: Record<string, DefCenario> = {
@@ -136,6 +138,40 @@ export const CENARIOS: Record<string, DefCenario> = {
 		tamanhos: {maquete: 1.6},
 		alturas: {pedestal: 1.0},
 	},
+	vitrine: {
+		descricao: 'Visual limpo. Fundo infinito claro de foto de produto (chão que vira parede sem quina), luz branca macia. Para coisas pequenas e mecanismos (relógio, câmera, caneta, motor): a peça no centro, no chão, no tamanho de verdade, e a câmera chega perto. Frente para +z.',
+		luzPadrao: 'vitrine',
+		visual: 'limpo',
+		marcas: {centro: [0, 0], esquerda: [-1.2, 0.2], direita: [1.2, 0.2], frente: [0, 2.6], fundo: [0, -2]},
+		pontos: {maquete: [0, 0.4, 0], alto: [0, 3, 2]},
+		tamanhos: {maquete: 1.2},
+	},
+	cozinha: {
+		descricao: 'Visual limpo. Cozinha clara: balcão de pedra (tampo a 0,92 m, de x -1,9 a 1,9, fundo em z -0,65), armários com puxadores, faixa de azulejo branco, janela clara no meio entre os armários de cima, vaso de planta e tábua nas pontas. Para eletrodomésticos e coisas de casa (liquidificador, torradeira, tomada, disjuntor, fogão, extintor). Coisa no balcão: marca balcao; coisa na parede (tomada, relógio, ar-condicionado): marca parede com "alt" (1,2 a 2,2) e a peça encostada no fundo. Frente para +z.',
+		luzPadrao: 'cozinha',
+		visual: 'limpo',
+		marcas: {balcao: [0, -0.32], balcao_esq: [-0.85, -0.32], balcao_dir: [0.85, -0.32], parede: [0, -0.62], chao: [0, 0.7], frente: [0, 2.2]},
+		pontos: {maquete: [0, 1.15, -0.32], balcao_topo: [0, 0.95, -0.32], janela: [0, 2.05, -0.6]},
+		tamanhos: {maquete: 0.9, balcao_topo: 1.6},
+		alturas: {balcao: 0.92, balcao_esq: 0.92, balcao_dir: 0.92},
+	},
+	campo: {
+		descricao: 'Visual limpo. Gramado aberto no tamanho real de uma obra (barragem, ponte, prédio, caixa d\'água, usina, túnel): morros ao fundo, árvores, pedras e nuvens, céu de dia. O meio (raio ~9 m) fica livre para a obra, que o episódio monta com peças (terreno em corte, agua, concreto, casa, arvore). Frente para +z; câmera de longe (10 a 40 m) para o tamanho da obra.',
+		luzPadrao: 'dia',
+		visual: 'limpo',
+		marcas: {centro: [0, 0], esquerda: [-6, 0], direita: [6, 0], frente: [0, 9], fundo: [0, -10]},
+		pontos: {obra: [0, 2, 0], alto: [0, 25, 30]},
+		tamanhos: {obra: 14},
+	},
+	rua: {
+		descricao: 'Visual limpo. Rua de cidade: asfalto com faixa no eixo x (de z -4 a 4), calçadas de concreto (topo a 0,16 m) com postes e árvores, prédios com janelas atrás (z ~ -12). Para carro, freio, semáforo, bicicleta, elevador, escada rolante. Frente para +z.',
+		luzPadrao: 'dia',
+		visual: 'limpo',
+		marcas: {rua: [0, 0], rua_esq: [-5, 1.8], rua_dir: [5, 1.8], calcada: [0, 5.4], calcada_fundo: [0, -5.2], esquina: [6, -4.6]},
+		pontos: {meio_rua: [0, 1, 0], alto: [0, 20, 22]},
+		tamanhos: {meio_rua: 8},
+		alturas: {calcada: 0.16, calcada_fundo: 0.16, esquina: 0.16},
+	},
 	oficina: {
 		descricao: 'Oficina antiga de inventor (para contar como a coisa foi inventada): piso de tábuas, bancada de madeira no fundo (tampo a 0,92 m) com ferramentas, lâmpada pendurada, janela com luz entrando, prateleiras com engrenagens e caixotes. Frente para +z.',
 		luzPadrao: 'oficina',
@@ -242,7 +278,7 @@ export const CENARIOS: Record<string, DefCenario> = {
 	},
 };
 
-export const LUZES = ['dia', 'por_do_sol', 'entardecer', 'noite', 'estudio', 'oficina'] as const;
+export const LUZES = ['dia', 'por_do_sol', 'entardecer', 'noite', 'estudio', 'oficina', 'vitrine', 'cozinha'] as const;
 
 /** modificador: soma por cima da pose atual (tremer) e não encerra nem é encerrado por estados. */
 export type TipoAcao = 'movimento' | 'gesto' | 'estado' | 'modificador';
@@ -529,7 +565,39 @@ export const USO_OBJETOS: Record<(typeof OBJETOS)[number], string> = {
 
 // --- maquetes ---------------------------------------------------------------------------
 
-export const FORMAS = ['caixa', 'cilindro', 'esfera', 'cone', 'capsula', 'toro', 'mola', 'engrenagem', 'seta', 'tubo', 'placa'] as const;
+export const FORMAS = [
+	'caixa',
+	'cilindro',
+	'esfera',
+	'cone',
+	'capsula',
+	'toro',
+	'mola',
+	'engrenagem',
+	'seta',
+	'tubo',
+	'placa',
+	'torno',
+	'extrusao',
+	'rachadura',
+	'terreno',
+	'helice',
+	'roda',
+	'casa',
+	'arvore',
+] as const;
+
+/** Para que serve cada forma nova (o catálogo mostra; tam e campos em tipos.ts > Peca). */
+export const USO_FORMAS: Record<string, string> = {
+	torno: 'peça redonda de contorno livre (copo, garrafa, bocal, lâmpada, lente, pistão): "perfil" [[raio, altura], ...] de baixo para cima',
+	extrusao: 'peça recortada (pá, ponteiro, suporte, alavanca, lâmina): "contorno" [[x, y], ...] no plano da frente e tam [espessura]',
+	rachadura: 'traço de rachadura que desce da "pos" no plano da frente da peça-mãe; tam [comprimento, largura, ramos], "semente"; com "crescer" ela vai rachando',
+	terreno: 'bloco de chão em corte (grama, terra, pedra): tam [largura, altura, profundidade], "camadas" opcional; para muro de arrimo, fundação, túnel, barragem, poste',
+	helice: 'hélice ou ventoinha: tam [raio, largura da pá, pás]; gira no eixo y',
+	roda: 'roda com pneu, aro e raios, de pé, eixo em x: tam [raio, largura, raios]; gira no eixo x',
+	casa: 'casinha de tijolo com telhado, porta e janelas (contexto: o que a obra protege); tam [largura, alturaParede, profundidade]',
+	arvore: 'árvore baixa poligonal (contexto); tam [altura]',
+};
 
 /** Animações de peça: o que cada uma faz e se dura até o fim da cena (estado) ou só o intervalo. */
 export const ANIMACOES_PECA: Record<string, string> = {
@@ -547,6 +615,8 @@ export const ANIMACOES_PECA: Record<string, string> = {
 	explodir: 'vista explodida: cada peça vai para o seu "explode"; peca = id da maquete',
 	montar: 'volta da vista explodida para o lugar; peca = id da maquete',
 	fluxo: 'bolinhas correndo por um caminho: "tipo" agua, eletricidade, calor, ar, gas ou luz',
+	cortar: 'vista em corte (visual limpo): um plano corta a frente da peça ou da maquete inteira (peca = id da maquete) e mostra o miolo pintado; "eixo" do corte (padrão z, de frente para a câmera), "posicao" onde para (m, padrão 0 = meio), "angulo": -1 corta pelo outro lado; "solo": true abre também o gramado/asfalto na frente do corte (campo, rua), para o bloco "terreno" aparecer de lado com as camadas (corte do chão, como nos vídeos da barragem e do muro)',
+	empurrar: 'vai e volta na direção para onde a peça aponta (+y dela): seta de força empurrando, pistão, êmbolo; "intensidade" = distância (padrão 0.08 m), "voltas" por segundo (padrão 1.6)',
 };
 
 export const FLUXOS: Record<string, {cor: string; brilha: boolean; raio: number}> = {

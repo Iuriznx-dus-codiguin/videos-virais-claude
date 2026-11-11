@@ -88,6 +88,32 @@ export const CLIMAS: Record<string, Clima> = {
 		mar: ['#16244A', '#16244A', '#16244A', '#16244A', '#16244A'],
 		nuvem: '#16244A',
 	},
+	// vitrine (Como Funciona, visual limpo): fundo claro de foto de produto, luz branca macia
+	vitrine: {
+		ambiente: [0.4, 0.42, 0.46],
+		sol: [0.62, 0.6, 0.56],
+		solDir: [-4, 9, 7],
+		contra: {cor: '#DDEBFF', dir: [5, 6, -9], intensidade: 0.55},
+		ceu: {cores: ['#E9EDF3', '#E3E8EF', '#DDE3EC', '#D5DCE7', '#CFD7E3'], paradas: [0, 0.1, 0.3, 0.65, 1]},
+		astro: {cor: '#E9EDF3', dir: [0, -1, 0], graus: 0.1, halo: 0},
+		estrelas: 0,
+		reforcoRosto: [0.2, 0.2, 0.2],
+		mar: ['#DDE3EC', '#DDE3EC', '#DDE3EC', '#DDE3EC', '#DDE3EC'],
+		nuvem: '#FFFFFF',
+	},
+	// cozinha (Como Funciona, visual limpo): manhã clara entrando pela janela
+	cozinha: {
+		ambiente: [0.38, 0.37, 0.38],
+		sol: [0.66, 0.62, 0.52],
+		solDir: [-3, 8, 9],
+		contra: {cor: '#E8F2FF', dir: [3, 6, -8], intensidade: 0.4},
+		ceu: {cores: ['#EFE6D6', '#EFE6D6', '#EFE6D6', '#EFE6D6', '#EFE6D6'], paradas: [0, 0.1, 0.3, 0.65, 1]},
+		astro: {cor: '#EFE6D6', dir: [0, -1, 0], graus: 0.1, halo: 0},
+		estrelas: 0,
+		reforcoRosto: [0.22, 0.22, 0.2],
+		mar: ['#EFE6D6', '#EFE6D6', '#EFE6D6', '#EFE6D6', '#EFE6D6'],
+		nuvem: '#FFFFFF',
+	},
 	// oficina antiga: luz quente de lâmpada e de janela, sombras marrons
 	oficina: {
 		ambiente: [0.28, 0.21, 0.17],
@@ -190,7 +216,7 @@ const direcao = (v: V3, dist: number): V3 => {
 
 /** Luz ambiente, sol/lua com sombra e luz de contra, centradas em `foco` para a sombra caber. */
 /** `alcanceNeblina` multiplica a distância da neblina (vistas do alto precisam enxergar longe). */
-export const Iluminacao: React.FC<{nome: string; foco: V3; alcanceSombra?: number; alcanceNeblina?: number}> = ({nome, foco, alcanceSombra = 22, alcanceNeblina = 1}) => {
+export const Iluminacao: React.FC<{nome: string; foco: V3; alcanceSombra?: number; alcanceNeblina?: number; limpo?: boolean}> = ({nome, foco, alcanceSombra = 22, alcanceNeblina = 1, limpo = false}) => {
 	const c = clima(nome);
 	const sol = direcao(c.solDir, 30);
 	const alvo = React.useMemo(() => new THREE.Object3D(), []);
@@ -198,7 +224,12 @@ export const Iluminacao: React.FC<{nome: string; foco: V3; alcanceSombra?: numbe
 	alvo.updateMatrixWorld();
 	return (
 		<>
-			<ambientLight color={linear(...c.ambiente)} intensity={Math.PI} />
+			{limpo ? (
+				// visual limpo: luz do céu por cima e reflexo do chão por baixo (dá volume sem contorno)
+				<hemisphereLight args={[linear(c.ambiente[0] * 1.2, c.ambiente[1] * 1.2, c.ambiente[2] * 1.25), linear(c.ambiente[0] * 0.75, c.ambiente[1] * 0.72, c.ambiente[2] * 0.66), Math.PI]} />
+			) : (
+				<ambientLight color={linear(...c.ambiente)} intensity={Math.PI} />
+			)}
 			<primitive object={alvo} />
 			<directionalLight
 				position={[foco[0] + sol[0], foco[1] + sol[1], foco[2] + sol[2]]}
@@ -207,7 +238,7 @@ export const Iluminacao: React.FC<{nome: string; foco: V3; alcanceSombra?: numbe
 				intensity={Math.PI}
 				castShadow
 				shadow-mapSize={[4096, 4096]}
-				shadow-radius={3}
+				shadow-radius={limpo ? 7 : 3}
 				shadow-camera-left={-alcanceSombra}
 				shadow-camera-right={alcanceSombra}
 				shadow-camera-top={alcanceSombra}

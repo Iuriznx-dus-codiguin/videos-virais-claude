@@ -8,7 +8,7 @@ import {createHash} from 'node:crypto';
 import {existsSync, mkdirSync, readFileSync, writeFileSync} from 'node:fs';
 import {join} from 'node:path';
 import {PASTA_SERIES} from './lib/caminhos.ts';
-import {alinharProporcional, avaliarPronuncia, duracaoDoAudio, ouvirFalas, rodarVoz, TONS, tratarAudio, type TarefaGerar} from './lib/voz.ts';
+import {alinharProporcional, avaliarPronuncia, duracaoDoAudio, ouvirFalas, rodarVoz, TONS, TRATAMENTOS, tratarAudio, type TarefaGerar} from './lib/voz.ts';
 import {nomeEpisodio} from './validar.ts';
 import {textoParaVoz} from '../src/roteiro/resolver.ts';
 import {ehSilencio} from '../src/roteiro/tipos.ts';
@@ -26,6 +26,8 @@ export interface Pedido {
 	voz: string;
 	velocidade: number;
 	semente: number;
+	/** tratamento do áudio do personagem (voz.tratamento da bíblia) */
+	tratamento?: string;
 	chave: string;
 }
 
@@ -46,13 +48,15 @@ export const montarPedidos = (serie: string, biblia: Biblia, ep: Episodio): Pedi
 				throw new Error(`"${fala.quem}" ainda não tem voz escolhida. Rode: npx tsx ferramentas/escolher-voz.ts ${serie} ${fala.quem} --auto`);
 			}
 			const texto = textoParaVoz(fala.texto);
-			const velocidade = +((fala.velocidade ?? 1) * (fala.tom ? (TONS[fala.tom]?.velocidade ?? 1) : 1)).toFixed(3);
-			const semente = fala.semente ?? biblia.personagens[fala.quem]?.voz?.semente ?? 1;
-			return {fala, texto, voz, velocidade, semente, chave: chaveDe(voz, texto, velocidade, semente, fala.tom)};
+			const daVoz = biblia.personagens[fala.quem]?.voz;
+			const velocidade = +((fala.velocidade ?? 1) * (daVoz?.velocidade ?? 1) * (fala.tom ? (TONS[fala.tom]?.velocidade ?? 1) : 1)).toFixed(3);
+			const semente = fala.semente ?? daVoz?.semente ?? 1;
+			const tratamento = daVoz?.tratamento;
+			return {fala, texto, voz, velocidade, semente, tratamento, chave: chaveDe(voz, texto, velocidade, semente, fala.tom, tratamento)};
 		});
 
-const chaveDe = (voz: string, texto: string, velocidade: number, semente: number, tom?: string) =>
-	hash(readFileSync(voz), JSON.stringify({texto, velocidade, semente, PASSOS, filtro: tom ? TONS[tom]?.filtro : undefined}));
+const chaveDe = (voz: string, texto: string, velocidade: number, semente: number, tom?: string, tratamento?: string) =>
+	hash(readFileSync(voz), JSON.stringify({texto, velocidade, semente, PASSOS, filtro: tom ? TONS[tom]?.filtro : undefined, ...(tratamento ? {tratamento: TRATAMENTOS[tratamento]} : {})}));
 
 /** Nomes próprios que a voz não pode engolir: os da bíblia e palavras com maiúscula no meio da frase. */
 const nomesDaFala = (biblia: Biblia, texto: string) => {
@@ -83,14 +87,14 @@ const conferirPronuncia = async (pedidos: Pedido[], biblia: Biblia, dirCache: st
 	for (const p of ruins) {
 		for (let k = 1; k <= TENTATIVAS; k++) {
 			const semente = p.semente + k * 101;
-			variantes.push({...p, semente, chave: chaveDe(p.voz, p.texto, p.velocidade, semente, p.fala.tom)});
+			variantes.push({...p, semente, chave: chaveDe(p.voz, p.texto, p.velocidade, semente, p.fala.tom, p.tratamento)});
 		}
 	}
 	const novas = variantes.filter((v) => !existsSync(final(v)));
 	if (novas.length) {
 		console.log(`refazendo ${ruins.length} falas com ${TENTATIVAS} sementes cada...`);
 		await rodarVoz('gerar', novas.map((v) => ({id: `${v.fala.id}@${v.semente}`, saida: join(dirCache, `${v.chave}.bruto.wav`), texto: v.texto, voz: v.voz, velocidade: v.velocidade, semente: v.semente})), PASSOS);
-		for (const v of novas) await tratarAudio(join(dirCache, `${v.chave}.bruto.wav`), final(v), v.fala.tom);
+		for (const v of novas) await tratarAudio(join(dirCache, `${v.chave}.bruto.wav`), final(v), v.fala.tom, v.tratamento);
 	}
 	const ouvidoV = await ouvirFalas(variantes.map((v) => ({id: `${v.fala.id}@${v.semente}`, audio: final(v)})));
 	const trocas = new Map<string, number>();
@@ -135,7 +139,7 @@ const main = async () => {
 	if (faltam.length) {
 		const tarefas: TarefaGerar[] = faltam.map((p) => ({id: p.fala.id, saida: bruto(p), texto: p.texto, voz: p.voz, velocidade: p.velocidade, semente: p.semente}));
 		await rodarVoz('gerar', tarefas, PASSOS);
-		for (const p of faltam) await tratarAudio(bruto(p), final(p), p.fala.tom);
+		for (const p of faltam) await tratarAudio(bruto(p), final(p), p.fala.tom, p.tratamento);
 	}
 
 	const conferir = args.includes('--conferir-tudo') ? pedidos : faltam;

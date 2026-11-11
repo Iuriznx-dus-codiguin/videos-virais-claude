@@ -172,7 +172,7 @@ const sobreOmbro = (cab: V3, alvo: V3, lado: number, escala: number) => {
 };
 
 /** Cenários com uma frente (+z): planos em pontos e peças olham de frente, não a partir do personagem. */
-const FRENTE_FIXA = new Set(['estudio', 'oficina']);
+const FRENTE_FIXA = new Set(['estudio', 'oficina', 'vitrine', 'cozinha']);
 
 /** Limite da câmera por cenário (esconderijo: precisa ficar dentro da toca). */
 const LIMITES: Record<string, (p: V3, plano: PlanoTempo) => V3> = {
@@ -185,6 +185,15 @@ const LIMITES: Record<string, (p: V3, plano: PlanoTempo) => V3> = {
 		const n = Math.hypot(dx, dz);
 		const k = n > 7.6 ? 7.6 / n : 1;
 		return [dx * k, clamp(p[1], 0.2, 8), 1.5 + dz * k];
+	},
+	// cozinha: entre as paredes laterais e na frente do balcão e da parede do fundo
+	cozinha: (p) => [clamp(p[0], -2.35, 2.35), clamp(p[1], 0.15, 2.7), Math.max(p[2], p[1] < 0.95 || p[1] > 1.6 ? -0.02 : -0.55)],
+	// vitrine: dentro do fundo infinito
+	vitrine: (p) => {
+		const dz = p[2] - 1.5;
+		const n = Math.hypot(p[0], dz);
+		const k = n > 6.2 ? 6.2 / n : 1;
+		return [p[0] * k, clamp(p[1], 0.05, 9), 1.5 + dz * k];
 	},
 	// oficina: entre as paredes e na frente da parede de tijolo
 	oficina: (p) => [clamp(p[0], -4.3, 4.3), clamp(p[1], 0.2, 4.2), Math.max(p[2], -2.75)],

@@ -210,10 +210,20 @@ export const TONS: Record<string, AjusteTom> = {
 	determinado: {velocidade: 1},
 };
 
+/**
+ * Tratamento de narrador de vídeo curto: tira o grave que embola, dá presença na faixa da
+ * fala (3 kHz) e um pouco de brilho, e comprime para a voz soar perto e com energia do começo
+ * ao fim da frase (o OmniVoice sai "de longe", com o fim das frases caindo).
+ */
+export const TRATAMENTOS: Record<string, string> = {
+	locutor: 'highpass=f=85,equalizer=f=250:t=q:w=1.2:g=-2.5,equalizer=f=3200:t=q:w=1.4:g=3.5,equalizer=f=9000:t=q:w=1.5:g=2,acompressor=threshold=-21dB:ratio=3.5:attack=4:release=70:makeup=3',
+};
+
 /** Mesmo volume para todas as falas, depois o ajuste do tom. Grava um .wav mono 24 kHz. */
-export const tratarAudio = async (entrada: string, saida: string, tom?: string) => {
+export const tratarAudio = async (entrada: string, saida: string, tom?: string, tratamento?: string) => {
 	mkdirSync(join(saida, '..'), {recursive: true});
-	const filtros = ['loudnorm=I=-17:TP=-1.5:LRA=7'];
+	const t = tratamento ? TRATAMENTOS[tratamento] : undefined;
+	const filtros = [...(t ? [t] : []), `loudnorm=I=-17:TP=-1.5:LRA=${t ? 5 : 7}`];
 	const f = tom ? TONS[tom]?.filtro : undefined;
 	if (f) filtros.push(f);
 	await exec('ffmpeg', ['-y', '-v', 'error', '-i', entrada, '-af', filtros.join(','), '-ar', '24000', '-ac', '1', saida]);

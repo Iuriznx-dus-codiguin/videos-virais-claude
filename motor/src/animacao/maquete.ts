@@ -28,6 +28,9 @@ export interface MaqueteNaCena {
 	pos: V3;
 	giro: number;
 	escala: number;
+	/** âncoras "aparece" e "some" do objeto (segundos) */
+	aparece?: number;
+	some?: number;
 }
 
 const EIXO: Record<string, number> = {x: 0, y: 1, z: 2};
@@ -58,6 +61,8 @@ export const maquetesDaCena = (cena: CenaTempo, linha: LinhaDoTempo): MaqueteNaC
 				pos: apoioObjeto(o, cena.cenario),
 				giro: ((o.giro ?? 0) * Math.PI) / 180,
 				escala: o.escala ?? 1,
+				aparece: typeof o._aparece === 'number' ? o._aparece : undefined,
+				some: typeof o._some === 'number' ? o._some : undefined,
 			};
 		});
 
@@ -83,6 +88,27 @@ export const alturaDaPeca = (p: Peca): number => {
 			return t[0] ?? 0.4;
 		case 'placa':
 			return t[1] ?? 0.3;
+		case 'torno': {
+			const ys = (p.perfil ?? [[0, 0], [0, 0.2]]).map((x) => x[1]);
+			return Math.max(...ys) - Math.min(...ys);
+		}
+		case 'extrusao': {
+			const ys = (p.contorno ?? [[0, 0], [0, 0.2]]).map((x) => x[1]);
+			return Math.max(...ys) - Math.min(...ys);
+		}
+		case 'rachadura':
+			return t[0] ?? 0.5;
+		case 'terreno':
+			return t[1] ?? 1;
+		case 'casa':
+			// paredes + laje (+ telhado): a "pos" é o meio dessa altura toda
+			return (t[1] ?? 2.4) + 0.1 + (p.sem_telhado ? 0 : (t[0] ?? 3) * 0.32);
+		case 'helice':
+			return (t[1] ?? 0.12) * 0.5;
+		case 'roda':
+			return 2 * (t[0] ?? 0.35);
+		case 'arvore':
+			return t[0] ?? 3;
 		default:
 			return 0.2;
 	}
@@ -154,6 +180,17 @@ export const estadoPeca = (m: MaqueteNaCena, p: Peca, anims: AnimacaoTempo[], t:
 			case 'transparente':
 				e.opacidade += ((a.opacidade ?? 0.25) - e.opacidade) * smoothstep(a.ini, a.ini + 0.6, t);
 				break;
+			case 'empurrar': {
+				// vai e volta na direção para onde a peça aponta (+y dela): seta de força, pistão, êmbolo
+				if (t > a.fim + 0.3) break;
+				const amp = (a.intensidade ?? 0.08) * smoothstep(a.ini, a.ini + 0.2, t) * (1 - smoothstep(a.fim, a.fim + 0.3, t));
+				const fase = (t - a.ini) * (a.voltas ?? 1.6);
+				const s = amp * (0.5 - 0.5 * Math.cos(fase * 2 * Math.PI));
+				const g = p.giro ?? [0, 0, 0];
+				const dir = new THREE.Vector3(0, 1, 0).applyEuler(new THREE.Euler(g[0] * GRAU, g[1] * GRAU, g[2] * GRAU));
+				e.desloc = [e.desloc[0] + dir.x * s, e.desloc[1] + dir.y * s, e.desloc[2] + dir.z * s];
+				break;
+			}
 			case 'tremer':
 				if (t <= a.fim) {
 					const amp = 0.012 * k * smoothstep(a.ini, a.ini + 0.15, t);
@@ -228,6 +265,20 @@ const meiaLargura = (p: Peca): number => {
 			return (t[0] ?? 0.3) / 2;
 		case 'placa':
 			return Math.max(t[0] ?? 0.3, t[1] ?? 0.3) / 2;
+		case 'torno':
+			return Math.max(0.02, ...(p.perfil ?? [[0.1, 0]]).map((x) => x[0]));
+		case 'extrusao':
+			return Math.max(0.02, ...(p.contorno ?? [[0.1, 0]]).map((x) => Math.hypot(x[0], x[1])));
+		case 'rachadura':
+			return (t[0] ?? 0.5) / 2;
+		case 'terreno':
+		case 'casa':
+			return Math.max(t[0] ?? 2, t[2] ?? 1) / 2;
+		case 'helice':
+		case 'roda':
+			return t[0] ?? 0.3;
+		case 'arvore':
+			return (t[0] ?? 3) * 0.3;
 		case 'tubo': {
 			const c = centroLocal(p);
 			return Math.max(0.05, ...(p.caminho ?? []).map((q) => Math.hypot(q[0] - c[0], q[1] - c[1], q[2] - c[2])));

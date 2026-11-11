@@ -1,6 +1,7 @@
 // Imprime o vocabulário do motor em poucas linhas, para quem escreve roteiros não precisar ler o código.
 // Uso: npm run catalogo [-- <cenario>]
-import {ACESSORIOS, ACOES, AMBIENTES, ANCORAS_OBJETO, ANIMACOES_PECA, CENARIOS, EFEITOS, EXPRESSOES, FILTROS, FLUXOS, FORMAS, ITENS_MAO, LADOS, LUZES, MOVIMENTOS, MUSICAS, OBJETOS, PARTICULAS, PLANOS, SONS, TRANSICOES, USO_MOVIMENTOS, USO_OBJETOS} from '../src/catalogo.ts';
+import {ACESSORIOS, ACOES, AMBIENTES, ANCORAS_OBJETO, ANIMACOES_PECA, CENARIOS, EFEITOS, EXPRESSOES, FILTROS, FLUXOS, FORMAS, ITENS_MAO, LADOS, LUZES, MOVIMENTOS, MUSICAS, OBJETOS, PARTICULAS, PLANOS, SONS, TRANSICOES, USO_FORMAS, USO_MOVIMENTOS, USO_OBJETOS} from '../src/catalogo.ts';
+import {MATERIAIS_DESCRICAO} from '../src/materiais.ts';
 
 const so = process.argv[2];
 if (so && !CENARIOS[so]) {
@@ -38,6 +39,9 @@ if (!so) {
 	for (const [n, d] of Object.entries(PARTICULAS)) console.log(`    ${n}: ${d}`);
 	console.log(`\nMAQUETES (objeto "maquete" com "modelo"; peças em "modelos" do episódio, ver src/roteiro/tipos.ts > Peca)`);
 	console.log(`  FORMAS: ${FORMAS.join(', ')}`);
+	for (const [n, d] of Object.entries(USO_FORMAS)) console.log(`    ${n}: ${d}`);
+	console.log('  MATERIAIS (campo "material" da peça; só nos cenários de visual limpo: vitrine, cozinha, campo, rua):');
+	for (const [n, d] of Object.entries(MATERIAIS_DESCRICAO)) console.log(`    ${n}: ${d}`);
 	console.log(`  FLUXOS: ${Object.keys(FLUXOS).join(', ')}`);
 	console.log('  ANIMAÇÕES (campo "animacoes" da cena):');
 	for (const [n, d] of Object.entries(ANIMACOES_PECA)) console.log(`    ${n}: ${d}`);
