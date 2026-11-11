@@ -24,6 +24,7 @@ import {Mirante} from './cenarios/Mirante';
 import {Adega} from './cenarios/Adega';
 import {SalaFarol} from './cenarios/SalaFarol';
 import {IlhotaFarol} from './cenarios/IlhotaFarol';
+import {Portaria} from './cenarios/Portaria';
 
 const CameraCena: React.FC<{c: Camera; nomeClima: string}> = ({c, nomeClima}) => {
 	const ref = useRef<THREE.PerspectiveCamera>(null);
@@ -45,10 +46,10 @@ const CameraCena: React.FC<{c: Camera; nomeClima: string}> = ({c, nomeClima}) =>
 	);
 };
 
-export const Mundo: React.FC<{linha: LinhaDoTempo; t: number}> = ({linha, t}) => {
+export const Mundo: React.FC<{linha: LinhaDoTempo; t: number; aspecto?: number}> = ({linha, t, aspecto}) => {
 	const cena = cenaNoTempo(linha, t);
 	const sim = simulacao(linha, cena);
-	const cam = cameraNoTempo(cena, sim, t);
+	const cam = cameraNoTempo(cena, sim, t, aspecto);
 	const nomeClima = cena.luz;
 	// a sombra acompanha a região que a câmera enxerga
 	const foco = lerp3(cam.alvo, cam.pos, 0.3);
@@ -70,6 +71,7 @@ export const Mundo: React.FC<{linha: LinhaDoTempo; t: number}> = ({linha, t}) =>
 			{cena.cenario === 'cabine' ? <Cabine t={t} nomeClima={nomeClima} /> : null}
 			{cena.cenario === 'estudio' ? <Estudio t={t} nomeClima={nomeClima} /> : null}
 			{cena.cenario === 'oficina' ? <Oficina t={t} nomeClima={nomeClima} /> : null}
+			{cena.cenario === 'portaria' ? <Portaria t={t} nomeClima={nomeClima} objetos={cena.objetos} /> : null}
 			<Objetos lista={cena.objetos} cenario={cena.cenario} t={t} />
 			<Atmosfera cena={cena} t={t} />
 			<Maquetes cena={cena} linha={linha} t={t} />

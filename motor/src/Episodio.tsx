@@ -32,6 +32,13 @@ export interface PropsEpisodio extends Record<string, unknown> {
 	 * esses quadros a 30 fps e acelera o áudio na mesma proporção (ver ferramentas/render.ts).
 	 */
 	velocidade?: number;
+	/** "filme": 16:9, para juntar as partes no fim da minissérie (ver src/filme.ts). Padrão: vertical. */
+	formato?: 'vertical' | 'filme';
+	/** Filme: esta parte abre o filme (título da série) ou fecha (cartão "FIM"). */
+	primeiraDoFilme?: boolean;
+	ultimaDoFilme?: boolean;
+	/** Filme: sem a legenda palavra por palavra. */
+	semLegenda?: boolean;
 }
 
 /** Filtro CSS de cada "filtro" de cena (só no 3D: legenda e etiquetas ficam com a cor certa). */
@@ -79,7 +86,7 @@ export const Episodio: React.FC<PropsEpisodio> = ({linha, semVoz = true, semAudi
 			) : null}
 			<AbsoluteFill style={css ? {filter: css} : undefined}>
 				<ThreeCanvas width={width} height={height} flat shadows="percentage" dpr={dpr} gl={{antialias: true}}>
-					<Mundo linha={linha} t={t} />
+					<Mundo linha={linha} t={t} aspecto={width / height} />
 				</ThreeCanvas>
 			</AbsoluteFill>
 			<Camada2D linha={linha} t={t} frame={frame} fps={fps} semVoz={semVoz} />

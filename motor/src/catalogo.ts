@@ -228,6 +228,37 @@ export const CENARIOS: Record<string, DefCenario> = {
 			passageiros_dir: [2.6, 0.7, 0],
 		},
 	},
+	portaria: {
+		descricao:
+			'Portaria de um prédio residencial à noite (Edifício Aurora, 12 andares), em escala real: use "escala": 0.6 nos personagens. Rua na frente (+z) com postes e carros, calçada, grade com o portão (meio) e o portão da GARAGEM (direita, x≈7), guarita envidraçada à esquerda (x de -6,4 a -3,6, z de 3,4 a 6) com mesa colada no vidro da frente, dois monitores das câmeras à esquerda do porteiro (não tapam o rosto dele visto da rua), interfone na parede do lado do portão, livro de ocorrências e luz fria; pátio e a fachada no fundo (z = -6) com o hall iluminado (x≈0) e a boca escura da garagem (x≈7). As janelas seguem o objeto "luzes_predio". Porteiro sentado na marca "guarita" olhando a rua [-4.75, 1.6, 9]. Câmeras boas: fachada inteira de baixo [3, 1.6, 9] alvo [0, 16, -6]; guarita vista da rua pelo vidro (médio) [-4.4, 1.6, 8.3] alvo "porteiro"; close pelo vidro [-4.6, 1.4, 7.2] alvo "porteiro"; close de dentro, por cima da mesa [-4.35, 1.45, 5.55] alvo "porteiro"; lado de fora pelo vidro lateral [-2.5, 1.5, 4.9] alvo "porteiro"; NÃO ponha câmera colada nos monitores, no interfone ou no livro (fica uma mancha sem detalhe): para mostrar a tela das câmeras, o interfone ou um recado, use inserções (cctv, interfone, bilhete); câmera de segurança da garagem (com inserção cctv) [3.5, 3.4, -1.5] alvo [7, 1.0, -6]; portão visto de dentro do pátio [-1, 1.7, 0] alvo [-0.8, 1.2, 6].',
+		luzPadrao: 'noite_cidade',
+		marcas: {
+			guarita: [-4.75, 4.3],
+			mesa: [-4.75, 5.5],
+			porta_guarita: [-3.2, 4.0],
+			portao: [-0.8, 5.6],
+			calcada: [-0.8, 6.6],
+			rua: [0, 10],
+			patio: [0, 0.5],
+			hall: [0, -4.8],
+			garagem: [7.0, -5.4],
+			frente_garagem: [7.0, -2.5],
+			portao_garagem: [7.2, 6.2],
+			poste: [5.5, 7.0],
+		},
+		pontos: {
+			monitores: [-5.6, 1.25, 5.65],
+			interfone: [-3.75, 1.35, 5.1],
+			livro: [-4.05, 0.84, 5.52],
+			portao_ponto: [-0.8, 1.3, 5.05],
+			fachada: [0, 18, -6],
+			topo_predio: [0, 37, -6],
+			hall_porta: [0, 1.3, -6],
+			garagem_boca: [7.0, 1.2, -6],
+			rua_longe: [0, 1.5, 30],
+		},
+		tamanhos: {monitores: 1.6, interfone: 0.9, livro: 0.8, hall_porta: 4.5, garagem_boca: 5},
+	},
 	montanha: {
 		descricao: 'Vista noturna da montanha da ilha, com uma caverna escura no meio e copas de árvores na frente.',
 		luzPadrao: 'noite',
@@ -242,7 +273,7 @@ export const CENARIOS: Record<string, DefCenario> = {
 	},
 };
 
-export const LUZES = ['dia', 'por_do_sol', 'entardecer', 'noite', 'estudio', 'oficina'] as const;
+export const LUZES = ['dia', 'por_do_sol', 'entardecer', 'noite', 'noite_cidade', 'estudio', 'oficina'] as const;
 
 /** modificador: soma por cima da pose atual (tremer) e não encerra nem é encerrado por estados. */
 export type TipoAcao = 'movimento' | 'gesto' | 'estado' | 'modificador';
@@ -361,6 +392,14 @@ export const FILTROS: Record<string, string> = {
 	noir: 'preto e branco (pesadelo, lembrança ruim)',
 	sonho: 'claro e lavado (sonho, delírio)',
 };
+/** Inserções em tela cheia (campo "insercoes" da cena), feitas em 2D por cima do 3D. */
+export const INSERCOES: Record<string, string> = {
+	celular: 'celular grande seguro por duas mãos: alerta (titulo + linhas) ou conversa (titulo = nome do grupo, mensagens: [{de, texto, eu}])',
+	bilhete: 'papel amassado com "linhas" escritas à mão (bilhete, aviso colado, página do livro de ocorrências)',
+	radio: 'rádio ou interfone em tela cheia, com a onda mexendo enquanto "quem" fala (titulo: RÁDIO, INTERFONE)',
+	interfone: 'interfone de parede em tela cheia: visor com "titulo" (APTO 0) piscando "CHAMANDO" até "quem" falar, e a onda da voz dele',
+	cctv: 'não cobre o 3D: moldura de câmera de segurança por cima do plano (REC, "titulo" CAM 03, "hora", chiado e sem cor)',
+};
 export const LADOS = ['frente', 'costas', 'direita', 'esquerda', 'tres_quartos_direita', 'tres_quartos_esquerda'] as const;
 
 export const EXPRESSOES = [
@@ -416,6 +455,7 @@ export const ACESSORIOS = [
 	'bandana',
 	'bone',
 	'capacete',
+	'capuz',
 	'cartola',
 	'oculos',
 	'bigode',
@@ -427,7 +467,7 @@ export const ACESSORIOS = [
 ] as const;
 
 /** Opções de objeto que são âncoras de tempo (o resolvedor converte "aparece" em "_aparece" etc.). */
-export const ANCORAS_OBJETO = ['aparece', 'some', 'acende', 'cai', 'enche', 'cheio'] as const;
+export const ANCORAS_OBJETO = ['aparece', 'some', 'acende', 'cai', 'enche', 'cheio', 'apagam'] as const;
 
 export const SONS = [
 	'impacto',
@@ -485,6 +525,7 @@ export const OBJETOS = [
 	'mascaras',
 	'particulas',
 	'feixe_luz',
+	'luzes_predio',
 ] as const;
 
 /** Valores do campo "particula" do objeto "particulas" e para que serve cada um. */
@@ -525,6 +566,7 @@ export const USO_OBJETOS: Record<(typeof OBJETOS)[number], string> = {
 	mascaras: 'máscaras de oxigênio que caem do teto da cabine em "cai" e ficam balançando; em: [x do meio do par de bancos, z da fileira]; quantas (2)',
 	particulas: 'efeito de partículas; particula (poeira, fagulhas, fumaca, vapor, folhas, vagalumes, faiscas, bolhas, confete), alt (altura da base, ex.: 1.1 em cima do pedestal), raio (área, m), altura (até onde sobem/caem, m), quantas, cor; "aparece" liga e "some" desliga',
 	feixe_luz: 'feixe de luz visível (refletor, sol entrando pela mata ou pela janela, lanterna forte): de [x, y, z] (de onde a luz sai), em = onde ela bate, alt (altura do ponto onde bate, padrão 0), largura (raio no fim, padrão 1.2), cor, intensidade (0.1 a 1, padrão 0.35), varrer (graus que o feixe balança, padrão 0)',
+	luzes_predio: 'janelas do prédio da portaria (não desenha nada sozinho): acesas (fração 0 a 1, padrão 0.55), semente, apagam (âncora: as luzes apagam andar por andar, de cima para baixo, em ~2,6 s, e o hall junto), acende (âncora: uma janela acende sozinha; andar 0 a 11 e coluna 0 a 4), vulto_monitor (true: um vulto parado na câmera 4 dos monitores)',
 };
 
 // --- maquetes ---------------------------------------------------------------------------

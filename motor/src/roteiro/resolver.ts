@@ -1,14 +1,17 @@
 // Transforma o roteiro (âncoras nas falas) em uma linha do tempo com segundos absolutos.
 // Sem áudio, a duração de cada fala é estimada pelo texto; com o alinhamento do OmniVoice,
 // usa o tempo real de cada letra. O resto do roteiro não muda entre um caso e outro.
-import {ACOES, ANCORAS_OBJETO, ANIMACOES_PECA, CENARIOS, EFEITOS, EFEITOS_COM_ALVO, EFEITOS_COM_TEXTO, ENCERRA_ESTADO, EXPRESSOES, FILTROS, FLUXOS, FORMAS, ITENS_MAO, LADOS, MOVIMENTOS, OBJETOS, PARTICULAS, PLANOS, TRANSICOES} from '../catalogo';
+import {ACOES, ANCORAS_OBJETO, ANIMACOES_PECA, CENARIOS, EFEITOS, EFEITOS_COM_ALVO, EFEITOS_COM_TEXTO, ENCERRA_ESTADO, EXPRESSOES, FILTROS, FLUXOS, FORMAS, INSERCOES, ITENS_MAO, LADOS, MOVIMENTOS, OBJETOS, PARTICULAS, PLANOS, TRANSICOES} from '../catalogo';
 import {
 	Alinhamentos,
 	AcaoTempo,
 	AnimacaoTempo,
 	Ancora,
 	CartaoTempo,
+	InsercaoTempo,
+	MancheteTempo,
 	Peca,
+	RelogioTempo,
 	RotuloTempo,
 	Biblia,
 	Cena,
@@ -388,6 +391,30 @@ export const resolverEpisodio = (ep: Episodio, bibliaSerie: Biblia, alinhamentos
 			return {...r, ini: rIni, fim: resolverAncora(r.ate, ctx) ?? Math.min(fim, rIni + 3)};
 		});
 
+		const manchetes: MancheteTempo[] = (c.manchetes ?? []).map((m, k) => {
+			ctx.onde = `cena ${c.id}, manchete ${k + 1}`;
+			if (!m.texto) avisos.push(`${ctx.onde}: precisa de "texto"`);
+			else if (m.texto.replace(/\*/g, '').length > 60) avisos.push(`${ctx.onde}: manchete longa (${m.texto.length} letras); até ~45 cabe em duas linhas`);
+			const mIni = resolverAncora(m.de, ctx) ?? ini;
+			return {...m, ini: mIni, fim: resolverAncora(m.ate, ctx) ?? fim};
+		});
+		let relogio: RelogioTempo | undefined;
+		if (c.relogio) {
+			ctx.onde = `cena ${c.id}, relógio`;
+			const hora = /^\d{1,2}:\d{2}$/;
+			if (!hora.test(c.relogio.hora) || (c.relogio.ate_hora && !hora.test(c.relogio.ate_hora))) avisos.push(`${ctx.onde}: hora no formato "03:11"`);
+			relogio = {...c.relogio, ini: resolverAncora(c.relogio.de, ctx) ?? ini, fim: resolverAncora(c.relogio.ate, ctx) ?? fim};
+		}
+		const insercoes: InsercaoTempo[] = (c.insercoes ?? []).map((x, k) => {
+			ctx.onde = `cena ${c.id}, inserção ${k + 1}`;
+			if (!(x.tipo in INSERCOES)) avisos.push(`${ctx.onde}: tipo "${x.tipo}" desconhecido (${Object.keys(INSERCOES).join(', ')})`);
+			if (x.tipo === 'celular' && !x.linhas?.length && !x.mensagens?.length) avisos.push(`${ctx.onde}: celular precisa de "linhas" (alerta) ou "mensagens" (conversa)`);
+			if (x.tipo === 'bilhete' && !x.linhas?.length) avisos.push(`${ctx.onde}: bilhete precisa de "linhas"`);
+			if (x.quem && !(x.quem in biblia.personagens)) avisos.push(`${ctx.onde}: personagem "${x.quem}" não está na bíblia`);
+			const xIni = resolverAncora(x.de, ctx) ?? ini;
+			return {...x, ini: xIni, fim: resolverAncora(x.ate, ctx) ?? Math.min(fim, xIni + 3.5)};
+		});
+
 		return {
 			id: c.id,
 			cenario: c.cenario,
@@ -417,6 +444,9 @@ export const resolverEpisodio = (ep: Episodio, bibliaSerie: Biblia, alinhamentos
 			cartoes,
 			filtro: c.filtro,
 			atmosfera: c.atmosfera !== false,
+			manchetes,
+			relogio,
+			insercoes,
 		};
 	});
 
@@ -461,5 +491,7 @@ export const resolverEpisodio = (ep: Episodio, bibliaSerie: Biblia, alinhamentos
 		avisos,
 		modelos,
 		formato: biblia.formato ?? 'serie',
+		totalPartes: biblia.partes,
+		rotuloParte: biblia.rotulo_parte,
 	};
 };

@@ -66,6 +66,31 @@ Pedido do Iuri em 03/11: os vídeos não passavam de mil visualizações. O Shor
 - **Acaba na virada.** Depois da última frase só vem a chamada. Nada de resumo, "e agora?", "fim" ou despedida: o que soa como fim faz deslizar antes de o vídeo recomeçar.
 - **Dilema que dá vontade de mandar para alguém.** A escolha da chamada divide opiniões de verdade: as duas saídas têm um risco claro, e ninguém acerta "de cara". É o tipo de pergunta que a pessoa manda para um amigo com "e você?".
 
+## Formato "regras e contradição" (referência 2D do Iuri, 11/11)
+
+Para mistério, terror e suspense. Saiu de um vídeo 2D que o Iuri mandou como exemplo de história que prende até o fim (porteiro da noite com regras estranhas). O esqueleto das 8 batidas continua; muda o motor da tensão: **uma autoridade dá regras, e a noite mostra que as regras estão escondendo alguma coisa.**
+
+| Batida | No formato regras e contradição | Exemplo (Apartamento 0, noite 1) |
+|---|---|---|
+| Gancho | "Se [coisa estranha] acontecer, nunca [faça o natural]." Falando com "você", que vira o protagonista. | "Se o interfone tocar de um apartamento que NÃO existe, nunca diga o seu nome." |
+| Promessa | Quem você é e onde está, com números. | "Doze andares, quarenta e oito apartamentos. E só você acordado." |
+| Alerta | O que já deu errado com quem veio antes. | "O porteiro antigo sumiu faz sete dias." |
+| Instinto errado → regras | Uma autoridade (síndica, chefe, gerente, mãe) manda as regras por mensagem, bilhete ou rádio: no máximo 2 ou 3, curtas e estranhas, cada uma vira manchete na tela. | "Regra um: depois da meia-noite, o portão não abre." |
+| Boa e má notícia | "A boa notícia é que [vantagem]. A má notícia é que [detalhe que não fecha]." | "Tem câmera em tudo." / "O interfone tem um botão a mais. O zero." |
+| Relógio | A hora certa na tela (campo `relogio`), e a coisa acontece numa hora exata: "Às 3h11...". | as luzes apagam andar por andar às 3h |
+| Corrente | Cada elo é uma voz de fora (interfone, celular, rádio, câmera) que contradiz uma regra ou a pessoa que deu a regra. | o interfone do 0 pede pra abrir a garagem; a câmera 4 mostra alguém olhando |
+| Falsa segurança / pista | Um objeto de quem veio antes (livro, bilhete, áudio) parece ajudar e muda a ameaça. | "Se o zero ligar, não diga seu nome. ELA está ouvindo." |
+| Virada | A voz de fora usa contra você algo seu (nome, rosto, regra que você seguiu). | "Você não é o Jorge. Qual é o seu nome?" |
+| Chamada | Dilema de verdade: as duas saídas têm risco. | "Você falaria o seu nome ou desligaria?" + "NOITE 2" |
+
+**O que faz esse formato prender** (o que tirar da referência):
+- **Segunda pessoa do começo ao fim.** "Você" é o protagonista: quem assiste testa cada regra junto. O personagem principal fala pouco (2 ou 3 falas curtas por parte).
+- **A tela conta junto com a voz.** Manchete no alto em toda batida, com a palavra-chave colorida (`manchetes`, `*palavra*`); relógio na tela a partir da hora do perigo; contador "NOITE 1/7" no selo (`partes` e `rotulo_parte` na bíblia).
+- **O objeto em tela cheia.** O celular com as regras, o bilhete, o visor do interfone, a câmera de segurança (`insercoes`): cada voz de fora tem a sua imagem, e quem vê sem som entende pela tela. Pelo menos uma inserção por parte, no máximo uma a cada ~10 s.
+- **Vozes de fora com etiqueta.** Quem fala pelo interfone ou rádio tem `etiqueta` na bíblia ("INTERFONE · APTO 0") e a legenda na cor dele.
+- **Números e horas exatas.** 3h11, 48 apartamentos, 7 dias, câmera 4. Hora quebrada assusta mais que hora redonda.
+- **Uma regra quebrada por parte**, até a última parte, em que a regra que parecia proteger é a que entrega o vilão.
+
 ## Outros gêneros
 
 O esqueleto serve para qualquer história: troque "sobreviver" pelo que o personagem quer.

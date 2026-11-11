@@ -1,6 +1,7 @@
 import React from 'react';
 import {CalculateMetadataFunction, Composition, staticFile} from 'remotion';
 import {Episodio, PropsEpisodio} from './Episodio';
+import {ALTURA_FILME, LARGURA_FILME, paraFilme} from './filme';
 import {resolverEpisodio} from './roteiro/resolver';
 import type {Alinhamentos, Biblia, Episodio as Roteiro} from './roteiro/tipos';
 
@@ -20,13 +21,17 @@ const carregar: CalculateMetadataFunction<PropsEpisodio> = async ({props, abortS
 	let alinhamentos: Alinhamentos = {};
 	const r = await fetch(staticFile(`${pasta}/vozes/${nomeEpisodio(props.parte)}.json`), {signal: abortSignal});
 	if (r.ok) alinhamentos = (await r.json()) as Alinhamentos;
-	const linha = resolverEpisodio(ep, biblia, alinhamentos);
+	const resolvida = resolverEpisodio(ep, biblia, alinhamentos);
+	// filme do fim da minissérie: 16:9 e a parte acaba antes da chamada (ver src/filme.ts)
+	const filme = props.formato === 'filme';
+	const linha = filme ? paraFilme(resolvida, {primeira: props.primeiraDoFilme, ultima: props.ultimaDoFilme, semLegenda: props.semLegenda}) : resolvida;
 	// tudo no motor é medido em segundos do roteiro (t = quadro / fps): com menos quadros por segundo
 	// a história é a mesma, só amostrada mais espaçada; tocada a 30 fps, sai acelerada
 	const fps = FPS / (props.velocidade ?? 1);
 	return {
 		fps,
 		durationInFrames: Math.ceil(linha.duracao * fps),
+		...(filme ? {width: LARGURA_FILME, height: ALTURA_FILME} : {}),
 		props: {...props, linha, semVoz: Object.keys(alinhamentos).length === 0},
 	};
 };

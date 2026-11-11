@@ -1,16 +1,20 @@
 // Camada 2D por cima do vídeo: selo da série, legendas palavra por palavra (com a cor de quem
 // fala), efeitos de tela (flash, preto, vinheta) e a chamada final para comentar.
+// No filme 16:9 do fim da minissérie (src/filme.ts) não há selo nem chamada: entram o letreiro de
+// capítulo, o escurecimento entre as partes, o cartão "FIM" e uma legenda menor, embaixo.
 import React from 'react';
-import {AbsoluteFill, cancelRender, continueRender, delayRender, spring, staticFile} from 'remotion';
+import {AbsoluteFill, cancelRender, continueRender, delayRender, spring, staticFile, useVideoConfig} from 'remotion';
 import * as THREE from 'three';
 import {cameraNoTempo, tipoDoPlano, transicaoNoTempo} from '../animacao/camera';
 import {transicaoAtiva} from '../animacao/transicoes';
 import {MEDIDAS} from '../animacao/pose';
 import {raioDaPeca} from '../animacao/maquete';
 import {cenaNoTempo, simulacao} from '../animacao/simulacao';
+import {CAPITULO_FILME, CLAREIA_FILME, ESCURECE_FILME} from '../filme';
 import {GrupoLegenda, gruposDeLegenda, textoNaTela} from '../roteiro/legendas';
 import type {LinhaDoTempo} from '../roteiro/tipos';
 import {aleatorio, clamp, easeInOut, easeOut, lerp, smoothstep} from '../util/mat';
+import {EtiquetaVoz, Insercoes, Manchete, Relogio, textoParte} from './Narrativa2D';
 
 const FONTE = 'Montserrat';
 const carregarFontes = () => {
@@ -37,10 +41,19 @@ const MARGEM_ESQ = 80;
 const MARGEM_DIR = 150;
 const VERMELHO = '#FF3B30';
 
-const contornoTexto = (px: number) => ({
+/** Tamanho do quadro (1080x1920 nos shorts, 1920x1080 no filme). */
+interface Tela {
+	w: number;
+	h: number;
+	filme: boolean;
+	/** escala dos textos: 1 nos shorts, menor no filme (a tela deitada pede letra menor) */
+	k: number;
+}
+
+const contornoTexto = (px: number, sombra = 1) => ({
 	WebkitTextStroke: `${px}px #000`,
 	paintOrder: 'stroke fill' as const,
-	textShadow: '0 8px 0 rgba(0,0,0,0.85), 0 14px 28px rgba(0,0,0,0.45)',
+	textShadow: `0 ${8 * sombra}px 0 rgba(0,0,0,0.85), 0 ${14 * sombra}px ${28 * sombra}px rgba(0,0,0,0.45)`,
 });
 
 /**
@@ -67,13 +80,13 @@ const Selo: React.FC<{linha: LinhaDoTempo}> = ({linha}) => (
 				padding: '12px 34px',
 			}}
 		>
-			{linha.tituloSerie} <span style={{color: AMARELO}}>• {linha.formato === 'avulso' ? `#${linha.parte}` : `PARTE ${linha.parte}`}</span>
+			{linha.tituloSerie} <span style={{color: AMARELO}}>• {textoParte(linha)}</span>
 		</div>
 	</div>
 );
 
-const AvisoPrevia: React.FC = () => (
-	<div style={{position: 'absolute', top: 236, width: '100%', display: 'flex', justifyContent: 'center'}}>
+const AvisoPrevia: React.FC<{tela: Tela}> = ({tela}) => (
+	<div style={{position: 'absolute', top: tela.filme ? 40 : 236, width: '100%', display: 'flex', justifyContent: 'center'}}>
 		<div
 			style={{
 				fontFamily: FONTE,
@@ -101,7 +114,7 @@ const grupos = (linha: LinhaDoTempo) => {
 	return g;
 };
 
-const Legenda: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: number}> = ({linha, t, frame, fps}) => {
+const Legenda: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: number; tela: Tela}> = ({linha, t, frame, fps, tela}) => {
 	if (t >= linha.chamada.ini) return null;
 	const g = grupos(linha).find((x) => t >= x.ini && t < x.fim);
 	if (!g) return null;
@@ -109,18 +122,21 @@ const Legenda: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: num
 	const tipo = tipoDoPlano(cena, t);
 	const baixa = tipo === 'close' || tipo === 'detalhe' || tipo === 'nuca' || tipo === 'ombro';
 	const corFala = linha.personagens[g.quem]?.cor_legenda ?? AMARELO;
+	// filme: legenda menor, sempre no pé da tela, como em filme legendado
+	const margem = tela.filme ? 260 : 0;
+	const largura = tela.filme ? tela.w - 2 * margem : 1080 - MARGEM_ESQ - MARGEM_DIR - 20;
 	return (
 		<div
 			style={{
 				position: 'absolute',
-				top: baixa ? '72%' : '62%',
-				left: MARGEM_ESQ,
-				right: MARGEM_DIR,
+				top: tela.filme ? '86%' : baixa ? '72%' : '62%',
+				left: tela.filme ? margem : MARGEM_ESQ,
+				right: tela.filme ? margem : MARGEM_DIR,
 				display: 'flex',
 				flexWrap: 'wrap',
 				justifyContent: 'center',
 				alignItems: 'baseline',
-				columnGap: 24,
+				columnGap: tela.filme ? 18 : 24,
 				rowGap: 0,
 				transform: 'translateY(-50%)',
 			}}
@@ -129,18 +145,20 @@ const Legenda: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: num
 				if (t < p.ini) return null;
 				const pop = spring({frame: frame - Math.round(p.ini * fps), fps, config: {damping: 12, stiffness: 220, mass: 0.6}});
 				const falando = t < p.fim + 0.04;
+				const base = tela.filme ? (p.enfase ? 84 : 68) : p.enfase ? 148 : 112;
+				const contorno = tela.filme ? (p.enfase ? 11 : 9) : p.enfase ? 18 : 15;
 				return (
 					<span
 						key={i}
 						style={{
 							fontFamily: FONTE,
 							fontWeight: 900,
-							fontSize: fonteQueCabe(textoNaTela(p.texto), p.enfase ? 148 : 112, 1080 - MARGEM_ESQ - MARGEM_DIR - 20),
+							fontSize: fonteQueCabe(textoNaTela(p.texto), base, largura),
 							lineHeight: 1.05,
 							color: falando ? (p.enfase ? VERMELHO : corFala) : '#FFFFFF',
 							display: 'inline-block',
-							transform: `scale(${0.55 + 0.45 * pop}) rotate(${p.enfase ? -3 : 0}deg)`,
-							...contornoTexto(p.enfase ? 18 : 15),
+							transform: `scale(${(tela.filme ? 0.75 : 0.55) + (tela.filme ? 0.25 : 0.45) * pop}) rotate(${p.enfase ? -3 : 0}deg)`,
+							...contornoTexto(contorno, tela.filme ? 0.55 : 1),
 						}}
 					>
 						{textoNaTela(p.texto)}
@@ -219,19 +237,18 @@ const Chamada: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: num
 
 // --- etiquetas presas às peças e cartões --------------------------------------------------
 
-const LARGURA = 1080;
-const ALTURA = 1920;
-
 /**
  * Ponto 3D na tela (px), pela mesma câmera do quadro, e o raio da cabeça na tela quando o alvo é
  * um personagem (0 para pontos e objetos); null se estiver atrás da lente.
  */
-const naTela = (linha: LinhaDoTempo, t: number, alvo: string | [number, number, number]): {x: number; y: number; raio: number; raioPeca?: number} | null => {
+const naTela = (linha: LinhaDoTempo, t: number, alvo: string | [number, number, number], tela: Tela): {x: number; y: number; raio: number; raioPeca?: number} | null => {
+	const LARGURA = tela.w;
+	const ALTURA = tela.h;
 	const cena = cenaNoTempo(linha, t);
 	const sim = simulacao(linha, cena);
 	const ponto = sim.ponto(alvo, t);
 	if (!ponto) return null;
-	const c = cameraNoTempo(cena, sim, t);
+	const c = cameraNoTempo(cena, sim, t, LARGURA / ALTURA);
 	const cam = new THREE.PerspectiveCamera(c.fov, LARGURA / ALTURA, 0.05, 900);
 	cam.position.set(...c.pos);
 	cam.up.set(0, 1, 0);
@@ -262,14 +279,19 @@ const naTela = (linha: LinhaDoTempo, t: number, alvo: string | [number, number, 
 const ALTURA_ETIQUETA = 150;
 const TOPO_LIVRE = 300;
 
-const Rotulos: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: number}> = ({linha, t, frame, fps}) => {
+const Rotulos: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: number; tela: Tela}> = ({linha, t, frame, fps, tela}) => {
 	if (t >= linha.chamada.ini) return null;
 	const cena = cenaNoTempo(linha, t);
 	const ativos = cena.rotulos.filter((r) => t >= r.ini && t < r.fim);
+	const {w: LARGURA, h: ALTURA, k} = tela;
+	// no filme não há selo em cima: a etiqueta pode subir até perto da borda
+	const topoLivre = tela.filme ? 50 : TOPO_LIVRE;
+	const pe = tela.filme ? ALTURA * 0.52 : 1050;
+	const alturaEtiqueta = ALTURA_ETIQUETA * k;
 	return (
 		<>
 			{ativos.map((r, i) => {
-				const p = naTela(linha, t, r.alvo);
+				const p = naTela(linha, t, r.alvo, tela);
 				if (!p) return null;
 				const lado = r.lado ?? (p.x < LARGURA / 2 ? 'esquerda' : 'direita');
 				const entra = spring({frame: frame - Math.round(r.ini * fps), fps, config: {damping: 13, stiffness: 200}});
@@ -283,8 +305,8 @@ const Rotulos: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: num
 					r.altura !== undefined
 						? r.altura * ALTURA
 						: p.raio
-							? clamp(p.y - p.raio - 50 - ALTURA_ETIQUETA - i * 20, TOPO_LIVRE, 1050)
-							: clamp(py - 170 - i * 20, 330, 1050);
+							? clamp(p.y - p.raio - 50 * k - alturaEtiqueta - i * 20, topoLivre, pe)
+							: clamp(py - 170 * k - i * 20, topoLivre + 30, pe);
 				const lx = lado === 'esquerda' ? 70 : LARGURA - 70;
 				const cor = r.cor ?? AMARELO;
 				// a linha sai da borda da etiqueta e vai até a peça
@@ -292,26 +314,26 @@ const Rotulos: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: num
 				return (
 					<React.Fragment key={i}>
 						<svg width={LARGURA} height={ALTURA} style={{position: 'absolute', left: 0, top: 0, opacity: vis}}>
-							<line x1={bx} y1={ly + 40} x2={bx + (px - bx) * entra} y2={ly + 40 + (py - ly - 40) * entra} stroke="#000" strokeWidth={14} strokeLinecap="round" />
-							<line x1={bx} y1={ly + 40} x2={bx + (px - bx) * entra} y2={ly + 40 + (py - ly - 40) * entra} stroke={cor} strokeWidth={7} strokeLinecap="round" />
-							<circle cx={px} cy={py} r={16 * entra} fill={cor} stroke="#000" strokeWidth={6} />
+							<line x1={bx} y1={ly + 40 * k} x2={bx + (px - bx) * entra} y2={ly + 40 * k + (py - ly - 40 * k) * entra} stroke="#000" strokeWidth={14 * k} strokeLinecap="round" />
+							<line x1={bx} y1={ly + 40 * k} x2={bx + (px - bx) * entra} y2={ly + 40 * k + (py - ly - 40 * k) * entra} stroke={cor} strokeWidth={7 * k} strokeLinecap="round" />
+							<circle cx={px} cy={py} r={16 * k * entra} fill={cor} stroke="#000" strokeWidth={6 * k} />
 						</svg>
 						<div
 							style={{
 								position: 'absolute',
 								top: ly,
 								[lado === 'esquerda' ? 'left' : 'right']: 50,
-								maxWidth: 560,
+								maxWidth: 560 * k,
 								fontFamily: FONTE,
 								fontWeight: 900,
-								fontSize: 54,
+								fontSize: 54 * k,
 								lineHeight: 1.05,
 								color: '#111',
 								background: cor,
-								border: '6px solid #000',
-								borderRadius: 22,
-								padding: '10px 26px 14px',
-								boxShadow: '0 10px 0 #000',
+								border: `${6 * k}px solid #000`,
+								borderRadius: 22 * k,
+								padding: `${10 * k}px ${26 * k}px ${14 * k}px`,
+								boxShadow: `0 ${10 * k}px 0 #000`,
 								opacity: vis,
 								transform: `scale(${0.6 + 0.4 * entra})`,
 								transformOrigin: lado === 'esquerda' ? 'left center' : 'right center',
@@ -337,7 +359,7 @@ const textoDoCartao = (c: {grande: string; contar?: [number, number]; ini: numbe
 	return c.grande.includes('#') ? c.grande.replace('#', num) : num;
 };
 
-const Cartoes: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: number}> = ({linha, t, frame, fps}) => {
+const Cartoes: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: number; tela: Tela}> = ({linha, t, frame, fps, tela}) => {
 	if (t >= linha.chamada.ini) return null;
 	const cena = cenaNoTempo(linha, t);
 	const c = cena.cartoes.find((x) => t >= x.ini && t < x.fim);
@@ -346,34 +368,34 @@ const Cartoes: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: num
 	const sai = 1 - smoothstep(c.fim - 0.25, c.fim, t);
 	const grande = textoDoCartao(c, t).toUpperCase();
 	return (
-		<div style={{position: 'absolute', top: 330, width: '100%', display: 'flex', justifyContent: 'center', opacity: sai}}>
+		<div style={{position: 'absolute', top: tela.filme ? 60 : 330, width: '100%', display: 'flex', justifyContent: 'center', opacity: sai}}>
 			<div
 				style={{
 					textAlign: 'center',
 					background: 'rgba(255,255,255,0.96)',
-					border: '7px solid #000',
-					borderRadius: 30,
-					boxShadow: '0 14px 0 #000',
-					padding: '14px 46px 20px',
+					border: `${7 * tela.k}px solid #000`,
+					borderRadius: 30 * tela.k,
+					boxShadow: `0 ${14 * tela.k}px 0 #000`,
+					padding: `${14 * tela.k}px ${46 * tela.k}px ${20 * tela.k}px`,
 					transform: `rotate(-2deg) scale(${entra})`,
 					maxWidth: 900,
 				}}
 			>
-				<div style={{fontFamily: FONTE, fontWeight: 900, fontSize: fonteQueCabe(c.contar ? c.grande.replace('#', String(c.contar[1])) : c.grande, 120, 800), lineHeight: 1, color: '#111', fontVariantNumeric: 'tabular-nums'}}>{grande}</div>
-				{c.pequeno ? <div style={{fontFamily: FONTE, fontWeight: 800, fontSize: 44, lineHeight: 1.15, color: '#333', marginTop: 8}}>{c.pequeno}</div> : null}
+				<div style={{fontFamily: FONTE, fontWeight: 900, fontSize: fonteQueCabe(c.contar ? c.grande.replace('#', String(c.contar[1])) : c.grande, 120 * tela.k, 800), lineHeight: 1, color: '#111', fontVariantNumeric: 'tabular-nums'}}>{grande}</div>
+				{c.pequeno ? <div style={{fontFamily: FONTE, fontWeight: 800, fontSize: 44 * tela.k, lineHeight: 1.15, color: '#333', marginTop: 8}}>{c.pequeno}</div> : null}
 			</div>
 		</div>
 	);
 };
 /** Riscos de chuva caindo na diagonal; a posição depende só de t (cada quadro é independente). */
 const GOTAS = Array.from({length: 170}, (_, i) => ({x: (i * 0.618034) % 1, y: (i * 0.754877) % 1, v: 0.8 + ((i * 0.3819) % 1) * 0.5, c: 50 + ((i * 7) % 5) * 14}));
-const Chuva: React.FC<{t: number; intensidade: number}> = ({t, intensidade}) => (
+const Chuva: React.FC<{t: number; intensidade: number; tela: Tela}> = ({t, intensidade, tela}) => (
 	<AbsoluteFill style={{opacity: intensidade}}>
 		<AbsoluteFill style={{backgroundColor: 'rgba(40,52,80,0.28)'}} />
-		<svg width="1080" height="1920" viewBox="0 0 1080 1920">
-			{GOTAS.map((g, i) => {
-				const y = ((g.y + t * 1.35 * g.v) % 1) * 2100 - 120;
-				const x = ((g.x + t * 0.18 * g.v) % 1) * 1300 - 110;
+		<svg width={tela.w} height={tela.h} viewBox={`0 0 ${tela.w} ${tela.h}`}>
+			{(tela.filme ? [...GOTAS, ...GOTAS.map((g) => ({...g, x: (g.x + 0.5) % 1, y: (g.y + 0.37) % 1}))] : GOTAS).map((g, i) => {
+				const y = ((g.y + t * 1.35 * g.v) % 1) * (tela.h + 180) - 120;
+				const x = ((g.x + t * 0.18 * g.v) % 1) * (tela.w + 220) - 110;
 				return <line key={i} x1={x} y1={y} x2={x - g.c * 0.22} y2={y + g.c} stroke="rgba(205,222,255,0.55)" strokeWidth={3} strokeLinecap="round" />;
 			})}
 		</svg>
@@ -383,17 +405,22 @@ const Chuva: React.FC<{t: number; intensidade: number}> = ({t, intensidade}) => 
 // --- efeitos de produção: linhas de ação, letreiro, círculo, destaque, barras de cinema ---
 
 /** Linhas de ação de desenho animado: cunhas finas vindo das bordas, trocando a cada 2 quadros. */
-const Linhas: React.FC<{t: number; ini: number; fim: number; intensidade: number; cor: string}> = ({t, ini, fim, intensidade, cor}) => {
+const Linhas: React.FC<{t: number; ini: number; fim: number; intensidade: number; cor: string; tela: Tela}> = ({t, ini, fim, intensidade, cor, tela}) => {
 	const vis = smoothstep(ini, ini + 0.08, t) * (1 - smoothstep(fim - 0.2, fim, t)) * intensidade;
 	const r = aleatorio(Math.floor(t * 15) + 7);
-	const cx = 540;
-	const cy = 880;
+	const LARGURA = tela.w;
+	const ALTURA = tela.h;
+	const cx = LARGURA / 2;
+	const cy = ALTURA * 0.458;
+	// elipse alongada no lado comprido da tela (em pé nos shorts, deitada no filme)
+	const escala = Math.max(LARGURA, ALTURA) / 1920;
+	const [ex, ey] = tela.filme ? [1, 0.62] : [0.62, 1];
 	const cunhas = Array.from({length: 56}, (_, i) => {
 		const a = (i / 56) * Math.PI * 2 + r() * 0.08;
 		const larg = 0.012 + r() * 0.02;
-		const dentro = 560 + r() * 260;
-		const fora = 1500;
-		const p = (ang: number, d: number) => `${(cx + Math.cos(ang) * d * 0.62).toFixed(0)},${(cy + Math.sin(ang) * d).toFixed(0)}`;
+		const dentro = (560 + r() * 260) * escala;
+		const fora = 1500 * escala;
+		const p = (ang: number, d: number) => `${(cx + Math.cos(ang) * d * ex).toFixed(0)},${(cy + Math.sin(ang) * d * ey).toFixed(0)}`;
 		return `M${p(a - larg, fora)} L${p(a, dentro)} L${p(a + larg, fora)} Z`;
 	});
 	return (
@@ -404,7 +431,8 @@ const Linhas: React.FC<{t: number; ini: number; fim: number; intensidade: number
 };
 
 /** Texto grande no meio da tela, numa faixa inclinada: entra batendo e sai sumindo. */
-const Letreiro: React.FC<{texto: string; ini: number; fim: number; t: number; frame: number; fps: number; cor: string; altura: number}> = ({texto, ini, fim, t, frame, fps, cor, altura}) => {
+const Letreiro: React.FC<{texto: string; ini: number; fim: number; t: number; frame: number; fps: number; cor: string; altura: number; tela: Tela}> = ({texto, ini, fim, t, frame, fps, cor, altura, tela}) => {
+	const k = tela.filme ? 0.8 : 1;
 	const entra = spring({frame: frame - Math.round(ini * fps), fps, config: {damping: 10, stiffness: 210, mass: 0.7}});
 	const sai = 1 - smoothstep(fim - 0.22, fim, t);
 	const faixa = easeOut(clamp((t - ini) / 0.18));
@@ -417,11 +445,11 @@ const Letreiro: React.FC<{texto: string; ini: number; fim: number; t: number; fr
 					left: -100,
 					right: -100,
 					top: '50%',
-					height: 210,
+					height: 210 * k,
 					transform: `translateY(-50%) rotate(-4deg) scaleX(${faixa})`,
 					background: 'rgba(12, 10, 24, 0.82)',
-					borderTop: `10px solid ${cor}`,
-					borderBottom: `10px solid ${cor}`,
+					borderTop: `${10 * k}px solid ${cor}`,
+					borderBottom: `${10 * k}px solid ${cor}`,
 				}}
 			/>
 			<div
@@ -431,11 +459,11 @@ const Letreiro: React.FC<{texto: string; ini: number; fim: number; t: number; fr
 					padding: '0 50px',
 					fontFamily: FONTE,
 					fontWeight: 900,
-					fontSize: fonteQueCabe(txt, 132, 960),
+					fontSize: fonteQueCabe(txt, 132 * k, tela.filme ? 1500 : 960),
 					lineHeight: 1.02,
 					color: '#fff',
 					transform: `rotate(-4deg) scale(${lerp(1.7, 1, entra)})`,
-					...contornoTexto(14),
+					...contornoTexto(14 * k, k),
 				}}
 			>
 				{txt}
@@ -445,7 +473,7 @@ const Letreiro: React.FC<{texto: string; ini: number; fim: number; t: number; fr
 };
 
 /** Círculo vermelho "à mão" desenhado em volta do alvo (duas voltas tortas). */
-const Circulo: React.FC<{x: number; y: number; raio: number; ini: number; fim: number; t: number; cor: string}> = ({x, y, raio, ini, fim, t, cor}) => {
+const Circulo: React.FC<{x: number; y: number; raio: number; ini: number; fim: number; t: number; cor: string; tela: Tela}> = ({x, y, raio, ini, fim, t, cor, tela}) => {
 	const desenho = easeInOut(clamp((t - ini) / 0.45));
 	const sai = 1 - smoothstep(fim - 0.2, fim, t);
 	const rx = raio * 1.25;
@@ -462,7 +490,7 @@ const Circulo: React.FC<{x: number; y: number; raio: number; ini: number; fim: n
 	const comp = 2 * Math.PI * Math.max(rx, ry) * voltas * 1.1;
 	const traco = {strokeDasharray: comp, strokeDashoffset: comp * (1 - desenho), fill: 'none', strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const};
 	return (
-		<svg width={LARGURA} height={ALTURA} style={{position: 'absolute', left: 0, top: 0, opacity: sai}}>
+		<svg width={tela.w} height={tela.h} style={{position: 'absolute', left: 0, top: 0, opacity: sai}}>
 			<path d={d} stroke="#000" strokeWidth={22} {...traco} />
 			<path d={d} stroke={cor} strokeWidth={12} {...traco} />
 		</svg>
@@ -484,9 +512,9 @@ const Destaque: React.FC<{x: number; y: number; raio: number; ini: number; fim: 
 	);
 };
 
-/** Faixas pretas de cinema em cima e embaixo. */
-const Barras: React.FC<{vis: number}> = ({vis}) => {
-	const h = 165 * easeInOut(vis);
+/** Faixas pretas de cinema em cima e embaixo (no filme, o quadro fica ~2,39:1 como no cinema). */
+const Barras: React.FC<{vis: number; tela: Tela}> = ({vis, tela}) => {
+	const h = (tela.filme ? 0.125 * tela.h : 165) * easeInOut(vis);
 	return (
 		<>
 			<div style={{position: 'absolute', left: 0, right: 0, top: 0, height: h, background: '#000'}} />
@@ -495,7 +523,7 @@ const Barras: React.FC<{vis: number}> = ({vis}) => {
 	);
 };
 
-const EfeitosDeProducao: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: number}> = ({linha, t, frame, fps}) => {
+const EfeitosDeProducao: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: number; tela: Tela}> = ({linha, t, frame, fps, tela}) => {
 	const cena = cenaNoTempo(linha, t);
 	const itens: React.ReactNode[] = [];
 	let barras = 0;
@@ -506,21 +534,21 @@ const EfeitosDeProducao: React.FC<{linha: LinhaDoTempo; t: number; frame: number
 		}
 		if (t < e.ini || t >= e.fim) return;
 		const intens = e.intensidade ?? 1;
-		if (e.efeito === 'linhas') itens.push(<Linhas key={i} t={t} ini={e.ini} fim={e.fim} intensidade={Math.min(1, 0.85 * intens)} cor={e.cor ?? '#FFFFFF'} />);
-		else if (e.efeito === 'letreiro' && e.texto) itens.push(<Letreiro key={i} texto={e.texto} ini={e.ini} fim={e.fim} t={t} frame={frame} fps={fps} cor={e.cor ?? AMARELO} altura={e.altura ?? 0.3} />);
+		if (e.efeito === 'linhas') itens.push(<Linhas key={i} t={t} ini={e.ini} fim={e.fim} intensidade={Math.min(1, 0.85 * intens)} cor={e.cor ?? '#FFFFFF'} tela={tela} />);
+		else if (e.efeito === 'letreiro' && e.texto) itens.push(<Letreiro key={i} texto={e.texto} ini={e.ini} fim={e.fim} t={t} frame={frame} fps={fps} cor={e.cor ?? AMARELO} altura={e.altura ?? 0.3} tela={tela} />);
 		else if ((e.efeito === 'circular' || e.efeito === 'destacar') && e.alvo !== undefined) {
 			// o alvo fica onde estava no começo do efeito (não persegue o tremor da câmera)
-			const p = naTela(linha, t, e.alvo);
+			const p = naTela(linha, t, e.alvo, tela);
 			if (!p) return;
 			const raio = p.raio ? p.raio * 1.5 : p.raioPeca ? clamp(p.raioPeca * 1.15, 55, 480) : 110 * intens;
-			if (e.efeito === 'circular') itens.push(<Circulo key={i} x={p.x} y={p.y} raio={raio} ini={e.ini} fim={e.fim} t={t} cor={e.cor ?? VERMELHO} />);
+			if (e.efeito === 'circular') itens.push(<Circulo key={i} x={p.x} y={p.y} raio={raio} ini={e.ini} fim={e.fim} t={t} cor={e.cor ?? VERMELHO} tela={tela} />);
 			else itens.push(<Destaque key={i} x={p.x} y={p.y} raio={raio} ini={e.ini} fim={e.fim} t={t} intensidade={Math.min(1.2, intens)} />);
 		}
 	});
 	return (
 		<>
 			{itens}
-			{barras > 0 ? <Barras vis={barras} /> : null}
+			{barras > 0 ? <Barras vis={barras} tela={tela} /> : null}
 		</>
 	);
 };
@@ -548,7 +576,7 @@ const Transicao2D: React.FC<{linha: LinhaDoTempo; t: number}> = ({linha, t}) => 
 	return null;
 };
 
-const Efeitos: React.FC<{linha: LinhaDoTempo; t: number}> = ({linha, t}) => {
+const Efeitos: React.FC<{linha: LinhaDoTempo; t: number; tela: Tela}> = ({linha, t, tela}) => {
 	const cena = cenaNoTempo(linha, t);
 	let branco = 0;
 	let preto = 0;
@@ -581,7 +609,7 @@ const Efeitos: React.FC<{linha: LinhaDoTempo; t: number}> = ({linha, t}) => {
 	return (
 		<>
 			<AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 46%, rgba(0,0,0,0) 45%, rgba(0,0,0,0.85) 100%)', opacity: clamp(vinheta)}} />
-			{chuva > 0 ? <Chuva t={t} intensidade={clamp(chuva)} /> : null}
+			{chuva > 0 ? <Chuva t={t} intensidade={clamp(chuva)} tela={tela} /> : null}
 			{raio > 0 ? <AbsoluteFill style={{backgroundColor: '#DCE6FF', opacity: clamp(raio * 0.85), mixBlendMode: 'screen'}} /> : null}
 			{branco > 0 ? <AbsoluteFill style={{backgroundColor: '#fff', opacity: clamp(branco)}} /> : null}
 			{preto > 0 ? <AbsoluteFill style={{backgroundColor: '#000', opacity: clamp(preto)}} /> : null}
@@ -589,16 +617,81 @@ const Efeitos: React.FC<{linha: LinhaDoTempo; t: number}> = ({linha, t}) => {
 	);
 };
 
-export const Camada2D: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: number; semVoz: boolean}> = ({linha, t, frame, fps, semVoz}) => (
-	<AbsoluteFill>
-		<Efeitos linha={linha} t={t} />
-		<EfeitosDeProducao linha={linha} t={t} frame={frame} fps={fps} />
-		<Rotulos linha={linha} t={t} frame={frame} fps={fps} />
-		<Selo linha={linha} />
-		{semVoz ? <AvisoPrevia /> : null}
-		<Cartoes linha={linha} t={t} frame={frame} fps={fps} />
-		<Legenda linha={linha} t={t} frame={frame} fps={fps} />
-		<Chamada linha={linha} t={t} frame={frame} fps={fps} />
-		<Transicao2D linha={linha} t={t} />
-	</AbsoluteFill>
-);
+// --- filme 16:9 (fim da minissérie): capítulo, escurecimento entre as partes e "FIM" ---------
+
+/** Letreiro de capítulo nos primeiros segundos; na primeira parte, o título da série no meio da tela. */
+const Capitulo: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: number}> = ({linha, t, frame, fps}) => {
+	const primeira = linha.filme?.primeira;
+	const de = CAPITULO_FILME.de;
+	const ate = primeira ? CAPITULO_FILME.ateNaPrimeira : CAPITULO_FILME.ate;
+	if (t < de || t > ate) return null;
+	const entra = spring({frame: frame - Math.round(de * fps), fps, config: {damping: 16, stiffness: 140}});
+	const vis = entra * (1 - smoothstep(ate - 0.45, ate, t));
+	const capitulo = (
+		<div style={{fontFamily: FONTE, fontWeight: 800, fontSize: 34, letterSpacing: 6, color: AMARELO, ...contornoTexto(6, 0.4)}}>
+			CAPÍTULO {linha.parte}
+			<span style={{color: '#fff'}}> · {linha.titulo.toUpperCase()}</span>
+		</div>
+	);
+	if (primeira) {
+		return (
+			<AbsoluteFill style={{justifyContent: 'center', alignItems: 'center', opacity: vis}}>
+				<AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 46%, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0) 60%)'}} />
+				<div style={{textAlign: 'center', transform: `translateY(${(1 - entra) * 24 - 60}px)`}}>
+					<div style={{fontFamily: FONTE, fontWeight: 900, fontSize: 168, lineHeight: 1, letterSpacing: 8, color: '#fff', marginBottom: 26, ...contornoTexto(14, 0.8)}}>{linha.tituloSerie}</div>
+					{capitulo}
+				</div>
+			</AbsoluteFill>
+		);
+	}
+	return (
+		<div style={{position: 'absolute', top: 64, left: 80, opacity: vis, transform: `translateX(${(1 - entra) * -40}px)`}}>
+			<div style={{width: 90, height: 8, background: AMARELO, border: '3px solid #000', marginBottom: 14}} />
+			{capitulo}
+		</div>
+	);
+};
+
+/** Clareia no começo da parte, escurece no corte e, na última parte, mostra "FIM" sobre o preto. */
+const MolduraFilme: React.FC<{linha: LinhaDoTempo; t: number}> = ({linha, t}) => {
+	const f = linha.filme!;
+	const preto = Math.max(1 - clamp(t / CLAREIA_FILME), smoothstep(f.corte - ESCURECE_FILME, f.corte, t));
+	const fim = f.ultima ? smoothstep(f.corte + 0.2, f.corte + 0.9, t) : 0;
+	return (
+		<>
+			{preto > 0.001 ? <AbsoluteFill style={{backgroundColor: '#000', opacity: clamp(preto)}} /> : null}
+			{fim > 0 ? (
+				<AbsoluteFill style={{justifyContent: 'center', alignItems: 'center', opacity: fim}}>
+					<div style={{textAlign: 'center', transform: `scale(${lerp(1.08, 1, fim)})`}}>
+						<div style={{fontFamily: FONTE, fontWeight: 900, fontSize: 210, lineHeight: 1, letterSpacing: 14, color: '#fff'}}>FIM</div>
+						<div style={{fontFamily: FONTE, fontWeight: 800, fontSize: 38, letterSpacing: 8, color: AMARELO, marginTop: 24}}>{linha.tituloSerie}</div>
+					</div>
+				</AbsoluteFill>
+			) : null}
+		</>
+	);
+};
+
+export const Camada2D: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: number; semVoz: boolean}> = ({linha, t, frame, fps, semVoz}) => {
+	const {width, height} = useVideoConfig();
+	const filme = !!linha.filme;
+	const tela: Tela = {w: width, h: height, filme, k: filme ? 0.75 : 1};
+	return (
+		<AbsoluteFill>
+			<Efeitos linha={linha} t={t} tela={tela} />
+			<EfeitosDeProducao linha={linha} t={t} frame={frame} fps={fps} tela={tela} />
+			<Rotulos linha={linha} t={t} frame={frame} fps={fps} tela={tela} />
+			<Insercoes linha={linha} t={t} frame={frame} fps={fps} tela={tela} />
+			{filme ? <Capitulo linha={linha} t={t} frame={frame} fps={fps} /> : <Selo linha={linha} />}
+			<Relogio linha={linha} t={t} frame={frame} fps={fps} tela={tela} />
+			<Manchete linha={linha} t={t} frame={frame} fps={fps} tela={tela} />
+			{semVoz ? <AvisoPrevia tela={tela} /> : null}
+			<Cartoes linha={linha} t={t} frame={frame} fps={fps} tela={tela} />
+			{filme && linha.filme?.semLegenda ? null : <Legenda linha={linha} t={t} frame={frame} fps={fps} tela={tela} />}
+			{filme && linha.filme?.semLegenda ? null : <EtiquetaVoz linha={linha} t={t} tela={tela} />}
+			{filme ? null : <Chamada linha={linha} t={t} frame={frame} fps={fps} />}
+			<Transicao2D linha={linha} t={t} />
+			{filme ? <MolduraFilme linha={linha} t={t} /> : null}
+		</AbsoluteFill>
+	);
+};

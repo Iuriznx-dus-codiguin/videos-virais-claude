@@ -1,6 +1,6 @@
 // Imprime o vocabulário do motor em poucas linhas, para quem escreve roteiros não precisar ler o código.
 // Uso: npm run catalogo [-- <cenario>]
-import {ACESSORIOS, ACOES, AMBIENTES, ANCORAS_OBJETO, ANIMACOES_PECA, CENARIOS, EFEITOS, EXPRESSOES, FILTROS, FLUXOS, FORMAS, ITENS_MAO, LADOS, LUZES, MOVIMENTOS, MUSICAS, OBJETOS, PARTICULAS, PLANOS, SONS, TRANSICOES, USO_MOVIMENTOS, USO_OBJETOS} from '../src/catalogo.ts';
+import {ACESSORIOS, ACOES, AMBIENTES, ANCORAS_OBJETO, ANIMACOES_PECA, CENARIOS, EFEITOS, EXPRESSOES, FILTROS, FLUXOS, FORMAS, INSERCOES, ITENS_MAO, LADOS, LUZES, MOVIMENTOS, MUSICAS, OBJETOS, PARTICULAS, PLANOS, SONS, TRANSICOES, USO_MOVIMENTOS, USO_OBJETOS} from '../src/catalogo.ts';
 
 const so = process.argv[2];
 if (so && !CENARIOS[so]) {
@@ -29,6 +29,11 @@ if (!so) {
 	console.log(`FILTROS de cor (campo "filtro" da cena): ${Object.entries(FILTROS).map(([n, d]) => `${n} (${d})`).join('; ')}`);
 	console.log('ATMOSFERA: estúdio, oficina, cabine, raízes, adega, selva e praia à noite já trazem poeira, feixes de luz, folhas ou vaga-lumes; "atmosfera": false na cena desliga');
 	console.log('CARTÃO com contador: "contar": [de, até] e "#" no "grande" ("# °C", "DIA #")');
+	console.log('MANCHETE (campo "manchetes" da cena: de, ate, texto): frase curta fixa no alto da tela enquanto a legenda corre; *palavras entre asteriscos* saem coloridas ("REGRA 1 — *APAGUE AS LUZES*")');
+	console.log('RELÓGIO (campo "relogio" da cena: hora "03:00", ate_hora "03:11" faz os minutos correrem): relógio digital no canto de cima');
+	console.log('INSERÇÕES (campo "insercoes" da cena: de, ate, tipo; objeto importante em tela cheia):');
+	for (const [n, d] of Object.entries(INSERCOES)) console.log(`  ${n}: ${d}`);
+	console.log('SÉRIE: "partes" na bíblia põe "PARTE 3/7" no selo ("rotulo_parte": NOITE, DIA...); "etiqueta" no personagem mostra "RÁDIO", "VOZ LÁ FORA" perto da legenda quando ele fala em off');
 	console.log(`SONS: ${SONS.join(', ')}\nAMBIENTES: ${AMBIENTES.join(', ')}\nMÚSICAS: ${MUSICAS.join(', ')}`);
 	console.log(`ITENS NA MÃO ("segura" ou "item" de pegar): ${ITENS_MAO.join(', ')}`);
 	console.log('OBJETOS (opções):');

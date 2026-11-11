@@ -1,5 +1,7 @@
 // Câmera: transforma o plano do roteiro (tipo, alvo, lado, movimento) em posição, ponto de
-// mira e lente a cada instante, enquadrando para vídeo vertical (9:16). Se outro personagem
+// mira e lente a cada instante, enquadrando para vídeo vertical (9:16). No filme 16:9 do fim da
+// minissérie (src/filme.ts) a câmera e a lente vertical são as mesmas: o quadro deitado só mostra
+// mais dos lados, e o desvio e o plano de dois levam em conta a largura nova. Se outro personagem
 // tapar a lente, a câmera gira em volta do assunto até achar um ângulo livre. Efeitos de
 // tremor e soco de zoom e os passos do gigante entram por cima.
 import {CENARIOS} from '../catalogo';
@@ -245,7 +247,103 @@ const tapa = (cam: V3, ponto: V3, e: {c: V3; r: number}, folga: number) => {
 	return ang - Math.asin(Math.min(1, e.r / dc)) < folga;
 };
 
-export const cameraNoTempo = (cena: CenaTempo, sim: SimulacaoCena, t: number): Camera => {
+/** Largura / altura do quadro vertical dos shorts. */
+export const ASPECTO_VERTICAL = 9 / 16;
+
+/**
+ * Câmera do instante. No quadro deitado (filme), a câmera é a mesma do vertical, só girada alguns
+ * graus para o lado quando isso tira do corte da borda a cabeça de quem ficou na beirada do quadro
+ * (ver giroDoFilme).
+ */
+export const cameraNoTempo = (cena: CenaTempo, sim: SimulacaoCena, t: number, aspecto = ASPECTO_VERTICAL): Camera => {
+	const c = cameraBase(cena, sim, t, aspecto);
+	if (aspecto <= 1) return c;
+	const plano = cena.planos.find((p) => t >= p.ini && t < p.fim) ?? cena.planos[cena.planos.length - 1];
+	const giro = plano ? giroDoFilme(cena, sim, plano, aspecto) : 0;
+	return giro ? {...c, alvo: add3(c.pos, girarY(sub3(c.alvo, c.pos), giro))} : c;
+};
+
+type Visto = 'dentro' | 'cortada' | 'fora';
+
+/** Onde a cabeça cai no quadro: x no centro (-1 a 1), meia altura na tela, se está cortada na borda do lado. */
+const cabecaNoQuadro = (c: {pos: V3; alvo: V3; fov: number}, centro: V3, raio: number, aspecto: number) => {
+	const f = norm3(sub3(c.alvo, c.pos));
+	const r = norm3([f[2] * UP[1] - f[1] * UP[2], f[0] * UP[2] - f[2] * UP[0], f[1] * UP[0] - f[0] * UP[1]]);
+	const d = sub3(centro, c.pos);
+	const z = d[0] * f[0] + d[1] * f[1] + d[2] * f[2];
+	if (z <= raio) return null;
+	const tg = Math.tan((c.fov * Math.PI) / 360);
+	const ry = raio / (z * tg);
+	const rx = ry / aspecto;
+	const x = -(d[0] * r[0] + d[1] * r[1] + d[2] * r[2]) / (z * tg * aspecto);
+	const fora = Math.max(clamp((-1 - (x - rx)) / (2 * rx)), clamp((x + rx - 1) / (2 * rx)));
+	const visto: Visto = fora >= 1 ? 'fora' : fora > 0.12 ? 'cortada' : 'dentro';
+	return {x, ry, visto};
+};
+
+const girosCalculados = new WeakMap<PlanoTempo, Map<number, number>>();
+
+/**
+ * Filme 16:9: o quadro deitado mostra mais dos lados, e quem ficava fora do vertical às vezes cai na
+ * beirada, com a cabeça cortada. Para cada plano, procura um giro pequeno da câmera (no máximo ~1/3 da
+ * meia largura, sem tirar o assunto do miolo) que deixe essas cabeças inteiras ou fora do quadro, sem
+ * perder ninguém que já aparecia inteiro. Um giro só por plano (calculado em três instantes dele), para
+ * a câmera não ficar procurando.
+ */
+const giroDoFilme = (cena: CenaTempo, sim: SimulacaoCena, plano: PlanoTempo, aspecto: number): number => {
+	let porAspecto = girosCalculados.get(plano);
+	const salvo = porAspecto?.get(aspecto);
+	if (salvo !== undefined) return salvo;
+	const dur = plano.fim - plano.ini;
+	const amostras = dur > 0.4 ? [0.25, 0.5, 0.75].map((u) => plano.ini + u * dur) : [plano.ini + dur / 2];
+	const palitos = [...sim.atores.entries()].filter(([, a]) => !a.gigante).map(([id, a]) => ({id, raio: 0.42 * a.escala}));
+	const assuntos = new Set([plano.alvo, plano.alvo2].filter((a): a is string => typeof a === 'string' && sim.atores.has(a)));
+	const bases = amostras.map((tt) => cameraBase(cena, sim, tt, aspecto));
+	const meiaLargura = Math.atan(Math.tan((bases[0].fov * Math.PI) / 360) * aspecto);
+	const passo = meiaLargura * 0.07;
+	const visto0 = bases.map((b, k) => new Map(palitos.map((p) => [p.id, cabecaNoQuadro(b, sim.rosto(p.id, amostras[k]), p.raio, aspecto)?.visto ?? 'fora'])));
+	const nota = (giro: number) => {
+		let soma = 0;
+		bases.forEach((b, k) => {
+			const c = {...b, alvo: add3(b.pos, girarY(sub3(b.alvo, b.pos), giro))};
+			for (const p of palitos) {
+				const q = cabecaNoQuadro(c, sim.rosto(p.id, amostras[k]), p.raio, aspecto);
+				if (assuntos.has(p.id)) {
+					if (!q || q.visto !== 'dentro' || Math.abs(q.x) > 0.62) soma += 10;
+					continue;
+				}
+				if (q && q.ry < 0.06) continue;
+				const peso = q ? Math.min(1, q.ry / 0.08) : 1;
+				const antes = visto0[k].get(p.id);
+				const agora = q?.visto ?? 'fora';
+				if (agora === 'cortada') soma += peso;
+				else if (agora === 'fora' && antes === 'dentro') soma += 2 * peso;
+			}
+		});
+		return soma / bases.length + 0.02 * Math.abs(giro / passo);
+	};
+	const parado = nota(0);
+	let melhor = 0;
+	let melhorNota = parado;
+	for (let i = -5; i <= 5; i++) {
+		if (i === 0) continue;
+		const n = nota(i * passo);
+		if (n < melhorNota - 1e-6) {
+			melhorNota = n;
+			melhor = i * passo;
+		}
+	}
+	// só gira se resolver de verdade alguma cabeça cortada
+	const giro = parado - melhorNota >= 0.45 ? melhor : 0;
+	if (!porAspecto) {
+		porAspecto = new Map();
+		girosCalculados.set(plano, porAspecto);
+	}
+	porAspecto.set(aspecto, giro);
+	return giro;
+};
+
+const cameraBase = (cena: CenaTempo, sim: SimulacaoCena, t: number, aspecto: number): Camera => {
 	const idx = Math.max(0, cena.planos.findIndex((p) => t >= p.ini && t < p.fim));
 	const plano = cena.planos[idx] ?? cena.planos[cena.planos.length - 1];
 	const dur = Math.max(0.3, plano.fim - plano.ini);
@@ -385,7 +483,7 @@ export const cameraNoTempo = (cena: CenaTempo, sim: SimulacaoCena, t: number): C
 			if (b) {
 				centro = lerp3(base, b, 0.5);
 				const lateral = Math.abs((b[0] - base[0]) * dirCam[1] - (b[2] - base[2]) * dirCam[0]);
-				extra = Math.max(0, (lateral + 1.2) / (2 * Math.tan((e.fov * Math.PI) / 360) * (9 / 16)) - dd) * 0.9;
+				extra = Math.max(0, (lateral + 1.2) / (2 * Math.tan((e.fov * Math.PI) / 360) * aspecto) - dd) * 0.9;
 			}
 		}
 		const dist = dd + extra;
@@ -406,8 +504,8 @@ export const cameraNoTempo = (cena: CenaTempo, sim: SimulacaoCena, t: number): C
 			[t0, t0 + dur / 2].every((tt) => {
 				const q = quadro(tt, dv);
 				const ponto = assunto(tt);
-				// miolo = 60% da meia largura do quadro vertical
-				const folga = 0.6 * Math.atan(Math.tan((q.fov * Math.PI) / 360) * (9 / 16));
+				// miolo = 60% da meia largura do quadro (vertical nos shorts, deitado no filme)
+				const folga = 0.6 * Math.atan(Math.tan((q.fov * Math.PI) / 360) * aspecto);
 				return outros.every((id) => esferasDoAtor(sim, id, tt).every((e) => !tapa(q.pos, ponto, e, folga)));
 			});
 		desvio = DESVIOS.find(livre) ?? 0;

@@ -1,5 +1,6 @@
 // Gera quadros soltos (PNG) de um episódio para conferir o visual sem renderizar o vídeo todo.
-// Uso: npm run quadro -- <serie> <parte> <segundos...> [--escala=0.5] [--dpr=1]
+// Uso: npm run quadro -- <serie> <parte> <segundos...> [--escala=0.5] [--dpr=1] [--formato=filme] [--primeira] [--ultima]
+// --formato=filme: o quadro 16:9 do filme do fim da minissérie (histórias), sem a chamada.
 import {bundle} from '@remotion/bundler';
 import {renderStill, selectComposition} from '@remotion/renderer';
 import {mkdirSync} from 'node:fs';
@@ -21,13 +22,20 @@ const main = async () => {
 	}
 	const escala = Number(opcoes.escala ?? 0.5);
 	const servir = await empacotar();
-	const inputProps = {serie, parte: Number(parte), semAudio: true, ...(opcoes.dpr ? {dpr: Number(opcoes.dpr)} : {})};
+	const filme = opcoes.formato === 'filme';
+	const inputProps = {
+		serie,
+		parte: Number(parte),
+		semAudio: true,
+		...(opcoes.dpr ? {dpr: Number(opcoes.dpr)} : {}),
+		...(filme ? {formato: 'filme', primeiraDoFilme: 'primeira' in opcoes, ultimaDoFilme: 'ultima' in opcoes} : {}),
+	};
 	const comp = await selectComposition({serveUrl: servir, id: 'Episodio', inputProps, browserExecutable: CHROME, chromiumOptions: {gl: 'swangle'}});
 	const pasta = join(RAIZ, 'out', 'quadros');
 	mkdirSync(pasta, {recursive: true});
 	for (const s of tempos) {
 		const frame = Math.min(comp.durationInFrames - 1, Math.round(Number(s) * comp.fps));
-		const saida = join(pasta, `${serie}-ep${String(parte).padStart(2, '0')}-${Number(s).toFixed(2).padStart(6, '0')}s.png`);
+		const saida = join(pasta, `${serie}-ep${String(parte).padStart(2, '0')}${filme ? '-filme' : ''}-${Number(s).toFixed(2).padStart(6, '0')}s.png`);
 		await renderStill({
 			composition: comp,
 			serveUrl: servir,
