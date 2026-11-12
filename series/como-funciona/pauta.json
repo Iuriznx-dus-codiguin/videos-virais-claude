@@ -331,7 +331,8 @@
       ],
       "gancho": "Apertar o interruptor só fecha uma porta para a eletricidade.",
       "estilo": "dúvida comum",
-      "status": "roteiro"
+      "status": "produzido",
+      "dia": "2026-11-12"
     },
     {
       "n": 20,
@@ -347,7 +348,7 @@
         "curto-circuito"
       ],
       "gancho": "Quando ele desarma, ele acabou de salvar a sua casa.",
-      "status": "pendente"
+      "status": "roteiro"
     },
     {
       "n": 21,
