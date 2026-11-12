@@ -1,2857 +1,2859 @@
 {
- "serie": "como-funciona",
- "parte": 19,
- "titulo": "Para que serve o terceiro furinho da tomada?",
- "musica": "curiosidade",
- "personagens": {
-  "hubbell": {
-   "nome": "Harvey Hubbell",
-   "papel": "inventor americano (Bridgeport, Connecticut); em 8/11/1904 recebeu a patente 774.250 de um plugue separável: uma parte fica rosqueada no bocal da lâmpada e o plugue do aparelho sai puxando, sem torcer o fio nem soltar faísca; antes, ferros e ventiladores eram rosqueados direto no bocal da lâmpada; não fala",
-   "visual": {
-    "altura": 1,
-    "corpo": "#2F3B4C",
-    "cabeca": "#F2D5BD",
-    "olhos": "redondos",
-    "sobrancelhas": "grossas",
-    "acessorios": [
-     {
-      "tipo": "cabelo_curto",
-      "cor": "#4E3B2A"
-     },
-     {
-      "tipo": "bigode",
-      "cor": "#4E3B2A"
-     },
-     {
-      "tipo": "colete",
-      "cor": "#6D5A44"
-     }
-    ]
-   }
-  }
- },
- "modelos": {
-  "tomada": [
-   {
-    "id": "terra",
-    "forma": "caixa",
-    "tam": [
-     0.66,
-     0.12,
-     0.3
-    ],
-    "pos": [
-     0.02,
-     0.06,
-     0
-    ],
-    "cor": "#8D6E63"
-   },
-   {
-    "id": "grama",
-    "forma": "caixa",
-    "tam": [
-     0.66,
-     0.012,
-     0.3
-    ],
-    "pos": [
-     0.02,
-     0.126,
-     0
-    ],
-    "cor": "#7CB342"
-   },
-   {
-    "id": "parede",
-    "forma": "caixa",
-    "tam": [
-     0.44,
-     0.4,
-     0.05
-    ],
-    "pos": [
-     -0.06,
-     0.32,
-     -0.07
-    ],
-    "cor": "#EFE6D6"
-   },
-   {
-    "id": "espelho_i",
-    "forma": "caixa",
-    "tam": [
-     0.065,
-     0.095,
-     0.01
-    ],
-    "pos": [
-     -0.16,
-     0.3,
-     -0.04
-    ],
-    "cor": "#FAFAFA"
-   },
-   {
-    "id": "tecla",
-    "forma": "caixa",
-    "tam": [
-     0.026,
-     0.045,
-     0.012
-    ],
-    "pos": [
-     -0.16,
-     0.3,
-     -0.032
-    ],
-    "cor": "#E0E0E0"
-   },
-   {
-    "id": "lamina_pivo",
-    "forma": "esfera",
-    "tam": [
-     0.006
-    ],
-    "pos": [
-     -0.185,
-     0.3,
-     -0.07
-    ],
-    "cor": "#B87333"
-   },
-   {
-    "id": "lamina",
-    "forma": "caixa",
-    "tam": [
-     0.05,
-     0.007,
-     0.012
-    ],
-    "pos": [
-     0.025,
-     0,
-     0
-    ],
-    "cor": "#D4A017",
-    "pai": "lamina_pivo"
-   },
-   {
-    "id": "contato",
-    "forma": "esfera",
-    "tam": [
-     0.008
-    ],
-    "pos": [
-     -0.135,
-     0.3,
-     -0.07
-    ],
-    "cor": "#B87333"
-   },
-   {
-    "id": "braco_l",
-    "forma": "caixa",
-    "tam": [
-     0.018,
-     0.018,
-     0.075
-    ],
-    "pos": [
-     -0.16,
-     0.5,
-     -0.01
-    ],
-    "cor": "#90A4AE"
-   },
-   {
-    "id": "soquete",
-    "forma": "cilindro",
-    "tam": [
-     0.018,
-     0.03
-    ],
-    "pos": [
-     -0.16,
-     0.475,
-     0.025
-    ],
-    "cor": "#C9A227"
-   },
-   {
-    "id": "bulbo",
-    "forma": "esfera",
-    "tam": [
-     0.032
-    ],
-    "pos": [
-     -0.16,
-     0.435,
-     0.025
-    ],
-    "cor": "#FFE066",
-    "brilho": 0.45
-   },
-   {
-    "id": "bulbo_apagado",
-    "forma": "esfera",
-    "tam": [
-     0.032
-    ],
-    "pos": [
-     -0.16,
-     0.435,
-     0.025
-    ],
-    "cor": "#D7DBDD",
-    "oculta": true
-   },
-   {
-    "id": "espelho_t",
-    "forma": "caixa",
-    "tam": [
-     0.085,
-     0.105,
-     0.01
-    ],
-    "pos": [
-     0.06,
-     0.22,
-     -0.04
-    ],
-    "cor": "#FAFAFA"
-   },
-   {
-    "id": "rebaixo",
-    "forma": "cilindro",
-    "tam": [
-     0.033,
-     0.004
-    ],
-    "pos": [
-     0.06,
-     0.22,
-     -0.034
-    ],
-    "giro": [
-     90,
-     0,
-     0
-    ],
-    "cor": "#E3E7EA"
-   },
-   {
-    "id": "furo_f",
-    "forma": "cilindro",
-    "tam": [
-     0.007,
-     0.004
-    ],
-    "pos": [
-     0.042,
-     0.228,
-     -0.0315
-    ],
-    "giro": [
-     90,
-     0,
-     0
-    ],
-    "cor": "#1B1B1B",
-    "sem_contorno": true
-   },
-   {
-    "id": "furo_n",
-    "forma": "cilindro",
-    "tam": [
-     0.007,
-     0.004
-    ],
-    "pos": [
-     0.078,
-     0.228,
-     -0.0315
-    ],
-    "giro": [
-     90,
-     0,
-     0
-    ],
-    "cor": "#1B1B1B",
-    "sem_contorno": true
-   },
-   {
-    "id": "furo_t",
-    "forma": "cilindro",
-    "tam": [
-     0.007,
-     0.004
-    ],
-    "pos": [
-     0.06,
-     0.212,
-     -0.0315
-    ],
-    "giro": [
-     90,
-     0,
-     0
-    ],
-    "cor": "#1B1B1B",
-    "sem_contorno": true
-   },
-   {
-    "id": "fase_t",
-    "forma": "tubo",
-    "tam": [
-     0.007
-    ],
-    "caminho": [
-     [
-      -0.28,
-      0.17,
-      -0.07
-     ],
-     [
-      0.042,
-      0.17,
-      -0.07
-     ],
-     [
-      0.042,
-      0.228,
-      -0.07
-     ]
-    ],
-    "cor": "#E53935"
-   },
-   {
-    "id": "neutro_t",
-    "forma": "tubo",
-    "tam": [
-     0.007
-    ],
-    "caminho": [
-     [
-      -0.28,
-      0.145,
-      -0.07
-     ],
-     [
-      0.078,
-      0.145,
-      -0.07
-     ],
-     [
-      0.078,
-      0.228,
-      -0.07
-     ]
-    ],
-    "cor": "#1E88E5"
-   },
-   {
-    "id": "fase_l",
-    "forma": "tubo",
-    "tam": [
-     0.007
-    ],
-    "caminho": [
-     [
-      -0.28,
-      0.38,
-      -0.07
-     ],
-     [
-      -0.185,
-      0.38,
-      -0.07
-     ],
-     [
-      -0.185,
-      0.3,
-      -0.07
-     ]
-    ],
-    "cor": "#E53935"
-   },
-   {
-    "id": "fase_l2",
-    "forma": "tubo",
-    "tam": [
-     0.007
-    ],
-    "caminho": [
-     [
-      -0.135,
-      0.3,
-      -0.07
-     ],
-     [
-      -0.135,
-      0.4,
-      -0.07
-     ],
-     [
-      -0.145,
-      0.49,
-      -0.05
-     ],
-     [
-      -0.16,
-      0.49,
-      -0.005
-     ],
-     [
-      -0.16,
-      0.478,
-      0.02
-     ]
-    ],
-    "cor": "#E53935"
-   },
-   {
-    "id": "neutro_l",
-    "forma": "tubo",
-    "tam": [
-     0.007
-    ],
-    "caminho": [
-     [
-      -0.28,
-      0.42,
-      -0.07
-     ],
-     [
-      -0.21,
-      0.42,
-      -0.07
-     ],
-     [
-      -0.21,
-      0.47,
-      -0.07
-     ],
-     [
-      -0.18,
-      0.49,
-      -0.04
-     ],
-     [
-      -0.165,
-      0.48,
-      0.015
-     ]
-    ],
-    "cor": "#1E88E5"
-   },
-   {
-    "id": "fio_terra",
-    "forma": "tubo",
-    "tam": [
-     0.007
-    ],
-    "pos": [
-     0.02,
-     0.16,
-     -0.07
-    ],
-    "caminho": [
-     [
-      0.04,
-      0.052,
-      0
-     ],
-     [
-      0.01,
-      0.04,
-      0
-     ],
-     [
-      -0.02,
-      0.0,
-      0
-     ],
-     [
-      -0.02,
-      -0.06,
-      0
-     ]
-    ],
-    "cor": "#43A047",
-    "oculta": true
-   },
-   {
-    "id": "haste",
-    "forma": "cilindro",
-    "tam": [
-     0.01,
-     0.1
-    ],
-    "pos": [
-     0.0,
-     0.05,
-     -0.07
-    ],
-    "cor": "#C77B30",
-    "oculta": true
-   },
-   {
-    "id": "lataria",
-    "forma": "caixa",
-    "tam": [
-     0.15,
-     0.3,
-     0.13
-    ],
-    "pos": [
-     0.255,
-     0.27,
-     -0.02
-    ],
-    "cor": "#CFD8DC"
-   },
-   {
-    "id": "divisoria",
-    "forma": "caixa",
-    "tam": [
-     0.15,
-     0.005,
-     0.004
-    ],
-    "pos": [
-     0.255,
-     0.33,
-     0.046
-    ],
-    "cor": "#90A4AE"
-   },
-   {
-    "id": "puxador1",
-    "forma": "caixa",
-    "tam": [
-     0.01,
-     0.04,
-     0.012
-    ],
-    "pos": [
-     0.195,
-     0.375,
-     0.05
-    ],
-    "cor": "#78909C"
-   },
-   {
-    "id": "puxador2",
-    "forma": "caixa",
-    "tam": [
-     0.01,
-     0.07,
-     0.012
-    ],
-    "pos": [
-     0.195,
-     0.27,
-     0.05
-    ],
-    "cor": "#78909C"
-   },
-   {
-    "id": "motor",
-    "forma": "cilindro",
-    "tam": [
-     0.03,
-     0.05
-    ],
-    "pos": [
-     0.265,
-     0.155,
-     -0.03
-    ],
-    "cor": "#37474F"
-   },
-   {
-    "id": "fio_motor",
-    "forma": "tubo",
-    "tam": [
-     0.006
-    ],
-    "caminho": [
-     [
-      0.185,
-      0.2,
-      0.0
-     ],
-     [
-      0.22,
-      0.19,
-      -0.01
-     ],
-     [
-      0.255,
-      0.17,
-      -0.03
-     ]
-    ],
-    "cor": "#E53935"
-   },
-   {
-    "id": "solto_pivo",
-    "forma": "esfera",
-    "tam": [
-     0.006
-    ],
-    "pos": [
-     0.285,
-     0.18,
-     -0.02
-    ],
-    "cor": "#37474F"
-   },
-   {
-    "id": "fio_solto",
-    "forma": "tubo",
-    "tam": [
-     0.006
-    ],
-    "pos": [
-     0,
-     0.045,
-     0
-    ],
-    "caminho": [
-     [
-      0,
-      -0.045,
-      0
-     ],
-     [
-      0,
-      0.005,
-      0
-     ],
-     [
-      0.004,
-      0.04,
-      0
-     ]
-    ],
-    "cor": "#E53935",
-    "pai": "solto_pivo"
-   },
-   {
-    "id": "plugue",
-    "forma": "caixa",
-    "tam": [
-     0.045,
-     0.05,
-     0.03
-    ],
-    "pos": [
-     0.11,
-     0.17,
-     0.08
-    ],
-    "cor": "#263238"
-   },
-   {
-    "id": "pino_f",
-    "forma": "cilindro",
-    "tam": [
-     0.0035,
-     0.03
-    ],
-    "pos": [
-     -0.018,
-     0.008,
-     -0.03
-    ],
-    "giro": [
-     90,
-     0,
-     0
-    ],
-    "cor": "#CFD2D6",
-    "pai": "plugue"
-   },
-   {
-    "id": "pino_n",
-    "forma": "cilindro",
-    "tam": [
-     0.0035,
-     0.03
-    ],
-    "pos": [
-     0.018,
-     0.008,
-     -0.03
-    ],
-    "giro": [
-     90,
-     0,
-     0
-    ],
-    "cor": "#CFD2D6",
-    "pai": "plugue"
-   },
-   {
-    "id": "pino_t",
-    "forma": "cilindro",
-    "tam": [
-     0.0035,
-     0.034
-    ],
-    "pos": [
-     0,
-     -0.008,
-     -0.032
-    ],
-    "giro": [
-     90,
-     0,
-     0
-    ],
-    "cor": "#CFD2D6",
-    "pai": "plugue"
-   },
-   {
-    "id": "cabo",
-    "forma": "tubo",
-    "tam": [
-     0.005
-    ],
-    "cor": "#263238",
-    "pai": "plugue",
-    "caminho": [
-     [
-      0,
-      -0.025,
-      0.005
-     ],
-     [
-      0.02,
-      -0.07,
-      0.02
-     ],
-     [
-      0.07,
-      -0.085,
-      0.03
-     ],
-     [
-      0.11,
-      -0.05,
-      0.025
-     ],
-     [
-      0.122,
-      -0.02,
-      0.02
-     ]
-    ]
-   },
-   {
-    "id": "pessoa",
-    "forma": "capsula",
-    "tam": [
-     0.025,
-     0.14
-    ],
-    "pos": [
-     0.41,
-     0.215,
-     0.07
-    ],
-    "cor": "#FB8C00",
-    "oculta": true
-   },
-   {
-    "id": "pessoa_cabeca",
-    "forma": "esfera",
-    "tam": [
-     0.025
-    ],
-    "pos": [
-     0,
-     0.118,
-     0
-    ],
-    "cor": "#F2D5BD",
-    "pai": "pessoa"
-   },
-   {
-    "id": "pessoa_braco",
-    "forma": "capsula",
-    "tam": [
-     0.008,
-     0.06
-    ],
-    "pos": [
-     -0.04,
-     0.045,
-     0
-    ],
-    "giro": [
-     0,
-     0,
-     75
-    ],
-    "cor": "#FB8C00",
-    "pai": "pessoa"
-   }
-  ],
-  "oficina_1900": [
-   {
-    "id": "poste",
-    "forma": "cilindro",
-    "tam": [
-     0.01,
-     0.3
-    ],
-    "pos": [
-     -0.13,
-     0.15,
-     0
-    ],
-    "cor": "#6D4C41"
-   },
-   {
-    "id": "braco",
-    "forma": "caixa",
-    "tam": [
-     0.15,
-     0.014,
-     0.014
-    ],
-    "pos": [
-     -0.065,
-     0.3,
-     0
-    ],
-    "cor": "#6D4C41"
-   },
-   {
-    "id": "fio_teto",
-    "forma": "cilindro",
-    "tam": [
-     0.003,
-     0.05
-    ],
-    "pos": [
-     0,
-     0.27,
-     0
-    ],
-    "cor": "#212121"
-   },
-   {
-    "id": "bocal",
-    "forma": "cilindro",
-    "tam": [
-     0.018,
-     0.035
-    ],
-    "pos": [
-     0,
-     0.23,
-     0
-    ],
-    "cor": "#B8860B"
-   },
-   {
-    "id": "lampada",
-    "forma": "esfera",
-    "tam": [
-     0.028
-    ],
-    "pos": [
-     0,
-     0.19,
-     0
-    ],
-    "cor": "#FFE9A8",
-    "brilho": 0.3
-   },
-   {
-    "id": "ferro",
-    "forma": "caixa",
-    "tam": [
-     0.11,
-     0.025,
-     0.055
-    ],
-    "pos": [
-     0.13,
-     0.0125,
-     0.03
-    ],
-    "cor": "#455A64"
-   },
-   {
-    "id": "ferro_ponta",
-    "forma": "cone",
-    "tam": [
-     0.028,
-     0.04
-    ],
-    "pos": [
-     0.205,
-     0.0125,
-     0.03
-    ],
-    "giro": [
-     0,
-     0,
-     -90
-    ],
-    "cor": "#455A64"
-   },
-   {
-    "id": "alca",
-    "forma": "caixa",
-    "tam": [
-     0.07,
-     0.012,
-     0.014
-    ],
-    "pos": [
-     0.13,
-     0.058,
-     0.03
-    ],
-    "cor": "#5D4037"
-   },
-   {
-    "id": "alca_pe1",
-    "forma": "cilindro",
-    "tam": [
-     0.005,
-     0.03
-    ],
-    "pos": [
-     0.105,
-     0.04,
-     0.03
-    ],
-    "cor": "#5D4037"
-   },
-   {
-    "id": "alca_pe2",
-    "forma": "cilindro",
-    "tam": [
-     0.005,
-     0.03
-    ],
-    "pos": [
-     0.155,
-     0.04,
-     0.03
-    ],
-    "cor": "#5D4037"
-   },
-   {
-    "id": "rosca",
-    "forma": "cilindro",
-    "tam": [
-     0.016,
-     0.03
-    ],
-    "pos": [
-     0,
-     0.2,
-     0
-    ],
-    "cor": "#9E9E9E",
-    "oculta": true
-   },
-   {
-    "id": "fio_ferro",
-    "forma": "tubo",
-    "tam": [
-     0.004
-    ],
-    "pos": [
-     0.06,
-     0.12,
-     0.015
-    ],
-    "cor": "#3E2723",
-    "oculta": true,
-    "caminho": [
-     [
-      -0.06,
-      0.065,
-      -0.015
-     ],
-     [
-      -0.03,
-      -0.02,
-      0.0
-     ],
-     [
-      0.03,
-      -0.07,
-      0.01
-     ],
-     [
-      0.07,
-      -0.062,
-      0.015
-     ]
-    ]
-   },
-   {
-    "id": "receptaculo",
-    "forma": "cilindro",
-    "tam": [
-     0.018,
-     0.025
-    ],
-    "pos": [
-     0,
-     0.2,
-     0
-    ],
-    "cor": "#F4F1E8",
-    "oculta": true
-   },
-   {
-    "id": "plugue_1904",
-    "forma": "caixa",
-    "tam": [
-     0.032,
-     0.02,
-     0.032
-    ],
-    "pos": [
-     0,
-     0.177,
-     0
-    ],
-    "cor": "#212121",
-    "oculta": true
-   },
-   {
-    "id": "lamina_1",
-    "forma": "caixa",
-    "tam": [
-     0.004,
-     0.014,
-     0.012
-    ],
-    "pos": [
-     -0.008,
-     0.016,
-     0
-    ],
-    "cor": "#D4A017",
-    "pai": "plugue_1904"
-   },
-   {
-    "id": "lamina_2",
-    "forma": "caixa",
-    "tam": [
-     0.004,
-     0.014,
-     0.012
-    ],
-    "pos": [
-     0.008,
-     0.016,
-     0
-    ],
-    "cor": "#D4A017",
-    "pai": "plugue_1904"
-   },
-   {
-    "id": "fio_ferro2",
-    "forma": "tubo",
-    "tam": [
-     0.004
-    ],
-    "cor": "#3E2723",
-    "pai": "plugue_1904",
-    "caminho": [
-     [
-      0,
-      -0.01,
-      0
-     ],
-     [
-      0.03,
-      -0.07,
-      0.01
-     ],
-     [
-      0.09,
-      -0.115,
-      0.022
-     ],
-     [
-      0.13,
-      -0.11,
-      0.03
-     ]
-    ]
-   }
-  ]
- },
- "falas": [
-  {
-   "id": "f1",
-   "quem": "tito",
-   "texto": "Esse terceiro furinho da tomada... para que ele serve?",
-   "tom": "animado"
-  },
-  {
-   "id": "f2",
-   "quem": "tito",
-   "texto": "Lá por 1900, para ligar um ferro de passar, você tirava a LÂMPADA do teto.",
-   "off": true
-  },
-  {
-   "id": "f3",
-   "quem": "tito",
-   "texto": "E rosqueava o fio do ferro no lugar dela. O fio torcia, e às vezes saía FAÍSCA.",
-   "off": true
-  },
-  {
-   "id": "f4",
-   "quem": "tito",
-   "texto": "Em 1904, o americano Harvey Hubbell patenteou um plugue que encaixa e sai só PUXANDO.",
-   "off": true
-  },
-  {
-   "id": "f5",
-   "quem": "tito",
-   "texto": "MAS o plugue dele tinha só DOIS pinos. Então por que a tomada de hoje tem TRÊS?",
-   "off": true,
-   "tom": "tenso",
-   "pausa_depois": 0.3
-  },
-  {
-   "id": "f6",
-   "quem": "tito",
-   "texto": "Os dois primeiros são fáceis: a eletricidade precisa de ida e VOLTA."
-  },
-  {
-   "id": "f7",
-   "quem": "tito",
-   "texto": "Ela chega por um fio, acende a lâmpada e volta pelo outro. É um CIRCUITO, uma volta completa."
-  },
-  {
-   "id": "f8",
-   "quem": "tito",
-   "texto": "E o INTERRUPTOR? Ele só afasta uma lamininha e abre um buraco nesse caminho."
-  },
-  {
-   "id": "f9",
-   "quem": "tito",
-   "texto": "Sem caminho completo, a eletricidade para, e a luz APAGA.",
-   "pausa_depois": 0.3
-  },
-  {
-   "id": "f10",
-   "quem": "tito",
-   "texto": "MAS imagina que, dentro da geladeira, um fio se solta e encosta na LATARIA.",
-   "tom": "tenso"
-  },
-  {
-   "id": "f11",
-   "quem": "tito",
-   "texto": "A geladeira inteira fica com eletricidade, e por fora ela parece NORMAL.",
-   "tom": "tenso"
-  },
-  {
-   "id": "f12",
-   "quem": "tito",
-   "texto": "Quem encostar nela vira o caminho até o chão: CHOQUE!",
-   "tom": "tenso",
-   "pausa_depois": 0.3
-  },
-  {
-   "id": "f13",
-   "quem": "tito",
-   "texto": "Por isso existe o terceiro furinho: o TERRA.",
-   "tom": "animado"
-  },
-  {
-   "id": "f14",
-   "quem": "tito",
-   "texto": "Ele liga a lataria a uma barra de metal enterrada no CHÃO."
-  },
-  {
-   "id": "f15",
-   "quem": "tito",
-   "texto": "Se um fio se soltar, a eletricidade foge por ali, um caminho muito mais FÁCIL que o seu corpo."
-  },
-  {
-   "id": "f16",
-   "quem": "tito",
-   "texto": "Isso se chama ATERRAMENTO: um caminho seguro até a terra.",
-   "pausa_depois": 0.3
-  },
-  {
-   "id": "f17",
-   "quem": "tito",
-   "texto": "E repara: o terceiro furinho não serve para ligar NADA."
-  },
-  {
-   "id": "f18",
-   "quem": "tito",
-   "texto": "Ele só trabalha no dia em que salva você.",
-   "tom": "animado"
-  }
- ],
- "chamada": {
-  "pergunta": "E agora, topa construir um disjuntor?",
-  "texto": "Comenta",
-  "destaque": "DISJUN­TOR"
- },
- "postagem": {
-  "titulo": "Como funciona a tomada? Para que serve o terceiro furinho",
-  "descricao": "Como funciona a tomada e o interruptor por dentro: o circuito de ida e volta, a lamininha que apaga a luz e o fio terra do terceiro furinho, que leva a eletricidade para o chão em vez de passar por você. E como era antes de existir plugue: o ferro de passar rosqueado no lugar da lâmpada.",
-  "hashtags": [
-   "comofunciona",
-   "tomada",
-   "eletricidade",
-   "fisica",
-   "curiosidades"
-  ],
-  "comentario": "Eu achava que o terceiro furinho também levava eletricidade. Você sabia que ele só trabalha quando dá problema?",
-  "capa": "f12:choque+0.5"
- },
- "cenas": [
-  {
-   "id": "gancho",
-   "cenario": "estudio",
-   "ambiente": "estudio",
-   "filtro": "vivo",
-   "personagens": {
-    "tito": {
-     "em": "apresentador",
-     "olhando": "maquete",
-     "expressao": "desconfiado"
-    }
-   },
-   "objetos": [
-    {
-     "tipo": "maquete",
-     "modelo": "tomada",
-     "em": "pedestal",
-     "escala": 1.4
-    }
-   ],
-   "animacoes": [
-    {
-     "peca": "plugue",
-     "faz": "mover",
-     "desloc": [
-      -0.02,
-      0.02,
-      -0.04
-     ],
-     "de": "inicio",
-     "ate": "f1:para"
-    },
-    {
-     "peca": "furo_t",
-     "faz": "pulsar",
-     "intensidade": 1,
-     "de": "inicio",
-     "ate": "f1:fim+0.3"
-    },
-    {
-     "peca": "pino_t",
-     "faz": "pulsar",
-     "intensidade": 0.8,
-     "de": "f1:terceiro",
-     "ate": "f1:fim+0.3"
-    }
-   ],
-   "acoes": [
-    {
-     "quem": "tito",
-     "olhar": "camera",
-     "expressao": "desconfiado",
-     "de": "f1:para-0.3"
-    }
-   ],
-   "planos": [
-    {
-     "de": "inicio",
-     "tipo": "detalhe",
-     "camera": [
-      -0.15,
-      1.42,
-      0.88
-     ],
-     "alvo": [
-      0.126,
-      1.28,
-      0.0
-     ],
-     "movimento": "arco",
-     "intensidade": 0.6
-    },
-    {
-     "de": "f1:para",
-     "tipo": "medio",
-     "alvo": "tito",
-     "lado": "tres_quartos_direita",
-     "movimento": "zoom_rapido"
-    }
-   ],
-   "sons": [
-    {
-     "de": "inicio",
-     "som": "zap",
-     "volume": 0.4
-    },
-    {
-     "de": "f1:terceiro",
-     "som": "bip",
-     "volume": 0.5
-    },
-    {
-     "de": "f1:serve",
-     "som": "impacto",
-     "volume": 0.5
-    }
-   ],
-   "efeitos": [
-    {
-     "de": "f1:terceiro",
-     "ate": "f1:para",
-     "efeito": "circular",
-     "alvo": "furo_t"
-    },
-    {
-     "de": "f1:serve",
-     "efeito": "zoom_soco"
-    }
-   ]
-  },
-  {
-   "id": "hubbell",
-   "cenario": "oficina",
-   "ambiente": "oficina",
-   "filtro": "sepia",
-   "de": "f2",
-   "personagens": {
+  "serie": "como-funciona",
+  "parte": 19,
+  "titulo": "Para que serve o terceiro furinho da tomada?",
+  "musica": "curiosidade",
+  "personagens": {
     "hubbell": {
-     "em": [
-      -1.0,
-      -0.3
-     ],
-     "olhando": [
-      1.2,
-      2.2,
-      3.0
-     ],
-     "expressao": "serio"
+      "nome": "Harvey Hubbell",
+      "papel": "inventor americano (Bridgeport, Connecticut); em 8/11/1904 recebeu a patente 774.250 de um plugue separável: uma parte fica rosqueada no bocal da lâmpada e o plugue do aparelho sai puxando, sem torcer o fio nem soltar faísca; antes, ferros e ventiladores eram rosqueados direto no bocal da lâmpada; não fala",
+      "visual": {
+        "altura": 1,
+        "corpo": "#2F3B4C",
+        "cabeca": "#F2D5BD",
+        "olhos": "redondos",
+        "sobrancelhas": "grossas",
+        "acessorios": [
+          {
+            "tipo": "cabelo_curto",
+            "cor": "#4E3B2A"
+          },
+          {
+            "tipo": "bigode",
+            "cor": "#4E3B2A"
+          },
+          {
+            "tipo": "colete",
+            "cor": "#6D5A44"
+          }
+        ]
+      }
     }
-   },
-   "objetos": [
-    {
-     "tipo": "maquete",
-     "modelo": "oficina_1900",
-     "em": [
-      0,
-      -1.05
-     ],
-     "alt": 0.92,
-     "escala": 1.5
-    },
-    {
-     "tipo": "particulas",
-     "particula": "faiscas",
-     "em": [
-      0,
-      -1.05
-     ],
-     "alt": 1.2,
-     "raio": 0.05,
-     "altura": 0.12,
-     "quantas": 10,
-     "aparece": "f3:faisca",
-     "some": "f3:fim+0.4"
-    }
-   ],
-   "cartoes": [
-    {
-     "de": "f4:1904",
-     "ate": "f4:plugue",
-     "grande": "1904",
-     "pequeno": "Harvey Hubbell · Estados Unidos"
-    }
-   ],
-   "animacoes": [
-    {
-     "peca": "lampada",
-     "faz": "girar",
-     "eixo": "y",
-     "voltas": 2,
-     "de": "f2:lampada",
-     "ate": "f2:teto+0.3"
-    },
-    {
-     "peca": "lampada",
-     "faz": "mover",
-     "desloc": [
-      0,
-      -0.03,
-      0
-     ],
-     "de": "f2:lampada",
-     "ate": "f2:teto+0.3"
-    },
-    {
-     "peca": "lampada",
-     "faz": "sumir",
-     "de": "f2:teto+0.3"
-    },
-    {
-     "peca": "rosca",
-     "faz": "aparecer",
-     "de": "f3:rosqueava"
-    },
-    {
-     "peca": "fio_ferro",
-     "faz": "aparecer",
-     "de": "f3:rosqueava"
-    },
-    {
-     "peca": "rosca",
-     "faz": "girar",
-     "eixo": "y",
-     "voltas": 3,
-     "de": "f3:rosqueava+0.3",
-     "ate": "f3:torcia+0.6"
-    },
-    {
-     "peca": "fio_ferro",
-     "faz": "tremer",
-     "intensidade": 0.8,
-     "de": "f3:torcia",
-     "ate": "f3:faisca"
-    },
-    {
-     "peca": "rosca",
-     "faz": "tremer",
-     "intensidade": 0.6,
-     "de": "f3:faisca",
-     "ate": "f3:fim"
-    },
-    {
-     "peca": "rosca",
-     "faz": "sumir",
-     "de": "f4:plugue"
-    },
-    {
-     "peca": "fio_ferro",
-     "faz": "sumir",
-     "de": "f4:plugue"
-    },
-    {
-     "peca": "receptaculo",
-     "faz": "aparecer",
-     "de": "f4:plugue"
-    },
-    {
-     "peca": "plugue_1904",
-     "faz": "aparecer",
-     "de": "f4:plugue"
-    },
-    {
-     "peca": "plugue_1904",
-     "faz": "mover",
-     "desloc": [
-      0,
-      -0.045,
-      0
-     ],
-     "de": "f4:puxando",
-     "ate": "f4:puxando+0.3"
-    }
-   ],
-   "acoes": [
-    {
-     "quem": "hubbell",
-     "faz": "virar",
-     "para": [
-      0.45,
-      2.75,
-      3.3
-     ],
-     "olhar": "camera",
-     "expressao": "serio",
-     "de": "f2"
-    },
-    {
-     "quem": "hubbell",
-     "faz": "estender_mao",
-     "para": "oficina_1900",
-     "olhar": "oficina_1900",
-     "expressao": "determinado",
-     "de": "f2:lampada"
-    },
-    {
-     "quem": "hubbell",
-     "faz": "virar",
-     "para": [
-      0.3,
-      2.85,
-      2.2
-     ],
-     "olhar": "camera",
-     "expressao": "nervoso",
-     "de": "f3:faisca-0.4"
-    },
-    {
-     "quem": "hubbell",
-     "faz": "susto",
-     "olhar": "camera",
-     "expressao": "medo",
-     "de": "f3:faisca"
-    },
-    {
-     "quem": "hubbell",
-     "faz": "virar",
-     "para": [
-      0.45,
-      2.75,
-      3.3
-     ],
-     "olhar": "camera",
-     "expressao": "feliz",
-     "de": "f4-0.2"
-    },
-    {
-     "quem": "hubbell",
-     "faz": "puxar",
-     "para": "oficina_1900",
-     "olhar": "oficina_1900",
-     "expressao": "feliz",
-     "de": "f4:puxando-0.3"
-    },
-    {
-     "quem": "hubbell",
-     "faz": "virar",
-     "para": [
-      0.3,
-      2.85,
-      2.2
-     ],
-     "olhar": "camera",
-     "expressao": "desconfiado",
-     "de": "f5:por-0.4"
-    }
-   ],
-   "planos": [
-    {
-     "de": "inicio",
-     "tipo": "aberto",
-     "camera": [
-      0.9,
-      2.85,
-      3.9
-     ],
-     "alvo": [
-      -0.55,
-      2.25,
-      -0.7
-     ],
-     "movimento": "arco",
-     "intensidade": 0.6,
-     "transicao": "desfoque"
-    },
-    {
-     "de": "f2:ferro",
-     "tipo": "detalhe",
-     "camera": [
-      -0.38,
-      1.3,
-      -0.3
-     ],
-     "alvo": [
-      0.08,
-      1.1,
-      -1.05
-     ],
-     "movimento": "arco",
-     "intensidade": 0.5
-    },
-    {
-     "de": "f2:lampada",
-     "tipo": "detalhe",
-     "camera": [
-      -0.22,
-      1.32,
-      -0.55
-     ],
-     "alvo": [
-      0.0,
-      1.22,
-      -1.05
-     ],
-     "movimento": "aproximar"
-    },
-    {
-     "de": "f3",
-     "tipo": "detalhe",
-     "camera": [
-      -0.38,
-      1.3,
-      -0.3
-     ],
-     "alvo": [
-      0.08,
-      1.1,
-      -1.05
-     ],
-     "movimento": "arco",
-     "intensidade": -0.5
-    },
-    {
-     "de": "f3:torcia",
-     "tipo": "detalhe",
-     "camera": [
-      -0.22,
-      1.32,
-      -0.55
-     ],
-     "alvo": [
-      0.0,
-      1.22,
-      -1.05
-     ],
-     "movimento": "zoom_rapido"
-    },
-    {
-     "de": "f4",
-     "tipo": "medio",
-     "camera": [
-      0.45,
-      2.75,
-      3.3
-     ],
-     "alvo": "hubbell",
-     "movimento": "travelling",
-     "intensidade": 0.4
-    },
-    {
-     "de": "f4:plugue",
-     "tipo": "detalhe",
-     "camera": [
-      -0.16,
-      1.2,
-      -0.56
-     ],
-     "alvo": [
-      0.02,
-      1.14,
-      -1.05
-     ],
-     "movimento": "aproximar"
-    },
-    {
-     "de": "f5",
-     "tipo": "detalhe",
-     "camera": [
-      -0.16,
-      1.2,
-      -0.56
-     ],
-     "alvo": [
-      0.02,
-      1.14,
-      -1.05
-     ],
-     "movimento": "arco",
-     "intensidade": 0.5
-    },
-    {
-     "de": "f5:por",
-     "tipo": "close",
-     "camera": [
-      0.3,
-      2.85,
-      2.2
-     ],
-     "alvo": "hubbell",
-     "movimento": "zoom_rapido"
-    }
-   ],
-   "sons": [
-    {
-     "de": "f2:lampada",
-     "som": "engrenagem",
-     "volume": 0.4
-    },
-    {
-     "de": "f3:rosqueava",
-     "som": "pop",
-     "volume": 0.6
-    },
-    {
-     "de": "f3:faisca",
-     "som": "zap",
-     "volume": 0.8
-    },
-    {
-     "de": "f4:1904",
-     "som": "pop",
-     "volume": 0.6
-    },
-    {
-     "de": "f4:plugue",
-     "som": "pop",
-     "volume": 0.8
-    },
-    {
-     "de": "f4:puxando",
-     "som": "clique",
-     "volume": 0.9
-    },
-    {
-     "de": "f5",
-     "som": "tensao_sobe",
-     "volume": 0.5
-    },
-    {
-     "de": "f5:dois",
-     "som": "impacto",
-     "volume": 0.6
-    }
-   ],
-   "efeitos": [
-    {
-     "de": "f3:faisca",
-     "efeito": "flash"
-    },
-    {
-     "de": "f3:faisca",
-     "efeito": "zoom_soco"
-    },
-    {
-     "de": "f4:plugue+0.1",
-     "ate": "f4:fim",
-     "efeito": "circular",
-     "alvo": "plugue_1904"
-    },
-    {
-     "de": "f5:dois",
-     "efeito": "zoom_soco"
-    }
-   ],
-   "rotulos": [
-    {
-     "alvo": "rosca",
-     "texto": "No bocal",
-     "de": "f3:rosqueava+0.2",
-     "ate": "f3:torcia"
-    },
-    {
-     "alvo": "plugue_1904",
-     "texto": "Plugue",
-     "de": "f4:plugue",
-     "ate": "f4:fim"
-    },
-    {
-     "alvo": "plugue_1904",
-     "texto": "2 pinos",
-     "de": "f5:dois",
-     "ate": "f5:por",
-     "cor": "#FF8A65"
-    }
-   ]
   },
-  {
-   "id": "por_dentro",
-   "cenario": "estudio",
-   "ambiente": "estudio",
-   "filtro": "vivo",
-   "de": "f6",
-   "personagens": {
-    "tito": {
-     "em": "apresentador",
-     "olhando": "maquete",
-     "expressao": "feliz"
+  "modelos": {
+    "tomada": [
+      {
+        "id": "terra",
+        "forma": "caixa",
+        "tam": [
+          0.66,
+          0.12,
+          0.3
+        ],
+        "pos": [
+          0.02,
+          0.06,
+          0
+        ],
+        "cor": "#8D6E63"
+      },
+      {
+        "id": "grama",
+        "forma": "caixa",
+        "tam": [
+          0.66,
+          0.012,
+          0.3
+        ],
+        "pos": [
+          0.02,
+          0.126,
+          0
+        ],
+        "cor": "#7CB342"
+      },
+      {
+        "id": "parede",
+        "forma": "caixa",
+        "tam": [
+          0.44,
+          0.4,
+          0.05
+        ],
+        "pos": [
+          -0.06,
+          0.32,
+          -0.07
+        ],
+        "cor": "#EFE6D6"
+      },
+      {
+        "id": "espelho_i",
+        "forma": "caixa",
+        "tam": [
+          0.065,
+          0.095,
+          0.01
+        ],
+        "pos": [
+          -0.16,
+          0.3,
+          -0.04
+        ],
+        "cor": "#FAFAFA"
+      },
+      {
+        "id": "tecla",
+        "forma": "caixa",
+        "tam": [
+          0.026,
+          0.045,
+          0.012
+        ],
+        "pos": [
+          -0.16,
+          0.3,
+          -0.032
+        ],
+        "cor": "#E0E0E0"
+      },
+      {
+        "id": "lamina_pivo",
+        "forma": "esfera",
+        "tam": [
+          0.006
+        ],
+        "pos": [
+          -0.185,
+          0.3,
+          -0.07
+        ],
+        "cor": "#B87333"
+      },
+      {
+        "id": "lamina",
+        "forma": "caixa",
+        "tam": [
+          0.05,
+          0.007,
+          0.012
+        ],
+        "pos": [
+          0.025,
+          0,
+          0
+        ],
+        "cor": "#D4A017",
+        "pai": "lamina_pivo"
+      },
+      {
+        "id": "contato",
+        "forma": "esfera",
+        "tam": [
+          0.008
+        ],
+        "pos": [
+          -0.135,
+          0.3,
+          -0.07
+        ],
+        "cor": "#B87333"
+      },
+      {
+        "id": "braco_l",
+        "forma": "caixa",
+        "tam": [
+          0.018,
+          0.018,
+          0.075
+        ],
+        "pos": [
+          -0.16,
+          0.5,
+          -0.01
+        ],
+        "cor": "#90A4AE"
+      },
+      {
+        "id": "soquete",
+        "forma": "cilindro",
+        "tam": [
+          0.018,
+          0.03
+        ],
+        "pos": [
+          -0.16,
+          0.475,
+          0.025
+        ],
+        "cor": "#C9A227"
+      },
+      {
+        "id": "bulbo",
+        "forma": "esfera",
+        "tam": [
+          0.032
+        ],
+        "pos": [
+          -0.16,
+          0.435,
+          0.025
+        ],
+        "cor": "#FFE066",
+        "brilho": 0.45
+      },
+      {
+        "id": "bulbo_apagado",
+        "forma": "esfera",
+        "tam": [
+          0.032
+        ],
+        "pos": [
+          -0.16,
+          0.435,
+          0.025
+        ],
+        "cor": "#D7DBDD",
+        "oculta": true
+      },
+      {
+        "id": "espelho_t",
+        "forma": "caixa",
+        "tam": [
+          0.085,
+          0.105,
+          0.01
+        ],
+        "pos": [
+          0.06,
+          0.22,
+          -0.04
+        ],
+        "cor": "#FAFAFA"
+      },
+      {
+        "id": "rebaixo",
+        "forma": "cilindro",
+        "tam": [
+          0.033,
+          0.004
+        ],
+        "pos": [
+          0.06,
+          0.22,
+          -0.034
+        ],
+        "giro": [
+          90,
+          0,
+          0
+        ],
+        "cor": "#E3E7EA"
+      },
+      {
+        "id": "furo_f",
+        "forma": "cilindro",
+        "tam": [
+          0.007,
+          0.004
+        ],
+        "pos": [
+          0.042,
+          0.228,
+          -0.0315
+        ],
+        "giro": [
+          90,
+          0,
+          0
+        ],
+        "cor": "#1B1B1B",
+        "sem_contorno": true
+      },
+      {
+        "id": "furo_n",
+        "forma": "cilindro",
+        "tam": [
+          0.007,
+          0.004
+        ],
+        "pos": [
+          0.078,
+          0.228,
+          -0.0315
+        ],
+        "giro": [
+          90,
+          0,
+          0
+        ],
+        "cor": "#1B1B1B",
+        "sem_contorno": true
+      },
+      {
+        "id": "furo_t",
+        "forma": "cilindro",
+        "tam": [
+          0.007,
+          0.004
+        ],
+        "pos": [
+          0.06,
+          0.212,
+          -0.0315
+        ],
+        "giro": [
+          90,
+          0,
+          0
+        ],
+        "cor": "#1B1B1B",
+        "sem_contorno": true
+      },
+      {
+        "id": "fase_t",
+        "forma": "tubo",
+        "tam": [
+          0.007
+        ],
+        "caminho": [
+          [
+            -0.28,
+            0.17,
+            -0.07
+          ],
+          [
+            0.042,
+            0.17,
+            -0.07
+          ],
+          [
+            0.042,
+            0.228,
+            -0.07
+          ]
+        ],
+        "cor": "#E53935"
+      },
+      {
+        "id": "neutro_t",
+        "forma": "tubo",
+        "tam": [
+          0.007
+        ],
+        "caminho": [
+          [
+            -0.28,
+            0.145,
+            -0.07
+          ],
+          [
+            0.078,
+            0.145,
+            -0.07
+          ],
+          [
+            0.078,
+            0.228,
+            -0.07
+          ]
+        ],
+        "cor": "#1E88E5"
+      },
+      {
+        "id": "fase_l",
+        "forma": "tubo",
+        "tam": [
+          0.007
+        ],
+        "caminho": [
+          [
+            -0.28,
+            0.38,
+            -0.07
+          ],
+          [
+            -0.185,
+            0.38,
+            -0.07
+          ],
+          [
+            -0.185,
+            0.3,
+            -0.07
+          ]
+        ],
+        "cor": "#E53935"
+      },
+      {
+        "id": "fase_l2",
+        "forma": "tubo",
+        "tam": [
+          0.007
+        ],
+        "caminho": [
+          [
+            -0.135,
+            0.3,
+            -0.07
+          ],
+          [
+            -0.135,
+            0.4,
+            -0.07
+          ],
+          [
+            -0.145,
+            0.49,
+            -0.05
+          ],
+          [
+            -0.16,
+            0.49,
+            -0.005
+          ],
+          [
+            -0.16,
+            0.478,
+            0.02
+          ]
+        ],
+        "cor": "#E53935"
+      },
+      {
+        "id": "neutro_l",
+        "forma": "tubo",
+        "tam": [
+          0.007
+        ],
+        "caminho": [
+          [
+            -0.28,
+            0.42,
+            -0.07
+          ],
+          [
+            -0.21,
+            0.42,
+            -0.07
+          ],
+          [
+            -0.21,
+            0.47,
+            -0.07
+          ],
+          [
+            -0.18,
+            0.49,
+            -0.04
+          ],
+          [
+            -0.165,
+            0.48,
+            0.015
+          ]
+        ],
+        "cor": "#1E88E5"
+      },
+      {
+        "id": "fio_terra",
+        "forma": "tubo",
+        "tam": [
+          0.007
+        ],
+        "pos": [
+          0.02,
+          0.16,
+          -0.07
+        ],
+        "caminho": [
+          [
+            0.04,
+            0.052,
+            0
+          ],
+          [
+            0.01,
+            0.04,
+            0
+          ],
+          [
+            -0.02,
+            0,
+            0
+          ],
+          [
+            -0.02,
+            -0.06,
+            0
+          ]
+        ],
+        "cor": "#43A047",
+        "oculta": true
+      },
+      {
+        "id": "haste",
+        "forma": "cilindro",
+        "tam": [
+          0.01,
+          0.1
+        ],
+        "pos": [
+          0,
+          0.05,
+          -0.07
+        ],
+        "cor": "#C77B30",
+        "oculta": true
+      },
+      {
+        "id": "lataria",
+        "forma": "caixa",
+        "tam": [
+          0.15,
+          0.3,
+          0.13
+        ],
+        "pos": [
+          0.255,
+          0.27,
+          -0.02
+        ],
+        "cor": "#CFD8DC"
+      },
+      {
+        "id": "divisoria",
+        "forma": "caixa",
+        "tam": [
+          0.15,
+          0.005,
+          0.004
+        ],
+        "pos": [
+          0.255,
+          0.33,
+          0.046
+        ],
+        "cor": "#90A4AE"
+      },
+      {
+        "id": "puxador1",
+        "forma": "caixa",
+        "tam": [
+          0.01,
+          0.04,
+          0.012
+        ],
+        "pos": [
+          0.195,
+          0.375,
+          0.05
+        ],
+        "cor": "#78909C"
+      },
+      {
+        "id": "puxador2",
+        "forma": "caixa",
+        "tam": [
+          0.01,
+          0.07,
+          0.012
+        ],
+        "pos": [
+          0.195,
+          0.27,
+          0.05
+        ],
+        "cor": "#78909C"
+      },
+      {
+        "id": "motor",
+        "forma": "cilindro",
+        "tam": [
+          0.03,
+          0.05
+        ],
+        "pos": [
+          0.265,
+          0.155,
+          -0.03
+        ],
+        "cor": "#37474F"
+      },
+      {
+        "id": "fio_motor",
+        "forma": "tubo",
+        "tam": [
+          0.006
+        ],
+        "caminho": [
+          [
+            0.185,
+            0.2,
+            0
+          ],
+          [
+            0.22,
+            0.19,
+            -0.01
+          ],
+          [
+            0.255,
+            0.17,
+            -0.03
+          ]
+        ],
+        "cor": "#E53935"
+      },
+      {
+        "id": "solto_pivo",
+        "forma": "esfera",
+        "tam": [
+          0.006
+        ],
+        "pos": [
+          0.285,
+          0.18,
+          -0.02
+        ],
+        "cor": "#37474F"
+      },
+      {
+        "id": "fio_solto",
+        "forma": "tubo",
+        "tam": [
+          0.006
+        ],
+        "pos": [
+          0,
+          0.045,
+          0
+        ],
+        "caminho": [
+          [
+            0,
+            -0.045,
+            0
+          ],
+          [
+            0,
+            0.005,
+            0
+          ],
+          [
+            0.004,
+            0.04,
+            0
+          ]
+        ],
+        "cor": "#E53935",
+        "pai": "solto_pivo"
+      },
+      {
+        "id": "plugue",
+        "forma": "caixa",
+        "tam": [
+          0.045,
+          0.05,
+          0.03
+        ],
+        "pos": [
+          0.11,
+          0.17,
+          0.08
+        ],
+        "cor": "#263238"
+      },
+      {
+        "id": "pino_f",
+        "forma": "cilindro",
+        "tam": [
+          0.0035,
+          0.03
+        ],
+        "pos": [
+          -0.018,
+          0.008,
+          -0.03
+        ],
+        "giro": [
+          90,
+          0,
+          0
+        ],
+        "cor": "#CFD2D6",
+        "pai": "plugue"
+      },
+      {
+        "id": "pino_n",
+        "forma": "cilindro",
+        "tam": [
+          0.0035,
+          0.03
+        ],
+        "pos": [
+          0.018,
+          0.008,
+          -0.03
+        ],
+        "giro": [
+          90,
+          0,
+          0
+        ],
+        "cor": "#CFD2D6",
+        "pai": "plugue"
+      },
+      {
+        "id": "pino_t",
+        "forma": "cilindro",
+        "tam": [
+          0.0035,
+          0.034
+        ],
+        "pos": [
+          0,
+          -0.008,
+          -0.032
+        ],
+        "giro": [
+          90,
+          0,
+          0
+        ],
+        "cor": "#CFD2D6",
+        "pai": "plugue"
+      },
+      {
+        "id": "cabo",
+        "forma": "tubo",
+        "tam": [
+          0.005
+        ],
+        "cor": "#263238",
+        "pai": "plugue",
+        "caminho": [
+          [
+            0,
+            -0.025,
+            0.005
+          ],
+          [
+            0.02,
+            -0.07,
+            0.02
+          ],
+          [
+            0.07,
+            -0.085,
+            0.03
+          ],
+          [
+            0.11,
+            -0.05,
+            0.025
+          ],
+          [
+            0.122,
+            -0.02,
+            0.02
+          ]
+        ]
+      },
+      {
+        "id": "pessoa",
+        "forma": "capsula",
+        "tam": [
+          0.025,
+          0.14
+        ],
+        "pos": [
+          0.41,
+          0.215,
+          0.07
+        ],
+        "cor": "#FB8C00",
+        "oculta": true
+      },
+      {
+        "id": "pessoa_cabeca",
+        "forma": "esfera",
+        "tam": [
+          0.025
+        ],
+        "pos": [
+          0,
+          0.118,
+          0
+        ],
+        "cor": "#F2D5BD",
+        "pai": "pessoa"
+      },
+      {
+        "id": "pessoa_braco",
+        "forma": "capsula",
+        "tam": [
+          0.008,
+          0.06
+        ],
+        "pos": [
+          -0.04,
+          0.045,
+          0
+        ],
+        "giro": [
+          0,
+          0,
+          75
+        ],
+        "cor": "#FB8C00",
+        "pai": "pessoa"
+      }
+    ],
+    "oficina_1900": [
+      {
+        "id": "poste",
+        "forma": "cilindro",
+        "tam": [
+          0.01,
+          0.3
+        ],
+        "pos": [
+          -0.13,
+          0.15,
+          0
+        ],
+        "cor": "#6D4C41"
+      },
+      {
+        "id": "braco",
+        "forma": "caixa",
+        "tam": [
+          0.15,
+          0.014,
+          0.014
+        ],
+        "pos": [
+          -0.065,
+          0.3,
+          0
+        ],
+        "cor": "#6D4C41"
+      },
+      {
+        "id": "fio_teto",
+        "forma": "cilindro",
+        "tam": [
+          0.003,
+          0.05
+        ],
+        "pos": [
+          0,
+          0.27,
+          0
+        ],
+        "cor": "#212121"
+      },
+      {
+        "id": "bocal",
+        "forma": "cilindro",
+        "tam": [
+          0.018,
+          0.035
+        ],
+        "pos": [
+          0,
+          0.23,
+          0
+        ],
+        "cor": "#B8860B"
+      },
+      {
+        "id": "lampada",
+        "forma": "esfera",
+        "tam": [
+          0.028
+        ],
+        "pos": [
+          0,
+          0.19,
+          0
+        ],
+        "cor": "#FFE9A8",
+        "brilho": 0.3
+      },
+      {
+        "id": "ferro",
+        "forma": "caixa",
+        "tam": [
+          0.11,
+          0.025,
+          0.055
+        ],
+        "pos": [
+          0.13,
+          0.0125,
+          0.03
+        ],
+        "cor": "#455A64"
+      },
+      {
+        "id": "ferro_ponta",
+        "forma": "cone",
+        "tam": [
+          0.028,
+          0.04
+        ],
+        "pos": [
+          0.205,
+          0.0125,
+          0.03
+        ],
+        "giro": [
+          0,
+          0,
+          -90
+        ],
+        "cor": "#455A64"
+      },
+      {
+        "id": "alca",
+        "forma": "caixa",
+        "tam": [
+          0.07,
+          0.012,
+          0.014
+        ],
+        "pos": [
+          0.13,
+          0.058,
+          0.03
+        ],
+        "cor": "#5D4037"
+      },
+      {
+        "id": "alca_pe1",
+        "forma": "cilindro",
+        "tam": [
+          0.005,
+          0.03
+        ],
+        "pos": [
+          0.105,
+          0.04,
+          0.03
+        ],
+        "cor": "#5D4037"
+      },
+      {
+        "id": "alca_pe2",
+        "forma": "cilindro",
+        "tam": [
+          0.005,
+          0.03
+        ],
+        "pos": [
+          0.155,
+          0.04,
+          0.03
+        ],
+        "cor": "#5D4037"
+      },
+      {
+        "id": "rosca",
+        "forma": "cilindro",
+        "tam": [
+          0.016,
+          0.03
+        ],
+        "pos": [
+          0,
+          0.2,
+          0
+        ],
+        "cor": "#9E9E9E",
+        "oculta": true
+      },
+      {
+        "id": "fio_ferro",
+        "forma": "tubo",
+        "tam": [
+          0.004
+        ],
+        "pos": [
+          0.06,
+          0.12,
+          0.015
+        ],
+        "cor": "#3E2723",
+        "oculta": true,
+        "caminho": [
+          [
+            -0.06,
+            0.065,
+            -0.015
+          ],
+          [
+            -0.03,
+            -0.02,
+            0
+          ],
+          [
+            0.03,
+            -0.07,
+            0.01
+          ],
+          [
+            0.07,
+            -0.062,
+            0.015
+          ]
+        ]
+      },
+      {
+        "id": "receptaculo",
+        "forma": "cilindro",
+        "tam": [
+          0.018,
+          0.025
+        ],
+        "pos": [
+          0,
+          0.2,
+          0
+        ],
+        "cor": "#F4F1E8",
+        "oculta": true
+      },
+      {
+        "id": "plugue_1904",
+        "forma": "caixa",
+        "tam": [
+          0.032,
+          0.02,
+          0.032
+        ],
+        "pos": [
+          0,
+          0.177,
+          0
+        ],
+        "cor": "#212121",
+        "oculta": true
+      },
+      {
+        "id": "lamina_1",
+        "forma": "caixa",
+        "tam": [
+          0.004,
+          0.014,
+          0.012
+        ],
+        "pos": [
+          -0.008,
+          0.016,
+          0
+        ],
+        "cor": "#D4A017",
+        "pai": "plugue_1904"
+      },
+      {
+        "id": "lamina_2",
+        "forma": "caixa",
+        "tam": [
+          0.004,
+          0.014,
+          0.012
+        ],
+        "pos": [
+          0.008,
+          0.016,
+          0
+        ],
+        "cor": "#D4A017",
+        "pai": "plugue_1904"
+      },
+      {
+        "id": "fio_ferro2",
+        "forma": "tubo",
+        "tam": [
+          0.004
+        ],
+        "cor": "#3E2723",
+        "pai": "plugue_1904",
+        "caminho": [
+          [
+            0,
+            -0.01,
+            0
+          ],
+          [
+            0.03,
+            -0.07,
+            0.01
+          ],
+          [
+            0.09,
+            -0.115,
+            0.022
+          ],
+          [
+            0.13,
+            -0.11,
+            0.03
+          ]
+        ]
+      }
+    ]
+  },
+  "falas": [
+    {
+      "id": "f1",
+      "quem": "tito",
+      "texto": "Esse terceiro furinho da tomada... para que ele serve?",
+      "tom": "animado"
+    },
+    {
+      "id": "f2",
+      "quem": "tito",
+      "texto": "Lá por 1900, para ligar um ferro de passar, você tirava a LÂMPADA do teto.",
+      "off": true
+    },
+    {
+      "id": "f3",
+      "quem": "tito",
+      "texto": "E rosqueava o fio do ferro no lugar dela. O fio torcia, e às vezes saía FAÍSCA.",
+      "off": true
+    },
+    {
+      "id": "f4",
+      "quem": "tito",
+      "texto": "Em 1904, o americano Harvey Hubbell patenteou um plugue que encaixa e sai só PUXANDO.",
+      "off": true
+    },
+    {
+      "id": "f5",
+      "quem": "tito",
+      "texto": "MAS o plugue dele tinha só DOIS pinos. Então por que a tomada de hoje tem TRÊS?",
+      "off": true,
+      "tom": "tenso",
+      "pausa_depois": 0.3
+    },
+    {
+      "id": "f6",
+      "quem": "tito",
+      "texto": "Os dois primeiros são fáceis: a eletricidade precisa de ida e VOLTA."
+    },
+    {
+      "id": "f7",
+      "quem": "tito",
+      "texto": "Ela chega por um fio, acende a lâmpada e volta pelo outro. É um CIRCUITO, uma volta completa."
+    },
+    {
+      "id": "f8",
+      "quem": "tito",
+      "texto": "E o INTERRUPTOR? Ele só afasta uma lamininha e abre um buraco nesse caminho."
+    },
+    {
+      "id": "f9",
+      "quem": "tito",
+      "texto": "Sem caminho completo, a eletricidade para, e a luz APAGA.",
+      "pausa_depois": 0.3
+    },
+    {
+      "id": "f10",
+      "quem": "tito",
+      "texto": "MAS imagina que, dentro da geladeira, um fio se solta e encosta na LATARIA.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f11",
+      "quem": "tito",
+      "texto": "A geladeira inteira fica com eletricidade, e por fora ela parece NORMAL.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f12",
+      "quem": "tito",
+      "texto": "Quem encostar nela vira o caminho até o chão: CHOQUE!",
+      "tom": "tenso",
+      "pausa_depois": 0.3,
+      "semente": 103
+    },
+    {
+      "id": "f13",
+      "quem": "tito",
+      "texto": "Por isso existe o terceiro furinho: o TERRA.",
+      "tom": "animado",
+      "semente": 204
+    },
+    {
+      "id": "f14",
+      "quem": "tito",
+      "texto": "Ele liga a lataria a uma barra de metal enterrada no CHÃO."
+    },
+    {
+      "id": "f15",
+      "quem": "tito",
+      "texto": "Se um fio se soltar, a eletricidade foge por ali, um caminho muito mais FÁCIL que o seu corpo."
+    },
+    {
+      "id": "f16",
+      "quem": "tito",
+      "texto": "Isso se chama ATERRAMENTO: um caminho seguro até a terra.",
+      "pausa_depois": 0.3
+    },
+    {
+      "id": "f17",
+      "quem": "tito",
+      "texto": "E repara: o terceiro furinho não serve para ligar NADA."
+    },
+    {
+      "id": "f18",
+      "quem": "tito",
+      "texto": "Ele só trabalha no dia em que salva você.",
+      "tom": "animado"
     }
-   },
-   "objetos": [
+  ],
+  "chamada": {
+    "pergunta": "E agora, topa construir um disjuntor?",
+    "texto": "Comenta",
+    "destaque": "DISJUN­TOR"
+  },
+  "postagem": {
+    "titulo": "Como funciona a tomada? Para que serve o terceiro furinho",
+    "descricao": "Como funciona a tomada e o interruptor por dentro: o circuito de ida e volta, a lamininha que apaga a luz e o fio terra do terceiro furinho, que leva a eletricidade para o chão em vez de passar por você. E como era antes de existir plugue: o ferro de passar rosqueado no lugar da lâmpada.",
+    "hashtags": [
+      "comofunciona",
+      "tomada",
+      "eletricidade",
+      "fisica",
+      "curiosidades"
+    ],
+    "comentario": "Eu achava que o terceiro furinho também levava eletricidade. Você sabia que ele só trabalha quando dá problema?",
+    "capa": "f12:choque+0.5"
+  },
+  "cenas": [
     {
-     "tipo": "maquete",
-     "modelo": "tomada",
-     "em": "pedestal",
-     "escala": 1.4
-    },
-    {
-     "tipo": "particulas",
-     "particula": "faiscas",
-     "em": [
-      0.466,
-      -0.028
-     ],
-     "alt": 1.35,
-     "raio": 0.03,
-     "altura": 0.04,
-     "quantas": 6,
-     "aparece": "f10:lataria",
-     "some": "f11:inteira"
-    },
-    {
-     "tipo": "particulas",
-     "particula": "faiscas",
-     "em": [
-      0.462,
-      0.098
-     ],
-     "alt": 1.378,
-     "raio": 0.05,
-     "altura": 0.1,
-     "quantas": 10,
-     "aparece": "f12:choque",
-     "some": "f12:fim+0.4"
-    }
-   ],
-   "animacoes": [
-    {
-     "peca": "plugue",
-     "faz": "mover",
-     "desloc": [
-      -0.05,
-      0.05,
-      -0.1
-     ],
-     "de": "inicio",
-     "ate": "inicio+0.05"
-    },
-    {
-     "peca": "parede",
-     "faz": "transparente",
-     "opacidade": 0.22,
-     "de": "f6:eletricidade",
-     "ate": "f6:eletricidade+0.6"
-    },
-    {
-     "peca": "fase_t",
-     "faz": "fluxo",
-     "tipo": "eletricidade",
-     "quantidade": 8,
-     "velocidade": 0.7,
-     "intensidade": 0.4,
-     "de": "f6:ida",
-     "ate": "f6:fim+0.3"
-    },
-    {
-     "peca": "neutro_t",
-     "faz": "fluxo",
-     "tipo": "eletricidade",
-     "quantidade": 8,
-     "velocidade": 0.7,
-     "intensidade": 0.4,
-     "de": "f6:volta",
-     "ate": "f6:fim+0.3",
-     "caminho": [
-      [
-       0.078,
-       0.228,
-       -0.07
+      "id": "gancho",
+      "cenario": "estudio",
+      "ambiente": "estudio",
+      "filtro": "vivo",
+      "personagens": {
+        "tito": {
+          "em": "apresentador",
+          "olhando": "maquete",
+          "expressao": "desconfiado"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "maquete",
+          "modelo": "tomada",
+          "em": "pedestal",
+          "escala": 1.4
+        }
       ],
-      [
-       0.078,
-       0.145,
-       -0.07
+      "animacoes": [
+        {
+          "peca": "plugue",
+          "faz": "mover",
+          "desloc": [
+            -0.02,
+            0.02,
+            -0.04
+          ],
+          "de": "inicio",
+          "ate": "f1:para"
+        },
+        {
+          "peca": "furo_t",
+          "faz": "pulsar",
+          "intensidade": 1,
+          "de": "inicio",
+          "ate": "f1:fim+0.3"
+        },
+        {
+          "peca": "pino_t",
+          "faz": "pulsar",
+          "intensidade": 0.8,
+          "de": "f1:terceiro",
+          "ate": "f1:fim+0.3"
+        }
       ],
-      [
-       -0.28,
-       0.145,
-       -0.07
+      "acoes": [
+        {
+          "quem": "tito",
+          "olhar": "camera",
+          "expressao": "desconfiado",
+          "de": "f1:para-0.3"
+        }
+      ],
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "detalhe",
+          "camera": [
+            -0.15,
+            1.42,
+            0.88
+          ],
+          "alvo": [
+            0.126,
+            1.28,
+            0
+          ],
+          "movimento": "arco",
+          "intensidade": 0.6
+        },
+        {
+          "de": "f1:para",
+          "tipo": "medio",
+          "alvo": "tito",
+          "lado": "tres_quartos_direita",
+          "movimento": "zoom_rapido"
+        }
+      ],
+      "sons": [
+        {
+          "de": "inicio",
+          "som": "zap",
+          "volume": 0.4
+        },
+        {
+          "de": "f1:terceiro",
+          "som": "bip",
+          "volume": 0.5
+        },
+        {
+          "de": "f1:serve",
+          "som": "impacto",
+          "volume": 0.5
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "f1:terceiro",
+          "ate": "f1:para",
+          "efeito": "circular",
+          "alvo": "furo_t"
+        },
+        {
+          "de": "f1:serve",
+          "efeito": "zoom_soco"
+        }
       ]
-     ]
     },
     {
-     "peca": "fase_l",
-     "faz": "fluxo",
-     "tipo": "eletricidade",
-     "quantidade": 6,
-     "velocidade": 0.7,
-     "intensidade": 0.4,
-     "de": "f7:chega",
-     "ate": "f9:para"
-    },
-    {
-     "peca": "fase_l2",
-     "faz": "fluxo",
-     "tipo": "eletricidade",
-     "quantidade": 7,
-     "velocidade": 0.7,
-     "intensidade": 0.4,
-     "de": "f7:chega+0.4",
-     "ate": "f9:para"
-    },
-    {
-     "peca": "neutro_l",
-     "faz": "fluxo",
-     "tipo": "eletricidade",
-     "quantidade": 7,
-     "velocidade": 0.7,
-     "intensidade": 0.4,
-     "de": "f7:volta",
-     "ate": "f9:para",
-     "caminho": [
-      [
-       -0.165,
-       0.48,
-       0.015
+      "id": "hubbell",
+      "cenario": "oficina",
+      "ambiente": "oficina",
+      "filtro": "sepia",
+      "de": "f2",
+      "personagens": {
+        "hubbell": {
+          "em": [
+            -1,
+            -0.3
+          ],
+          "olhando": [
+            1.2,
+            2.2,
+            3
+          ],
+          "expressao": "serio"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "maquete",
+          "modelo": "oficina_1900",
+          "em": [
+            0,
+            -1.05
+          ],
+          "alt": 0.92,
+          "escala": 1.5
+        },
+        {
+          "tipo": "particulas",
+          "particula": "faiscas",
+          "em": [
+            0,
+            -1.05
+          ],
+          "alt": 1.2,
+          "raio": 0.05,
+          "altura": 0.12,
+          "quantas": 10,
+          "aparece": "f3:faisca",
+          "some": "f3:fim+0.4"
+        }
       ],
-      [
-       -0.18,
-       0.49,
-       -0.04
+      "cartoes": [
+        {
+          "de": "f4:1904",
+          "ate": "f4:plugue",
+          "grande": "1904",
+          "pequeno": "Harvey Hubbell · Estados Unidos"
+        }
       ],
-      [
-       -0.21,
-       0.47,
-       -0.07
+      "animacoes": [
+        {
+          "peca": "lampada",
+          "faz": "girar",
+          "eixo": "y",
+          "voltas": 2,
+          "de": "f2:lampada",
+          "ate": "f2:teto+0.3"
+        },
+        {
+          "peca": "lampada",
+          "faz": "mover",
+          "desloc": [
+            0,
+            -0.03,
+            0
+          ],
+          "de": "f2:lampada",
+          "ate": "f2:teto+0.3"
+        },
+        {
+          "peca": "lampada",
+          "faz": "sumir",
+          "de": "f2:teto+0.3"
+        },
+        {
+          "peca": "rosca",
+          "faz": "aparecer",
+          "de": "f3:rosqueava"
+        },
+        {
+          "peca": "fio_ferro",
+          "faz": "aparecer",
+          "de": "f3:rosqueava"
+        },
+        {
+          "peca": "rosca",
+          "faz": "girar",
+          "eixo": "y",
+          "voltas": 3,
+          "de": "f3:rosqueava+0.3",
+          "ate": "f3:torcia+0.6"
+        },
+        {
+          "peca": "fio_ferro",
+          "faz": "tremer",
+          "intensidade": 0.8,
+          "de": "f3:torcia",
+          "ate": "f3:faisca"
+        },
+        {
+          "peca": "rosca",
+          "faz": "tremer",
+          "intensidade": 0.6,
+          "de": "f3:faisca",
+          "ate": "f3:fim"
+        },
+        {
+          "peca": "rosca",
+          "faz": "sumir",
+          "de": "f4:plugue"
+        },
+        {
+          "peca": "fio_ferro",
+          "faz": "sumir",
+          "de": "f4:plugue"
+        },
+        {
+          "peca": "receptaculo",
+          "faz": "aparecer",
+          "de": "f4:plugue"
+        },
+        {
+          "peca": "plugue_1904",
+          "faz": "aparecer",
+          "de": "f4:plugue"
+        },
+        {
+          "peca": "plugue_1904",
+          "faz": "mover",
+          "desloc": [
+            0,
+            -0.045,
+            0
+          ],
+          "de": "f4:puxando",
+          "ate": "f4:puxando+0.3"
+        }
       ],
-      [
-       -0.21,
-       0.42,
-       -0.07
+      "acoes": [
+        {
+          "quem": "hubbell",
+          "faz": "virar",
+          "para": [
+            0.45,
+            2.75,
+            3.3
+          ],
+          "olhar": "camera",
+          "expressao": "serio",
+          "de": "f2"
+        },
+        {
+          "quem": "hubbell",
+          "faz": "estender_mao",
+          "para": "oficina_1900",
+          "olhar": "oficina_1900",
+          "expressao": "determinado",
+          "de": "f2:lampada"
+        },
+        {
+          "quem": "hubbell",
+          "faz": "virar",
+          "para": [
+            0.3,
+            2.85,
+            2.2
+          ],
+          "olhar": "camera",
+          "expressao": "nervoso",
+          "de": "f3:faisca-0.4"
+        },
+        {
+          "quem": "hubbell",
+          "faz": "susto",
+          "olhar": "camera",
+          "expressao": "medo",
+          "de": "f3:faisca"
+        },
+        {
+          "quem": "hubbell",
+          "faz": "virar",
+          "para": [
+            0.45,
+            2.75,
+            3.3
+          ],
+          "olhar": "camera",
+          "expressao": "feliz",
+          "de": "f4-0.2"
+        },
+        {
+          "quem": "hubbell",
+          "faz": "puxar",
+          "para": "oficina_1900",
+          "olhar": "oficina_1900",
+          "expressao": "feliz",
+          "de": "f4:puxando-0.3"
+        },
+        {
+          "quem": "hubbell",
+          "faz": "virar",
+          "para": [
+            0.3,
+            2.85,
+            2.2
+          ],
+          "olhar": "camera",
+          "expressao": "desconfiado",
+          "de": "f5:por-0.4"
+        }
       ],
-      [
-       -0.28,
-       0.42,
-       -0.07
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "aberto",
+          "camera": [
+            0.9,
+            2.85,
+            3.9
+          ],
+          "alvo": [
+            -0.55,
+            2.25,
+            -0.7
+          ],
+          "movimento": "arco",
+          "intensidade": 0.6,
+          "transicao": "desfoque"
+        },
+        {
+          "de": "f2:ferro",
+          "tipo": "detalhe",
+          "camera": [
+            -0.38,
+            1.3,
+            -0.3
+          ],
+          "alvo": [
+            0.08,
+            1.1,
+            -1.05
+          ],
+          "movimento": "arco",
+          "intensidade": 0.5
+        },
+        {
+          "de": "f2:lampada",
+          "tipo": "detalhe",
+          "camera": [
+            -0.22,
+            1.32,
+            -0.55
+          ],
+          "alvo": [
+            0,
+            1.22,
+            -1.05
+          ],
+          "movimento": "aproximar"
+        },
+        {
+          "de": "f3",
+          "tipo": "detalhe",
+          "camera": [
+            -0.38,
+            1.3,
+            -0.3
+          ],
+          "alvo": [
+            0.08,
+            1.1,
+            -1.05
+          ],
+          "movimento": "arco",
+          "intensidade": -0.5
+        },
+        {
+          "de": "f3:torcia",
+          "tipo": "detalhe",
+          "camera": [
+            -0.22,
+            1.32,
+            -0.55
+          ],
+          "alvo": [
+            0,
+            1.22,
+            -1.05
+          ],
+          "movimento": "zoom_rapido"
+        },
+        {
+          "de": "f4",
+          "tipo": "medio",
+          "camera": [
+            0.45,
+            2.75,
+            3.3
+          ],
+          "alvo": "hubbell",
+          "movimento": "travelling",
+          "intensidade": 0.4
+        },
+        {
+          "de": "f4:plugue",
+          "tipo": "detalhe",
+          "camera": [
+            -0.16,
+            1.2,
+            -0.56
+          ],
+          "alvo": [
+            0.02,
+            1.14,
+            -1.05
+          ],
+          "movimento": "aproximar"
+        },
+        {
+          "de": "f5",
+          "tipo": "detalhe",
+          "camera": [
+            -0.16,
+            1.2,
+            -0.56
+          ],
+          "alvo": [
+            0.02,
+            1.14,
+            -1.05
+          ],
+          "movimento": "arco",
+          "intensidade": 0.5
+        },
+        {
+          "de": "f5:por",
+          "tipo": "close",
+          "camera": [
+            0.3,
+            2.85,
+            2.2
+          ],
+          "alvo": "hubbell",
+          "movimento": "zoom_rapido"
+        }
+      ],
+      "sons": [
+        {
+          "de": "f2:lampada",
+          "som": "engrenagem",
+          "volume": 0.4
+        },
+        {
+          "de": "f3:rosqueava",
+          "som": "pop",
+          "volume": 0.6
+        },
+        {
+          "de": "f3:faisca",
+          "som": "zap",
+          "volume": 0.8
+        },
+        {
+          "de": "f4:1904",
+          "som": "pop",
+          "volume": 0.6
+        },
+        {
+          "de": "f4:plugue",
+          "som": "pop",
+          "volume": 0.8
+        },
+        {
+          "de": "f4:puxando",
+          "som": "clique",
+          "volume": 0.9
+        },
+        {
+          "de": "f5",
+          "som": "tensao_sobe",
+          "volume": 0.5
+        },
+        {
+          "de": "f5:dois",
+          "som": "impacto",
+          "volume": 0.6
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "f3:faisca",
+          "efeito": "flash"
+        },
+        {
+          "de": "f3:faisca",
+          "efeito": "zoom_soco"
+        },
+        {
+          "de": "f4:plugue+0.1",
+          "ate": "f4:fim",
+          "efeito": "circular",
+          "alvo": "plugue_1904"
+        },
+        {
+          "de": "f5:dois",
+          "efeito": "zoom_soco"
+        }
+      ],
+      "rotulos": [
+        {
+          "alvo": "rosca",
+          "texto": "No bocal",
+          "de": "f3:rosqueava+0.2",
+          "ate": "f3:torcia"
+        },
+        {
+          "alvo": "plugue_1904",
+          "texto": "Plugue",
+          "de": "f4:plugue",
+          "ate": "f4:fim"
+        },
+        {
+          "alvo": "plugue_1904",
+          "texto": "2 pinos",
+          "de": "f5:dois",
+          "ate": "f5:por",
+          "cor": "#FF8A65"
+        }
       ]
-     ]
     },
     {
-     "peca": "bulbo",
-     "faz": "pulsar",
-     "intensidade": 0.8,
-     "de": "f7:acende",
-     "ate": "f7:volta"
-    },
-    {
-     "peca": "espelho_i",
-     "faz": "transparente",
-     "opacidade": 0.25,
-     "de": "f8:afasta",
-     "ate": "f8:afasta+0.4"
-    },
-    {
-     "peca": "tecla",
-     "faz": "transparente",
-     "opacidade": 0.25,
-     "de": "f8:afasta",
-     "ate": "f8:afasta+0.4"
-    },
-    {
-     "peca": "lamina_pivo",
-     "faz": "girar_para",
-     "eixo": "z",
-     "angulo": 32,
-     "de": "f8:abre",
-     "ate": "f8:abre+0.25"
-    },
-    {
-     "peca": "tecla",
-     "faz": "girar_para",
-     "eixo": "x",
-     "angulo": 20,
-     "de": "f8:abre",
-     "ate": "f8:abre+0.15"
-    },
-    {
-     "peca": "bulbo",
-     "faz": "sumir",
-     "de": "f9:apaga"
-    },
-    {
-     "peca": "bulbo_apagado",
-     "faz": "aparecer",
-     "de": "f9:apaga"
-    },
-    {
-     "peca": "lataria",
-     "faz": "transparente",
-     "opacidade": 0.28,
-     "de": "f10:geladeira",
-     "ate": "f10:geladeira+0.6"
-    },
-    {
-     "peca": "solto_pivo",
-     "faz": "girar_para",
-     "eixo": "z",
-     "angulo": -34,
-     "de": "f10:solta",
-     "ate": "f10:lataria"
-    },
-    {
-     "peca": "lataria",
-     "faz": "transparente",
-     "opacidade": 1,
-     "de": "f11",
-     "ate": "f11+0.6"
-    },
-    {
-     "peca": "tomada",
-     "faz": "fluxo",
-     "tipo": "eletricidade",
-     "quantidade": 14,
-     "velocidade": 0.6,
-     "intensidade": 0.35,
-     "de": "f11:inteira",
-     "ate": "f12:fim+0.3",
-     "caminho": [
-      [
-       0.185,
-       0.13,
-       0.05
+      "id": "por_dentro",
+      "cenario": "estudio",
+      "ambiente": "estudio",
+      "filtro": "vivo",
+      "de": "f6",
+      "personagens": {
+        "tito": {
+          "em": "apresentador",
+          "olhando": "maquete",
+          "expressao": "feliz"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "maquete",
+          "modelo": "tomada",
+          "em": "pedestal",
+          "escala": 1.4
+        },
+        {
+          "tipo": "particulas",
+          "particula": "faiscas",
+          "em": [
+            0.466,
+            -0.028
+          ],
+          "alt": 1.35,
+          "raio": 0.03,
+          "altura": 0.04,
+          "quantas": 6,
+          "aparece": "f10:lataria",
+          "some": "f11:inteira"
+        },
+        {
+          "tipo": "particulas",
+          "particula": "faiscas",
+          "em": [
+            0.462,
+            0.098
+          ],
+          "alt": 1.378,
+          "raio": 0.05,
+          "altura": 0.1,
+          "quantas": 10,
+          "aparece": "f12:choque",
+          "some": "f12:fim+0.4"
+        }
       ],
-      [
-       0.185,
-       0.41,
-       0.05
+      "animacoes": [
+        {
+          "peca": "plugue",
+          "faz": "mover",
+          "desloc": [
+            -0.05,
+            0.05,
+            -0.1
+          ],
+          "de": "inicio",
+          "ate": "inicio+0.05"
+        },
+        {
+          "peca": "parede",
+          "faz": "transparente",
+          "opacidade": 0.22,
+          "de": "f6:eletricidade",
+          "ate": "f6:eletricidade+0.6"
+        },
+        {
+          "peca": "fase_t",
+          "faz": "fluxo",
+          "tipo": "eletricidade",
+          "quantidade": 8,
+          "velocidade": 0.7,
+          "intensidade": 0.4,
+          "de": "f6:ida",
+          "ate": "f6:fim+0.3"
+        },
+        {
+          "peca": "neutro_t",
+          "faz": "fluxo",
+          "tipo": "eletricidade",
+          "quantidade": 8,
+          "velocidade": 0.7,
+          "intensidade": 0.4,
+          "de": "f6:volta",
+          "ate": "f6:fim+0.3",
+          "caminho": [
+            [
+              0.078,
+              0.228,
+              -0.07
+            ],
+            [
+              0.078,
+              0.145,
+              -0.07
+            ],
+            [
+              -0.28,
+              0.145,
+              -0.07
+            ]
+          ]
+        },
+        {
+          "peca": "fase_l",
+          "faz": "fluxo",
+          "tipo": "eletricidade",
+          "quantidade": 6,
+          "velocidade": 0.7,
+          "intensidade": 0.4,
+          "de": "f7:chega",
+          "ate": "f9:para"
+        },
+        {
+          "peca": "fase_l2",
+          "faz": "fluxo",
+          "tipo": "eletricidade",
+          "quantidade": 7,
+          "velocidade": 0.7,
+          "intensidade": 0.4,
+          "de": "f7:chega+0.4",
+          "ate": "f9:para"
+        },
+        {
+          "peca": "neutro_l",
+          "faz": "fluxo",
+          "tipo": "eletricidade",
+          "quantidade": 7,
+          "velocidade": 0.7,
+          "intensidade": 0.4,
+          "de": "f7:volta",
+          "ate": "f9:para",
+          "caminho": [
+            [
+              -0.165,
+              0.48,
+              0.015
+            ],
+            [
+              -0.18,
+              0.49,
+              -0.04
+            ],
+            [
+              -0.21,
+              0.47,
+              -0.07
+            ],
+            [
+              -0.21,
+              0.42,
+              -0.07
+            ],
+            [
+              -0.28,
+              0.42,
+              -0.07
+            ]
+          ]
+        },
+        {
+          "peca": "bulbo",
+          "faz": "pulsar",
+          "intensidade": 0.8,
+          "de": "f7:acende",
+          "ate": "f7:volta"
+        },
+        {
+          "peca": "espelho_i",
+          "faz": "transparente",
+          "opacidade": 0.25,
+          "de": "f8:afasta",
+          "ate": "f8:afasta+0.4"
+        },
+        {
+          "peca": "tecla",
+          "faz": "transparente",
+          "opacidade": 0.25,
+          "de": "f8:afasta",
+          "ate": "f8:afasta+0.4"
+        },
+        {
+          "peca": "lamina_pivo",
+          "faz": "girar_para",
+          "eixo": "z",
+          "angulo": 32,
+          "de": "f8:abre",
+          "ate": "f8:abre+0.25"
+        },
+        {
+          "peca": "tecla",
+          "faz": "girar_para",
+          "eixo": "x",
+          "angulo": 20,
+          "de": "f8:abre",
+          "ate": "f8:abre+0.15"
+        },
+        {
+          "peca": "bulbo",
+          "faz": "sumir",
+          "de": "f9:apaga"
+        },
+        {
+          "peca": "bulbo_apagado",
+          "faz": "aparecer",
+          "de": "f9:apaga"
+        },
+        {
+          "peca": "lataria",
+          "faz": "transparente",
+          "opacidade": 0.28,
+          "de": "f10:geladeira",
+          "ate": "f10:geladeira+0.6"
+        },
+        {
+          "peca": "solto_pivo",
+          "faz": "girar_para",
+          "eixo": "z",
+          "angulo": -34,
+          "de": "f10:solta",
+          "ate": "f10:lataria"
+        },
+        {
+          "peca": "lataria",
+          "faz": "transparente",
+          "opacidade": 1,
+          "de": "f11",
+          "ate": "f11+0.6"
+        },
+        {
+          "peca": "tomada",
+          "faz": "fluxo",
+          "tipo": "eletricidade",
+          "quantidade": 14,
+          "velocidade": 0.6,
+          "intensidade": 0.35,
+          "de": "f11:inteira",
+          "ate": "f12:fim+0.3",
+          "caminho": [
+            [
+              0.185,
+              0.13,
+              0.05
+            ],
+            [
+              0.185,
+              0.41,
+              0.05
+            ],
+            [
+              0.325,
+              0.41,
+              0.05
+            ],
+            [
+              0.325,
+              0.13,
+              0.05
+            ],
+            [
+              0.19,
+              0.13,
+              0.05
+            ]
+          ]
+        },
+        {
+          "peca": "pessoa",
+          "faz": "aparecer",
+          "de": "f12:quem"
+        },
+        {
+          "peca": "pessoa",
+          "faz": "mover",
+          "desloc": [
+            -0.03,
+            0,
+            0
+          ],
+          "de": "f12:encostar",
+          "ate": "f12:encostar+0.4"
+        },
+        {
+          "peca": "tomada",
+          "faz": "fluxo",
+          "tipo": "eletricidade",
+          "quantidade": 8,
+          "velocidade": 0.9,
+          "intensidade": 0.45,
+          "de": "f12:caminho",
+          "ate": "f12:fim+0.3",
+          "caminho": [
+            [
+              0.33,
+              0.3,
+              0.06
+            ],
+            [
+              0.355,
+              0.26,
+              0.07
+            ],
+            [
+              0.37,
+              0.2,
+              0.07
+            ],
+            [
+              0.375,
+              0.13,
+              0.07
+            ],
+            [
+              0.375,
+              0.06,
+              0.07
+            ]
+          ]
+        },
+        {
+          "peca": "pessoa",
+          "faz": "tremer",
+          "intensidade": 1.2,
+          "de": "f12:choque",
+          "ate": "f12:fim+0.3"
+        },
+        {
+          "peca": "plugue",
+          "faz": "mover",
+          "desloc": [
+            0.05,
+            -0.05,
+            0.1
+          ],
+          "de": "f13",
+          "ate": "f13+0.4"
+        },
+        {
+          "peca": "furo_t",
+          "faz": "pulsar",
+          "intensidade": 1,
+          "de": "f13:furinho",
+          "ate": "f13:fim"
+        },
+        {
+          "peca": "plugue",
+          "faz": "mover",
+          "desloc": [
+            -0.05,
+            0.05,
+            -0.1
+          ],
+          "de": "f14",
+          "ate": "f14+0.4"
+        },
+        {
+          "peca": "fio_terra",
+          "faz": "aparecer",
+          "de": "f14:liga"
+        },
+        {
+          "peca": "terra",
+          "faz": "transparente",
+          "opacidade": 0.3,
+          "de": "f14:barra",
+          "ate": "f14:barra+0.6"
+        },
+        {
+          "peca": "haste",
+          "faz": "aparecer",
+          "de": "f14:barra"
+        },
+        {
+          "peca": "tomada",
+          "faz": "fluxo",
+          "tipo": "eletricidade",
+          "quantidade": 16,
+          "velocidade": 0.55,
+          "intensidade": 0.45,
+          "de": "f15:foge",
+          "ate": "f16:fim+0.3",
+          "caminho": [
+            [
+              0.32,
+              0.28,
+              0
+            ],
+            [
+              0.22,
+              0.24,
+              0
+            ],
+            [
+              0.182,
+              0.2,
+              0
+            ],
+            [
+              0.17,
+              0.17,
+              0.005
+            ],
+            [
+              0.13,
+              0.135,
+              0.01
+            ],
+            [
+              0.08,
+              0.15,
+              0
+            ],
+            [
+              0.06,
+              0.195,
+              -0.015
+            ],
+            [
+              0.06,
+              0.212,
+              -0.04
+            ],
+            [
+              0.06,
+              0.212,
+              -0.07
+            ],
+            [
+              0.03,
+              0.2,
+              -0.07
+            ],
+            [
+              0,
+              0.16,
+              -0.07
+            ],
+            [
+              0,
+              0.1,
+              -0.07
+            ],
+            [
+              0,
+              0.01,
+              -0.07
+            ]
+          ]
+        },
+        {
+          "peca": "haste",
+          "faz": "pulsar",
+          "intensidade": 0.7,
+          "de": "f16:aterramento",
+          "ate": "f16:fim"
+        },
+        {
+          "peca": "solto_pivo",
+          "faz": "girar_para",
+          "eixo": "z",
+          "angulo": 34,
+          "de": "f17",
+          "ate": "f17+0.3"
+        },
+        {
+          "peca": "fase_t",
+          "faz": "fluxo",
+          "tipo": "eletricidade",
+          "quantidade": 8,
+          "velocidade": 0.7,
+          "intensidade": 0.4,
+          "de": "f17:repara",
+          "ate": "f18:fim+0.5"
+        },
+        {
+          "peca": "neutro_t",
+          "faz": "fluxo",
+          "tipo": "eletricidade",
+          "quantidade": 8,
+          "velocidade": 0.7,
+          "intensidade": 0.4,
+          "de": "f17:repara",
+          "ate": "f18:fim+0.5",
+          "caminho": [
+            [
+              0.078,
+              0.228,
+              -0.07
+            ],
+            [
+              0.078,
+              0.145,
+              -0.07
+            ],
+            [
+              -0.28,
+              0.145,
+              -0.07
+            ]
+          ]
+        },
+        {
+          "peca": "haste",
+          "faz": "pulsar",
+          "intensidade": 0.8,
+          "de": "f18:salva",
+          "ate": "f18:fim+0.5"
+        }
       ],
-      [
-       0.325,
-       0.41,
-       0.05
+      "acoes": [
+        {
+          "quem": "tito",
+          "faz": "virar",
+          "para": [
+            -0.75,
+            2,
+            5.9
+          ],
+          "olhar": "camera",
+          "expressao": "feliz",
+          "de": "f6"
+        },
+        {
+          "quem": "tito",
+          "faz": "apontar",
+          "para": "espelho_t",
+          "olhar": "maquete",
+          "expressao": "feliz",
+          "de": "f6:primeiros"
+        },
+        {
+          "quem": "tito",
+          "olhar": "camera",
+          "expressao": "feliz",
+          "de": "f7:circuito-0.3"
+        },
+        {
+          "quem": "tito",
+          "olhar": "camera",
+          "expressao": "nervoso",
+          "de": "f10-0.2"
+        },
+        {
+          "quem": "tito",
+          "faz": "medo",
+          "olhar": "maquete",
+          "expressao": "medo",
+          "de": "f12:choque"
+        },
+        {
+          "quem": "tito",
+          "faz": "levantar",
+          "olhar": "camera",
+          "expressao": "feliz",
+          "de": "f13"
+        },
+        {
+          "quem": "tito",
+          "olhar": "camera",
+          "expressao": "feliz",
+          "de": "f15:facil-0.3"
+        },
+        {
+          "quem": "tito",
+          "faz": "virar",
+          "para": [
+            -0.9,
+            2,
+            5.8
+          ],
+          "olhar": "camera",
+          "expressao": "feliz",
+          "de": "f18-0.3"
+        },
+        {
+          "quem": "tito",
+          "faz": "apontar",
+          "para": "haste",
+          "olhar": "camera",
+          "expressao": "feliz",
+          "de": "f18:salva"
+        }
       ],
-      [
-       0.325,
-       0.13,
-       0.05
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "aberto",
+          "camera": [
+            -0.75,
+            2,
+            5.9
+          ],
+          "alvo": [
+            -0.75,
+            1.5,
+            0.3
+          ],
+          "movimento": "arco",
+          "intensidade": 0.5,
+          "transicao": "desfoque"
+        },
+        {
+          "de": "f6:eletricidade",
+          "tipo": "detalhe",
+          "camera": [
+            -0.2,
+            1.38,
+            1.05
+          ],
+          "alvo": [
+            0,
+            1.252,
+            -0.098
+          ],
+          "movimento": "aproximar"
+        },
+        {
+          "de": "f7",
+          "tipo": "detalhe",
+          "camera": [
+            0,
+            1.62,
+            1.15
+          ],
+          "alvo": [
+            -0.252,
+            1.518,
+            -0.07
+          ],
+          "movimento": "arco",
+          "intensidade": 0.4
+        },
+        {
+          "de": "f7:circuito",
+          "tipo": "medio",
+          "alvo": "tito",
+          "lado": "tres_quartos_direita",
+          "movimento": "travelling",
+          "intensidade": 0.4,
+          "transicao": "chicote"
+        },
+        {
+          "de": "f8",
+          "tipo": "detalhe",
+          "camera": [
+            0,
+            1.62,
+            1.15
+          ],
+          "alvo": [
+            -0.252,
+            1.518,
+            -0.07
+          ],
+          "movimento": "aproximar"
+        },
+        {
+          "de": "f8:afasta",
+          "tipo": "detalhe",
+          "camera": [
+            -0.1,
+            1.48,
+            0.55
+          ],
+          "alvo": [
+            -0.224,
+            1.42,
+            -0.084
+          ],
+          "movimento": "arco",
+          "intensidade": 0.4,
+          "transicao": "zoom"
+        },
+        {
+          "de": "f9",
+          "tipo": "detalhe",
+          "camera": [
+            0,
+            1.62,
+            1.15
+          ],
+          "alvo": [
+            -0.252,
+            1.518,
+            -0.07
+          ],
+          "movimento": "arco",
+          "intensidade": -0.4
+        },
+        {
+          "de": "f10",
+          "tipo": "medio",
+          "alvo": "tito",
+          "lado": "tres_quartos_direita",
+          "movimento": "dolly_zoom",
+          "transicao": "chicote"
+        },
+        {
+          "de": "f10:geladeira",
+          "tipo": "detalhe",
+          "camera": [
+            0.78,
+            1.47,
+            0.8
+          ],
+          "alvo": [
+            0.357,
+            1.378,
+            -0.014
+          ],
+          "movimento": "arco",
+          "intensidade": 0.4
+        },
+        {
+          "de": "f11",
+          "tipo": "detalhe",
+          "camera": [
+            0.45,
+            1.42,
+            1.15
+          ],
+          "alvo": [
+            0.357,
+            1.378,
+            0.056
+          ],
+          "movimento": "aproximar"
+        },
+        {
+          "de": "f12",
+          "tipo": "detalhe",
+          "camera": [
+            0.6,
+            1.45,
+            1.35
+          ],
+          "alvo": [
+            0.434,
+            1.35,
+            0.028
+          ],
+          "movimento": "arco",
+          "intensidade": -0.4
+        },
+        {
+          "de": "f13",
+          "tipo": "detalhe",
+          "camera": [
+            -0.15,
+            1.42,
+            0.88
+          ],
+          "alvo": [
+            0.126,
+            1.28,
+            0
+          ],
+          "movimento": "aproximar",
+          "transicao": "varrer"
+        },
+        {
+          "de": "f14",
+          "tipo": "detalhe",
+          "camera": [
+            0.12,
+            1.12,
+            0.85
+          ],
+          "alvo": [
+            0.028,
+            1.14,
+            -0.07
+          ],
+          "movimento": "arco",
+          "intensidade": 0.4
+        },
+        {
+          "de": "f15",
+          "tipo": "detalhe",
+          "camera": [
+            0.4,
+            1.4,
+            1.3
+          ],
+          "alvo": [
+            0.224,
+            1.28,
+            0
+          ],
+          "movimento": "arco",
+          "intensidade": -0.4
+        },
+        {
+          "de": "f15:facil",
+          "tipo": "medio",
+          "alvo": "tito",
+          "lado": "tres_quartos_direita",
+          "movimento": "travelling",
+          "intensidade": -0.4,
+          "transicao": "chicote"
+        },
+        {
+          "de": "f16",
+          "tipo": "detalhe",
+          "camera": [
+            0.12,
+            1.12,
+            0.85
+          ],
+          "alvo": [
+            0.028,
+            1.14,
+            -0.07
+          ],
+          "movimento": "aproximar"
+        },
+        {
+          "de": "f17",
+          "tipo": "detalhe",
+          "camera": [
+            -0.2,
+            1.38,
+            1.05
+          ],
+          "alvo": [
+            0,
+            1.252,
+            -0.098
+          ],
+          "movimento": "arco",
+          "intensidade": 0.4,
+          "transicao": "desfoque"
+        },
+        {
+          "de": "f18",
+          "tipo": "aberto",
+          "camera": [
+            -0.9,
+            2,
+            5.8
+          ],
+          "alvo": [
+            -0.9,
+            1.5,
+            0.3
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.3
+        }
       ],
-      [
-       0.19,
-       0.13,
-       0.05
+      "sons": [
+        {
+          "de": "f6:ida",
+          "som": "zap",
+          "volume": 0.4
+        },
+        {
+          "de": "f7:acende",
+          "som": "ding",
+          "volume": 0.6
+        },
+        {
+          "de": "f8:interruptor",
+          "som": "pop",
+          "volume": 0.7
+        },
+        {
+          "de": "f8:abre",
+          "som": "clique",
+          "volume": 0.9
+        },
+        {
+          "de": "f9:apaga",
+          "som": "sopro",
+          "volume": 0.5
+        },
+        {
+          "de": "f10",
+          "som": "tensao_sobe",
+          "volume": 0.6
+        },
+        {
+          "de": "f10:lataria",
+          "som": "zap",
+          "volume": 0.8
+        },
+        {
+          "de": "f11:inteira",
+          "som": "chiado",
+          "volume": 0.4
+        },
+        {
+          "de": "f12:choque",
+          "som": "impacto",
+          "volume": 0.8
+        },
+        {
+          "de": "f13:terra",
+          "som": "ding",
+          "volume": 0.8
+        },
+        {
+          "de": "f14:liga",
+          "som": "pop",
+          "volume": 0.7
+        },
+        {
+          "de": "f14:barra",
+          "som": "pop",
+          "volume": 0.8
+        },
+        {
+          "de": "f15:foge",
+          "som": "zap",
+          "volume": 0.5
+        },
+        {
+          "de": "f16:aterramento",
+          "som": "ding",
+          "volume": 0.7
+        },
+        {
+          "de": "f17:nada",
+          "som": "bip",
+          "volume": 0.5
+        },
+        {
+          "de": "f18:salva",
+          "som": "ding",
+          "volume": 0.8
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "f8:interruptor+0.1",
+          "ate": "f8:afasta",
+          "efeito": "circular",
+          "alvo": "espelho_i"
+        },
+        {
+          "de": "f8:lamininha",
+          "ate": "f8:fim",
+          "efeito": "destacar",
+          "alvo": "lamina"
+        },
+        {
+          "de": "f10",
+          "efeito": "zoom_soco"
+        },
+        {
+          "de": "f10:lataria",
+          "efeito": "tremor"
+        },
+        {
+          "de": "f12:choque",
+          "efeito": "flash"
+        },
+        {
+          "de": "f12:choque",
+          "ate": "f12:fim+0.3",
+          "efeito": "tremor"
+        },
+        {
+          "de": "f12:choque",
+          "ate": "f12:fim+0.3",
+          "efeito": "letreiro",
+          "texto": "PERIGO!",
+          "cor": "#FF3B30",
+          "altura": 0.25
+        },
+        {
+          "de": "f13:furinho",
+          "ate": "f13:fim",
+          "efeito": "circular",
+          "alvo": "furo_t"
+        },
+        {
+          "de": "f14:barra+0.1",
+          "ate": "f14:fim+0.2",
+          "efeito": "circular",
+          "alvo": "haste"
+        },
+        {
+          "de": "f15:corpo-0.6",
+          "ate": "f15:fim",
+          "efeito": "circular",
+          "alvo": "pessoa"
+        },
+        {
+          "de": "f17:nada",
+          "ate": "f17:fim+0.3",
+          "efeito": "circular",
+          "alvo": "fio_terra"
+        },
+        {
+          "de": "f18:salva",
+          "ate": "f18:fim+0.5",
+          "efeito": "linhas",
+          "intensidade": 0.6
+        }
+      ],
+      "rotulos": [
+        {
+          "alvo": "fase_t",
+          "texto": "Ida",
+          "de": "f6:ida",
+          "ate": "f6:fim+0.3"
+        },
+        {
+          "alvo": "neutro_t",
+          "texto": "Volta",
+          "de": "f6:volta",
+          "ate": "f6:fim+0.3",
+          "cor": "#7FC4FF"
+        },
+        {
+          "alvo": "lamina",
+          "texto": "Lamininha",
+          "de": "f8:lamininha",
+          "ate": "f8:fim"
+        },
+        {
+          "alvo": "fio_solto",
+          "texto": "Fio solto",
+          "de": "f10:solta",
+          "ate": "f10:fim+0.3",
+          "cor": "#FF8A65"
+        },
+        {
+          "alvo": "lataria",
+          "texto": "Lataria",
+          "de": "f11+0.3",
+          "ate": "f11:fim",
+          "cor": "#FF8A65"
+        },
+        {
+          "alvo": "pino_t",
+          "texto": "Terra",
+          "de": "f13:terra",
+          "ate": "f13:fim+0.3",
+          "cor": "#7CE07A"
+        },
+        {
+          "alvo": "fio_terra",
+          "texto": "Fio terra",
+          "de": "f14:liga",
+          "ate": "f14:barra",
+          "cor": "#7CE07A"
+        },
+        {
+          "alvo": "haste",
+          "texto": "Barra enterrada",
+          "de": "f14:barra",
+          "ate": "f14:fim+0.2"
+        },
+        {
+          "alvo": "pessoa",
+          "texto": "Nada de choque",
+          "de": "f15:corpo-0.6",
+          "ate": "f15:fim"
+        },
+        {
+          "alvo": "fio_terra",
+          "texto": "Vazio",
+          "de": "f17:nada",
+          "ate": "f17:fim+0.3",
+          "cor": "#7CE07A"
+        }
+      ],
+      "cartoes": [
+        {
+          "de": "f7:circuito",
+          "ate": "f7:fim+0.2",
+          "grande": "CIRCUITO",
+          "pequeno": "ida e volta, sem buraco no caminho"
+        },
+        {
+          "de": "f16:aterramento",
+          "ate": "f16:fim+0.3",
+          "grande": "ATERRA­MENTO",
+          "pequeno": "um caminho seguro até a terra"
+        }
       ]
-     ]
-    },
-    {
-     "peca": "pessoa",
-     "faz": "aparecer",
-     "de": "f12:quem"
-    },
-    {
-     "peca": "pessoa",
-     "faz": "mover",
-     "desloc": [
-      -0.03,
-      0,
-      0
-     ],
-     "de": "f12:encostar",
-     "ate": "f12:encostar+0.4"
-    },
-    {
-     "peca": "tomada",
-     "faz": "fluxo",
-     "tipo": "eletricidade",
-     "quantidade": 8,
-     "velocidade": 0.9,
-     "intensidade": 0.45,
-     "de": "f12:caminho",
-     "ate": "f12:fim+0.3",
-     "caminho": [
-      [
-       0.33,
-       0.3,
-       0.06
-      ],
-      [
-       0.355,
-       0.26,
-       0.07
-      ],
-      [
-       0.37,
-       0.2,
-       0.07
-      ],
-      [
-       0.375,
-       0.13,
-       0.07
-      ],
-      [
-       0.375,
-       0.06,
-       0.07
-      ]
-     ]
-    },
-    {
-     "peca": "pessoa",
-     "faz": "tremer",
-     "intensidade": 1.2,
-     "de": "f12:choque",
-     "ate": "f12:fim+0.3"
-    },
-    {
-     "peca": "plugue",
-     "faz": "mover",
-     "desloc": [
-      0.05,
-      -0.05,
-      0.1
-     ],
-     "de": "f13",
-     "ate": "f13+0.4"
-    },
-    {
-     "peca": "furo_t",
-     "faz": "pulsar",
-     "intensidade": 1,
-     "de": "f13:furinho",
-     "ate": "f13:fim"
-    },
-    {
-     "peca": "plugue",
-     "faz": "mover",
-     "desloc": [
-      -0.05,
-      0.05,
-      -0.1
-     ],
-     "de": "f14",
-     "ate": "f14+0.4"
-    },
-    {
-     "peca": "fio_terra",
-     "faz": "aparecer",
-     "de": "f14:liga"
-    },
-    {
-     "peca": "terra",
-     "faz": "transparente",
-     "opacidade": 0.3,
-     "de": "f14:barra",
-     "ate": "f14:barra+0.6"
-    },
-    {
-     "peca": "haste",
-     "faz": "aparecer",
-     "de": "f14:barra"
-    },
-    {
-     "peca": "tomada",
-     "faz": "fluxo",
-     "tipo": "eletricidade",
-     "quantidade": 16,
-     "velocidade": 0.55,
-     "intensidade": 0.45,
-     "de": "f15:foge",
-     "ate": "f16:fim+0.3",
-     "caminho": [
-      [
-       0.32,
-       0.28,
-       0.0
-      ],
-      [
-       0.22,
-       0.24,
-       0.0
-      ],
-      [
-       0.182,
-       0.2,
-       0.0
-      ],
-      [
-       0.17,
-       0.17,
-       0.005
-      ],
-      [
-       0.13,
-       0.135,
-       0.01
-      ],
-      [
-       0.08,
-       0.15,
-       0.0
-      ],
-      [
-       0.06,
-       0.195,
-       -0.015
-      ],
-      [
-       0.06,
-       0.212,
-       -0.04
-      ],
-      [
-       0.06,
-       0.212,
-       -0.07
-      ],
-      [
-       0.03,
-       0.2,
-       -0.07
-      ],
-      [
-       0.0,
-       0.16,
-       -0.07
-      ],
-      [
-       0.0,
-       0.1,
-       -0.07
-      ],
-      [
-       0.0,
-       0.01,
-       -0.07
-      ]
-     ]
-    },
-    {
-     "peca": "haste",
-     "faz": "pulsar",
-     "intensidade": 0.7,
-     "de": "f16:aterramento",
-     "ate": "f16:fim"
-    },
-    {
-     "peca": "solto_pivo",
-     "faz": "girar_para",
-     "eixo": "z",
-     "angulo": 34,
-     "de": "f17",
-     "ate": "f17+0.3"
-    },
-    {
-     "peca": "fase_t",
-     "faz": "fluxo",
-     "tipo": "eletricidade",
-     "quantidade": 8,
-     "velocidade": 0.7,
-     "intensidade": 0.4,
-     "de": "f17:repara",
-     "ate": "f18:fim+0.5"
-    },
-    {
-     "peca": "neutro_t",
-     "faz": "fluxo",
-     "tipo": "eletricidade",
-     "quantidade": 8,
-     "velocidade": 0.7,
-     "intensidade": 0.4,
-     "de": "f17:repara",
-     "ate": "f18:fim+0.5",
-     "caminho": [
-      [
-       0.078,
-       0.228,
-       -0.07
-      ],
-      [
-       0.078,
-       0.145,
-       -0.07
-      ],
-      [
-       -0.28,
-       0.145,
-       -0.07
-      ]
-     ]
-    },
-    {
-     "peca": "haste",
-     "faz": "pulsar",
-     "intensidade": 0.8,
-     "de": "f18:salva",
-     "ate": "f18:fim+0.5"
     }
-   ],
-   "acoes": [
-    {
-     "quem": "tito",
-     "faz": "virar",
-     "para": [
-      -0.75,
-      2,
-      5.9
-     ],
-     "olhar": "camera",
-     "expressao": "feliz",
-     "de": "f6"
-    },
-    {
-     "quem": "tito",
-     "faz": "apontar",
-     "para": "espelho_t",
-     "olhar": "maquete",
-     "expressao": "feliz",
-     "de": "f6:primeiros"
-    },
-    {
-     "quem": "tito",
-     "olhar": "camera",
-     "expressao": "feliz",
-     "de": "f7:circuito-0.3"
-    },
-    {
-     "quem": "tito",
-     "olhar": "camera",
-     "expressao": "nervoso",
-     "de": "f10-0.2"
-    },
-    {
-     "quem": "tito",
-     "faz": "medo",
-     "olhar": "maquete",
-     "expressao": "medo",
-     "de": "f12:choque"
-    },
-    {
-     "quem": "tito",
-     "faz": "levantar",
-     "olhar": "camera",
-     "expressao": "feliz",
-     "de": "f13"
-    },
-    {
-     "quem": "tito",
-     "olhar": "camera",
-     "expressao": "feliz",
-     "de": "f15:facil-0.3"
-    },
-    {
-     "quem": "tito",
-     "faz": "virar",
-     "para": [
-      -0.9,
-      2.0,
-      5.8
-     ],
-     "olhar": "camera",
-     "expressao": "feliz",
-     "de": "f18-0.3"
-    },
-    {
-     "quem": "tito",
-     "faz": "apontar",
-     "para": "haste",
-     "olhar": "camera",
-     "expressao": "feliz",
-     "de": "f18:salva"
-    }
-   ],
-   "planos": [
-    {
-     "de": "inicio",
-     "tipo": "aberto",
-     "camera": [
-      -0.75,
-      2,
-      5.9
-     ],
-     "alvo": [
-      -0.75,
-      1.5,
-      0.3
-     ],
-     "movimento": "arco",
-     "intensidade": 0.5,
-     "transicao": "desfoque"
-    },
-    {
-     "de": "f6:eletricidade",
-     "tipo": "detalhe",
-     "camera": [
-      -0.2,
-      1.38,
-      1.05
-     ],
-     "alvo": [
-      0.0,
-      1.252,
-      -0.098
-     ],
-     "movimento": "aproximar"
-    },
-    {
-     "de": "f7",
-     "tipo": "detalhe",
-     "camera": [
-      0.0,
-      1.62,
-      1.15
-     ],
-     "alvo": [
-      -0.252,
-      1.518,
-      -0.07
-     ],
-     "movimento": "arco",
-     "intensidade": 0.4
-    },
-    {
-     "de": "f7:circuito",
-     "tipo": "medio",
-     "alvo": "tito",
-     "lado": "tres_quartos_direita",
-     "movimento": "travelling",
-     "intensidade": 0.4,
-     "transicao": "chicote"
-    },
-    {
-     "de": "f8",
-     "tipo": "detalhe",
-     "camera": [
-      0.0,
-      1.62,
-      1.15
-     ],
-     "alvo": [
-      -0.252,
-      1.518,
-      -0.07
-     ],
-     "movimento": "aproximar"
-    },
-    {
-     "de": "f8:afasta",
-     "tipo": "detalhe",
-     "camera": [
-      -0.1,
-      1.48,
-      0.55
-     ],
-     "alvo": [
-      -0.224,
-      1.42,
-      -0.084
-     ],
-     "movimento": "arco",
-     "intensidade": 0.4,
-     "transicao": "zoom"
-    },
-    {
-     "de": "f9",
-     "tipo": "detalhe",
-     "camera": [
-      0.0,
-      1.62,
-      1.15
-     ],
-     "alvo": [
-      -0.252,
-      1.518,
-      -0.07
-     ],
-     "movimento": "arco",
-     "intensidade": -0.4
-    },
-    {
-     "de": "f10",
-     "tipo": "medio",
-     "alvo": "tito",
-     "lado": "tres_quartos_direita",
-     "movimento": "dolly_zoom",
-     "transicao": "chicote"
-    },
-    {
-     "de": "f10:geladeira",
-     "tipo": "detalhe",
-     "camera": [
-      0.78,
-      1.47,
-      0.8
-     ],
-     "alvo": [
-      0.357,
-      1.378,
-      -0.014
-     ],
-     "movimento": "arco",
-     "intensidade": 0.4
-    },
-    {
-     "de": "f11",
-     "tipo": "detalhe",
-     "camera": [
-      0.45,
-      1.42,
-      1.15
-     ],
-     "alvo": [
-      0.357,
-      1.378,
-      0.056
-     ],
-     "movimento": "aproximar"
-    },
-    {
-     "de": "f12",
-     "tipo": "detalhe",
-     "camera": [
-      0.6,
-      1.45,
-      1.35
-     ],
-     "alvo": [
-      0.434,
-      1.35,
-      0.028
-     ],
-     "movimento": "arco",
-     "intensidade": -0.4
-    },
-    {
-     "de": "f13",
-     "tipo": "detalhe",
-     "camera": [
-      -0.15,
-      1.42,
-      0.88
-     ],
-     "alvo": [
-      0.126,
-      1.28,
-      0.0
-     ],
-     "movimento": "aproximar",
-     "transicao": "varrer"
-    },
-    {
-     "de": "f14",
-     "tipo": "detalhe",
-     "camera": [
-      0.12,
-      1.12,
-      0.85
-     ],
-     "alvo": [
-      0.028,
-      1.14,
-      -0.07
-     ],
-     "movimento": "arco",
-     "intensidade": 0.4
-    },
-    {
-     "de": "f15",
-     "tipo": "detalhe",
-     "camera": [
-      0.4,
-      1.4,
-      1.3
-     ],
-     "alvo": [
-      0.224,
-      1.28,
-      0.0
-     ],
-     "movimento": "arco",
-     "intensidade": -0.4
-    },
-    {
-     "de": "f15:facil",
-     "tipo": "medio",
-     "alvo": "tito",
-     "lado": "tres_quartos_direita",
-     "movimento": "travelling",
-     "intensidade": -0.4,
-     "transicao": "chicote"
-    },
-    {
-     "de": "f16",
-     "tipo": "detalhe",
-     "camera": [
-      0.12,
-      1.12,
-      0.85
-     ],
-     "alvo": [
-      0.028,
-      1.14,
-      -0.07
-     ],
-     "movimento": "aproximar"
-    },
-    {
-     "de": "f17",
-     "tipo": "detalhe",
-     "camera": [
-      -0.2,
-      1.38,
-      1.05
-     ],
-     "alvo": [
-      0.0,
-      1.252,
-      -0.098
-     ],
-     "movimento": "arco",
-     "intensidade": 0.4,
-     "transicao": "desfoque"
-    },
-    {
-     "de": "f18",
-     "tipo": "aberto",
-     "camera": [
-      -0.9,
-      2.0,
-      5.8
-     ],
-     "alvo": [
-      -0.9,
-      1.5,
-      0.3
-     ],
-     "movimento": "travelling",
-     "intensidade": 0.3
-    }
-   ],
-   "sons": [
-    {
-     "de": "f6:ida",
-     "som": "zap",
-     "volume": 0.4
-    },
-    {
-     "de": "f7:acende",
-     "som": "ding",
-     "volume": 0.6
-    },
-    {
-     "de": "f8:interruptor",
-     "som": "pop",
-     "volume": 0.7
-    },
-    {
-     "de": "f8:abre",
-     "som": "clique",
-     "volume": 0.9
-    },
-    {
-     "de": "f9:apaga",
-     "som": "sopro",
-     "volume": 0.5
-    },
-    {
-     "de": "f10",
-     "som": "tensao_sobe",
-     "volume": 0.6
-    },
-    {
-     "de": "f10:lataria",
-     "som": "zap",
-     "volume": 0.8
-    },
-    {
-     "de": "f11:inteira",
-     "som": "chiado",
-     "volume": 0.4
-    },
-    {
-     "de": "f12:choque",
-     "som": "impacto",
-     "volume": 0.8
-    },
-    {
-     "de": "f13:terra",
-     "som": "ding",
-     "volume": 0.8
-    },
-    {
-     "de": "f14:liga",
-     "som": "pop",
-     "volume": 0.7
-    },
-    {
-     "de": "f14:barra",
-     "som": "pop",
-     "volume": 0.8
-    },
-    {
-     "de": "f15:foge",
-     "som": "zap",
-     "volume": 0.5
-    },
-    {
-     "de": "f16:aterramento",
-     "som": "ding",
-     "volume": 0.7
-    },
-    {
-     "de": "f17:nada",
-     "som": "bip",
-     "volume": 0.5
-    },
-    {
-     "de": "f18:salva",
-     "som": "ding",
-     "volume": 0.8
-    }
-   ],
-   "efeitos": [
-    {
-     "de": "f8:interruptor+0.1",
-     "ate": "f8:afasta",
-     "efeito": "circular",
-     "alvo": "espelho_i"
-    },
-    {
-     "de": "f8:lamininha",
-     "ate": "f8:fim",
-     "efeito": "destacar",
-     "alvo": "lamina"
-    },
-    {
-     "de": "f10",
-     "efeito": "zoom_soco"
-    },
-    {
-     "de": "f10:lataria",
-     "efeito": "tremor"
-    },
-    {
-     "de": "f12:choque",
-     "efeito": "flash"
-    },
-    {
-     "de": "f12:choque",
-     "ate": "f12:fim+0.3",
-     "efeito": "tremor"
-    },
-    {
-     "de": "f12:choque",
-     "ate": "f12:fim+0.3",
-     "efeito": "letreiro",
-     "texto": "PERIGO!",
-     "cor": "#FF3B30",
-     "altura": 0.25
-    },
-    {
-     "de": "f13:furinho",
-     "ate": "f13:fim",
-     "efeito": "circular",
-     "alvo": "furo_t"
-    },
-    {
-     "de": "f14:barra+0.1",
-     "ate": "f14:fim+0.2",
-     "efeito": "circular",
-     "alvo": "haste"
-    },
-    {
-     "de": "f15:corpo-0.6",
-     "ate": "f15:fim",
-     "efeito": "circular",
-     "alvo": "pessoa"
-    },
-    {
-     "de": "f17:nada",
-     "ate": "f17:fim+0.3",
-     "efeito": "circular",
-     "alvo": "fio_terra"
-    },
-    {
-     "de": "f18:salva",
-     "ate": "f18:fim+0.5",
-     "efeito": "linhas",
-     "intensidade": 0.6
-    }
-   ],
-   "rotulos": [
-    {
-     "alvo": "fase_t",
-     "texto": "Ida",
-     "de": "f6:ida",
-     "ate": "f6:fim+0.3"
-    },
-    {
-     "alvo": "neutro_t",
-     "texto": "Volta",
-     "de": "f6:volta",
-     "ate": "f6:fim+0.3",
-     "cor": "#7FC4FF"
-    },
-    {
-     "alvo": "lamina",
-     "texto": "Lamininha",
-     "de": "f8:lamininha",
-     "ate": "f8:fim"
-    },
-    {
-     "alvo": "fio_solto",
-     "texto": "Fio solto",
-     "de": "f10:solta",
-     "ate": "f10:fim+0.3",
-     "cor": "#FF8A65"
-    },
-    {
-     "alvo": "lataria",
-     "texto": "Lataria",
-     "de": "f11+0.3",
-     "ate": "f11:fim",
-     "cor": "#FF8A65"
-    },
-    {
-     "alvo": "pino_t",
-     "texto": "Terra",
-     "de": "f13:terra",
-     "ate": "f13:fim+0.3",
-     "cor": "#7CE07A"
-    },
-    {
-     "alvo": "fio_terra",
-     "texto": "Fio terra",
-     "de": "f14:liga",
-     "ate": "f14:barra",
-     "cor": "#7CE07A"
-    },
-    {
-     "alvo": "haste",
-     "texto": "Barra enterrada",
-     "de": "f14:barra",
-     "ate": "f14:fim+0.2"
-    },
-    {
-     "alvo": "pessoa",
-     "texto": "Nada de choque",
-     "de": "f15:corpo-0.6",
-     "ate": "f15:fim"
-    },
-    {
-     "alvo": "fio_terra",
-     "texto": "Vazio",
-     "de": "f17:nada",
-     "ate": "f17:fim+0.3",
-     "cor": "#7CE07A"
-    }
-   ],
-   "cartoes": [
-    {
-     "de": "f7:circuito",
-     "ate": "f7:fim+0.2",
-     "grande": "CIRCUITO",
-     "pequeno": "ida e volta, sem buraco no caminho"
-    },
-    {
-     "de": "f16:aterramento",
-     "ate": "f16:fim+0.3",
-     "grande": "ATERRA­MENTO",
-     "pequeno": "um caminho seguro até a terra"
-    }
-   ]
-  }
- ]
+  ]
 }
