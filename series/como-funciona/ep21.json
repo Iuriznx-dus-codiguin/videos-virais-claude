@@ -1,0 +1,4165 @@
+{
+ "serie": "como-funciona",
+ "parte": 21,
+ "titulo": "Construa uma caixa d'água do zero",
+ "musica": "curiosidade",
+ "modelos": {
+  "caixadagua": [
+   {
+    "id": "grama",
+    "forma": "caixa",
+    "tam": [
+     0.46,
+     0.03,
+     0.3
+    ],
+    "pos": [
+     0,
+     0.015,
+     0
+    ],
+    "cor": "#7CB342"
+   },
+   {
+    "id": "rua",
+    "forma": "caixa",
+    "tam": [
+     0.07,
+     0.034,
+     0.3
+    ],
+    "pos": [
+     -0.195,
+     0.017,
+     0
+    ],
+    "cor": "#546E7A"
+   },
+   {
+    "id": "faixa0",
+    "forma": "caixa",
+    "tam": [
+     0.008,
+     0.002,
+     0.045
+    ],
+    "pos": [
+     -0.195,
+     0.035,
+     -0.09
+    ],
+    "cor": "#FAFAFA",
+    "sem_contorno": true
+   },
+   {
+    "id": "faixa1",
+    "forma": "caixa",
+    "tam": [
+     0.008,
+     0.002,
+     0.045
+    ],
+    "pos": [
+     -0.195,
+     0.035,
+     0.0
+    ],
+    "cor": "#FAFAFA",
+    "sem_contorno": true
+   },
+   {
+    "id": "faixa2",
+    "forma": "caixa",
+    "tam": [
+     0.008,
+     0.002,
+     0.045
+    ],
+    "pos": [
+     -0.195,
+     0.035,
+     0.09
+    ],
+    "cor": "#FAFAFA",
+    "sem_contorno": true
+   },
+   {
+    "id": "piso_casa",
+    "forma": "caixa",
+    "tam": [
+     0.22,
+     0.006,
+     0.2
+    ],
+    "pos": [
+     0.08,
+     0.033,
+     0
+    ],
+    "cor": "#CFD8DC"
+   },
+   {
+    "id": "parede_fundo",
+    "forma": "caixa",
+    "tam": [
+     0.24,
+     0.22,
+     0.02
+    ],
+    "pos": [
+     0.08,
+     0.14,
+     -0.1
+    ],
+    "cor": "#FFE0B2"
+   },
+   {
+    "id": "parede_esq",
+    "forma": "caixa",
+    "tam": [
+     0.02,
+     0.22,
+     0.2
+    ],
+    "pos": [
+     -0.03,
+     0.14,
+     0.0
+    ],
+    "cor": "#FFCC80"
+   },
+   {
+    "id": "parede_dir",
+    "forma": "caixa",
+    "tam": [
+     0.02,
+     0.22,
+     0.2
+    ],
+    "pos": [
+     0.19,
+     0.14,
+     0.0
+    ],
+    "cor": "#FFCC80"
+   },
+   {
+    "id": "forro",
+    "forma": "caixa",
+    "tam": [
+     0.24,
+     0.012,
+     0.22
+    ],
+    "pos": [
+     0.08,
+     0.256,
+     0.0
+    ],
+    "cor": "#BCAAA4"
+   },
+   {
+    "id": "porta",
+    "forma": "caixa",
+    "tam": [
+     0.004,
+     0.11,
+     0.055
+    ],
+    "pos": [
+     -0.042,
+     0.085,
+     0.04
+    ],
+    "cor": "#6D4C41"
+   },
+   {
+    "id": "macaneta",
+    "forma": "esfera",
+    "tam": [
+     0.004
+    ],
+    "pos": [
+     -0.045,
+     0.085,
+     0.06
+    ],
+    "cor": "#FFD54F",
+    "sem_contorno": true
+   },
+   {
+    "id": "janela",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.045,
+     0.004
+    ],
+    "pos": [
+     0.03,
+     0.17,
+     -0.089
+    ],
+    "cor": "#81D4FA"
+   },
+   {
+    "id": "braco_chuv",
+    "forma": "cilindro",
+    "tam": [
+     0.005,
+     0.03
+    ],
+    "pos": [
+     0.13,
+     0.2,
+     -0.075
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#B0BEC5"
+   },
+   {
+    "id": "chuveiro",
+    "forma": "cilindro",
+    "tam": [
+     0.022,
+     0.012
+    ],
+    "pos": [
+     0.13,
+     0.195,
+     -0.05
+    ],
+    "cor": "#ECEFF1"
+   },
+   {
+    "id": "ralo",
+    "forma": "cilindro",
+    "tam": [
+     0.012,
+     0.003
+    ],
+    "pos": [
+     0.13,
+     0.037,
+     -0.045
+    ],
+    "cor": "#455A64"
+   },
+   {
+    "id": "cano_rua",
+    "forma": "tubo",
+    "tam": [
+     0.0075
+    ],
+    "caminho": [
+     [
+      -0.235,
+      0.045,
+      -0.085
+     ],
+     [
+      -0.14,
+      0.045,
+      -0.085
+     ]
+    ],
+    "cor": "#A0522D"
+   },
+   {
+    "id": "relogio",
+    "forma": "caixa",
+    "tam": [
+     0.026,
+     0.024,
+     0.022
+    ],
+    "pos": [
+     -0.15,
+     0.05,
+     -0.085
+    ],
+    "cor": "#1565C0"
+   },
+   {
+    "id": "visor",
+    "forma": "cilindro",
+    "tam": [
+     0.007,
+     0.004
+    ],
+    "pos": [
+     -0.15,
+     0.052,
+     -0.07300000000000001
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#E3F2FD"
+   },
+   {
+    "id": "ramal0",
+    "forma": "tubo",
+    "tam": [
+     0.0075
+    ],
+    "caminho": [
+     [
+      -0.14,
+      0.045,
+      -0.085
+     ],
+     [
+      0.11,
+      0.045,
+      -0.085
+     ],
+     [
+      0.13,
+      0.06,
+      -0.085
+     ],
+     [
+      0.13,
+      0.2,
+      -0.085
+     ]
+    ],
+    "cor": "#A0522D"
+   },
+   {
+    "id": "ramal1_in",
+    "forma": "tubo",
+    "tam": [
+     0.0075
+    ],
+    "caminho": [
+     [
+      -0.14,
+      0.045,
+      -0.085
+     ],
+     [
+      -0.165,
+      0.05,
+      -0.06
+     ],
+     [
+      -0.17,
+      0.1,
+      0.0
+     ],
+     [
+      -0.16,
+      0.113,
+      0.03
+     ],
+     [
+      -0.147,
+      0.113,
+      0.03
+     ]
+    ],
+    "cor": "#A0522D",
+    "oculta": true
+   },
+   {
+    "id": "ramal1_out",
+    "forma": "tubo",
+    "tam": [
+     0.0075
+    ],
+    "caminho": [
+     [
+      -0.055,
+      0.042,
+      0.03
+     ],
+     [
+      -0.035,
+      0.042,
+      0.03
+     ],
+     [
+      0.0,
+      0.042,
+      -0.04
+     ],
+     [
+      0.11,
+      0.042,
+      -0.085
+     ],
+     [
+      0.13,
+      0.06,
+      -0.085
+     ],
+     [
+      0.13,
+      0.2,
+      -0.085
+     ]
+    ],
+    "cor": "#A0522D",
+    "oculta": true
+   },
+   {
+    "id": "tanque",
+    "forma": "cilindro",
+    "tam": [
+     0.052,
+     0.09,
+     0.042
+    ],
+    "pos": [
+     -0.1,
+     0.075,
+     0.03
+    ],
+    "cor": "#1E88E5",
+    "oculta": true
+   },
+   {
+    "id": "agua_tq",
+    "forma": "cilindro",
+    "tam": [
+     0.046,
+     0.058,
+     0.04
+    ],
+    "pos": [
+     0,
+     -0.015,
+     0
+    ],
+    "cor": "#29B6F6",
+    "sem_contorno": true,
+    "pai": "tanque",
+    "oculta": true
+   },
+   {
+    "id": "agua_cima",
+    "forma": "cilindro",
+    "tam": [
+     0.048,
+     0.026,
+     0.046
+    ],
+    "pos": [
+     0,
+     0.027,
+     0
+    ],
+    "cor": "#29B6F6",
+    "sem_contorno": true,
+    "pai": "tanque",
+    "oculta": true
+   },
+   {
+    "id": "agua_cima2",
+    "forma": "cilindro",
+    "tam": [
+     0.048,
+     0.026,
+     0.046
+    ],
+    "pos": [
+     0,
+     0.027,
+     0
+    ],
+    "cor": "#29B6F6",
+    "sem_contorno": true,
+    "pai": "tanque",
+    "oculta": true
+   },
+   {
+    "id": "valvula",
+    "forma": "caixa",
+    "tam": [
+     0.012,
+     0.014,
+     0.012
+    ],
+    "pos": [
+     -0.044,
+     0.038,
+     0.0
+    ],
+    "cor": "#607D8B",
+    "pai": "tanque"
+   },
+   {
+    "id": "piv_boia",
+    "pos": [
+     -0.044,
+     0.038,
+     0.0
+    ],
+    "giro": [
+     0,
+     0,
+     -24
+    ],
+    "pai": "tanque",
+    "oculta": true,
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "cor": "#95A5A6",
+    "sem_contorno": true
+   },
+   {
+    "id": "braco_boia",
+    "forma": "caixa",
+    "tam": [
+     0.032,
+     0.004,
+     0.004
+    ],
+    "pos": [
+     0.016,
+     0,
+     0
+    ],
+    "cor": "#90A4AE",
+    "pai": "piv_boia",
+    "oculta": true
+   },
+   {
+    "id": "boia",
+    "forma": "esfera",
+    "tam": [
+     0.012
+    ],
+    "pos": [
+     0.036,
+     0,
+     0
+    ],
+    "cor": "#FF7043",
+    "pai": "piv_boia",
+    "oculta": true
+   },
+   {
+    "id": "marca_nivel",
+    "forma": "esfera",
+    "tam": [
+     0.006
+    ],
+    "pos": [
+     0.13,
+     0.1,
+     -0.07200000000000001
+    ],
+    "cor": "#29B6F6",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "ramal2_in",
+    "forma": "tubo",
+    "tam": [
+     0.0075
+    ],
+    "caminho": [
+     [
+      -0.14,
+      0.045,
+      -0.085
+     ],
+     [
+      -0.07,
+      0.045,
+      -0.085
+     ],
+     [
+      -0.055,
+      0.06,
+      -0.085
+     ],
+     [
+      -0.055,
+      0.33,
+      -0.085
+     ],
+     [
+      -0.04,
+      0.345,
+      -0.06
+     ],
+     [
+      0.0,
+      0.345,
+      -0.02
+     ],
+     [
+      0.034,
+      0.345,
+      0.0
+     ]
+    ],
+    "cor": "#A0522D",
+    "oculta": true
+   },
+   {
+    "id": "descida",
+    "forma": "tubo",
+    "tam": [
+     0.0075
+    ],
+    "caminho": [
+     [
+      0.115,
+      0.27,
+      -0.02
+     ],
+     [
+      0.115,
+      0.245,
+      -0.03
+     ],
+     [
+      0.12,
+      0.236,
+      -0.07
+     ],
+     [
+      0.13,
+      0.232,
+      -0.085
+     ],
+     [
+      0.13,
+      0.2,
+      -0.085
+     ]
+    ],
+    "cor": "#A0522D",
+    "oculta": true
+   },
+   {
+    "id": "racha0",
+    "forma": "caixa",
+    "tam": [
+     0.03,
+     0.003,
+     0.002
+    ],
+    "pos": [
+     0.03,
+     0.256,
+     0.112
+    ],
+    "giro": [
+     0,
+     0,
+     25
+    ],
+    "cor": "#3E2723",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "racha1",
+    "forma": "caixa",
+    "tam": [
+     0.026,
+     0.003,
+     0.002
+    ],
+    "pos": [
+     0.056,
+     0.256,
+     0.112
+    ],
+    "giro": [
+     0,
+     0,
+     -30
+    ],
+    "cor": "#3E2723",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "racha2",
+    "forma": "caixa",
+    "tam": [
+     0.024,
+     0.003,
+     0.002
+    ],
+    "pos": [
+     0.082,
+     0.255,
+     0.112
+    ],
+    "giro": [
+     0,
+     0,
+     20
+    ],
+    "cor": "#3E2723",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "racha3",
+    "forma": "caixa",
+    "tam": [
+     0.003,
+     0.03,
+     0.002
+    ],
+    "pos": [
+     0.06,
+     0.232,
+     -0.089
+    ],
+    "giro": [
+     0,
+     0,
+     15
+    ],
+    "cor": "#3E2723",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "racha4",
+    "forma": "caixa",
+    "tam": [
+     0.003,
+     0.026,
+     0.002
+    ],
+    "pos": [
+     0.064,
+     0.205,
+     -0.089
+    ],
+    "giro": [
+     0,
+     0,
+     -20
+    ],
+    "cor": "#3E2723",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "po0",
+    "forma": "esfera",
+    "tam": [
+     0.0045
+    ],
+    "pos": [
+     0.03,
+     0.245,
+     0.02
+    ],
+    "cor": "#BDBDBD",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "po1",
+    "forma": "esfera",
+    "tam": [
+     0.0045
+    ],
+    "pos": [
+     0.052,
+     0.245,
+     0.06
+    ],
+    "cor": "#BDBDBD",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "po2",
+    "forma": "esfera",
+    "tam": [
+     0.0045
+    ],
+    "pos": [
+     0.074,
+     0.245,
+     0.02
+    ],
+    "cor": "#BDBDBD",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "po3",
+    "forma": "esfera",
+    "tam": [
+     0.0045
+    ],
+    "pos": [
+     0.096,
+     0.245,
+     0.06
+    ],
+    "cor": "#BDBDBD",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "po4",
+    "forma": "esfera",
+    "tam": [
+     0.0045
+    ],
+    "pos": [
+     0.118,
+     0.245,
+     0.02
+    ],
+    "cor": "#BDBDBD",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "laje",
+    "forma": "caixa",
+    "tam": [
+     0.25,
+     0.022,
+     0.22
+    ],
+    "pos": [
+     0.08,
+     0.251,
+     0.0
+    ],
+    "cor": "#90A4AE",
+    "oculta": true
+   },
+   {
+    "id": "poca",
+    "forma": "cilindro",
+    "tam": [
+     0.03,
+     0.002
+    ],
+    "pos": [
+     0.215,
+     0.031,
+     0.06
+    ],
+    "cor": "#64B5F6",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "ladrao",
+    "forma": "tubo",
+    "tam": [
+     0.0075
+    ],
+    "caminho": [
+     [
+      0.126,
+      0.337,
+      0.0
+     ],
+     [
+      0.17,
+      0.337,
+      0.0
+     ],
+     [
+      0.205,
+      0.33,
+      0.03
+     ],
+     [
+      0.212,
+      0.3,
+      0.04
+     ],
+     [
+      0.212,
+      0.055,
+      0.05
+     ],
+     [
+      0.222,
+      0.042,
+      0.065
+     ]
+    ],
+    "cor": "#A0522D",
+    "oculta": true
+   },
+   {
+    "id": "poca2",
+    "forma": "cilindro",
+    "tam": [
+     0.026,
+     0.002
+    ],
+    "pos": [
+     0.228,
+     0.031,
+     0.075
+    ],
+    "cor": "#64B5F6",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "folha0",
+    "forma": "caixa",
+    "tam": [
+     0.014,
+     0.002,
+     0.008
+    ],
+    "pos": [
+     0.06,
+     0.43,
+     0.02
+    ],
+    "giro": [
+     0,
+     30,
+     15
+    ],
+    "cor": "#558B2F",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "folha1",
+    "forma": "caixa",
+    "tam": [
+     0.014,
+     0.002,
+     0.008
+    ],
+    "pos": [
+     0.1,
+     0.43,
+     -0.015
+    ],
+    "giro": [
+     0,
+     -40,
+     15
+    ],
+    "cor": "#558B2F",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "folha2",
+    "forma": "caixa",
+    "tam": [
+     0.014,
+     0.002,
+     0.008
+    ],
+    "pos": [
+     0.085,
+     0.43,
+     0.025
+    ],
+    "giro": [
+     0,
+     70,
+     15
+    ],
+    "cor": "#558B2F",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "poeira0",
+    "forma": "esfera",
+    "tam": [
+     0.004
+    ],
+    "pos": [
+     0.065,
+     0.42,
+     -0.01
+    ],
+    "cor": "#A1887F",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "poeira1",
+    "forma": "esfera",
+    "tam": [
+     0.004
+    ],
+    "pos": [
+     0.08,
+     0.42,
+     0.002
+    ],
+    "cor": "#A1887F",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "poeira2",
+    "forma": "esfera",
+    "tam": [
+     0.004
+    ],
+    "pos": [
+     0.095,
+     0.42,
+     0.014
+    ],
+    "cor": "#A1887F",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "mosq0",
+    "forma": "esfera",
+    "tam": [
+     0.0055
+    ],
+    "pos": [
+     0.05,
+     0.4,
+     0.03
+    ],
+    "cor": "#212121",
+    "oculta": true
+   },
+   {
+    "id": "mosq0_asa",
+    "forma": "caixa",
+    "tam": [
+     0.014,
+     0.001,
+     0.005
+    ],
+    "pos": [
+     0,
+     0.004,
+     0
+    ],
+    "cor": "#ECEFF1",
+    "opacidade": 0.7,
+    "sem_contorno": true,
+    "pai": "mosq0",
+    "oculta": true
+   },
+   {
+    "id": "mosq1",
+    "forma": "esfera",
+    "tam": [
+     0.0055
+    ],
+    "pos": [
+     0.11,
+     0.385,
+     -0.01
+    ],
+    "cor": "#212121",
+    "oculta": true
+   },
+   {
+    "id": "mosq1_asa",
+    "forma": "caixa",
+    "tam": [
+     0.014,
+     0.001,
+     0.005
+    ],
+    "pos": [
+     0,
+     0.004,
+     0
+    ],
+    "cor": "#ECEFF1",
+    "opacidade": 0.7,
+    "sem_contorno": true,
+    "pai": "mosq1",
+    "oculta": true
+   },
+   {
+    "id": "mosq2",
+    "forma": "esfera",
+    "tam": [
+     0.0055
+    ],
+    "pos": [
+     0.09,
+     0.42,
+     0.02
+    ],
+    "cor": "#212121",
+    "oculta": true
+   },
+   {
+    "id": "mosq2_asa",
+    "forma": "caixa",
+    "tam": [
+     0.014,
+     0.001,
+     0.005
+    ],
+    "pos": [
+     0,
+     0.004,
+     0
+    ],
+    "cor": "#ECEFF1",
+    "opacidade": 0.7,
+    "sem_contorno": true,
+    "pai": "mosq2",
+    "oculta": true
+   },
+   {
+    "id": "tampa",
+    "forma": "cilindro",
+    "tam": [
+     0.056,
+     0.008
+    ],
+    "pos": [
+     0.08,
+     0.416,
+     0.0
+    ],
+    "cor": "#1565C0",
+    "oculta": true
+   },
+   {
+    "id": "pegador",
+    "forma": "cilindro",
+    "tam": [
+     0.01,
+     0.006
+    ],
+    "pos": [
+     0,
+     0.007,
+     0
+    ],
+    "cor": "#0D47A1",
+    "pai": "tampa",
+    "oculta": true
+   },
+   {
+    "id": "seta",
+    "forma": "seta",
+    "tam": [
+     0.22,
+     0.006
+    ],
+    "pos": [
+     0.215,
+     0.27,
+     0.1
+    ],
+    "giro": [
+     180,
+     0,
+     0
+    ],
+    "cor": "#FFD54F",
+    "oculta": true
+   }
+  ]
+ },
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "tito",
+   "texto": "Uma casa, um cano e um chuveiro. Dá para a água sair FORTE sem bomba nenhuma?",
+   "tom": "animado"
+  },
+  {
+   "id": "f2",
+   "quem": "tito",
+   "texto": "Se você ligar o chuveiro direto no cano da RUA, a água chega, sim."
+  },
+  {
+   "id": "f3",
+   "quem": "tito",
+   "texto": "MAS a água da rua falta, ou chega fraquinha. Na hora do banho, o chuveiro só PINGA!",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f4",
+   "quem": "tito",
+   "texto": "Então, você coloca um TANQUE no quintal, para guardar água enquanto a rua manda."
+  },
+  {
+   "id": "f5",
+   "quem": "tito",
+   "texto": "SÓ QUE o tanque está no chão, e água não sobe sozinha. O chuveiro fica SECO!",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f6",
+   "quem": "tito",
+   "texto": "Então, você sobe o tanque lá para o ALTO, em cima da casa."
+  },
+  {
+   "id": "f7",
+   "quem": "tito",
+   "texto": "Agora, o PESO da água lá em cima empurra ela cano abaixo, e o chuveiro sai forte!",
+   "tom": "animado",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f8",
+   "quem": "tito",
+   "texto": "MAS mil litros de água pesam uma TONELADA, igual a um carro pequeno.",
+   "tom": "tenso"
+  },
+  {
+   "id": "f9",
+   "quem": "tito",
+   "texto": "Em cima de um forro fraquinho, o teto pode RACHAR!",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f10",
+   "quem": "tito",
+   "texto": "Então, você apoia o tanque numa LAJE de concreto, firme em cima das paredes.",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f11",
+   "quem": "tito",
+   "texto": "E SE a rua continuar mandando água? O tanque enche, enche... e TRANSBORDA!",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f12",
+   "quem": "tito",
+   "texto": "Então, você coloca uma BOIA: ela sobe com a água e, com o tanque cheio, fecha a entrada.",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f13",
+   "quem": "tito",
+   "texto": "MAS e se a boia TRAVAR?",
+   "tom": "tenso"
+  },
+  {
+   "id": "f14",
+   "quem": "tito",
+   "texto": "Então, você põe um LADRÃO: um cano que joga a sobra lá fora, onde dá para ver.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f15",
+   "quem": "tito",
+   "texto": "SÓ QUE tanque aberto junta folha, poeira... e o MOSQUITO da dengue!",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f16",
+   "quem": "tito",
+   "texto": "Então, você fecha tudo com uma TAMPA bem justa.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f17",
+   "quem": "tito",
+   "texto": "E repara: não tem bomba nenhuma. Quem empurra a água do seu chuveiro é a ALTURA.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f18",
+   "quem": "tito",
+   "texto": "Parabéns! Você construiu uma CAIXA D'ÁGUA!",
+   "tom": "animado"
+  }
+ ],
+ "chamada": {
+  "pergunta": "E agora, topa construir um fogão a gás?",
+  "texto": "Comenta",
+  "destaque": "FOGÃO"
+ },
+ "postagem": {
+  "titulo": "Como funciona a caixa d'água? Por que ela fica no alto",
+  "descricao": "Como funciona a caixa d'água: por que ela fica no alto da casa, como o peso da água faz o chuveiro sair forte sem bomba, a laje que aguenta uma tonelada, a boia que fecha a entrada e a tampa contra o mosquito da dengue.",
+  "hashtags": [
+   "comofunciona",
+   "caixadagua",
+   "hidraulica",
+   "engenharia",
+   "curiosidades"
+  ],
+  "comentario": "Eu nunca tinha pensado que a caixa d'água cheia pesa igual a um carro. Na sua casa ela fica onde?",
+  "capa": "f8:fim"
+ },
+ "cenas": [
+  {
+   "id": "construcao",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "desconfiado"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "caixadagua",
+     "em": "pedestal",
+     "escala": 1.4
+    },
+    {
+     "tipo": "particulas",
+     "particula": "confete",
+     "em": [
+      0,
+      0
+     ],
+     "alt": 1.6,
+     "raio": 1.4,
+     "altura": 1.2,
+     "quantas": 60,
+     "aparece": "f18:parabens"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "caixadagua",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 4,
+     "velocidade": 0.35,
+     "intensidade": 0.26,
+     "de": "inicio",
+     "ate": "f2:chega",
+     "caminho": [
+      [
+       -0.235,
+       0.045,
+       -0.073
+      ],
+      [
+       -0.14,
+       0.045,
+       -0.073
+      ]
+     ]
+    },
+    {
+     "peca": "caixadagua",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 4,
+     "velocidade": 0.35,
+     "intensidade": 0.26,
+     "de": "inicio",
+     "ate": "f2:chega",
+     "caminho": [
+      [
+       -0.14,
+       0.045,
+       -0.073
+      ],
+      [
+       0.11,
+       0.045,
+       -0.073
+      ],
+      [
+       0.13,
+       0.06,
+       -0.073
+      ],
+      [
+       0.13,
+       0.2,
+       -0.073
+      ]
+     ]
+    },
+    {
+     "peca": "chuveiro",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 2,
+     "velocidade": 0.55,
+     "intensidade": 0.2,
+     "de": "inicio",
+     "ate": "f2:chega",
+     "caminho": [
+      [
+       -0.014,
+       -0.008,
+       0.004
+      ],
+      [
+       -0.0308,
+       -0.152,
+       0.018
+      ]
+     ]
+    },
+    {
+     "peca": "chuveiro",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 2,
+     "velocidade": 0.55,
+     "intensidade": 0.2,
+     "de": "inicio",
+     "ate": "f2:chega",
+     "caminho": [
+      [
+       -0.005,
+       -0.008,
+       -0.006
+      ],
+      [
+       -0.011,
+       -0.152,
+       -0.002
+      ]
+     ]
+    },
+    {
+     "peca": "chuveiro",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 2,
+     "velocidade": 0.55,
+     "intensidade": 0.2,
+     "de": "inicio",
+     "ate": "f2:chega",
+     "caminho": [
+      [
+       0.005,
+       -0.008,
+       0.006
+      ],
+      [
+       0.011,
+       -0.152,
+       0.022
+      ]
+     ]
+    },
+    {
+     "peca": "chuveiro",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 2,
+     "velocidade": 0.55,
+     "intensidade": 0.2,
+     "de": "inicio",
+     "ate": "f2:chega",
+     "caminho": [
+      [
+       0.014,
+       -0.008,
+       -0.004
+      ],
+      [
+       0.0308,
+       -0.152,
+       0.002
+      ]
+     ]
+    },
+    {
+     "peca": "caixadagua",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 10,
+     "velocidade": 0.9,
+     "intensidade": 0.3,
+     "de": "f2:chega",
+     "ate": "f3:pinga",
+     "caminho": [
+      [
+       -0.235,
+       0.045,
+       -0.073
+      ],
+      [
+       -0.14,
+       0.045,
+       -0.073
+      ]
+     ]
+    },
+    {
+     "peca": "caixadagua",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 10,
+     "velocidade": 0.9,
+     "intensidade": 0.3,
+     "de": "f2:chega",
+     "ate": "f3:pinga",
+     "caminho": [
+      [
+       -0.14,
+       0.045,
+       -0.073
+      ],
+      [
+       0.11,
+       0.045,
+       -0.073
+      ],
+      [
+       0.13,
+       0.06,
+       -0.073
+      ],
+      [
+       0.13,
+       0.2,
+       -0.073
+      ]
+     ]
+    },
+    {
+     "peca": "chuveiro",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 8,
+     "velocidade": 1.1,
+     "intensidade": 0.2,
+     "de": "f2:chega",
+     "ate": "f3:pinga",
+     "caminho": [
+      [
+       -0.014,
+       -0.008,
+       0.004
+      ],
+      [
+       -0.0308,
+       -0.152,
+       0.018
+      ]
+     ]
+    },
+    {
+     "peca": "chuveiro",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 8,
+     "velocidade": 1.1,
+     "intensidade": 0.2,
+     "de": "f2:chega",
+     "ate": "f3:pinga",
+     "caminho": [
+      [
+       -0.005,
+       -0.008,
+       -0.006
+      ],
+      [
+       -0.011,
+       -0.152,
+       -0.002
+      ]
+     ]
+    },
+    {
+     "peca": "chuveiro",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 8,
+     "velocidade": 1.1,
+     "intensidade": 0.2,
+     "de": "f2:chega",
+     "ate": "f3:pinga",
+     "caminho": [
+      [
+       0.005,
+       -0.008,
+       0.006
+      ],
+      [
+       0.011,
+       -0.152,
+       0.022
+      ]
+     ]
+    },
+    {
+     "peca": "chuveiro",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 8,
+     "velocidade": 1.1,
+     "intensidade": 0.2,
+     "de": "f2:chega",
+     "ate": "f3:pinga",
+     "caminho": [
+      [
+       0.014,
+       -0.008,
+       -0.004
+      ],
+      [
+       0.0308,
+       -0.152,
+       0.002
+      ]
+     ]
+    },
+    {
+     "peca": "caixadagua",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 4,
+     "velocidade": 0.35,
+     "intensidade": 0.26,
+     "de": "f3:pinga",
+     "ate": "f4:tanque",
+     "caminho": [
+      [
+       -0.235,
+       0.045,
+       -0.073
+      ],
+      [
+       -0.14,
+       0.045,
+       -0.073
+      ]
+     ]
+    },
+    {
+     "peca": "caixadagua",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 4,
+     "velocidade": 0.35,
+     "intensidade": 0.26,
+     "de": "f3:pinga",
+     "ate": "f4:tanque",
+     "caminho": [
+      [
+       -0.14,
+       0.045,
+       -0.073
+      ],
+      [
+       0.11,
+       0.045,
+       -0.073
+      ],
+      [
+       0.13,
+       0.06,
+       -0.073
+      ],
+      [
+       0.13,
+       0.2,
+       -0.073
+      ]
+     ]
+    },
+    {
+     "peca": "chuveiro",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 2,
+     "velocidade": 0.55,
+     "intensidade": 0.2,
+     "de": "f3:pinga",
+     "ate": "f4:tanque",
+     "caminho": [
+      [
+       -0.014,
+       -0.008,
+       0.004
+      ],
+      [
+       -0.0308,
+       -0.152,
+       0.018
+      ]
+     ]
+    },
+    {
+     "peca": "chuveiro",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 2,
+     "velocidade": 0.55,
+     "intensidade": 0.2,
+     "de": "f3:pinga",
+     "ate": "f4:tanque",
+     "caminho": [
+      [
+       -0.005,
+       -0.008,
+       -0.006
+      ],
+      [
+       -0.011,
+       -0.152,
+       -0.002
+      ]
+     ]
+    },
+    {
+     "peca": "chuveiro",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 2,
+     "velocidade": 0.55,
+     "intensidade": 0.2,
+     "de": "f3:pinga",
+     "ate": "f4:tanque",
+     "caminho": [
+      [
+       0.005,
+       -0.008,
+       0.006
+      ],
+      [
+       0.011,
+       -0.152,
+       0.022
+      ]
+     ]
+    },
+    {
+     "peca": "chuveiro",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 2,
+     "velocidade": 0.55,
+     "intensidade": 0.2,
+     "de": "f3:pinga",
+     "ate": "f4:tanque",
+     "caminho": [
+      [
+       0.014,
+       -0.008,
+       -0.004
+      ],
+      [
+       0.0308,
+       -0.152,
+       0.002
+      ]
+     ]
+    },
+    {
+     "peca": "ramal0",
+     "faz": "sumir",
+     "de": "f4:tanque"
+    },
+    {
+     "peca": "tanque",
+     "faz": "aparecer",
+     "de": "f4:tanque"
+    },
+    {
+     "peca": "ramal1_in",
+     "faz": "aparecer",
+     "de": "f4:tanque"
+    },
+    {
+     "peca": "ramal1_out",
+     "faz": "aparecer",
+     "de": "f4:tanque"
+    },
+    {
+     "peca": "caixadagua",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 10,
+     "velocidade": 0.9,
+     "intensidade": 0.3,
+     "de": "f4:guardar",
+     "ate": "f6:alto",
+     "caminho": [
+      [
+       -0.235,
+       0.045,
+       -0.073
+      ],
+      [
+       -0.14,
+       0.045,
+       -0.073
+      ]
+     ]
+    },
+    {
+     "peca": "caixadagua",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 10,
+     "velocidade": 0.9,
+     "intensidade": 0.3,
+     "de": "f4:guardar",
+     "ate": "f6:alto",
+     "caminho": [
+      [
+       -0.14,
+       0.045,
+       -0.073
+      ],
+      [
+       -0.165,
+       0.05,
+       -0.048
+      ],
+      [
+       -0.17,
+       0.1,
+       0.012
+      ],
+      [
+       -0.16,
+       0.113,
+       0.042
+      ],
+      [
+       -0.147,
+       0.113,
+       0.042
+      ]
+     ]
+    },
+    {
+     "peca": "caixadagua",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 8,
+     "velocidade": 0.7,
+     "intensidade": 0.3,
+     "de": "f5:chao",
+     "ate": "f6:alto",
+     "caminho": [
+      [
+       -0.055,
+       0.042,
+       0.042
+      ],
+      [
+       -0.035,
+       0.042,
+       0.042
+      ],
+      [
+       0.0,
+       0.042,
+       -0.028
+      ],
+      [
+       0.11,
+       0.042,
+       -0.073
+      ],
+      [
+       0.13,
+       0.06,
+       -0.073
+      ],
+      [
+       0.13,
+       0.1,
+       -0.073
+      ]
+     ]
+    },
+    {
+     "peca": "marca_nivel",
+     "faz": "aparecer",
+     "de": "f5:sozinha"
+    },
+    {
+     "peca": "marca_nivel",
+     "faz": "pulsar",
+     "intensidade": 0.8,
+     "de": "f5:sozinha",
+     "ate": "f6"
+    },
+    {
+     "peca": "marca_nivel",
+     "faz": "sumir",
+     "de": "f6"
+    },
+    {
+     "peca": "ramal1_in",
+     "faz": "sumir",
+     "de": "f6:alto"
+    },
+    {
+     "peca": "ramal1_out",
+     "faz": "sumir",
+     "de": "f6:alto"
+    },
+    {
+     "peca": "tanque",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.262,
+      -0.03
+     ],
+     "de": "f6:alto",
+     "ate": "f6:alto+0.55"
+    },
+    {
+     "peca": "tanque",
+     "faz": "mover",
+     "desloc": [
+      0.18,
+      -0.03,
+      0
+     ],
+     "de": "f6:alto+0.55",
+     "ate": "f6:casa"
+    },
+    {
+     "peca": "ramal2_in",
+     "faz": "aparecer",
+     "de": "f6:casa"
+    },
+    {
+     "peca": "descida",
+     "faz": "aparecer",
+     "de": "f6:casa"
+    },
+    {
+     "peca": "agua_tq",
+     "faz": "crescer",
+     "de": "f6:casa",
+     "ate": "f7:fim"
+    },
+    {
+     "peca": "caixadagua",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 10,
+     "velocidade": 0.9,
+     "intensidade": 0.3,
+     "de": "f6:casa",
+     "ate": "f12:fecha",
+     "caminho": [
+      [
+       -0.235,
+       0.045,
+       -0.073
+      ],
+      [
+       -0.14,
+       0.045,
+       -0.073
+      ]
+     ]
+    },
+    {
+     "peca": "caixadagua",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 10,
+     "velocidade": 0.9,
+     "intensidade": 0.3,
+     "de": "f6:casa",
+     "ate": "f12:fecha",
+     "caminho": [
+      [
+       -0.14,
+       0.045,
+       -0.073
+      ],
+      [
+       -0.07,
+       0.045,
+       -0.073
+      ],
+      [
+       -0.055,
+       0.06,
+       -0.073
+      ],
+      [
+       -0.055,
+       0.33,
+       -0.073
+      ],
+      [
+       -0.04,
+       0.345,
+       -0.048
+      ],
+      [
+       0.0,
+       0.345,
+       -0.008
+      ],
+      [
+       0.034,
+       0.345,
+       0.012
+      ]
+     ]
+    },
+    {
+     "peca": "caixadagua",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 12,
+     "velocidade": 1.3,
+     "intensidade": 0.32,
+     "de": "f7:peso",
+     "ate": "f18:fim+2",
+     "caminho": [
+      [
+       0.115,
+       0.27,
+       -0.008
+      ],
+      [
+       0.115,
+       0.245,
+       -0.018
+      ],
+      [
+       0.12,
+       0.236,
+       -0.058
+      ],
+      [
+       0.13,
+       0.232,
+       -0.073
+      ],
+      [
+       0.13,
+       0.2,
+       -0.073
+      ]
+     ]
+    },
+    {
+     "peca": "chuveiro",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 12,
+     "velocidade": 1.5,
+     "intensidade": 0.22,
+     "de": "f7:empurra",
+     "ate": "f18:fim+2",
+     "caminho": [
+      [
+       -0.014,
+       -0.008,
+       0.004
+      ],
+      [
+       -0.0308,
+       -0.152,
+       0.018
+      ]
+     ]
+    },
+    {
+     "peca": "chuveiro",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 12,
+     "velocidade": 1.5,
+     "intensidade": 0.22,
+     "de": "f7:empurra",
+     "ate": "f18:fim+2",
+     "caminho": [
+      [
+       -0.005,
+       -0.008,
+       -0.006
+      ],
+      [
+       -0.011,
+       -0.152,
+       -0.002
+      ]
+     ]
+    },
+    {
+     "peca": "chuveiro",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 12,
+     "velocidade": 1.5,
+     "intensidade": 0.22,
+     "de": "f7:empurra",
+     "ate": "f18:fim+2",
+     "caminho": [
+      [
+       0.005,
+       -0.008,
+       0.006
+      ],
+      [
+       0.011,
+       -0.152,
+       0.022
+      ]
+     ]
+    },
+    {
+     "peca": "chuveiro",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 12,
+     "velocidade": 1.5,
+     "intensidade": 0.22,
+     "de": "f7:empurra",
+     "ate": "f18:fim+2",
+     "caminho": [
+      [
+       0.014,
+       -0.008,
+       -0.004
+      ],
+      [
+       0.0308,
+       -0.152,
+       0.002
+      ]
+     ]
+    },
+    {
+     "peca": "tanque",
+     "faz": "transparente",
+     "opacidade": 0.35,
+     "de": "f8",
+     "ate": "f8+0.6"
+    },
+    {
+     "peca": "forro",
+     "faz": "tremer",
+     "intensidade": 0.35,
+     "de": "f9:forro",
+     "ate": "f10:laje"
+    },
+    {
+     "peca": "tanque",
+     "faz": "tremer",
+     "intensidade": 0.25,
+     "de": "f9:rachar",
+     "ate": "f10:laje"
+    },
+    {
+     "peca": "forro",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.006,
+      0
+     ],
+     "de": "f9:rachar",
+     "ate": "f9:rachar+0.3"
+    },
+    {
+     "peca": "tanque",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.006,
+      0
+     ],
+     "de": "f9:rachar",
+     "ate": "f9:rachar+0.3"
+    },
+    {
+     "peca": "racha0",
+     "faz": "aparecer",
+     "de": "f9:rachar"
+    },
+    {
+     "peca": "racha0",
+     "faz": "sumir",
+     "de": "f10:laje"
+    },
+    {
+     "peca": "racha1",
+     "faz": "aparecer",
+     "de": "f9:rachar+0.08"
+    },
+    {
+     "peca": "racha1",
+     "faz": "sumir",
+     "de": "f10:laje"
+    },
+    {
+     "peca": "racha2",
+     "faz": "aparecer",
+     "de": "f9:rachar+0.16"
+    },
+    {
+     "peca": "racha2",
+     "faz": "sumir",
+     "de": "f10:laje"
+    },
+    {
+     "peca": "racha3",
+     "faz": "aparecer",
+     "de": "f9:rachar+0.24"
+    },
+    {
+     "peca": "racha3",
+     "faz": "sumir",
+     "de": "f10:laje"
+    },
+    {
+     "peca": "racha4",
+     "faz": "aparecer",
+     "de": "f9:rachar+0.32"
+    },
+    {
+     "peca": "racha4",
+     "faz": "sumir",
+     "de": "f10:laje"
+    },
+    {
+     "peca": "po0",
+     "faz": "aparecer",
+     "de": "f9:rachar+0.10"
+    },
+    {
+     "peca": "po0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.2,
+      0
+     ],
+     "de": "f9:rachar+0.10",
+     "ate": "f9:rachar+1.00"
+    },
+    {
+     "peca": "po0",
+     "faz": "sumir",
+     "de": "f9:rachar+1.00"
+    },
+    {
+     "peca": "po1",
+     "faz": "aparecer",
+     "de": "f9:rachar+0.22"
+    },
+    {
+     "peca": "po1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.2,
+      0
+     ],
+     "de": "f9:rachar+0.22",
+     "ate": "f9:rachar+1.12"
+    },
+    {
+     "peca": "po1",
+     "faz": "sumir",
+     "de": "f9:rachar+1.12"
+    },
+    {
+     "peca": "po2",
+     "faz": "aparecer",
+     "de": "f9:rachar+0.34"
+    },
+    {
+     "peca": "po2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.2,
+      0
+     ],
+     "de": "f9:rachar+0.34",
+     "ate": "f9:rachar+1.24"
+    },
+    {
+     "peca": "po2",
+     "faz": "sumir",
+     "de": "f9:rachar+1.24"
+    },
+    {
+     "peca": "po3",
+     "faz": "aparecer",
+     "de": "f9:rachar+0.46"
+    },
+    {
+     "peca": "po3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.2,
+      0
+     ],
+     "de": "f9:rachar+0.46",
+     "ate": "f9:rachar+1.36"
+    },
+    {
+     "peca": "po3",
+     "faz": "sumir",
+     "de": "f9:rachar+1.36"
+    },
+    {
+     "peca": "po4",
+     "faz": "aparecer",
+     "de": "f9:rachar+0.58"
+    },
+    {
+     "peca": "po4",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.2,
+      0
+     ],
+     "de": "f9:rachar+0.58",
+     "ate": "f9:rachar+1.48"
+    },
+    {
+     "peca": "po4",
+     "faz": "sumir",
+     "de": "f9:rachar+1.48"
+    },
+    {
+     "peca": "forro",
+     "faz": "sumir",
+     "de": "f10:laje"
+    },
+    {
+     "peca": "laje",
+     "faz": "aparecer",
+     "de": "f10:laje"
+    },
+    {
+     "peca": "tanque",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.006,
+      0
+     ],
+     "de": "f10:laje",
+     "ate": "f10:laje+0.4"
+    },
+    {
+     "peca": "agua_cima",
+     "faz": "crescer",
+     "de": "f11:enche",
+     "ate": "f11:transborda"
+    },
+    {
+     "peca": "caixadagua",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 8,
+     "velocidade": 1.0,
+     "intensidade": 0.3,
+     "de": "f11:transborda",
+     "ate": "f12",
+     "caminho": [
+      [
+       0.112,
+       0.352,
+       0.018
+      ],
+      [
+       0.135,
+       0.35,
+       0.03
+      ],
+      [
+       0.165,
+       0.32,
+       0.04
+      ],
+      [
+       0.205,
+       0.27,
+       0.05
+      ],
+      [
+       0.21,
+       0.04,
+       0.055
+      ]
+     ]
+    },
+    {
+     "peca": "caixadagua",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 8,
+     "velocidade": 1.0,
+     "intensidade": 0.3,
+     "de": "f11:transborda",
+     "ate": "f12",
+     "caminho": [
+      [
+       0.112,
+       0.352,
+       0.036
+      ],
+      [
+       0.135,
+       0.35,
+       0.06
+      ],
+      [
+       0.165,
+       0.32,
+       0.06999999999999999
+      ],
+      [
+       0.205,
+       0.27,
+       0.08
+      ],
+      [
+       0.21,
+       0.04,
+       0.08499999999999999
+      ]
+     ]
+    },
+    {
+     "peca": "caixadagua",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 8,
+     "velocidade": 1.0,
+     "intensidade": 0.3,
+     "de": "f11:transborda",
+     "ate": "f12",
+     "caminho": [
+      [
+       0.112,
+       0.352,
+       0.054
+      ],
+      [
+       0.135,
+       0.35,
+       0.09
+      ],
+      [
+       0.165,
+       0.32,
+       0.09999999999999999
+      ],
+      [
+       0.205,
+       0.27,
+       0.11
+      ],
+      [
+       0.21,
+       0.04,
+       0.11499999999999999
+      ]
+     ]
+    },
+    {
+     "peca": "tanque",
+     "faz": "tremer",
+     "intensidade": 0.15,
+     "de": "f11:transborda",
+     "ate": "f12"
+    },
+    {
+     "peca": "poca",
+     "faz": "crescer",
+     "de": "f11:transborda+0.4",
+     "ate": "f11:transborda+1.2"
+    },
+    {
+     "peca": "poca",
+     "faz": "sumir",
+     "de": "f12:fecha+0.4"
+    },
+    {
+     "peca": "agua_cima",
+     "faz": "sumir",
+     "de": "f12"
+    },
+    {
+     "peca": "piv_boia",
+     "faz": "aparecer",
+     "de": "f12:boia"
+    },
+    {
+     "peca": "braco_boia",
+     "faz": "aparecer",
+     "de": "f12:boia"
+    },
+    {
+     "peca": "boia",
+     "faz": "aparecer",
+     "de": "f12:boia"
+    },
+    {
+     "peca": "agua_cima2",
+     "faz": "crescer",
+     "de": "f12:sobe",
+     "ate": "f12:fecha"
+    },
+    {
+     "peca": "piv_boia",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": 24,
+     "de": "f12:sobe",
+     "ate": "f12:fecha"
+    },
+    {
+     "peca": "valvula",
+     "faz": "pulsar",
+     "intensidade": 0.8,
+     "de": "f12:fecha",
+     "ate": "f12:fim+0.3"
+    },
+    {
+     "peca": "piv_boia",
+     "faz": "tremer",
+     "intensidade": 0.25,
+     "de": "f13:travar",
+     "ate": "f14:ladrao"
+    },
+    {
+     "peca": "agua_cima2",
+     "faz": "tremer",
+     "intensidade": 0.1,
+     "de": "f13:travar",
+     "ate": "f14:ladrao"
+    },
+    {
+     "peca": "caixadagua",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 10,
+     "velocidade": 0.9,
+     "intensidade": 0.3,
+     "de": "f13",
+     "ate": "f14:ver+0.6",
+     "caminho": [
+      [
+       -0.235,
+       0.045,
+       -0.073
+      ],
+      [
+       -0.14,
+       0.045,
+       -0.073
+      ]
+     ]
+    },
+    {
+     "peca": "caixadagua",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 10,
+     "velocidade": 0.9,
+     "intensidade": 0.3,
+     "de": "f13",
+     "ate": "f14:ver+0.6",
+     "caminho": [
+      [
+       -0.14,
+       0.045,
+       -0.073
+      ],
+      [
+       -0.07,
+       0.045,
+       -0.073
+      ],
+      [
+       -0.055,
+       0.06,
+       -0.073
+      ],
+      [
+       -0.055,
+       0.33,
+       -0.073
+      ],
+      [
+       -0.04,
+       0.345,
+       -0.048
+      ],
+      [
+       0.0,
+       0.345,
+       -0.008
+      ],
+      [
+       0.034,
+       0.345,
+       0.012
+      ]
+     ]
+    },
+    {
+     "peca": "ladrao",
+     "faz": "aparecer",
+     "de": "f14:ladrao"
+    },
+    {
+     "peca": "caixadagua",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 10,
+     "velocidade": 0.9,
+     "intensidade": 0.3,
+     "de": "f14:ladrao+0.3",
+     "ate": "f14:ver+0.8",
+     "caminho": [
+      [
+       0.126,
+       0.337,
+       0.012
+      ],
+      [
+       0.17,
+       0.337,
+       0.012
+      ],
+      [
+       0.205,
+       0.33,
+       0.042
+      ],
+      [
+       0.212,
+       0.3,
+       0.052
+      ],
+      [
+       0.212,
+       0.055,
+       0.062
+      ],
+      [
+       0.222,
+       0.042,
+       0.077
+      ]
+     ]
+    },
+    {
+     "peca": "poca2",
+     "faz": "crescer",
+     "de": "f14:sobra",
+     "ate": "f14:ver"
+    },
+    {
+     "peca": "poca2",
+     "faz": "sumir",
+     "de": "f15"
+    },
+    {
+     "peca": "folha0",
+     "faz": "aparecer",
+     "de": "f15:folha"
+    },
+    {
+     "peca": "folha0",
+     "faz": "mover",
+     "desloc": [
+      -0.01,
+      -0.078,
+      0
+     ],
+     "de": "f15:folha",
+     "ate": "f15:folha+0.90"
+    },
+    {
+     "peca": "folha0",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 0.6,
+     "de": "f15:folha",
+     "ate": "f15:folha+0.90"
+    },
+    {
+     "peca": "folha0",
+     "faz": "sumir",
+     "de": "f16:tampa+0.35"
+    },
+    {
+     "peca": "folha1",
+     "faz": "aparecer",
+     "de": "f15:folha+0.25"
+    },
+    {
+     "peca": "folha1",
+     "faz": "mover",
+     "desloc": [
+      0.0,
+      -0.078,
+      0
+     ],
+     "de": "f15:folha+0.25",
+     "ate": "f15:folha+1.15"
+    },
+    {
+     "peca": "folha1",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 0.6,
+     "de": "f15:folha+0.25",
+     "ate": "f15:folha+1.15"
+    },
+    {
+     "peca": "folha1",
+     "faz": "sumir",
+     "de": "f16:tampa+0.35"
+    },
+    {
+     "peca": "folha2",
+     "faz": "aparecer",
+     "de": "f15:folha+0.50"
+    },
+    {
+     "peca": "folha2",
+     "faz": "mover",
+     "desloc": [
+      0.01,
+      -0.078,
+      0
+     ],
+     "de": "f15:folha+0.50",
+     "ate": "f15:folha+1.40"
+    },
+    {
+     "peca": "folha2",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 0.6,
+     "de": "f15:folha+0.50",
+     "ate": "f15:folha+1.40"
+    },
+    {
+     "peca": "folha2",
+     "faz": "sumir",
+     "de": "f16:tampa+0.35"
+    },
+    {
+     "peca": "poeira0",
+     "faz": "aparecer",
+     "de": "f15:poeira"
+    },
+    {
+     "peca": "poeira0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.07,
+      0
+     ],
+     "de": "f15:poeira",
+     "ate": "f15:poeira+0.80"
+    },
+    {
+     "peca": "poeira0",
+     "faz": "sumir",
+     "de": "f16:tampa+0.35"
+    },
+    {
+     "peca": "poeira1",
+     "faz": "aparecer",
+     "de": "f15:poeira+0.15"
+    },
+    {
+     "peca": "poeira1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.07,
+      0
+     ],
+     "de": "f15:poeira+0.15",
+     "ate": "f15:poeira+0.95"
+    },
+    {
+     "peca": "poeira1",
+     "faz": "sumir",
+     "de": "f16:tampa+0.35"
+    },
+    {
+     "peca": "poeira2",
+     "faz": "aparecer",
+     "de": "f15:poeira+0.30"
+    },
+    {
+     "peca": "poeira2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.07,
+      0
+     ],
+     "de": "f15:poeira+0.30",
+     "ate": "f15:poeira+1.10"
+    },
+    {
+     "peca": "poeira2",
+     "faz": "sumir",
+     "de": "f16:tampa+0.35"
+    },
+    {
+     "peca": "mosq0",
+     "faz": "aparecer",
+     "de": "f15:mosquito-0.30"
+    },
+    {
+     "peca": "mosq0_asa",
+     "faz": "aparecer",
+     "de": "f15:mosquito-0.30"
+    },
+    {
+     "peca": "mosq0_asa",
+     "faz": "tremer",
+     "intensidade": 0.25,
+     "de": "f15:mosquito-0.30",
+     "ate": "f16:tampa+0.3"
+    },
+    {
+     "peca": "mosq0",
+     "faz": "mover",
+     "desloc": [
+      0.03,
+      0.012,
+      0.01
+     ],
+     "de": "f15:mosquito-0.30",
+     "ate": "f15:mosquito+0.20"
+    },
+    {
+     "peca": "mosq0",
+     "faz": "mover",
+     "desloc": [
+      -0.035,
+      -0.008,
+      0.012
+     ],
+     "de": "f15:mosquito+0.20",
+     "ate": "f15:mosquito+0.70"
+    },
+    {
+     "peca": "mosq0",
+     "faz": "mover",
+     "desloc": [
+      0.02,
+      0.015,
+      -0.015
+     ],
+     "de": "f15:mosquito+0.70",
+     "ate": "f15:mosquito+1.20"
+    },
+    {
+     "peca": "mosq0",
+     "faz": "mover",
+     "desloc": [
+      -0.025,
+      -0.01,
+      0.0
+     ],
+     "de": "f15:mosquito+1.20",
+     "ate": "f15:mosquito+1.70"
+    },
+    {
+     "peca": "mosq0",
+     "faz": "mover",
+     "desloc": [
+      0.03,
+      0.006,
+      0.01
+     ],
+     "de": "f15:mosquito+1.70",
+     "ate": "f15:mosquito+2.20"
+    },
+    {
+     "peca": "mosq0",
+     "faz": "sumir",
+     "de": "f16:tampa+0.3"
+    },
+    {
+     "peca": "mosq0_asa",
+     "faz": "sumir",
+     "de": "f16:tampa+0.3"
+    },
+    {
+     "peca": "mosq1",
+     "faz": "aparecer",
+     "de": "f15:mosquito-0.18"
+    },
+    {
+     "peca": "mosq1_asa",
+     "faz": "aparecer",
+     "de": "f15:mosquito-0.18"
+    },
+    {
+     "peca": "mosq1_asa",
+     "faz": "tremer",
+     "intensidade": 0.25,
+     "de": "f15:mosquito-0.18",
+     "ate": "f16:tampa+0.3"
+    },
+    {
+     "peca": "mosq1",
+     "faz": "mover",
+     "desloc": [
+      -0.03,
+      0.012,
+      0.01
+     ],
+     "de": "f15:mosquito-0.18",
+     "ate": "f15:mosquito+0.32"
+    },
+    {
+     "peca": "mosq1",
+     "faz": "mover",
+     "desloc": [
+      0.035,
+      -0.008,
+      0.012
+     ],
+     "de": "f15:mosquito+0.32",
+     "ate": "f15:mosquito+0.82"
+    },
+    {
+     "peca": "mosq1",
+     "faz": "mover",
+     "desloc": [
+      -0.02,
+      0.015,
+      -0.015
+     ],
+     "de": "f15:mosquito+0.82",
+     "ate": "f15:mosquito+1.32"
+    },
+    {
+     "peca": "mosq1",
+     "faz": "mover",
+     "desloc": [
+      0.025,
+      -0.01,
+      0.0
+     ],
+     "de": "f15:mosquito+1.32",
+     "ate": "f15:mosquito+1.82"
+    },
+    {
+     "peca": "mosq1",
+     "faz": "mover",
+     "desloc": [
+      -0.03,
+      0.006,
+      0.01
+     ],
+     "de": "f15:mosquito+1.82",
+     "ate": "f15:mosquito+2.32"
+    },
+    {
+     "peca": "mosq1",
+     "faz": "sumir",
+     "de": "f16:tampa+0.3"
+    },
+    {
+     "peca": "mosq1_asa",
+     "faz": "sumir",
+     "de": "f16:tampa+0.3"
+    },
+    {
+     "peca": "mosq2",
+     "faz": "aparecer",
+     "de": "f15:mosquito-0.06"
+    },
+    {
+     "peca": "mosq2_asa",
+     "faz": "aparecer",
+     "de": "f15:mosquito-0.06"
+    },
+    {
+     "peca": "mosq2_asa",
+     "faz": "tremer",
+     "intensidade": 0.25,
+     "de": "f15:mosquito-0.06",
+     "ate": "f16:tampa+0.3"
+    },
+    {
+     "peca": "mosq2",
+     "faz": "mover",
+     "desloc": [
+      0.03,
+      0.012,
+      0.01
+     ],
+     "de": "f15:mosquito-0.06",
+     "ate": "f15:mosquito+0.44"
+    },
+    {
+     "peca": "mosq2",
+     "faz": "mover",
+     "desloc": [
+      -0.035,
+      -0.008,
+      0.012
+     ],
+     "de": "f15:mosquito+0.44",
+     "ate": "f15:mosquito+0.94"
+    },
+    {
+     "peca": "mosq2",
+     "faz": "mover",
+     "desloc": [
+      0.02,
+      0.015,
+      -0.015
+     ],
+     "de": "f15:mosquito+0.94",
+     "ate": "f15:mosquito+1.44"
+    },
+    {
+     "peca": "mosq2",
+     "faz": "mover",
+     "desloc": [
+      -0.025,
+      -0.01,
+      0.0
+     ],
+     "de": "f15:mosquito+1.44",
+     "ate": "f15:mosquito+1.94"
+    },
+    {
+     "peca": "mosq2",
+     "faz": "mover",
+     "desloc": [
+      0.03,
+      0.006,
+      0.01
+     ],
+     "de": "f15:mosquito+1.94",
+     "ate": "f15:mosquito+2.44"
+    },
+    {
+     "peca": "mosq2",
+     "faz": "sumir",
+     "de": "f16:tampa+0.3"
+    },
+    {
+     "peca": "mosq2_asa",
+     "faz": "sumir",
+     "de": "f16:tampa+0.3"
+    },
+    {
+     "peca": "tampa",
+     "faz": "aparecer",
+     "de": "f16:tampa"
+    },
+    {
+     "peca": "pegador",
+     "faz": "aparecer",
+     "de": "f16:tampa"
+    },
+    {
+     "peca": "tampa",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f16:tampa+0.15",
+     "ate": "f16:tampa+0.6"
+    },
+    {
+     "peca": "tanque",
+     "faz": "transparente",
+     "opacidade": 1,
+     "de": "f17",
+     "ate": "f17+0.6"
+    },
+    {
+     "peca": "seta",
+     "faz": "crescer",
+     "de": "f17:altura-0.2",
+     "ate": "f17:altura+0.5"
+    },
+    {
+     "peca": "seta",
+     "faz": "pulsar",
+     "intensidade": 0.5,
+     "de": "f17:altura+0.5",
+     "ate": "f17:fim+0.3"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f1:forte"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "cano_rua",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f2:rua"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f3"
+    },
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "triste",
+     "de": "f3:pinga"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "tanque",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f4:tanque"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f5"
+    },
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "nervoso",
+     "de": "f5:seco"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "tanque",
+     "olhar": "maquete",
+     "expressao": "determinado",
+     "de": "f6:alto"
+    },
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f7:forte"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f8"
+    },
+    {
+     "quem": "tito",
+     "faz": "maos_na_cabeca",
+     "olhar": "maquete",
+     "expressao": "medo",
+     "de": "f9:rachar"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "laje",
+     "olhar": "maquete",
+     "expressao": "aliviado",
+     "de": "f10:laje"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f11"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "maquete",
+     "expressao": "surpreso",
+     "de": "f11:transborda"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "boia",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f12:boia"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "camera",
+     "expressao": "nervoso",
+     "de": "f13"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "ladrao",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f14:ladrao"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f15"
+    },
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "bravo",
+     "de": "f15:mosquito"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "tampa",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f16:tampa"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "serio",
+     "de": "f17"
+    },
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f18"
+    },
+    {
+     "quem": "tito",
+     "faz": "acenar",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f18:parabens"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "camera": [
+      0.12,
+      1.36,
+      1.25
+     ],
+     "alvo": [
+      0.07,
+      1.196,
+      -0.056
+     ],
+     "movimento": "arco",
+     "intensidade": 0.6
+    },
+    {
+     "de": "f1:forte",
+     "tipo": "detalhe",
+     "camera": [
+      0.24,
+      1.25,
+      0.72
+     ],
+     "alvo": [
+      0.182,
+      1.182,
+      -0.07
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f2",
+     "tipo": "aberto",
+     "camera": [
+      0.0,
+      1.48,
+      1.45
+     ],
+     "alvo": [
+      0.0,
+      1.27,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": -0.4
+    },
+    {
+     "de": "f2:rua",
+     "tipo": "detalhe",
+     "camera": [
+      -0.2,
+      1.22,
+      0.8
+     ],
+     "alvo": [
+      -0.224,
+      1.084,
+      -0.084
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f2:chega",
+     "tipo": "detalhe",
+     "camera": [
+      0.24,
+      1.25,
+      0.72
+     ],
+     "alvo": [
+      0.182,
+      1.182,
+      -0.07
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f3",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f3:pinga",
+     "tipo": "detalhe",
+     "camera": [
+      0.24,
+      1.25,
+      0.72
+     ],
+     "alvo": [
+      0.182,
+      1.182,
+      -0.07
+     ],
+     "movimento": "tremer"
+    },
+    {
+     "de": "f4",
+     "tipo": "detalhe",
+     "camera": [
+      -0.1,
+      1.24,
+      0.78
+     ],
+     "alvo": [
+      -0.14,
+      1.112,
+      0.028
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f5",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f5:chao",
+     "tipo": "detalhe",
+     "camera": [
+      0.0,
+      1.27,
+      1.42
+     ],
+     "alvo": [
+      0.0,
+      1.13,
+      -0.03
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f5:seco",
+     "tipo": "detalhe",
+     "camera": [
+      0.24,
+      1.25,
+      0.72
+     ],
+     "alvo": [
+      0.182,
+      1.182,
+      -0.07
+     ],
+     "movimento": "orbitar"
+    },
+    {
+     "de": "f6",
+     "tipo": "aberto",
+     "camera": [
+      0.05,
+      1.42,
+      1.65
+     ],
+     "alvo": [
+      0.02,
+      1.27,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f7",
+     "tipo": "detalhe",
+     "camera": [
+      0.22,
+      1.42,
+      1.0
+     ],
+     "alvo": [
+      0.154,
+      1.35,
+      -0.042
+     ],
+     "movimento": "descer"
+    },
+    {
+     "de": "f7:chuveiro",
+     "tipo": "detalhe",
+     "camera": [
+      0.24,
+      1.25,
+      0.72
+     ],
+     "alvo": [
+      0.182,
+      1.182,
+      -0.07
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f8",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "dolly_zoom",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f8:tonelada",
+     "tipo": "detalhe",
+     "camera": [
+      0.15,
+      1.53,
+      0.72
+     ],
+     "alvo": [
+      0.112,
+      1.434,
+      0.0
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f9",
+     "tipo": "detalhe",
+     "camera": [
+      0.1,
+      1.38,
+      0.75
+     ],
+     "alvo": [
+      0.098,
+      1.357,
+      0.084
+     ],
+     "movimento": "tremer"
+    },
+    {
+     "de": "f10",
+     "tipo": "detalhe",
+     "camera": [
+      -0.05,
+      1.45,
+      0.9
+     ],
+     "alvo": [
+      0.112,
+      1.364,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f11",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f11:enche",
+     "tipo": "detalhe",
+     "camera": [
+      0.1,
+      1.64,
+      0.6
+     ],
+     "alvo": [
+      0.112,
+      1.462,
+      0.0
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f11:transborda",
+     "tipo": "detalhe",
+     "camera": [
+      0.46,
+      1.36,
+      0.95
+     ],
+     "alvo": [
+      0.238,
+      1.308,
+      0.056
+     ],
+     "movimento": "tremer"
+    },
+    {
+     "de": "f12",
+     "tipo": "detalhe",
+     "camera": [
+      0.1,
+      1.64,
+      0.6
+     ],
+     "alvo": [
+      0.112,
+      1.462,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "zoom"
+    },
+    {
+     "de": "f13",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f14",
+     "tipo": "detalhe",
+     "camera": [
+      0.1,
+      1.64,
+      0.6
+     ],
+     "alvo": [
+      0.112,
+      1.462,
+      0.0
+     ],
+     "movimento": "tremer"
+    },
+    {
+     "de": "f14:ladrao",
+     "tipo": "detalhe",
+     "camera": [
+      0.46,
+      1.36,
+      0.95
+     ],
+     "alvo": [
+      0.238,
+      1.308,
+      0.056
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f15",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": 0.3,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f15:folha",
+     "tipo": "detalhe",
+     "camera": [
+      0.09,
+      1.6,
+      0.62
+     ],
+     "alvo": [
+      0.112,
+      1.504,
+      0.0
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f16",
+     "tipo": "detalhe",
+     "camera": [
+      0.15,
+      1.53,
+      0.72
+     ],
+     "alvo": [
+      0.112,
+      1.434,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f17",
+     "tipo": "aberto",
+     "camera": [
+      0.0,
+      1.48,
+      1.45
+     ],
+     "alvo": [
+      0.0,
+      1.27,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f17:empurra",
+     "tipo": "detalhe",
+     "camera": [
+      0.42,
+      1.36,
+      1.25
+     ],
+     "alvo": [
+      0.21,
+      1.28,
+      0.056
+     ],
+     "movimento": "subir"
+    },
+    {
+     "de": "f18",
+     "tipo": "aberto",
+     "camera": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "alvo": [
+      -0.9,
+      1.5,
+      0.3
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    }
+   ],
+   "sons": [
+    {
+     "de": "inicio",
+     "som": "agua",
+     "volume": 0.35
+    },
+    {
+     "de": "f1:forte",
+     "som": "impacto",
+     "volume": 0.5
+    },
+    {
+     "de": "f2:chega",
+     "som": "agua",
+     "volume": 0.6
+    },
+    {
+     "de": "f3",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f3:pinga",
+     "som": "impacto",
+     "volume": 0.6
+    },
+    {
+     "de": "f4:tanque",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f4:guardar",
+     "som": "agua",
+     "volume": 0.4
+    },
+    {
+     "de": "f5",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f5:seco",
+     "som": "impacto",
+     "volume": 0.7
+    },
+    {
+     "de": "f6:alto",
+     "som": "whoosh",
+     "volume": 0.7
+    },
+    {
+     "de": "f6:casa",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f7:peso",
+     "som": "agua",
+     "volume": 0.7
+    },
+    {
+     "de": "f7:forte",
+     "som": "ding",
+     "volume": 0.8
+    },
+    {
+     "de": "f8",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f8:tonelada",
+     "som": "impacto",
+     "volume": 0.8
+    },
+    {
+     "de": "f9:forro",
+     "som": "engrenagem",
+     "volume": 0.4
+    },
+    {
+     "de": "f9:rachar",
+     "som": "galho",
+     "volume": 0.9
+    },
+    {
+     "de": "f9:rachar+0.1",
+     "som": "impacto",
+     "volume": 0.7
+    },
+    {
+     "de": "f10:laje",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f10:firme",
+     "som": "ding",
+     "volume": 0.7
+    },
+    {
+     "de": "f11",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f11:transborda",
+     "som": "agua",
+     "volume": 0.9
+    },
+    {
+     "de": "f12:boia",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f12:fecha",
+     "som": "clique",
+     "volume": 0.9
+    },
+    {
+     "de": "f12:entrada",
+     "som": "ding",
+     "volume": 0.7
+    },
+    {
+     "de": "f13",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f13:travar",
+     "som": "impacto",
+     "volume": 0.7
+    },
+    {
+     "de": "f14:ladrao",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f14:sobra",
+     "som": "agua",
+     "volume": 0.6
+    },
+    {
+     "de": "f14:ver",
+     "som": "ding",
+     "volume": 0.7
+    },
+    {
+     "de": "f15",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f15:mosquito",
+     "som": "chiado",
+     "volume": 0.45
+    },
+    {
+     "de": "f16:tampa",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f16:tampa+0.6",
+     "som": "clique",
+     "volume": 0.9
+    },
+    {
+     "de": "f16:justa",
+     "som": "ding",
+     "volume": 0.7
+    },
+    {
+     "de": "f17:altura",
+     "som": "ding",
+     "volume": 0.8
+    },
+    {
+     "de": "f18:parabens",
+     "som": "ding",
+     "volume": 0.9
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f1:forte",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f2:chega",
+     "ate": "f2:chega+0.6",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f3:pinga",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f4:tanque+0.1",
+     "ate": "f4:guardar",
+     "efeito": "circular",
+     "alvo": "tanque"
+    },
+    {
+     "de": "f5:seco",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f6:alto",
+     "ate": "f6:alto+0.8",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f7:forte",
+     "ate": "f7:forte+0.7",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f8:tonelada",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f9:rachar",
+     "efeito": "flash"
+    },
+    {
+     "de": "f9:rachar",
+     "ate": "f9:fim+0.3",
+     "efeito": "tremor",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f9:rachar",
+     "ate": "f9:fim+0.3",
+     "efeito": "letreiro",
+     "texto": "PERIGO!",
+     "cor": "#FF3B30",
+     "altura": 0.2
+    },
+    {
+     "de": "f10:laje+0.1",
+     "ate": "f10:fim",
+     "efeito": "circular",
+     "alvo": "laje"
+    },
+    {
+     "de": "f11:transborda",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f11:transborda",
+     "ate": "f11:fim+0.3",
+     "efeito": "tremor",
+     "intensidade": 0.35
+    },
+    {
+     "de": "f12:boia+0.1",
+     "ate": "f12:fecha",
+     "efeito": "circular",
+     "alvo": "boia"
+    },
+    {
+     "de": "f14:ladrao+0.1",
+     "ate": "f14:sobra",
+     "efeito": "circular",
+     "alvo": "ladrao"
+    },
+    {
+     "de": "f15:mosquito",
+     "ate": "f15:fim+0.3",
+     "efeito": "letreiro",
+     "texto": "DENGUE!",
+     "cor": "#FF3B30",
+     "altura": 0.2
+    },
+    {
+     "de": "f15:mosquito",
+     "ate": "f15:mosquito+0.7",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f16:tampa+0.6",
+     "ate": "f16:fim+0.3",
+     "efeito": "circular",
+     "alvo": "tampa"
+    },
+    {
+     "de": "f17:altura+0.4",
+     "ate": "f17:fim+0.3",
+     "efeito": "circular",
+     "alvo": "seta"
+    },
+    {
+     "de": "f18:parabens",
+     "ate": "f18:fim+0.5",
+     "efeito": "linhas",
+     "intensidade": 0.6
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "cano_rua",
+     "texto": "Da rua",
+     "de": "f2:rua",
+     "ate": "f2:fim"
+    },
+    {
+     "alvo": "chuveiro",
+     "texto": "Pingando",
+     "de": "f3:pinga",
+     "ate": "f3:fim+0.3",
+     "cor": "#FF8A65"
+    },
+    {
+     "alvo": "tanque",
+     "texto": "Tanque",
+     "de": "f4:tanque",
+     "ate": "f4:fim"
+    },
+    {
+     "alvo": "marca_nivel",
+     "texto": "Parou aqui",
+     "de": "f5:sozinha",
+     "ate": "f5:seco",
+     "cor": "#FF8A65"
+    },
+    {
+     "alvo": "chuveiro",
+     "texto": "Seco",
+     "de": "f5:seco",
+     "ate": "f5:fim+0.3",
+     "cor": "#FF8A65"
+    },
+    {
+     "alvo": "descida",
+     "texto": "Peso da água",
+     "de": "f7:peso",
+     "ate": "f7:chuveiro"
+    },
+    {
+     "alvo": "forro",
+     "texto": "Forro fraco",
+     "de": "f9:forro",
+     "ate": "f9:fim",
+     "cor": "#FF8A65"
+    },
+    {
+     "alvo": "laje",
+     "texto": "Laje",
+     "de": "f10:laje",
+     "ate": "f10:fim+0.2"
+    },
+    {
+     "alvo": "agua_cima",
+     "texto": "Transbordou",
+     "de": "f11:transborda",
+     "ate": "f11:fim+0.3",
+     "cor": "#FF8A65"
+    },
+    {
+     "alvo": "boia",
+     "texto": "Boia",
+     "de": "f12:boia",
+     "ate": "f12:fim"
+    },
+    {
+     "alvo": "boia",
+     "texto": "Travou",
+     "de": "f14",
+     "ate": "f14:ladrao",
+     "cor": "#FF8A65"
+    },
+    {
+     "alvo": "ladrao",
+     "texto": "Ladrão",
+     "de": "f14:ladrao",
+     "ate": "f14:fim+0.2"
+    },
+    {
+     "alvo": "mosq2",
+     "texto": "Mosquito",
+     "de": "f15:mosquito",
+     "ate": "f15:fim"
+    },
+    {
+     "alvo": "tampa",
+     "texto": "Tampa",
+     "de": "f16:tampa+0.5",
+     "ate": "f16:fim+0.3"
+    },
+    {
+     "alvo": "seta",
+     "texto": "Altura",
+     "de": "f17:altura",
+     "ate": "f17:fim+0.3"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f8:tonelada",
+     "ate": "f8:fim+0.3",
+     "grande": "# kg",
+     "contar": [
+      0,
+      1000
+     ],
+     "pequeno": "mil litros de água"
+    },
+    {
+     "de": "f17:altura+0.3",
+     "ate": "f17:fim+0.3",
+     "grande": "ALTURA",
+     "pequeno": "quanto mais alto o tanque, mais forte a água"
+    }
+   ]
+  }
+ ]
+}
