@@ -1,0 +1,7906 @@
+{
+ "serie": "como-funciona",
+ "parte": 24,
+ "titulo": "Construa um motor de carro do zero",
+ "musica": "curiosidade",
+ "modelos": {
+  "motor": [
+   {
+    "id": "bloco",
+    "forma": "caixa",
+    "tam": [
+     0.36,
+     0.05,
+     0.14
+    ],
+    "pos": [
+     0,
+     0.025,
+     0
+    ],
+    "cor": "#546E7A"
+   },
+   {
+    "id": "mancal1",
+    "forma": "caixa",
+    "tam": [
+     0.02,
+     0.04,
+     0.04
+    ],
+    "pos": [
+     -0.17,
+     0.07,
+     0
+    ],
+    "cor": "#455A64"
+   },
+   {
+    "id": "mancal2",
+    "forma": "caixa",
+    "tam": [
+     0.02,
+     0.04,
+     0.04
+    ],
+    "pos": [
+     0.17,
+     0.07,
+     0
+    ],
+    "cor": "#455A64"
+   },
+   {
+    "id": "cano0",
+    "forma": "cilindro",
+    "tam": [
+     0.031,
+     0.15
+    ],
+    "pos": [
+     -0.04,
+     0.245,
+     0
+    ],
+    "cor": "#B0BEC5",
+    "opacidade": 0.35,
+    "sem_contorno": true,
+    "oculta": false
+   },
+   {
+    "id": "pistao0",
+    "forma": "cilindro",
+    "tam": [
+     0.028,
+     0.04
+    ],
+    "pos": [
+     -0.04,
+     0.27,
+     0
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true
+   },
+   {
+    "id": "biela0",
+    "forma": "caixa",
+    "tam": [
+     0.012,
+     0.14,
+     0.01
+    ],
+    "pos": [
+     0,
+     -0.09,
+     0
+    ],
+    "cor": "#78909C",
+    "pai": "pistao0",
+    "oculta": true
+   },
+   {
+    "id": "piv0",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     -0.04,
+     0.08,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#95A5A6",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "manivela0",
+    "forma": "caixa",
+    "tam": [
+     0.014,
+     0.041999999999999996,
+     0.024
+    ],
+    "pos": [
+     0,
+     0.015,
+     0
+    ],
+    "cor": "#90A4AE",
+    "pai": "piv0",
+    "oculta": true
+   },
+   {
+    "id": "contrapeso0",
+    "forma": "cilindro",
+    "tam": [
+     0.022,
+     0.016
+    ],
+    "pos": [
+     0,
+     -0.015,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#607D8B",
+    "pai": "piv0",
+    "oculta": true
+   },
+   {
+    "id": "brasa0",
+    "forma": "cilindro",
+    "tam": [
+     0.027,
+     0.012
+    ],
+    "pos": [
+     -0.04,
+     0.305,
+     0
+    ],
+    "cor": "#FF7043",
+    "brilho": 1.4,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "cano1",
+    "forma": "cilindro",
+    "tam": [
+     0.031,
+     0.15
+    ],
+    "pos": [
+     -0.12,
+     0.245,
+     0
+    ],
+    "cor": "#B0BEC5",
+    "opacidade": 0.35,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "pistao1",
+    "forma": "cilindro",
+    "tam": [
+     0.028,
+     0.04
+    ],
+    "pos": [
+     -0.12,
+     0.21000000000000002,
+     0
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true
+   },
+   {
+    "id": "biela1",
+    "forma": "caixa",
+    "tam": [
+     0.012,
+     0.14,
+     0.01
+    ],
+    "pos": [
+     0,
+     -0.09,
+     0
+    ],
+    "cor": "#78909C",
+    "pai": "pistao1",
+    "oculta": true
+   },
+   {
+    "id": "piv1",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     -0.12,
+     0.08,
+     0
+    ],
+    "giro": [
+     180,
+     0,
+     0
+    ],
+    "cor": "#95A5A6",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "manivela1",
+    "forma": "caixa",
+    "tam": [
+     0.014,
+     0.041999999999999996,
+     0.024
+    ],
+    "pos": [
+     0,
+     0.015,
+     0
+    ],
+    "cor": "#90A4AE",
+    "pai": "piv1",
+    "oculta": true
+   },
+   {
+    "id": "contrapeso1",
+    "forma": "cilindro",
+    "tam": [
+     0.022,
+     0.016
+    ],
+    "pos": [
+     0,
+     -0.015,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#607D8B",
+    "pai": "piv1",
+    "oculta": true
+   },
+   {
+    "id": "brasa1",
+    "forma": "cilindro",
+    "tam": [
+     0.027,
+     0.012
+    ],
+    "pos": [
+     -0.12,
+     0.305,
+     0
+    ],
+    "cor": "#FF7043",
+    "brilho": 1.4,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "cano2",
+    "forma": "cilindro",
+    "tam": [
+     0.031,
+     0.15
+    ],
+    "pos": [
+     0.04,
+     0.245,
+     0
+    ],
+    "cor": "#B0BEC5",
+    "opacidade": 0.35,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "pistao2",
+    "forma": "cilindro",
+    "tam": [
+     0.028,
+     0.04
+    ],
+    "pos": [
+     0.04,
+     0.27,
+     0
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true
+   },
+   {
+    "id": "biela2",
+    "forma": "caixa",
+    "tam": [
+     0.012,
+     0.14,
+     0.01
+    ],
+    "pos": [
+     0,
+     -0.09,
+     0
+    ],
+    "cor": "#78909C",
+    "pai": "pistao2",
+    "oculta": true
+   },
+   {
+    "id": "piv2",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     0.04,
+     0.08,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#95A5A6",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "manivela2",
+    "forma": "caixa",
+    "tam": [
+     0.014,
+     0.041999999999999996,
+     0.024
+    ],
+    "pos": [
+     0,
+     0.015,
+     0
+    ],
+    "cor": "#90A4AE",
+    "pai": "piv2",
+    "oculta": true
+   },
+   {
+    "id": "contrapeso2",
+    "forma": "cilindro",
+    "tam": [
+     0.022,
+     0.016
+    ],
+    "pos": [
+     0,
+     -0.015,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#607D8B",
+    "pai": "piv2",
+    "oculta": true
+   },
+   {
+    "id": "brasa2",
+    "forma": "cilindro",
+    "tam": [
+     0.027,
+     0.012
+    ],
+    "pos": [
+     0.04,
+     0.305,
+     0
+    ],
+    "cor": "#FF7043",
+    "brilho": 1.4,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "cano3",
+    "forma": "cilindro",
+    "tam": [
+     0.031,
+     0.15
+    ],
+    "pos": [
+     0.12,
+     0.245,
+     0
+    ],
+    "cor": "#B0BEC5",
+    "opacidade": 0.35,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "pistao3",
+    "forma": "cilindro",
+    "tam": [
+     0.028,
+     0.04
+    ],
+    "pos": [
+     0.12,
+     0.21000000000000002,
+     0
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true
+   },
+   {
+    "id": "biela3",
+    "forma": "caixa",
+    "tam": [
+     0.012,
+     0.14,
+     0.01
+    ],
+    "pos": [
+     0,
+     -0.09,
+     0
+    ],
+    "cor": "#78909C",
+    "pai": "pistao3",
+    "oculta": true
+   },
+   {
+    "id": "piv3",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     0.12,
+     0.08,
+     0
+    ],
+    "giro": [
+     180,
+     0,
+     0
+    ],
+    "cor": "#95A5A6",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "manivela3",
+    "forma": "caixa",
+    "tam": [
+     0.014,
+     0.041999999999999996,
+     0.024
+    ],
+    "pos": [
+     0,
+     0.015,
+     0
+    ],
+    "cor": "#90A4AE",
+    "pai": "piv3",
+    "oculta": true
+   },
+   {
+    "id": "contrapeso3",
+    "forma": "cilindro",
+    "tam": [
+     0.022,
+     0.016
+    ],
+    "pos": [
+     0,
+     -0.015,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#607D8B",
+    "pai": "piv3",
+    "oculta": true
+   },
+   {
+    "id": "brasa3",
+    "forma": "cilindro",
+    "tam": [
+     0.027,
+     0.012
+    ],
+    "pos": [
+     0.12,
+     0.305,
+     0
+    ],
+    "cor": "#FF7043",
+    "brilho": 1.4,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "eixo",
+    "forma": "cilindro",
+    "tam": [
+     0.008,
+     0.36
+    ],
+    "pos": [
+     0,
+     0.08,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#90A4AE",
+    "oculta": true
+   },
+   {
+    "id": "fundo",
+    "forma": "cilindro",
+    "tam": [
+     0.032,
+     0.008
+    ],
+    "pos": [
+     -0.04,
+     0.172,
+     0
+    ],
+    "cor": "#78909C"
+   },
+   {
+    "id": "gasolina",
+    "forma": "cilindro",
+    "tam": [
+     0.028,
+     0.012
+    ],
+    "pos": [
+     -0.04,
+     0.182,
+     0
+    ],
+    "cor": "#FBC02D",
+    "opacidade": 0.8
+   },
+   {
+    "id": "tampa",
+    "forma": "cilindro",
+    "tam": [
+     0.034,
+     0.012
+    ],
+    "pos": [
+     -0.04,
+     0.326,
+     0
+    ],
+    "cor": "#78909C"
+   },
+   {
+    "id": "vela",
+    "forma": "cilindro",
+    "tam": [
+     0.006,
+     0.045
+    ],
+    "pos": [
+     0.010000000000000002,
+     0.3,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#ECEFF1"
+   },
+   {
+    "id": "vela_ponta",
+    "forma": "cilindro",
+    "tam": [
+     0.004,
+     0.012
+    ],
+    "pos": [
+     -0.013000000000000001,
+     0.3,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#8D6E63"
+   },
+   {
+    "id": "faisca",
+    "forma": "esfera",
+    "tam": [
+     0.01
+    ],
+    "pos": [
+     -0.022000000000000002,
+     0.3,
+     0
+    ],
+    "cor": "#FFF59D",
+    "brilho": 1.8,
+    "sem_contorno": true
+   },
+   {
+    "id": "cabeca",
+    "forma": "caixa",
+    "tam": [
+     0.36,
+     0.03,
+     0.08
+    ],
+    "pos": [
+     0,
+     0.335,
+     0
+    ],
+    "cor": "#607D8B",
+    "oculta": true
+   },
+   {
+    "id": "roda",
+    "forma": "cilindro",
+    "tam": [
+     0.07,
+     0.03
+    ],
+    "pos": [
+     0.2,
+     0.08,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#212121",
+    "oculta": true
+   },
+   {
+    "id": "aro",
+    "forma": "cilindro",
+    "tam": [
+     0.04,
+     0.032
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#B0BEC5",
+    "pai": "roda",
+    "oculta": true
+   },
+   {
+    "id": "marca",
+    "forma": "caixa",
+    "tam": [
+     0.012,
+     0.034,
+     0.05
+    ],
+    "pos": [
+     0,
+     0,
+     0.0
+    ],
+    "cor": "#FFC20E",
+    "pai": "roda",
+    "oculta": true
+   },
+   {
+    "id": "fumo0",
+    "forma": "esfera",
+    "tam": [
+     0.012
+    ],
+    "pos": [
+     -0.052000000000000005,
+     0.3,
+     0
+    ],
+    "cor": "#5E5E5E",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "fumo1",
+    "forma": "esfera",
+    "tam": [
+     0.012
+    ],
+    "pos": [
+     -0.03,
+     0.29,
+     0
+    ],
+    "cor": "#5E5E5E",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "fumo2",
+    "forma": "esfera",
+    "tam": [
+     0.012
+    ],
+    "pos": [
+     -0.04,
+     0.31,
+     0
+    ],
+    "cor": "#5E5E5E",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "valv_adm",
+    "forma": "cone",
+    "tam": [
+     0.01,
+     0.025
+    ],
+    "pos": [
+     -0.054,
+     0.312,
+     0
+    ],
+    "giro": [
+     180,
+     0,
+     0
+    ],
+    "cor": "#43A047",
+    "oculta": true
+   },
+   {
+    "id": "valv_esc",
+    "forma": "cone",
+    "tam": [
+     0.01,
+     0.025
+    ],
+    "pos": [
+     -0.026000000000000002,
+     0.312,
+     0
+    ],
+    "giro": [
+     180,
+     0,
+     0
+    ],
+    "cor": "#E53935",
+    "oculta": true
+   },
+   {
+    "id": "tubo_adm",
+    "forma": "tubo",
+    "tam": [
+     0.007
+    ],
+    "pos": [
+     -0.08,
+     0.35,
+     0
+    ],
+    "cor": "#43A047",
+    "sem_contorno": true,
+    "oculta": true,
+    "caminho": [
+     [
+      0.026,
+      -0.03,
+      0
+     ],
+     [
+      0.026,
+      0.0,
+      0
+     ],
+     [
+      -0.04,
+      0.02,
+      0
+     ]
+    ]
+   },
+   {
+    "id": "tubo_esc",
+    "forma": "tubo",
+    "tam": [
+     0.007
+    ],
+    "pos": [
+     0.0,
+     0.35,
+     0
+    ],
+    "cor": "#E53935",
+    "sem_contorno": true,
+    "oculta": true,
+    "caminho": [
+     [
+      -0.026,
+      -0.03,
+      0
+     ],
+     [
+      -0.026,
+      0.0,
+      0
+     ],
+     [
+      0.04,
+      0.02,
+      0
+     ]
+    ]
+   },
+   {
+    "id": "camisa",
+    "forma": "cilindro",
+    "tam": [
+     0.04,
+     0.13
+    ],
+    "pos": [
+     -0.04,
+     0.245,
+     0
+    ],
+    "cor": "#4FC3F7",
+    "opacidade": 0.3,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "radiador",
+    "forma": "caixa",
+    "tam": [
+     0.1,
+     0.12,
+     0.02
+    ],
+    "pos": [
+     -0.12,
+     0.22,
+     -0.09
+    ],
+    "cor": "#B0BEC5",
+    "oculta": true
+   },
+   {
+    "id": "aleta0",
+    "forma": "caixa",
+    "tam": [
+     0.004,
+     0.11,
+     0.024
+    ],
+    "pos": [
+     -0.16,
+     0.22,
+     -0.09
+    ],
+    "cor": "#78909C",
+    "oculta": true
+   },
+   {
+    "id": "aleta1",
+    "forma": "caixa",
+    "tam": [
+     0.004,
+     0.11,
+     0.024
+    ],
+    "pos": [
+     -0.133,
+     0.22,
+     -0.09
+    ],
+    "cor": "#78909C",
+    "oculta": true
+   },
+   {
+    "id": "aleta2",
+    "forma": "caixa",
+    "tam": [
+     0.004,
+     0.11,
+     0.024
+    ],
+    "pos": [
+     -0.10600000000000001,
+     0.22,
+     -0.09
+    ],
+    "cor": "#78909C",
+    "oculta": true
+   },
+   {
+    "id": "aleta3",
+    "forma": "caixa",
+    "tam": [
+     0.004,
+     0.11,
+     0.024
+    ],
+    "pos": [
+     -0.079,
+     0.22,
+     -0.09
+    ],
+    "cor": "#78909C",
+    "oculta": true
+   },
+   {
+    "id": "tubo_agua1",
+    "forma": "tubo",
+    "tam": [
+     0.006
+    ],
+    "pos": [
+     -0.08,
+     0.27,
+     -0.05
+    ],
+    "cor": "#0288D1",
+    "sem_contorno": true,
+    "oculta": true,
+    "caminho": [
+     [
+      -0.04,
+      0.0,
+      -0.04
+     ],
+     [
+      0.0,
+      0.01,
+      0.0
+     ],
+     [
+      0.04,
+      0.0,
+      0.05
+     ]
+    ]
+   },
+   {
+    "id": "tubo_agua2",
+    "forma": "tubo",
+    "tam": [
+     0.006
+    ],
+    "pos": [
+     -0.08,
+     0.2,
+     -0.05
+    ],
+    "cor": "#0288D1",
+    "sem_contorno": true,
+    "oculta": true,
+    "caminho": [
+     [
+      0.04,
+      0.0,
+      0.05
+     ],
+     [
+      0.0,
+      -0.01,
+      0.0
+     ],
+     [
+      -0.04,
+      0.0,
+      -0.04
+     ]
+    ]
+   }
+  ]
+ },
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "tito",
+   "texto": "Um cano, um pouco de gasolina e uma faísca. Dá para isso empurrar um CARRO?",
+   "tom": "animado"
+  },
+  {
+   "id": "f2",
+   "quem": "tito",
+   "texto": "Se você soltar uma faísca na gasolina dentro de um cano fechado, a tampa VOA longe."
+  },
+  {
+   "id": "f3",
+   "quem": "tito",
+   "texto": "MAS ela voa uma vez só. Para andar, o carro precisa de um empurrão atrás do OUTRO.",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f4",
+   "quem": "tito",
+   "texto": "Então, você troca a tampa por um PISTÃO: uma rolha de metal que desliza dentro do cano."
+  },
+  {
+   "id": "f5",
+   "quem": "tito",
+   "texto": "SÓ QUE o pistão só sobe e desce, e a roda precisa GIRAR.",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f6",
+   "quem": "tito",
+   "texto": "Então, você prende o pistão num VIRABREQUIM: um eixo torto, igual ao pedal da bicicleta."
+  },
+  {
+   "id": "f7",
+   "quem": "tito",
+   "texto": "A explosão empurra o pistão, o eixo gira, e o próprio giro traz o pistão de VOLTA.",
+   "tom": "animado",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f8",
+   "quem": "tito",
+   "texto": "MAS o cano fica cheio de fumaça, e a próxima explosão não tem AR para queimar.",
+   "tom": "tenso"
+  },
+  {
+   "id": "f9",
+   "quem": "tito",
+   "texto": "Então, você coloca duas VÁLVULAS: uma deixa entrar ar com gasolina, a outra solta a fumaça."
+  },
+  {
+   "id": "f10",
+   "quem": "tito",
+   "texto": "Fica um ritmo de quatro tempos: puxa, aperta, EXPLODE e solta.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f11",
+   "quem": "tito",
+   "texto": "SÓ QUE tanta explosão esquenta o cano, e o metal pode até DERRETER.",
+   "tom": "tenso"
+  },
+  {
+   "id": "f12",
+   "quem": "tito",
+   "texto": "Então, você passa ÁGUA por dentro das paredes do cano, e um radiador esfria essa água.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f13",
+   "quem": "tito",
+   "texto": "MAS um pistão sozinho dá um TRANCO a cada explosão.",
+   "tom": "tenso"
+  },
+  {
+   "id": "f14",
+   "quem": "tito",
+   "texto": "Então, você coloca QUATRO pistões, cada um explodindo na sua vez.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f15",
+   "quem": "tito",
+   "texto": "E repara: a três mil giros por minuto, esse motor dá SEIS mil explosões por minuto.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f16",
+   "quem": "tito",
+   "texto": "São cem explosões a cada SEGUNDO. É daí que vem aquele ronco do motor.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f17",
+   "quem": "tito",
+   "texto": "Parabéns! Você construiu um MOTOR de carro!",
+   "tom": "animado"
+  }
+ ],
+ "chamada": {
+  "pergunta": "E agora, topa construir o freio de um carro?",
+  "texto": "Comenta",
+  "destaque": "FREIO"
+ },
+ "postagem": {
+  "titulo": "Como funciona o motor do carro? Explosões que giram a roda",
+  "descricao": "Como funciona o motor do carro por dentro: o pistão, o virabrequim, as válvulas e a vela, os quatro tempos (puxa, aperta, explode e solta), a água e o radiador que esfriam tudo e por que são quatro pistões. A 3 mil giros, são seis mil explosões por minuto.",
+  "hashtags": [
+   "comofunciona",
+   "motor",
+   "carro",
+   "engenharia",
+   "curiosidades"
+  ],
+  "comentario": "Eu não fazia ideia de que eram milhares de explosões por minuto. Você sabia?",
+  "capa": "f2:voa+0.3"
+ },
+ "cenas": [
+  {
+   "id": "construcao",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "desconfiado"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "motor",
+     "em": "pedestal",
+     "escala": 1.4
+    },
+    {
+     "tipo": "particulas",
+     "particula": "fagulhas",
+     "em": [
+      -0.056,
+      0.0
+     ],
+     "alt": 1.448,
+     "raio": 0.05,
+     "altura": 0.3,
+     "quantas": 14,
+     "aparece": "f2:voa",
+     "some": "f3"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "fumaca",
+     "em": [
+      0.084,
+      0.0
+     ],
+     "alt": 1.532,
+     "raio": 0.04,
+     "altura": 0.15,
+     "quantas": 6,
+     "aparece": "f9:solta",
+     "some": "f10"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "vapor",
+     "em": [
+      -0.056,
+      0.0
+     ],
+     "alt": 1.448,
+     "raio": 0.04,
+     "altura": 0.12,
+     "quantas": 8,
+     "aparece": "f11:esquenta",
+     "some": "f12:paredes"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "confete",
+     "em": [
+      0,
+      0
+     ],
+     "alt": 1.6,
+     "raio": 1.4,
+     "altura": 1.2,
+     "quantas": 60,
+     "aparece": "f17:parabens"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "faisca",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "inicio",
+     "ate": "f2:voa"
+    },
+    {
+     "peca": "tampa",
+     "faz": "tremer",
+     "intensidade": 0.5,
+     "de": "inicio",
+     "ate": "f2:voa"
+    },
+    {
+     "peca": "gasolina",
+     "faz": "fluxo",
+     "tipo": "gas",
+     "quantidade": 6,
+     "velocidade": 0.6,
+     "intensidade": 0.2,
+     "de": "inicio",
+     "ate": "f2:voa",
+     "caminho": [
+      [
+       0,
+       0.01,
+       0
+      ],
+      [
+       0,
+       0.11,
+       0
+      ]
+     ]
+    },
+    {
+     "peca": "faisca",
+     "faz": "sumir",
+     "de": "f2:voa"
+    },
+    {
+     "peca": "gasolina",
+     "faz": "sumir",
+     "de": "f2:voa"
+    },
+    {
+     "peca": "brasa0",
+     "faz": "aparecer",
+     "de": "f2:voa"
+    },
+    {
+     "peca": "brasa0",
+     "faz": "sumir",
+     "de": "f2:voa+0.4"
+    },
+    {
+     "peca": "tampa",
+     "faz": "mover",
+     "desloc": [
+      0.08,
+      0.4,
+      0.1
+     ],
+     "de": "f2:voa",
+     "ate": "f2:voa+0.6"
+    },
+    {
+     "peca": "tampa",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": 2,
+     "de": "f2:voa",
+     "ate": "f2:voa+0.6"
+    },
+    {
+     "peca": "tampa",
+     "faz": "sumir",
+     "de": "f2:voa+0.6"
+    },
+    {
+     "peca": "fundo",
+     "faz": "sumir",
+     "de": "f4:pistao"
+    },
+    {
+     "peca": "cabeca",
+     "faz": "aparecer",
+     "de": "f4:pistao"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "aparecer",
+     "de": "f4:pistao"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f4:desliza",
+     "ate": "f4:desliza+0.4"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f5:sobe",
+     "ate": "f5:sobe+0.35"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f5:desce",
+     "ate": "f5:desce+0.35"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f5:girar-0.2",
+     "ate": "f5:girar+0.2"
+    },
+    {
+     "peca": "roda",
+     "faz": "aparecer",
+     "de": "f5:roda"
+    },
+    {
+     "peca": "aro",
+     "faz": "aparecer",
+     "de": "f5:roda"
+    },
+    {
+     "peca": "marca",
+     "faz": "aparecer",
+     "de": "f5:roda"
+    },
+    {
+     "peca": "eixo",
+     "faz": "aparecer",
+     "de": "f6:virabrequim"
+    },
+    {
+     "peca": "piv0",
+     "faz": "aparecer",
+     "de": "f6:virabrequim"
+    },
+    {
+     "peca": "manivela0",
+     "faz": "aparecer",
+     "de": "f6:virabrequim"
+    },
+    {
+     "peca": "contrapeso0",
+     "faz": "aparecer",
+     "de": "f6:virabrequim"
+    },
+    {
+     "peca": "biela0",
+     "faz": "aparecer",
+     "de": "f6:virabrequim"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f7:empurra+0.00",
+     "ate": "f7:empurra+0.35"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f7:empurra+0.00",
+     "ate": "f7:empurra+0.35"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f7:empurra+0.35",
+     "ate": "f7:empurra+0.70"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f7:empurra+0.35",
+     "ate": "f7:empurra+0.70"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f7:empurra+0.70",
+     "ate": "f7:empurra+1.05"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f7:empurra+0.70",
+     "ate": "f7:empurra+1.05"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f7:empurra+1.05",
+     "ate": "f7:empurra+1.40"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f7:empurra+1.05",
+     "ate": "f7:empurra+1.40"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f7:empurra+1.40",
+     "ate": "f7:empurra+1.75"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f7:empurra+1.40",
+     "ate": "f7:empurra+1.75"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f7:empurra+1.75",
+     "ate": "f7:empurra+2.10"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f7:empurra+1.75",
+     "ate": "f7:empurra+2.10"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f7:empurra+2.10",
+     "ate": "f7:empurra+2.45"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f7:empurra+2.10",
+     "ate": "f7:empurra+2.45"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f7:empurra+2.45",
+     "ate": "f7:empurra+2.80"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f7:empurra+2.45",
+     "ate": "f7:empurra+2.80"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f7:empurra+2.80",
+     "ate": "f7:empurra+3.15"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f7:empurra+2.80",
+     "ate": "f7:empurra+3.15"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f7:empurra+3.15",
+     "ate": "f7:empurra+3.50"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f7:empurra+3.15",
+     "ate": "f7:empurra+3.50"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f7:empurra+3.50",
+     "ate": "f7:empurra+3.85"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f7:empurra+3.50",
+     "ate": "f7:empurra+3.85"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f7:empurra+3.85",
+     "ate": "f7:empurra+4.20"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f7:empurra+3.85",
+     "ate": "f7:empurra+4.20"
+    },
+    {
+     "peca": "roda",
+     "faz": "girar",
+     "eixo": "x",
+     "voltas": 1.4,
+     "de": "f7:empurra",
+     "ate": "f7:empurra+4.2"
+    },
+    {
+     "peca": "brasa0",
+     "faz": "aparecer",
+     "de": "f7:empurra"
+    },
+    {
+     "peca": "brasa0",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "f7:empurra",
+     "ate": "f7:empurra+4.2"
+    },
+    {
+     "peca": "brasa0",
+     "faz": "sumir",
+     "de": "f7:empurra+4.2"
+    },
+    {
+     "peca": "fumo0",
+     "faz": "aparecer",
+     "de": "f8:fumaca+0.00"
+    },
+    {
+     "peca": "fumo0",
+     "faz": "tremer",
+     "intensidade": 0.4,
+     "de": "f8:fumaca",
+     "ate": "f9:solta"
+    },
+    {
+     "peca": "fumo1",
+     "faz": "aparecer",
+     "de": "f8:fumaca+0.15"
+    },
+    {
+     "peca": "fumo1",
+     "faz": "tremer",
+     "intensidade": 0.4,
+     "de": "f8:fumaca",
+     "ate": "f9:solta"
+    },
+    {
+     "peca": "fumo2",
+     "faz": "aparecer",
+     "de": "f8:fumaca+0.30"
+    },
+    {
+     "peca": "fumo2",
+     "faz": "tremer",
+     "intensidade": 0.4,
+     "de": "f8:fumaca",
+     "ate": "f9:solta"
+    },
+    {
+     "peca": "valv_adm",
+     "faz": "aparecer",
+     "de": "f9:valvulas"
+    },
+    {
+     "peca": "valv_esc",
+     "faz": "aparecer",
+     "de": "f9:valvulas"
+    },
+    {
+     "peca": "tubo_adm",
+     "faz": "crescer",
+     "de": "f9:valvulas",
+     "ate": "f9:valvulas+0.5"
+    },
+    {
+     "peca": "tubo_esc",
+     "faz": "crescer",
+     "de": "f9:valvulas",
+     "ate": "f9:valvulas+0.5"
+    },
+    {
+     "peca": "valv_adm",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.01,
+      0
+     ],
+     "de": "f9:entrar",
+     "ate": "f9:entrar+0.2"
+    },
+    {
+     "peca": "tubo_adm",
+     "faz": "fluxo",
+     "tipo": "gas",
+     "quantidade": 6,
+     "velocidade": 1.0,
+     "intensidade": 0.25,
+     "de": "f9:entrar",
+     "ate": "f9:outra"
+    },
+    {
+     "peca": "valv_adm",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.01,
+      0
+     ],
+     "de": "f9:outra",
+     "ate": "f9:outra+0.2"
+    },
+    {
+     "peca": "valv_esc",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.01,
+      0
+     ],
+     "de": "f9:solta",
+     "ate": "f9:solta+0.2"
+    },
+    {
+     "peca": "fumo0",
+     "faz": "mover",
+     "desloc": [
+      0.08,
+      0.06,
+      0
+     ],
+     "de": "f9:solta+0.0",
+     "ate": "f9:solta+0.6"
+    },
+    {
+     "peca": "fumo0",
+     "faz": "sumir",
+     "de": "f9:solta+0.6"
+    },
+    {
+     "peca": "fumo1",
+     "faz": "mover",
+     "desloc": [
+      0.08,
+      0.06,
+      0
+     ],
+     "de": "f9:solta+0.1",
+     "ate": "f9:solta+0.7"
+    },
+    {
+     "peca": "fumo1",
+     "faz": "sumir",
+     "de": "f9:solta+0.7"
+    },
+    {
+     "peca": "fumo2",
+     "faz": "mover",
+     "desloc": [
+      0.08,
+      0.06,
+      0
+     ],
+     "de": "f9:solta+0.2",
+     "ate": "f9:solta+0.8"
+    },
+    {
+     "peca": "fumo2",
+     "faz": "sumir",
+     "de": "f9:solta+0.8"
+    },
+    {
+     "peca": "valv_esc",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.01,
+      0
+     ],
+     "de": "f9:fim",
+     "ate": "f9:fim+0.2"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f10:puxa",
+     "ate": "f10:aperta"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f10:puxa",
+     "ate": "f10:aperta"
+    },
+    {
+     "peca": "roda",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f10:puxa",
+     "ate": "f10:aperta"
+    },
+    {
+     "peca": "valv_adm",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.01,
+      0
+     ],
+     "de": "f10:puxa",
+     "ate": "f10:puxa+0.15"
+    },
+    {
+     "peca": "tubo_adm",
+     "faz": "fluxo",
+     "tipo": "gas",
+     "quantidade": 6,
+     "velocidade": 1.0,
+     "intensidade": 0.25,
+     "de": "f10:puxa",
+     "ate": "f10:aperta"
+    },
+    {
+     "peca": "valv_adm",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.01,
+      0
+     ],
+     "de": "f10:aperta-0.15",
+     "ate": "f10:aperta"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f10:aperta",
+     "ate": "f10:explode"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f10:aperta",
+     "ate": "f10:explode"
+    },
+    {
+     "peca": "roda",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f10:aperta",
+     "ate": "f10:explode"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f10:explode",
+     "ate": "f10:solta"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f10:explode",
+     "ate": "f10:solta"
+    },
+    {
+     "peca": "roda",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f10:explode",
+     "ate": "f10:solta"
+    },
+    {
+     "peca": "brasa0",
+     "faz": "aparecer",
+     "de": "f10:explode"
+    },
+    {
+     "peca": "brasa0",
+     "faz": "sumir",
+     "de": "f10:explode+0.5"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f10:solta",
+     "ate": "f10:fim+0.3"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f10:solta",
+     "ate": "f10:fim+0.3"
+    },
+    {
+     "peca": "roda",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f10:solta",
+     "ate": "f10:fim+0.3"
+    },
+    {
+     "peca": "valv_esc",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.01,
+      0
+     ],
+     "de": "f10:solta",
+     "ate": "f10:solta+0.15"
+    },
+    {
+     "peca": "tubo_esc",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "quantidade": 6,
+     "velocidade": 1.0,
+     "intensidade": 0.2,
+     "de": "f10:solta",
+     "ate": "f10:fim+0.3"
+    },
+    {
+     "peca": "valv_esc",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.01,
+      0
+     ],
+     "de": "f10:fim",
+     "ate": "f10:fim+0.2"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f11+0.00",
+     "ate": "f11+0.30"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f11+0.00",
+     "ate": "f11+0.30"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f11+0.30",
+     "ate": "f11+0.60"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f11+0.30",
+     "ate": "f11+0.60"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f11+0.60",
+     "ate": "f11+0.90"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f11+0.60",
+     "ate": "f11+0.90"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f11+0.90",
+     "ate": "f11+1.20"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f11+0.90",
+     "ate": "f11+1.20"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f11+1.20",
+     "ate": "f11+1.50"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f11+1.20",
+     "ate": "f11+1.50"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f11+1.50",
+     "ate": "f11+1.80"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f11+1.50",
+     "ate": "f11+1.80"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f11+1.80",
+     "ate": "f11+2.10"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f11+1.80",
+     "ate": "f11+2.10"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f11+2.10",
+     "ate": "f11+2.40"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f11+2.10",
+     "ate": "f11+2.40"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f11+2.40",
+     "ate": "f11+2.70"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f11+2.40",
+     "ate": "f11+2.70"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f11+2.70",
+     "ate": "f11+3.00"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f11+2.70",
+     "ate": "f11+3.00"
+    },
+    {
+     "peca": "cano0",
+     "faz": "aquecer",
+     "intensidade": 1.3,
+     "de": "f11:esquenta",
+     "ate": "f11:derreter"
+    },
+    {
+     "peca": "cano0",
+     "faz": "tremer",
+     "intensidade": 0.5,
+     "de": "f11:derreter",
+     "ate": "f12"
+    },
+    {
+     "peca": "camisa",
+     "faz": "aparecer",
+     "de": "f12:agua"
+    },
+    {
+     "peca": "camisa",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 8,
+     "velocidade": 0.8,
+     "intensidade": 0.25,
+     "de": "f12:agua",
+     "ate": "f17:fim+2",
+     "caminho": [
+      [
+       0.035,
+       -0.06,
+       0.02
+      ],
+      [
+       0.035,
+       0.06,
+       0.02
+      ],
+      [
+       -0.035,
+       0.06,
+       0.02
+      ],
+      [
+       -0.035,
+       -0.06,
+       0.02
+      ]
+     ]
+    },
+    {
+     "peca": "cano0",
+     "faz": "esfriar",
+     "de": "f12:paredes",
+     "ate": "f12:paredes+1"
+    },
+    {
+     "peca": "radiador",
+     "faz": "aparecer",
+     "de": "f12:radiador"
+    },
+    {
+     "peca": "aleta0",
+     "faz": "aparecer",
+     "de": "f12:radiador"
+    },
+    {
+     "peca": "aleta1",
+     "faz": "aparecer",
+     "de": "f12:radiador"
+    },
+    {
+     "peca": "aleta2",
+     "faz": "aparecer",
+     "de": "f12:radiador"
+    },
+    {
+     "peca": "aleta3",
+     "faz": "aparecer",
+     "de": "f12:radiador"
+    },
+    {
+     "peca": "tubo_agua1",
+     "faz": "crescer",
+     "de": "f12:radiador",
+     "ate": "f12:radiador+0.5"
+    },
+    {
+     "peca": "tubo_agua1",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 6,
+     "velocidade": 0.8,
+     "intensidade": 0.25,
+     "de": "f12:radiador+0.5",
+     "ate": "f17:fim+2"
+    },
+    {
+     "peca": "tubo_agua2",
+     "faz": "crescer",
+     "de": "f12:radiador",
+     "ate": "f12:radiador+0.5"
+    },
+    {
+     "peca": "tubo_agua2",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 6,
+     "velocidade": 0.8,
+     "intensidade": 0.25,
+     "de": "f12:radiador+0.5",
+     "ate": "f17:fim+2"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f13+0.00",
+     "ate": "f13+0.30"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f13+0.00",
+     "ate": "f13+0.30"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f13+0.30",
+     "ate": "f13+0.60"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f13+0.30",
+     "ate": "f13+0.60"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f13+0.60",
+     "ate": "f13+0.90"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f13+0.60",
+     "ate": "f13+0.90"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f13+0.90",
+     "ate": "f13+1.20"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f13+0.90",
+     "ate": "f13+1.20"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f13+1.20",
+     "ate": "f13+1.50"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f13+1.20",
+     "ate": "f13+1.50"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f13+1.50",
+     "ate": "f13+1.80"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f13+1.50",
+     "ate": "f13+1.80"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f13+1.80",
+     "ate": "f13+2.10"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f13+1.80",
+     "ate": "f13+2.10"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f13+2.10",
+     "ate": "f13+2.40"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f13+2.10",
+     "ate": "f13+2.40"
+    },
+    {
+     "peca": "bloco",
+     "faz": "tremer",
+     "intensidade": 0.7,
+     "de": "f13:tranco",
+     "ate": "f13:fim+0.3"
+    },
+    {
+     "peca": "cano0",
+     "faz": "tremer",
+     "intensidade": 0.7,
+     "de": "f13:tranco",
+     "ate": "f13:fim+0.3"
+    },
+    {
+     "peca": "roda",
+     "faz": "tremer",
+     "intensidade": 0.7,
+     "de": "f13:tranco",
+     "ate": "f13:fim+0.3"
+    },
+    {
+     "peca": "cano1",
+     "faz": "aparecer",
+     "de": "f14:quatro+0.00"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "aparecer",
+     "de": "f14:quatro+0.00"
+    },
+    {
+     "peca": "biela1",
+     "faz": "aparecer",
+     "de": "f14:quatro+0.00"
+    },
+    {
+     "peca": "piv1",
+     "faz": "aparecer",
+     "de": "f14:quatro+0.00"
+    },
+    {
+     "peca": "manivela1",
+     "faz": "aparecer",
+     "de": "f14:quatro+0.00"
+    },
+    {
+     "peca": "contrapeso1",
+     "faz": "aparecer",
+     "de": "f14:quatro+0.00"
+    },
+    {
+     "peca": "cano2",
+     "faz": "aparecer",
+     "de": "f14:quatro+0.12"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "aparecer",
+     "de": "f14:quatro+0.12"
+    },
+    {
+     "peca": "biela2",
+     "faz": "aparecer",
+     "de": "f14:quatro+0.12"
+    },
+    {
+     "peca": "piv2",
+     "faz": "aparecer",
+     "de": "f14:quatro+0.12"
+    },
+    {
+     "peca": "manivela2",
+     "faz": "aparecer",
+     "de": "f14:quatro+0.12"
+    },
+    {
+     "peca": "contrapeso2",
+     "faz": "aparecer",
+     "de": "f14:quatro+0.12"
+    },
+    {
+     "peca": "cano3",
+     "faz": "aparecer",
+     "de": "f14:quatro+0.24"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "aparecer",
+     "de": "f14:quatro+0.24"
+    },
+    {
+     "peca": "biela3",
+     "faz": "aparecer",
+     "de": "f14:quatro+0.24"
+    },
+    {
+     "peca": "piv3",
+     "faz": "aparecer",
+     "de": "f14:quatro+0.24"
+    },
+    {
+     "peca": "manivela3",
+     "faz": "aparecer",
+     "de": "f14:quatro+0.24"
+    },
+    {
+     "peca": "contrapeso3",
+     "faz": "aparecer",
+     "de": "f14:quatro+0.24"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+0.00",
+     "ate": "f14:vez+0.30"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+0.00",
+     "ate": "f14:vez+0.30"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+0.00",
+     "ate": "f14:vez+0.30"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+0.00",
+     "ate": "f14:vez+0.30"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+0.00",
+     "ate": "f14:vez+0.30"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+0.00",
+     "ate": "f14:vez+0.30"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+0.00",
+     "ate": "f14:vez+0.30"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+0.00",
+     "ate": "f14:vez+0.30"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+0.30",
+     "ate": "f14:vez+0.60"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+0.30",
+     "ate": "f14:vez+0.60"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+0.30",
+     "ate": "f14:vez+0.60"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+0.30",
+     "ate": "f14:vez+0.60"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+0.30",
+     "ate": "f14:vez+0.60"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+0.30",
+     "ate": "f14:vez+0.60"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+0.30",
+     "ate": "f14:vez+0.60"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+0.30",
+     "ate": "f14:vez+0.60"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+0.60",
+     "ate": "f14:vez+0.90"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+0.60",
+     "ate": "f14:vez+0.90"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+0.60",
+     "ate": "f14:vez+0.90"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+0.60",
+     "ate": "f14:vez+0.90"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+0.60",
+     "ate": "f14:vez+0.90"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+0.60",
+     "ate": "f14:vez+0.90"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+0.60",
+     "ate": "f14:vez+0.90"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+0.60",
+     "ate": "f14:vez+0.90"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+0.90",
+     "ate": "f14:vez+1.20"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+0.90",
+     "ate": "f14:vez+1.20"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+0.90",
+     "ate": "f14:vez+1.20"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+0.90",
+     "ate": "f14:vez+1.20"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+0.90",
+     "ate": "f14:vez+1.20"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+0.90",
+     "ate": "f14:vez+1.20"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+0.90",
+     "ate": "f14:vez+1.20"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+0.90",
+     "ate": "f14:vez+1.20"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+1.20",
+     "ate": "f14:vez+1.50"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+1.20",
+     "ate": "f14:vez+1.50"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+1.20",
+     "ate": "f14:vez+1.50"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+1.20",
+     "ate": "f14:vez+1.50"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+1.20",
+     "ate": "f14:vez+1.50"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+1.20",
+     "ate": "f14:vez+1.50"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+1.20",
+     "ate": "f14:vez+1.50"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+1.20",
+     "ate": "f14:vez+1.50"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+1.50",
+     "ate": "f14:vez+1.80"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+1.50",
+     "ate": "f14:vez+1.80"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+1.50",
+     "ate": "f14:vez+1.80"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+1.50",
+     "ate": "f14:vez+1.80"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+1.50",
+     "ate": "f14:vez+1.80"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+1.50",
+     "ate": "f14:vez+1.80"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+1.50",
+     "ate": "f14:vez+1.80"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+1.50",
+     "ate": "f14:vez+1.80"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+1.80",
+     "ate": "f14:vez+2.10"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+1.80",
+     "ate": "f14:vez+2.10"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+1.80",
+     "ate": "f14:vez+2.10"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+1.80",
+     "ate": "f14:vez+2.10"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+1.80",
+     "ate": "f14:vez+2.10"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+1.80",
+     "ate": "f14:vez+2.10"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+1.80",
+     "ate": "f14:vez+2.10"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+1.80",
+     "ate": "f14:vez+2.10"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+2.10",
+     "ate": "f14:vez+2.40"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+2.10",
+     "ate": "f14:vez+2.40"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+2.10",
+     "ate": "f14:vez+2.40"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+2.10",
+     "ate": "f14:vez+2.40"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+2.10",
+     "ate": "f14:vez+2.40"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+2.10",
+     "ate": "f14:vez+2.40"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+2.10",
+     "ate": "f14:vez+2.40"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+2.10",
+     "ate": "f14:vez+2.40"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+2.40",
+     "ate": "f14:vez+2.70"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+2.40",
+     "ate": "f14:vez+2.70"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+2.40",
+     "ate": "f14:vez+2.70"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+2.40",
+     "ate": "f14:vez+2.70"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+2.40",
+     "ate": "f14:vez+2.70"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+2.40",
+     "ate": "f14:vez+2.70"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+2.40",
+     "ate": "f14:vez+2.70"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+2.40",
+     "ate": "f14:vez+2.70"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+2.70",
+     "ate": "f14:vez+3.00"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+2.70",
+     "ate": "f14:vez+3.00"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+2.70",
+     "ate": "f14:vez+3.00"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+2.70",
+     "ate": "f14:vez+3.00"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+2.70",
+     "ate": "f14:vez+3.00"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+2.70",
+     "ate": "f14:vez+3.00"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+2.70",
+     "ate": "f14:vez+3.00"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+2.70",
+     "ate": "f14:vez+3.00"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+3.00",
+     "ate": "f14:vez+3.30"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+3.00",
+     "ate": "f14:vez+3.30"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+3.00",
+     "ate": "f14:vez+3.30"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+3.00",
+     "ate": "f14:vez+3.30"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+3.00",
+     "ate": "f14:vez+3.30"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+3.00",
+     "ate": "f14:vez+3.30"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+3.00",
+     "ate": "f14:vez+3.30"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+3.00",
+     "ate": "f14:vez+3.30"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+3.30",
+     "ate": "f14:vez+3.60"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+3.30",
+     "ate": "f14:vez+3.60"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+3.30",
+     "ate": "f14:vez+3.60"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+3.30",
+     "ate": "f14:vez+3.60"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+3.30",
+     "ate": "f14:vez+3.60"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+3.30",
+     "ate": "f14:vez+3.60"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+3.30",
+     "ate": "f14:vez+3.60"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+3.30",
+     "ate": "f14:vez+3.60"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+3.60",
+     "ate": "f14:vez+3.90"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+3.60",
+     "ate": "f14:vez+3.90"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+3.60",
+     "ate": "f14:vez+3.90"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+3.60",
+     "ate": "f14:vez+3.90"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+3.60",
+     "ate": "f14:vez+3.90"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+3.60",
+     "ate": "f14:vez+3.90"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+3.60",
+     "ate": "f14:vez+3.90"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+3.60",
+     "ate": "f14:vez+3.90"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+3.90",
+     "ate": "f14:vez+4.20"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+3.90",
+     "ate": "f14:vez+4.20"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+3.90",
+     "ate": "f14:vez+4.20"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+3.90",
+     "ate": "f14:vez+4.20"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+3.90",
+     "ate": "f14:vez+4.20"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+3.90",
+     "ate": "f14:vez+4.20"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+3.90",
+     "ate": "f14:vez+4.20"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+3.90",
+     "ate": "f14:vez+4.20"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+4.20",
+     "ate": "f14:vez+4.50"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+4.20",
+     "ate": "f14:vez+4.50"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+4.20",
+     "ate": "f14:vez+4.50"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+4.20",
+     "ate": "f14:vez+4.50"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+4.20",
+     "ate": "f14:vez+4.50"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+4.20",
+     "ate": "f14:vez+4.50"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+4.20",
+     "ate": "f14:vez+4.50"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+4.20",
+     "ate": "f14:vez+4.50"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+4.50",
+     "ate": "f14:vez+4.80"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+4.50",
+     "ate": "f14:vez+4.80"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+4.50",
+     "ate": "f14:vez+4.80"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+4.50",
+     "ate": "f14:vez+4.80"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+4.50",
+     "ate": "f14:vez+4.80"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+4.50",
+     "ate": "f14:vez+4.80"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+4.50",
+     "ate": "f14:vez+4.80"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+4.50",
+     "ate": "f14:vez+4.80"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+4.80",
+     "ate": "f14:vez+5.10"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+4.80",
+     "ate": "f14:vez+5.10"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+4.80",
+     "ate": "f14:vez+5.10"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+4.80",
+     "ate": "f14:vez+5.10"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+4.80",
+     "ate": "f14:vez+5.10"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+4.80",
+     "ate": "f14:vez+5.10"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+4.80",
+     "ate": "f14:vez+5.10"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+4.80",
+     "ate": "f14:vez+5.10"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+5.10",
+     "ate": "f14:vez+5.40"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+5.10",
+     "ate": "f14:vez+5.40"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+5.10",
+     "ate": "f14:vez+5.40"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+5.10",
+     "ate": "f14:vez+5.40"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+5.10",
+     "ate": "f14:vez+5.40"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+5.10",
+     "ate": "f14:vez+5.40"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+5.10",
+     "ate": "f14:vez+5.40"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+5.10",
+     "ate": "f14:vez+5.40"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+5.40",
+     "ate": "f14:vez+5.70"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+5.40",
+     "ate": "f14:vez+5.70"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+5.40",
+     "ate": "f14:vez+5.70"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+5.40",
+     "ate": "f14:vez+5.70"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+5.40",
+     "ate": "f14:vez+5.70"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+5.40",
+     "ate": "f14:vez+5.70"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+5.40",
+     "ate": "f14:vez+5.70"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+5.40",
+     "ate": "f14:vez+5.70"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+5.70",
+     "ate": "f14:vez+6.00"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+5.70",
+     "ate": "f14:vez+6.00"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+5.70",
+     "ate": "f14:vez+6.00"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+5.70",
+     "ate": "f14:vez+6.00"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+5.70",
+     "ate": "f14:vez+6.00"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+5.70",
+     "ate": "f14:vez+6.00"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+5.70",
+     "ate": "f14:vez+6.00"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+5.70",
+     "ate": "f14:vez+6.00"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+6.00",
+     "ate": "f14:vez+6.30"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+6.00",
+     "ate": "f14:vez+6.30"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+6.00",
+     "ate": "f14:vez+6.30"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+6.00",
+     "ate": "f14:vez+6.30"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+6.00",
+     "ate": "f14:vez+6.30"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+6.00",
+     "ate": "f14:vez+6.30"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+6.00",
+     "ate": "f14:vez+6.30"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+6.00",
+     "ate": "f14:vez+6.30"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+6.30",
+     "ate": "f14:vez+6.60"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+6.30",
+     "ate": "f14:vez+6.60"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+6.30",
+     "ate": "f14:vez+6.60"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+6.30",
+     "ate": "f14:vez+6.60"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+6.30",
+     "ate": "f14:vez+6.60"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+6.30",
+     "ate": "f14:vez+6.60"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+6.30",
+     "ate": "f14:vez+6.60"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+6.30",
+     "ate": "f14:vez+6.60"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+6.60",
+     "ate": "f14:vez+6.90"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+6.60",
+     "ate": "f14:vez+6.90"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+6.60",
+     "ate": "f14:vez+6.90"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+6.60",
+     "ate": "f14:vez+6.90"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+6.60",
+     "ate": "f14:vez+6.90"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+6.60",
+     "ate": "f14:vez+6.90"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+6.60",
+     "ate": "f14:vez+6.90"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+6.60",
+     "ate": "f14:vez+6.90"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+6.90",
+     "ate": "f14:vez+7.20"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+6.90",
+     "ate": "f14:vez+7.20"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+6.90",
+     "ate": "f14:vez+7.20"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+6.90",
+     "ate": "f14:vez+7.20"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+6.90",
+     "ate": "f14:vez+7.20"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+6.90",
+     "ate": "f14:vez+7.20"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+6.90",
+     "ate": "f14:vez+7.20"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+6.90",
+     "ate": "f14:vez+7.20"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+7.20",
+     "ate": "f14:vez+7.50"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+7.20",
+     "ate": "f14:vez+7.50"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+7.20",
+     "ate": "f14:vez+7.50"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+7.20",
+     "ate": "f14:vez+7.50"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+7.20",
+     "ate": "f14:vez+7.50"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+7.20",
+     "ate": "f14:vez+7.50"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+7.20",
+     "ate": "f14:vez+7.50"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+7.20",
+     "ate": "f14:vez+7.50"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+7.50",
+     "ate": "f14:vez+7.80"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+7.50",
+     "ate": "f14:vez+7.80"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+7.50",
+     "ate": "f14:vez+7.80"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+7.50",
+     "ate": "f14:vez+7.80"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+7.50",
+     "ate": "f14:vez+7.80"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+7.50",
+     "ate": "f14:vez+7.80"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+7.50",
+     "ate": "f14:vez+7.80"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+7.50",
+     "ate": "f14:vez+7.80"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+7.80",
+     "ate": "f14:vez+8.10"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+7.80",
+     "ate": "f14:vez+8.10"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+7.80",
+     "ate": "f14:vez+8.10"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+7.80",
+     "ate": "f14:vez+8.10"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+7.80",
+     "ate": "f14:vez+8.10"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+7.80",
+     "ate": "f14:vez+8.10"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+7.80",
+     "ate": "f14:vez+8.10"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+7.80",
+     "ate": "f14:vez+8.10"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+8.10",
+     "ate": "f14:vez+8.40"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+8.10",
+     "ate": "f14:vez+8.40"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+8.10",
+     "ate": "f14:vez+8.40"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+8.10",
+     "ate": "f14:vez+8.40"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+8.10",
+     "ate": "f14:vez+8.40"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+8.10",
+     "ate": "f14:vez+8.40"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+8.10",
+     "ate": "f14:vez+8.40"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+8.10",
+     "ate": "f14:vez+8.40"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+8.40",
+     "ate": "f14:vez+8.70"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+8.40",
+     "ate": "f14:vez+8.70"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+8.40",
+     "ate": "f14:vez+8.70"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+8.40",
+     "ate": "f14:vez+8.70"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+8.40",
+     "ate": "f14:vez+8.70"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+8.40",
+     "ate": "f14:vez+8.70"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+8.40",
+     "ate": "f14:vez+8.70"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+8.40",
+     "ate": "f14:vez+8.70"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+8.70",
+     "ate": "f14:vez+9.00"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+8.70",
+     "ate": "f14:vez+9.00"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+8.70",
+     "ate": "f14:vez+9.00"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+8.70",
+     "ate": "f14:vez+9.00"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+8.70",
+     "ate": "f14:vez+9.00"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+8.70",
+     "ate": "f14:vez+9.00"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+8.70",
+     "ate": "f14:vez+9.00"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+8.70",
+     "ate": "f14:vez+9.00"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+9.00",
+     "ate": "f14:vez+9.30"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+9.00",
+     "ate": "f14:vez+9.30"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+9.00",
+     "ate": "f14:vez+9.30"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+9.00",
+     "ate": "f14:vez+9.30"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+9.00",
+     "ate": "f14:vez+9.30"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+9.00",
+     "ate": "f14:vez+9.30"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+9.00",
+     "ate": "f14:vez+9.30"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+9.00",
+     "ate": "f14:vez+9.30"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+9.30",
+     "ate": "f14:vez+9.60"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+9.30",
+     "ate": "f14:vez+9.60"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+9.30",
+     "ate": "f14:vez+9.60"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+9.30",
+     "ate": "f14:vez+9.60"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+9.30",
+     "ate": "f14:vez+9.60"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+9.30",
+     "ate": "f14:vez+9.60"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+9.30",
+     "ate": "f14:vez+9.60"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+9.30",
+     "ate": "f14:vez+9.60"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+9.60",
+     "ate": "f14:vez+9.90"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+9.60",
+     "ate": "f14:vez+9.90"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+9.60",
+     "ate": "f14:vez+9.90"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+9.60",
+     "ate": "f14:vez+9.90"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+9.60",
+     "ate": "f14:vez+9.90"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+9.60",
+     "ate": "f14:vez+9.90"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+9.60",
+     "ate": "f14:vez+9.90"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+9.60",
+     "ate": "f14:vez+9.90"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+9.90",
+     "ate": "f14:vez+10.20"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+9.90",
+     "ate": "f14:vez+10.20"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+9.90",
+     "ate": "f14:vez+10.20"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+9.90",
+     "ate": "f14:vez+10.20"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+9.90",
+     "ate": "f14:vez+10.20"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+9.90",
+     "ate": "f14:vez+10.20"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+9.90",
+     "ate": "f14:vez+10.20"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+9.90",
+     "ate": "f14:vez+10.20"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+10.20",
+     "ate": "f14:vez+10.50"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+10.20",
+     "ate": "f14:vez+10.50"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+10.20",
+     "ate": "f14:vez+10.50"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+10.20",
+     "ate": "f14:vez+10.50"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+10.20",
+     "ate": "f14:vez+10.50"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+10.20",
+     "ate": "f14:vez+10.50"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+10.20",
+     "ate": "f14:vez+10.50"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+10.20",
+     "ate": "f14:vez+10.50"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+10.50",
+     "ate": "f14:vez+10.80"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+10.50",
+     "ate": "f14:vez+10.80"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+10.50",
+     "ate": "f14:vez+10.80"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+10.50",
+     "ate": "f14:vez+10.80"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+10.50",
+     "ate": "f14:vez+10.80"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+10.50",
+     "ate": "f14:vez+10.80"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+10.50",
+     "ate": "f14:vez+10.80"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+10.50",
+     "ate": "f14:vez+10.80"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+10.80",
+     "ate": "f14:vez+11.10"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+10.80",
+     "ate": "f14:vez+11.10"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+10.80",
+     "ate": "f14:vez+11.10"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+10.80",
+     "ate": "f14:vez+11.10"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+10.80",
+     "ate": "f14:vez+11.10"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+10.80",
+     "ate": "f14:vez+11.10"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+10.80",
+     "ate": "f14:vez+11.10"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+10.80",
+     "ate": "f14:vez+11.10"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+11.10",
+     "ate": "f14:vez+11.40"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+11.10",
+     "ate": "f14:vez+11.40"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+11.10",
+     "ate": "f14:vez+11.40"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+11.10",
+     "ate": "f14:vez+11.40"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+11.10",
+     "ate": "f14:vez+11.40"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+11.10",
+     "ate": "f14:vez+11.40"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+11.10",
+     "ate": "f14:vez+11.40"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+11.10",
+     "ate": "f14:vez+11.40"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+11.40",
+     "ate": "f14:vez+11.70"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+11.40",
+     "ate": "f14:vez+11.70"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+11.40",
+     "ate": "f14:vez+11.70"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+11.40",
+     "ate": "f14:vez+11.70"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+11.40",
+     "ate": "f14:vez+11.70"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+11.40",
+     "ate": "f14:vez+11.70"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+11.40",
+     "ate": "f14:vez+11.70"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+11.40",
+     "ate": "f14:vez+11.70"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+11.70",
+     "ate": "f14:vez+12.00"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+11.70",
+     "ate": "f14:vez+12.00"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+11.70",
+     "ate": "f14:vez+12.00"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+11.70",
+     "ate": "f14:vez+12.00"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+11.70",
+     "ate": "f14:vez+12.00"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+11.70",
+     "ate": "f14:vez+12.00"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+11.70",
+     "ate": "f14:vez+12.00"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+11.70",
+     "ate": "f14:vez+12.00"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+12.00",
+     "ate": "f14:vez+12.30"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+12.00",
+     "ate": "f14:vez+12.30"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+12.00",
+     "ate": "f14:vez+12.30"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+12.00",
+     "ate": "f14:vez+12.30"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+12.00",
+     "ate": "f14:vez+12.30"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+12.00",
+     "ate": "f14:vez+12.30"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+12.00",
+     "ate": "f14:vez+12.30"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+12.00",
+     "ate": "f14:vez+12.30"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+12.30",
+     "ate": "f14:vez+12.60"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+12.30",
+     "ate": "f14:vez+12.60"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+12.30",
+     "ate": "f14:vez+12.60"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+12.30",
+     "ate": "f14:vez+12.60"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+12.30",
+     "ate": "f14:vez+12.60"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+12.30",
+     "ate": "f14:vez+12.60"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+12.30",
+     "ate": "f14:vez+12.60"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+12.30",
+     "ate": "f14:vez+12.60"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+12.60",
+     "ate": "f14:vez+12.90"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+12.60",
+     "ate": "f14:vez+12.90"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+12.60",
+     "ate": "f14:vez+12.90"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+12.60",
+     "ate": "f14:vez+12.90"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+12.60",
+     "ate": "f14:vez+12.90"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+12.60",
+     "ate": "f14:vez+12.90"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+12.60",
+     "ate": "f14:vez+12.90"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+12.60",
+     "ate": "f14:vez+12.90"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+12.90",
+     "ate": "f14:vez+13.20"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+12.90",
+     "ate": "f14:vez+13.20"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+12.90",
+     "ate": "f14:vez+13.20"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+12.90",
+     "ate": "f14:vez+13.20"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+12.90",
+     "ate": "f14:vez+13.20"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+12.90",
+     "ate": "f14:vez+13.20"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+12.90",
+     "ate": "f14:vez+13.20"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+12.90",
+     "ate": "f14:vez+13.20"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+13.20",
+     "ate": "f14:vez+13.50"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+13.20",
+     "ate": "f14:vez+13.50"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+13.20",
+     "ate": "f14:vez+13.50"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+13.20",
+     "ate": "f14:vez+13.50"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+13.20",
+     "ate": "f14:vez+13.50"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+13.20",
+     "ate": "f14:vez+13.50"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+13.20",
+     "ate": "f14:vez+13.50"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+13.20",
+     "ate": "f14:vez+13.50"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+13.50",
+     "ate": "f14:vez+13.80"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+13.50",
+     "ate": "f14:vez+13.80"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+13.50",
+     "ate": "f14:vez+13.80"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+13.50",
+     "ate": "f14:vez+13.80"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+13.50",
+     "ate": "f14:vez+13.80"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+13.50",
+     "ate": "f14:vez+13.80"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+13.50",
+     "ate": "f14:vez+13.80"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+13.50",
+     "ate": "f14:vez+13.80"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+13.80",
+     "ate": "f14:vez+14.10"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+13.80",
+     "ate": "f14:vez+14.10"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+13.80",
+     "ate": "f14:vez+14.10"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+13.80",
+     "ate": "f14:vez+14.10"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+13.80",
+     "ate": "f14:vez+14.10"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+13.80",
+     "ate": "f14:vez+14.10"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+13.80",
+     "ate": "f14:vez+14.10"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+13.80",
+     "ate": "f14:vez+14.10"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+14.10",
+     "ate": "f14:vez+14.40"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+14.10",
+     "ate": "f14:vez+14.40"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+14.10",
+     "ate": "f14:vez+14.40"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+14.10",
+     "ate": "f14:vez+14.40"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+14.10",
+     "ate": "f14:vez+14.40"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+14.10",
+     "ate": "f14:vez+14.40"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+14.10",
+     "ate": "f14:vez+14.40"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+14.10",
+     "ate": "f14:vez+14.40"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+14.40",
+     "ate": "f14:vez+14.70"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+14.40",
+     "ate": "f14:vez+14.70"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+14.40",
+     "ate": "f14:vez+14.70"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+14.40",
+     "ate": "f14:vez+14.70"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+14.40",
+     "ate": "f14:vez+14.70"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+14.40",
+     "ate": "f14:vez+14.70"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+14.40",
+     "ate": "f14:vez+14.70"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+14.40",
+     "ate": "f14:vez+14.70"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+14.70",
+     "ate": "f14:vez+15.00"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+14.70",
+     "ate": "f14:vez+15.00"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+14.70",
+     "ate": "f14:vez+15.00"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+14.70",
+     "ate": "f14:vez+15.00"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+14.70",
+     "ate": "f14:vez+15.00"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+14.70",
+     "ate": "f14:vez+15.00"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+14.70",
+     "ate": "f14:vez+15.00"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+14.70",
+     "ate": "f14:vez+15.00"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+15.00",
+     "ate": "f14:vez+15.30"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+15.00",
+     "ate": "f14:vez+15.30"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+15.00",
+     "ate": "f14:vez+15.30"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+15.00",
+     "ate": "f14:vez+15.30"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+15.00",
+     "ate": "f14:vez+15.30"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+15.00",
+     "ate": "f14:vez+15.30"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+15.00",
+     "ate": "f14:vez+15.30"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+15.00",
+     "ate": "f14:vez+15.30"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+15.30",
+     "ate": "f14:vez+15.60"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+15.30",
+     "ate": "f14:vez+15.60"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+15.30",
+     "ate": "f14:vez+15.60"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+15.30",
+     "ate": "f14:vez+15.60"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+15.30",
+     "ate": "f14:vez+15.60"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+15.30",
+     "ate": "f14:vez+15.60"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+15.30",
+     "ate": "f14:vez+15.60"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+15.30",
+     "ate": "f14:vez+15.60"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+15.60",
+     "ate": "f14:vez+15.90"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+15.60",
+     "ate": "f14:vez+15.90"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+15.60",
+     "ate": "f14:vez+15.90"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+15.60",
+     "ate": "f14:vez+15.90"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+15.60",
+     "ate": "f14:vez+15.90"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+15.60",
+     "ate": "f14:vez+15.90"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+15.60",
+     "ate": "f14:vez+15.90"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+15.60",
+     "ate": "f14:vez+15.90"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+15.90",
+     "ate": "f14:vez+16.20"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+15.90",
+     "ate": "f14:vez+16.20"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+15.90",
+     "ate": "f14:vez+16.20"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+15.90",
+     "ate": "f14:vez+16.20"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+15.90",
+     "ate": "f14:vez+16.20"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+15.90",
+     "ate": "f14:vez+16.20"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+15.90",
+     "ate": "f14:vez+16.20"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+15.90",
+     "ate": "f14:vez+16.20"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+16.20",
+     "ate": "f14:vez+16.50"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+16.20",
+     "ate": "f14:vez+16.50"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+16.20",
+     "ate": "f14:vez+16.50"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+16.20",
+     "ate": "f14:vez+16.50"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+16.20",
+     "ate": "f14:vez+16.50"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+16.20",
+     "ate": "f14:vez+16.50"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+16.20",
+     "ate": "f14:vez+16.50"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+16.20",
+     "ate": "f14:vez+16.50"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+16.50",
+     "ate": "f14:vez+16.80"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+16.50",
+     "ate": "f14:vez+16.80"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+16.50",
+     "ate": "f14:vez+16.80"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+16.50",
+     "ate": "f14:vez+16.80"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+16.50",
+     "ate": "f14:vez+16.80"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+16.50",
+     "ate": "f14:vez+16.80"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+16.50",
+     "ate": "f14:vez+16.80"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+16.50",
+     "ate": "f14:vez+16.80"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+16.80",
+     "ate": "f14:vez+17.10"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+16.80",
+     "ate": "f14:vez+17.10"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+16.80",
+     "ate": "f14:vez+17.10"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+16.80",
+     "ate": "f14:vez+17.10"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+16.80",
+     "ate": "f14:vez+17.10"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+16.80",
+     "ate": "f14:vez+17.10"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+16.80",
+     "ate": "f14:vez+17.10"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+16.80",
+     "ate": "f14:vez+17.10"
+    },
+    {
+     "peca": "pistao0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+17.10",
+     "ate": "f14:vez+17.40"
+    },
+    {
+     "peca": "piv0",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+17.10",
+     "ate": "f14:vez+17.40"
+    },
+    {
+     "peca": "pistao1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+17.10",
+     "ate": "f14:vez+17.40"
+    },
+    {
+     "peca": "piv1",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+17.10",
+     "ate": "f14:vez+17.40"
+    },
+    {
+     "peca": "pistao2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:vez+17.10",
+     "ate": "f14:vez+17.40"
+    },
+    {
+     "peca": "piv2",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+17.10",
+     "ate": "f14:vez+17.40"
+    },
+    {
+     "peca": "pistao3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:vez+17.10",
+     "ate": "f14:vez+17.40"
+    },
+    {
+     "peca": "piv3",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 180,
+     "de": "f14:vez+17.10",
+     "ate": "f14:vez+17.40"
+    },
+    {
+     "peca": "roda",
+     "faz": "girar",
+     "eixo": "x",
+     "voltas": 1.67,
+     "de": "f14:vez",
+     "ate": "f14:vez+17.4"
+    },
+    {
+     "peca": "brasa0",
+     "faz": "aparecer",
+     "de": "f14:vez"
+    },
+    {
+     "peca": "brasa0",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "f14:vez+0.00",
+     "ate": "f17:fim+2"
+    },
+    {
+     "peca": "brasa1",
+     "faz": "aparecer",
+     "de": "f14:vez"
+    },
+    {
+     "peca": "brasa1",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "f14:vez+0.15",
+     "ate": "f17:fim+2"
+    },
+    {
+     "peca": "brasa2",
+     "faz": "aparecer",
+     "de": "f14:vez"
+    },
+    {
+     "peca": "brasa2",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "f14:vez+0.30",
+     "ate": "f17:fim+2"
+    },
+    {
+     "peca": "brasa3",
+     "faz": "aparecer",
+     "de": "f14:vez"
+    },
+    {
+     "peca": "brasa3",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "f14:vez+0.45",
+     "ate": "f17:fim+2"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f1:carro"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "maquete",
+     "expressao": "surpreso",
+     "de": "f2:voa"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f3"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "pistao0",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f4:pistao"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f5"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "manivela0",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f6:virabrequim"
+    },
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "surpreso",
+     "de": "f7:volta"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "camera",
+     "expressao": "nervoso",
+     "de": "f8"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "valv_adm",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f9:valvulas"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "camera",
+     "expressao": "medo",
+     "de": "f11"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "radiador",
+     "olhar": "maquete",
+     "expressao": "aliviado",
+     "de": "f12:radiador"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "camera",
+     "expressao": "nervoso",
+     "de": "f13"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "cano3",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f14:quatro"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f15:seis"
+    },
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f16:ronco"
+    },
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f17"
+    },
+    {
+     "quem": "tito",
+     "faz": "acenar",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f17:parabens"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "camera": [
+      0.08,
+      1.46,
+      0.95
+     ],
+     "alvo": [
+      -0.056,
+      1.378,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.6
+    },
+    {
+     "de": "f1:carro",
+     "tipo": "detalhe",
+     "camera": [
+      0.06,
+      1.38,
+      0.62
+     ],
+     "alvo": [
+      -0.056,
+      1.336,
+      0.0
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f2",
+     "tipo": "detalhe",
+     "camera": [
+      -0.38,
+      1.42,
+      0.55
+     ],
+     "alvo": [
+      -0.056,
+      1.336,
+      0.0
+     ],
+     "movimento": "orbitar"
+    },
+    {
+     "de": "f2:voa",
+     "tipo": "detalhe",
+     "camera": [
+      0.08,
+      1.46,
+      0.95
+     ],
+     "alvo": [
+      -0.056,
+      1.378,
+      0.0
+     ],
+     "movimento": "subir"
+    },
+    {
+     "de": "f3",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f4",
+     "tipo": "detalhe",
+     "camera": [
+      0.06,
+      1.38,
+      0.62
+     ],
+     "alvo": [
+      -0.056,
+      1.336,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f5",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f5:roda",
+     "tipo": "detalhe",
+     "camera": [
+      0.55,
+      1.2,
+      0.62
+     ],
+     "alvo": [
+      0.28,
+      1.112,
+      0.0
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f6",
+     "tipo": "detalhe",
+     "camera": [
+      0.12,
+      1.14,
+      0.55
+     ],
+     "alvo": [
+      -0.056,
+      1.14,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f7",
+     "tipo": "aberto",
+     "camera": [
+      0.0,
+      1.5,
+      1.8
+     ],
+     "alvo": [
+      0.0,
+      1.28,
+      0.0
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f7:eixo",
+     "tipo": "detalhe",
+     "camera": [
+      0.12,
+      1.14,
+      0.55
+     ],
+     "alvo": [
+      -0.056,
+      1.14,
+      0.0
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f8",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f8:fumaca",
+     "tipo": "detalhe",
+     "camera": [
+      0.06,
+      1.38,
+      0.62
+     ],
+     "alvo": [
+      -0.056,
+      1.336,
+      0.0
+     ],
+     "movimento": "tremer"
+    },
+    {
+     "de": "f9",
+     "tipo": "detalhe",
+     "camera": [
+      0.02,
+      1.62,
+      0.5
+     ],
+     "alvo": [
+      -0.056,
+      1.448,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f10",
+     "tipo": "detalhe",
+     "camera": [
+      -0.38,
+      1.42,
+      0.55
+     ],
+     "alvo": [
+      -0.056,
+      1.336,
+      0.0
+     ],
+     "movimento": "aproximar",
+     "transicao": "zoom"
+    },
+    {
+     "de": "f11",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "dolly_zoom",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f11:esquenta",
+     "tipo": "detalhe",
+     "camera": [
+      0.06,
+      1.38,
+      0.62
+     ],
+     "alvo": [
+      -0.056,
+      1.336,
+      0.0
+     ],
+     "movimento": "tremer"
+    },
+    {
+     "de": "f12",
+     "tipo": "detalhe",
+     "camera": [
+      0.06,
+      1.38,
+      0.62
+     ],
+     "alvo": [
+      -0.056,
+      1.336,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f12:radiador",
+     "tipo": "detalhe",
+     "camera": [
+      -0.42,
+      1.42,
+      0.62
+     ],
+     "alvo": [
+      -0.14,
+      1.322,
+      -0.07
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f13",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f13:tranco",
+     "tipo": "detalhe",
+     "camera": [
+      0.55,
+      1.2,
+      0.62
+     ],
+     "alvo": [
+      0.28,
+      1.112,
+      0.0
+     ],
+     "movimento": "tremer"
+    },
+    {
+     "de": "f14",
+     "tipo": "aberto",
+     "camera": [
+      0.05,
+      1.46,
+      1.15
+     ],
+     "alvo": [
+      0.0,
+      1.28,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f15",
+     "tipo": "detalhe",
+     "camera": [
+      0.12,
+      1.14,
+      0.55
+     ],
+     "alvo": [
+      -0.056,
+      1.14,
+      0.0
+     ],
+     "movimento": "aproximar",
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f15:seis",
+     "tipo": "aberto",
+     "camera": [
+      0.05,
+      1.46,
+      1.15
+     ],
+     "alvo": [
+      0.0,
+      1.28,
+      0.0
+     ],
+     "movimento": "orbitar"
+    },
+    {
+     "de": "f16",
+     "tipo": "detalhe",
+     "camera": [
+      -0.38,
+      1.42,
+      0.55
+     ],
+     "alvo": [
+      -0.056,
+      1.336,
+      0.0
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.3,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f17",
+     "tipo": "aberto",
+     "camera": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "alvo": [
+      -0.9,
+      1.5,
+      0.3
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    }
+   ],
+   "sons": [
+    {
+     "de": "inicio",
+     "som": "zap",
+     "volume": 0.4
+    },
+    {
+     "de": "f1:carro",
+     "som": "impacto",
+     "volume": 0.5
+    },
+    {
+     "de": "f2:faisca",
+     "som": "isqueiro",
+     "volume": 0.7
+    },
+    {
+     "de": "f2:voa",
+     "som": "impacto",
+     "volume": 0.9
+    },
+    {
+     "de": "f2:voa",
+     "som": "whoosh",
+     "volume": 0.6
+    },
+    {
+     "de": "f3",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f4:pistao",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f4:desliza",
+     "som": "impacto",
+     "volume": 0.5
+    },
+    {
+     "de": "f5",
+     "som": "tensao_sobe",
+     "volume": 0.4
+    },
+    {
+     "de": "f5:roda",
+     "som": "pop",
+     "volume": 0.6
+    },
+    {
+     "de": "f6:virabrequim",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f7:empurra",
+     "som": "engrenagem",
+     "volume": 0.6
+    },
+    {
+     "de": "f7:volta",
+     "som": "ding",
+     "volume": 0.7
+    },
+    {
+     "de": "f8",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f8:fumaca",
+     "som": "chiado",
+     "volume": 0.4
+    },
+    {
+     "de": "f9:valvulas",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f9:solta",
+     "som": "sopro",
+     "volume": 0.6
+    },
+    {
+     "de": "f10:puxa",
+     "som": "sopro",
+     "volume": 0.5
+    },
+    {
+     "de": "f10:aperta",
+     "som": "clique",
+     "volume": 0.6
+    },
+    {
+     "de": "f10:explode",
+     "som": "impacto",
+     "volume": 0.8
+    },
+    {
+     "de": "f10:solta",
+     "som": "sopro",
+     "volume": 0.5
+    },
+    {
+     "de": "f11",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f11:esquenta",
+     "som": "chiado",
+     "volume": 0.5
+    },
+    {
+     "de": "f12:agua",
+     "som": "agua",
+     "volume": 0.6
+    },
+    {
+     "de": "f12:radiador",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f13",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f13:tranco",
+     "som": "impacto",
+     "volume": 0.7
+    },
+    {
+     "de": "f14:quatro",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f14:vez",
+     "som": "engrenagem",
+     "volume": 0.6
+    },
+    {
+     "de": "f15:seis",
+     "som": "ding",
+     "volume": 0.8
+    },
+    {
+     "de": "f16:segundo",
+     "som": "engrenagem",
+     "volume": 0.7
+    },
+    {
+     "de": "f17:parabens",
+     "som": "ding",
+     "volume": 0.9
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f1:carro",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f2:voa",
+     "efeito": "flash"
+    },
+    {
+     "de": "f2:voa",
+     "ate": "f2:voa+0.7",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f3:so",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f4:pistao+0.1",
+     "ate": "f4:fim",
+     "efeito": "circular",
+     "alvo": "pistao0"
+    },
+    {
+     "de": "f5:girar",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f6:virabrequim+0.1",
+     "ate": "f6:fim+0.2",
+     "efeito": "circular",
+     "alvo": "manivela0"
+    },
+    {
+     "de": "f7:volta",
+     "ate": "f7:volta+0.7",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f8:ar",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f9:valvulas+0.1",
+     "ate": "f9:entrar",
+     "efeito": "circular",
+     "alvo": "valv_adm"
+    },
+    {
+     "de": "f9:solta",
+     "ate": "f9:fim",
+     "efeito": "circular",
+     "alvo": "valv_esc"
+    },
+    {
+     "de": "f10:explode",
+     "efeito": "flash"
+    },
+    {
+     "de": "f11:derreter",
+     "ate": "f11:fim+0.3",
+     "efeito": "tremor",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f11:derreter",
+     "ate": "f11:fim+0.3",
+     "efeito": "letreiro",
+     "texto": "QUENTE!",
+     "cor": "#FF3B30",
+     "altura": 0.22
+    },
+    {
+     "de": "f12:agua+0.1",
+     "ate": "f12:radiador",
+     "efeito": "destacar",
+     "alvo": "camisa"
+    },
+    {
+     "de": "f12:radiador+0.1",
+     "ate": "f12:fim+0.2",
+     "efeito": "circular",
+     "alvo": "radiador"
+    },
+    {
+     "de": "f13:tranco",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f13:tranco",
+     "ate": "f13:fim+0.3",
+     "efeito": "tremor",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f14:quatro",
+     "ate": "f14:quatro+0.7",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f17:parabens",
+     "ate": "f17:fim+0.5",
+     "efeito": "linhas",
+     "intensidade": 0.6
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "gasolina",
+     "texto": "Gasolina",
+     "de": "f1:gasolina",
+     "ate": "f1:fim"
+    },
+    {
+     "alvo": "pistao0",
+     "texto": "Pistão",
+     "de": "f4:pistao",
+     "ate": "f4:fim"
+    },
+    {
+     "alvo": "roda",
+     "texto": "Parada",
+     "de": "f5:roda",
+     "ate": "f5:fim",
+     "cor": "#FF8A65"
+    },
+    {
+     "alvo": "manivela0",
+     "texto": "Virabrequim",
+     "de": "f6:virabrequim",
+     "ate": "f6:fim"
+    },
+    {
+     "alvo": "fumo1",
+     "texto": "Fumaça",
+     "de": "f8:fumaca",
+     "ate": "f8:fim",
+     "cor": "#FF8A65"
+    },
+    {
+     "alvo": "valv_adm",
+     "texto": "Entra",
+     "de": "f9:entrar",
+     "ate": "f9:solta"
+    },
+    {
+     "alvo": "valv_esc",
+     "texto": "Sai",
+     "de": "f9:solta",
+     "ate": "f9:fim+0.3"
+    },
+    {
+     "alvo": "vela",
+     "texto": "Vela",
+     "de": "f10:explode",
+     "ate": "f10:fim"
+    },
+    {
+     "alvo": "camisa",
+     "texto": "Água",
+     "de": "f12:agua",
+     "ate": "f12:radiador"
+    },
+    {
+     "alvo": "radiador",
+     "texto": "Radiador",
+     "de": "f12:radiador",
+     "ate": "f12:fim"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f10:quatro",
+     "ate": "f10:fim+0.4",
+     "grande": "4 TEMPOS",
+     "pequeno": "puxa · aperta · explode · solta"
+    },
+    {
+     "de": "f15:seis",
+     "ate": "f15:fim+0.3",
+     "grande": "# EXPLO­SÕES",
+     "contar": [
+      0,
+      6000
+     ],
+     "pequeno": "por minuto, a 3 mil giros"
+    }
+   ]
+  }
+ ]
+}

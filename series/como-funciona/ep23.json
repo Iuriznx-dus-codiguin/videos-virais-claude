@@ -1,0 +1,3082 @@
+{
+ "serie": "como-funciona",
+ "parte": 23,
+ "titulo": "Por que água não apaga qualquer fogo?",
+ "musica": "curiosidade",
+ "personagens": {
+  "manby": {
+   "nome": "George William Manby",
+   "papel": "capitão e inventor inglês; em 1818 apresentou o \"Extincteur\", um dos primeiros extintores portáteis: um tanque de cobre com água e potassa (carbonato de potássio) e ar comprimido, que soltava um jato pela torneira para apagar o fogo ainda pequeno; não fala",
+   "visual": {
+    "altura": 1,
+    "corpo": "#2E3B55",
+    "cabeca": "#F2D5BD",
+    "olhos": "redondos",
+    "sobrancelhas": "grossas",
+    "acessorios": [
+     {
+      "tipo": "cabelo_curto",
+      "cor": "#7A5C3E"
+     },
+     {
+      "tipo": "lenco",
+      "cor": "#F5F5F5"
+     },
+     {
+      "tipo": "colete",
+      "cor": "#8B1E1E"
+     }
+    ]
+   }
+  }
+ },
+ "modelos": {
+  "extintor": [
+   {
+    "id": "piso",
+    "forma": "caixa",
+    "tam": [
+     0.46,
+     0.03,
+     0.3
+    ],
+    "pos": [
+     0,
+     0.015,
+     0
+    ],
+    "cor": "#A1887F"
+   },
+   {
+    "id": "ext_base",
+    "forma": "cilindro",
+    "tam": [
+     0.047,
+     0.015
+    ],
+    "pos": [
+     0.0,
+     0.0375,
+     -0.06
+    ],
+    "cor": "#B71C1C"
+   },
+   {
+    "id": "ext_corpo",
+    "forma": "cilindro",
+    "tam": [
+     0.045,
+     0.24
+    ],
+    "pos": [
+     0.0,
+     0.15,
+     -0.06
+    ],
+    "cor": "#E53935"
+   },
+   {
+    "id": "ext_topo",
+    "forma": "esfera",
+    "tam": [
+     0.045
+    ],
+    "pos": [
+     0.0,
+     0.27,
+     -0.06
+    ],
+    "cor": "#E53935"
+   },
+   {
+    "id": "ext_valv",
+    "forma": "cilindro",
+    "tam": [
+     0.014,
+     0.03
+    ],
+    "pos": [
+     0.0,
+     0.325,
+     -0.06
+    ],
+    "cor": "#455A64"
+   },
+   {
+    "id": "alca_fixa",
+    "forma": "caixa",
+    "tam": [
+     0.06,
+     0.008,
+     0.016
+    ],
+    "pos": [
+     0.025,
+     0.336,
+     -0.06
+    ],
+    "cor": "#37474F"
+   },
+   {
+    "id": "piv_gat",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     -0.005,
+     0.35,
+     -0.06
+    ],
+    "cor": "#95A5A6",
+    "sem_contorno": true
+   },
+   {
+    "id": "gatilho",
+    "forma": "caixa",
+    "tam": [
+     0.065,
+     0.008,
+     0.016
+    ],
+    "pos": [
+     0.0325,
+     0,
+     0
+    ],
+    "cor": "#263238",
+    "pai": "piv_gat"
+   },
+   {
+    "id": "pino",
+    "forma": "toro",
+    "tam": [
+     0.012,
+     0.0025
+    ],
+    "pos": [
+     -0.022,
+     0.343,
+     -0.046
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#FFD600"
+   },
+   {
+    "id": "manometro",
+    "forma": "cilindro",
+    "tam": [
+     0.014,
+     0.006
+    ],
+    "pos": [
+     -0.026,
+     0.318,
+     -0.044
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#FAFAFA"
+   },
+   {
+    "id": "mano_verde",
+    "forma": "cilindro",
+    "tam": [
+     0.008,
+     0.002
+    ],
+    "pos": [
+     -0.026,
+     0.318,
+     -0.039999999999999994
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#43A047"
+   },
+   {
+    "id": "mangueira",
+    "forma": "tubo",
+    "tam": [
+     0.006
+    ],
+    "cor": "#212121",
+    "caminho": [
+     [
+      0.014,
+      0.32,
+      -0.06
+     ],
+     [
+      0.05,
+      0.3,
+      -0.039999999999999994
+     ],
+     [
+      0.062,
+      0.2,
+      -0.015
+     ],
+     [
+      0.055,
+      0.135,
+      0.0
+     ]
+    ]
+   },
+   {
+    "id": "bocal",
+    "forma": "cilindro",
+    "tam": [
+     0.008,
+     0.025,
+     0.011
+    ],
+    "pos": [
+     0.055,
+     0.12,
+     0.0020000000000000018
+    ],
+    "cor": "#212121"
+   },
+   {
+    "id": "po",
+    "forma": "cilindro",
+    "tam": [
+     0.041,
+     0.15
+    ],
+    "pos": [
+     0.0,
+     0.12,
+     -0.06
+    ],
+    "cor": "#FFF3C4",
+    "oculta": true
+   },
+   {
+    "id": "gas_dentro",
+    "forma": "cilindro",
+    "tam": [
+     0.041,
+     0.075
+    ],
+    "pos": [
+     0.0,
+     0.235,
+     -0.06
+    ],
+    "cor": "#90CAF9",
+    "opacidade": 0.45,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "sifao",
+    "forma": "cilindro",
+    "tam": [
+     0.005,
+     0.26
+    ],
+    "pos": [
+     0.012,
+     0.18,
+     -0.06
+    ],
+    "cor": "#9E9E9E",
+    "oculta": true
+   },
+   {
+    "id": "fogao",
+    "forma": "caixa",
+    "tam": [
+     0.12,
+     0.08,
+     0.1
+    ],
+    "pos": [
+     -0.13,
+     0.07,
+     0.04
+    ],
+    "cor": "#ECEFF1"
+   },
+   {
+    "id": "boca",
+    "forma": "cilindro",
+    "tam": [
+     0.025,
+     0.008
+    ],
+    "pos": [
+     -0.13,
+     0.114,
+     0.04
+    ],
+    "cor": "#37474F"
+   },
+   {
+    "id": "botao_f",
+    "forma": "cilindro",
+    "tam": [
+     0.01,
+     0.01
+    ],
+    "pos": [
+     -0.16,
+     0.07,
+     0.094
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#263238"
+   },
+   {
+    "id": "panela",
+    "forma": "cilindro",
+    "tam": [
+     0.05,
+     0.045,
+     0.045
+    ],
+    "pos": [
+     -0.13,
+     0.14,
+     0.04
+    ],
+    "cor": "#90A4AE"
+   },
+   {
+    "id": "oleo",
+    "forma": "cilindro",
+    "tam": [
+     0.046,
+     0.004
+    ],
+    "pos": [
+     -0.13,
+     0.157,
+     0.04
+    ],
+    "cor": "#F9A825"
+   },
+   {
+    "id": "cabo",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.008,
+     0.012
+    ],
+    "pos": [
+     -0.06,
+     0.155,
+     0.04
+    ],
+    "cor": "#3E2723"
+   },
+   {
+    "id": "fogo_p",
+    "forma": "cone",
+    "tam": [
+     0.038,
+     0.09
+    ],
+    "pos": [
+     -0.13,
+     0.20500000000000002,
+     0.04
+    ],
+    "cor": "#FF7043",
+    "brilho": 1.2,
+    "sem_contorno": true,
+    "oculta": false
+   },
+   {
+    "id": "fogo_p_in",
+    "forma": "cone",
+    "tam": [
+     0.020900000000000002,
+     0.054
+    ],
+    "pos": [
+     -0.13,
+     0.187,
+     0.04
+    ],
+    "cor": "#FFD54F",
+    "brilho": 1.5,
+    "sem_contorno": true,
+    "oculta": false
+   },
+   {
+    "id": "fogo_p2",
+    "forma": "cone",
+    "tam": [
+     0.038,
+     0.09
+    ],
+    "pos": [
+     -0.13,
+     0.20500000000000002,
+     0.04
+    ],
+    "cor": "#FF7043",
+    "brilho": 1.2,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "fogo_p2_in",
+    "forma": "cone",
+    "tam": [
+     0.020900000000000002,
+     0.054
+    ],
+    "pos": [
+     -0.13,
+     0.187,
+     0.04
+    ],
+    "cor": "#FFD54F",
+    "brilho": 1.5,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "tampa",
+    "forma": "cilindro",
+    "tam": [
+     0.053,
+     0.006
+    ],
+    "pos": [
+     -0.13,
+     0.27,
+     0.04
+    ],
+    "cor": "#78909C",
+    "oculta": true
+   },
+   {
+    "id": "tampa_pega",
+    "forma": "esfera",
+    "tam": [
+     0.009
+    ],
+    "pos": [
+     0,
+     0.008,
+     0
+    ],
+    "cor": "#263238",
+    "pai": "tampa",
+    "oculta": true
+   },
+   {
+    "id": "copo",
+    "forma": "cilindro",
+    "tam": [
+     0.02,
+     0.045,
+     0.016
+    ],
+    "pos": [
+     -0.095,
+     0.33,
+     0.04
+    ],
+    "giro": [
+     0,
+     0,
+     70
+    ],
+    "cor": "#81D4FA",
+    "opacidade": 0.7,
+    "oculta": false
+   },
+   {
+    "id": "copo2",
+    "forma": "cilindro",
+    "tam": [
+     0.02,
+     0.045,
+     0.016
+    ],
+    "pos": [
+     -0.095,
+     0.33,
+     0.04
+    ],
+    "giro": [
+     0,
+     0,
+     70
+    ],
+    "cor": "#81D4FA",
+    "opacidade": 0.7,
+    "oculta": true
+   },
+   {
+    "id": "bola",
+    "forma": "esfera",
+    "tam": [
+     0.11
+    ],
+    "pos": [
+     -0.13,
+     0.26,
+     0.04
+    ],
+    "cor": "#FF5722",
+    "brilho": 1.3,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "lenha1",
+    "forma": "cilindro",
+    "tam": [
+     0.013,
+     0.1
+    ],
+    "pos": [
+     0.13,
+     0.043,
+     0.05
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#6D4C41"
+   },
+   {
+    "id": "lenha2",
+    "forma": "cilindro",
+    "tam": [
+     0.013,
+     0.1
+    ],
+    "pos": [
+     0.13,
+     0.058,
+     0.05
+    ],
+    "giro": [
+     0,
+     60,
+     90
+    ],
+    "cor": "#795548"
+   },
+   {
+    "id": "lenha3",
+    "forma": "cilindro",
+    "tam": [
+     0.013,
+     0.1
+    ],
+    "pos": [
+     0.13,
+     0.072,
+     0.05
+    ],
+    "giro": [
+     0,
+     -60,
+     90
+    ],
+    "cor": "#5D4037"
+   },
+   {
+    "id": "fogo_l",
+    "forma": "cone",
+    "tam": [
+     0.035,
+     0.085
+    ],
+    "pos": [
+     0.13,
+     0.1175,
+     0.05
+    ],
+    "cor": "#FF7043",
+    "brilho": 1.2,
+    "sem_contorno": true,
+    "oculta": false
+   },
+   {
+    "id": "fogo_l_in",
+    "forma": "cone",
+    "tam": [
+     0.019250000000000003,
+     0.051000000000000004
+    ],
+    "pos": [
+     0.13,
+     0.1005,
+     0.05
+    ],
+    "cor": "#FFD54F",
+    "brilho": 1.5,
+    "sem_contorno": true,
+    "oculta": false
+   },
+   {
+    "id": "parede",
+    "forma": "caixa",
+    "tam": [
+     0.12,
+     0.17,
+     0.02
+    ],
+    "pos": [
+     0.15,
+     0.115,
+     -0.1
+    ],
+    "cor": "#EFE6D6"
+   },
+   {
+    "id": "tomada",
+    "forma": "caixa",
+    "tam": [
+     0.035,
+     0.045,
+     0.008
+    ],
+    "pos": [
+     0.15,
+     0.13,
+     -0.08600000000000001
+    ],
+    "cor": "#FAFAFA"
+   },
+   {
+    "id": "plugue",
+    "forma": "caixa",
+    "tam": [
+     0.02,
+     0.025,
+     0.02
+    ],
+    "pos": [
+     0.15,
+     0.13,
+     -0.07200000000000001
+    ],
+    "cor": "#263238"
+   },
+   {
+    "id": "fio",
+    "forma": "tubo",
+    "tam": [
+     0.004
+    ],
+    "cor": "#212121",
+    "caminho": [
+     [
+      0.15,
+      0.117,
+      -0.07
+     ],
+     [
+      0.16999999999999998,
+      0.07,
+      -0.05500000000000001
+     ],
+     [
+      0.195,
+      0.035,
+      -0.03
+     ]
+    ]
+   },
+   {
+    "id": "clarao",
+    "forma": "esfera",
+    "tam": [
+     0.014
+    ],
+    "pos": [
+     0.15,
+     0.13,
+     -0.060000000000000005
+    ],
+    "cor": "#FFF59D",
+    "brilho": 1.8,
+    "sem_contorno": true,
+    "oculta": true
+   }
+  ],
+  "oficina_1818": [
+   {
+    "id": "tanque",
+    "forma": "cilindro",
+    "tam": [
+     0.05,
+     0.16
+    ],
+    "pos": [
+     0,
+     0.08,
+     0
+    ],
+    "cor": "#B87333"
+   },
+   {
+    "id": "tanque_topo",
+    "forma": "esfera",
+    "tam": [
+     0.05
+    ],
+    "pos": [
+     0,
+     0.16,
+     0
+    ],
+    "cor": "#B87333"
+   },
+   {
+    "id": "aro1",
+    "forma": "toro",
+    "tam": [
+     0.052,
+     0.004
+    ],
+    "pos": [
+     0,
+     0.035,
+     0
+    ],
+    "cor": "#8D5524"
+   },
+   {
+    "id": "aro2",
+    "forma": "toro",
+    "tam": [
+     0.052,
+     0.004
+    ],
+    "pos": [
+     0,
+     0.125,
+     0
+    ],
+    "cor": "#8D5524"
+   },
+   {
+    "id": "torneira",
+    "forma": "cilindro",
+    "tam": [
+     0.007,
+     0.05
+    ],
+    "pos": [
+     0.07,
+     0.03,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#D4A017"
+   },
+   {
+    "id": "bomba",
+    "forma": "cilindro",
+    "tam": [
+     0.006,
+     0.09
+    ],
+    "pos": [
+     0,
+     0.24,
+     0
+    ],
+    "cor": "#5D4037"
+   },
+   {
+    "id": "bomba_cabo",
+    "forma": "caixa",
+    "tam": [
+     0.07,
+     0.012,
+     0.012
+    ],
+    "pos": [
+     0,
+     0.045,
+     0
+    ],
+    "cor": "#5D4037",
+    "pai": "bomba"
+   },
+   {
+    "id": "bandeja",
+    "forma": "caixa",
+    "tam": [
+     0.11,
+     0.012,
+     0.08
+    ],
+    "pos": [
+     0.22,
+     0.006,
+     0
+    ],
+    "cor": "#424242"
+   },
+   {
+    "id": "graveto1",
+    "forma": "cilindro",
+    "tam": [
+     0.009,
+     0.08
+    ],
+    "pos": [
+     0.22,
+     0.02,
+     0
+    ],
+    "giro": [
+     0,
+     40,
+     90
+    ],
+    "cor": "#6D4C41"
+   },
+   {
+    "id": "graveto2",
+    "forma": "cilindro",
+    "tam": [
+     0.009,
+     0.08
+    ],
+    "pos": [
+     0.22,
+     0.03,
+     0
+    ],
+    "giro": [
+     0,
+     -40,
+     90
+    ],
+    "cor": "#5D4037"
+   },
+   {
+    "id": "chama",
+    "forma": "cone",
+    "tam": [
+     0.03,
+     0.08
+    ],
+    "pos": [
+     0.22,
+     0.07500000000000001,
+     0
+    ],
+    "cor": "#FF7043",
+    "brilho": 1.2,
+    "sem_contorno": true
+   },
+   {
+    "id": "chama_in",
+    "forma": "cone",
+    "tam": [
+     0.017,
+     0.05
+    ],
+    "pos": [
+     0.22,
+     0.060000000000000005,
+     0
+    ],
+    "cor": "#FFD54F",
+    "brilho": 1.5,
+    "sem_contorno": true
+   }
+  ]
+ },
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "tito",
+   "texto": "Água apaga qualquer fogo? Numa panela de óleo, ela faz o fogo EXPLODIR.",
+   "tom": "tenso"
+  },
+  {
+   "id": "f2",
+   "quem": "tito",
+   "texto": "E é por isso que existe mais de um tipo de EXTINTOR.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f3",
+   "quem": "tito",
+   "texto": "Em 1818, na Inglaterra, o capitão George Manby queria apagar o fogo ainda PEQUENO, antes de virar incêndio.",
+   "off": true
+  },
+  {
+   "id": "f4",
+   "quem": "tito",
+   "texto": "Ele encheu um tanque de cobre com água e potassa, um tipo de sal, e bombeou AR lá dentro.",
+   "off": true
+  },
+  {
+   "id": "f5",
+   "quem": "tito",
+   "texto": "Abriu a torneira, e o ar apertado empurrou a água num jato, direto no FOGO.",
+   "off": true
+  },
+  {
+   "id": "f6",
+   "quem": "tito",
+   "texto": "Foi um dos primeiros extintores que dava para CARREGAR.",
+   "off": true,
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f7",
+   "quem": "tito",
+   "texto": "O de hoje é parecido: lá dentro, o pó fica preso junto com um gás, bem APERTADO."
+  },
+  {
+   "id": "f8",
+   "quem": "tito",
+   "texto": "Você puxa o PINO, aperta o gatilho, e o gás empurra o pó pela mangueira.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f9",
+   "quem": "tito",
+   "texto": "MAS por que não usar só água? Fogo precisa de três coisas: combustível, AR e calor."
+  },
+  {
+   "id": "f10",
+   "quem": "tito",
+   "texto": "A água tira o CALOR. Na madeira e no papel, funciona muito bem.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f11",
+   "quem": "tito",
+   "texto": "MAS no óleo quente, a água afunda, ferve na hora e vira VAPOR.",
+   "tom": "tenso"
+  },
+  {
+   "id": "f12",
+   "quem": "tito",
+   "texto": "O vapor joga o óleo pegando fogo para cima, numa BOLA de fogo!",
+   "tom": "tenso",
+   "pausa_depois": 0.4
+  },
+  {
+   "id": "f13",
+   "quem": "tito",
+   "texto": "Por isso existe o extintor de PÓ: ele cai como um cobertor e abafa o fogo.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f14",
+   "quem": "tito",
+   "texto": "E na tomada? A água leva a eletricidade, e quem segura o extintor leva CHOQUE.",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f15",
+   "quem": "tito",
+   "texto": "Por isso, cada extintor tem uma LETRA: A para madeira e papel, B para óleo e gasolina, C para tomada.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f16",
+   "quem": "tito",
+   "texto": "E se a panela de óleo pegar fogo na sua casa? Desligue o fogão e TAMPE a panela. Sem ar, o fogo morre."
+  }
+ ],
+ "chamada": {
+  "pergunta": "E agora, topa construir um motor de carro?",
+  "texto": "Comenta",
+  "destaque": "CARRO"
+ },
+ "postagem": {
+  "titulo": "Como funciona o extintor? Por que não usar água em tudo",
+  "descricao": "Como funciona o extintor de incêndio por dentro: o pó e o gás apertado, o pino, o gatilho e a mangueira. O triângulo do fogo, por que a água piora o fogo da panela de óleo e da tomada, e o que querem dizer as letras A, B e C. E a história do capitão Manby, que inventou um dos primeiros em 1818.",
+  "hashtags": [
+   "comofunciona",
+   "extintor",
+   "seguranca",
+   "ciencia",
+   "curiosidades"
+  ],
+  "comentario": "Eu achava que água apagava qualquer fogo. Você sabia da panela de óleo?",
+  "capa": "f12:bola+0.4"
+ },
+ "cenas": [
+  {
+   "id": "gancho",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "desconfiado"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "extintor",
+     "em": "pedestal",
+     "escala": 1.4
+    },
+    {
+     "tipo": "particulas",
+     "particula": "vapor",
+     "em": [
+      -0.182,
+      0.056
+     ],
+     "alt": 1.238,
+     "raio": 0.05,
+     "altura": 0.15,
+     "quantas": 10,
+     "aparece": "f1:panela",
+     "some": "f1:explodir"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "fagulhas",
+     "em": [
+      -0.182,
+      0.056
+     ],
+     "alt": 1.28,
+     "raio": 0.1,
+     "altura": 0.3,
+     "quantas": 18,
+     "aparece": "f1:explodir",
+     "some": "f2"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "copo",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 8,
+     "velocidade": 1.2,
+     "intensidade": 0.3,
+     "de": "inicio",
+     "ate": "f1:explodir",
+     "caminho": [
+      [
+       0.0,
+       -0.02,
+       0
+      ],
+      [
+       -0.03,
+       -0.1,
+       0
+      ],
+      [
+       -0.035,
+       -0.16,
+       0
+      ]
+     ]
+    },
+    {
+     "peca": "fogo_p",
+     "faz": "tremer",
+     "intensidade": 0.5,
+     "de": "inicio",
+     "ate": "f2:fim+1"
+    },
+    {
+     "peca": "fogo_p",
+     "faz": "pulsar",
+     "intensidade": 0.5,
+     "de": "inicio",
+     "ate": "f2:fim+1"
+    },
+    {
+     "peca": "fogo_p_in",
+     "faz": "tremer",
+     "intensidade": 0.5,
+     "de": "inicio",
+     "ate": "f2:fim+1"
+    },
+    {
+     "peca": "fogo_p_in",
+     "faz": "pulsar",
+     "intensidade": 0.5,
+     "de": "inicio",
+     "ate": "f2:fim+1"
+    },
+    {
+     "peca": "fogo_l",
+     "faz": "tremer",
+     "intensidade": 0.5,
+     "de": "inicio",
+     "ate": "f2:fim+1"
+    },
+    {
+     "peca": "fogo_l",
+     "faz": "pulsar",
+     "intensidade": 0.5,
+     "de": "inicio",
+     "ate": "f2:fim+1"
+    },
+    {
+     "peca": "fogo_l_in",
+     "faz": "tremer",
+     "intensidade": 0.5,
+     "de": "inicio",
+     "ate": "f2:fim+1"
+    },
+    {
+     "peca": "fogo_l_in",
+     "faz": "pulsar",
+     "intensidade": 0.5,
+     "de": "inicio",
+     "ate": "f2:fim+1"
+    },
+    {
+     "peca": "fogo_p",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "f1:oleo",
+     "ate": "f1:explodir"
+    },
+    {
+     "peca": "panela",
+     "faz": "tremer",
+     "intensidade": 0.6,
+     "de": "f1:oleo",
+     "ate": "f1:explodir+0.6"
+    },
+    {
+     "peca": "copo",
+     "faz": "sumir",
+     "de": "f1:explodir"
+    },
+    {
+     "peca": "bola",
+     "faz": "crescer",
+     "de": "f1:explodir",
+     "ate": "f1:explodir+0.25"
+    },
+    {
+     "peca": "bola",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "f1:explodir",
+     "ate": "f1:explodir+0.8"
+    },
+    {
+     "peca": "bola",
+     "faz": "sumir",
+     "de": "f1:explodir+0.8"
+    },
+    {
+     "peca": "ext_corpo",
+     "faz": "pulsar",
+     "intensidade": 0.5,
+     "de": "f2:extintor",
+     "ate": "f2:extintor+0.8"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "desconfiado",
+     "de": "inicio"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "maquete",
+     "expressao": "medo",
+     "de": "f1:explodir"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "ext_corpo",
+     "olhar": "camera",
+     "expressao": "serio",
+     "de": "f2:extintor"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "camera": [
+      -0.1,
+      1.5,
+      0.9
+     ],
+     "alvo": [
+      -0.182,
+      1.336,
+      0.056
+     ],
+     "movimento": "arco",
+     "intensidade": 0.6
+    },
+    {
+     "de": "f1:oleo",
+     "tipo": "detalhe",
+     "camera": [
+      -0.05,
+      1.5,
+      1.0
+     ],
+     "alvo": [
+      -0.182,
+      1.336,
+      0.056
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f2",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f2:tipo",
+     "tipo": "detalhe",
+     "camera": [
+      0.12,
+      1.4,
+      0.85
+     ],
+     "alvo": [
+      0.0,
+      1.28,
+      -0.084
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    }
+   ],
+   "sons": [
+    {
+     "de": "inicio",
+     "som": "fogo",
+     "volume": 0.5
+    },
+    {
+     "de": "inicio",
+     "som": "agua",
+     "volume": 0.4
+    },
+    {
+     "de": "f1:panela",
+     "som": "chiado",
+     "volume": 0.6
+    },
+    {
+     "de": "f1:explodir",
+     "som": "impacto",
+     "volume": 0.9
+    },
+    {
+     "de": "f1:explodir",
+     "som": "fogo",
+     "volume": 0.8
+    },
+    {
+     "de": "f2:extintor",
+     "som": "ding",
+     "volume": 0.7
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f1:explodir",
+     "efeito": "flash"
+    },
+    {
+     "de": "f1:explodir",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f1:explodir",
+     "ate": "f1:explodir+0.8",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f2:extintor",
+     "ate": "f2:fim+0.3",
+     "efeito": "circular",
+     "alvo": "ext_corpo"
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "copo",
+     "texto": "Água",
+     "de": "inicio",
+     "ate": "f1:oleo"
+    },
+    {
+     "alvo": "oleo",
+     "texto": "Óleo quente",
+     "de": "f1:oleo",
+     "ate": "f1:explodir",
+     "cor": "#FF8A65"
+    }
+   ]
+  },
+  {
+   "id": "manby",
+   "cenario": "oficina",
+   "ambiente": "oficina",
+   "filtro": "sepia",
+   "de": "f3",
+   "personagens": {
+    "manby": {
+     "em": [
+      -1.0,
+      -0.3
+     ],
+     "olhando": [
+      1.2,
+      2.2,
+      3.0
+     ],
+     "expressao": "serio"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "oficina_1818",
+     "em": [
+      0,
+      -1.05
+     ],
+     "alt": 0.92,
+     "escala": 1.5
+    },
+    {
+     "tipo": "particulas",
+     "particula": "vapor",
+     "em": [
+      0.33,
+      -1.05
+     ],
+     "alt": 1.0,
+     "raio": 0.06,
+     "altura": 0.2,
+     "quantas": 10,
+     "aparece": "f5:fogo",
+     "some": "f6:fim"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f3:1818",
+     "ate": "f3:manby+0.8",
+     "grande": "1818",
+     "pequeno": "George Manby · Inglaterra"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "chama",
+     "faz": "tremer",
+     "intensidade": 0.6,
+     "de": "inicio",
+     "ate": "f5:fogo"
+    },
+    {
+     "peca": "chama",
+     "faz": "pulsar",
+     "intensidade": 0.6,
+     "de": "inicio",
+     "ate": "f5:fogo"
+    },
+    {
+     "peca": "chama_in",
+     "faz": "tremer",
+     "intensidade": 0.6,
+     "de": "inicio",
+     "ate": "f5:fogo"
+    },
+    {
+     "peca": "chama_in",
+     "faz": "pulsar",
+     "intensidade": 0.6,
+     "de": "inicio",
+     "ate": "f5:fogo"
+    },
+    {
+     "peca": "bomba",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.05,
+      0
+     ],
+     "de": "f4:ar+0.0",
+     "ate": "f4:ar+0.25"
+    },
+    {
+     "peca": "bomba",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.05,
+      0
+     ],
+     "de": "f4:ar+0.25",
+     "ate": "f4:ar+0.5"
+    },
+    {
+     "peca": "bomba",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.05,
+      0
+     ],
+     "de": "f4:ar+0.5",
+     "ate": "f4:ar+0.75"
+    },
+    {
+     "peca": "bomba",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.05,
+      0
+     ],
+     "de": "f4:ar+0.75",
+     "ate": "f4:ar+1.0"
+    },
+    {
+     "peca": "bomba",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.05,
+      0
+     ],
+     "de": "f4:ar+1.0",
+     "ate": "f4:ar+1.25"
+    },
+    {
+     "peca": "bomba",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.05,
+      0
+     ],
+     "de": "f4:ar+1.25",
+     "ate": "f4:ar+1.5"
+    },
+    {
+     "peca": "bomba",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.05,
+      0
+     ],
+     "de": "f4:ar+1.5",
+     "ate": "f4:ar+1.75"
+    },
+    {
+     "peca": "bomba",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.05,
+      0
+     ],
+     "de": "f4:ar+1.75",
+     "ate": "f4:ar+2.0"
+    },
+    {
+     "peca": "tanque",
+     "faz": "pulsar",
+     "intensidade": 0.5,
+     "de": "f4:ar",
+     "ate": "f4:fim"
+    },
+    {
+     "peca": "torneira",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 10,
+     "velocidade": 1.6,
+     "intensidade": 0.3,
+     "de": "f5:jato",
+     "ate": "f6",
+     "caminho": [
+      [
+       0.0,
+       0.03,
+       0
+      ],
+      [
+       0.0,
+       0.1,
+       0.0
+      ],
+      [
+       0.0,
+       0.16,
+       0.01
+      ]
+     ]
+    },
+    {
+     "peca": "chama",
+     "faz": "sumir",
+     "de": "f5:fogo"
+    },
+    {
+     "peca": "chama_in",
+     "faz": "sumir",
+     "de": "f5:fogo"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "manby",
+     "faz": "virar",
+     "para": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "olhar": "camera",
+     "expressao": "serio",
+     "de": "f3"
+    },
+    {
+     "quem": "manby",
+     "faz": "virar",
+     "para": [
+      0.3,
+      2.85,
+      2.2
+     ],
+     "olhar": "camera",
+     "expressao": "determinado",
+     "de": "f3:pequeno-0.3"
+    },
+    {
+     "quem": "manby",
+     "faz": "estender_mao",
+     "para": "oficina_1818",
+     "olhar": "oficina_1818",
+     "expressao": "determinado",
+     "de": "f4"
+    },
+    {
+     "quem": "manby",
+     "faz": "estender_mao",
+     "para": "oficina_1818",
+     "olhar": "oficina_1818",
+     "expressao": "surpreso",
+     "de": "f5"
+    },
+    {
+     "quem": "manby",
+     "faz": "virar",
+     "para": [
+      0.3,
+      2.85,
+      2.2
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f6-0.2"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "camera": [
+      0.9,
+      2.85,
+      3.9
+     ],
+     "alvo": [
+      -0.55,
+      2.25,
+      -0.7
+     ],
+     "movimento": "arco",
+     "intensidade": 0.6,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f3:manby",
+     "tipo": "medio",
+     "camera": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "alvo": "manby",
+     "movimento": "travelling",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f3:pequeno",
+     "tipo": "detalhe",
+     "camera": [
+      0.4,
+      1.2,
+      -0.5
+     ],
+     "alvo": [
+      0.33,
+      1.0,
+      -1.05
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f4",
+     "tipo": "detalhe",
+     "camera": [
+      -0.36,
+      1.32,
+      -0.3
+     ],
+     "alvo": [
+      0.1,
+      1.1,
+      -1.05
+     ],
+     "movimento": "arco",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f4:ar",
+     "tipo": "detalhe",
+     "camera": [
+      -0.22,
+      1.42,
+      -0.5
+     ],
+     "alvo": [
+      0.0,
+      1.27,
+      -1.05
+     ],
+     "movimento": "subir"
+    },
+    {
+     "de": "f5",
+     "tipo": "detalhe",
+     "camera": [
+      0.02,
+      1.24,
+      -0.45
+     ],
+     "alvo": [
+      0.2,
+      1.0,
+      -1.05
+     ],
+     "movimento": "arco",
+     "intensidade": -0.4
+    },
+    {
+     "de": "f5:fogo",
+     "tipo": "detalhe",
+     "camera": [
+      0.4,
+      1.2,
+      -0.5
+     ],
+     "alvo": [
+      0.33,
+      1.0,
+      -1.05
+     ],
+     "movimento": "zoom_rapido"
+    },
+    {
+     "de": "f6",
+     "tipo": "close",
+     "camera": [
+      0.3,
+      2.85,
+      2.2
+     ],
+     "alvo": "manby",
+     "movimento": "aproximar"
+    }
+   ],
+   "sons": [
+    {
+     "de": "f3:1818",
+     "som": "pop",
+     "volume": 0.6
+    },
+    {
+     "de": "f3:pequeno",
+     "som": "fogo",
+     "volume": 0.5
+    },
+    {
+     "de": "f4:cobre",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f4:ar",
+     "som": "sopro",
+     "volume": 0.6
+    },
+    {
+     "de": "f5:torneira",
+     "som": "clique",
+     "volume": 0.8
+    },
+    {
+     "de": "f5:jato",
+     "som": "agua",
+     "volume": 0.7
+    },
+    {
+     "de": "f5:fogo",
+     "som": "chiado",
+     "volume": 0.7
+    },
+    {
+     "de": "f6:carregar",
+     "som": "ding",
+     "volume": 0.8
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f4:cobre",
+     "ate": "f4:ar",
+     "efeito": "circular",
+     "alvo": "tanque"
+    },
+    {
+     "de": "f5:fogo",
+     "efeito": "zoom_soco"
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "tanque",
+     "texto": "Cobre",
+     "de": "f4:cobre",
+     "ate": "f4:ar"
+    },
+    {
+     "alvo": "bomba",
+     "texto": "Ar",
+     "de": "f4:ar",
+     "ate": "f4:fim"
+    },
+    {
+     "alvo": "torneira",
+     "texto": "Torneira",
+     "de": "f5:torneira",
+     "ate": "f5:fogo"
+    }
+   ]
+  },
+  {
+   "id": "por_dentro",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "de": "f7",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "feliz"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "extintor",
+     "em": "pedestal",
+     "escala": 1.4
+    },
+    {
+     "tipo": "particulas",
+     "particula": "poeira",
+     "cor": "#FFFDE7",
+     "em": [
+      0.077,
+      0.028
+     ],
+     "alt": 1.154,
+     "raio": 0.04,
+     "altura": 0.06,
+     "quantas": 10,
+     "aparece": "f8:mangueira",
+     "some": "f8:fim+0.6"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "vapor",
+     "em": [
+      0.182,
+      0.07
+     ],
+     "alt": 1.112,
+     "raio": 0.05,
+     "altura": 0.18,
+     "quantas": 10,
+     "aparece": "f10:funciona",
+     "some": "f10:fim+0.8"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "vapor",
+     "em": [
+      -0.182,
+      0.056
+     ],
+     "alt": 1.238,
+     "raio": 0.05,
+     "altura": 0.15,
+     "quantas": 10,
+     "aparece": "f11:ferve",
+     "some": "f12:bola"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "fagulhas",
+     "em": [
+      -0.182,
+      0.056
+     ],
+     "alt": 1.28,
+     "raio": 0.1,
+     "altura": 0.3,
+     "quantas": 18,
+     "aparece": "f12:bola",
+     "some": "f13"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "poeira",
+     "cor": "#FFFDE7",
+     "em": [
+      -0.182,
+      0.056
+     ],
+     "alt": 1.252,
+     "raio": 0.07,
+     "altura": 0.1,
+     "quantas": 16,
+     "aparece": "f13:po+0.3",
+     "some": "f13:fim+0.6"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "faiscas",
+     "em": [
+      0.21,
+      -0.084
+     ],
+     "alt": 1.182,
+     "raio": 0.03,
+     "altura": 0.06,
+     "quantas": 10,
+     "aparece": "f14:choque",
+     "some": "f14:fim+0.4"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f9:tres",
+     "ate": "f9:fim+0.4",
+     "grande": "TRIÂN­GULO DO FOGO",
+     "pequeno": "combustível + ar + calor: tirou um, ele apaga"
+    },
+    {
+     "de": "f15:letra",
+     "ate": "f15:fim+0.3",
+     "grande": "A · B · C",
+     "pequeno": "a letra no rótulo diz em que fogo usar"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "copo",
+     "faz": "sumir",
+     "de": "inicio"
+    },
+    {
+     "peca": "fogo_p",
+     "faz": "tremer",
+     "intensidade": 0.5,
+     "de": "inicio",
+     "ate": "f13:abafa"
+    },
+    {
+     "peca": "fogo_p",
+     "faz": "pulsar",
+     "intensidade": 0.5,
+     "de": "inicio",
+     "ate": "f13:abafa"
+    },
+    {
+     "peca": "fogo_p_in",
+     "faz": "tremer",
+     "intensidade": 0.5,
+     "de": "inicio",
+     "ate": "f13:abafa"
+    },
+    {
+     "peca": "fogo_p_in",
+     "faz": "pulsar",
+     "intensidade": 0.5,
+     "de": "inicio",
+     "ate": "f13:abafa"
+    },
+    {
+     "peca": "fogo_l",
+     "faz": "tremer",
+     "intensidade": 0.5,
+     "de": "inicio",
+     "ate": "f10:funciona"
+    },
+    {
+     "peca": "fogo_l",
+     "faz": "pulsar",
+     "intensidade": 0.5,
+     "de": "inicio",
+     "ate": "f10:funciona"
+    },
+    {
+     "peca": "fogo_l_in",
+     "faz": "tremer",
+     "intensidade": 0.5,
+     "de": "inicio",
+     "ate": "f10:funciona"
+    },
+    {
+     "peca": "fogo_l_in",
+     "faz": "pulsar",
+     "intensidade": 0.5,
+     "de": "inicio",
+     "ate": "f10:funciona"
+    },
+    {
+     "peca": "ext_corpo",
+     "faz": "transparente",
+     "opacidade": 0.3,
+     "de": "f7:dentro",
+     "ate": "f7:dentro+0.6"
+    },
+    {
+     "peca": "ext_topo",
+     "faz": "transparente",
+     "opacidade": 0.3,
+     "de": "f7:dentro",
+     "ate": "f7:dentro+0.6"
+    },
+    {
+     "peca": "po",
+     "faz": "aparecer",
+     "de": "f7:po"
+    },
+    {
+     "peca": "gas_dentro",
+     "faz": "aparecer",
+     "de": "f7:gas"
+    },
+    {
+     "peca": "sifao",
+     "faz": "aparecer",
+     "de": "f7:gas"
+    },
+    {
+     "peca": "gas_dentro",
+     "faz": "pulsar",
+     "intensidade": 0.8,
+     "de": "f7:apertado",
+     "ate": "f7:fim+0.3"
+    },
+    {
+     "peca": "pino",
+     "faz": "mover",
+     "desloc": [
+      -0.04,
+      0.0,
+      0.03
+     ],
+     "de": "f8:pino",
+     "ate": "f8:pino+0.3"
+    },
+    {
+     "peca": "pino",
+     "faz": "sumir",
+     "de": "f8:pino+0.4"
+    },
+    {
+     "peca": "piv_gat",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": -12,
+     "de": "f8:gatilho",
+     "ate": "f8:gatilho+0.25"
+    },
+    {
+     "peca": "sifao",
+     "faz": "fluxo",
+     "tipo": "gas",
+     "quantidade": 6,
+     "velocidade": 1.4,
+     "intensidade": 0.25,
+     "de": "f8:empurra",
+     "ate": "f8:fim+0.4",
+     "caminho": [
+      [
+       0,
+       -0.12,
+       0
+      ],
+      [
+       0,
+       0.13,
+       0
+      ]
+     ]
+    },
+    {
+     "peca": "mangueira",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "quantidade": 6,
+     "velocidade": 1.4,
+     "intensidade": 0.2,
+     "de": "f8:mangueira",
+     "ate": "f8:fim+0.6"
+    },
+    {
+     "peca": "piv_gat",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": 12,
+     "de": "f9",
+     "ate": "f9+0.3"
+    },
+    {
+     "peca": "ext_corpo",
+     "faz": "transparente",
+     "opacidade": 1,
+     "de": "f9",
+     "ate": "f9+0.5"
+    },
+    {
+     "peca": "ext_topo",
+     "faz": "transparente",
+     "opacidade": 1,
+     "de": "f9",
+     "ate": "f9+0.5"
+    },
+    {
+     "peca": "fogo_l",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 10,
+     "velocidade": 1.4,
+     "intensidade": 0.3,
+     "de": "f10:agua",
+     "ate": "f10:fim",
+     "caminho": [
+      [
+       0,
+       0.3,
+       0.02
+      ],
+      [
+       0,
+       0.0,
+       0
+      ]
+     ]
+    },
+    {
+     "peca": "fogo_l",
+     "faz": "sumir",
+     "de": "f10:funciona"
+    },
+    {
+     "peca": "fogo_l_in",
+     "faz": "sumir",
+     "de": "f10:funciona"
+    },
+    {
+     "peca": "copo2",
+     "faz": "aparecer",
+     "de": "f11:oleo"
+    },
+    {
+     "peca": "copo2",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 8,
+     "velocidade": 1.2,
+     "intensidade": 0.3,
+     "de": "f11:agua",
+     "ate": "f11:ferve",
+     "caminho": [
+      [
+       0.0,
+       -0.02,
+       0
+      ],
+      [
+       -0.03,
+       -0.1,
+       0
+      ],
+      [
+       -0.035,
+       -0.16,
+       0
+      ]
+     ]
+    },
+    {
+     "peca": "copo2",
+     "faz": "sumir",
+     "de": "f11:ferve+0.3"
+    },
+    {
+     "peca": "oleo",
+     "faz": "aquecer",
+     "intensidade": 1.2,
+     "de": "f11:afunda",
+     "ate": "f11:vapor"
+    },
+    {
+     "peca": "panela",
+     "faz": "tremer",
+     "intensidade": 0.7,
+     "de": "f11:ferve",
+     "ate": "f12:bola+0.6"
+    },
+    {
+     "peca": "bola",
+     "faz": "crescer",
+     "de": "f12:bola",
+     "ate": "f12:bola+0.25"
+    },
+    {
+     "peca": "bola",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "f12:bola",
+     "ate": "f12:fim"
+    },
+    {
+     "peca": "bola",
+     "faz": "sumir",
+     "de": "f12:fim"
+    },
+    {
+     "peca": "oleo",
+     "faz": "esfriar",
+     "de": "f13:abafa",
+     "ate": "f13:abafa+0.8"
+    },
+    {
+     "peca": "piv_gat",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": -12,
+     "de": "f13:po",
+     "ate": "f13:po+0.25"
+    },
+    {
+     "peca": "bocal",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "quantidade": 10,
+     "velocidade": 1.5,
+     "intensidade": 0.25,
+     "de": "f13:po",
+     "ate": "f13:fim+0.3",
+     "caminho": [
+      [
+       0,
+       -0.01,
+       0.01
+      ],
+      [
+       -0.09,
+       0.06,
+       0.05
+      ],
+      [
+       -0.18,
+       0.06,
+       0.1
+      ]
+     ]
+    },
+    {
+     "peca": "fogo_p",
+     "faz": "sumir",
+     "de": "f13:abafa"
+    },
+    {
+     "peca": "fogo_p_in",
+     "faz": "sumir",
+     "de": "f13:abafa"
+    },
+    {
+     "peca": "piv_gat",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": 12,
+     "de": "f14",
+     "ate": "f14+0.3"
+    },
+    {
+     "peca": "plugue",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 10,
+     "velocidade": 1.3,
+     "intensidade": 0.3,
+     "de": "f14:agua",
+     "ate": "f14:fim",
+     "caminho": [
+      [
+       0.0,
+       0.3,
+       0.06
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ]
+     ]
+    },
+    {
+     "peca": "plugue",
+     "faz": "fluxo",
+     "tipo": "eletricidade",
+     "quantidade": 10,
+     "velocidade": 2.0,
+     "intensidade": 0.35,
+     "de": "f14:eletricidade",
+     "ate": "f14:fim+0.3",
+     "caminho": [
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.3,
+       0.06
+      ]
+     ]
+    },
+    {
+     "peca": "clarao",
+     "faz": "aparecer",
+     "de": "f14:choque"
+    },
+    {
+     "peca": "clarao",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "f14:choque",
+     "ate": "f14:fim+0.4"
+    },
+    {
+     "peca": "clarao",
+     "faz": "sumir",
+     "de": "f14:fim+0.4"
+    },
+    {
+     "peca": "fogo_p2",
+     "faz": "crescer",
+     "de": "f16:fogo",
+     "ate": "f16:fogo+0.3"
+    },
+    {
+     "peca": "fogo_p2_in",
+     "faz": "crescer",
+     "de": "f16:fogo",
+     "ate": "f16:fogo+0.3"
+    },
+    {
+     "peca": "fogo_p2",
+     "faz": "tremer",
+     "intensidade": 0.6,
+     "de": "f16:fogo",
+     "ate": "f16:morre"
+    },
+    {
+     "peca": "fogo_p2",
+     "faz": "pulsar",
+     "intensidade": 0.6,
+     "de": "f16:fogo",
+     "ate": "f16:morre"
+    },
+    {
+     "peca": "fogo_p2_in",
+     "faz": "tremer",
+     "intensidade": 0.6,
+     "de": "f16:fogo",
+     "ate": "f16:morre"
+    },
+    {
+     "peca": "fogo_p2_in",
+     "faz": "pulsar",
+     "intensidade": 0.6,
+     "de": "f16:fogo",
+     "ate": "f16:morre"
+    },
+    {
+     "peca": "botao_f",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": 90,
+     "de": "f16:desligue",
+     "ate": "f16:desligue+0.3"
+    },
+    {
+     "peca": "tampa",
+     "faz": "aparecer",
+     "de": "f16:tampe-0.2"
+    },
+    {
+     "peca": "tampa_pega",
+     "faz": "aparecer",
+     "de": "f16:tampe-0.2"
+    },
+    {
+     "peca": "tampa",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.1,
+      0
+     ],
+     "de": "f16:tampe",
+     "ate": "f16:tampe+0.4"
+    },
+    {
+     "peca": "fogo_p2",
+     "faz": "sumir",
+     "de": "f16:tampe+0.4"
+    },
+    {
+     "peca": "fogo_p2_in",
+     "faz": "sumir",
+     "de": "f16:tampe+0.4"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.75,
+      2,
+      5.9
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f7"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "ext_corpo",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f7:dentro"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "pino",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f8:pino-0.2"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f9"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "lenha1",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f10:madeira"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "camera",
+     "expressao": "nervoso",
+     "de": "f11"
+    },
+    {
+     "quem": "tito",
+     "faz": "maos_na_cabeca",
+     "olhar": "maquete",
+     "expressao": "medo",
+     "de": "f12:bola"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "bocal",
+     "olhar": "maquete",
+     "expressao": "aliviado",
+     "de": "f13:po"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "maquete",
+     "expressao": "medo",
+     "de": "f14:choque"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "serio",
+     "de": "f15"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "panela",
+     "olhar": "maquete",
+     "expressao": "serio",
+     "de": "f16:tampe"
+    },
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f16:sem-0.2"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "camera": [
+      -0.75,
+      2,
+      5.9
+     ],
+     "alvo": [
+      -0.75,
+      1.5,
+      0.3
+     ],
+     "movimento": "arco",
+     "intensidade": 0.5,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f7:dentro",
+     "tipo": "detalhe",
+     "camera": [
+      -0.08,
+      1.33,
+      0.6
+     ],
+     "alvo": [
+      0.0,
+      1.266,
+      -0.084
+     ],
+     "movimento": "aproximar",
+     "transicao": "zoom"
+    },
+    {
+     "de": "f8",
+     "tipo": "detalhe",
+     "camera": [
+      0.04,
+      1.52,
+      0.48
+     ],
+     "alvo": [
+      0.0,
+      1.462,
+      -0.084
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f8:mangueira",
+     "tipo": "detalhe",
+     "camera": [
+      0.22,
+      1.25,
+      0.55
+     ],
+     "alvo": [
+      0.07,
+      1.21,
+      -0.014
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f9",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f9:fogo",
+     "tipo": "aberto",
+     "camera": [
+      0.0,
+      1.5,
+      1.85
+     ],
+     "alvo": [
+      0.0,
+      1.27,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f10",
+     "tipo": "detalhe",
+     "camera": [
+      0.32,
+      1.3,
+      0.68
+     ],
+     "alvo": [
+      0.182,
+      1.126,
+      0.07
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f11",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f11:oleo",
+     "tipo": "detalhe",
+     "camera": [
+      -0.1,
+      1.5,
+      0.9
+     ],
+     "alvo": [
+      -0.182,
+      1.336,
+      0.056
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f12",
+     "tipo": "detalhe",
+     "camera": [
+      -0.05,
+      1.5,
+      1.0
+     ],
+     "alvo": [
+      -0.182,
+      1.336,
+      0.056
+     ],
+     "movimento": "tremer"
+    },
+    {
+     "de": "f12:fogo",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "dolly_zoom"
+    },
+    {
+     "de": "f13",
+     "tipo": "detalhe",
+     "camera": [
+      -0.04,
+      1.44,
+      0.9
+     ],
+     "alvo": [
+      -0.084,
+      1.238,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f14",
+     "tipo": "detalhe",
+     "camera": [
+      0.3,
+      1.45,
+      0.4
+     ],
+     "alvo": [
+      0.21,
+      1.182,
+      -0.14
+     ],
+     "movimento": "aproximar",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f14:choque",
+     "tipo": "detalhe",
+     "camera": [
+      0.3,
+      1.45,
+      0.4
+     ],
+     "alvo": [
+      0.21,
+      1.182,
+      -0.14
+     ],
+     "movimento": "tremer"
+    },
+    {
+     "de": "f15",
+     "tipo": "aberto",
+     "camera": [
+      0.0,
+      1.5,
+      1.85
+     ],
+     "alvo": [
+      0.0,
+      1.27,
+      0.0
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f16",
+     "tipo": "detalhe",
+     "camera": [
+      -0.05,
+      1.5,
+      1.0
+     ],
+     "alvo": [
+      -0.182,
+      1.336,
+      0.056
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f16:tampe",
+     "tipo": "detalhe",
+     "camera": [
+      -0.14,
+      1.34,
+      0.62
+     ],
+     "alvo": [
+      -0.182,
+      1.238,
+      0.056
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f16:sem",
+     "tipo": "aberto",
+     "camera": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "alvo": [
+      -0.9,
+      1.5,
+      0.3
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    }
+   ],
+   "sons": [
+    {
+     "de": "inicio",
+     "som": "fogo",
+     "volume": 0.4
+    },
+    {
+     "de": "f7:dentro",
+     "som": "whoosh",
+     "volume": 0.5
+    },
+    {
+     "de": "f7:po",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f7:gas",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f7:apertado",
+     "som": "chiado",
+     "volume": 0.4
+    },
+    {
+     "de": "f8:pino",
+     "som": "clique",
+     "volume": 0.9
+    },
+    {
+     "de": "f8:gatilho",
+     "som": "clique",
+     "volume": 0.8
+    },
+    {
+     "de": "f8:empurra",
+     "som": "sopro",
+     "volume": 0.7
+    },
+    {
+     "de": "f9",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f9:tres",
+     "som": "ding",
+     "volume": 0.6
+    },
+    {
+     "de": "f10:agua",
+     "som": "agua",
+     "volume": 0.7
+    },
+    {
+     "de": "f10:funciona",
+     "som": "chiado",
+     "volume": 0.6
+    },
+    {
+     "de": "f11",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f11:ferve",
+     "som": "chiado",
+     "volume": 0.7
+    },
+    {
+     "de": "f12:bola",
+     "som": "impacto",
+     "volume": 0.9
+    },
+    {
+     "de": "f12:bola",
+     "som": "fogo",
+     "volume": 0.8
+    },
+    {
+     "de": "f13:po",
+     "som": "sopro",
+     "volume": 0.8
+    },
+    {
+     "de": "f13:abafa",
+     "som": "ding",
+     "volume": 0.7
+    },
+    {
+     "de": "f14",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f14:choque",
+     "som": "zap",
+     "volume": 0.9
+    },
+    {
+     "de": "f15:letra",
+     "som": "pop",
+     "volume": 0.6
+    },
+    {
+     "de": "f15:madeira",
+     "som": "pop",
+     "volume": 0.6
+    },
+    {
+     "de": "f15:oleo",
+     "som": "pop",
+     "volume": 0.6
+    },
+    {
+     "de": "f15:tomada",
+     "som": "pop",
+     "volume": 0.6
+    },
+    {
+     "de": "f16:fogo",
+     "som": "fogo",
+     "volume": 0.6
+    },
+    {
+     "de": "f16:desligue",
+     "som": "clique",
+     "volume": 0.8
+    },
+    {
+     "de": "f16:tampe+0.4",
+     "som": "impacto",
+     "volume": 0.5
+    },
+    {
+     "de": "f16:morre",
+     "som": "ding",
+     "volume": 0.8
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f7:po",
+     "ate": "f7:gas",
+     "efeito": "destacar",
+     "alvo": "po"
+    },
+    {
+     "de": "f7:gas",
+     "ate": "f7:fim+0.2",
+     "efeito": "destacar",
+     "alvo": "gas_dentro"
+    },
+    {
+     "de": "f8:pino",
+     "ate": "f8:pino+0.8",
+     "efeito": "circular",
+     "alvo": "pino"
+    },
+    {
+     "de": "f10:funciona",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f11:vapor",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f12:bola",
+     "efeito": "flash"
+    },
+    {
+     "de": "f12:bola",
+     "ate": "f12:fim+0.4",
+     "efeito": "tremor",
+     "intensidade": 0.6
+    },
+    {
+     "de": "f12:bola",
+     "ate": "f12:fim+0.4",
+     "efeito": "letreiro",
+     "texto": "PERIGO!",
+     "cor": "#FF3B30",
+     "altura": 0.22
+    },
+    {
+     "de": "f12:bola",
+     "ate": "f12:bola+0.8",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f13:po+0.1",
+     "ate": "f13:abafa",
+     "efeito": "circular",
+     "alvo": "bocal"
+    },
+    {
+     "de": "f14:choque",
+     "efeito": "flash"
+    },
+    {
+     "de": "f14:choque",
+     "ate": "f14:fim+0.3",
+     "efeito": "tremor",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f16:tampe+0.1",
+     "ate": "f16:sem",
+     "efeito": "circular",
+     "alvo": "tampa"
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "po",
+     "texto": "Pó",
+     "de": "f7:po",
+     "ate": "f7:gas"
+    },
+    {
+     "alvo": "gas_dentro",
+     "texto": "Gás apertado",
+     "de": "f7:gas",
+     "ate": "f7:fim+0.3"
+    },
+    {
+     "alvo": "pino",
+     "texto": "Pino",
+     "de": "f8:pino",
+     "ate": "f8:gatilho"
+    },
+    {
+     "alvo": "gatilho",
+     "texto": "Gatilho",
+     "de": "f8:gatilho",
+     "ate": "f8:fim"
+    },
+    {
+     "alvo": "fogo_l",
+     "texto": "Sem calor",
+     "de": "f10:calor",
+     "ate": "f10:funciona"
+    },
+    {
+     "alvo": "oleo",
+     "texto": "Vapor",
+     "de": "f11:vapor",
+     "ate": "f12:bola",
+     "cor": "#FF8A65"
+    },
+    {
+     "alvo": "panela",
+     "texto": "Abafado",
+     "de": "f13:abafa",
+     "ate": "f13:fim+0.3"
+    },
+    {
+     "alvo": "plugue",
+     "texto": "Choque",
+     "de": "f14:choque",
+     "ate": "f14:fim+0.3",
+     "cor": "#FF8A65"
+    },
+    {
+     "alvo": "lenha1",
+     "texto": "A",
+     "de": "f15:madeira",
+     "ate": "f15:tomada"
+    },
+    {
+     "alvo": "panela",
+     "texto": "B",
+     "de": "f15:oleo",
+     "ate": "f15:fim+0.3"
+    },
+    {
+     "alvo": "tomada",
+     "texto": "C",
+     "de": "f15:tomada",
+     "ate": "f15:fim+0.3"
+    },
+    {
+     "alvo": "tampa",
+     "texto": "Tampa",
+     "de": "f16:tampe",
+     "ate": "f16:sem"
+    }
+   ]
+  }
+ ]
+}

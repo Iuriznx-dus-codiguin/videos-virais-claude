@@ -1,0 +1,3369 @@
+{
+ "serie": "como-funciona",
+ "parte": 22,
+ "titulo": "Construa um fogão a gás do zero",
+ "musica": "curiosidade",
+ "modelos": {
+  "fogao": [
+   {
+    "id": "piso",
+    "forma": "caixa",
+    "tam": [
+     0.46,
+     0.03,
+     0.3
+    ],
+    "pos": [
+     0,
+     0.015,
+     0
+    ],
+    "cor": "#A1887F"
+   },
+   {
+    "id": "botijao",
+    "forma": "cilindro",
+    "tam": [
+     0.055,
+     0.15
+    ],
+    "pos": [
+     -0.15,
+     0.105,
+     -0.03
+    ],
+    "cor": "#1E88E5"
+   },
+   {
+    "id": "botijao_topo",
+    "forma": "esfera",
+    "tam": [
+     0.055
+    ],
+    "pos": [
+     -0.15,
+     0.18,
+     -0.03
+    ],
+    "cor": "#1E88E5"
+   },
+   {
+    "id": "botijao_base",
+    "forma": "cilindro",
+    "tam": [
+     0.058,
+     0.02
+    ],
+    "pos": [
+     -0.15,
+     0.04,
+     -0.03
+    ],
+    "cor": "#1565C0"
+   },
+   {
+    "id": "alca_bot",
+    "forma": "toro",
+    "tam": [
+     0.035,
+     0.006
+    ],
+    "pos": [
+     -0.15,
+     0.225,
+     -0.03
+    ],
+    "cor": "#1565C0"
+   },
+   {
+    "id": "registro",
+    "forma": "cilindro",
+    "tam": [
+     0.012,
+     0.03
+    ],
+    "pos": [
+     -0.15,
+     0.25,
+     -0.03
+    ],
+    "cor": "#455A64"
+   },
+   {
+    "id": "regulador",
+    "forma": "caixa",
+    "tam": [
+     0.034,
+     0.022,
+     0.024
+    ],
+    "pos": [
+     -0.13999999999999999,
+     0.272,
+     -0.03
+    ],
+    "cor": "#F9A825"
+   },
+   {
+    "id": "mangueira",
+    "forma": "tubo",
+    "tam": [
+     0.008
+    ],
+    "cor": "#FFCA28",
+    "caminho": [
+     [
+      -0.123,
+      0.272,
+      -0.03
+     ],
+     [
+      -0.09,
+      0.27,
+      -0.02
+     ],
+     [
+      -0.06,
+      0.17,
+      0.0
+     ],
+     [
+      -0.04,
+      0.06,
+      0.02
+     ],
+     [
+      -0.01,
+      0.045,
+      0.02
+     ],
+     [
+      0.048,
+      0.045,
+      0.02
+     ]
+    ]
+   },
+   {
+    "id": "cano",
+    "forma": "cilindro",
+    "tam": [
+     0.01,
+     0.065
+    ],
+    "pos": [
+     0.06,
+     0.0625,
+     0.02
+    ],
+    "cor": "#B0BEC5"
+   },
+   {
+    "id": "cano_alto",
+    "forma": "cilindro",
+    "tam": [
+     0.01,
+     0.06
+    ],
+    "pos": [
+     0.06,
+     0.125,
+     0.02
+    ],
+    "cor": "#B0BEC5"
+   },
+   {
+    "id": "chama_a",
+    "forma": "cone",
+    "tam": [
+     0.028,
+     0.1
+    ],
+    "pos": [
+     0.06,
+     0.20500000000000002,
+     0.02
+    ],
+    "cor": "#FFB300",
+    "brilho": 1.2,
+    "sem_contorno": true,
+    "oculta": false
+   },
+   {
+    "id": "chama_a_in",
+    "forma": "cone",
+    "tam": [
+     0.015400000000000002,
+     0.06
+    ],
+    "pos": [
+     0.06,
+     0.185,
+     0.02
+    ],
+    "cor": "#FFF59D",
+    "brilho": 1.5,
+    "sem_contorno": true,
+    "oculta": false
+   },
+   {
+    "id": "chama_b",
+    "forma": "cone",
+    "tam": [
+     0.028,
+     0.1
+    ],
+    "pos": [
+     0.06,
+     0.20500000000000002,
+     0.02
+    ],
+    "cor": "#FFB300",
+    "brilho": 1.2,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "chama_b_in",
+    "forma": "cone",
+    "tam": [
+     0.015400000000000002,
+     0.06
+    ],
+    "pos": [
+     0.06,
+     0.185,
+     0.02
+    ],
+    "cor": "#FFF59D",
+    "brilho": 1.5,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "chama_azul",
+    "forma": "cone",
+    "tam": [
+     0.02,
+     0.045
+    ],
+    "pos": [
+     0.06,
+     0.1775,
+     0.02
+    ],
+    "cor": "#2196F3",
+    "brilho": 1.2,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "chama_azul_in",
+    "forma": "cone",
+    "tam": [
+     0.011000000000000001,
+     0.027
+    ],
+    "pos": [
+     0.06,
+     0.1685,
+     0.02
+    ],
+    "cor": "#BBDEFB",
+    "brilho": 1.5,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "panela",
+    "forma": "cilindro",
+    "tam": [
+     0.075,
+     0.06,
+     0.066
+    ],
+    "pos": [
+     0.06,
+     0.283,
+     0.02
+    ],
+    "cor": "#B0BEC5",
+    "oculta": true
+   },
+   {
+    "id": "cabo",
+    "forma": "caixa",
+    "tam": [
+     0.07,
+     0.012,
+     0.016
+    ],
+    "pos": [
+     0.105,
+     0.018,
+     0
+    ],
+    "cor": "#3E2723",
+    "pai": "panela",
+    "oculta": true
+   },
+   {
+    "id": "fuligem",
+    "forma": "cilindro",
+    "tam": [
+     0.067,
+     0.005
+    ],
+    "pos": [
+     0,
+     -0.031,
+     0
+    ],
+    "cor": "#1B1B1B",
+    "pai": "panela",
+    "oculta": true
+   },
+   {
+    "id": "mancha",
+    "forma": "cilindro",
+    "tam": [
+     0.026,
+     0.005
+    ],
+    "pos": [
+     0,
+     -0.032,
+     0
+    ],
+    "cor": "#B0BEC5",
+    "pai": "panela",
+    "oculta": true
+   },
+   {
+    "id": "fumo_p0",
+    "forma": "esfera",
+    "tam": [
+     0.016
+    ],
+    "pos": [
+     0.009999999999999995,
+     0.31299999999999994,
+     0.02
+    ],
+    "cor": "#5E5E5E",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "fumo_p1",
+    "forma": "esfera",
+    "tam": [
+     0.021
+    ],
+    "pos": [
+     0.06,
+     0.31299999999999994,
+     0.02
+    ],
+    "cor": "#5E5E5E",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "fumo_p2",
+    "forma": "esfera",
+    "tam": [
+     0.015
+    ],
+    "pos": [
+     0.11,
+     0.31299999999999994,
+     0.02
+    ],
+    "cor": "#5E5E5E",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "fumo_a0",
+    "forma": "esfera",
+    "tam": [
+     0.016
+    ],
+    "pos": [
+     0.009999999999999995,
+     0.175,
+     0.02
+    ],
+    "cor": "#5E5E5E",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "fumo_a1",
+    "forma": "esfera",
+    "tam": [
+     0.021
+    ],
+    "pos": [
+     0.06,
+     0.175,
+     0.02
+    ],
+    "cor": "#5E5E5E",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "fumo_a2",
+    "forma": "esfera",
+    "tam": [
+     0.015
+    ],
+    "pos": [
+     0.11,
+     0.175,
+     0.02
+    ],
+    "cor": "#5E5E5E",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "grade_aro",
+    "forma": "toro",
+    "tam": [
+     0.07,
+     0.006
+    ],
+    "pos": [
+     0.06,
+     0.25,
+     0.02
+    ],
+    "cor": "#212121",
+    "oculta": true
+   },
+   {
+    "id": "grade_x1",
+    "forma": "caixa",
+    "tam": [
+     0.15,
+     0.008,
+     0.008
+    ],
+    "pos": [
+     0.06,
+     0.25,
+     0.02
+    ],
+    "giro": [
+     0,
+     45,
+     0
+    ],
+    "cor": "#212121",
+    "oculta": true
+   },
+   {
+    "id": "grade_x2",
+    "forma": "caixa",
+    "tam": [
+     0.15,
+     0.008,
+     0.008
+    ],
+    "pos": [
+     0.06,
+     0.25,
+     0.02
+    ],
+    "giro": [
+     0,
+     -45,
+     0
+    ],
+    "cor": "#212121",
+    "oculta": true
+   },
+   {
+    "id": "grade_pe1",
+    "forma": "cilindro",
+    "tam": [
+     0.005,
+     0.22
+    ],
+    "pos": [
+     0.009999999999999995,
+     0.14,
+     -0.030000000000000002
+    ],
+    "cor": "#212121",
+    "oculta": true
+   },
+   {
+    "id": "grade_pe2",
+    "forma": "cilindro",
+    "tam": [
+     0.005,
+     0.22
+    ],
+    "pos": [
+     0.11,
+     0.14,
+     -0.030000000000000002
+    ],
+    "cor": "#212121",
+    "oculta": true
+   },
+   {
+    "id": "grade_pe3",
+    "forma": "cilindro",
+    "tam": [
+     0.005,
+     0.22
+    ],
+    "pos": [
+     0.009999999999999995,
+     0.14,
+     0.07
+    ],
+    "cor": "#212121",
+    "oculta": true
+   },
+   {
+    "id": "grade_pe4",
+    "forma": "cilindro",
+    "tam": [
+     0.005,
+     0.22
+    ],
+    "pos": [
+     0.11,
+     0.14,
+     0.07
+    ],
+    "cor": "#212121",
+    "oculta": true
+   },
+   {
+    "id": "injetor",
+    "forma": "cilindro",
+    "tam": [
+     0.004,
+     0.018,
+     0.01
+    ],
+    "pos": [
+     0.06,
+     0.104,
+     0.02
+    ],
+    "cor": "#D4A017",
+    "oculta": true
+   },
+   {
+    "id": "misturador",
+    "forma": "cilindro",
+    "tam": [
+     0.017,
+     0.05
+    ],
+    "pos": [
+     0.06,
+     0.13,
+     0.02
+    ],
+    "cor": "#CFD8DC",
+    "opacidade": 0.35,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "janela1",
+    "forma": "caixa",
+    "tam": [
+     0.004,
+     0.012,
+     0.014
+    ],
+    "pos": [
+     0.041999999999999996,
+     0.115,
+     0.02
+    ],
+    "cor": "#263238",
+    "oculta": true
+   },
+   {
+    "id": "janela2",
+    "forma": "caixa",
+    "tam": [
+     0.004,
+     0.012,
+     0.014
+    ],
+    "pos": [
+     0.078,
+     0.115,
+     0.02
+    ],
+    "cor": "#263238",
+    "oculta": true
+   },
+   {
+    "id": "queimador",
+    "forma": "cilindro",
+    "tam": [
+     0.035,
+     0.016,
+     0.03
+    ],
+    "pos": [
+     0.06,
+     0.163,
+     0.02
+    ],
+    "cor": "#37474F",
+    "oculta": true
+   },
+   {
+    "id": "tampa",
+    "forma": "cilindro",
+    "tam": [
+     0.03,
+     0.006
+    ],
+    "pos": [
+     0.06,
+     0.174,
+     0.02
+    ],
+    "cor": "#212121",
+    "oculta": true
+   },
+   {
+    "id": "anel_a0",
+    "forma": "cone",
+    "tam": [
+     0.008,
+     0.032
+    ],
+    "pos": [
+     0.0946,
+     0.179,
+     0.04
+    ],
+    "cor": "#2196F3",
+    "brilho": 1.4,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "anel_a1",
+    "forma": "cone",
+    "tam": [
+     0.008,
+     0.032
+    ],
+    "pos": [
+     0.06,
+     0.179,
+     0.06
+    ],
+    "cor": "#2196F3",
+    "brilho": 1.4,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "anel_a2",
+    "forma": "cone",
+    "tam": [
+     0.008,
+     0.032
+    ],
+    "pos": [
+     0.0254,
+     0.179,
+     0.04
+    ],
+    "cor": "#2196F3",
+    "brilho": 1.4,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "anel_a3",
+    "forma": "cone",
+    "tam": [
+     0.008,
+     0.032
+    ],
+    "pos": [
+     0.0254,
+     0.179,
+     -0.0
+    ],
+    "cor": "#2196F3",
+    "brilho": 1.4,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "anel_a4",
+    "forma": "cone",
+    "tam": [
+     0.008,
+     0.032
+    ],
+    "pos": [
+     0.06,
+     0.179,
+     -0.02
+    ],
+    "cor": "#2196F3",
+    "brilho": 1.4,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "anel_a5",
+    "forma": "cone",
+    "tam": [
+     0.008,
+     0.032
+    ],
+    "pos": [
+     0.0946,
+     0.179,
+     -0.0
+    ],
+    "cor": "#2196F3",
+    "brilho": 1.4,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "anel_b0",
+    "forma": "cone",
+    "tam": [
+     0.008,
+     0.032
+    ],
+    "pos": [
+     0.0946,
+     0.179,
+     0.04
+    ],
+    "cor": "#2196F3",
+    "brilho": 1.4,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "anel_b1",
+    "forma": "cone",
+    "tam": [
+     0.008,
+     0.032
+    ],
+    "pos": [
+     0.06,
+     0.179,
+     0.06
+    ],
+    "cor": "#2196F3",
+    "brilho": 1.4,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "anel_b2",
+    "forma": "cone",
+    "tam": [
+     0.008,
+     0.032
+    ],
+    "pos": [
+     0.0254,
+     0.179,
+     0.04
+    ],
+    "cor": "#2196F3",
+    "brilho": 1.4,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "anel_b3",
+    "forma": "cone",
+    "tam": [
+     0.008,
+     0.032
+    ],
+    "pos": [
+     0.0254,
+     0.179,
+     -0.0
+    ],
+    "cor": "#2196F3",
+    "brilho": 1.4,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "anel_b4",
+    "forma": "cone",
+    "tam": [
+     0.008,
+     0.032
+    ],
+    "pos": [
+     0.06,
+     0.179,
+     -0.02
+    ],
+    "cor": "#2196F3",
+    "brilho": 1.4,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "anel_b5",
+    "forma": "cone",
+    "tam": [
+     0.008,
+     0.032
+    ],
+    "pos": [
+     0.0946,
+     0.179,
+     -0.0
+    ],
+    "cor": "#2196F3",
+    "brilho": 1.4,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "anel_c0",
+    "forma": "cone",
+    "tam": [
+     0.008,
+     0.032
+    ],
+    "pos": [
+     0.0946,
+     0.179,
+     0.04
+    ],
+    "cor": "#2196F3",
+    "brilho": 1.4,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "anel_c1",
+    "forma": "cone",
+    "tam": [
+     0.008,
+     0.032
+    ],
+    "pos": [
+     0.06,
+     0.179,
+     0.06
+    ],
+    "cor": "#2196F3",
+    "brilho": 1.4,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "anel_c2",
+    "forma": "cone",
+    "tam": [
+     0.008,
+     0.032
+    ],
+    "pos": [
+     0.0254,
+     0.179,
+     0.04
+    ],
+    "cor": "#2196F3",
+    "brilho": 1.4,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "anel_c3",
+    "forma": "cone",
+    "tam": [
+     0.008,
+     0.032
+    ],
+    "pos": [
+     0.0254,
+     0.179,
+     -0.0
+    ],
+    "cor": "#2196F3",
+    "brilho": 1.4,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "anel_c4",
+    "forma": "cone",
+    "tam": [
+     0.008,
+     0.032
+    ],
+    "pos": [
+     0.06,
+     0.179,
+     -0.02
+    ],
+    "cor": "#2196F3",
+    "brilho": 1.4,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "anel_c5",
+    "forma": "cone",
+    "tam": [
+     0.008,
+     0.032
+    ],
+    "pos": [
+     0.0946,
+     0.179,
+     -0.0
+    ],
+    "cor": "#2196F3",
+    "brilho": 1.4,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "bola",
+    "forma": "esfera",
+    "tam": [
+     0.16
+    ],
+    "pos": [
+     0.039999999999999994,
+     0.2,
+     0.02
+    ],
+    "cor": "#FF7043",
+    "brilho": 1.3,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "valvula",
+    "forma": "caixa",
+    "tam": [
+     0.036,
+     0.03,
+     0.03
+    ],
+    "pos": [
+     0.06,
+     0.07,
+     0.02
+    ],
+    "cor": "#E53935",
+    "oculta": true
+   },
+   {
+    "id": "sensor",
+    "forma": "cilindro",
+    "tam": [
+     0.003,
+     0.07
+    ],
+    "pos": [
+     0.1,
+     0.155,
+     0.02
+    ],
+    "cor": "#B87333",
+    "oculta": true
+   },
+   {
+    "id": "fio_sensor",
+    "forma": "tubo",
+    "tam": [
+     0.0022
+    ],
+    "pos": [
+     0.09,
+     0.095,
+     0.02
+    ],
+    "cor": "#B87333",
+    "sem_contorno": true,
+    "oculta": true,
+    "caminho": [
+     [
+      0.01,
+      0.025,
+      0
+     ],
+     [
+      0.01,
+      -0.025,
+      0
+     ],
+     [
+      -0.012,
+      -0.025,
+      0
+     ]
+    ]
+   },
+   {
+    "id": "corpo",
+    "forma": "caixa",
+    "tam": [
+     0.22,
+     0.12,
+     0.2
+    ],
+    "pos": [
+     0.06,
+     0.09,
+     0.02
+    ],
+    "cor": "#ECEFF1",
+    "opacidade": 0.55,
+    "oculta": true
+   },
+   {
+    "id": "botao1",
+    "forma": "cilindro",
+    "tam": [
+     0.012,
+     0.012
+    ],
+    "pos": [
+     0.009999999999999995,
+     0.1,
+     0.126
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#263238",
+    "oculta": true
+   },
+   {
+    "id": "botao2",
+    "forma": "cilindro",
+    "tam": [
+     0.012,
+     0.012
+    ],
+    "pos": [
+     0.11,
+     0.1,
+     0.126
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#263238",
+    "oculta": true
+   }
+  ]
+ },
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "tito",
+   "texto": "Um botijão, um cano e fogo. Dá para cozinhar com isso sem a casa EXPLODIR?",
+   "tom": "animado"
+  },
+  {
+   "id": "f2",
+   "quem": "tito",
+   "texto": "Se você soltar o gás na ponta do cano e acender, sai uma chama ENORME."
+  },
+  {
+   "id": "f3",
+   "quem": "tito",
+   "texto": "MAS quando você põe a panela em cima, ela tampa o fogo, e a chama APAGA.",
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f4",
+   "quem": "tito",
+   "texto": "Fogo precisa de três coisas juntas: gás, AR e calor. Sem ar, acabou."
+  },
+  {
+   "id": "f5",
+   "quem": "tito",
+   "texto": "Então, você coloca uma GRADE, que segura a panela no alto e deixa o ar entrar por baixo.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f6",
+   "quem": "tito",
+   "texto": "SÓ QUE essa chama é AMARELA e solta fumaça preta. Suja a panela e quase não esquenta.",
+   "tom": "tenso"
+  },
+  {
+   "id": "f7",
+   "quem": "tito",
+   "texto": "É que o gás só encontra o ar do lado de FORA da chama.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f8",
+   "quem": "tito",
+   "texto": "Então, você coloca um INJETOR: um furinho minúsculo que solta o gás em jato."
+  },
+  {
+   "id": "f9",
+   "quem": "tito",
+   "texto": "O jato puxa ar junto, e o gás chega misturado. A chama fica AZUL e bem mais quente.",
+   "tom": "animado",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f10",
+   "quem": "tito",
+   "texto": "MAS o fogo sai todo num ponto só. O meio da panela QUEIMA e a borda fica fria.",
+   "tom": "tenso"
+  },
+  {
+   "id": "f11",
+   "quem": "tito",
+   "texto": "Então, você coloca um QUEIMADOR: uma tampa com uma roda de furinhos, que abre o fogo em anel.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f12",
+   "quem": "tito",
+   "texto": "E SE um vento apagar a chama, e o gás continuar saindo? A cozinha enche de GÁS.",
+   "tom": "tenso"
+  },
+  {
+   "id": "f13",
+   "quem": "tito",
+   "texto": "Aí, basta uma faísca, e tudo EXPLODE!",
+   "tom": "tenso",
+   "pausa_depois": 0.4
+  },
+  {
+   "id": "f14",
+   "quem": "tito",
+   "texto": "Então, você coloca uma VÁLVULA de segurança, com um sensor de metal dentro da chama."
+  },
+  {
+   "id": "f15",
+   "quem": "tito",
+   "texto": "Enquanto o sensor está quente, o gás passa. Se a chama apaga, ele esfria e FECHA o gás sozinho.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f16",
+   "quem": "tito",
+   "texto": "E repara: o gás de cozinha, de verdade, não tem CHEIRO nenhum."
+  },
+  {
+   "id": "f17",
+   "quem": "tito",
+   "texto": "Aquele cheiro ruim é colocado de propósito, para você perceber um VAZAMENTO.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f18",
+   "quem": "tito",
+   "texto": "Parabéns! Você construiu um FOGÃO a gás!",
+   "tom": "animado"
+  }
+ ],
+ "chamada": {
+  "pergunta": "E o extintor? Dá para apagar qualquer fogo com água?",
+  "texto": "Comenta",
+  "destaque": "EXTINTOR"
+ },
+ "postagem": {
+  "titulo": "Como funciona o fogão a gás? Por que a chama é azul",
+  "descricao": "Como funciona o fogão a gás por dentro: a grade, o injetor que mistura o gás com o ar (por isso a chama fica azul), o queimador que abre o fogo em anel e a válvula de segurança que fecha o gás se a chama apagar. E por que o gás de cozinha tem aquele cheiro.",
+  "hashtags": [
+   "comofunciona",
+   "fogao",
+   "cozinha",
+   "ciencia",
+   "curiosidades"
+  ],
+  "comentario": "Eu jurava que aquele cheiro era do próprio gás. Você também achava?",
+  "capa": "f9:azul+0.6"
+ },
+ "cenas": [
+  {
+   "id": "construcao",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "desconfiado"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "fogao",
+     "em": "pedestal",
+     "escala": 1.4
+    },
+    {
+     "tipo": "particulas",
+     "particula": "fumaca",
+     "cor": "#C5E1A5",
+     "em": [
+      0.084,
+      0.028
+     ],
+     "alt": 1.252,
+     "raio": 0.2,
+     "altura": 0.35,
+     "quantas": 9,
+     "aparece": "f12:saindo",
+     "some": "f13:explode+0.3"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "fagulhas",
+     "em": [
+      0.084,
+      0.028
+     ],
+     "alt": 1.28,
+     "raio": 0.15,
+     "altura": 0.4,
+     "quantas": 20,
+     "aparece": "f13:explode",
+     "some": "f14"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "confete",
+     "em": [
+      0,
+      0
+     ],
+     "alt": 1.6,
+     "raio": 1.4,
+     "altura": 1.2,
+     "quantas": 60,
+     "aparece": "f18:parabens"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "mangueira",
+     "faz": "fluxo",
+     "tipo": "gas",
+     "quantidade": 8,
+     "velocidade": 0.8,
+     "intensidade": 0.25,
+     "de": "inicio",
+     "ate": "f15:fecha"
+    },
+    {
+     "peca": "cano",
+     "faz": "fluxo",
+     "tipo": "gas",
+     "quantidade": 4,
+     "velocidade": 0.8,
+     "intensidade": 0.25,
+     "de": "inicio",
+     "ate": "f15:fecha",
+     "caminho": [
+      [
+       0,
+       -0.03,
+       0
+      ],
+      [
+       0,
+       0.03,
+       0
+      ]
+     ]
+    },
+    {
+     "peca": "mangueira",
+     "faz": "fluxo",
+     "tipo": "gas",
+     "quantidade": 8,
+     "velocidade": 0.8,
+     "intensidade": 0.25,
+     "de": "f16",
+     "ate": "f18:fim+2"
+    },
+    {
+     "peca": "cano",
+     "faz": "fluxo",
+     "tipo": "gas",
+     "quantidade": 4,
+     "velocidade": 0.8,
+     "intensidade": 0.25,
+     "de": "f16",
+     "ate": "f18:fim+2",
+     "caminho": [
+      [
+       0,
+       -0.03,
+       0
+      ],
+      [
+       0,
+       0.03,
+       0
+      ]
+     ]
+    },
+    {
+     "peca": "chama_a",
+     "faz": "tremer",
+     "intensidade": 0.5,
+     "de": "inicio",
+     "ate": "f3:tampa"
+    },
+    {
+     "peca": "chama_a",
+     "faz": "pulsar",
+     "intensidade": 0.5,
+     "de": "inicio",
+     "ate": "f3:tampa"
+    },
+    {
+     "peca": "chama_a_in",
+     "faz": "tremer",
+     "intensidade": 0.5,
+     "de": "inicio",
+     "ate": "f3:tampa"
+    },
+    {
+     "peca": "chama_a_in",
+     "faz": "pulsar",
+     "intensidade": 0.5,
+     "de": "inicio",
+     "ate": "f3:tampa"
+    },
+    {
+     "peca": "chama_a",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "f2:acender",
+     "ate": "f2:enorme+0.6"
+    },
+    {
+     "peca": "chama_a",
+     "faz": "sumir",
+     "de": "f3:tampa"
+    },
+    {
+     "peca": "chama_a_in",
+     "faz": "sumir",
+     "de": "f3:tampa"
+    },
+    {
+     "peca": "panela",
+     "faz": "aparecer",
+     "de": "f3:panela"
+    },
+    {
+     "peca": "cabo",
+     "faz": "aparecer",
+     "de": "f3:panela"
+    },
+    {
+     "peca": "panela",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.098,
+      0
+     ],
+     "de": "f3:panela+0.2",
+     "ate": "f3:tampa"
+    },
+    {
+     "peca": "fumo_p0",
+     "faz": "aparecer",
+     "de": "f6:fumaca+0.10"
+    },
+    {
+     "peca": "fumo_p0",
+     "faz": "mover",
+     "desloc": [
+      -0.01,
+      0.16,
+      0.02
+     ],
+     "de": "f6:fumaca+0.10",
+     "ate": "f8"
+    },
+    {
+     "peca": "fumo_p0",
+     "faz": "sumir",
+     "de": "f8"
+    },
+    {
+     "peca": "fumo_p1",
+     "faz": "aparecer",
+     "de": "f6:fumaca+0.40"
+    },
+    {
+     "peca": "fumo_p1",
+     "faz": "mover",
+     "desloc": [
+      0.0,
+      0.16,
+      0.02
+     ],
+     "de": "f6:fumaca+0.40",
+     "ate": "f8"
+    },
+    {
+     "peca": "fumo_p1",
+     "faz": "sumir",
+     "de": "f8"
+    },
+    {
+     "peca": "fumo_p2",
+     "faz": "aparecer",
+     "de": "f6:fumaca+0.70"
+    },
+    {
+     "peca": "fumo_p2",
+     "faz": "mover",
+     "desloc": [
+      0.01,
+      0.16,
+      0.02
+     ],
+     "de": "f6:fumaca+0.70",
+     "ate": "f8"
+    },
+    {
+     "peca": "fumo_p2",
+     "faz": "sumir",
+     "de": "f8"
+    },
+    {
+     "peca": "fumo_a0",
+     "faz": "aparecer",
+     "de": "f3:tampa+0.10"
+    },
+    {
+     "peca": "fumo_a0",
+     "faz": "mover",
+     "desloc": [
+      -0.01,
+      0.1,
+      0.02
+     ],
+     "de": "f3:tampa+0.10",
+     "ate": "f4"
+    },
+    {
+     "peca": "fumo_a0",
+     "faz": "sumir",
+     "de": "f4"
+    },
+    {
+     "peca": "fumo_a1",
+     "faz": "aparecer",
+     "de": "f3:tampa+0.40"
+    },
+    {
+     "peca": "fumo_a1",
+     "faz": "mover",
+     "desloc": [
+      0.0,
+      0.1,
+      0.02
+     ],
+     "de": "f3:tampa+0.40",
+     "ate": "f4"
+    },
+    {
+     "peca": "fumo_a1",
+     "faz": "sumir",
+     "de": "f4"
+    },
+    {
+     "peca": "fumo_a2",
+     "faz": "aparecer",
+     "de": "f3:tampa+0.70"
+    },
+    {
+     "peca": "fumo_a2",
+     "faz": "mover",
+     "desloc": [
+      0.01,
+      0.1,
+      0.02
+     ],
+     "de": "f3:tampa+0.70",
+     "ate": "f4"
+    },
+    {
+     "peca": "fumo_a2",
+     "faz": "sumir",
+     "de": "f4"
+    },
+    {
+     "peca": "grade_aro",
+     "faz": "aparecer",
+     "de": "f5:grade+0.00"
+    },
+    {
+     "peca": "grade_x1",
+     "faz": "aparecer",
+     "de": "f5:grade+0.05"
+    },
+    {
+     "peca": "grade_x2",
+     "faz": "aparecer",
+     "de": "f5:grade+0.10"
+    },
+    {
+     "peca": "grade_pe1",
+     "faz": "aparecer",
+     "de": "f5:grade+0.15"
+    },
+    {
+     "peca": "grade_pe2",
+     "faz": "aparecer",
+     "de": "f5:grade+0.20"
+    },
+    {
+     "peca": "grade_pe3",
+     "faz": "aparecer",
+     "de": "f5:grade+0.25"
+    },
+    {
+     "peca": "grade_pe4",
+     "faz": "aparecer",
+     "de": "f5:grade+0.30"
+    },
+    {
+     "peca": "panela",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.098,
+      0
+     ],
+     "de": "f5:alto",
+     "ate": "f5:alto+0.5"
+    },
+    {
+     "peca": "chama_b",
+     "faz": "crescer",
+     "de": "f5:ar",
+     "ate": "f5:ar+0.4"
+    },
+    {
+     "peca": "chama_b_in",
+     "faz": "crescer",
+     "de": "f5:ar",
+     "ate": "f5:ar+0.4"
+    },
+    {
+     "peca": "chama_b",
+     "faz": "tremer",
+     "intensidade": 0.7,
+     "de": "f5:ar",
+     "ate": "f9:azul"
+    },
+    {
+     "peca": "chama_b",
+     "faz": "pulsar",
+     "intensidade": 0.7,
+     "de": "f5:ar",
+     "ate": "f9:azul"
+    },
+    {
+     "peca": "chama_b_in",
+     "faz": "tremer",
+     "intensidade": 0.7,
+     "de": "f5:ar",
+     "ate": "f9:azul"
+    },
+    {
+     "peca": "chama_b_in",
+     "faz": "pulsar",
+     "intensidade": 0.7,
+     "de": "f5:ar",
+     "ate": "f9:azul"
+    },
+    {
+     "peca": "chama_b",
+     "faz": "sumir",
+     "de": "f9:azul"
+    },
+    {
+     "peca": "chama_b_in",
+     "faz": "sumir",
+     "de": "f9:azul"
+    },
+    {
+     "peca": "fuligem",
+     "faz": "aparecer",
+     "de": "f6:preta"
+    },
+    {
+     "peca": "fuligem",
+     "faz": "sumir",
+     "de": "f9:azul+0.3"
+    },
+    {
+     "peca": "cano_alto",
+     "faz": "sumir",
+     "de": "f8:injetor"
+    },
+    {
+     "peca": "injetor",
+     "faz": "aparecer",
+     "de": "f8:injetor"
+    },
+    {
+     "peca": "misturador",
+     "faz": "aparecer",
+     "de": "f8:injetor"
+    },
+    {
+     "peca": "janela1",
+     "faz": "aparecer",
+     "de": "f8:injetor"
+    },
+    {
+     "peca": "janela2",
+     "faz": "aparecer",
+     "de": "f8:injetor"
+    },
+    {
+     "peca": "injetor",
+     "faz": "fluxo",
+     "tipo": "gas",
+     "quantidade": 6,
+     "velocidade": 1.6,
+     "intensidade": 0.3,
+     "de": "f8:jato",
+     "ate": "f12:apagar",
+     "caminho": [
+      [
+       0,
+       0.01,
+       0
+      ],
+      [
+       0,
+       0.06,
+       0
+      ]
+     ]
+    },
+    {
+     "peca": "injetor",
+     "faz": "fluxo",
+     "tipo": "gas",
+     "quantidade": 6,
+     "velocidade": 1.6,
+     "intensidade": 0.3,
+     "de": "f12:apagar",
+     "ate": "f15:fecha",
+     "caminho": [
+      [
+       0,
+       0.01,
+       0
+      ],
+      [
+       0,
+       0.06,
+       0
+      ]
+     ]
+    },
+    {
+     "peca": "injetor",
+     "faz": "fluxo",
+     "tipo": "gas",
+     "quantidade": 6,
+     "velocidade": 1.6,
+     "intensidade": 0.3,
+     "de": "f16",
+     "ate": "f18:fim+2",
+     "caminho": [
+      [
+       0,
+       0.01,
+       0
+      ],
+      [
+       0,
+       0.06,
+       0
+      ]
+     ]
+    },
+    {
+     "peca": "janela1",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.15,
+     "de": "f9:puxa",
+     "ate": "f12:apagar",
+     "caminho": [
+      [
+       -0.05,
+       0,
+       0
+      ],
+      [
+       0.012,
+       0,
+       0
+      ],
+      [
+       0.016,
+       0.035,
+       0
+      ]
+     ]
+    },
+    {
+     "peca": "janela2",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.15,
+     "de": "f9:puxa",
+     "ate": "f12:apagar",
+     "caminho": [
+      [
+       0.05,
+       0,
+       0
+      ],
+      [
+       -0.012,
+       0,
+       0
+      ],
+      [
+       -0.016,
+       0.035,
+       0
+      ]
+     ]
+    },
+    {
+     "peca": "janela1",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.15,
+     "de": "f16",
+     "ate": "f18:fim+2",
+     "caminho": [
+      [
+       -0.05,
+       0,
+       0
+      ],
+      [
+       0.012,
+       0,
+       0
+      ],
+      [
+       0.016,
+       0.035,
+       0
+      ]
+     ]
+    },
+    {
+     "peca": "janela2",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.15,
+     "de": "f16",
+     "ate": "f18:fim+2",
+     "caminho": [
+      [
+       0.05,
+       0,
+       0
+      ],
+      [
+       -0.012,
+       0,
+       0
+      ],
+      [
+       -0.016,
+       0.035,
+       0
+      ]
+     ]
+    },
+    {
+     "peca": "chama_azul",
+     "faz": "crescer",
+     "de": "f9:azul",
+     "ate": "f9:azul+0.3"
+    },
+    {
+     "peca": "chama_azul_in",
+     "faz": "crescer",
+     "de": "f9:azul",
+     "ate": "f9:azul+0.3"
+    },
+    {
+     "peca": "chama_azul",
+     "faz": "tremer",
+     "intensidade": 0.3,
+     "de": "f9:azul",
+     "ate": "f11:queimador"
+    },
+    {
+     "peca": "chama_azul",
+     "faz": "pulsar",
+     "intensidade": 0.3,
+     "de": "f9:azul",
+     "ate": "f11:queimador"
+    },
+    {
+     "peca": "chama_azul_in",
+     "faz": "tremer",
+     "intensidade": 0.3,
+     "de": "f9:azul",
+     "ate": "f11:queimador"
+    },
+    {
+     "peca": "chama_azul_in",
+     "faz": "pulsar",
+     "intensidade": 0.3,
+     "de": "f9:azul",
+     "ate": "f11:queimador"
+    },
+    {
+     "peca": "mancha",
+     "faz": "aparecer",
+     "de": "f10:queima"
+    },
+    {
+     "peca": "mancha",
+     "faz": "aquecer",
+     "intensidade": 1.5,
+     "de": "f10:queima",
+     "ate": "f10:borda"
+    },
+    {
+     "peca": "panela",
+     "faz": "tremer",
+     "intensidade": 0.4,
+     "de": "f10:queima",
+     "ate": "f10:fim"
+    },
+    {
+     "peca": "mancha",
+     "faz": "esfriar",
+     "de": "f11:anel",
+     "ate": "f11:anel+0.8"
+    },
+    {
+     "peca": "mancha",
+     "faz": "sumir",
+     "de": "f11:fim"
+    },
+    {
+     "peca": "chama_azul",
+     "faz": "sumir",
+     "de": "f11:queimador"
+    },
+    {
+     "peca": "chama_azul_in",
+     "faz": "sumir",
+     "de": "f11:queimador"
+    },
+    {
+     "peca": "queimador",
+     "faz": "aparecer",
+     "de": "f11:queimador"
+    },
+    {
+     "peca": "tampa",
+     "faz": "aparecer",
+     "de": "f11:queimador"
+    },
+    {
+     "peca": "anel_a0",
+     "faz": "crescer",
+     "de": "f11:anel+0.00",
+     "ate": "f11:anel+0.30"
+    },
+    {
+     "peca": "anel_a1",
+     "faz": "crescer",
+     "de": "f11:anel+0.05",
+     "ate": "f11:anel+0.35"
+    },
+    {
+     "peca": "anel_a2",
+     "faz": "crescer",
+     "de": "f11:anel+0.10",
+     "ate": "f11:anel+0.40"
+    },
+    {
+     "peca": "anel_a3",
+     "faz": "crescer",
+     "de": "f11:anel+0.15",
+     "ate": "f11:anel+0.45"
+    },
+    {
+     "peca": "anel_a4",
+     "faz": "crescer",
+     "de": "f11:anel+0.20",
+     "ate": "f11:anel+0.50"
+    },
+    {
+     "peca": "anel_a5",
+     "faz": "crescer",
+     "de": "f11:anel+0.25",
+     "ate": "f11:anel+0.55"
+    },
+    {
+     "peca": "anel_a0",
+     "faz": "tremer",
+     "intensidade": 0.3,
+     "de": "f11:anel",
+     "ate": "f12:apagar"
+    },
+    {
+     "peca": "anel_a0",
+     "faz": "pulsar",
+     "intensidade": 0.3,
+     "de": "f11:anel",
+     "ate": "f12:apagar"
+    },
+    {
+     "peca": "anel_a1",
+     "faz": "tremer",
+     "intensidade": 0.3,
+     "de": "f11:anel",
+     "ate": "f12:apagar"
+    },
+    {
+     "peca": "anel_a1",
+     "faz": "pulsar",
+     "intensidade": 0.3,
+     "de": "f11:anel",
+     "ate": "f12:apagar"
+    },
+    {
+     "peca": "anel_a2",
+     "faz": "tremer",
+     "intensidade": 0.3,
+     "de": "f11:anel",
+     "ate": "f12:apagar"
+    },
+    {
+     "peca": "anel_a2",
+     "faz": "pulsar",
+     "intensidade": 0.3,
+     "de": "f11:anel",
+     "ate": "f12:apagar"
+    },
+    {
+     "peca": "anel_a3",
+     "faz": "tremer",
+     "intensidade": 0.3,
+     "de": "f11:anel",
+     "ate": "f12:apagar"
+    },
+    {
+     "peca": "anel_a3",
+     "faz": "pulsar",
+     "intensidade": 0.3,
+     "de": "f11:anel",
+     "ate": "f12:apagar"
+    },
+    {
+     "peca": "anel_a4",
+     "faz": "tremer",
+     "intensidade": 0.3,
+     "de": "f11:anel",
+     "ate": "f12:apagar"
+    },
+    {
+     "peca": "anel_a4",
+     "faz": "pulsar",
+     "intensidade": 0.3,
+     "de": "f11:anel",
+     "ate": "f12:apagar"
+    },
+    {
+     "peca": "anel_a5",
+     "faz": "tremer",
+     "intensidade": 0.3,
+     "de": "f11:anel",
+     "ate": "f12:apagar"
+    },
+    {
+     "peca": "anel_a5",
+     "faz": "pulsar",
+     "intensidade": 0.3,
+     "de": "f11:anel",
+     "ate": "f12:apagar"
+    },
+    {
+     "peca": "queimador",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "quantidade": 8,
+     "velocidade": 1.4,
+     "intensidade": 0.2,
+     "de": "f12:vento",
+     "ate": "f12:apagar+0.6",
+     "caminho": [
+      [
+       -0.25,
+       0.02,
+       0
+      ],
+      [
+       0.2,
+       0.03,
+       0
+      ]
+     ]
+    },
+    {
+     "peca": "anel_a0",
+     "faz": "sumir",
+     "de": "f12:apagar"
+    },
+    {
+     "peca": "anel_a1",
+     "faz": "sumir",
+     "de": "f12:apagar"
+    },
+    {
+     "peca": "anel_a2",
+     "faz": "sumir",
+     "de": "f12:apagar"
+    },
+    {
+     "peca": "anel_a3",
+     "faz": "sumir",
+     "de": "f12:apagar"
+    },
+    {
+     "peca": "anel_a4",
+     "faz": "sumir",
+     "de": "f12:apagar"
+    },
+    {
+     "peca": "anel_a5",
+     "faz": "sumir",
+     "de": "f12:apagar"
+    },
+    {
+     "peca": "queimador",
+     "faz": "fluxo",
+     "tipo": "gas",
+     "quantidade": 10,
+     "velocidade": 0.6,
+     "intensidade": 0.4,
+     "de": "f12:saindo",
+     "ate": "f13:explode",
+     "caminho": [
+      [
+       0,
+       0.01,
+       0
+      ],
+      [
+       0.02,
+       0.12,
+       0.03
+      ]
+     ]
+    },
+    {
+     "peca": "bola",
+     "faz": "crescer",
+     "de": "f13:explode",
+     "ate": "f13:explode+0.25"
+    },
+    {
+     "peca": "bola",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "f13:explode",
+     "ate": "f13:explode+0.7"
+    },
+    {
+     "peca": "bola",
+     "faz": "sumir",
+     "de": "f13:explode+0.7"
+    },
+    {
+     "peca": "anel_b0",
+     "faz": "aparecer",
+     "de": "f14"
+    },
+    {
+     "peca": "anel_b1",
+     "faz": "aparecer",
+     "de": "f14"
+    },
+    {
+     "peca": "anel_b2",
+     "faz": "aparecer",
+     "de": "f14"
+    },
+    {
+     "peca": "anel_b3",
+     "faz": "aparecer",
+     "de": "f14"
+    },
+    {
+     "peca": "anel_b4",
+     "faz": "aparecer",
+     "de": "f14"
+    },
+    {
+     "peca": "anel_b5",
+     "faz": "aparecer",
+     "de": "f14"
+    },
+    {
+     "peca": "anel_b0",
+     "faz": "tremer",
+     "intensidade": 0.3,
+     "de": "f14",
+     "ate": "f15:apaga"
+    },
+    {
+     "peca": "anel_b0",
+     "faz": "pulsar",
+     "intensidade": 0.3,
+     "de": "f14",
+     "ate": "f15:apaga"
+    },
+    {
+     "peca": "anel_b1",
+     "faz": "tremer",
+     "intensidade": 0.3,
+     "de": "f14",
+     "ate": "f15:apaga"
+    },
+    {
+     "peca": "anel_b1",
+     "faz": "pulsar",
+     "intensidade": 0.3,
+     "de": "f14",
+     "ate": "f15:apaga"
+    },
+    {
+     "peca": "anel_b2",
+     "faz": "tremer",
+     "intensidade": 0.3,
+     "de": "f14",
+     "ate": "f15:apaga"
+    },
+    {
+     "peca": "anel_b2",
+     "faz": "pulsar",
+     "intensidade": 0.3,
+     "de": "f14",
+     "ate": "f15:apaga"
+    },
+    {
+     "peca": "anel_b3",
+     "faz": "tremer",
+     "intensidade": 0.3,
+     "de": "f14",
+     "ate": "f15:apaga"
+    },
+    {
+     "peca": "anel_b3",
+     "faz": "pulsar",
+     "intensidade": 0.3,
+     "de": "f14",
+     "ate": "f15:apaga"
+    },
+    {
+     "peca": "anel_b4",
+     "faz": "tremer",
+     "intensidade": 0.3,
+     "de": "f14",
+     "ate": "f15:apaga"
+    },
+    {
+     "peca": "anel_b4",
+     "faz": "pulsar",
+     "intensidade": 0.3,
+     "de": "f14",
+     "ate": "f15:apaga"
+    },
+    {
+     "peca": "anel_b5",
+     "faz": "tremer",
+     "intensidade": 0.3,
+     "de": "f14",
+     "ate": "f15:apaga"
+    },
+    {
+     "peca": "anel_b5",
+     "faz": "pulsar",
+     "intensidade": 0.3,
+     "de": "f14",
+     "ate": "f15:apaga"
+    },
+    {
+     "peca": "valvula",
+     "faz": "aparecer",
+     "de": "f14:valvula"
+    },
+    {
+     "peca": "sensor",
+     "faz": "aparecer",
+     "de": "f14:sensor"
+    },
+    {
+     "peca": "fio_sensor",
+     "faz": "crescer",
+     "de": "f14:sensor",
+     "ate": "f14:sensor+0.5"
+    },
+    {
+     "peca": "sensor",
+     "faz": "aquecer",
+     "intensidade": 1.0,
+     "de": "f14:chama",
+     "ate": "f15:quente"
+    },
+    {
+     "peca": "anel_b0",
+     "faz": "sumir",
+     "de": "f15:apaga"
+    },
+    {
+     "peca": "anel_b1",
+     "faz": "sumir",
+     "de": "f15:apaga"
+    },
+    {
+     "peca": "anel_b2",
+     "faz": "sumir",
+     "de": "f15:apaga"
+    },
+    {
+     "peca": "anel_b3",
+     "faz": "sumir",
+     "de": "f15:apaga"
+    },
+    {
+     "peca": "anel_b4",
+     "faz": "sumir",
+     "de": "f15:apaga"
+    },
+    {
+     "peca": "anel_b5",
+     "faz": "sumir",
+     "de": "f15:apaga"
+    },
+    {
+     "peca": "sensor",
+     "faz": "esfriar",
+     "de": "f15:esfria",
+     "ate": "f15:esfria+0.6"
+    },
+    {
+     "peca": "valvula",
+     "faz": "pulsar",
+     "intensidade": 0.9,
+     "de": "f15:fecha",
+     "ate": "f15:fecha+0.6"
+    },
+    {
+     "peca": "anel_c0",
+     "faz": "aparecer",
+     "de": "f16"
+    },
+    {
+     "peca": "anel_c1",
+     "faz": "aparecer",
+     "de": "f16"
+    },
+    {
+     "peca": "anel_c2",
+     "faz": "aparecer",
+     "de": "f16"
+    },
+    {
+     "peca": "anel_c3",
+     "faz": "aparecer",
+     "de": "f16"
+    },
+    {
+     "peca": "anel_c4",
+     "faz": "aparecer",
+     "de": "f16"
+    },
+    {
+     "peca": "anel_c5",
+     "faz": "aparecer",
+     "de": "f16"
+    },
+    {
+     "peca": "anel_c0",
+     "faz": "tremer",
+     "intensidade": 0.3,
+     "de": "f16",
+     "ate": "f18:fim+2"
+    },
+    {
+     "peca": "anel_c0",
+     "faz": "pulsar",
+     "intensidade": 0.3,
+     "de": "f16",
+     "ate": "f18:fim+2"
+    },
+    {
+     "peca": "anel_c1",
+     "faz": "tremer",
+     "intensidade": 0.3,
+     "de": "f16",
+     "ate": "f18:fim+2"
+    },
+    {
+     "peca": "anel_c1",
+     "faz": "pulsar",
+     "intensidade": 0.3,
+     "de": "f16",
+     "ate": "f18:fim+2"
+    },
+    {
+     "peca": "anel_c2",
+     "faz": "tremer",
+     "intensidade": 0.3,
+     "de": "f16",
+     "ate": "f18:fim+2"
+    },
+    {
+     "peca": "anel_c2",
+     "faz": "pulsar",
+     "intensidade": 0.3,
+     "de": "f16",
+     "ate": "f18:fim+2"
+    },
+    {
+     "peca": "anel_c3",
+     "faz": "tremer",
+     "intensidade": 0.3,
+     "de": "f16",
+     "ate": "f18:fim+2"
+    },
+    {
+     "peca": "anel_c3",
+     "faz": "pulsar",
+     "intensidade": 0.3,
+     "de": "f16",
+     "ate": "f18:fim+2"
+    },
+    {
+     "peca": "anel_c4",
+     "faz": "tremer",
+     "intensidade": 0.3,
+     "de": "f16",
+     "ate": "f18:fim+2"
+    },
+    {
+     "peca": "anel_c4",
+     "faz": "pulsar",
+     "intensidade": 0.3,
+     "de": "f16",
+     "ate": "f18:fim+2"
+    },
+    {
+     "peca": "anel_c5",
+     "faz": "tremer",
+     "intensidade": 0.3,
+     "de": "f16",
+     "ate": "f18:fim+2"
+    },
+    {
+     "peca": "anel_c5",
+     "faz": "pulsar",
+     "intensidade": 0.3,
+     "de": "f16",
+     "ate": "f18:fim+2"
+    },
+    {
+     "peca": "sensor",
+     "faz": "aquecer",
+     "intensidade": 1.0,
+     "de": "f16",
+     "ate": "f16+1"
+    },
+    {
+     "peca": "botijao",
+     "faz": "pulsar",
+     "intensidade": 0.5,
+     "de": "f16:cheiro",
+     "ate": "f16:cheiro+0.8"
+    },
+    {
+     "peca": "corpo",
+     "faz": "crescer",
+     "de": "f18:construiu",
+     "ate": "f18:construiu+0.4"
+    },
+    {
+     "peca": "botao1",
+     "faz": "aparecer",
+     "de": "f18:construiu+0.3"
+    },
+    {
+     "peca": "botao2",
+     "faz": "aparecer",
+     "de": "f18:construiu+0.3"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f1:cozinhar"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "mangueira",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f2:gas"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f3"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "serio",
+     "de": "f4"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "grade_aro",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f5:grade"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f6"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "injetor",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f8:injetor"
+    },
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "surpreso",
+     "de": "f9:azul"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "camera",
+     "expressao": "nervoso",
+     "de": "f10"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "queimador",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f11:queimador"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "camera",
+     "expressao": "medo",
+     "de": "f12"
+    },
+    {
+     "quem": "tito",
+     "faz": "maos_na_cabeca",
+     "olhar": "maquete",
+     "expressao": "medo",
+     "de": "f13:explode"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "valvula",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f14:valvula"
+    },
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "determinado",
+     "de": "f15"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f16"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "serio",
+     "de": "f17"
+    },
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f18"
+    },
+    {
+     "quem": "tito",
+     "faz": "acenar",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f18:parabens"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "camera": [
+      0.02,
+      1.38,
+      1.15
+     ],
+     "alvo": [
+      -0.042,
+      1.21,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.6
+    },
+    {
+     "de": "f1:explodir",
+     "tipo": "detalhe",
+     "camera": [
+      0.12,
+      1.32,
+      0.72
+     ],
+     "alvo": [
+      0.084,
+      1.28,
+      0.028
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f2",
+     "tipo": "detalhe",
+     "camera": [
+      -0.3,
+      1.32,
+      0.78
+     ],
+     "alvo": [
+      -0.182,
+      1.224,
+      -0.042
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f2:acender",
+     "tipo": "detalhe",
+     "camera": [
+      0.12,
+      1.32,
+      0.72
+     ],
+     "alvo": [
+      0.084,
+      1.28,
+      0.028
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f3",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f3:panela",
+     "tipo": "detalhe",
+     "camera": [
+      0.16,
+      1.42,
+      0.78
+     ],
+     "alvo": [
+      0.084,
+      1.322,
+      0.028
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f4",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f5",
+     "tipo": "detalhe",
+     "camera": [
+      0.16,
+      1.42,
+      0.78
+     ],
+     "alvo": [
+      0.084,
+      1.322,
+      0.028
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f6",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f6:fumaca",
+     "tipo": "detalhe",
+     "camera": [
+      0.16,
+      1.42,
+      0.78
+     ],
+     "alvo": [
+      0.084,
+      1.322,
+      0.028
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f7",
+     "tipo": "detalhe",
+     "camera": [
+      -0.35,
+      1.36,
+      0.62
+     ],
+     "alvo": [
+      0.084,
+      1.28,
+      0.028
+     ],
+     "movimento": "orbitar"
+    },
+    {
+     "de": "f8",
+     "tipo": "detalhe",
+     "camera": [
+      0.05,
+      1.17,
+      0.5
+     ],
+     "alvo": [
+      0.084,
+      1.175,
+      0.028
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f9",
+     "tipo": "detalhe",
+     "camera": [
+      0.05,
+      1.17,
+      0.5
+     ],
+     "alvo": [
+      0.084,
+      1.175,
+      0.028
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f9:azul",
+     "tipo": "detalhe",
+     "camera": [
+      0.12,
+      1.32,
+      0.72
+     ],
+     "alvo": [
+      0.084,
+      1.28,
+      0.028
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "zoom"
+    },
+    {
+     "de": "f10",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f10:queima",
+     "tipo": "detalhe",
+     "camera": [
+      0.16,
+      1.42,
+      0.78
+     ],
+     "alvo": [
+      0.084,
+      1.322,
+      0.028
+     ],
+     "movimento": "tremer"
+    },
+    {
+     "de": "f11",
+     "tipo": "detalhe",
+     "camera": [
+      0.1,
+      1.45,
+      0.55
+     ],
+     "alvo": [
+      0.084,
+      1.238,
+      0.028
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f12",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "dolly_zoom",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f12:vento",
+     "tipo": "detalhe",
+     "camera": [
+      -0.3,
+      1.42,
+      0.45
+     ],
+     "alvo": [
+      0.084,
+      1.238,
+      0.028
+     ],
+     "movimento": "tremer"
+    },
+    {
+     "de": "f12:enche",
+     "tipo": "aberto",
+     "camera": [
+      0.0,
+      1.5,
+      1.8
+     ],
+     "alvo": [
+      0.0,
+      1.28,
+      0.0
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f13:explode",
+     "tipo": "aberto",
+     "camera": [
+      0.0,
+      1.5,
+      1.8
+     ],
+     "alvo": [
+      0.0,
+      1.28,
+      0.0
+     ],
+     "movimento": "tremer"
+    },
+    {
+     "de": "f14",
+     "tipo": "detalhe",
+     "camera": [
+      -0.06,
+      1.14,
+      0.6
+     ],
+     "alvo": [
+      0.105,
+      1.126,
+      0.028
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f14:sensor",
+     "tipo": "detalhe",
+     "camera": [
+      0.1,
+      1.45,
+      0.55
+     ],
+     "alvo": [
+      0.084,
+      1.238,
+      0.028
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f15:apaga",
+     "tipo": "detalhe",
+     "camera": [
+      -0.3,
+      1.42,
+      0.45
+     ],
+     "alvo": [
+      0.084,
+      1.238,
+      0.028
+     ],
+     "movimento": "tremer"
+    },
+    {
+     "de": "f15:fecha",
+     "tipo": "detalhe",
+     "camera": [
+      -0.06,
+      1.14,
+      0.6
+     ],
+     "alvo": [
+      0.105,
+      1.126,
+      0.028
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f16",
+     "tipo": "detalhe",
+     "camera": [
+      -0.3,
+      1.32,
+      0.78
+     ],
+     "alvo": [
+      -0.182,
+      1.224,
+      -0.042
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f17",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": 0.3,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f18",
+     "tipo": "aberto",
+     "camera": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "alvo": [
+      -0.9,
+      1.5,
+      0.3
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    }
+   ],
+   "sons": [
+    {
+     "de": "inicio",
+     "som": "fogo",
+     "volume": 0.5
+    },
+    {
+     "de": "inicio",
+     "som": "chiado",
+     "volume": 0.3
+    },
+    {
+     "de": "f1:explodir",
+     "som": "impacto",
+     "volume": 0.6
+    },
+    {
+     "de": "f2:acender",
+     "som": "isqueiro",
+     "volume": 0.8
+    },
+    {
+     "de": "f2:enorme",
+     "som": "fogo",
+     "volume": 0.6
+    },
+    {
+     "de": "f3",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f3:tampa",
+     "som": "sopro",
+     "volume": 0.7
+    },
+    {
+     "de": "f4:tres",
+     "som": "ding",
+     "volume": 0.6
+    },
+    {
+     "de": "f5:grade",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f5:ar",
+     "som": "isqueiro",
+     "volume": 0.6
+    },
+    {
+     "de": "f6",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f6:fumaca",
+     "som": "chiado",
+     "volume": 0.4
+    },
+    {
+     "de": "f8:injetor",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f8:jato",
+     "som": "chiado",
+     "volume": 0.4
+    },
+    {
+     "de": "f9:puxa",
+     "som": "sopro",
+     "volume": 0.5
+    },
+    {
+     "de": "f9:azul",
+     "som": "ding",
+     "volume": 0.8
+    },
+    {
+     "de": "f10",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f10:queima",
+     "som": "chiado",
+     "volume": 0.5
+    },
+    {
+     "de": "f11:queimador",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f11:anel",
+     "som": "ding",
+     "volume": 0.7
+    },
+    {
+     "de": "f12",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f12:vento",
+     "som": "sopro",
+     "volume": 0.7
+    },
+    {
+     "de": "f12:saindo",
+     "som": "chiado",
+     "volume": 0.5
+    },
+    {
+     "de": "f13:faisca",
+     "som": "zap",
+     "volume": 0.7
+    },
+    {
+     "de": "f13:explode",
+     "som": "impacto",
+     "volume": 0.9
+    },
+    {
+     "de": "f13:explode",
+     "som": "fogo",
+     "volume": 0.7
+    },
+    {
+     "de": "f14:valvula",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f14:sensor",
+     "som": "ding",
+     "volume": 0.7
+    },
+    {
+     "de": "f15:apaga",
+     "som": "sopro",
+     "volume": 0.6
+    },
+    {
+     "de": "f15:fecha",
+     "som": "clique",
+     "volume": 0.9
+    },
+    {
+     "de": "f16:cheiro",
+     "som": "ding",
+     "volume": 0.7
+    },
+    {
+     "de": "f17:vazamento",
+     "som": "chiado",
+     "volume": 0.4
+    },
+    {
+     "de": "f18:parabens",
+     "som": "ding",
+     "volume": 0.9
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f1:explodir",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f1:explodir",
+     "ate": "f1:explodir+0.7",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f2:enorme",
+     "ate": "f2:enorme+0.6",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f3:apaga",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f5:grade+0.1",
+     "ate": "f5:fim",
+     "efeito": "circular",
+     "alvo": "grade_aro"
+    },
+    {
+     "de": "f6:fumaca",
+     "ate": "f6:fumaca+0.6",
+     "efeito": "tremor",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f8:injetor+0.1",
+     "ate": "f8:fim",
+     "efeito": "circular",
+     "alvo": "injetor"
+    },
+    {
+     "de": "f9:azul",
+     "ate": "f9:azul+0.8",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f10:queima",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f11:queimador+0.1",
+     "ate": "f11:fim",
+     "efeito": "circular",
+     "alvo": "queimador"
+    },
+    {
+     "de": "f12:apagar",
+     "ate": "f12:apagar+0.6",
+     "efeito": "tremor",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f13:explode",
+     "efeito": "flash"
+    },
+    {
+     "de": "f13:explode",
+     "ate": "f13:fim+0.4",
+     "efeito": "tremor",
+     "intensidade": 0.6
+    },
+    {
+     "de": "f13:explode",
+     "ate": "f13:fim+0.4",
+     "efeito": "letreiro",
+     "texto": "PERIGO!",
+     "cor": "#FF3B30",
+     "altura": 0.22
+    },
+    {
+     "de": "f13:explode",
+     "ate": "f13:explode+0.8",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f14:valvula+0.1",
+     "ate": "f14:sensor",
+     "efeito": "circular",
+     "alvo": "valvula"
+    },
+    {
+     "de": "f14:sensor+0.1",
+     "ate": "f15:quente",
+     "efeito": "destacar",
+     "alvo": "sensor"
+    },
+    {
+     "de": "f15:fecha",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f16:cheiro",
+     "ate": "f16:fim+0.3",
+     "efeito": "circular",
+     "alvo": "botijao"
+    },
+    {
+     "de": "f18:parabens",
+     "ate": "f18:fim+0.5",
+     "efeito": "linhas",
+     "intensidade": 0.6
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "mangueira",
+     "texto": "Gás",
+     "de": "f2:gas",
+     "ate": "f2:fim"
+    },
+    {
+     "alvo": "panela",
+     "texto": "Sem ar",
+     "de": "f3:apaga",
+     "ate": "f4:fim",
+     "cor": "#FF8A65"
+    },
+    {
+     "alvo": "grade_aro",
+     "texto": "Grade",
+     "de": "f5:grade",
+     "ate": "f5:fim"
+    },
+    {
+     "alvo": "fuligem",
+     "texto": "Fumaça",
+     "de": "f6:fumaca",
+     "ate": "f7",
+     "cor": "#FF8A65"
+    },
+    {
+     "alvo": "injetor",
+     "texto": "Injetor",
+     "de": "f8:injetor",
+     "ate": "f8:fim"
+    },
+    {
+     "alvo": "janela1",
+     "texto": "Ar",
+     "de": "f9:puxa",
+     "ate": "f9:azul"
+    },
+    {
+     "alvo": "queimador",
+     "texto": "Queimador",
+     "de": "f11:queimador",
+     "ate": "f11:fim"
+    },
+    {
+     "alvo": "queimador",
+     "texto": "Vazando",
+     "de": "f12:saindo",
+     "ate": "f13:explode",
+     "cor": "#FF8A65"
+    },
+    {
+     "alvo": "valvula",
+     "texto": "Válvula",
+     "de": "f14:valvula",
+     "ate": "f14:sensor"
+    },
+    {
+     "alvo": "sensor",
+     "texto": "Sensor",
+     "de": "f14:sensor",
+     "ate": "f15:fim"
+    },
+    {
+     "alvo": "botijao",
+     "texto": "Sem cheiro",
+     "de": "f16:cheiro",
+     "ate": "f17"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f4:tres",
+     "ate": "f4:fim+0.3",
+     "grande": "TRIÂN­GULO DO FOGO",
+     "pequeno": "gás + ar + calor: tirou um, o fogo apaga"
+    },
+    {
+     "de": "f9:azul+0.2",
+     "ate": "f9:fim+0.3",
+     "grande": "CHAMA AZUL",
+     "pequeno": "gás misturado com ar antes de queimar"
+    },
+    {
+     "de": "f17:proposito",
+     "ate": "f17:fim+0.3",
+     "grande": "CHEIRO DE PROPÓ­SITO",
+     "pequeno": "é ele que avisa que o gás está vazando"
+    }
+   ]
+  }
+ ]
+}
