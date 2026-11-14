@@ -399,7 +399,8 @@
    ],
    "gancho": "Cada extintor tira um lado diferente do triângulo do fogo.",
    "estilo": "mito",
-   "status": "pendente"
+   "status": "produzido",
+   "dia": "2026-11-15"
   },
   {
    "n": 24,
@@ -415,7 +416,7 @@
     "combustão"
    ],
    "gancho": "Seu carro anda com milhares de explosões pequenas por minuto.",
-   "status": "pendente"
+   "status": "roteiro"
   },
   {
    "n": 25,

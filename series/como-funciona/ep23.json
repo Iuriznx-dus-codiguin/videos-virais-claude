@@ -547,6 +547,22 @@
     "oculta": true
    },
    {
+    "id": "bola_in",
+    "forma": "esfera",
+    "tam": [
+     0.07
+    ],
+    "pos": [
+     -0.13,
+     0.26,
+     0.1
+    ],
+    "cor": "#FFF176",
+    "brilho": 1.8,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
     "id": "lenha1",
     "forma": "cilindro",
     "tam": [
@@ -696,14 +712,14 @@
       -0.07
      ],
      [
-      0.16999999999999998,
+      0.13999999999999999,
       0.07,
-      -0.05500000000000001
+      -0.065
      ],
      [
-      0.195,
+      0.11499999999999999,
       0.035,
-      -0.03
+      -0.07
      ]
     ]
    },
@@ -1030,7 +1046,7 @@
    "curiosidades"
   ],
   "comentario": "Eu achava que água apagava qualquer fogo. Você sabia da panela de óleo?",
-  "capa": "f12:bola+0.4"
+  "capa": "f12:bola+0.3"
  },
  "cenas": [
   {
@@ -1199,6 +1215,17 @@
     },
     {
      "peca": "bola",
+     "faz": "sumir",
+     "de": "f1:explodir+0.8"
+    },
+    {
+     "peca": "bola_in",
+     "faz": "crescer",
+     "de": "f1:explodir",
+     "ate": "f1:explodir+0.25"
+    },
+    {
+     "peca": "bola_in",
      "faz": "sumir",
      "de": "f1:explodir+0.8"
     },
@@ -2223,6 +2250,17 @@
      "de": "f12:fim"
     },
     {
+     "peca": "bola_in",
+     "faz": "crescer",
+     "de": "f12:bola",
+     "ate": "f12:bola+0.25"
+    },
+    {
+     "peca": "bola_in",
+     "faz": "sumir",
+     "de": "f12:fim"
+    },
+    {
      "peca": "oleo",
      "faz": "esfriar",
      "de": "f13:abafa",
@@ -2666,7 +2704,7 @@
      "movimento": "tremer"
     },
     {
-     "de": "f12:fogo",
+     "de": "f12:bola+0.9",
      "tipo": "medio",
      "alvo": "tito",
      "lado": "tres_quartos_direita",
@@ -2693,9 +2731,9 @@
      "de": "f14",
      "tipo": "detalhe",
      "camera": [
-      0.3,
-      1.45,
-      0.4
+      0.4,
+      1.5,
+      0.6
      ],
      "alvo": [
       0.21,
@@ -2709,9 +2747,9 @@
      "de": "f14:choque",
      "tipo": "detalhe",
      "camera": [
-      0.3,
-      1.45,
-      0.4
+      0.4,
+      1.5,
+      0.6
      ],
      "alvo": [
       0.21,
