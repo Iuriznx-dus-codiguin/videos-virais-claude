@@ -174,12 +174,15 @@
     "Edifício Aurora: 12 andares, 48 apartamentos, uma guarita na frente, garagem no subsolo.",
     "O porteiro antigo, Seu Jorge, sumiu há sete dias sem avisar.",
     "Regras da síndica (grupo do prédio): 1) depois da meia-noite o portão não abre pra ninguém; 2) o porteiro nunca sai da guarita.",
-    "O interfone tem um botão a mais: o 0. Não existe apartamento 0."
+    "O interfone tem um botão a mais: o 0. Não existe apartamento 0.",
+    "Noite 2: a câmera do 7º andar está desligada desde ontem; só a síndica tem a senha das câmeras.",
+    "Noite 2: às 3h20 a síndica desceu de roupão e abriu o portão da garagem com um controle (ela quebra a própria regra 1); olhou pra câmera 4 e pra guarita: ela sabe que o porteiro viu."
   ],
   "ganchos_abertos": [
     "Quem liga do apartamento 0 e por que quer a garagem aberta às 3h?",
     "Por que as luzes do prédio apagam andar por andar às 3h?",
     "Quem é 'ELA', que está ouvindo (aviso do Seu Jorge no livro)?",
-    "Onde está o Seu Jorge?"
+    "Onde está o Seu Jorge?",
+    "O que a síndica foi fazer na garagem às 3h20?"
   ]
 }

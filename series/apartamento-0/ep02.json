@@ -373,9 +373,9 @@
      "tipo": "close",
      "alvo": "porteiro",
      "camera": [
-      -4.35,
-      1.45,
-      5.55
+      -4.6,
+      1.4,
+      7.2
      ],
      "movimento": "zoom_rapido",
      "intensidade": 0.3,
@@ -506,12 +506,12 @@
     },
     {
      "de": "f10b",
-     "tipo": "close",
+     "tipo": "medio",
      "alvo": "porteiro",
      "camera": [
-      -4.35,
-      1.45,
-      5.55
+      -4.4,
+      1.6,
+      8.3
      ],
      "movimento": "aproximar",
      "intensidade": 0.3,
@@ -580,12 +580,12 @@
    "planos": [
     {
      "de": "f11",
-     "tipo": "close",
+     "tipo": "medio",
      "alvo": "porteiro",
      "camera": [
-      -4.35,
-      1.45,
-      5.55
+      -4.4,
+      1.6,
+      8.3
      ],
      "movimento": "tremer",
      "intensidade": 0.3
@@ -688,14 +688,37 @@
      ],
      "movimento": "fixo",
      "transicao": "flash"
+    },
+    {
+     "de": "f14b",
+     "tipo": "aberto",
+     "alvo": [
+      5.5,
+      1.3,
+      -4.8
+     ],
+     "camera": [
+      3.6,
+      3.3,
+      -1.2
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.3
     }
    ],
    "insercoes": [
     {
      "de": "f13",
-     "ate": "f16-0.05",
+     "ate": "f14b-0.05",
      "tipo": "cctv",
      "titulo": "CAM 2 · HALL",
+     "hora": "03:20"
+    },
+    {
+     "de": "f14b",
+     "ate": "f16-0.05",
+     "tipo": "cctv",
+     "titulo": "CAM 4 · GARAGEM",
      "hora": "03:20"
     }
    ],
@@ -968,6 +991,6 @@
    "animacao"
   ],
   "comentario": "Eu fingia que não vi e pedia demissão de manhã kkkk. E você?",
-  "capa": "f15:síndica+0.4"
+  "capa": "f17:câmera+0.4"
  }
 }
