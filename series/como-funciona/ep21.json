@@ -4006,12 +4006,6 @@
      "alvo": "boia"
     },
     {
-     "de": "f14:ladrao+0.1",
-     "ate": "f14:sobra",
-     "efeito": "circular",
-     "alvo": "ladrao"
-    },
-    {
      "de": "f15:mosquito",
      "ate": "f15:fim+0.3",
      "efeito": "letreiro",
@@ -4124,22 +4118,10 @@
      "ate": "f14:fim+0.2"
     },
     {
-     "alvo": "mosq2",
-     "texto": "Mosquito",
-     "de": "f15:mosquito",
-     "ate": "f15:fim"
-    },
-    {
      "alvo": "tampa",
      "texto": "Tampa",
      "de": "f16:tampa+0.5",
      "ate": "f16:fim+0.3"
-    },
-    {
-     "alvo": "seta",
-     "texto": "Altura",
-     "de": "f17:altura",
-     "ate": "f17:fim+0.3"
     }
    ],
    "cartoes": [
