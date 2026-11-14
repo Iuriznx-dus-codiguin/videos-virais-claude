@@ -961,6 +961,23 @@
     ],
     "cor": "#FF7043",
     "brilho": 1.3,
+    "opacidade": 0.75,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "bola_in",
+    "forma": "esfera",
+    "tam": [
+     0.1
+    ],
+    "pos": [
+     0.039999999999999994,
+     0.2,
+     0.11
+    ],
+    "cor": "#FFF176",
+    "brilho": 1.8,
     "sem_contorno": true,
     "oculta": true
    },
@@ -1210,7 +1227,7 @@
    "curiosidades"
   ],
   "comentario": "Eu jurava que aquele cheiro era do próprio gás. Você também achava?",
-  "capa": "f9:azul+0.6"
+  "capa": "f13:explode+0.35"
  },
  "cenas": [
   {
@@ -2136,6 +2153,24 @@
     },
     {
      "peca": "bola",
+     "faz": "sumir",
+     "de": "f13:explode+0.7"
+    },
+    {
+     "peca": "bola_in",
+     "faz": "crescer",
+     "de": "f13:explode",
+     "ate": "f13:explode+0.25"
+    },
+    {
+     "peca": "bola_in",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "f13:explode",
+     "ate": "f13:explode+0.7"
+    },
+    {
+     "peca": "bola_in",
      "faz": "sumir",
      "de": "f13:explode+0.7"
     },
