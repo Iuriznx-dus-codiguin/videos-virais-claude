@@ -394,14 +394,15 @@
      "alvo": "rafa",
      "texto": "RAFA · MOTOBOY DO 303",
      "de": "f4:Rafa",
-     "ate": "f4:fim"
+     "ate": "f4:fim",
+     "altura": 0.34
     }
    ],
    "manchetes": [
     {
      "de": "f4",
      "ate": "f5",
-     "texto": "O RAFA *SABE* DE UMA COISA"
+     "texto": "O RAFA *SABE*"
     },
     {
      "de": "f5",
@@ -437,23 +438,25 @@
      "tipo": "particulas",
      "em": [
       7.0,
-      -5.6
+      -4.6
      ],
      "particula": "fumaca",
-     "alt": 0.5,
-     "raio": 1.5,
-     "altura": 9
+     "alt": 0.8,
+     "raio": 2.0,
+     "altura": 12,
+     "quantas": 160
     },
     {
      "tipo": "particulas",
      "em": [
       7.0,
-      -5.6
+      -4.6
      ],
      "particula": "fagulhas",
      "alt": 0.3,
-     "raio": 1.2,
-     "altura": 4
+     "raio": 1.6,
+     "altura": 5,
+     "quantas": 120
     }
    ],
    "planos": [

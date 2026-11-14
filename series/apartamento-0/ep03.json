@@ -322,14 +322,15 @@
      "alvo": "marta",
      "texto": "DONA MARTA · SÍNDICA",
      "de": "f2:Marta",
-     "ate": "f2:fim"
+     "ate": "f2:fim",
+     "altura": 0.34
     }
    ],
    "manchetes": [
     {
      "de": "f2",
      "ate": "f3",
-     "texto": "*18H*: A SÍNDICA NA GUARITA"
+     "texto": "*18H* NA GUARITA"
     },
     {
      "de": "f3",
@@ -594,7 +595,7 @@
     {
      "de": "f6",
      "ate": "f8",
-     "texto": "O RECADO *DO JORGE*"
+     "texto": "O *RECADO*"
     },
     {
      "de": "f8",
@@ -806,7 +807,8 @@
      "alvo": "rafa",
      "texto": "RAFA · MOTOBOY DO 303",
      "de": "f13:Rafa",
-     "ate": "f13:Mas"
+     "ate": "f13:Mas",
+     "altura": 0.34
     }
    ],
    "insercoes": [
@@ -832,7 +834,7 @@
     {
      "de": "f13",
      "ate": "f13:Mas",
-     "texto": "O MOTOBOY *DO 303*"
+     "texto": "QUEM *É ELE*?"
     },
     {
      "de": "f13:Mas",

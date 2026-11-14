@@ -176,7 +176,10 @@
     "Regras da síndica (grupo do prédio): 1) depois da meia-noite o portão não abre pra ninguém; 2) o porteiro nunca sai da guarita.",
     "O interfone tem um botão a mais: o 0. Não existe apartamento 0.",
     "Noite 2: a câmera do 7º andar está desligada desde ontem; só a síndica tem a senha das câmeras.",
-    "Noite 2: às 3h20 a síndica desceu de roupão e abriu o portão da garagem com um controle (ela quebra a própria regra 1); olhou pra câmera 4 e pra guarita: ela sabe que o porteiro viu."
+    "Noite 2: às 3h20 a síndica desceu de roupão e abriu o portão da garagem com um controle (ela quebra a própria regra 1); olhou pra câmera 4 e pra guarita: ela sabe que o porteiro viu.",
+    "Noite 3: o porteiro arrancou do livro a página do Jorge e guardou; a síndica percebeu a folha faltando ('O Jorge também arrancava páginas').",
+    "Noite 3: o porteiro quebrou a regra 1 e abriu o portão às 3h02 para o Rafa (motoboy do 303), que vira aliado.",
+    "Noite 3: a garagem tem 48 vagas e 49 carros; o carro a mais (vaga 49) é do Seu Jorge, com a chave no contato."
   ],
   "ganchos_abertos": [
     "Quem liga do apartamento 0 e por que quer a garagem aberta às 3h?",
