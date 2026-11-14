@@ -73,6 +73,24 @@
       "cor_legenda": "#7CFFB2",
       "etiqueta": "INTERFONE · APTO 0"
     },
+    "caio": {
+      "nome": "Caio",
+      "papel": "sobrinho da síndica; é o vulto de capuz da garagem e a voz do interfone do apartamento 0 (o rosto aparece na noite 5, quando ele tira o capuz); guarda no apartamento 0 a carga roubada que chega às 3h",
+      "personalidade": "calmo demais, educado demais, nunca grita",
+      "voz": {
+        "descricao": "a mesma voz do vulto (se o Caio falar, copie vozes/vulto.pt para vozes/caio.pt em vez de criar outra)",
+        "instruct": "male, young adult, low pitch",
+        "semente": 3
+      },
+      "visual": {
+        "corpo": "#2C2C36",
+        "cabeca": "#F2EEE6",
+        "olhos": "redondos",
+        "sobrancelhas": "grossas"
+      },
+      "cor_legenda": "#7CFFB2",
+      "etiqueta": "INTERFONE · APTO 0"
+    },
     "jorge": {
       "nome": "Seu Jorge",
       "papel": "porteiro antigo, 30 anos de prédio; sumiu há sete dias (está preso no apartamento 0, no subsolo); deixou avisos no livro da portaria",

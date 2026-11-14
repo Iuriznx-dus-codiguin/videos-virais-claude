@@ -1,0 +1,1281 @@
+{
+ "serie": "apartamento-0",
+ "parte": 5,
+ "titulo": "Câmera quatro",
+ "musica": "tensao",
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Se a luz do prédio apaga toda noite na mesma hora, alguém não quer ser filmado."
+  },
+  {
+   "id": "f2",
+   "quem": "narrador",
+   "off": true,
+   "texto": "Ontem, a voz do Seu Jorge veio lá de baixo. Do apartamento zero."
+  },
+  {
+   "id": "f3",
+   "quem": "porteiro",
+   "tom": "nervoso",
+   "texto": "Eu vou chamar a polícia agora."
+  },
+  {
+   "id": "f4",
+   "quem": "narrador",
+   "off": true,
+   "tom": "serio",
+   "texto": "Não. Sem prova, a síndica diz que foi trote. E o Jorge some de vez."
+  },
+  {
+   "id": "f5",
+   "quem": "rafa",
+   "tom": "determinado",
+   "texto": "Então a gente filma. Câmera quatro."
+  },
+  {
+   "id": "f6",
+   "quem": "narrador",
+   "off": true,
+   "tom": "animado",
+   "texto": "A boa notícia: o Rafa ligou a câmera numa bateria escondida."
+  },
+  {
+   "id": "f7",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "A má notícia: a bateria só aguenta QUATRO minutos."
+  },
+  {
+   "id": "f7b",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Se a luz apagar às três e onze, vocês têm até três e quinze."
+  },
+  {
+   "id": "f8",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Três e onze. As luzes apagam, andar por andar."
+  },
+  {
+   "id": "f9",
+   "quem": "narrador",
+   "off": true,
+   "texto": "O prédio inteiro fica no escuro. Menos a câmera quatro."
+  },
+  {
+   "id": "f9b",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Aí chega mensagem da síndica: Porteiro, tudo certo aí?"
+  },
+  {
+   "id": "f9c",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Vocês não respondem."
+  },
+  {
+   "id": "f10",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Na garagem, o vulto de capuz carrega caixas. Uma, duas, dez."
+  },
+  {
+   "id": "f11",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Todas pra mesma porta. A do apartamento zero."
+  },
+  {
+   "id": "f12",
+   "quem": "rafa",
+   "tom": "nervoso",
+   "texto": "Ninguém guarda caixa num lugar queimado."
+  },
+  {
+   "id": "f13",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Aí o vulto para embaixo da câmera. E tira o capuz.",
+   "pausa_depois": 0.4
+  },
+  {
+   "id": "f14",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "É o Caio. O sobrinho da síndica."
+  },
+  {
+   "id": "f14b",
+   "quem": "narrador",
+   "off": true,
+   "texto": "O moço educado que carrega as compras da tia todo domingo."
+  },
+  {
+   "id": "f15",
+   "quem": "narrador",
+   "off": true,
+   "texto": "Três minutos e meio gravados. Tudo no celular do Rafa."
+  },
+  {
+   "id": "f16",
+   "quem": "narrador",
+   "off": true,
+   "tom": "aliviado",
+   "texto": "Pela primeira vez, vocês têm como provar tudo."
+  },
+  {
+   "id": "f16b",
+   "quem": "rafa",
+   "tom": "animado",
+   "texto": "Amanhã cedo, isso vai pra polícia."
+  },
+  {
+   "id": "f17",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Só que o Caio olha pra câmera. E sorri.",
+   "pausa_depois": 0.4
+  },
+  {
+   "id": "f18",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "E vem andando pra guarita.",
+   "pausa_depois": 0.5
+  }
+ ],
+ "cenas": [
+  {
+   "id": "gancho",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "inicio",
+   "ate": "f1:fim+0.1",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -4.75,
+      1.6,
+      9.0
+     ],
+     "expressao": "nervoso",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.3,
+     "semente": 9
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "geral",
+     "alvo": [
+      0,
+      14,
+      -6
+     ],
+     "camera": [
+      3,
+      1.6,
+      9.5
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "inicio",
+     "ate": "f1:alguém",
+     "texto": "A LUZ APAGA *TODA NOITE*"
+    },
+    {
+     "de": "f1:alguém",
+     "texto": "ALGUÉM *NÃO QUER SER FILMADO*"
+    }
+   ],
+   "relogio": {
+    "de": "inicio",
+    "hora": "03:00"
+   },
+   "sons": [
+    {
+     "de": "f1:filmado",
+     "som": "impacto",
+     "volume": 0.3
+    }
+   ]
+  },
+  {
+   "id": "policia",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f2",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -2.75,
+      1.3,
+      4.3
+     ],
+     "expressao": "medo",
+     "escala": 0.6
+    },
+    "rafa": {
+     "em": [
+      -2.75,
+      4.3
+     ],
+     "olhando": [
+      -4.75,
+      1.3,
+      4.3
+     ],
+     "expressao": "nervoso",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.3,
+     "semente": 9
+    }
+   ],
+   "planos": [
+    {
+     "de": "f2",
+     "tipo": "aberto",
+     "alvo": [
+      7.0,
+      0.5,
+      -6.0
+     ],
+     "camera": [
+      3.6,
+      3.3,
+      -1.2
+     ],
+     "movimento": "descer",
+     "intensidade": 0.4,
+     "transicao": "zoom"
+    },
+    {
+     "de": "f3",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      -4.35,
+      1.45,
+      5.55
+     ],
+     "movimento": "zoom_rapido",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f4",
+     "tipo": "medio",
+     "alvo": "porteiro",
+     "camera": [
+      -4.4,
+      1.6,
+      8.3
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.3
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f2",
+     "ate": "f3-0.05",
+     "tipo": "interfone",
+     "titulo": "APTO 0"
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f2",
+     "ate": "f3",
+     "texto": "A VOZ VEIO *DE BAIXO*"
+    },
+    {
+     "de": "f3",
+     "ate": "f4",
+     "texto": "CHAMAR *A POLÍCIA*?"
+    },
+    {
+     "de": "f4",
+     "texto": "SEM PROVA, *É TROTE*"
+    }
+   ],
+   "relogio": {
+    "de": "f2",
+    "hora": "03:00"
+   }
+  },
+  {
+   "id": "plano",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f5",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -2.75,
+      1.3,
+      4.3
+     ],
+     "expressao": "desconfiado",
+     "escala": 0.6
+    },
+    "rafa": {
+     "em": [
+      -2.75,
+      4.3
+     ],
+     "olhando": [
+      -4.75,
+      1.3,
+      4.3
+     ],
+     "expressao": "determinado",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.3,
+     "semente": 9
+    }
+   ],
+   "planos": [
+    {
+     "de": "f5",
+     "tipo": "close",
+     "alvo": "rafa",
+     "camera": [
+      -4.2,
+      1.35,
+      4.0
+     ],
+     "movimento": "zoom_rapido",
+     "intensidade": 0.25,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f6",
+     "tipo": "medio",
+     "alvo": "rafa",
+     "camera": [
+      -4.3,
+      1.5,
+      5.0
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f7",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      -4.6,
+      1.4,
+      7.2
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f7b",
+     "tipo": "medio",
+     "alvo": [
+      -3.8,
+      1.1,
+      4.3
+     ],
+     "camera": [
+      -1.4,
+      1.9,
+      8.8
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.3
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "rafa",
+     "texto": "RAFA · MOTOBOY DO 303",
+     "de": "f5",
+     "ate": "f5:fim"
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f7:QUATRO",
+     "ate": "f7:QUATRO+1.6",
+     "efeito": "letreiro",
+     "texto": "4 MINUTOS",
+     "altura": 0.5
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f5",
+     "ate": "f6",
+     "texto": "A GENTE *FILMA*"
+    },
+    {
+     "de": "f6",
+     "ate": "f7",
+     "texto": "A BOA: *UMA BATERIA*",
+     "cor": "#2FD27A"
+    },
+    {
+     "de": "f7",
+     "ate": "f7b",
+     "texto": "A MÁ: *SÓ 4 MINUTOS*"
+    },
+    {
+     "de": "f7b",
+     "texto": "DE *3H11* ATÉ *3H15*"
+    }
+   ],
+   "relogio": {
+    "de": "f5",
+    "hora": "03:04"
+   }
+  },
+  {
+   "id": "apagao",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f8",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -5.6,
+      1.25,
+      5.65
+     ],
+     "expressao": "medo",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.3,
+     "semente": 9,
+     "apagam": "f8:apagam"
+    }
+   ],
+   "planos": [
+    {
+     "de": "f8",
+     "tipo": "geral",
+     "alvo": [
+      0,
+      22,
+      -6
+     ],
+     "camera": [
+      4,
+      1.4,
+      10.5
+     ],
+     "movimento": "descer",
+     "intensidade": 0.4,
+     "transicao": "flash"
+    },
+    {
+     "de": "f9:Menos",
+     "tipo": "aberto",
+     "alvo": [
+      7.0,
+      1.0,
+      -6.0
+     ],
+     "camera": [
+      3.5,
+      3.4,
+      -1.5
+     ],
+     "movimento": "fixo"
+    },
+    {
+     "de": "f9b",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      -4.35,
+      1.45,
+      5.55
+     ],
+     "movimento": "tremer",
+     "intensidade": 0.3,
+     "transicao": "chicote"
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f9:Menos",
+     "ate": "f9b-0.05",
+     "tipo": "cctv",
+     "titulo": "CAM 4 · GARAGEM",
+     "hora": "03:11"
+    },
+    {
+     "de": "f9b:mensagem",
+     "ate": "f10-0.05",
+     "tipo": "celular",
+     "titulo": "Moradores Ed. Aurora",
+     "mensagens": [
+      {
+       "de": "Dona Marta (síndica)",
+       "texto": "Porteiro, tudo certo aí?"
+      }
+     ]
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f8",
+     "ate": "f9:Menos",
+     "texto": "*3H11*: TUDO APAGA"
+    },
+    {
+     "de": "f9:Menos",
+     "ate": "f9b",
+     "texto": "MENOS *A CÂMERA 4*"
+    },
+    {
+     "de": "f9b",
+     "ate": "f9c",
+     "texto": "A SÍNDICA *ACORDADA*"
+    },
+    {
+     "de": "f9c",
+     "texto": "NINGUÉM *RESPONDE*"
+    }
+   ],
+   "relogio": {
+    "de": "f8",
+    "hora": "03:11"
+   },
+   "sons": [
+    {
+     "de": "f8:apagam",
+     "som": "queda",
+     "volume": 0.4
+    },
+    {
+     "de": "f9:Menos",
+     "som": "bip",
+     "volume": 0.35
+    },
+    {
+     "de": "f9b:mensagem",
+     "som": "pop",
+     "volume": 0.35
+    }
+   ]
+  },
+  {
+   "id": "caixas",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f10",
+   "personagens": {
+    "vulto": {
+     "em": [
+      8.0,
+      -3.6
+     ],
+     "olhando": [
+      7.0,
+      1.0,
+      -6.5
+     ],
+     "expressao": "neutro",
+     "escala": 0.6,
+     "segura": "pacote"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.0,
+     "semente": 9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      8.3,
+      -4.9
+     ],
+     "escala": 0.6
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      8.3,
+      -4.3
+     ],
+     "escala": 0.6
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      8.9,
+      -4.6
+     ],
+     "escala": 0.6
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "vulto",
+     "faz": "andar",
+     "de": "f10",
+     "para": [
+      7.0,
+      -5.6
+     ]
+    },
+    {
+     "quem": "vulto",
+     "faz": "andar",
+     "de": "f11:porta",
+     "para": [
+      8.0,
+      -3.4
+     ]
+    }
+   ],
+   "planos": [
+    {
+     "de": "f10",
+     "tipo": "aberto",
+     "alvo": [
+      7.4,
+      1.0,
+      -4.8
+     ],
+     "camera": [
+      3.6,
+      3.3,
+      -1.2
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f12",
+     "tipo": "close",
+     "alvo": "rafa",
+     "camera": [
+      -4.2,
+      1.35,
+      4.0
+     ],
+     "movimento": "fixo",
+     "transicao": "chicote"
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f10",
+     "ate": "f12-0.05",
+     "tipo": "cctv",
+     "titulo": "CAM 4 · GARAGEM",
+     "hora": "03:12"
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f10",
+     "ate": "f11",
+     "texto": "O VULTO *CARREGA CAIXAS*"
+    },
+    {
+     "de": "f11",
+     "ate": "f12",
+     "texto": "TUDO PRO *APTO 0*"
+    },
+    {
+     "de": "f12",
+     "texto": "CAIXA NUM *LUGAR QUEIMADO*?"
+    }
+   ],
+   "relogio": {
+    "de": "f10",
+    "hora": "03:12"
+   }
+  },
+  {
+   "id": "capuz",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f13",
+   "personagens": {
+    "vulto": {
+     "em": [
+      6.4,
+      -3.4
+     ],
+     "olhando": [
+      3.5,
+      3.4,
+      -1.5
+     ],
+     "expressao": "neutro",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.0,
+     "semente": 9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      8.3,
+      -4.9
+     ],
+     "escala": 0.6
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      8.3,
+      -4.3
+     ],
+     "escala": 0.6
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      8.9,
+      -4.6
+     ],
+     "escala": 0.6
+    }
+   ],
+   "planos": [
+    {
+     "de": "f13",
+     "tipo": "medio",
+     "alvo": "vulto",
+     "camera": [
+      4.6,
+      2.9,
+      -2.2
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.5,
+     "transicao": "zoom"
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f13",
+     "ate": "f14-0.05",
+     "tipo": "cctv",
+     "titulo": "CAM 4 · GARAGEM",
+     "hora": "03:13"
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f13",
+     "texto": "ELE *TIRA O CAPUZ*"
+    }
+   ],
+   "relogio": {
+    "de": "f13",
+    "hora": "03:13"
+   },
+   "sons": [
+    {
+     "de": "f13:capuz",
+     "som": "tensao_sobe",
+     "volume": 0.35
+    }
+   ]
+  },
+  {
+   "id": "caio",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f14",
+   "personagens": {
+    "caio": {
+     "em": [
+      6.4,
+      -3.4
+     ],
+     "olhando": [
+      4.6,
+      2.9,
+      -2.2
+     ],
+     "expressao": "serio",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.0,
+     "semente": 9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      8.3,
+      -4.9
+     ],
+     "escala": 0.6
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      8.3,
+      -4.3
+     ],
+     "escala": 0.6
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      8.9,
+      -4.6
+     ],
+     "escala": 0.6
+    }
+   ],
+   "planos": [
+    {
+     "de": "f14",
+     "tipo": "medio",
+     "alvo": "caio",
+     "camera": [
+      4.6,
+      2.9,
+      -2.2
+     ],
+     "movimento": "zoom_rapido",
+     "intensidade": 0.3,
+     "transicao": "flash"
+    },
+    {
+     "de": "f14b",
+     "tipo": "aberto",
+     "alvo": "caio",
+     "camera": [
+      3.6,
+      3.3,
+      -1.2
+     ],
+     "movimento": "afastar",
+     "intensidade": 0.3
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f14",
+     "ate": "f15-0.05",
+     "tipo": "cctv",
+     "titulo": "CAM 4 · GARAGEM",
+     "hora": "03:13"
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "caio",
+     "texto": "CAIO · SOBRINHO DA SÍNDICA",
+     "de": "f14:Caio",
+     "ate": "f14:fim+0.2"
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f14:Caio-0.3",
+     "ate": "f14b",
+     "texto": "É O *SOBRINHO DA SÍNDICA*"
+    },
+    {
+     "de": "f14b",
+     "texto": "O SOBRINHO *EDUCADO*"
+    }
+   ],
+   "relogio": {
+    "de": "f14",
+    "hora": "03:13"
+   },
+   "sons": [
+    {
+     "de": "f14:Caio",
+     "som": "impacto",
+     "volume": 0.45
+    }
+   ]
+  },
+  {
+   "id": "prova",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f15",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -2.75,
+      1.3,
+      4.3
+     ],
+     "expressao": "aliviado",
+     "escala": 0.6
+    },
+    "rafa": {
+     "em": [
+      -2.75,
+      4.3
+     ],
+     "olhando": [
+      -4.75,
+      1.3,
+      4.3
+     ],
+     "expressao": "aliviado",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.0,
+     "semente": 9
+    }
+   ],
+   "planos": [
+    {
+     "de": "f15",
+     "tipo": "medio",
+     "alvo": [
+      -3.8,
+      1.1,
+      4.3
+     ],
+     "camera": [
+      -1.4,
+      1.9,
+      8.8
+     ],
+     "movimento": "arco",
+     "intensidade": 0.25,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f16b",
+     "tipo": "close",
+     "alvo": "rafa",
+     "camera": [
+      -4.2,
+      1.35,
+      4.0
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.3
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f15:gravados",
+     "ate": "f16:fim",
+     "tipo": "celular",
+     "titulo": "Gravação",
+     "linhas": [
+      "● REC  03:14",
+      "CAM 4 · 3 min 30 s",
+      "salvo no celular do Rafa"
+     ]
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f15",
+     "ate": "f16",
+     "texto": "*3 MIN E MEIO* GRAVADOS"
+    },
+    {
+     "de": "f16",
+     "texto": "AGORA TEM *PROVA*",
+     "cor": "#2FD27A"
+    }
+   ],
+   "relogio": {
+    "de": "f15",
+    "hora": "03:14"
+   }
+  },
+  {
+   "id": "sorriso",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f17",
+   "personagens": {
+    "caio": {
+     "em": [
+      6.4,
+      -3.4
+     ],
+     "olhando": [
+      3.5,
+      3.4,
+      -1.5
+     ],
+     "expressao": "feliz",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.0,
+     "semente": 9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      8.3,
+      -4.9
+     ],
+     "escala": 0.6
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      8.3,
+      -4.3
+     ],
+     "escala": 0.6
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      8.9,
+      -4.6
+     ],
+     "escala": 0.6
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "caio",
+     "faz": "andar",
+     "de": "f18",
+     "para": [
+      3.0,
+      0.5
+     ]
+    }
+   ],
+   "planos": [
+    {
+     "de": "f17",
+     "tipo": "close",
+     "alvo": "caio",
+     "camera": [
+      4.3,
+      2.6,
+      -1.9
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.4,
+     "transicao": "chicote"
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f17",
+     "ate": "f18-0.05",
+     "tipo": "cctv",
+     "titulo": "CAM 4 · GARAGEM",
+     "hora": "03:14"
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f17:sorri-0.3",
+     "texto": "ELE *SORRI* PRA CÂMERA"
+    }
+   ],
+   "relogio": {
+    "de": "f17",
+    "hora": "03:14"
+   },
+   "sons": [
+    {
+     "de": "f17:sorri",
+     "som": "susto",
+     "volume": 0.4
+    }
+   ]
+  },
+  {
+   "id": "virada",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f18",
+   "filtro": "dramatico",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -4.75,
+      1.6,
+      9.0
+     ],
+     "expressao": "medo",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.0,
+     "semente": 9
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "porteiro",
+     "faz": "tremer",
+     "de": "f18"
+    }
+   ],
+   "planos": [
+    {
+     "de": "f18",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      -4.6,
+      1.4,
+      7.2
+     ],
+     "movimento": "dolly_zoom",
+     "intensidade": 0.8,
+     "transicao": "zoom"
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f18",
+     "ate": "fim",
+     "efeito": "barras"
+    },
+    {
+     "de": "f18:guarita",
+     "ate": "f18:fim+0.3",
+     "efeito": "destacar",
+     "alvo": "porteiro"
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f18:andando-0.3",
+     "texto": "ELE VEM *PRA GUARITA*"
+    }
+   ],
+   "relogio": {
+    "de": "f18",
+    "hora": "03:14"
+   },
+   "sons": [
+    {
+     "de": "f18:guarita",
+     "som": "impacto",
+     "volume": 0.5
+    }
+   ]
+  }
+ ],
+ "chamada": {
+  "pergunta": "Você fica na guarita ou corre?",
+  "texto": "COMENTA",
+  "destaque": "NOITE 6"
+ },
+ "postagem": {
+  "titulo": "A câmera da garagem gravou quem apaga a luz às 3h",
+  "descricao": "Quinta noite do porteiro novo no Edifício Aurora: a luz do prédio apaga às 3h11, mas a câmera 4 tem bateria por 4 minutos e grava quem carrega caixas pro apartamento 0.",
+  "hashtags": [
+   "camerasdeseguranca",
+   "historiadeterror",
+   "suspense",
+   "animacao"
+  ],
+  "comentario": "Eu trancava a guarita e mandava o vídeo pro grupo na hora. Você ficava ou corria?",
+  "capa": "f3:polícia"
+ }
+}

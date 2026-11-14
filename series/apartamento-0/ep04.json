@@ -1,0 +1,1086 @@
+{
+ "serie": "apartamento-0",
+ "parte": 4,
+ "titulo": "A zeladoria",
+ "musica": "tensao",
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Se o interfone tocar de um apartamento que pegou fogo, não desligue."
+  },
+  {
+   "id": "f2",
+   "quem": "narrador",
+   "off": true,
+   "texto": "Três da manhã. O carro do Seu Jorge continua na vaga quarenta e nove."
+  },
+  {
+   "id": "f3",
+   "quem": "rafa",
+   "tom": "nervoso",
+   "texto": "Ninguém some e deixa a chave no carro."
+  },
+  {
+   "id": "f4",
+   "quem": "narrador",
+   "off": true,
+   "texto": "O Rafa mora aqui desde criança. E sabe uma coisa que você não sabe."
+  },
+  {
+   "id": "f5",
+   "quem": "rafa",
+   "tom": "serio",
+   "texto": "O apartamento zero existia. Era a zeladoria."
+  },
+  {
+   "id": "f6",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "No subsolo, do lado da garagem. Pegou fogo em dois mil e nove."
+  },
+  {
+   "id": "f6b",
+   "quem": "rafa",
+   "off": true,
+   "tom": "serio",
+   "texto": "Quem apagou o fogo foi o Seu Jorge. Sozinho."
+  },
+  {
+   "id": "f7",
+   "quem": "narrador",
+   "off": true,
+   "texto": "Depois do incêndio, a síndica mandou fechar a porta com tijolo."
+  },
+  {
+   "id": "f8",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Ninguém entra lá faz dezessete anos."
+  },
+  {
+   "id": "f9",
+   "quem": "narrador",
+   "off": true,
+   "texto": "Seu primeiro instinto é achar que é trote. Criança brincando no interfone."
+  },
+  {
+   "id": "f10",
+   "quem": "narrador",
+   "off": true,
+   "tom": "serio",
+   "texto": "Não. Trote não tem linha própria na central do interfone."
+  },
+  {
+   "id": "f11",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Você abre a central. Linha zero: LIGADA."
+  },
+  {
+   "id": "f12",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "E o fio dela não desce pro subsolo. Sobe pro apartamento da síndica."
+  },
+  {
+   "id": "f13",
+   "quem": "rafa",
+   "tom": "nervoso",
+   "texto": "Por que o zero passa pela casa dela?"
+  },
+  {
+   "id": "f13b",
+   "quem": "narrador",
+   "off": true,
+   "texto": "Então vocês combinam: se o zero tocar hoje, ninguém desliga.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f14",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Três e onze. As luzes apagam. E o interfone toca."
+  },
+  {
+   "id": "f15",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Você atende. Mas a voz agora é outra. Cansada.",
+   "pausa_depois": 0.4
+  },
+  {
+   "id": "f16",
+   "quem": "jorge",
+   "off": true,
+   "tom": "interfone",
+   "texto": "Não abre a garagem. Sou eu, o Jorge.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f17",
+   "quem": "porteiro",
+   "tom": "nervoso",
+   "texto": "Seu Jorge? Onde o senhor tá?"
+  },
+  {
+   "id": "f18",
+   "quem": "narrador",
+   "off": true,
+   "texto": "Ele está vivo. Pela primeira vez na noite, você respira."
+  },
+  {
+   "id": "f18b",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Só que a voz dele não vem de nenhum andar.",
+   "pausa_depois": 0.5
+  },
+  {
+   "id": "f19",
+   "quem": "jorge",
+   "off": true,
+   "tom": "interfone",
+   "texto": "Eu tô embaixo de vocês.",
+   "pausa_depois": 0.5
+  }
+ ],
+ "cenas": [
+  {
+   "id": "gancho",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "inicio",
+   "ate": "f1:fim+0.1",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -4.75,
+      1.6,
+      9.0
+     ],
+     "expressao": "nervoso",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.3,
+     "semente": 7
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "geral",
+     "alvo": [
+      0,
+      14,
+      -6
+     ],
+     "camera": [
+      3,
+      1.6,
+      9.5
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "inicio",
+     "ate": "f1:fogo",
+     "texto": "O INTERFONE DO *APTO 0*"
+    },
+    {
+     "de": "f1:fogo",
+     "texto": "UM APTO QUE *PEGOU FOGO*"
+    }
+   ],
+   "relogio": {
+    "de": "inicio",
+    "hora": "03:00"
+   },
+   "sons": [
+    {
+     "de": "f1:fogo",
+     "som": "impacto",
+     "volume": 0.3
+    }
+   ]
+  },
+  {
+   "id": "carro",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f2",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -2.75,
+      1.3,
+      4.3
+     ],
+     "expressao": "serio",
+     "escala": 0.6
+    },
+    "rafa": {
+     "em": [
+      -2.75,
+      4.3
+     ],
+     "olhando": [
+      -4.75,
+      1.3,
+      4.3
+     ],
+     "expressao": "nervoso",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.3,
+     "semente": 7
+    }
+   ],
+   "planos": [
+    {
+     "de": "f2",
+     "tipo": "aberto",
+     "alvo": [
+      7.0,
+      1.0,
+      -6.0
+     ],
+     "camera": [
+      3.5,
+      3.4,
+      -1.5
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.4,
+     "transicao": "zoom"
+    },
+    {
+     "de": "f3",
+     "tipo": "close",
+     "alvo": "rafa",
+     "camera": [
+      -4.15,
+      1.45,
+      4.85
+     ],
+     "movimento": "fixo"
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f2",
+     "ate": "f3-0.05",
+     "tipo": "cctv",
+     "titulo": "CAM 5 · VAGA 49",
+     "hora": "03:00"
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f2",
+     "ate": "f3",
+     "texto": "O CARRO DO JORGE *CONTINUA LÁ*"
+    },
+    {
+     "de": "f3",
+     "texto": "*COM A CHAVE*"
+    }
+   ],
+   "relogio": {
+    "de": "f2",
+    "hora": "03:00"
+   }
+  },
+  {
+   "id": "rafa",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f4",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -2.75,
+      1.3,
+      4.3
+     ],
+     "expressao": "desconfiado",
+     "escala": 0.6
+    },
+    "rafa": {
+     "em": [
+      -2.75,
+      4.3
+     ],
+     "olhando": [
+      -4.75,
+      1.3,
+      4.3
+     ],
+     "expressao": "serio",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.3,
+     "semente": 7
+    }
+   ],
+   "planos": [
+    {
+     "de": "f4",
+     "tipo": "medio",
+     "alvo": "rafa",
+     "camera": [
+      -4.3,
+      1.5,
+      5.0
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.3,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f5",
+     "tipo": "close",
+     "alvo": "rafa",
+     "camera": [
+      -4.2,
+      1.35,
+      4.0
+     ],
+     "movimento": "zoom_rapido",
+     "intensidade": 0.3
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "rafa",
+     "texto": "RAFA · MOTOBOY DO 303",
+     "de": "f4:Rafa",
+     "ate": "f4:fim"
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f4",
+     "ate": "f5",
+     "texto": "O RAFA *SABE* DE UMA COISA"
+    },
+    {
+     "de": "f5",
+     "texto": "O APTO 0 ERA *A ZELADORIA*"
+    }
+   ],
+   "relogio": {
+    "de": "f4",
+    "hora": "03:02"
+   },
+   "sons": [
+    {
+     "de": "f5:zeladoria",
+     "som": "impacto",
+     "volume": 0.35
+    }
+   ]
+  },
+  {
+   "id": "incendio",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f6",
+   "filtro": "sepia",
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.6,
+     "semente": 3
+    },
+    {
+     "tipo": "particulas",
+     "em": [
+      7.0,
+      -5.6
+     ],
+     "particula": "fumaca",
+     "alt": 0.5,
+     "raio": 1.5,
+     "altura": 9
+    },
+    {
+     "tipo": "particulas",
+     "em": [
+      7.0,
+      -5.6
+     ],
+     "particula": "fagulhas",
+     "alt": 0.3,
+     "raio": 1.2,
+     "altura": 4
+    }
+   ],
+   "planos": [
+    {
+     "de": "f6",
+     "tipo": "aberto",
+     "alvo": [
+      6.0,
+      3.0,
+      -6.0
+     ],
+     "camera": [
+      1.5,
+      2.0,
+      4.5
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f8",
+     "tipo": "geral",
+     "alvo": [
+      3.0,
+      6.0,
+      -6.0
+     ],
+     "camera": [
+      -1.0,
+      1.6,
+      9.5
+     ],
+     "movimento": "afastar",
+     "intensidade": 0.3
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f7:mandou",
+     "ate": "f8-0.05",
+     "tipo": "bilhete",
+     "titulo": "Aviso — 2009",
+     "linhas": [
+      "ZELADORIA INTERDITADA.",
+      "PROIBIDO ENTRAR.",
+      "— A Síndica"
+     ]
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f6",
+     "ate": "f6+1.6",
+     "efeito": "letreiro",
+     "texto": "2009",
+     "altura": 0.45
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f6",
+     "ate": "f6b",
+     "texto": "ZELADORIA: *INCÊNDIO*"
+    },
+    {
+     "de": "f6b",
+     "ate": "f7",
+     "texto": "QUEM APAGOU? *O JORGE*"
+    },
+    {
+     "de": "f7",
+     "ate": "f8",
+     "texto": "A SÍNDICA *FECHOU A PORTA*"
+    },
+    {
+     "de": "f8",
+     "texto": "*17 ANOS* SEM NINGUÉM"
+    }
+   ],
+   "sons": [
+    {
+     "de": "f6",
+     "som": "fogo",
+     "volume": 0.35
+    }
+   ]
+  },
+  {
+   "id": "trote",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f9",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -2.75,
+      1.3,
+      4.3
+     ],
+     "expressao": "desconfiado",
+     "escala": 0.6
+    },
+    "rafa": {
+     "em": [
+      -2.75,
+      4.3
+     ],
+     "olhando": [
+      -4.75,
+      1.3,
+      4.3
+     ],
+     "expressao": "serio",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.3,
+     "semente": 7
+    }
+   ],
+   "planos": [
+    {
+     "de": "f9",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      -4.35,
+      1.45,
+      5.55
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.3,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f10",
+     "tipo": "medio",
+     "alvo": "porteiro",
+     "camera": [
+      -4.4,
+      1.6,
+      8.3
+     ],
+     "movimento": "zoom_rapido",
+     "intensidade": 0.3
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f9",
+     "ate": "f10",
+     "texto": "TROTE?"
+    },
+    {
+     "de": "f10",
+     "texto": "TROTE *NÃO TEM LINHA*"
+    }
+   ],
+   "relogio": {
+    "de": "f9",
+    "hora": "03:05"
+   }
+  },
+  {
+   "id": "central",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f11",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -5.6,
+      1.25,
+      5.65
+     ],
+     "expressao": "medo",
+     "escala": 0.6
+    },
+    "rafa": {
+     "em": [
+      -2.75,
+      4.3
+     ],
+     "olhando": [
+      -4.75,
+      1.3,
+      4.3
+     ],
+     "expressao": "medo",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.3,
+     "semente": 7
+    }
+   ],
+   "planos": [
+    {
+     "de": "f11",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      -4.6,
+      1.4,
+      7.2
+     ],
+     "movimento": "fixo"
+    },
+    {
+     "de": "f13",
+     "tipo": "close",
+     "alvo": "rafa",
+     "camera": [
+      -4.2,
+      1.35,
+      4.0
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.3,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f13b",
+     "tipo": "medio",
+     "alvo": [
+      -3.8,
+      1.1,
+      4.3
+     ],
+     "camera": [
+      -1.4,
+      1.9,
+      8.8
+     ],
+     "movimento": "arco",
+     "intensidade": 0.25
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f11:central",
+     "ate": "f13-0.05",
+     "tipo": "interfone",
+     "titulo": "CENTRAL",
+     "linhas": [
+      "101",
+      "...",
+      "1201 · SÍNDICA",
+      "0"
+     ]
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f11",
+     "ate": "f12",
+     "texto": "LINHA 0: *LIGADA*"
+    },
+    {
+     "de": "f12",
+     "ate": "f13",
+     "texto": "O FIO VAI PRA *CASA DA SÍNDICA*"
+    },
+    {
+     "de": "f13",
+     "ate": "f13b",
+     "texto": "POR QUE *PELA CASA DELA*?"
+    },
+    {
+     "de": "f13b",
+     "texto": "HOJE *NINGUÉM DESLIGA*"
+    }
+   ],
+   "relogio": {
+    "de": "f11",
+    "hora": "03:08"
+   },
+   "sons": [
+    {
+     "de": "f11:LIGADA",
+     "som": "bip",
+     "volume": 0.4
+    },
+    {
+     "de": "f12:síndica",
+     "som": "tensao_sobe",
+     "volume": 0.3
+    }
+   ]
+  },
+  {
+   "id": "toca",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f14",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -3.75,
+      1.35,
+      5.1
+     ],
+     "expressao": "medo",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.3,
+     "semente": 7,
+     "apagam": "f14:apagam"
+    }
+   ],
+   "planos": [
+    {
+     "de": "f14",
+     "tipo": "geral",
+     "alvo": [
+      0,
+      20,
+      -6
+     ],
+     "camera": [
+      4,
+      1.4,
+      10.5
+     ],
+     "movimento": "descer",
+     "intensidade": 0.4,
+     "transicao": "flash"
+    },
+    {
+     "de": "f15",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      -4.35,
+      1.45,
+      5.55
+     ],
+     "movimento": "tremer",
+     "intensidade": 0.3
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f15:atende",
+     "ate": "f16:fim+0.15",
+     "tipo": "interfone",
+     "titulo": "APTO 0",
+     "quem": "jorge"
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f14",
+     "ate": "f15",
+     "texto": "*3H11*: AS LUZES APAGAM"
+    },
+    {
+     "de": "f15",
+     "ate": "f16",
+     "texto": "A VOZ *É OUTRA*"
+    },
+    {
+     "de": "f16:Jorge",
+     "texto": "\"SOU EU, *O JORGE*\""
+    }
+   ],
+   "relogio": {
+    "de": "f14",
+    "hora": "03:11"
+   },
+   "sons": [
+    {
+     "de": "f14:toca",
+     "som": "ding",
+     "volume": 0.45
+    },
+    {
+     "de": "f14:toca+0.7",
+     "som": "ding",
+     "volume": 0.45
+    },
+    {
+     "de": "f16",
+     "som": "chiado",
+     "volume": 0.25
+    }
+   ]
+  },
+  {
+   "id": "vivo",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f17",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -3.75,
+      1.35,
+      5.1
+     ],
+     "expressao": "surpreso",
+     "escala": 0.6
+    },
+    "rafa": {
+     "em": [
+      -2.75,
+      4.3
+     ],
+     "olhando": [
+      -4.75,
+      1.3,
+      4.3
+     ],
+     "expressao": "aliviado",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.03,
+     "semente": 7
+    }
+   ],
+   "planos": [
+    {
+     "de": "f17",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      -4.6,
+      1.4,
+      7.2
+     ],
+     "movimento": "zoom_rapido",
+     "intensidade": 0.25
+    },
+    {
+     "de": "f18",
+     "tipo": "medio",
+     "alvo": [
+      -3.8,
+      1.1,
+      4.3
+     ],
+     "camera": [
+      -1.6,
+      1.8,
+      8.6
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.25
+    },
+    {
+     "de": "f18b",
+     "tipo": "geral",
+     "alvo": [
+      0,
+      12,
+      -6
+     ],
+     "camera": [
+      3.5,
+      1.5,
+      10.0
+     ],
+     "movimento": "descer",
+     "intensidade": 0.5,
+     "transicao": "chicote"
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f17",
+     "ate": "f18",
+     "texto": "ONDE O JORGE *ESTÁ*?"
+    },
+    {
+     "de": "f18",
+     "ate": "f18b",
+     "texto": "ELE ESTÁ *VIVO*",
+     "cor": "#2FD27A"
+    },
+    {
+     "de": "f18b",
+     "texto": "DE *NENHUM ANDAR*"
+    }
+   ],
+   "relogio": {
+    "de": "f17",
+    "hora": "03:12"
+   }
+  },
+  {
+   "id": "virada",
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "de": "f19",
+   "filtro": "dramatico",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -4.75,
+      0.0,
+      4.6
+     ],
+     "expressao": "medo",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.03,
+     "semente": 7
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "porteiro",
+     "faz": "tremer",
+     "de": "f19"
+    }
+   ],
+   "planos": [
+    {
+     "de": "f19",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      -4.6,
+      1.4,
+      7.2
+     ],
+     "movimento": "dolly_zoom",
+     "intensidade": 0.8,
+     "transicao": "zoom"
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f19",
+     "ate": "fim",
+     "efeito": "barras"
+    },
+    {
+     "de": "f19:embaixo",
+     "ate": "f19:fim+0.3",
+     "efeito": "destacar",
+     "alvo": "porteiro"
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f19:embaixo-0.3",
+     "texto": "ELE ESTÁ *EMBAIXO DE VOCÊS*"
+    }
+   ],
+   "relogio": {
+    "de": "f19",
+    "hora": "03:12"
+   },
+   "sons": [
+    {
+     "de": "f19",
+     "som": "chiado",
+     "volume": 0.2
+    },
+    {
+     "de": "f19:embaixo",
+     "som": "impacto",
+     "volume": 0.5
+    }
+   ]
+  }
+ ],
+ "chamada": {
+  "pergunta": "Você desce pro subsolo ou chama a polícia?",
+  "texto": "COMENTA",
+  "destaque": "NOITE 5"
+ },
+ "postagem": {
+  "titulo": "O interfone tocou de um apartamento que pegou fogo",
+  "descricao": "Quarta noite do porteiro novo no Edifício Aurora: o apartamento 0 era a zeladoria que pegou fogo em 2009, a linha dele passa pela casa da síndica e às 3h11 alguém liga de lá.",
+  "hashtags": [
+   "interfone",
+   "historiadeterror",
+   "suspense",
+   "animacao"
+  ],
+  "comentario": "Eu chamava a polícia na hora. Mas e se a síndica estiver ouvindo? Você descia?",
+  "capa": "f5:zeladoria"
+ }
+}
