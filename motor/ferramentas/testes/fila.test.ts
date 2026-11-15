@@ -74,6 +74,8 @@ describe('texto de postagem', () => {
 		assert.deepEqual(ok.avisos, []);
 		assert.equal(ok.legendaInstagram, t.legendaInstagram);
 		assert.deepEqual(ok.tagsYoutube, ['apartamento0', 'porteiro', 'historiadeterror', 'misterio', 'animacao']);
+		const comSelo = conferirLimites({...t, legendaInstagram: `Texto\n\nCOMO FUNCIONA #21\n\n#a #b #c #d #e`});
+		assert.deepEqual(comSelo.avisos, []);
 		const muito = conferirLimites({...t, tituloYoutube: 'x'.repeat(120), legendaInstagram: `${t.legendaInstagram} #seis #sete`});
 		assert.equal(muito.tituloYoutube.length, 100);
 		assert.equal((muito.legendaInstagram.match(/#/g) ?? []).length, 5);
@@ -83,43 +85,56 @@ describe('texto de postagem', () => {
 
 describe('horários do lote', () => {
 	const agora = B('2026-11-14', '10:30'); // sábado
+	const yt = (p: {tarefas: {youtube?: {horario: number}}}) => textoDoHorario(p.tarefas.youtube!.horario);
+	const ig = (p: {tarefas: {instagram?: {horario: number}}}) => textoDoHorario(p.tarefas.instagram!.horario);
 
-	it('no prazo: sai no horário combinado na entrega', () => {
+	it('no prazo: sai no horário combinado na entrega, nas duas plataformas', () => {
 		const p = planejar([item('apartamento-0-ep03', iso('2026-11-14', '18:00'))], agora);
 		assert.equal(p.length, 1);
-		assert.equal(textoDoHorario(p[0].horario), 'sáb 14/11 18:00');
-		assert.equal(p[0].atrasado, false);
-		assert.deepEqual(p[0].acoes, {youtube: 'subir', instagram: 'subir'});
+		assert.equal(yt(p[0]), 'sáb 14/11 18:00');
+		assert.equal(ig(p[0]), 'sáb 14/11 18:00');
+		assert.equal(p[0].tarefas.youtube!.atrasado, false);
+		assert.deepEqual([p[0].tarefas.youtube!.acao, p[0].tarefas.instagram!.acao], ['subir', 'subir']);
 	});
 
 	it('atrasado: próximo horário livre do fluxo, antes da próxima parte, que não muda', () => {
 		const p = planejar([item('apartamento-0-ep02', iso('2026-11-14', '11:00')), item('apartamento-0-ep03', iso('2026-11-14', '18:00'))], agora);
-		assert.deepEqual(p.map((x) => textoDoHorario(x.horario)), ['sáb 14/11 15:00', 'sáb 14/11 18:00']);
-		assert.deepEqual(p.map((x) => x.atrasado), [true, false]);
+		assert.deepEqual(p.map(yt), ['sáb 14/11 15:00', 'sáb 14/11 18:00']);
+		assert.deepEqual(p.map((x) => x.tarefas.youtube!.atrasado), [true, false]);
 	});
 
 	it('em dia de semana o primeiro horário extra é 12h e o fluxo avulso não divide horário com as histórias', () => {
 		const seg = B('2026-11-16', '09:00');
 		const p = planejar([item('voo-818-ep17', iso('2026-11-13', '18:00')), item('voo-818-ep18', iso('2026-11-14', '18:00')), item('como-funciona-ep20', iso('2026-11-15', '18:00'))], seg);
-		const h = Object.fromEntries(p.map((x) => [x.item.nome, textoDoHorario(x.horario)]));
-		assert.deepEqual(h, {'voo-818-ep17': 'seg 16/11 12:00', 'voo-818-ep18': 'seg 16/11 15:00', 'como-funciona-ep20': 'seg 16/11 12:00'});
+		assert.deepEqual(Object.fromEntries(p.map((x) => [x.item.nome, yt(x)])), {'voo-818-ep17': 'seg 16/11 12:00', 'voo-818-ep18': 'seg 16/11 15:00', 'como-funciona-ep20': 'seg 16/11 12:00'});
 	});
 
 	it('muitos atrasados empurram as partes seguintes, em ordem e com 3 h entre elas', () => {
 		const itens = [11, 12, 13, 14, 15].map((n, i) => item(`voo-818-ep${n}`, iso('2026-11-10', `${dois(12 + i)}:00`)));
 		itens.push(item('voo-818-ep16', iso('2026-11-14', '18:00')));
 		const p = planejar(itens, agora);
-		const horas = p.map((x) => x.horario);
 		assert.deepEqual(p.map((x) => x.item.parte), [11, 12, 13, 14, 15, 16]);
+		const horas = p.map((x) => x.tarefas.youtube!.horario);
 		for (let i = 1; i < horas.length; i++) assert.ok(horas[i] - horas[i - 1] >= 3 * 3_600_000);
-		assert.deepEqual(p.map((x) => textoDoHorario(x.horario)), ['sáb 14/11 15:00', 'sáb 14/11 18:00', 'sáb 14/11 21:00', 'dom 15/11 11:00', 'dom 15/11 15:00', 'dom 15/11 18:00']);
+		assert.deepEqual(p.map(yt), ['sáb 14/11 15:00', 'sáb 14/11 18:00', 'sáb 14/11 21:00', 'dom 15/11 11:00', 'dom 15/11 15:00', 'dom 15/11 18:00']);
 	});
 
-	it('já programado fica onde está; a outra plataforma usa o mesmo horário', () => {
+	it('cada plataforma tem a própria fila: o Instagram atrasado não segura o YouTube', () => {
+		const manual = (nome: string, planejado: string): ItemFila => item(nome, planejado, {publicacao: {nome, youtube: {status: 'publicado', nota: 'manual', horario: planejado, em: ''}}});
+		const p = planejar([manual('voo-818-ep11', iso('2026-11-06', '18:00')), manual('voo-818-ep12', iso('2026-11-07', '11:00')), item('voo-818-ep13', iso('2026-11-07', '18:00'))], agora);
+		const porNome = Object.fromEntries(p.map((x) => [x.item.nome, x.tarefas]));
+		assert.equal(porNome['voo-818-ep11'].youtube, undefined);
+		assert.equal(ig({tarefas: porNome['voo-818-ep11']}), 'sáb 14/11 15:00');
+		assert.equal(ig({tarefas: porNome['voo-818-ep12']}), 'sáb 14/11 18:00');
+		assert.equal(ig({tarefas: porNome['voo-818-ep13']}), 'sáb 14/11 21:00');
+		assert.equal(yt({tarefas: porNome['voo-818-ep13']}), 'sáb 14/11 15:00');
+	});
+
+	it('já programado fica onde está; a outra plataforma segue a fila dela', () => {
 		const pub: Publicacao = {nome: 'apartamento-0-ep03', youtube: {status: 'programado', horario: iso('2026-11-14', '18:00'), video: 'blob-apartamento-0-ep03', em: ''}};
 		const p = planejar([item('apartamento-0-ep03', iso('2026-11-14', '18:00'), {publicacao: pub})], agora);
-		assert.deepEqual(p[0].acoes, {instagram: 'subir'});
-		assert.equal(textoDoHorario(p[0].horario), 'sáb 14/11 18:00');
+		assert.deepEqual(Object.keys(p[0].tarefas), ['instagram']);
+		assert.equal(ig(p[0]), 'sáb 14/11 18:00');
 	});
 
 	it('entrega nova depois de programado: trocar; horário que passou: conferir e comentar', () => {
@@ -128,7 +143,8 @@ describe('horários do lote', () => {
 		const saiu = item('apartamento-0-ep01', iso('2026-11-12', '18:00'), {publicacao: {nome: 'apartamento-0-ep01', youtube: prog(iso('2026-11-12', '18:00'), 'blob-apartamento-0-ep01'), instagram: {status: 'publicado', horario: iso('2026-11-12', '18:00'), em: ''}}});
 		const manual = item('apartamento-0-ep02', iso('2026-11-13', '18:00'), {publicacao: {nome: 'apartamento-0-ep02', youtube: {status: 'publicado', nota: 'manual', em: ''}, instagram: {status: 'publicado', nota: 'manual', em: ''}}});
 		const p = planejar([trocado, saiu, manual], agora);
-		assert.deepEqual(Object.fromEntries(p.map((x) => [x.item.nome, x.acoes])), {
+		const acoes = Object.fromEntries(p.map((x) => [x.item.nome, Object.fromEntries(Object.entries(x.tarefas).map(([pl, t]) => [pl, t!.acao]))]));
+		assert.deepEqual(acoes, {
 			'apartamento-0-ep01': {youtube: 'conferir', instagram: 'comentar'},
 			'apartamento-0-ep03': {youtube: 'trocar'},
 		});
@@ -186,14 +202,19 @@ describe('fila num repositório local', () => {
 	after(() => rmSync(base, {recursive: true, force: true}));
 
 	it('lote: horários, capa no ramo e links diretos', () => {
+		fila('contas', '--instagram:historias=@historiasdestick');
+		assert.match(noRamo('publicacao/contas.json'), /"historias": "historiasdestick"/);
 		const saida = fila('lote', '--agora=2026-11-14T13:30:00Z');
-		assert.match(saida, /lote: 2 para subir/);
+		assert.match(saida, /lote: YouTube 2, Instagram 2 para programar/);
 		const lote = JSON.parse(readFileSync(join(raiz, 'out', 'lote', 'lote.json'), 'utf8'));
-		assert.deepEqual(lote.itens.map((i: {horario: {texto: string}}) => i.horario.texto), ['sáb 14/11 15:00', 'sáb 14/11 18:00']);
+		assert.deepEqual(lote.itens.map((i: {youtube: {horario: {texto: string}}}) => i.youtube.horario.texto), ['sáb 14/11 15:00', 'sáb 14/11 18:00']);
+		assert.equal(lote.itens[0].instagram.conta, 'historiasdestick');
 		assert.equal(lote.itens[0].video, `https://raw.exemplo/dono/repo/${lote.commit}/videos/apartamento-0-ep02.mp4`);
 		assert.equal(lote.itens[0].capa, `https://raw.exemplo/dono/repo/${lote.commit}/publicacao/capas/apartamento-0-ep02.jpg`);
 		assert.match(noRamo('publicacao/capas/apartamento-0-ep02.txt'), /1\.5/);
-		assert.match(readFileSync(join(raiz, 'out', 'lote', 'lote.md'), 'utf8'), /\| sáb 14\/11 15:00 \(era sáb 14\/11 11:00\) \|/);
+		const md = readFileSync(join(raiz, 'out', 'lote', 'lote.md'), 'utf8');
+		assert.match(md, /## YouTube: 2 para programar/);
+		assert.match(md, /\| sáb 14\/11 15:00 \(era sáb 14\/11 11:00\) \| APARTAMENTO 0 · Parte 3: O livro \(@historiasdestick\) \|/);
 	});
 
 	it('marcar programado guarda o horário do lote e o vídeo subido', () => {
@@ -206,6 +227,7 @@ describe('fila num repositório local', () => {
 		const depois = fila('--agora=2026-11-14T13:45:00Z');
 		assert.match(depois, /apartamento-0-ep02 .*YT programado sáb 14\/11 15:00/);
 		assert.match(depois, /apartamento-0-ep02 .*→ nada a fazer/);
+		assert.match(depois, /apartamento-0-ep03 .*→ YT: subir sáb 14\/11 18:00, IG: subir sáb 14\/11 18:00/);
 	});
 
 	it('depois que sai: conferir, marcar publicado com comentário', () => {

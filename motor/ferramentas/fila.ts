@@ -14,6 +14,8 @@
 //   npm run fila -- marcar <nome> --comentario=youtube,instagram
 //   npm run fila -- marcar --ate=2026-11-12 --youtube=publicado --instagram=publicado --nota=manual
 //                                              tudo com horário até esse dia (o que o Iuri já postou à mão)
+//   npm run fila -- contas --instagram:historias=conta --instagram:avulso:como-funciona=conta
+//                                              conta de destino de cada fluxo (publicacao/contas.json)
 //   --agora=2026-11-14T13:00:00Z               finge outra hora (testes)
 //
 // Horários de Brasília (UTC-3, sem horário de verão). O ramo guarda tudo em UTC.
@@ -28,8 +30,6 @@ const BRASILIA_H = 3;
 const H = 3_600_000;
 /** Tempo mínimo entre agora e o horário programado: dá para subir o lote inteiro antes do primeiro sair. */
 export const MARGEM_MS = 90 * 60_000;
-/** Vídeo já programado numa plataforma: a outra usa o mesmo horário se ainda faltar pelo menos isto. */
-export const MARGEM_CURTA_MS = 30 * 60_000;
 /** Dois vídeos do mesmo fluxo nunca saem com menos de 3 h entre eles. */
 export const INTERVALO_MS = 3 * H;
 /** Horários possíveis (Brasília). Os do calendário (18h; fim de semana 11h e 18h) mais os extras de quem atrasou. */
@@ -126,73 +126,73 @@ function* horariosDesde(inicio: number): Generator<number> {
 // ---------- plano do lote ----------
 
 export type Acao = 'subir' | 'trocar' | 'conferir' | 'comentar';
-export interface Plano {
-	item: ItemFila;
+export interface Tarefa {
+	acao: Acao;
+	/** Quando sai (ou saiu) nessa plataforma, UTC em ms. */
 	horario: number;
 	atrasado: boolean;
+}
+export interface Plano {
+	item: ItemFila;
 	/** O que fazer em cada plataforma neste lote (só as que têm algo a fazer). */
-	acoes: Partial<Record<Plataforma, Acao>>;
+	tarefas: Partial<Record<Plataforma, Tarefa>>;
 }
 
-const feito = (p?: NaPlataforma) => p?.status === 'publicado' || p?.status === 'pulado' || p?.status === 'programado';
-
 /**
- * Decide o horário de cada vídeo e o que fazer em cada plataforma.
- * - Vídeo já programado numa plataforma fica no horário de lá; a outra plataforma usa o mesmo, se ainda der.
- * - Vídeo no prazo sai no horário combinado na entrega.
- * - Vídeo atrasado (o horário passou ou está a menos de 90 min) vai para o próximo horário livre do fluxo
- *   (calendário mais os extras de 12h/15h/21h), sempre depois do vídeo anterior do fluxo e com 3 h entre eles.
+ * Decide, plataforma por plataforma, quando cada vídeo sai e o que fazer. Cada plataforma tem a própria fila
+ * (o YouTube pode estar em dia enquanto o Instagram está atrasado), e dentro dela cada fluxo anda sozinho.
+ * - Já programado fica onde está; se o horário passou, conferir se saiu (e fixar o comentário); se a produção
+ *   entregou outro vídeo depois (correção), trocar.
+ * - No prazo: sai no horário combinado na entrega.
+ * - Atrasado (o horário passou ou falta menos de 90 min): próximo horário livre do fluxo naquela plataforma
+ *   (calendário mais os extras de 12h/15h/21h), sempre depois do vídeo anterior e com 3 h entre eles.
  *   Os horários futuros só andam se não couberem depois dos atrasados.
- * - Programado com horário que já passou: conferir se saiu (e fixar o comentário). Entrega nova depois de
- *   programado (correção): trocar, se ainda não saiu.
  */
 export const planejar = (itens: ItemFila[], agora: number): Plano[] => {
-	const planos: Plano[] = [];
+	const tarefas = new Map<string, Plano['tarefas']>();
 	const porFluxo = new Map<string, ItemFila[]>();
 	for (const i of itens) porFluxo.set(i.fluxo, [...(porFluxo.get(i.fluxo) ?? []), i]);
 	for (const lista of porFluxo.values()) {
 		lista.sort((a, b) => a.planejado.localeCompare(b.planejado) || a.serie.localeCompare(b.serie) || a.parte - b.parte);
-		// horários que já estão ocupados por algo programado ou publicado
-		const ocupados = new Set<number>();
-		for (const i of lista) for (const p of PLATAFORMAS) if (i.publicacao[p]?.horario) ocupados.add(Date.parse(i.publicacao[p]!.horario!));
-		let anterior = -Infinity;
-		for (const item of lista) {
-			const pub = item.publicacao;
-			const fixos = PLATAFORMAS.map((p) => pub[p]?.horario).filter((h): h is string => !!h).map((h) => Date.parse(h));
-			const acoes: Plano['acoes'] = {};
-			const cedo = agora + MARGEM_MS;
-			const fixo = fixos.length ? Math.min(...fixos) : undefined;
-			let horario: number;
-			if (fixo !== undefined && (fixo >= agora + MARGEM_CURTA_MS || PLATAFORMAS.every((p) => feito(pub[p])))) horario = fixo;
-			else {
-				const minimo = Math.max(cedo, anterior + INTERVALO_MS);
+		for (const p of PLATAFORMAS) {
+			const ocupados = new Set<number>();
+			for (const i of lista) if (i.publicacao[p]?.horario) ocupados.add(Date.parse(i.publicacao[p]!.horario!));
+			let anterior = -Infinity;
+			for (const item of lista) {
+				const n = item.publicacao[p];
 				const combinado = Date.parse(item.planejado);
-				if (combinado >= minimo && !ocupados.has(combinado)) horario = combinado;
-				else {
+				const anotar = (acao: Acao, horario: number) => tarefas.set(item.nome, {...tarefas.get(item.nome), [p]: {acao, horario, atrasado: horario !== combinado}});
+				if (n) {
+					const h = n.horario ? Date.parse(n.horario) : combinado;
+					anterior = Math.max(anterior, h);
+					if (n.status === 'programado') {
+						if (h <= agora) anotar('conferir', h);
+						else if (n.video && n.video !== item.video) anotar('trocar', h);
+					} else if (n.status === 'publicado' && !n.comentario && item.textos.comentario && n.nota !== 'manual') anotar('comentar', h);
+					continue;
+				}
+				const minimo = Math.max(agora + MARGEM_MS, anterior + INTERVALO_MS);
+				let horario = combinado;
+				if (combinado < minimo || ocupados.has(combinado)) {
 					horario = minimo;
 					for (const h of horariosDesde(minimo)) {
-						if (!ocupados.has(h) && ![...ocupados].some((o) => Math.abs(o - h) < INTERVALO_MS)) {
+						if (![...ocupados].some((o) => Math.abs(o - h) < INTERVALO_MS)) {
 							horario = h;
 							break;
 						}
 					}
 				}
 				ocupados.add(horario);
+				anterior = horario;
+				anotar('subir', horario);
 			}
-			anterior = Math.max(anterior, horario);
-			for (const p of PLATAFORMAS) {
-				const n = pub[p];
-				if (!n) acoes[p] = 'subir';
-				else if (n.status === 'programado') {
-					const saiu = n.horario ? Date.parse(n.horario) <= agora : false;
-					if (saiu) acoes[p] = 'conferir';
-					else if (n.video && n.video !== item.video) acoes[p] = 'trocar';
-				} else if (n.status === 'publicado' && !n.comentario && item.textos.comentario && n.nota !== 'manual') acoes[p] = 'comentar';
-			}
-			if (Object.keys(acoes).length) planos.push({item, horario, atrasado: horario !== Date.parse(item.planejado), acoes});
 		}
 	}
-	return planos.sort((a, b) => a.horario - b.horario || a.item.nome.localeCompare(b.item.nome));
+	const primeiro = (pl: Plano) => Math.min(...Object.values(pl.tarefas).map((t) => t!.horario));
+	return itens
+		.filter((i) => tarefas.has(i.nome))
+		.map((item) => ({item, tarefas: tarefas.get(item.nome)!}))
+		.sort((a, b) => primeiro(a) - primeiro(b) || a.item.nome.localeCompare(b.item.nome));
 };
 
 // ---------- texto de postagem (.md do entregar) ----------
@@ -232,6 +232,9 @@ export const lerTextos = (md: string): Textos => {
 	};
 };
 
+/** Hashtag de verdade tem pelo menos uma letra ("#21" do selo do Como Funciona não conta). */
+const HASHTAG = /#(?=[\p{N}_]*\p{L})[\p{L}\p{N}_]+/gu;
+
 /** Só limites das plataformas (nada de conteúdo): o que passar do limite é avisado e cortado no lote. */
 export const conferirLimites = (t: Textos) => {
 	const avisos: string[] = [];
@@ -246,13 +249,13 @@ export const conferirLimites = (t: Textos) => {
 		tituloYoutube = [...tituloYoutube].slice(0, LIMITE_TITULO_YT).join('').trim();
 	}
 	if (Buffer.byteLength(descricaoYoutube) > LIMITE_DESCRICAO_YT) avisos.push('descrição do YouTube passa de 5000 bytes: encurte no texto de postagem do fluxo');
-	const tags = legendaInstagram.match(/#[\p{L}\p{N}_]+/gu) ?? [];
+	const tags = legendaInstagram.match(HASHTAG) ?? [];
 	if (tags.length > LIMITE_HASHTAGS_IG) {
 		avisos.push(`Instagram aceita ${LIMITE_HASHTAGS_IG} hashtags e a legenda tem ${tags.length}: ficaram as ${LIMITE_HASHTAGS_IG} primeiras`);
 		for (const extra of tags.slice(LIMITE_HASHTAGS_IG)) legendaInstagram = legendaInstagram.replace(new RegExp(`\\s*${extra}(?![\\p{L}\\p{N}_])`, 'u'), '');
 	}
 	if ([...legendaInstagram].length > LIMITE_LEGENDA_IG) avisos.push(`legenda do Instagram com ${[...legendaInstagram].length} caracteres (máx. ${LIMITE_LEGENDA_IG}): encurte no texto de postagem do fluxo`);
-	const tagsYoutube = [...new Set((descricaoYoutube.match(/#[\p{L}\p{N}_]+/gu) ?? []).map((x) => x.slice(1)).filter((x) => x.toLowerCase() !== 'shorts'))];
+	const tagsYoutube = [...new Set((descricaoYoutube.match(HASHTAG) ?? []).map((x) => x.slice(1)).filter((x) => x.toLowerCase() !== 'shorts'))];
 	return {tituloYoutube, descricaoYoutube, legendaInstagram, tagsYoutube, avisos};
 };
 
@@ -355,7 +358,20 @@ const agoraDe = (opc: Record<string, string>) => (opc.agora ? Date.parse(opc.ago
 // ---------- comandos ----------
 
 const ROTULO_ACAO: Record<Acao, string> = {subir: 'subir e programar', trocar: 'trocar pelo vídeo novo (correção)', conferir: 'conferir se saiu e fixar o comentário', comentar: 'postar e fixar o comentário'};
+const NOME_PLATAFORMA: Record<Plataforma, string> = {youtube: 'YouTube', instagram: 'Instagram'};
 const situacao = (p?: NaPlataforma) => (!p ? '—' : `${p.status}${p.horario ? ` ${textoDoHorario(p.horario)}` : ''}${p.comentario ? ' +coment.' : ''}${p.nota ? ` (${p.nota})` : ''}`);
+const vaiSubir = (t?: {acao: Acao}) => t?.acao === 'subir' || t?.acao === 'trocar';
+const jaSaiu = (t?: {acao: Acao}) => t?.acao === 'conferir' || t?.acao === 'comentar';
+
+/** Contas de destino de cada fluxo (publicacao/contas.json no ramo dados): {"instagram": {"historias": "conta", ...}}. */
+interface Contas {
+	youtube?: string;
+	instagram?: Record<string, string>;
+}
+const lerContas = (pasta: string): Contas => {
+	const arq = join(pasta, 'publicacao', 'contas.json');
+	return existsSync(arq) ? lerJson<Contas>(arq) : {};
+};
 
 export const mostrar = (agora = Date.now()) => {
 	const pasta = abrir();
@@ -364,9 +380,11 @@ export const mostrar = (agora = Date.now()) => {
 		if (!itens.length) return console.log('nenhum vídeo entregue no ramo dados');
 		const planos = new Map(planejar(itens, agora).map((p) => [p.item.nome, p]));
 		for (const i of itens) {
-			const p = planos.get(i.nome);
-			const falta = p ? Object.entries(p.acoes).map(([pl, a]) => `${pl === 'youtube' ? 'YT' : 'IG'}: ${a}`).join(', ') : 'nada a fazer';
-			console.log(`${textoDoHorario(i.planejado)}  ${i.nome.padEnd(22)}  YT ${situacao(i.publicacao.youtube).padEnd(28)} IG ${situacao(i.publicacao.instagram).padEnd(28)} → ${falta}${p?.atrasado ? ` (novo horário ${textoDoHorario(p.horario)})` : ''}`);
+			const t = planos.get(i.nome)?.tarefas ?? {};
+			const falta = PLATAFORMAS.filter((p) => t[p])
+				.map((p) => `${p === 'youtube' ? 'YT' : 'IG'}: ${t[p]!.acao}${t[p]!.acao === 'subir' ? ` ${textoDoHorario(t[p]!.horario)}` : ''}`)
+				.join(', ');
+			console.log(`${textoDoHorario(i.planejado)}  ${i.nome.padEnd(22)}  YT ${situacao(i.publicacao.youtube).padEnd(28)} IG ${situacao(i.publicacao.instagram).padEnd(28)} → ${falta || 'nada a fazer'}`);
 		}
 	} finally {
 		rmSync(pasta, {recursive: true, force: true});
@@ -390,14 +408,16 @@ const tirarCapa = (pasta: string, item: ItemFila, destino: string) => {
 	}
 };
 
+const horarioJson = (utc: number) => ({utc: new Date(utc).toISOString(), ...partesDoHorario(utc), texto: textoDoHorario(utc)});
+
 export const montarLote = (agora = Date.now(), saida = join(RAIZ, 'out', 'lote')) => {
 	const pasta = abrir();
 	try {
 		const planos = planejar(lerItens(pasta), agora);
+		const contas = lerContas(pasta);
 		// capas que faltam vão para publicacao/capas/ no ramo, para o navegador buscar pelo link direto
-		const precisaCapa = planos.filter((p) => p.item.textos.segundoDaCapa !== undefined && Object.values(p.acoes).some((a) => a === 'subir' || a === 'trocar'));
 		git(pasta, 'sparse-checkout', 'add', '/publicacao/capas/');
-		for (const p of precisaCapa) {
+		for (const p of planos.filter((x) => x.item.textos.segundoDaCapa !== undefined && PLATAFORMAS.some((pl) => vaiSubir(x.tarefas[pl])))) {
 			const arq = join(pasta, 'publicacao', 'capas', `${p.item.nome}.jpg`);
 			const marca = join(pasta, 'publicacao', 'capas', `${p.item.nome}.txt`);
 			const assinatura = `${p.item.video} ${p.item.textos.segundoDaCapa}`;
@@ -406,54 +426,62 @@ export const montarLote = (agora = Date.now(), saida = join(RAIZ, 'out', 'lote')
 		}
 		if (enviar(pasta, 'fila: capas do lote')) console.log('capas novas salvas no ramo dados (publicacao/capas/)');
 		const commit = git(pasta, 'rev-parse', 'HEAD');
-		const lote = planos.map((p) => {
-			const t = p.item.textos;
+		const lote = planos.map(({item, tarefas}) => {
+			const t = item.textos;
 			const lim = conferirLimites(t);
-			const capa = existsSync(join(pasta, 'publicacao', 'capas', `${p.item.nome}.jpg`)) ? linkDireto(commit, `publicacao/capas/${p.item.nome}.jpg`) : undefined;
-			const {dia, hora} = partesDoHorario(p.horario);
+			const yt = tarefas.youtube;
+			const ig = tarefas.instagram;
 			return {
-				nome: p.item.nome,
+				nome: item.nome,
 				rotulo: t.rotulo,
-				fluxo: p.item.fluxo,
-				horario: {utc: new Date(p.horario).toISOString(), dia, hora, texto: textoDoHorario(p.horario)},
-				planejado: textoDoHorario(p.item.planejado),
-				atrasado: p.atrasado,
-				acoes: p.acoes,
-				video: linkDireto(commit, `videos/${p.item.nome}.mp4`),
-				capa,
+				fluxo: item.fluxo,
+				planejado: textoDoHorario(item.planejado),
+				video: linkDireto(commit, `videos/${item.nome}.mp4`),
+				capa: existsSync(join(pasta, 'publicacao', 'capas', `${item.nome}.jpg`)) ? linkDireto(commit, `publicacao/capas/${item.nome}.jpg`) : undefined,
 				segundo_da_capa: t.segundoDaCapa,
-				youtube: {titulo: lim.tituloYoutube, descricao: lim.descricaoYoutube, tags: lim.tagsYoutube, playlist: t.playlist, relacionado: t.relacionado, atual: p.item.publicacao.youtube},
-				instagram: {legenda: lim.legendaInstagram, atual: p.item.publicacao.instagram},
 				comentario: t.comentario,
 				avisos: lim.avisos,
+				youtube: yt && {acao: yt.acao, horario: horarioJson(yt.horario), atrasado: yt.atrasado, titulo: lim.tituloYoutube, descricao: lim.descricaoYoutube, tags: lim.tagsYoutube, playlist: t.playlist, relacionado: t.relacionado, atual: item.publicacao.youtube},
+				instagram: ig && {acao: ig.acao, horario: horarioJson(ig.horario), atrasado: ig.atrasado, conta: contas.instagram?.[item.fluxo], legenda: lim.legendaInstagram, atual: item.publicacao.instagram},
 			};
 		});
 		mkdirSync(saida, {recursive: true});
 		writeFileSync(join(saida, 'lote.json'), `${JSON.stringify({gerado_em: new Date(agora).toISOString(), commit, itens: lote}, null, 2)}\n`);
+
 		const linhas = [`# Lote de publicação (${textoDoHorario(agora)}, Brasília)`, ''];
 		if (!lote.length) linhas.push('Nada a fazer: tudo entregue já está programado ou publicado.');
-		const tabela = lote.filter((l) => Object.values(l.acoes).some((a) => a === 'subir' || a === 'trocar'));
-		if (tabela.length) {
-			linhas.push('| Sai em | Vídeo | YouTube | Instagram |', '|---|---|---|---|');
-			for (const l of tabela) linhas.push(`| ${l.horario.texto}${l.atrasado ? ` (era ${l.planejado})` : ''} | ${l.rotulo} | ${l.acoes.youtube ?? 'ok'} | ${l.acoes.instagram ?? 'ok'} |`);
+		const subir = lote.filter((l) => vaiSubir(l.youtube) || vaiSubir(l.instagram));
+		for (const p of PLATAFORMAS) {
+			const daqui = subir.filter((l) => vaiSubir(l[p])).sort((a, b) => a[p]!.horario.utc.localeCompare(b[p]!.horario.utc));
+			if (!daqui.length) continue;
+			linhas.push(`## ${NOME_PLATAFORMA[p]}: ${daqui.length} para programar`, '', '| Sai em | Vídeo |', '|---|---|');
+			for (const l of daqui) {
+				const t = l[p]!;
+				const conta = p === 'instagram' && 'conta' in t && t.conta ? ` (@${t.conta})` : '';
+				linhas.push(`| ${t.horario.texto}${t.atrasado ? ` (era ${l.planejado})` : ''} | ${l.rotulo}${conta}${t.acao === 'trocar' ? ' **trocar o programado**' : ''} |`);
+			}
 			linhas.push('');
 		}
-		const depois = lote.filter((l) => Object.values(l.acoes).some((a) => a === 'conferir' || a === 'comentar'));
+		const depois = lote.filter((l) => jaSaiu(l.youtube) || jaSaiu(l.instagram));
 		if (depois.length) {
 			linhas.push('## Já saíram: conferir e fixar o comentário', '');
-			for (const l of depois) linhas.push(`- ${l.rotulo}: ${Object.entries(l.acoes).map(([pl, a]) => `${pl} ${ROTULO_ACAO[a]}`).join('; ')}`);
+			for (const l of depois) linhas.push(`- ${l.rotulo}: ${PLATAFORMAS.filter((p) => jaSaiu(l[p])).map((p) => `${NOME_PLATAFORMA[p]}, ${ROTULO_ACAO[l[p]!.acao]}`).join('; ')}`);
 			linhas.push('');
 		}
-		for (const l of tabela) {
-			linhas.push(`## ${l.rotulo}`, '', `Sai em **${l.horario.texto}** (Brasília)${l.atrasado ? `; estava para ${l.planejado}` : ''}.`, '');
+		linhas.push('## Textos', '');
+		for (const l of subir) {
+			linhas.push(`### ${l.rotulo}`, '');
 			if (l.avisos.length) linhas.push(...l.avisos.map((a) => `> Aviso: ${a}`), '');
-			linhas.push('**YouTube**', '', `Título: ${l.youtube.titulo}`, '', l.youtube.descricao, '');
-			linhas.push(`Playlist: ${l.youtube.playlist ?? '—'} · Vídeo relacionado: ${l.youtube.relacionado ?? '—'} · Capa: ${l.segundo_da_capa !== undefined ? `quadro de ${String(l.segundo_da_capa).replace('.', ',')} s` : 'a sugerida pela plataforma'}`, '');
-			linhas.push('**Instagram**', '', l.instagram.legenda, '');
+			if (vaiSubir(l.youtube)) {
+				linhas.push(`**YouTube**, ${l.youtube!.horario.texto}`, '', `Título: ${l.youtube!.titulo}`, '', l.youtube!.descricao, '');
+				linhas.push(`Playlist: ${l.youtube!.playlist ?? '—'} · Vídeo relacionado: ${l.youtube!.relacionado ?? '—'} · Capa: ${l.segundo_da_capa !== undefined ? `quadro de ${String(l.segundo_da_capa).replace('.', ',')} s` : 'a sugerida pela plataforma'}`, '');
+			}
+			if (vaiSubir(l.instagram)) linhas.push(`**Instagram**${l.instagram!.conta ? ` @${l.instagram!.conta}` : ''}, ${l.instagram!.horario.texto}`, '', l.instagram!.legenda, '');
 			if (l.comentario) linhas.push(`**Comentário para fixar depois que sair:** ${l.comentario}`, '');
 		}
 		writeFileSync(join(saida, 'lote.md'), `${linhas.join('\n')}\n`);
-		console.log(`lote: ${tabela.length} para subir/trocar, ${depois.length} para conferir/comentar → ${join(saida, 'lote.md')} e lote.json`);
+		const conta = (p: Plataforma) => subir.filter((l) => vaiSubir(l[p])).length;
+		console.log(`lote: YouTube ${conta('youtube')}, Instagram ${conta('instagram')} para programar; ${depois.length} para conferir/comentar → ${join(saida, 'lote.md')} e lote.json`);
 		return lote;
 	} finally {
 		rmSync(pasta, {recursive: true, force: true});
@@ -477,9 +505,8 @@ export const marcar = (nomes: string[], opc: Record<string, string>, agora = Dat
 			});
 		}
 		if (!alvo.length) return console.log('nenhum vídeo nesse período');
-		const lote = existsSync(join(RAIZ, 'out', 'lote', 'lote.json'))
-			? lerJson<{itens: {nome: string; horario: {utc: string}}[]}>(join(RAIZ, 'out', 'lote', 'lote.json')).itens
-			: [];
+		const arqLote = join(RAIZ, 'out', 'lote', 'lote.json');
+		const lote = existsSync(arqLote) ? lerJson<{itens: ({nome: string} & Partial<Record<Plataforma, {horario: {utc: string}}>>)[]}>(arqLote).itens : [];
 		const comentarios = (opc.comentario ?? '').split(',').map((x) => x.trim()).filter(Boolean);
 		mkdirSync(join(pasta, 'publicacao'), {recursive: true});
 		for (const i of alvo) {
@@ -493,7 +520,7 @@ export const marcar = (nomes: string[], opc: Record<string, string>, agora = Dat
 					if (opc.horario) {
 						const [dia, hora] = opc.horario.split('T');
 						horario = new Date(utcDeBrasilia(dia, hora ?? '')).toISOString();
-					} else if (!horario) horario = lote.find((l) => l.nome === i.nome)?.horario.utc ?? (valor === 'publicado' && opc.nota === 'manual' ? i.planejado : undefined);
+					} else if (!horario) horario = lote.find((l) => l.nome === i.nome)?.[p]?.horario.utc ?? (valor === 'publicado' && opc.nota === 'manual' ? i.planejado : undefined);
 					if (valor === 'programado' && !horario) throw new Error(`${i.nome}: diga o horário programado (--horario=AAAA-MM-DDTHH:MM, Brasília) ou rode o lote antes`);
 					if (valor === 'programado' && Date.parse(horario!) <= agora) throw new Error(`${i.nome}: ${textoDoHorario(horario!)} já passou; programado precisa ser no futuro`);
 					pub[p] = {
@@ -522,6 +549,24 @@ export const marcar = (nomes: string[], opc: Record<string, string>, agora = Dat
 	}
 };
 
+/** Guarda a conta de destino de cada fluxo: --instagram:historias=conta --instagram:avulso:como-funciona=conta --youtube=canal. */
+export const definirContas = (opc: Record<string, string>) => {
+	const pasta = abrir();
+	try {
+		const contas = lerContas(pasta);
+		for (const [k, v] of Object.entries(opc)) {
+			if (k === 'youtube') contas.youtube = v;
+			else if (k.startsWith('instagram:')) contas.instagram = {...contas.instagram, [k.slice('instagram:'.length)]: v.replace(/^@/, '')};
+		}
+		mkdirSync(join(pasta, 'publicacao'), {recursive: true});
+		writeFileSync(join(pasta, 'publicacao', 'contas.json'), `${JSON.stringify(contas, null, 2)}\n`);
+		console.log(JSON.stringify(contas, null, 2));
+		console.log(enviar(pasta, 'fila: contas de destino') ? 'salvo no ramo dados (publicacao/contas.json)' : 'nada mudou');
+	} finally {
+		rmSync(pasta, {recursive: true, force: true});
+	}
+};
+
 if (process.argv[1] && import.meta.filename === process.argv[1]) {
 	const [comando, ...resto] = process.argv.slice(2);
 	const {opc, pos} = opcoes(resto);
@@ -529,7 +574,8 @@ if (process.argv[1] && import.meta.filename === process.argv[1]) {
 		if (!comando || comando.startsWith('--')) mostrar(agoraDe(opcoes(process.argv.slice(2)).opc));
 		else if (comando === 'lote') montarLote(agoraDe(opc));
 		else if (comando === 'marcar') marcar(pos, opc, agoraDe(opc));
-		else throw new Error('comandos: (nada) | lote | marcar');
+		else if (comando === 'contas') definirContas(opc);
+		else throw new Error('comandos: (nada) | lote | marcar | contas');
 	} catch (e) {
 		console.error(e instanceof Error ? e.message : e);
 		process.exit(1);
