@@ -103,10 +103,29 @@ describe('horários do lote', () => {
 		assert.deepEqual(p.map((x) => x.tarefas.youtube!.atrasado), [true, false]);
 	});
 
-	it('em dia de semana o primeiro horário extra é 12h e o fluxo avulso não divide horário com as histórias', () => {
+	it('em dia de semana o primeiro horário extra é 12h; no YouTube (um canal) o avulso sai 1h30 depois da história, no Instagram (outra conta) não', () => {
 		const seg = B('2026-11-16', '09:00');
 		const p = planejar([item('voo-818-ep17', iso('2026-11-13', '18:00')), item('voo-818-ep18', iso('2026-11-14', '18:00')), item('como-funciona-ep20', iso('2026-11-15', '18:00'))], seg);
-		assert.deepEqual(Object.fromEntries(p.map((x) => [x.item.nome, yt(x)])), {'voo-818-ep17': 'seg 16/11 12:00', 'voo-818-ep18': 'seg 16/11 15:00', 'como-funciona-ep20': 'seg 16/11 12:00'});
+		assert.deepEqual(Object.fromEntries(p.map((x) => [x.item.nome, yt(x)])), {'voo-818-ep17': 'seg 16/11 12:00', 'voo-818-ep18': 'seg 16/11 15:00', 'como-funciona-ep20': 'seg 16/11 13:30'});
+		assert.deepEqual(Object.fromEntries(p.map((x) => [x.item.nome, ig(x)])), {'voo-818-ep17': 'seg 16/11 12:00', 'voo-818-ep18': 'seg 16/11 15:00', 'como-funciona-ep20': 'seg 16/11 12:00'});
+	});
+
+	it('atraso dos dois fluxos no YouTube: alternam história e Como Funciona, 1h30 entre vídeos, nada depois das 21h', () => {
+		const dom = B('2026-11-15', '18:45');
+		const historias = ['voo-818-ep15', 'voo-818-ep16', 'voo-818-ep17'].map((n, i) => item(n, iso(`2026-11-${dois(8 + i)}`, '18:00')));
+		const avulsos = ['como-funciona-ep17', 'como-funciona-ep18', 'como-funciona-ep19'].map((n, i) => item(n, iso(`2026-11-${dois(10 + i)}`, '18:00')));
+		const p = planejar([...historias, ...avulsos], dom);
+		const porHorario = [...p].sort((a, b) => a.tarefas.youtube!.horario - b.tarefas.youtube!.horario);
+		assert.deepEqual(porHorario.map((x) => `${x.item.nome} ${yt(x)}`), [
+			'voo-818-ep15 dom 15/11 21:00',
+			'voo-818-ep16 seg 16/11 12:00',
+			'como-funciona-ep17 seg 16/11 13:30',
+			'voo-818-ep17 seg 16/11 15:00',
+			'como-funciona-ep18 seg 16/11 16:30',
+			'como-funciona-ep19 seg 16/11 21:00',
+		]);
+		const horas = p.map((x) => x.tarefas.youtube!.horario).sort((a, b) => a - b);
+		for (let i = 1; i < horas.length; i++) assert.ok(horas[i] - horas[i - 1] >= 90 * 60_000);
 	});
 
 	it('muitos atrasados empurram as partes seguintes, em ordem e com 3 h entre elas', () => {

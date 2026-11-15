@@ -32,6 +32,10 @@ const H = 3_600_000;
 export const MARGEM_MS = 90 * 60_000;
 /** Dois vídeos do mesmo fluxo nunca saem com menos de 3 h entre eles. */
 export const INTERVALO_MS = 3 * H;
+/** No YouTube os dois fluxos dividem um canal só (Iuri, 15/11): dois vídeos quaisquer saem com pelo menos 1h30 entre eles. */
+export const INTERVALO_CANAL_MS = 90 * 60_000;
+/** Plataformas em que todos os fluxos postam na mesma conta. No Instagram cada fluxo tem a sua. */
+const CANAL_UNICO: Record<Plataforma, boolean> = {youtube: true, instagram: false};
 /** Horários possíveis (Brasília). Os do calendário (18h; fim de semana 11h e 18h) mais os extras de quem atrasou. */
 const HORAS_SEMANA = [12, 15, 18, 21];
 const HORAS_FIM_DE_SEMANA = [11, 15, 18, 21];
@@ -111,14 +115,15 @@ const partesDoHorario = (utc: number) => {
 	return {dia: `${b.getUTCFullYear()}-${dois(b.getUTCMonth() + 1)}-${dois(b.getUTCDate())}`, hora: `${dois(b.getUTCHours())}:${dois(b.getUTCMinutes())}`};
 };
 
-/** Horários possíveis a partir de um instante (UTC), em ordem. */
-function* horariosDesde(inicio: number): Generator<number> {
+/** Horários possíveis a partir de um instante (UTC), em ordem, dizendo se é o último do dia. */
+function* horariosDesde(inicio: number): Generator<{utc: number; ultimo: boolean}> {
 	const b = brasilia(inicio);
 	for (let dia = Date.UTC(b.getUTCFullYear(), b.getUTCMonth(), b.getUTCDate()); ; dia += 24 * H) {
 		const semana = new Date(dia).getUTCDay();
-		for (const hora of semana === 0 || semana === 6 ? HORAS_FIM_DE_SEMANA : HORAS_SEMANA) {
+		const horas = semana === 0 || semana === 6 ? HORAS_FIM_DE_SEMANA : HORAS_SEMANA;
+		for (const [i, hora] of horas.entries()) {
 			const utc = dia + (hora + BRASILIA_H) * H;
-			if (utc >= inicio) yield utc;
+			if (utc >= inicio) yield {utc, ultimo: i === horas.length - 1};
 		}
 	}
 }
@@ -140,52 +145,59 @@ export interface Plano {
 
 /**
  * Decide, plataforma por plataforma, quando cada vídeo sai e o que fazer. Cada plataforma tem a própria fila
- * (o YouTube pode estar em dia enquanto o Instagram está atrasado), e dentro dela cada fluxo anda sozinho.
+ * (o YouTube pode estar em dia enquanto o Instagram está atrasado), e dentro dela cada fluxo anda na sua ordem.
  * - Já programado fica onde está; se o horário passou, conferir se saiu (e fixar o comentário); se a produção
  *   entregou outro vídeo depois (correção), trocar.
- * - No prazo: sai no horário combinado na entrega.
- * - Atrasado (o horário passou ou falta menos de 90 min): próximo horário livre do fluxo naquela plataforma
- *   (calendário mais os extras de 12h/15h/21h), sempre depois do vídeo anterior e com 3 h entre eles.
- *   Os horários futuros só andam se não couberem depois dos atrasados.
+ * - No prazo: sai no horário combinado na entrega, se estiver livre.
+ * - Atrasado (o horário passou ou falta menos de 90 min) ou horário ocupado: próximo horário livre do calendário
+ *   (com os extras de 12h/15h/21h), sempre depois do vídeo anterior do mesmo fluxo e com 3 h entre eles.
+ * - No YouTube (um canal para os dois fluxos) também 1h30 entre quaisquer dois vídeos: quando o horário já é de
+ *   outro fluxo, este sai 1h30 depois (história 15h, Como Funciona 16h30), nunca depois do último horário do dia.
+ *   Os fluxos se alternam na ordem em que foram entregues.
+ * Os horários futuros só andam se não couberem depois dos atrasados.
  */
 export const planejar = (itens: ItemFila[], agora: number): Plano[] => {
 	const tarefas = new Map<string, Plano['tarefas']>();
-	const porFluxo = new Map<string, ItemFila[]>();
-	for (const i of itens) porFluxo.set(i.fluxo, [...(porFluxo.get(i.fluxo) ?? []), i]);
-	for (const lista of porFluxo.values()) {
-		lista.sort((a, b) => a.planejado.localeCompare(b.planejado) || a.serie.localeCompare(b.serie) || a.parte - b.parte);
-		for (const p of PLATAFORMAS) {
-			const ocupados = new Set<number>();
-			for (const i of lista) if (i.publicacao[p]?.horario) ocupados.add(Date.parse(i.publicacao[p]!.horario!));
-			let anterior = -Infinity;
-			for (const item of lista) {
-				const n = item.publicacao[p];
-				const combinado = Date.parse(item.planejado);
-				const anotar = (acao: Acao, horario: number) => tarefas.set(item.nome, {...tarefas.get(item.nome), [p]: {acao, horario, atrasado: horario !== combinado}});
-				if (n) {
-					const h = n.horario ? Date.parse(n.horario) : combinado;
-					anterior = Math.max(anterior, h);
-					if (n.status === 'programado') {
-						if (h <= agora) anotar('conferir', h);
-						else if (n.video && n.video !== item.video) anotar('trocar', h);
-					} else if (n.status === 'publicado' && !n.comentario && item.textos.comentario && n.nota !== 'manual') anotar('comentar', h);
-					continue;
-				}
-				const minimo = Math.max(agora + MARGEM_MS, anterior + INTERVALO_MS);
-				let horario = combinado;
-				if (combinado < minimo || ocupados.has(combinado)) {
-					horario = minimo;
-					for (const h of horariosDesde(minimo)) {
-						if (![...ocupados].some((o) => Math.abs(o - h) < INTERVALO_MS)) {
-							horario = h;
-							break;
-						}
+	const ordem = [...itens].sort((a, b) => a.planejado.localeCompare(b.planejado) || a.serie.localeCompare(b.serie) || a.parte - b.parte);
+	for (const p of PLATAFORMAS) {
+		const ocupados: {horario: number; fluxo: string}[] = [];
+		for (const i of ordem) if (i.publicacao[p]?.horario) ocupados.push({horario: Date.parse(i.publicacao[p]!.horario!), fluxo: i.fluxo});
+		const livre = (h: number, fluxo: string) =>
+			!ocupados.some((o) => (o.fluxo === fluxo && Math.abs(o.horario - h) < INTERVALO_MS) || (CANAL_UNICO[p] && Math.abs(o.horario - h) < INTERVALO_CANAL_MS));
+		const anterior = new Map<string, number>();
+		for (const item of ordem) {
+			const n = item.publicacao[p];
+			const combinado = Date.parse(item.planejado);
+			const anotar = (acao: Acao, horario: number) => tarefas.set(item.nome, {...tarefas.get(item.nome), [p]: {acao, horario, atrasado: horario !== combinado}});
+			if (n) {
+				const h = n.horario ? Date.parse(n.horario) : combinado;
+				anterior.set(item.fluxo, Math.max(anterior.get(item.fluxo) ?? -Infinity, h));
+				if (n.status === 'programado') {
+					if (h <= agora) anotar('conferir', h);
+					else if (n.video && n.video !== item.video) anotar('trocar', h);
+				} else if (n.status === 'publicado' && !n.comentario && item.textos.comentario && n.nota !== 'manual') anotar('comentar', h);
+				continue;
+			}
+			const minimo = Math.max(agora + MARGEM_MS, (anterior.get(item.fluxo) ?? -Infinity) + INTERVALO_MS);
+			let horario = combinado;
+			const deOutroFluxo = (h: number) => ocupados.some((o) => o.fluxo !== item.fluxo && Math.abs(o.horario - h) < INTERVALO_CANAL_MS);
+			if (combinado < minimo || !livre(combinado, item.fluxo)) {
+				horario = minimo;
+				for (const {utc: h, ultimo} of horariosDesde(minimo - INTERVALO_CANAL_MS)) {
+					if (h >= minimo && livre(h, item.fluxo)) {
+						horario = h;
+						break;
+					}
+					const meia = h + INTERVALO_CANAL_MS;
+					if (CANAL_UNICO[p] && !ultimo && deOutroFluxo(h) && meia >= minimo && livre(meia, item.fluxo)) {
+						horario = meia;
+						break;
 					}
 				}
-				ocupados.add(horario);
-				anterior = horario;
-				anotar('subir', horario);
 			}
+			ocupados.push({horario, fluxo: item.fluxo});
+			anterior.set(item.fluxo, horario);
+			anotar('subir', horario);
 		}
 	}
 	const primeiro = (pl: Plano) => Math.min(...Object.values(pl.tarefas).map((t) => t!.horario));
