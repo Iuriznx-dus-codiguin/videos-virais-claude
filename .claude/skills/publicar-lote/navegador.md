@@ -36,19 +36,41 @@ campo.dispatchEvent(new Event('change', {bubbles: true}));
 
 **Plano C (o mais simples, com um passo do Iuri):** copie os vídeos do lote para a pasta dele no PC (`device_commit_files`, pasta "Iuri Robson" na Área de Trabalho, subpasta `postagens/AAAA-MM-DD/`, um arquivo por vídeo com o nome do lote) e peça para ele arrastar os arquivos para o diálogo de envio que você deixou aberto (o YouTube aceita até 15 de uma vez). Daí em diante, título, descrição, capa e agendamento são seus.
 
-Anote aqui qual caminho funcionou em cada plataforma.
+**O que funcionou (14–15/11/2026):**
+- **YouTube Studio:** o `fetch` direto do raw.githubusercontent.com funciona (a página deixa). Use a automação abaixo.
+- **Instagram (instagram.com):** a página bloqueia o `fetch` (Failed to fetch). O plano B funciona, mas o `window.open` só passa com gesto do usuário: injete um botão na página e clique nele com o `computer` (clique de verdade). O instagram.com não agenda: para agendar é o Meta Business Suite.
+- O `file_upload` do Claude in Chrome tem limite de 10 MB: não serve para os vídeos.
 
-## YouTube Studio
-1. `https://studio.youtube.com` → **Criar** → **Enviar vídeos**. Com o diálogo aberto, rode o código com o `video` do lote.
-2. Na tela de detalhes (o vídeo vertical de até 3 min vira Short sozinho):
-   - **Título:** clique no campo, selecione tudo (ctrl+a) e digite `youtube.titulo`.
-   - **Descrição:** o mesmo com `youtube.descricao` (as quebras de linha contam).
-   - **Miniatura:** em "Enviar arquivo" da miniatura, rode o código com `capa`, `image/jpeg`, `ACEITA = 'image'`. Sem campo de miniatura para Shorts, escolha a sugestão mais clara.
-   - **Playlists:** marque `youtube.playlist`. Se não existir, "Nova playlist" com esse nome, visibilidade Pública. Ela deve ficar em ordem de publicação.
-   - **Público:** "Não, não é conteúdo para crianças".
-   - **Mostrar mais:** conteúdo alterado = Não; tags = `youtube.tags` separadas por vírgula; "Vídeo relacionado" (se aparecer aqui ou na tela de elementos) = `youtube.relacionado` (procure pelo título).
-3. **Avançar** até **Visibilidade** → **Programar** → data e hora de `horario` (dia e hora de Brasília; confira o fuso mostrado: GMT-3, São Paulo) → **Programar**.
-4. Copie o link do vídeo que aparece no diálogo (youtube.com/shorts/... ou youtu.be/...) e marque: `npm run fila -- marcar <nome> --youtube=programado --url=<link>`.
+## YouTube Studio (automação)
+O diálogo inteiro é preenchido por `youtube.js` (nesta pasta). Cada vídeo leva uma chamada e um acompanhamento.
+
+1. Aba nova em `https://studio.youtube.com/channel/<canal>/videos/short`.
+2. Carregue o script (uma vez por aba; troque `<commit>` pelo commit do ramo que tem a versão atual do `youtube.js`). O Studio bloqueia `eval` em algumas páginas, por isso entra como `<script>` com o nonce da própria página:
+```js
+window.__carregar = async (sha) => {
+  const code = await (await fetch(`https://raw.githubusercontent.com/<dono>/<repo>/${sha}/.claude/skills/publicar-lote/youtube.js`)).text();
+  const s = document.createElement('script'); s.nonce = (document.querySelector('script[nonce]') || {}).nonce;
+  let txt = code; if (window.trustedTypes && trustedTypes.createPolicy) { try { txt = trustedTypes.createPolicy('publote' + Date.now(), {createScript: (x) => x}).createScript(code); } catch (e) {} }
+  s.textContent = txt; document.head.appendChild(s); return 'carregado';
+};
+window.__fechar = async () => { const f = [...document.querySelectorAll('ytcp-button, button')].find(e => e.innerText.trim() === 'Fechar' && e.getBoundingClientRect().width > 0); if (f) f.click(); await new Promise(r => setTimeout(r, 1000)); return !!f; };
+await __carregar('<commit>');
+```
+3. As playlists precisam existir antes: **Criar → Nova playlist**, visibilidade Pública; para série em ordem, "Ordem padrão dos vídeos" = **Data de publicação (mais antiga)**. Depois **Adicionar vídeos → Escolher vídeos do canal** e marque as partes que já saíram.
+4. Para cada vídeo, na ordem do lote: `python3 .claude/skills/publicar-lote/cfg_youtube.py <nome>` imprime `__autoRun({...})`. Rode `await __fechar();` e essa linha com `javascript_tool`.
+5. Acompanhe a cada ~10–15 s: `JSON.stringify({fase: __auto.fase, erro: __auto.erro, avisos: __auto.avisos, conf: __auto.conferencia, agenda: __auto.conferenciaAgenda, confirmacao: __auto.confirmacao, ok: __auto.ok, link: __auto.link})`. Leva ~1 min por vídeo.
+   - `programado` com `ok: true`: a mensagem "Vídeo programado" bateu com dia e hora. Marque `npm run fila -- marcar <nome> --youtube=programado --url=<link>`.
+   - `conferir data e hora`: algo não bateu (data, hora ou fuso). Tire print, acerte com cliques (`__auto.alvos` tem as coordenadas) e clique em Programar.
+   - `erro`: leia `__auto.erro`; `cfg.desde` (detalhes | playlist | avancado | elementos | visibilidade) retoma do passo sem reenviar.
+6. O que o script já resolve, para não redescobrir:
+   - Abre o envio por **Criar → Enviar vídeos**. Clique por JS no `ytcp-button` do cabeçalho não abre o menu; no `button` de dentro, abre. Os itens do menu repetem ids (`#text-item-0`) com outros menus: procure pelo texto.
+   - Diálogos são `position: fixed` (`offsetParent` é nulo): veja visibilidade pelo tamanho do retângulo.
+   - "Conteúdo alterado" e tags ficam em **Mostrar mais** (`#toggle-button`); a seção some do DOM quando fecha. As tags viram chips depois de `insertText` + `blur`.
+   - **Vídeo relacionado** (em Elementos do vídeo): a lista só mostra vídeos **públicos**, então a parte anterior ainda programada não aparece; o script usa a mais recente pública da mesma série.
+   - Hora: `insertText` no campo e Enter funciona. Fuso: "Fuso horário" sem nada escolhido é o horário local; o script escolhe "(GMT-0300) Horário local" para ficar explícito.
+   - Ao clicar em Programar com a verificação ainda rodando, aparece "Ainda estamos verificando seu conteúdo": o script clica em Ok e segue.
+   - A data é digitada no calendário (`#datepicker-trigger`) como "16 de nov. de 2026". Esse caminho ainda não foi testado: se falhar, para em `conferir data e hora`.
+   - Se o PC do Iuri dormir no meio, o navegador desconecta: pare, avise e retome depois pelo `npm run fila -- lote` (os já programados não voltam para o lote).
 
 ## Instagram (Meta Business Suite)
 O Instagram só agenda Reels pelo computador no Meta Business Suite (perfil profissional ligado a uma página do Facebook).
