@@ -1,9 +1,11 @@
 // Automação do diálogo de envio do YouTube Studio (usada pela skill publicar-lote).
 // Carregue na aba do Studio com:
 //   eval(await (await fetch('https://raw.githubusercontent.com/<dono>/<repo>/<commit>/.claude/skills/publicar-lote/youtube.js')).text())
+// (o Studio bloqueia eval em algumas páginas: injete como <script> com o nonce da página, ver navegador.md)
 // e rode `__autoRun(cfg)` com o cfg que `python3 .claude/skills/publicar-lote/cfg_youtube.py <nome>` imprime.
-// Acompanhe por `__auto.fase` / `__auto.erro`. Para no passo "data e hora": data, hora e o clique em
-// "Programar" são feitos com cliques de verdade, conferindo na tela.
+// Acompanhe por `__auto.fase` / `__auto.erro`. Preenche tudo, agenda data, hora e fuso (GMT-0300) e, com
+// `cfg.programar: true`, clica em Programar e confere a mensagem "Vídeo programado" (fase 'programado', __auto.link).
+// Sem `programar`, para em 'pronto para programar'; se algo não bate, para em 'conferir data e hora'.
 // `cfg.desde` retoma a partir de um passo: detalhes | playlist | avancado | elementos | visibilidade.
 window.__abrirEnvio = async () => {
   if (document.querySelector('input[type=file][name=Filedata]')) return 'ja aberto';
@@ -87,7 +89,7 @@ window.__autoRun = (cfg) => {
       if (!chips().length) {
         const tagIn = q('ytcp-free-text-chip-bar input, #tags-container input');
         tagIn.focus(); document.execCommand('insertText', false, cfg.tags.join(',') + ',');
-        await sleep(600);
+        await esperar(() => chips().length >= cfg.tags.length, 5000, 'tags').catch(() => st.avisos.push('tags não conferidas'));
       }
       st.conferencia = {
         titulo: q('#title-textarea #textbox').innerText.trim() === cfg.titulo,
@@ -112,9 +114,10 @@ window.__autoRun = (cfg) => {
           add.click();
           await sleep(2500);
           const caixa = qa('ytcp-video-pick-dialog, tp-yt-paper-dialog', document).filter(visivel).at(-1);
-          const res = cfg.relacionado.map((p) => new RegExp(p, 'i'));
-          const cards = caixa ? qa('[role=button], ytcp-entity-card, [class*=card]', caixa).filter(visivel) : [];
-          const achado = cards.find((e) => res.some((r) => r.test(e.innerText.replace(/\s+/g, ' '))));
+          const cards = caixa ? qa('ytcp-entity-card', caixa).filter(visivel) : [];
+          const texto = (e) => e.innerText.replace(/\s+/g, ' ').trim();
+          let achado;
+          for (const p of [...cfg.relacionado, cfg.serieRe].filter(Boolean)) { achado = cards.find((e) => new RegExp(p, 'i').test(texto(e))); if (achado) break; }
           st.cardsVistos = cards.slice(0, 8).map((e) => e.innerText.replace(/\s+/g, ' ').trim().slice(0, 50));
           if (achado) { achado.click(); await sleep(1500); st.relacionado = achado.innerText.replace(/\s+/g, ' ').trim().slice(0, 60); }
           else {
@@ -136,8 +139,48 @@ window.__autoRun = (cfg) => {
     hora.scrollIntoView({block: 'center'}); await sleep(500);
     st.link = (q('a[href*="shorts/"], a[href*="youtu.be"]') || {}).href;
     st.agenda = q('ytcp-uploads-review #second-container').innerText.replace(/\s+/g, ' ');
-    st.alvos = {hora: centro(hora), data: centro(q('ytcp-uploads-review #datepicker-trigger')), fuso: centro(q('ytcp-uploads-review #timezone-select-button')), programar: centro(q('#done-button'))};
-    L('pronto para data e hora');
+    L('agendando');
+    const MESES = ['jan.', 'fev.', 'mar.', 'abr.', 'mai.', 'jun.', 'jul.', 'ago.', 'set.', 'out.', 'nov.', 'dez.'];
+    const MESES_LONGOS = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+    const [ano, mes, dia] = cfg.dia.split('-').map(Number);
+    const dataCurta = `${dia} de ${MESES[mes - 1]} de ${ano}`;
+    const R = () => q('ytcp-uploads-review');
+    const agenda = () => q('#second-container', R()).innerText.replace(/\s+/g, ' ');
+    if (!agenda().includes(dataCurta)) {
+      q('#datepicker-trigger', R()).click();
+      await sleep(900);
+      const caixa = await esperar(() => qa('ytcp-date-picker, tp-yt-paper-dialog', document).filter(visivel).find((e) => e.querySelector('input')), 5000, 'calendário');
+      const campo = caixa.querySelector('input');
+      campo.focus(); campo.select();
+      document.execCommand('insertText', false, dataCurta);
+      campo.dispatchEvent(new KeyboardEvent('keydown', {key: 'Enter', code: 'Enter', keyCode: 13, bubbles: true}));
+      await sleep(900);
+      if (visivel(caixa)) { document.body.dispatchEvent(new KeyboardEvent('keydown', {key: 'Escape', code: 'Escape', keyCode: 27, bubbles: true})); await sleep(500); }
+    }
+    hora.focus(); hora.select();
+    document.execCommand('insertText', false, cfg.hora);
+    hora.dispatchEvent(new KeyboardEvent('keydown', {key: 'Enter', code: 'Enter', keyCode: 13, bubbles: true}));
+    hora.blur(); await sleep(500);
+    const fuso = q('#timezone-select-button', R());
+    if (fuso) {
+      fuso.click(); await sleep(900);
+      const it = [...document.querySelectorAll('tp-yt-paper-item, [role=option]')].find((e) => /^\(GMT-0300\) Horário local/.test(e.innerText.trim()) && visivel(e));
+      if (it) it.click(); else st.avisos.push('fuso GMT-0300 não achado');
+      await sleep(800);
+    }
+    st.agenda = agenda();
+    st.conferenciaAgenda = {data: st.agenda.includes(dataCurta), hora: hora.value === cfg.hora, fuso: st.agenda.includes('(GMT-0300)')};
+    st.alvos = {hora: centro(hora), data: centro(q('#datepicker-trigger', R())), programar: centro(q('#done-button'))};
+    if (!(st.conferenciaAgenda.data && st.conferenciaAgenda.hora && st.conferenciaAgenda.fuso)) { L('conferir data e hora'); return; }
+    if (!cfg.programar) { L('pronto para programar'); return; }
+    L('programando');
+    q('#done-button').click();
+    const esperado = `${dia} de ${MESES_LONGOS[mes - 1]} de ${ano} às ${cfg.hora}`;
+    const conf = await esperar(() => qa('tp-yt-paper-dialog, ytcp-dialog', document).filter(visivel).find((e) => /Vídeo programado/.test(e.innerText)), 60000, 'confirmação');
+    st.confirmacao = conf.innerText.replace(/\s+/g, ' ').slice(0, 200);
+    st.link = ((conf.querySelector('a[href*="shorts/"], a[href*="youtu"]') || {}).href || st.link || '').replace(/\?.*$/, '');
+    st.ok = st.confirmacao.includes(esperado);
+    L(st.ok ? 'programado' : 'programado com horário diferente');
   } catch (e) { st.erro = String((e && e.message) || e); L('erro'); } })();
   return 'iniciado ' + cfg.nome;
 };
