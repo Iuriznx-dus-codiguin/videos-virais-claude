@@ -89,7 +89,9 @@ window.__autoRun = (cfg) => {
       if (!chips().length) {
         const tagIn = q('ytcp-free-text-chip-bar input, #tags-container input');
         tagIn.focus(); document.execCommand('insertText', false, cfg.tags.join(',') + ',');
-        await esperar(() => chips().length >= cfg.tags.length, 5000, 'tags').catch(() => st.avisos.push('tags não conferidas'));
+        tagIn.dispatchEvent(new Event('change', {bubbles: true}));
+        tagIn.blur();
+        await esperar(() => chips().length >= cfg.tags.length, 5000, 'tags').catch(() => st.avisos.push('tags não conferidas: ' + JSON.stringify({chips: chips(), valor: tagIn.value})));
       }
       st.conferencia = {
         titulo: q('#title-textarea #textbox').innerText.trim() === cfg.titulo,
@@ -176,7 +178,12 @@ window.__autoRun = (cfg) => {
     L('programando');
     q('#done-button').click();
     const esperado = `${dia} de ${MESES_LONGOS[mes - 1]} de ${ano} às ${cfg.hora}`;
-    const conf = await esperar(() => qa('tp-yt-paper-dialog, ytcp-dialog', document).filter(visivel).find((e) => /Vídeo programado/.test(e.innerText)), 60000, 'confirmação');
+    const conf = await esperar(() => {
+      const caixas = qa('tp-yt-paper-dialog, ytcp-dialog', document).filter(visivel);
+      const aviso = caixas.find((e) => /Ainda estamos verificando/.test(e.innerText));
+      if (aviso) { const ok = qa('ytcp-button, button', aviso).filter(visivel).find((b) => /^Ok$/i.test(b.innerText.trim())); if (ok) { ok.click(); st.avisos.push('aviso de verificação em andamento: ok'); } }
+      return caixas.find((e) => /Vídeo programado/.test(e.innerText));
+    }, 90000, 'confirmação');
     st.confirmacao = conf.innerText.replace(/\s+/g, ' ').slice(0, 200);
     st.link = ((conf.querySelector('a[href*="shorts/"], a[href*="youtu"]') || {}).href || st.link || '').replace(/\?.*$/, '');
     st.ok = st.confirmacao.includes(esperado);
