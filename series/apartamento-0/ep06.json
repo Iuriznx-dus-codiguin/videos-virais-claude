@@ -1136,9 +1136,9 @@
      "tipo": "close",
      "alvo": "jorge",
      "camera": [
-      -0.85,
-      0.95,
-      -0.5
+      -0.5,
+      1.0,
+      -0.2
      ],
      "movimento": "zoom_rapido",
      "intensidade": 0.3
@@ -1146,10 +1146,14 @@
     {
      "de": "f16",
      "tipo": "medio",
-     "alvo": "jorge",
+     "alvo": [
+      -2.2,
+      0.85,
+      -1.7
+     ],
      "camera": [
       -0.5,
-      1.15,
+      1.2,
       0.1
      ],
      "movimento": "aproximar",
@@ -1161,7 +1165,8 @@
      "alvo": "jorge",
      "texto": "SEU JORGE · 30 ANOS DE PORTARIA",
      "de": "f15:VIVO",
-     "ate": "f16"
+     "ate": "f16",
+     "altura": 0.34
     }
    ],
    "efeitos": [
@@ -1181,7 +1186,7 @@
     {
      "de": "f15:Jorge",
      "ate": "f16",
-     "texto": "7 DIAS *PRESO AQUI*"
+     "texto": "*7 DIAS* PRESO"
     },
     {
      "de": "f16",
@@ -1743,9 +1748,9 @@
      "tipo": "close",
      "alvo": "porteiro",
      "camera": [
-      2.8,
+      3.0,
       1.5,
-      1.9
+      2.9
      ],
      "movimento": "tremer",
      "intensidade": 0.3,
