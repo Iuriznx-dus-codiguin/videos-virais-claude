@@ -1,0 +1,2637 @@
+{
+ "serie": "apartamento-0",
+ "parte": 7,
+ "titulo": "A última regra",
+ "musica": "tensao",
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Se a síndica te trancar no subsolo, não grite por socorro. ELA tá ouvindo."
+  },
+  {
+   "id": "f2",
+   "quem": "narrador",
+   "off": true,
+   "texto": "Mas você tem a única prova contra ela: o vídeo da câmera quatro."
+  },
+  {
+   "id": "f3",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Só que travou em noventa e nove por cento. Aqui embaixo, sem sinal.",
+   "pausa_depois": 0.4
+  },
+  {
+   "id": "f4",
+   "quem": "marta",
+   "off": true,
+   "tom": "interfone",
+   "texto": "Quando o caminhão sair, o Caio desce pra conversar."
+  },
+  {
+   "id": "f5",
+   "quem": "narrador",
+   "off": true,
+   "texto": "O primeiro instinto do Rafa é esmurrar a porta."
+  },
+  {
+   "id": "f6",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Não. Quarenta e oito apartamentos dormindo. Só ELA ouve."
+  },
+  {
+   "id": "f7",
+   "quem": "jorge",
+   "tom": "cansado",
+   "texto": "Lá em cima tem uma grade pra rua. Ali pega sinal."
+  },
+  {
+   "id": "f8",
+   "quem": "narrador",
+   "off": true,
+   "texto": "A grade fica no alto. A escada? As caixas que ela roubou."
+  },
+  {
+   "id": "f9",
+   "quem": "narrador",
+   "off": true,
+   "tom": "animado",
+   "texto": "Uma barrinha de sinal. Enviado."
+  },
+  {
+   "id": "f10",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Só que quem manda no grupo é ela. Dez segundos, e o vídeo some."
+  },
+  {
+   "id": "f11",
+   "quem": "narrador",
+   "off": true,
+   "texto": "Mas a Dona Cleide, do sétimo, já tinha baixado.",
+   "pausa_depois": 0.4
+  },
+  {
+   "id": "f12",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Três e quarenta e sete, o caminhão sai. E a porta abre."
+  },
+  {
+   "id": "f13",
+   "quem": "caio",
+   "tom": "calmo",
+   "texto": "Boa noite. Desculpa a demora."
+  },
+  {
+   "id": "f14",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "Atrás dele, a garagem que ela deixava no escuro tá vermelha e azul."
+  },
+  {
+   "id": "f15",
+   "quem": "narrador",
+   "off": true,
+   "texto": "É a polícia. O Caio sai algemado."
+  },
+  {
+   "id": "f16",
+   "quem": "narrador",
+   "off": true,
+   "tom": "tenso",
+   "texto": "A síndica corre pro portão da frente."
+  },
+  {
+   "id": "f17",
+   "quem": "marta",
+   "tom": "bravo",
+   "texto": "Porteiro, abre esse portão. AGORA!"
+  },
+  {
+   "id": "f18",
+   "quem": "porteiro",
+   "tom": "determinado",
+   "texto": "Regra um, Dona Marta. Depois da meia-noite, o portão não abre."
+  },
+  {
+   "id": "f19",
+   "quem": "narrador",
+   "off": true,
+   "texto": "A regra que ela mesma escreveu.",
+   "pausa_depois": 0.5
+  },
+  {
+   "id": "f20",
+   "quem": "narrador",
+   "off": true,
+   "tom": "aliviado",
+   "texto": "De manhã, a Marta não é mais síndica. E o Seu Jorge volta pra guarita."
+  },
+  {
+   "id": "f21",
+   "quem": "jorge",
+   "tom": "calmo",
+   "texto": "A vaga da noite é sua, filho."
+  },
+  {
+   "id": "f22",
+   "quem": "narrador",
+   "off": true,
+   "texto": "No livro, com a letra dele, uma regra nova.",
+   "pausa_depois": 0.4
+  },
+  {
+   "id": "f23",
+   "quem": "narrador",
+   "off": true,
+   "tom": "calmo",
+   "texto": "Regra três: confie no porteiro da noite."
+  }
+ ],
+ "cenas": [
+  {
+   "cenario": "oficina",
+   "luz": "noite",
+   "ambiente": "noite",
+   "filtro": "frio",
+   "id": "gancho",
+   "de": "inicio",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      0.6,
+      0.9
+     ],
+     "olhando": [
+      2.2,
+      1.25,
+      4.8
+     ],
+     "expressao": "medo",
+     "escala": 0.6,
+     "segura": "lanterna"
+    },
+    "rafa": {
+     "em": [
+      -0.6,
+      0.2
+     ],
+     "olhando": [
+      2.2,
+      1.25,
+      4.8
+     ],
+     "expressao": "nervoso",
+     "escala": 0.6
+    },
+    "jorge": {
+     "em": [
+      -1.9,
+      -2.1
+     ],
+     "olhando": [
+      0.4,
+      1.0,
+      1.4
+     ],
+     "expressao": "cansado",
+     "escala": 0.6,
+     "pose": "sentado"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.7,
+      -2.5
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.0,
+      -2.5
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.7,
+      -1.8
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.7,
+      -0.9
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -1.4,
+      -2.6
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      1.5,
+      -2.5
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.7,
+      -2.4
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.0,
+      -2.6
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.7,
+      -1.7
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.7,
+      -0.8
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.6,
+      0.3
+     ],
+     "escala": 0.9
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "alvo": [
+      -0.4,
+      0.9,
+      -0.6
+     ],
+     "camera": [
+      0.0,
+      2.6,
+      6.4
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f1:ELA",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      0.9,
+      1.45,
+      2.6
+     ],
+     "movimento": "zoom_rapido",
+     "intensidade": 0.3
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "inicio",
+     "ate": "f1:ELA",
+     "texto": "TRANCADOS NO *APTO 0*"
+    },
+    {
+     "de": "f1:ELA",
+     "texto": "ELA *ESTÁ OUVINDO*"
+    }
+   ],
+   "relogio": {
+    "de": "inicio",
+    "hora": "03:26"
+   },
+   "sons": [
+    {
+     "de": "f1:ELA",
+     "som": "impacto",
+     "volume": 0.3
+    }
+   ]
+  },
+  {
+   "cenario": "oficina",
+   "luz": "noite",
+   "ambiente": "noite",
+   "filtro": "frio",
+   "id": "prova",
+   "de": "f2",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      0.6,
+      0.9
+     ],
+     "olhando": [
+      2.2,
+      1.25,
+      4.8
+     ],
+     "expressao": "nervoso",
+     "escala": 0.6,
+     "segura": "lanterna"
+    },
+    "rafa": {
+     "em": [
+      -0.6,
+      0.2
+     ],
+     "olhando": [
+      2.2,
+      1.25,
+      4.8
+     ],
+     "expressao": "determinado",
+     "escala": 0.6
+    },
+    "jorge": {
+     "em": [
+      -1.9,
+      -2.1
+     ],
+     "olhando": [
+      0.4,
+      1.0,
+      1.4
+     ],
+     "expressao": "cansado",
+     "escala": 0.6,
+     "pose": "sentado"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.7,
+      -2.5
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.0,
+      -2.5
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.7,
+      -1.8
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.7,
+      -0.9
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -1.4,
+      -2.6
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      1.5,
+      -2.5
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.7,
+      -2.4
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.0,
+      -2.6
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.7,
+      -1.7
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.7,
+      -0.8
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.6,
+      0.3
+     ],
+     "escala": 0.9
+    }
+   ],
+   "planos": [
+    {
+     "de": "f2",
+     "tipo": "medio",
+     "alvo": "rafa",
+     "camera": [
+      -0.6,
+      1.5,
+      2.8
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.25
+    },
+    {
+     "de": "f3:Aqui",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      0.9,
+      1.45,
+      2.6
+     ],
+     "movimento": "tremer",
+     "intensidade": 0.25
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f2:vídeo",
+     "ate": "f3:Aqui-0.05",
+     "tipo": "celular",
+     "titulo": "Moradores Ed. Aurora",
+     "mensagens": [
+      {
+       "de": "Rafa (303)",
+       "texto": "[vídeo] CAM 4 · enviando... 99%",
+       "eu": true
+      }
+     ]
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f2",
+     "ate": "f3",
+     "texto": "A PROVA: *O VÍDEO*"
+    },
+    {
+     "de": "f3",
+     "texto": "*99%* E SEM SINAL"
+    }
+   ],
+   "relogio": {
+    "de": "f2",
+    "hora": "03:26"
+   },
+   "sons": [
+    {
+     "de": "f3:travou",
+     "som": "bip",
+     "volume": 0.3
+    }
+   ]
+  },
+  {
+   "cenario": "oficina",
+   "luz": "noite",
+   "ambiente": "noite",
+   "filtro": "frio",
+   "id": "interfone",
+   "de": "f4",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      0.6,
+      0.9
+     ],
+     "olhando": [
+      2.2,
+      1.25,
+      4.8
+     ],
+     "expressao": "medo",
+     "escala": 0.6,
+     "segura": "lanterna"
+    },
+    "rafa": {
+     "em": [
+      -0.6,
+      0.2
+     ],
+     "olhando": [
+      2.2,
+      1.25,
+      4.8
+     ],
+     "expressao": "medo",
+     "escala": 0.6
+    },
+    "jorge": {
+     "em": [
+      -1.9,
+      -2.1
+     ],
+     "olhando": [
+      0.4,
+      1.0,
+      1.4
+     ],
+     "expressao": "cansado",
+     "escala": 0.6,
+     "pose": "sentado"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.7,
+      -2.5
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.0,
+      -2.5
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.7,
+      -1.8
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.7,
+      -0.9
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -1.4,
+      -2.6
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      1.5,
+      -2.5
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.7,
+      -2.4
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.0,
+      -2.6
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.7,
+      -1.7
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.7,
+      -0.8
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.6,
+      0.3
+     ],
+     "escala": 0.9
+    }
+   ],
+   "planos": [
+    {
+     "de": "f4",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      0.4,
+      1.45,
+      2.6
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.3
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f3:fim",
+     "ate": "f4:fim+0.1",
+     "tipo": "interfone",
+     "titulo": "CENTRAL",
+     "quem": "marta"
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f3:fim",
+     "texto": "*O CAIO* VAI DESCER"
+    }
+   ],
+   "relogio": {
+    "de": "f4",
+    "hora": "03:27"
+   },
+   "sons": [
+    {
+     "de": "f3:fim",
+     "som": "bip",
+     "volume": 0.35
+    }
+   ]
+  },
+  {
+   "cenario": "oficina",
+   "luz": "noite",
+   "ambiente": "noite",
+   "filtro": "frio",
+   "id": "instinto",
+   "de": "f5",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      0.6,
+      0.9
+     ],
+     "olhando": [
+      2.2,
+      1.25,
+      4.8
+     ],
+     "expressao": "nervoso",
+     "escala": 0.6,
+     "segura": "lanterna"
+    },
+    "rafa": {
+     "em": [
+      -0.6,
+      0.2
+     ],
+     "olhando": [
+      2.2,
+      1.25,
+      4.8
+     ],
+     "expressao": "bravo",
+     "escala": 0.6
+    },
+    "jorge": {
+     "em": [
+      -1.9,
+      -2.1
+     ],
+     "olhando": [
+      0.4,
+      1.0,
+      1.4
+     ],
+     "expressao": "cansado",
+     "escala": 0.6,
+     "pose": "sentado"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.7,
+      -2.5
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.0,
+      -2.5
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.7,
+      -1.8
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.7,
+      -0.9
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -1.4,
+      -2.6
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      1.5,
+      -2.5
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.7,
+      -2.4
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.0,
+      -2.6
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.7,
+      -1.7
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.7,
+      -0.8
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.6,
+      0.3
+     ],
+     "escala": 0.9
+    }
+   ],
+   "planos": [
+    {
+     "de": "f5",
+     "tipo": "medio",
+     "alvo": "rafa",
+     "camera": [
+      3.2,
+      1.5,
+      5.6
+     ],
+     "movimento": "acompanhar",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f6",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      0.2,
+      1.5,
+      2.9
+     ],
+     "movimento": "zoom_rapido",
+     "intensidade": 0.25
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "rafa",
+     "faz": "andar",
+     "de": "f5",
+     "para": [
+      1.6,
+      3.6
+     ]
+    },
+    {
+     "quem": "rafa",
+     "faz": "puxar",
+     "de": "f5:esmurrar",
+     "para": [
+      2.0,
+      1.3,
+      4.6
+     ]
+    },
+    {
+     "quem": "porteiro",
+     "faz": "estender_mao",
+     "de": "f6",
+     "para": [
+      1.5,
+      1.25,
+      3.4
+     ],
+     "olhar": [
+      1.6,
+      1.4,
+      3.6
+     ]
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "rafa",
+     "texto": "RAFA · MOTOBOY DO 303",
+     "de": "f5:Rafa",
+     "ate": "f5:fim"
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f5",
+     "ate": "f6",
+     "texto": "ESMURRAR *A PORTA*?"
+    },
+    {
+     "de": "f6",
+     "texto": "*NÃO*"
+    }
+   ],
+   "relogio": {
+    "de": "f5",
+    "hora": "03:27"
+   },
+   "sons": [
+    {
+     "de": "f5:esmurrar",
+     "som": "impacto",
+     "volume": 0.3
+    },
+    {
+     "de": "f5:esmurrar+0.35",
+     "som": "impacto",
+     "volume": 0.3
+    }
+   ]
+  },
+  {
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "id": "predio",
+   "de": "f6:Quarenta",
+   "personagens": {},
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.0,
+     "semente": 9,
+     "acende": "f6:ELA",
+     "andar": 11,
+     "coluna": 2
+    }
+   ],
+   "planos": [
+    {
+     "de": "f6:Quarenta",
+     "tipo": "geral",
+     "alvo": [
+      0,
+      20,
+      -6
+     ],
+     "camera": [
+      4,
+      1.4,
+      10.5
+     ],
+     "movimento": "descer",
+     "intensidade": 0.35
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f6:Quarenta",
+     "ate": "f6:ELA",
+     "texto": "*48* APARTAMENTOS DORMINDO"
+    },
+    {
+     "de": "f6:ELA",
+     "texto": "SÓ *A SÍNDICA* OUVE"
+    }
+   ],
+   "relogio": {
+    "de": "f6:Quarenta",
+    "hora": "03:27"
+   }
+  },
+  {
+   "cenario": "oficina",
+   "luz": "noite",
+   "ambiente": "noite",
+   "filtro": "frio",
+   "id": "grade",
+   "de": "f7",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      2.2,
+      0.6
+     ],
+     "olhando": [
+      -1.9,
+      0.8,
+      -2.1
+     ],
+     "expressao": "nervoso",
+     "escala": 0.6,
+     "segura": "lanterna"
+    },
+    "rafa": {
+     "em": [
+      -0.2,
+      -0.6
+     ],
+     "olhando": [
+      -1.9,
+      0.8,
+      -2.1
+     ],
+     "expressao": "nervoso",
+     "escala": 0.6
+    },
+    "jorge": {
+     "em": [
+      -1.9,
+      -2.1
+     ],
+     "olhando": [
+      -0.6,
+      1.0,
+      0.2
+     ],
+     "expressao": "determinado",
+     "escala": 0.6,
+     "pose": "sentado"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.7,
+      -2.5
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.0,
+      -2.5
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.7,
+      -1.8
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.7,
+      -0.9
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -1.4,
+      -2.6
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      1.5,
+      -2.5
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.7,
+      -2.4
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.0,
+      -2.6
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.7,
+      -1.7
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.7,
+      -0.8
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.6,
+      0.3
+     ],
+     "escala": 0.9
+    }
+   ],
+   "planos": [
+    {
+     "de": "f7",
+     "tipo": "medio",
+     "alvo": "jorge",
+     "camera": [
+      -1.1,
+      1.05,
+      -0.7
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.3,
+     "transicao": "zoom"
+    },
+    {
+     "de": "f8",
+     "tipo": "aberto",
+     "alvo": [
+      -2.8,
+      1.3,
+      -2.0
+     ],
+     "camera": [
+      1.6,
+      1.0,
+      1.4
+     ],
+     "movimento": "subir",
+     "intensidade": 0.35
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "rafa",
+     "faz": "andar",
+     "de": "f8",
+     "para": [
+      -3.0,
+      -1.2
+     ]
+    },
+    {
+     "quem": "rafa",
+     "faz": "estender_mao",
+     "de": "f8:caixas",
+     "para": [
+      -2.7,
+      2.1,
+      -2.9
+     ]
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "jorge",
+     "texto": "SEU JORGE · 30 ANOS DE PORTARIA",
+     "de": "f7",
+     "ate": "f7:fim"
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f8",
+     "ate": "f8+1.5",
+     "efeito": "circular",
+     "alvo": [
+      -2.6,
+      1.82,
+      -2.95
+     ]
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f7",
+     "ate": "f8",
+     "texto": "A GRADE *PRA RUA*"
+    },
+    {
+     "de": "f8",
+     "texto": "A ESCADA: *A CARGA ROUBADA*"
+    }
+   ],
+   "relogio": {
+    "de": "f7",
+    "hora": "03:28"
+   }
+  },
+  {
+   "cenario": "oficina",
+   "luz": "noite",
+   "ambiente": "noite",
+   "filtro": "frio",
+   "id": "enviado",
+   "de": "f9",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      0.6,
+      0.9
+     ],
+     "olhando": [
+      -3.0,
+      1.6,
+      -1.2
+     ],
+     "expressao": "nervoso",
+     "escala": 0.6,
+     "segura": "lanterna"
+    },
+    "rafa": {
+     "em": [
+      -3.0,
+      -1.2
+     ],
+     "olhando": [
+      -2.7,
+      2.1,
+      -2.9
+     ],
+     "expressao": "feliz",
+     "escala": 0.6
+    },
+    "jorge": {
+     "em": [
+      -1.9,
+      -2.1
+     ],
+     "olhando": [
+      0.4,
+      1.0,
+      1.4
+     ],
+     "expressao": "cansado",
+     "escala": 0.6,
+     "pose": "sentado"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.7,
+      -2.5
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.0,
+      -2.5
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.7,
+      -1.8
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.7,
+      -0.9
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -1.4,
+      -2.6
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      1.5,
+      -2.5
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.7,
+      -2.4
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.0,
+      -2.6
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.7,
+      -1.7
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.7,
+      -0.8
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.6,
+      0.3
+     ],
+     "escala": 0.9
+    }
+   ],
+   "planos": [
+    {
+     "de": "f9",
+     "tipo": "close",
+     "alvo": "rafa",
+     "camera": [
+      -2.6,
+      1.3,
+      -2.65
+     ],
+     "movimento": "zoom_rapido",
+     "intensidade": 0.25
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "rafa",
+     "faz": "estender_mao",
+     "de": "f9",
+     "para": [
+      -2.7,
+      2.1,
+      -2.9
+     ]
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f9:Enviado-0.2",
+     "ate": "f10-0.05",
+     "tipo": "celular",
+     "titulo": "Moradores Ed. Aurora",
+     "mensagens": [
+      {
+       "de": "Rafa (303)",
+       "texto": "[vídeo] CAM 4 · 3 min 30 s ✓",
+       "eu": true
+      }
+     ]
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f9",
+     "texto": "*ENVIADO* PRO GRUPO",
+     "cor": "#2FD27A"
+    }
+   ],
+   "relogio": {
+    "de": "f9",
+    "hora": "03:29"
+   },
+   "sons": [
+    {
+     "de": "f9:Enviado",
+     "som": "pop",
+     "volume": 0.4
+    }
+   ]
+  },
+  {
+   "cenario": "oficina",
+   "luz": "noite",
+   "ambiente": "noite",
+   "filtro": "frio",
+   "id": "apagado",
+   "de": "f10",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      0.6,
+      0.9
+     ],
+     "olhando": [
+      -3.0,
+      1.6,
+      -1.2
+     ],
+     "expressao": "medo",
+     "escala": 0.6,
+     "segura": "lanterna"
+    },
+    "rafa": {
+     "em": [
+      -3.0,
+      -1.2
+     ],
+     "olhando": [
+      0.6,
+      1.5,
+      0.9
+     ],
+     "expressao": "medo",
+     "escala": 0.6
+    },
+    "jorge": {
+     "em": [
+      -1.9,
+      -2.1
+     ],
+     "olhando": [
+      0.4,
+      1.0,
+      1.4
+     ],
+     "expressao": "cansado",
+     "escala": 0.6,
+     "pose": "sentado"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.7,
+      -2.5
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.0,
+      -2.5
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.7,
+      -1.8
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.7,
+      -0.9
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -1.4,
+      -2.6
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      1.5,
+      -2.5
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.7,
+      -2.4
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.0,
+      -2.6
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.7,
+      -1.7
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.7,
+      -0.8
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.6,
+      0.3
+     ],
+     "escala": 0.9
+    }
+   ],
+   "planos": [
+    {
+     "de": "f10",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      -0.9,
+      1.5,
+      0.4
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.3
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f10:Dez",
+     "ate": "f11-0.05",
+     "tipo": "celular",
+     "titulo": "Moradores Ed. Aurora",
+     "mensagens": [
+      {
+       "de": "Dona Marta (síndica)",
+       "texto": "Mensagem apagada pela administradora"
+      }
+     ]
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f10",
+     "ate": "f10:Dez",
+     "texto": "A DONA DO GRUPO: *ELA*"
+    },
+    {
+     "de": "f10:Dez",
+     "texto": "O VÍDEO *SUMIU*"
+    }
+   ],
+   "relogio": {
+    "de": "f10",
+    "hora": "03:29"
+   },
+   "sons": [
+    {
+     "de": "f10:some",
+     "som": "impacto",
+     "volume": 0.35
+    }
+   ]
+  },
+  {
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "id": "cleide",
+   "de": "f11",
+   "personagens": {},
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.0,
+     "semente": 9,
+     "acende": "f11:Cleide",
+     "andar": 6,
+     "coluna": 3
+    }
+   ],
+   "planos": [
+    {
+     "de": "f11",
+     "tipo": "geral",
+     "alvo": [
+      0,
+      12,
+      -6
+     ],
+     "camera": [
+      -3,
+      1.5,
+      10.5
+     ],
+     "movimento": "subir",
+     "intensidade": 0.3
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f11:baixado",
+     "ate": "f12-0.05",
+     "tipo": "celular",
+     "titulo": "Dona Cleide (704)",
+     "mensagens": [
+      {
+       "de": "Dona Cleide (704)",
+       "texto": "Eu salvei o vídeo antes. Já liguei 190."
+      }
+     ]
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f11",
+     "ate": "f11:baixado",
+     "texto": "A DONA CLEIDE *NÃO DORME*"
+    },
+    {
+     "de": "f11:baixado",
+     "texto": "*190*",
+     "cor": "#2FD27A"
+    }
+   ],
+   "relogio": {
+    "de": "f11",
+    "hora": "03:30"
+   },
+   "sons": [
+    {
+     "de": "f11:baixado",
+     "som": "pop",
+     "volume": 0.35
+    }
+   ]
+  },
+  {
+   "cenario": "oficina",
+   "luz": "noite",
+   "ambiente": "noite",
+   "filtro": "frio",
+   "id": "porta",
+   "de": "f12",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      0.6,
+      0.9
+     ],
+     "olhando": [
+      1.9,
+      1.5,
+      3.0
+     ],
+     "expressao": "medo",
+     "escala": 0.6,
+     "segura": "lanterna"
+    },
+    "rafa": {
+     "em": [
+      -0.6,
+      0.2
+     ],
+     "olhando": [
+      1.9,
+      1.5,
+      3.0
+     ],
+     "expressao": "medo",
+     "escala": 0.6
+    },
+    "jorge": {
+     "em": [
+      -1.9,
+      -2.1
+     ],
+     "olhando": [
+      1.9,
+      1.5,
+      3.0
+     ],
+     "expressao": "medo",
+     "escala": 0.6,
+     "pose": "sentado"
+    },
+    "caio": {
+     "em": [
+      2.2,
+      4.6
+     ],
+     "olhando": [
+      -0.8,
+      1.4,
+      1.6
+     ],
+     "expressao": "feliz",
+     "escala": 0.6,
+     "segura": "lanterna"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.7,
+      -2.5
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.0,
+      -2.5
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.7,
+      -1.8
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.7,
+      -0.9
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -1.4,
+      -2.6
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      1.5,
+      -2.5
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.7,
+      -2.4
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.0,
+      -2.6
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.7,
+      -1.7
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      3.7,
+      -0.8
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "caixote",
+     "em": [
+      -3.6,
+      0.3
+     ],
+     "escala": 0.9
+    },
+    {
+     "tipo": "feixe_luz",
+     "de": [
+      3.4,
+      2.4,
+      6.0
+     ],
+     "em": [
+      2.2,
+      3.6
+     ],
+     "largura": 1.4,
+     "cor": "#FF2A2A",
+     "intensidade": 0.5,
+     "varrer": 35,
+     "aparece": "f14:Atrás"
+    },
+    {
+     "tipo": "feixe_luz",
+     "de": [
+      1.2,
+      2.4,
+      6.0
+     ],
+     "em": [
+      1.6,
+      3.2
+     ],
+     "largura": 1.4,
+     "cor": "#2A6BFF",
+     "intensidade": 0.5,
+     "varrer": 35,
+     "aparece": "f14:Atrás+0.3"
+    }
+   ],
+   "planos": [
+    {
+     "de": "f12",
+     "tipo": "medio",
+     "alvo": "caio",
+     "camera": [
+      -1.5,
+      1.4,
+      3.6
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.3,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f13",
+     "tipo": "close",
+     "alvo": "caio",
+     "camera": [
+      0.0,
+      1.45,
+      3.2
+     ],
+     "movimento": "zoom_rapido",
+     "intensidade": 0.25
+    },
+    {
+     "de": "f14",
+     "tipo": "medio",
+     "alvo": [
+      1.9,
+      1.2,
+      3.0
+     ],
+     "camera": [
+      -1.5,
+      1.4,
+      3.6
+     ],
+     "movimento": "tremer",
+     "intensidade": 0.3
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "caio",
+     "faz": "andar",
+     "de": "f12:abre",
+     "para": [
+      1.9,
+      3.0
+     ]
+    },
+    {
+     "quem": "caio",
+     "faz": "virar",
+     "de": "f14:Atrás",
+     "para": [
+      2.6,
+      6.0
+     ]
+    },
+    {
+     "quem": "porteiro",
+     "faz": "susto",
+     "de": "f12:abre"
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f12:abre-0.6",
+     "ate": "f12:abre+1.0",
+     "efeito": "letreiro",
+     "texto": "20 MIN DEPOIS",
+     "altura": 0.55
+    },
+    {
+     "de": "f14:vermelha",
+     "ate": "f14:vermelha+0.4",
+     "efeito": "flash"
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "caio",
+     "texto": "CAIO · SOBRINHO DA SÍNDICA",
+     "de": "f13",
+     "ate": "f13:fim"
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f12",
+     "ate": "f13",
+     "texto": "A PORTA *ABRE*"
+    },
+    {
+     "de": "f13",
+     "ate": "f14",
+     "texto": "EDUCADO *DEMAIS*"
+    },
+    {
+     "de": "f14",
+     "texto": "*VERMELHO E AZUL*"
+    }
+   ],
+   "relogio": {
+    "de": "f12",
+    "hora": "03:47"
+   },
+   "sons": [
+    {
+     "de": "f12:abre",
+     "som": "clique",
+     "volume": 0.45
+    },
+    {
+     "de": "f14:Atrás",
+     "som": "alarme",
+     "volume": 0.3
+    }
+   ]
+  },
+  {
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "id": "policia",
+   "de": "f15",
+   "personagens": {
+    "caio": {
+     "em": [
+      7.0,
+      -5.0
+     ],
+     "olhando": [
+      5.6,
+      1.4,
+      0.5
+     ],
+     "expressao": "triste",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.0,
+     "semente": 9
+    },
+    {
+     "tipo": "feixe_luz",
+     "de": [
+      7.0,
+      2.6,
+      -8.5
+     ],
+     "em": [
+      6.6,
+      -3.5
+     ],
+     "largura": 2.0,
+     "cor": "#FF2A2A",
+     "intensidade": 0.55,
+     "varrer": 40
+    },
+    {
+     "tipo": "feixe_luz",
+     "de": [
+      7.4,
+      2.6,
+      -8.5
+     ],
+     "em": [
+      7.4,
+      -3.0
+     ],
+     "largura": 2.0,
+     "cor": "#2A6BFF",
+     "intensidade": 0.55,
+     "varrer": 40
+    }
+   ],
+   "planos": [
+    {
+     "de": "f15",
+     "tipo": "aberto",
+     "alvo": [
+      6.6,
+      1.0,
+      -4.2
+     ],
+     "camera": [
+      3.5,
+      3.4,
+      -1.5
+     ],
+     "movimento": "fixo",
+     "transicao": "chicote"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "caio",
+     "faz": "andar",
+     "de": "f15",
+     "para": [
+      6.5,
+      -3.5
+     ]
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f15",
+     "ate": "f16-0.05",
+     "tipo": "cctv",
+     "titulo": "CAM 4 · GARAGEM",
+     "hora": "03:48"
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f15",
+     "texto": "*POLÍCIA* NA GARAGEM"
+    }
+   ],
+   "relogio": {
+    "de": "f15",
+    "hora": "03:48"
+   },
+   "sons": [
+    {
+     "de": "f15",
+     "som": "alarme",
+     "volume": 0.3
+    }
+   ]
+  },
+  {
+   "cenario": "portaria",
+   "ambiente": "noite",
+   "id": "portao",
+   "de": "f16",
+   "personagens": {
+    "porteiro": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -1.0,
+      1.4,
+      5.2
+     ],
+     "expressao": "determinado",
+     "escala": 0.6
+    },
+    "marta": {
+     "em": [
+      1.2,
+      -3.8
+     ],
+     "olhando": [
+      -1.0,
+      1.4,
+      5.6
+     ],
+     "expressao": "medo",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.0,
+     "semente": 9
+    },
+    {
+     "tipo": "feixe_luz",
+     "de": [
+      -0.8,
+      2.4,
+      10.0
+     ],
+     "em": [
+      -0.9,
+      5.4
+     ],
+     "largura": 1.8,
+     "cor": "#FF2A2A",
+     "intensidade": 0.45,
+     "varrer": 35,
+     "aparece": "f19"
+    },
+    {
+     "tipo": "feixe_luz",
+     "de": [
+      0.4,
+      2.4,
+      10.0
+     ],
+     "em": [
+      -0.6,
+      5.0
+     ],
+     "largura": 1.8,
+     "cor": "#2A6BFF",
+     "intensidade": 0.45,
+     "varrer": 35,
+     "aparece": "f19+0.3"
+    }
+   ],
+   "planos": [
+    {
+     "de": "f16",
+     "tipo": "aberto",
+     "alvo": [
+      0.2,
+      1.0,
+      1.0
+     ],
+     "camera": [
+      3.4,
+      3.2,
+      8.6
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f17",
+     "tipo": "close",
+     "alvo": "marta",
+     "camera": [
+      -2.5,
+      1.45,
+      4.8
+     ],
+     "movimento": "zoom_rapido",
+     "intensidade": 0.25
+    },
+    {
+     "de": "f18",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      -2.5,
+      1.5,
+      4.9
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f19",
+     "tipo": "close",
+     "alvo": "marta",
+     "camera": [
+      -2.6,
+      1.45,
+      4.6
+     ],
+     "movimento": "dolly_zoom",
+     "intensidade": 0.8
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "marta",
+     "faz": "correr",
+     "de": "f16",
+     "para": [
+      -1.0,
+      5.2
+     ]
+    },
+    {
+     "quem": "marta",
+     "faz": "virar",
+     "de": "f17",
+     "para": [
+      -4.4,
+      5.0
+     ]
+    },
+    {
+     "quem": "marta",
+     "faz": "estender_mao",
+     "de": "f17:AGORA",
+     "para": [
+      -0.9,
+      1.3,
+      6.0
+     ]
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "marta",
+     "texto": "DONA MARTA · SÍNDICA",
+     "de": "f17",
+     "ate": "f17:fim",
+     "altura": 0.34
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f19",
+     "ate": "f19:fim+0.5",
+     "efeito": "barras"
+    },
+    {
+     "de": "f19:mesma",
+     "ate": "f19:fim+0.4",
+     "efeito": "destacar",
+     "alvo": "marta"
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f16",
+     "ate": "f17",
+     "texto": "A SÍNDICA *FOGE*"
+    },
+    {
+     "de": "f17",
+     "ate": "f18",
+     "texto": "\"ABRE *O PORTÃO*\""
+    },
+    {
+     "de": "f18",
+     "ate": "f19",
+     "texto": "REGRA 1: *O PORTÃO NÃO ABRE*"
+    },
+    {
+     "de": "f19",
+     "texto": "A REGRA *DELA MESMA*"
+    }
+   ],
+   "relogio": {
+    "de": "f16",
+    "hora": "03:52"
+   },
+   "filtro": "dramatico",
+   "sons": [
+    {
+     "de": "f17:AGORA",
+     "som": "impacto",
+     "volume": 0.35
+    },
+    {
+     "de": "f19",
+     "som": "alarme",
+     "volume": 0.3
+    },
+    {
+     "de": "f19:mesma",
+     "som": "tensao_sobe",
+     "volume": 0.35
+    }
+   ]
+  },
+  {
+   "cenario": "portaria",
+   "luz": "dia",
+   "id": "manha",
+   "de": "f20",
+   "filtro": "quente",
+   "personagens": {
+    "jorge": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -3.0,
+      1.4,
+      7.6
+     ],
+     "expressao": "feliz",
+     "escala": 0.6
+    },
+    "porteiro": {
+     "em": [
+      -3.0,
+      7.6
+     ],
+     "olhando": [
+      -4.4,
+      1.4,
+      5.8
+     ],
+     "expressao": "feliz",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.35,
+     "semente": 5
+    }
+   ],
+   "planos": [
+    {
+     "de": "f20",
+     "tipo": "geral",
+     "alvo": [
+      0,
+      14,
+      -6
+     ],
+     "camera": [
+      3,
+      1.6,
+      9
+     ],
+     "movimento": "arco",
+     "intensidade": 0.25,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f20:Seu",
+     "tipo": "close",
+     "alvo": "jorge",
+     "camera": [
+      -4.6,
+      1.4,
+      7.2
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f21",
+     "tipo": "medio",
+     "alvo": "jorge",
+     "camera": [
+      -4.4,
+      1.6,
+      8.3
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.25
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f20:Marta",
+     "ate": "f20:Seu-0.05",
+     "tipo": "celular",
+     "titulo": "Moradores Ed. Aurora",
+     "mensagens": [
+      {
+       "de": "Aviso",
+       "texto": "Dona Marta foi removida do cargo de síndica"
+      },
+      {
+       "de": "Dona Cleide (704)",
+       "texto": "Obrigada, porteiro!"
+      }
+     ]
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f20",
+     "ate": "f20+1.6",
+     "efeito": "letreiro",
+     "texto": "6H",
+     "altura": 0.5
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "jorge",
+     "texto": "SEU JORGE · DE VOLTA",
+     "de": "f20:Seu",
+     "ate": "f20:fim",
+     "altura": 0.34
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f20",
+     "ate": "f20:Seu",
+     "texto": "A SÍNDICA *FORA*",
+     "cor": "#2FD27A"
+    },
+    {
+     "de": "f20:Seu",
+     "ate": "f21",
+     "texto": "O JORGE *DE VOLTA*",
+     "cor": "#2FD27A"
+    },
+    {
+     "de": "f21",
+     "texto": "A VAGA DA NOITE *É SUA*",
+     "cor": "#2FD27A"
+    }
+   ],
+   "relogio": {
+    "de": "f20",
+    "hora": "06:02"
+   },
+   "sons": [
+    {
+     "de": "f20:Marta",
+     "som": "pop",
+     "volume": 0.3
+    }
+   ]
+  },
+  {
+   "cenario": "portaria",
+   "luz": "dia",
+   "id": "regra",
+   "de": "f22",
+   "filtro": "quente",
+   "personagens": {
+    "jorge": {
+     "em": [
+      -4.75,
+      4.3
+     ],
+     "olhando": [
+      -3.0,
+      1.4,
+      7.6
+     ],
+     "expressao": "feliz",
+     "escala": 0.6
+    },
+    "porteiro": {
+     "em": [
+      -3.0,
+      7.6
+     ],
+     "olhando": [
+      -4.4,
+      1.4,
+      5.8
+     ],
+     "expressao": "feliz",
+     "escala": 0.6
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "luzes_predio",
+     "em": "patio",
+     "acesas": 0.35,
+     "semente": 5
+    }
+   ],
+   "planos": [
+    {
+     "de": "f22",
+     "tipo": "close",
+     "alvo": "porteiro",
+     "camera": [
+      -4.4,
+      1.5,
+      5.75
+     ],
+     "movimento": "aproximar",
+     "intensidade": 0.3
+    }
+   ],
+   "insercoes": [
+    {
+     "de": "f22:livro",
+     "ate": "f23:fim+0.5",
+     "tipo": "bilhete",
+     "titulo": "Livro da portaria — Jorge",
+     "linhas": [
+      "REGRA 1: O PORTÃO NÃO ABRE.",
+      "REGRA 2: NÃO SAIA DA GUARITA.",
+      "REGRA 3: CONFIE NO",
+      "PORTEIRO DA NOITE."
+     ]
+    }
+   ],
+   "manchetes": [
+    {
+     "de": "f22",
+     "ate": "f23",
+     "texto": "UMA *REGRA NOVA*"
+    },
+    {
+     "de": "f23",
+     "texto": "A *ÚLTIMA* REGRA",
+     "cor": "#2FD27A"
+    }
+   ],
+   "relogio": {
+    "de": "f22",
+    "hora": "06:05"
+   },
+   "sons": [
+    {
+     "de": "f22:livro",
+     "som": "folhas",
+     "volume": 0.4
+    }
+   ]
+  }
+ ],
+ "chamada": {
+  "pergunta": "Quem foi pior: a síndica ou o sobrinho?",
+  "texto": "COMENTA",
+  "destaque": "FIM"
+ },
+ "postagem": {
+  "titulo": "Trancados no subsolo com o porteiro sumido",
+  "descricao": "Última noite do porteiro novo no Edifício Aurora: trancado no apartamento 0 com o Seu Jorge, você tem o vídeo que prova tudo e nenhum sinal no subsolo.",
+  "hashtags": [
+   "historiadeterror",
+   "suspense",
+   "porteiro",
+   "animacao"
+  ],
+  "comentario": "Pra mim o pior foi o sobrinho: educado demais até no fim. E pra você, quem foi pior?",
+  "capa": "f13:Desculpa"
+ }
+}
