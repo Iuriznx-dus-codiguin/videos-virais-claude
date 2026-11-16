@@ -328,14 +328,14 @@
     "id": "mig0",
     "forma": "esfera",
     "tam": [
-     0.006
+     0.011
     ],
     "pos": [
      0.062,
-     0.254,
+     0.256,
      0.012
     ],
-    "cor": "#111111",
+    "cor": "#5A5A5A",
     "sem_contorno": true,
     "oculta": true
    },
@@ -343,14 +343,14 @@
     "id": "mig1",
     "forma": "esfera",
     "tam": [
-     0.006
+     0.011
     ],
     "pos": [
      0.096,
-     0.254,
+     0.256,
      -0.01
     ],
-    "cor": "#111111",
+    "cor": "#5A5A5A",
     "sem_contorno": true,
     "oculta": true
    },
@@ -358,14 +358,14 @@
     "id": "mig2",
     "forma": "esfera",
     "tam": [
-     0.006
+     0.011
     ],
     "pos": [
      0.074,
-     0.254,
+     0.256,
      -0.016
     ],
-    "cor": "#111111",
+    "cor": "#5A5A5A",
     "sem_contorno": true,
     "oculta": true
    },
@@ -373,14 +373,14 @@
     "id": "mig3",
     "forma": "esfera",
     "tam": [
-     0.006
+     0.011
     ],
     "pos": [
      0.092,
-     0.254,
+     0.256,
      0.016
     ],
-    "cor": "#111111",
+    "cor": "#5A5A5A",
     "sem_contorno": true,
     "oculta": true
    },
@@ -388,14 +388,14 @@
     "id": "mig4",
     "forma": "esfera",
     "tam": [
-     0.006
+     0.011
     ],
     "pos": [
      0.06,
-     0.254,
+     0.256,
      -0.004
     ],
-    "cor": "#111111",
+    "cor": "#5A5A5A",
     "sem_contorno": true,
     "oculta": true
    },
@@ -403,14 +403,14 @@
     "id": "mig5",
     "forma": "esfera",
     "tam": [
-     0.006
+     0.011
     ],
     "pos": [
      0.1,
-     0.254,
+     0.256,
      0.004
     ],
-    "cor": "#111111",
+    "cor": "#5A5A5A",
     "sem_contorno": true,
     "oculta": true
    },
@@ -972,9 +972,9 @@
       0.112
      ],
      "alt": 1.252,
-     "raio": 0.03,
-     "altura": 0.15,
-     "quantas": 12,
+     "raio": 0.05,
+     "altura": 0.2,
+     "quantas": 22,
      "aparece": "f9:raspando",
      "some": "f10"
     },
@@ -1932,7 +1932,7 @@
     {
      "peca": "disco",
      "faz": "aquecer",
-     "intensidade": 1.2,
+     "intensidade": 0.7,
      "de": "f11:trezentos",
      "ate": "f12:quente"
     },
@@ -2638,13 +2638,13 @@
      "de": "inicio",
      "tipo": "detalhe",
      "camera": [
-      -0.05,
-      1.42,
-      1.95
+      0.0,
+      1.38,
+      1.6
      ],
      "alvo": [
-      -0.056,
-      1.196,
+      -0.042,
+      1.168,
       0.028
      ],
      "movimento": "arco",
@@ -2826,9 +2826,9 @@
      "de": "f8",
      "tipo": "aberto",
      "camera": [
-      0.06,
-      1.4,
-      1.6
+      0.05,
+      1.37,
+      1.28
      ],
      "alvo": [
       0.0,
@@ -2989,9 +2989,9 @@
      "de": "f15",
      "tipo": "aberto",
      "camera": [
-      0.06,
-      1.4,
-      1.6
+      0.05,
+      1.37,
+      1.28
      ],
      "alvo": [
       0.0,

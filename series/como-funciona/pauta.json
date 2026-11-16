@@ -417,7 +417,8 @@
     "combustão"
    ],
    "gancho": "Seu carro anda com milhares de explosões pequenas por minuto.",
-   "status": "roteiro"
+   "status": "produzido",
+   "dia": "2026-11-16"
   },
   {
    "n": 25,
@@ -433,7 +434,7 @@
     "multiplicação de força"
    ],
    "gancho": "Seu pé faz pouca força. O óleo multiplica.",
-   "status": "pendente"
+   "status": "roteiro"
   },
   {
    "n": 26,
