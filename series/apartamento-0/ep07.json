@@ -321,9 +321,9 @@
      "tipo": "close",
      "alvo": "porteiro",
      "camera": [
-      0.9,
+      1.1,
       1.45,
-      2.6
+      3.1
      ],
      "movimento": "zoom_rapido",
      "intensidade": 0.3
@@ -510,9 +510,9 @@
      "tipo": "close",
      "alvo": "porteiro",
      "camera": [
-      0.9,
+      1.1,
       1.45,
-      2.6
+      3.1
      ],
      "movimento": "tremer",
      "intensidade": 0.25
@@ -702,9 +702,9 @@
      "tipo": "close",
      "alvo": "porteiro",
      "camera": [
-      0.4,
+      0.3,
       1.45,
-      2.6
+      3.0
      ],
      "movimento": "aproximar",
      "intensidade": 0.3
@@ -944,14 +944,15 @@
      "alvo": "rafa",
      "texto": "RAFA · MOTOBOY DO 303",
      "de": "f5:Rafa",
-     "ate": "f5:fim"
+     "ate": "f5:fim",
+     "altura": 0.34
     }
    ],
    "manchetes": [
     {
      "de": "f5",
      "ate": "f6",
-     "texto": "ESMURRAR *A PORTA*?"
+     "texto": "*ESMURRAR*?"
     },
     {
      "de": "f6",
@@ -998,16 +999,16 @@
      "tipo": "geral",
      "alvo": [
       0,
-      20,
+      30,
       -6
      ],
      "camera": [
+      5,
       4,
-      1.4,
-      10.5
+      22
      ],
-     "movimento": "descer",
-     "intensidade": 0.35
+     "movimento": "aproximar",
+     "intensidade": 0.3
     }
    ],
    "manchetes": [
@@ -1050,8 +1051,8 @@
     },
     "rafa": {
      "em": [
-      -0.2,
-      -0.6
+      0.3,
+      -0.4
      ],
      "olhando": [
       -1.9,
@@ -1172,9 +1173,9 @@
      "tipo": "medio",
      "alvo": "jorge",
      "camera": [
-      -1.1,
-      1.05,
-      -0.7
+      -0.8,
+      1.2,
+      -0.1
      ],
      "movimento": "aproximar",
      "intensidade": 0.3,
@@ -1223,7 +1224,8 @@
      "alvo": "jorge",
      "texto": "SEU JORGE · 30 ANOS DE PORTARIA",
      "de": "f7",
-     "ate": "f7:fim"
+     "ate": "f7:fim",
+     "altura": 0.72
     }
    ],
    "efeitos": [
@@ -1397,7 +1399,7 @@
    "planos": [
     {
      "de": "f9",
-     "tipo": "close",
+     "tipo": "medio",
      "alvo": "rafa",
      "camera": [
       -2.6,
@@ -1600,9 +1602,9 @@
      "tipo": "close",
      "alvo": "porteiro",
      "camera": [
-      -0.9,
+      -1.3,
       1.5,
-      0.4
+      0.15
      ],
      "movimento": "aproximar",
      "intensidade": 0.3
@@ -1667,16 +1669,16 @@
      "de": "f11",
      "tipo": "geral",
      "alvo": [
-      0,
-      12,
+      3.8,
+      22,
       -6
      ],
      "camera": [
-      -3,
-      1.5,
-      10.5
+      -2,
+      3,
+      18
      ],
-     "movimento": "subir",
+     "movimento": "aproximar",
      "intensidade": 0.3
     }
    ],
@@ -1732,9 +1734,9 @@
       0.9
      ],
      "olhando": [
-      1.9,
+      3.4,
       1.5,
-      3.0
+      2.4
      ],
      "expressao": "medo",
      "escala": 0.6,
@@ -1746,9 +1748,9 @@
       0.2
      ],
      "olhando": [
-      1.9,
+      3.4,
       1.5,
-      3.0
+      2.4
      ],
      "expressao": "medo",
      "escala": 0.6
@@ -1759,9 +1761,9 @@
       -2.1
      ],
      "olhando": [
-      1.9,
+      3.4,
       1.5,
-      3.0
+      2.4
      ],
      "expressao": "medo",
      "escala": 0.6,
@@ -1769,8 +1771,8 @@
     },
     "caio": {
      "em": [
-      2.2,
-      4.6
+      4.2,
+      2.6
      ],
      "olhando": [
       -0.8,
@@ -1874,35 +1876,35 @@
     {
      "tipo": "feixe_luz",
      "de": [
-      3.4,
+      4.5,
       2.4,
-      6.0
+      3.9
      ],
      "em": [
-      2.2,
-      3.6
+      2.6,
+      3.9
      ],
-     "largura": 1.4,
+     "largura": 1.0,
      "cor": "#FF2A2A",
-     "intensidade": 0.5,
-     "varrer": 35,
+     "intensidade": 0.3,
+     "varrer": 30,
      "aparece": "f14:Atrás"
     },
     {
      "tipo": "feixe_luz",
      "de": [
-      1.2,
+      4.5,
       2.4,
-      6.0
+      0.9
      ],
      "em": [
-      1.6,
-      3.2
+      2.6,
+      0.9
      ],
-     "largura": 1.4,
+     "largura": 1.0,
      "cor": "#2A6BFF",
-     "intensidade": 0.5,
-     "varrer": 35,
+     "intensidade": 0.3,
+     "varrer": 30,
      "aparece": "f14:Atrás+0.3"
     }
    ],
@@ -1912,9 +1914,9 @@
      "tipo": "medio",
      "alvo": "caio",
      "camera": [
-      -1.5,
+      0.0,
       1.4,
-      3.6
+      2.0
      ],
      "movimento": "aproximar",
      "intensidade": 0.3,
@@ -1925,9 +1927,9 @@
      "tipo": "close",
      "alvo": "caio",
      "camera": [
-      0.0,
+      0.6,
       1.45,
-      3.2
+      2.9
      ],
      "movimento": "zoom_rapido",
      "intensidade": 0.25
@@ -1935,15 +1937,11 @@
     {
      "de": "f14",
      "tipo": "medio",
-     "alvo": [
-      1.9,
-      1.2,
-      3.0
-     ],
+     "alvo": "caio",
      "camera": [
-      -1.5,
+      0.0,
       1.4,
-      3.6
+      2.0
      ],
      "movimento": "tremer",
      "intensidade": 0.3
@@ -1955,18 +1953,15 @@
      "faz": "andar",
      "de": "f12:abre",
      "para": [
-      1.9,
-      3.0
+      3.4,
+      2.4
      ]
     },
     {
      "quem": "caio",
-     "faz": "virar",
-     "de": "f14:Atrás",
-     "para": [
-      2.6,
-      6.0
-     ]
+     "faz": "susto",
+     "de": "f14:vermelha",
+     "expressao": "medo"
     },
     {
      "quem": "porteiro",
@@ -1993,7 +1988,8 @@
      "alvo": "caio",
      "texto": "CAIO · SOBRINHO DA SÍNDICA",
      "de": "f13",
-     "ate": "f13:fim"
+     "ate": "f13:fim",
+     "altura": 0.34
     }
    ],
    "manchetes": [
@@ -2159,20 +2155,20 @@
      "olhando": [
       -1.0,
       1.4,
-      5.2
+      4.2
      ],
      "expressao": "determinado",
      "escala": 0.6
     },
     "marta": {
      "em": [
-      1.2,
-      -3.8
+      0.6,
+      0.2
      ],
      "olhando": [
       -1.0,
       1.4,
-      5.6
+      4.6
      ],
      "expressao": "medo",
      "escala": 0.6
@@ -2190,11 +2186,11 @@
      "de": [
       -0.8,
       2.4,
-      10.0
+      9.0
      ],
      "em": [
-      -0.9,
-      5.4
+      -1.2,
+      4.0
      ],
      "largura": 1.8,
      "cor": "#FF2A2A",
@@ -2207,11 +2203,11 @@
      "de": [
       0.4,
       2.4,
-      10.0
+      9.0
      ],
      "em": [
       -0.6,
-      5.0
+      3.6
      ],
      "largura": 1.8,
      "cor": "#2A6BFF",
@@ -2224,30 +2220,25 @@
     {
      "de": "f16",
      "tipo": "aberto",
-     "alvo": [
-      0.2,
-      1.0,
-      1.0
-     ],
+     "alvo": "marta",
      "camera": [
-      3.4,
-      3.2,
-      8.6
+      4.0,
+      1.8,
+      2.5
      ],
-     "movimento": "travelling",
-     "intensidade": 0.3
+     "movimento": "acompanhar"
     },
     {
      "de": "f17",
      "tipo": "close",
      "alvo": "marta",
      "camera": [
-      -2.5,
+      -3.2,
       1.45,
-      4.8
+      3.9
      ],
      "movimento": "zoom_rapido",
-     "intensidade": 0.25
+     "intensidade": 0.2
     },
     {
      "de": "f18",
@@ -2266,9 +2257,9 @@
      "tipo": "close",
      "alvo": "marta",
      "camera": [
-      -2.6,
+      -2.5,
       1.45,
-      4.6
+      2.9
      ],
      "movimento": "dolly_zoom",
      "intensidade": 0.8
@@ -2281,7 +2272,7 @@
      "de": "f16",
      "para": [
       -1.0,
-      5.2
+      4.2
      ]
     },
     {
@@ -2290,17 +2281,23 @@
      "de": "f17",
      "para": [
       -4.4,
-      5.0
+      1.4,
+      4.3
+     ],
+     "olhar": [
+      -4.4,
+      1.5,
+      4.3
      ]
     },
     {
      "quem": "marta",
-     "faz": "estender_mao",
+     "faz": "apontar",
      "de": "f17:AGORA",
      "para": [
-      -0.9,
-      1.3,
-      6.0
+      -4.4,
+      1.4,
+      4.4
      ]
     }
    ],
@@ -2310,7 +2307,7 @@
      "texto": "DONA MARTA · SÍNDICA",
      "de": "f17",
      "ate": "f17:fim",
-     "altura": 0.34
+     "altura": 0.8
     }
    ],
    "efeitos": [
@@ -2340,7 +2337,7 @@
     {
      "de": "f18",
      "ate": "f19",
-     "texto": "REGRA 1: *O PORTÃO NÃO ABRE*"
+     "texto": "REGRA 1: *NÃO ABRE*"
     },
     {
      "de": "f19",
