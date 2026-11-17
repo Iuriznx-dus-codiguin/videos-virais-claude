@@ -1,0 +1,2750 @@
+{
+ "serie": "como-funciona",
+ "parte": 26,
+ "titulo": "Como o airbag enche mais rápido que um piscar?",
+ "musica": "curiosidade",
+ "personagens": {
+  "hetrick": {
+   "nome": "John W. Hetrick",
+   "papel": "engenheiro americano; em 1952, depois de desviar de uma pedra com a esposa e a filha no carro, pediu a patente de uma \"almofada de segurança\" que enchia com ar comprimido de um tanque na batida (US 2,649,311, de 1953), um dos primeiros desenhos de airbag; não fala",
+   "visual": {
+    "altura": 1,
+    "corpo": "#3E5C76",
+    "cabeca": "#F2D5BD",
+    "olhos": "redondos",
+    "sobrancelhas": "grossas",
+    "acessorios": [
+     {
+      "tipo": "cabelo_curto",
+      "cor": "#4E342E"
+     },
+     {
+      "tipo": "oculos",
+      "cor": "#212121"
+     },
+     {
+      "tipo": "colete",
+      "cor": "#6D4C41"
+     }
+    ]
+   }
+  }
+ },
+ "modelos": {
+  "airbag": [
+   {
+    "id": "piso",
+    "forma": "caixa",
+    "tam": [
+     0.46,
+     0.02,
+     0.27
+    ],
+    "pos": [
+     -0.03,
+     0.01,
+     0
+    ],
+    "cor": "#546E7A"
+   },
+   {
+    "id": "muro",
+    "forma": "caixa",
+    "tam": [
+     0.04,
+     0.17,
+     0.26
+    ],
+    "pos": [
+     0.18,
+     0.105,
+     0
+    ],
+    "cor": "#CFD8DC"
+   },
+   {
+    "id": "listra0",
+    "forma": "caixa",
+    "tam": [
+     0.042,
+     0.022,
+     0.262
+    ],
+    "pos": [
+     0.18,
+     0.06,
+     0
+    ],
+    "cor": "#FFD600",
+    "sem_contorno": true
+   },
+   {
+    "id": "listra1",
+    "forma": "caixa",
+    "tam": [
+     0.042,
+     0.022,
+     0.262
+    ],
+    "pos": [
+     0.18,
+     0.1,
+     0
+    ],
+    "cor": "#212121",
+    "sem_contorno": true
+   },
+   {
+    "id": "listra2",
+    "forma": "caixa",
+    "tam": [
+     0.042,
+     0.022,
+     0.262
+    ],
+    "pos": [
+     0.18,
+     0.14,
+     0
+    ],
+    "cor": "#FFD600",
+    "sem_contorno": true
+   },
+   {
+    "id": "carro",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     -0.05,
+     0.02,
+     0
+    ],
+    "cor": "#95A5A6",
+    "sem_contorno": true
+   },
+   {
+    "id": "chassi",
+    "forma": "caixa",
+    "tam": [
+     0.3,
+     0.03,
+     0.2
+    ],
+    "pos": [
+     0,
+     0.045,
+     0
+    ],
+    "cor": "#E53935",
+    "pai": "carro"
+   },
+   {
+    "id": "capo",
+    "forma": "caixa",
+    "tam": [
+     0.07,
+     0.05,
+     0.2
+    ],
+    "pos": [
+     0.11,
+     0.085,
+     0
+    ],
+    "cor": "#E53935",
+    "pai": "carro"
+   },
+   {
+    "id": "parachoque",
+    "forma": "caixa",
+    "tam": [
+     0.012,
+     0.03,
+     0.21
+    ],
+    "pos": [
+     0.153,
+     0.05,
+     0
+    ],
+    "cor": "#37474F",
+    "pai": "carro"
+   },
+   {
+    "id": "farol",
+    "forma": "esfera",
+    "tam": [
+     0.01
+    ],
+    "pos": [
+     0.145,
+     0.09,
+     0.09
+    ],
+    "cor": "#FFF59D",
+    "sem_contorno": true,
+    "pai": "carro"
+   },
+   {
+    "id": "painel",
+    "forma": "caixa",
+    "tam": [
+     0.04,
+     0.05,
+     0.18
+    ],
+    "pos": [
+     0.065,
+     0.12,
+     0
+    ],
+    "cor": "#37474F",
+    "pai": "carro"
+   },
+   {
+    "id": "parabrisa",
+    "forma": "caixa",
+    "tam": [
+     0.004,
+     0.11,
+     0.18
+    ],
+    "pos": [
+     0.068,
+     0.19,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     35
+    ],
+    "cor": "#B3E5FC",
+    "opacidade": 0.3,
+    "sem_contorno": true,
+    "pai": "carro"
+   },
+   {
+    "id": "teto",
+    "forma": "caixa",
+    "tam": [
+     0.19,
+     0.01,
+     0.2
+    ],
+    "pos": [
+     -0.057,
+     0.24,
+     0
+    ],
+    "cor": "#E53935",
+    "pai": "carro"
+   },
+   {
+    "id": "traseira",
+    "forma": "caixa",
+    "tam": [
+     0.03,
+     0.2,
+     0.2
+    ],
+    "pos": [
+     -0.135,
+     0.14,
+     0
+    ],
+    "cor": "#E53935",
+    "pai": "carro"
+   },
+   {
+    "id": "lateral_fundo",
+    "forma": "caixa",
+    "tam": [
+     0.27,
+     0.17,
+     0.008
+    ],
+    "pos": [
+     -0.01,
+     0.145,
+     -0.1
+    ],
+    "cor": "#B71C1C",
+    "pai": "carro"
+   },
+   {
+    "id": "roda_fe",
+    "forma": "cilindro",
+    "tam": [
+     0.032,
+     0.022
+    ],
+    "pos": [
+     0.095,
+     0.032,
+     0.1
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#212121",
+    "pai": "carro"
+   },
+   {
+    "id": "roda_te",
+    "forma": "cilindro",
+    "tam": [
+     0.032,
+     0.022
+    ],
+    "pos": [
+     -0.095,
+     0.032,
+     0.1
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#212121",
+    "pai": "carro"
+   },
+   {
+    "id": "roda_fd",
+    "forma": "cilindro",
+    "tam": [
+     0.032,
+     0.022
+    ],
+    "pos": [
+     0.095,
+     0.032,
+     -0.1
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#212121",
+    "pai": "carro"
+   },
+   {
+    "id": "roda_td",
+    "forma": "cilindro",
+    "tam": [
+     0.032,
+     0.022
+    ],
+    "pos": [
+     -0.095,
+     0.032,
+     -0.1
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#212121",
+    "pai": "carro"
+   },
+   {
+    "id": "calota_f",
+    "forma": "cilindro",
+    "tam": [
+     0.014,
+     0.024
+    ],
+    "pos": [
+     0.095,
+     0.032,
+     0.1
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#B0BEC5",
+    "pai": "carro"
+   },
+   {
+    "id": "calota_t",
+    "forma": "cilindro",
+    "tam": [
+     0.014,
+     0.024
+    ],
+    "pos": [
+     -0.095,
+     0.032,
+     0.1
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#B0BEC5",
+    "pai": "carro"
+   },
+   {
+    "id": "assento",
+    "forma": "caixa",
+    "tam": [
+     0.065,
+     0.022,
+     0.1
+    ],
+    "pos": [
+     -0.07,
+     0.071,
+     0
+    ],
+    "cor": "#263238",
+    "pai": "carro"
+   },
+   {
+    "id": "encosto",
+    "forma": "caixa",
+    "tam": [
+     0.022,
+     0.11,
+     0.1
+    ],
+    "pos": [
+     -0.108,
+     0.13,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     8
+    ],
+    "cor": "#263238",
+    "pai": "carro"
+   },
+   {
+    "id": "apoio_cab",
+    "forma": "caixa",
+    "tam": [
+     0.018,
+     0.03,
+     0.07
+    ],
+    "pos": [
+     -0.116,
+     0.2,
+     0
+    ],
+    "cor": "#37474F",
+    "pai": "carro"
+   },
+   {
+    "id": "coluna",
+    "forma": "cilindro",
+    "tam": [
+     0.006,
+     0.04
+    ],
+    "pos": [
+     0.033,
+     0.145,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     60
+    ],
+    "cor": "#455A64",
+    "pai": "carro"
+   },
+   {
+    "id": "volante",
+    "forma": "toro",
+    "tam": [
+     0.032,
+     0.0055
+    ],
+    "pos": [
+     0.015,
+     0.155,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     60
+    ],
+    "cor": "#212121",
+    "pai": "carro"
+   },
+   {
+    "id": "cubo",
+    "forma": "cilindro",
+    "tam": [
+     0.015,
+     0.012
+    ],
+    "pos": [
+     0.017,
+     0.156,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     60
+    ],
+    "cor": "#424242",
+    "pai": "carro"
+   },
+   {
+    "id": "pastilha",
+    "forma": "cilindro",
+    "tam": [
+     0.008,
+     0.006
+    ],
+    "pos": [
+     0.017,
+     0.156,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     60
+    ],
+    "cor": "#8D6E63",
+    "oculta": true,
+    "pai": "carro"
+   },
+   {
+    "id": "sensor",
+    "forma": "caixa",
+    "tam": [
+     0.022,
+     0.016,
+     0.012
+    ],
+    "pos": [
+     0.12,
+     0.085,
+     0.104
+    ],
+    "cor": "#1E88E5",
+    "oculta": true,
+    "pai": "carro"
+   },
+   {
+    "id": "led",
+    "forma": "esfera",
+    "tam": [
+     0.005
+    ],
+    "pos": [
+     0.12,
+     0.096,
+     0.11
+    ],
+    "cor": "#FF1744",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "carro"
+   },
+   {
+    "id": "fio",
+    "forma": "tubo",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     0.07,
+     0.12,
+     0.08
+    ],
+    "cor": "#FFB300",
+    "sem_contorno": true,
+    "oculta": true,
+    "caminho": [
+     [
+      0.05,
+      -0.035,
+      0.024
+     ],
+     [
+      0.0,
+      0.0,
+      0.02
+     ],
+     [
+      -0.053,
+      0.036,
+      -0.06
+     ]
+    ],
+    "pai": "carro"
+   },
+   {
+    "id": "coxa",
+    "forma": "capsula",
+    "tam": [
+     0.011,
+     0.046
+    ],
+    "pos": [
+     -0.044,
+     0.095,
+     0.025
+    ],
+    "giro": [
+     0,
+     0,
+     -81
+    ],
+    "cor": "#FFD54F",
+    "pai": "carro"
+   },
+   {
+    "id": "canela",
+    "forma": "capsula",
+    "tam": [
+     0.009,
+     0.035
+    ],
+    "pos": [
+     0.01,
+     0.0825,
+     0.025
+    ],
+    "giro": [
+     0,
+     0,
+     49
+    ],
+    "cor": "#FFD54F",
+    "pai": "carro"
+   },
+   {
+    "id": "piv_corpo",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     -0.078,
+     0.09,
+     0
+    ],
+    "cor": "#95A5A6",
+    "sem_contorno": true,
+    "pai": "carro"
+   },
+   {
+    "id": "tronco",
+    "forma": "capsula",
+    "tam": [
+     0.022,
+     0.06
+    ],
+    "pos": [
+     0,
+     0.05,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     8
+    ],
+    "cor": "#FFD54F",
+    "pai": "piv_corpo"
+   },
+   {
+    "id": "cabeca",
+    "forma": "esfera",
+    "tam": [
+     0.024
+    ],
+    "pos": [
+     -0.008,
+     0.115,
+     0
+    ],
+    "cor": "#FFD54F",
+    "pai": "piv_corpo"
+   },
+   {
+    "id": "alvo_cab",
+    "forma": "cilindro",
+    "tam": [
+     0.01,
+     0.002
+    ],
+    "pos": [
+     -0.008,
+     0.115,
+     0.024
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#212121",
+    "sem_contorno": true,
+    "pai": "piv_corpo"
+   },
+   {
+    "id": "alvo_cab2",
+    "forma": "cilindro",
+    "tam": [
+     0.0045,
+     0.0024
+    ],
+    "pos": [
+     -0.008,
+     0.115,
+     0.0252
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#FFD54F",
+    "sem_contorno": true,
+    "pai": "piv_corpo"
+   },
+   {
+    "id": "braco",
+    "forma": "capsula",
+    "tam": [
+     0.009,
+     0.065
+    ],
+    "pos": [
+     0.037,
+     0.082,
+     -0.03
+    ],
+    "giro": [
+     0,
+     0,
+     80
+    ],
+    "cor": "#FFD54F",
+    "pai": "piv_corpo"
+   },
+   {
+    "id": "cinto",
+    "forma": "tubo",
+    "tam": [
+     0.0055
+    ],
+    "pos": [
+     0,
+     0.05,
+     0.026
+    ],
+    "cor": "#212121",
+    "oculta": true,
+    "caminho": [
+     [
+      -0.018,
+      0.045,
+      0
+     ],
+     [
+      0.018,
+      -0.045,
+      0
+     ]
+    ],
+    "pai": "piv_corpo"
+   },
+   {
+    "id": "fivela",
+    "forma": "caixa",
+    "tam": [
+     0.012,
+     0.016,
+     0.005
+    ],
+    "pos": [
+     0.018,
+     0.005,
+     0.029
+    ],
+    "cor": "#B0BEC5",
+    "oculta": true,
+    "pai": "piv_corpo"
+   },
+   {
+    "id": "saco",
+    "forma": "esfera",
+    "tam": [
+     0.038
+    ],
+    "pos": [
+     -0.02,
+     0.178,
+     0
+    ],
+    "cor": "#FAFAFA",
+    "oculta": true,
+    "pai": "carro"
+   },
+   {
+    "id": "furo1",
+    "forma": "cilindro",
+    "tam": [
+     0.006,
+     0.004
+    ],
+    "pos": [
+     0.01,
+     -0.015,
+     0.034
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#455A64",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "saco"
+   },
+   {
+    "id": "furo2",
+    "forma": "cilindro",
+    "tam": [
+     0.006,
+     0.004
+    ],
+    "pos": [
+     0.02,
+     0.012,
+     0.03
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#455A64",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "saco"
+   },
+   {
+    "id": "murcho",
+    "forma": "cilindro",
+    "tam": [
+     0.028,
+     0.012
+    ],
+    "pos": [
+     0.006,
+     0.162,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     60
+    ],
+    "cor": "#EEEEEE",
+    "oculta": true,
+    "pai": "carro"
+   },
+   {
+    "id": "saco_b",
+    "forma": "esfera",
+    "tam": [
+     0.038
+    ],
+    "pos": [
+     -0.02,
+     0.178,
+     0
+    ],
+    "cor": "#FAFAFA",
+    "oculta": true,
+    "pai": "carro"
+   }
+  ],
+  "oficina_1952": [
+   {
+    "id": "tanque",
+    "forma": "cilindro",
+    "tam": [
+     0.035,
+     0.12
+    ],
+    "pos": [
+     -0.15,
+     0.036,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#556B2F"
+   },
+   {
+    "id": "tanque_e",
+    "forma": "esfera",
+    "tam": [
+     0.035
+    ],
+    "pos": [
+     -0.21,
+     0.036,
+     0
+    ],
+    "cor": "#556B2F"
+   },
+   {
+    "id": "tanque_d",
+    "forma": "esfera",
+    "tam": [
+     0.035
+    ],
+    "pos": [
+     -0.09,
+     0.036,
+     0
+    ],
+    "cor": "#556B2F"
+   },
+   {
+    "id": "manometro",
+    "forma": "cilindro",
+    "tam": [
+     0.012,
+     0.006
+    ],
+    "pos": [
+     -0.15,
+     0.036,
+     0.037
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#FAFAFA"
+   },
+   {
+    "id": "registro",
+    "forma": "cilindro",
+    "tam": [
+     0.01,
+     0.03
+    ],
+    "pos": [
+     -0.045,
+     0.036,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#C9A227"
+   },
+   {
+    "id": "manopla",
+    "forma": "caixa",
+    "tam": [
+     0.004,
+     0.03,
+     0.004
+    ],
+    "pos": [
+     -0.045,
+     0.062,
+     0
+    ],
+    "cor": "#B71C1C"
+   },
+   {
+    "id": "mangueira",
+    "forma": "tubo",
+    "tam": [
+     0.006
+    ],
+    "pos": [
+     0.0,
+     0.05,
+     0
+    ],
+    "cor": "#6D4C41",
+    "caminho": [
+     [
+      -0.03,
+      -0.014,
+      0
+     ],
+     [
+      0.02,
+      -0.014,
+      0
+     ],
+     [
+      0.04,
+      0.02,
+      0
+     ],
+     [
+      0.04,
+      0.05,
+      0
+     ]
+    ]
+   },
+   {
+    "id": "haste_v",
+    "forma": "cilindro",
+    "tam": [
+     0.005,
+     0.09
+    ],
+    "pos": [
+     0.09,
+     0.045,
+     0
+    ],
+    "cor": "#5D4037"
+   },
+   {
+    "id": "volante_p",
+    "forma": "toro",
+    "tam": [
+     0.032,
+     0.006
+    ],
+    "pos": [
+     0.075,
+     0.1,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     60
+    ],
+    "cor": "#3E2723"
+   },
+   {
+    "id": "saco_p",
+    "forma": "esfera",
+    "tam": [
+     0.036
+    ],
+    "pos": [
+     0.035,
+     0.112,
+     0
+    ],
+    "cor": "#EFE6D2",
+    "oculta": true
+   },
+   {
+    "id": "poste",
+    "forma": "cilindro",
+    "tam": [
+     0.005,
+     0.22
+    ],
+    "pos": [
+     -0.03,
+     0.11,
+     -0.03
+    ],
+    "cor": "#5D4037"
+   },
+   {
+    "id": "travessa",
+    "forma": "caixa",
+    "tam": [
+     0.03,
+     0.008,
+     0.035
+    ],
+    "pos": [
+     -0.02,
+     0.22,
+     -0.015
+    ],
+    "cor": "#5D4037"
+   },
+   {
+    "id": "piv_cab",
+    "forma": "esfera",
+    "tam": [
+     0.004
+    ],
+    "pos": [
+     -0.015,
+     0.215,
+     0
+    ],
+    "cor": "#5D4037",
+    "sem_contorno": true
+   },
+   {
+    "id": "fio_cab",
+    "forma": "cilindro",
+    "tam": [
+     0.0025,
+     0.08
+    ],
+    "pos": [
+     0,
+     -0.04,
+     0
+    ],
+    "cor": "#8D6E63",
+    "pai": "piv_cab"
+   },
+   {
+    "id": "cabeca_p",
+    "forma": "esfera",
+    "tam": [
+     0.022
+    ],
+    "pos": [
+     0,
+     -0.1,
+     0
+    ],
+    "cor": "#D7B98E",
+    "pai": "piv_cab"
+   }
+  ]
+ },
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "tito",
+   "texto": "Uma batida, e esse saco enche mais rápido que um PISCAR de olhos. Como?",
+   "tom": "surpreso"
+  },
+  {
+   "id": "f2",
+   "quem": "tito",
+   "texto": "E por que, logo depois, ele já MURCHA sozinho?",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f3",
+   "quem": "tito",
+   "texto": "Em 1952, o americano John Hetrick desviou de uma pedra, e a filha quase bateu no PAINEL.",
+   "off": true
+  },
+  {
+   "id": "f4",
+   "quem": "tito",
+   "texto": "Aí ele pensou: e se uma almofada de AR pulasse na frente dela?",
+   "off": true
+  },
+  {
+   "id": "f5",
+   "quem": "tito",
+   "texto": "Ele desenhou um saco que enchia sozinho, com o ar de um tanque APERTADO.",
+   "off": true
+  },
+  {
+   "id": "f6",
+   "quem": "tito",
+   "texto": "MAS o ar do tanque era lento: o saco encheria TARDE demais.",
+   "off": true,
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f7",
+   "quem": "tito",
+   "texto": "A saída foi trocar o tanque de ar por uma pequena EXPLOSÃO."
+  },
+  {
+   "id": "f8",
+   "quem": "tito",
+   "texto": "Primeiro, um SENSOR sente o carro parar de uma vez."
+  },
+  {
+   "id": "f9",
+   "quem": "tito",
+   "texto": "Freada forte não liga nada: só a parada brusca de uma BATIDA."
+  },
+  {
+   "id": "f10",
+   "quem": "tito",
+   "texto": "Ele manda uma faísca para uma pastilha de PÓ, guardada dentro do volante."
+  },
+  {
+   "id": "f11",
+   "quem": "tito",
+   "texto": "O pó queima num instante e vira um monte de GÁS, que estufa o saco."
+  },
+  {
+   "id": "f12",
+   "quem": "tito",
+   "texto": "Em trinta MILÉSIMOS de segundo, ele está cheio. Um piscar leva uns cem.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f13",
+   "quem": "tito",
+   "texto": "MAS um saco cheio e duro, como uma bola, faria sua cabeça QUICAR para trás.",
+   "tom": "tenso"
+  },
+  {
+   "id": "f14",
+   "quem": "tito",
+   "texto": "Por isso, ele tem FUROS: o gás escapa, e o saco murcha enquanto você afunda nele.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f15",
+   "quem": "tito",
+   "texto": "É o truque de dobrar os joelhos no pulo: parar aos POUCOS machuca menos.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f16",
+   "quem": "tito",
+   "texto": "SÓ QUE ele só funciona direito com o CINTO: sem ele, você bate no saco ainda abrindo.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f17",
+   "quem": "tito",
+   "texto": "E a fumaça branca? É pó tipo TALCO, que deixa o saco abrir sem grudar, mais rápido que um piscar."
+  }
+ ],
+ "chamada": {
+  "pergunta": "E o semáforo? Como ele sabe a hora de ficar verde?",
+  "texto": "Comenta",
+  "destaque": "SEMÁ­FORO"
+ },
+ "postagem": {
+  "titulo": "Como funciona o airbag? Mais rápido que um piscar de olhos",
+  "descricao": "Como funciona o airbag por dentro: o sensor que sente a batida, a faísca, a pastilha de pó que vira gás em trinta milésimos de segundo e os furos que deixam o saco murchar enquanto você afunda nele. E a história de John Hetrick, que em 1952 desenhou um dos primeiros, com ar apertado.",
+  "hashtags": [
+   "comofunciona",
+   "airbag",
+   "carro",
+   "seguranca",
+   "curiosidades"
+  ],
+  "comentario": "Eu achava que aquela fumaça do airbag era fogo. Você sabia que é pó tipo talco?",
+  "capa": "f11:estufa+0.4"
+ },
+ "cenas": [
+  {
+   "id": "gancho",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "surpreso"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "airbag",
+     "em": "pedestal",
+     "escala": 1.4
+    },
+    {
+     "tipo": "particulas",
+     "particula": "poeira",
+     "cor": "#FFFFFF",
+     "em": [
+      -0.028,
+      0.0
+     ],
+     "alt": 1.238,
+     "raio": 0.06,
+     "altura": 0.08,
+     "quantas": 14,
+     "aparece": "inicio+0.45",
+     "some": "f1:como"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "carro",
+     "faz": "mover",
+     "desloc": [
+      0.05,
+      0,
+      0
+     ],
+     "de": "inicio+0.15",
+     "ate": "inicio+0.45"
+    },
+    {
+     "peca": "muro",
+     "faz": "tremer",
+     "intensidade": 0.6,
+     "de": "inicio+0.45",
+     "ate": "inicio+0.8"
+    },
+    {
+     "peca": "capo",
+     "faz": "tremer",
+     "intensidade": 0.6,
+     "de": "inicio+0.45",
+     "ate": "inicio+0.8"
+    },
+    {
+     "peca": "parachoque",
+     "faz": "tremer",
+     "intensidade": 0.6,
+     "de": "inicio+0.45",
+     "ate": "inicio+0.8"
+    },
+    {
+     "peca": "saco",
+     "faz": "aparecer",
+     "de": "inicio+0.45"
+    },
+    {
+     "peca": "piv_corpo",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": -18,
+     "de": "inicio+0.45",
+     "ate": "inicio+0.7"
+    },
+    {
+     "peca": "saco",
+     "faz": "sumir",
+     "de": "f2:murcha"
+    },
+    {
+     "peca": "murcho",
+     "faz": "aparecer",
+     "de": "f2:murcha+0.2"
+    },
+    {
+     "peca": "piv_corpo",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": 18,
+     "de": "f2:murcha+0.3",
+     "ate": "f2:fim+0.3"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "surpreso",
+     "de": "inicio"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "maquete",
+     "expressao": "surpreso",
+     "de": "inicio+0.45"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f1:como-0.3"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "saco",
+     "olhar": "maquete",
+     "expressao": "desconfiado",
+     "de": "f2"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "camera": [
+      0.0,
+      1.38,
+      1.12
+     ],
+     "alvo": [
+      0.0,
+      1.168,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f1:saco",
+     "tipo": "detalhe",
+     "camera": [
+      -0.16,
+      1.33,
+      0.82
+     ],
+     "alvo": [
+      -0.049,
+      1.238,
+      0.0
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f1:como",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f2",
+     "tipo": "detalhe",
+     "camera": [
+      -0.3,
+      1.38,
+      0.95
+     ],
+     "alvo": [
+      -0.042,
+      1.224,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": -0.4
+    }
+   ],
+   "sons": [
+    {
+     "de": "inicio",
+     "som": "buzina",
+     "volume": 0.5
+    },
+    {
+     "de": "inicio+0.45",
+     "som": "impacto",
+     "volume": 1.0
+    },
+    {
+     "de": "inicio+0.45",
+     "som": "sopro",
+     "volume": 0.8
+    },
+    {
+     "de": "f1:como",
+     "som": "tensao_sobe",
+     "volume": 0.4
+    },
+    {
+     "de": "f2:murcha",
+     "som": "sopro",
+     "volume": 0.6
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "inicio+0.45",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "inicio+0.45",
+     "ate": "inicio+1.1",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f2:murcha",
+     "ate": "f2:fim+0.3",
+     "efeito": "circular",
+     "alvo": "murcho"
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "saco",
+     "texto": "Airbag",
+     "de": "f1:saco",
+     "ate": "f1:como"
+    }
+   ]
+  },
+  {
+   "id": "hetrick",
+   "cenario": "oficina",
+   "ambiente": "oficina",
+   "filtro": "sepia",
+   "de": "f3",
+   "personagens": {
+    "hetrick": {
+     "em": [
+      -1.0,
+      -0.3
+     ],
+     "olhando": [
+      1.2,
+      2.2,
+      3.0
+     ],
+     "expressao": "serio"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "oficina_1952",
+     "em": [
+      0,
+      -1.05
+     ],
+     "alt": 0.92,
+     "escala": 1.5
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f3:1952",
+     "ate": "f3:pedra",
+     "grande": "1952",
+     "pequeno": "John Hetrick · Estados Unidos"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "volante_p",
+     "faz": "pulsar",
+     "intensidade": 0.5,
+     "de": "f4:almofada",
+     "ate": "f4:fim"
+    },
+    {
+     "peca": "manopla",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 90,
+     "de": "f5:ar",
+     "ate": "f5:ar+0.3"
+    },
+    {
+     "peca": "tanque",
+     "faz": "pulsar",
+     "intensidade": 0.5,
+     "de": "f5:apertado",
+     "ate": "f6"
+    },
+    {
+     "peca": "piv_cab",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": 38,
+     "de": "f6:lento",
+     "ate": "f6:lento+0.25"
+    },
+    {
+     "peca": "volante_p",
+     "faz": "tremer",
+     "intensidade": 0.6,
+     "de": "f6:lento+0.25",
+     "ate": "f6:lento+0.6"
+    },
+    {
+     "peca": "saco_p",
+     "faz": "crescer",
+     "de": "f6:saco",
+     "ate": "f6:fim+1.5"
+    },
+    {
+     "peca": "mangueira",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "quantidade": 5,
+     "velocidade": 0.35,
+     "intensidade": 0.2,
+     "de": "f5:apertado",
+     "ate": "f6:fim+0.6"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "hetrick",
+     "faz": "virar",
+     "para": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "olhar": "camera",
+     "expressao": "serio",
+     "de": "f3"
+    },
+    {
+     "quem": "hetrick",
+     "faz": "virar",
+     "para": [
+      0.3,
+      2.85,
+      2.2
+     ],
+     "olhar": "camera",
+     "expressao": "medo",
+     "de": "f3:filha-0.3"
+    },
+    {
+     "quem": "hetrick",
+     "faz": "susto",
+     "olhar": "camera",
+     "expressao": "medo",
+     "de": "f3:painel"
+    },
+    {
+     "quem": "hetrick",
+     "olhar": "camera",
+     "expressao": "determinado",
+     "de": "f4"
+    },
+    {
+     "quem": "hetrick",
+     "faz": "estender_mao",
+     "para": "oficina_1952",
+     "olhar": "oficina_1952",
+     "expressao": "determinado",
+     "de": "f5"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "camera": [
+      0.9,
+      2.85,
+      3.9
+     ],
+     "alvo": [
+      -0.55,
+      2.25,
+      -0.7
+     ],
+     "movimento": "arco",
+     "intensidade": 0.6,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f3:hetrick",
+     "tipo": "medio",
+     "camera": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "alvo": "hetrick",
+     "movimento": "travelling",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f3:filha",
+     "tipo": "close",
+     "camera": [
+      0.3,
+      2.85,
+      2.2
+     ],
+     "alvo": "hetrick",
+     "movimento": "zoom_rapido"
+    },
+    {
+     "de": "f4:almofada",
+     "tipo": "detalhe",
+     "camera": [
+      -0.28,
+      1.32,
+      -0.05
+     ],
+     "alvo": [
+      -0.06,
+      1.06,
+      -1.05
+     ],
+     "movimento": "arco",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f5:tanque",
+     "tipo": "detalhe",
+     "camera": [
+      -0.3,
+      1.12,
+      -0.45
+     ],
+     "alvo": [
+      -0.15,
+      0.99,
+      -1.05
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f6",
+     "tipo": "detalhe",
+     "camera": [
+      0.16,
+      1.17,
+      -0.33
+     ],
+     "alvo": [
+      0.04,
+      1.1,
+      -1.05
+     ],
+     "movimento": "arco",
+     "intensidade": -0.4
+    }
+   ],
+   "sons": [
+    {
+     "de": "f3:1952",
+     "som": "pop",
+     "volume": 0.6
+    },
+    {
+     "de": "f3:pedra",
+     "som": "buzina",
+     "volume": 0.5
+    },
+    {
+     "de": "f3:painel",
+     "som": "susto",
+     "volume": 0.6
+    },
+    {
+     "de": "f4:almofada",
+     "som": "pop",
+     "volume": 0.6
+    },
+    {
+     "de": "f5:ar",
+     "som": "clique",
+     "volume": 0.8
+    },
+    {
+     "de": "f5:apertado",
+     "som": "sopro",
+     "volume": 0.5
+    },
+    {
+     "de": "f6",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f6:lento+0.25",
+     "som": "impacto",
+     "volume": 0.8
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f4:almofada",
+     "ate": "f4:fim",
+     "efeito": "circular",
+     "alvo": "volante_p"
+    },
+    {
+     "de": "f6:lento+0.25",
+     "efeito": "zoom_soco"
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "tanque",
+     "texto": "Ar apertado",
+     "de": "f5:tanque",
+     "ate": "f6"
+    },
+    {
+     "alvo": "saco_p",
+     "texto": "Tarde demais",
+     "de": "f6:tarde",
+     "ate": "f6:fim+0.3",
+     "cor": "#FF8A65"
+    }
+   ]
+  },
+  {
+   "id": "por_dentro",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "de": "f7",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "feliz"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "airbag",
+     "em": "pedestal",
+     "escala": 1.4
+    },
+    {
+     "tipo": "particulas",
+     "particula": "faiscas",
+     "em": [
+      0.024,
+      0.0
+     ],
+     "alt": 1.218,
+     "raio": 0.02,
+     "altura": 0.03,
+     "quantas": 8,
+     "aparece": "f11:queima",
+     "some": "f11:estufa+0.3"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "poeira",
+     "cor": "#FFFFFF",
+     "em": [
+      -0.028,
+      0.0
+     ],
+     "alt": 1.238,
+     "raio": 0.06,
+     "altura": 0.08,
+     "quantas": 14,
+     "aparece": "f11:estufa",
+     "some": "f12"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "poeira",
+     "cor": "#FFFFFF",
+     "em": [
+      -0.028,
+      0.0
+     ],
+     "alt": 1.238,
+     "raio": 0.08,
+     "altura": 0.12,
+     "quantas": 22,
+     "aparece": "f17:fumaca",
+     "some": "f17:fim+0.5"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f12:milesimos",
+     "ate": "f12:fim+0.3",
+     "grande": "#",
+     "contar": [
+      0,
+      30
+     ],
+     "pequeno": "milésimos de segundo · um piscar leva uns 100"
+    },
+    {
+     "de": "f15:poucos",
+     "ate": "f15:fim+0.3",
+     "grande": "PARAR AOS POUCOS",
+     "pequeno": "mais tempo parando, menos força na cabeça"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "cubo",
+     "faz": "transparente",
+     "opacidade": 0.3,
+     "de": "f7:explosao",
+     "ate": "f7:explosao+0.6"
+    },
+    {
+     "peca": "pastilha",
+     "faz": "aparecer",
+     "de": "f7:explosao"
+    },
+    {
+     "peca": "sensor",
+     "faz": "aparecer",
+     "de": "f8:sensor"
+    },
+    {
+     "peca": "led",
+     "faz": "aparecer",
+     "de": "f8:sensor"
+    },
+    {
+     "peca": "led",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "f9:batida+0.3",
+     "ate": "f10:faisca+0.6"
+    },
+    {
+     "peca": "fio",
+     "faz": "aparecer",
+     "de": "f10"
+    },
+    {
+     "peca": "pastilha",
+     "faz": "pulsar",
+     "intensidade": 0.8,
+     "de": "f10:po",
+     "ate": "f10:fim"
+    },
+    {
+     "peca": "pastilha",
+     "faz": "aquecer",
+     "intensidade": 0.9,
+     "de": "f11:queima",
+     "ate": "f11:instante"
+    },
+    {
+     "peca": "saco",
+     "faz": "aparecer",
+     "de": "f11:estufa"
+    },
+    {
+     "peca": "piv_corpo",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": -18,
+     "de": "f11:estufa+0.1",
+     "ate": "f11:estufa+0.35"
+    },
+    {
+     "peca": "piv_corpo",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": 40,
+     "de": "f13:quicar",
+     "ate": "f13:quicar+0.2"
+    },
+    {
+     "peca": "piv_corpo",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": -22,
+     "de": "f13:quicar+0.35",
+     "ate": "f13:quicar+0.75"
+    },
+    {
+     "peca": "saco",
+     "faz": "tremer",
+     "intensidade": 0.5,
+     "de": "f13:quicar",
+     "ate": "f13:quicar+0.4"
+    },
+    {
+     "peca": "furo1",
+     "faz": "aparecer",
+     "de": "f14:furos"
+    },
+    {
+     "peca": "furo2",
+     "faz": "aparecer",
+     "de": "f14:furos+0.15"
+    },
+    {
+     "peca": "piv_corpo",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": -24,
+     "de": "f14:murcha",
+     "ate": "f14:nele"
+    },
+    {
+     "peca": "saco",
+     "faz": "sumir",
+     "de": "f14:afunda"
+    },
+    {
+     "peca": "murcho",
+     "faz": "aparecer",
+     "de": "f14:afunda+0.2"
+    },
+    {
+     "peca": "piv_corpo",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": 24,
+     "de": "f15",
+     "ate": "f15+0.6"
+    },
+    {
+     "peca": "cinto",
+     "faz": "aparecer",
+     "de": "f16:cinto"
+    },
+    {
+     "peca": "fivela",
+     "faz": "aparecer",
+     "de": "f16:cinto+0.15"
+    },
+    {
+     "peca": "saco_b",
+     "faz": "aparecer",
+     "de": "f17:fumaca"
+    },
+    {
+     "peca": "carro",
+     "faz": "mover",
+     "desloc": [
+      0.05,
+      0,
+      0
+     ],
+     "de": "f9:batida",
+     "ate": "f9:batida+0.3"
+    },
+    {
+     "peca": "muro",
+     "faz": "tremer",
+     "intensidade": 0.6,
+     "de": "f9:batida+0.3",
+     "ate": "f9:batida+0.65"
+    },
+    {
+     "peca": "capo",
+     "faz": "tremer",
+     "intensidade": 0.6,
+     "de": "f9:batida+0.3",
+     "ate": "f9:batida+0.65"
+    },
+    {
+     "peca": "parachoque",
+     "faz": "tremer",
+     "intensidade": 0.6,
+     "de": "f9:batida+0.3",
+     "ate": "f9:batida+0.65"
+    },
+    {
+     "peca": "fio",
+     "faz": "fluxo",
+     "tipo": "eletricidade",
+     "quantidade": 8,
+     "velocidade": 1.8,
+     "intensidade": 0.4,
+     "de": "f10:faisca",
+     "ate": "f10:po+0.4"
+    },
+    {
+     "peca": "cubo",
+     "faz": "fluxo",
+     "tipo": "gas",
+     "quantidade": 8,
+     "velocidade": 2.0,
+     "intensidade": 0.3,
+     "de": "f11:gas",
+     "ate": "f11:estufa+0.4",
+     "caminho": [
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       -0.02,
+       0.012,
+       0.0
+      ],
+      [
+       -0.037,
+       0.022,
+       0.0
+      ]
+     ]
+    },
+    {
+     "peca": "furo1",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "quantidade": 6,
+     "velocidade": 1.4,
+     "intensidade": 0.25,
+     "de": "f14:escapa",
+     "ate": "f14:afunda+0.2",
+     "caminho": [
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.02,
+       -0.01,
+       0.05
+      ]
+     ]
+    },
+    {
+     "peca": "furo2",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "quantidade": 6,
+     "velocidade": 1.4,
+     "intensidade": 0.25,
+     "de": "f14:escapa",
+     "ate": "f14:afunda+0.2",
+     "caminho": [
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.03,
+       0.02,
+       0.05
+      ]
+     ]
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.75,
+      2,
+      5.9
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f7"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "cubo",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f7:explosao"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "sensor",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f8:sensor"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "serio",
+     "de": "f9"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "maquete",
+     "expressao": "surpreso",
+     "de": "f9:batida+0.3"
+    },
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "surpreso",
+     "de": "f11:estufa"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f12"
+    },
+    {
+     "quem": "tito",
+     "faz": "fechar_olhos",
+     "de": "f12:piscar"
+    },
+    {
+     "quem": "tito",
+     "faz": "abrir_olhos",
+     "de": "f12:piscar+0.3"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "camera",
+     "expressao": "nervoso",
+     "de": "f13"
+    },
+    {
+     "quem": "tito",
+     "faz": "maos_na_cabeca",
+     "olhar": "maquete",
+     "expressao": "medo",
+     "de": "f13:quicar"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "saco",
+     "olhar": "maquete",
+     "expressao": "aliviado",
+     "de": "f14:furos"
+    },
+    {
+     "quem": "tito",
+     "faz": "agachar",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f15:joelhos"
+    },
+    {
+     "quem": "tito",
+     "faz": "levantar",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f15:pulo"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "serio",
+     "de": "f16"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "cinto",
+     "olhar": "maquete",
+     "expressao": "serio",
+     "de": "f16:cinto"
+    },
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f17:grudar-0.2"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "camera": [
+      -0.75,
+      2,
+      5.9
+     ],
+     "alvo": [
+      -0.75,
+      1.5,
+      0.3
+     ],
+     "movimento": "arco",
+     "intensidade": 0.5,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f7:explosao",
+     "tipo": "detalhe",
+     "camera": [
+      -0.26,
+      1.4,
+      0.38
+     ],
+     "alvo": [
+      0.021,
+      1.22,
+      0.0
+     ],
+     "movimento": "aproximar",
+     "transicao": "zoom"
+    },
+    {
+     "de": "f8:sensor",
+     "tipo": "detalhe",
+     "camera": [
+      0.12,
+      1.2,
+      0.66
+     ],
+     "alvo": [
+      0.098,
+      1.119,
+      0.14
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f9",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": 0.3,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f9:batida",
+     "tipo": "detalhe",
+     "camera": [
+      0.0,
+      1.38,
+      1.12
+     ],
+     "alvo": [
+      0.0,
+      1.168,
+      0.0
+     ],
+     "movimento": "tremer"
+    },
+    {
+     "de": "f10",
+     "tipo": "detalhe",
+     "camera": [
+      0.16,
+      1.32,
+      0.78
+     ],
+     "alvo": [
+      0.084,
+      1.182,
+      0.07
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f10:po",
+     "tipo": "detalhe",
+     "camera": [
+      -0.26,
+      1.4,
+      0.38
+     ],
+     "alvo": [
+      0.021,
+      1.22,
+      0.0
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f11:gas",
+     "tipo": "detalhe",
+     "camera": [
+      -0.16,
+      1.33,
+      0.82
+     ],
+     "alvo": [
+      -0.049,
+      1.238,
+      0.0
+     ],
+     "movimento": "zoom_rapido"
+    },
+    {
+     "de": "f12",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": 0.3,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f13",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido"
+    },
+    {
+     "de": "f13:bola",
+     "tipo": "detalhe",
+     "camera": [
+      -0.3,
+      1.38,
+      0.95
+     ],
+     "alvo": [
+      -0.042,
+      1.224,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f13:quicar+0.8",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "dolly_zoom"
+    },
+    {
+     "de": "f14",
+     "tipo": "detalhe",
+     "camera": [
+      0.06,
+      1.3,
+      0.56
+     ],
+     "alvo": [
+      -0.014,
+      1.245,
+      0.042
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f14:murcha",
+     "tipo": "detalhe",
+     "camera": [
+      -0.16,
+      1.33,
+      0.82
+     ],
+     "alvo": [
+      -0.049,
+      1.238,
+      0.0
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f15",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": -0.3,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f15:poucos",
+     "tipo": "aberto",
+     "camera": [
+      -0.2,
+      1.55,
+      1.9
+     ],
+     "alvo": [
+      0.0,
+      1.22,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f16",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f16:cinto",
+     "tipo": "detalhe",
+     "camera": [
+      -0.1,
+      1.26,
+      0.5
+     ],
+     "alvo": [
+      -0.105,
+      1.21,
+      0.028
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f17",
+     "tipo": "detalhe",
+     "camera": [
+      -0.3,
+      1.38,
+      0.95
+     ],
+     "alvo": [
+      -0.042,
+      1.224,
+      0.0
+     ],
+     "movimento": "aproximar",
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f17:grudar",
+     "tipo": "aberto",
+     "camera": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "alvo": [
+      -0.9,
+      1.5,
+      0.3
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    }
+   ],
+   "sons": [
+    {
+     "de": "f7:explosao",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f8:sensor",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f9:batida+0.3",
+     "som": "impacto",
+     "volume": 0.9
+    },
+    {
+     "de": "f9:batida+0.4",
+     "som": "bip",
+     "volume": 0.6
+    },
+    {
+     "de": "f10:faisca",
+     "som": "zap",
+     "volume": 0.7
+    },
+    {
+     "de": "f10:po",
+     "som": "ding",
+     "volume": 0.6
+    },
+    {
+     "de": "f11:queima",
+     "som": "isqueiro",
+     "volume": 0.7
+    },
+    {
+     "de": "f11:estufa",
+     "som": "impacto",
+     "volume": 0.9
+    },
+    {
+     "de": "f11:estufa",
+     "som": "sopro",
+     "volume": 0.8
+    },
+    {
+     "de": "f12:milesimos",
+     "som": "ding",
+     "volume": 0.6
+    },
+    {
+     "de": "f13",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f13:quicar",
+     "som": "impacto",
+     "volume": 0.9
+    },
+    {
+     "de": "f14:furos",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f14:escapa",
+     "som": "sopro",
+     "volume": 0.6
+    },
+    {
+     "de": "f15:poucos",
+     "som": "ding",
+     "volume": 0.6
+    },
+    {
+     "de": "f16",
+     "som": "tensao_sobe",
+     "volume": 0.4
+    },
+    {
+     "de": "f16:cinto",
+     "som": "clique",
+     "volume": 0.9
+    },
+    {
+     "de": "f17:fumaca",
+     "som": "sopro",
+     "volume": 0.6
+    },
+    {
+     "de": "f17:talco",
+     "som": "pop",
+     "volume": 0.6
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f8:sensor",
+     "ate": "f9:batida",
+     "efeito": "circular",
+     "alvo": "sensor"
+    },
+    {
+     "de": "f9:batida+0.3",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f10:po",
+     "ate": "f10:fim+0.2",
+     "efeito": "circular",
+     "alvo": "pastilha"
+    },
+    {
+     "de": "f11:estufa",
+     "efeito": "flash"
+    },
+    {
+     "de": "f11:estufa",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f11:estufa",
+     "ate": "f11:estufa+0.8",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f13:quicar",
+     "ate": "f13:quicar+0.5",
+     "efeito": "tremor",
+     "intensidade": 0.6
+    },
+    {
+     "de": "f13:quicar",
+     "ate": "f13:fim+0.3",
+     "efeito": "letreiro",
+     "texto": "PERIGO!",
+     "cor": "#FF3B30",
+     "altura": 0.22
+    },
+    {
+     "de": "f14:furos",
+     "ate": "f14:escapa",
+     "efeito": "circular",
+     "alvo": "furo1"
+    },
+    {
+     "de": "f16:cinto",
+     "ate": "f16:sem",
+     "efeito": "circular",
+     "alvo": "cinto"
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "pastilha",
+     "texto": "Pó",
+     "de": "f7:explosao",
+     "ate": "f8"
+    },
+    {
+     "alvo": "sensor",
+     "texto": "Sensor",
+     "de": "f8:sensor",
+     "ate": "f9"
+    },
+    {
+     "alvo": "fio",
+     "texto": "Faísca",
+     "de": "f10:faisca",
+     "ate": "f10:po"
+    },
+    {
+     "alvo": "pastilha",
+     "texto": "Pó",
+     "de": "f10:po",
+     "ate": "f11:gas"
+    },
+    {
+     "alvo": "saco",
+     "texto": "Gás",
+     "de": "f11:gas",
+     "ate": "f11:fim"
+    },
+    {
+     "alvo": "saco",
+     "texto": "Duro",
+     "de": "f13:duro",
+     "ate": "f13:quicar",
+     "cor": "#FF8A65"
+    },
+    {
+     "alvo": "furo1",
+     "texto": "Furos",
+     "de": "f14:furos",
+     "ate": "f14:murcha"
+    },
+    {
+     "alvo": "cinto",
+     "texto": "Cinto",
+     "de": "f16:cinto",
+     "ate": "f16:fim"
+    },
+    {
+     "alvo": "saco_b",
+     "texto": "Talco",
+     "de": "f17:talco",
+     "ate": "f17:grudar"
+    }
+   ]
+  }
+ ]
+}
