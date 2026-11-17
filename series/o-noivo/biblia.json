@@ -1,0 +1,206 @@
+{
+  "serie": "o-noivo",
+  "titulo": "O NOIVO",
+  "genero": "novelinha / drama de família (8 batidas clássicas)",
+  "partes": 7,
+  "rotulo_parte": "PARTE",
+  "sinopse": "Na véspera do casamento da irmã, na ilha que o avô deixou para a noiva, a Lara (madrinha e narradora) recebe a foto do noivo casando com outra mulher. Ninguém da família acredita nela. Sete partes até o 'sim' no altar da praia, num domingo às cinco da tarde.",
+  "narrador": "lara",
+  "personagens": {
+    "lara": {
+      "nome": "Lara",
+      "papel": "narradora e protagonista: irmã caçula da noiva e madrinha do casamento; fala com 'você' no gancho e conta o resto em primeira pessoa, no presente",
+      "personalidade": "desconfiada, teimosa, protege a irmã mesmo quando a irmã briga com ela; tem humor seco",
+      "voz": {
+        "descricao": "mulher brasileira de uns 24 anos, voz clara e expressiva, de quem conta uma fofoca séria pra uma amiga",
+        "instruct": "female, young adult, moderate pitch",
+        "amostra": "Se o noivo da sua irmã tiver outra esposa, você conta ou fica quieta? Eu vou te contar o que eu fiz.",
+        "realce": true
+      },
+      "visual": {
+        "altura": 0.95,
+        "corpo": "#E0A030",
+        "cabeca": "#FFE2C4",
+        "olhos": "redondos",
+        "sobrancelhas": "finas",
+        "cilios": true,
+        "acessorios": [
+          {
+            "tipo": "rabo_de_cavalo",
+            "cor": "#3B2418"
+          }
+        ]
+      },
+      "cor_legenda": "#FFD60A"
+    },
+    "bia": {
+      "nome": "Bia",
+      "papel": "a noiva, irmã mais velha da Lara (30 anos); herdou do avô Tonico, o antigo faroleiro, a Ilha do Farol, onde vai casar",
+      "personalidade": "doce, apaixonada, defende o noivo de todo mundo; mais esperta do que parece (na parte 7 mostra que tinha um plano)",
+      "voz": {
+        "descricao": "mulher brasileira de uns 30 anos, voz doce e emotiva",
+        "instruct": "female, young adult, high pitch"
+      },
+      "visual": {
+        "altura": 0.97,
+        "corpo": "#F6F2EA",
+        "cabeca": "#F2D5BD",
+        "olhos": "ovais",
+        "sobrancelhas": "finas",
+        "cilios": true,
+        "bochechas": "#F4A7A3",
+        "acessorios": [
+          {
+            "tipo": "lenco",
+            "cor": "#FFFFFF"
+          },
+          {
+            "tipo": "cabelo_curto",
+            "cor": "#5A3A24"
+          }
+        ]
+      },
+      "cor_legenda": "#FF8FB1"
+    },
+    "ricardo": {
+      "nome": "Ricardo",
+      "papel": "o noivo (38 anos), 'empresário' charmoso que pagou a dívida da mãe; na verdade se chama Rodrigo Paiva e é golpista de casamento",
+      "personalidade": "simpático, calmo, sempre tem uma explicação pronta; só perde a calma quando está sozinho com a Lara",
+      "voz": {
+        "descricao": "homem brasileiro de uns 38 anos, voz grave, macia e segura",
+        "instruct": "male, middle-aged, low pitch"
+      },
+      "visual": {
+        "altura": 1.05,
+        "corpo": "#1E2230",
+        "cabeca": "#E9C9A8",
+        "olhos": "ovais",
+        "sobrancelhas": "grossas",
+        "acessorios": [
+          {
+            "tipo": "cabelo_curto",
+            "cor": "#1A120C"
+          },
+          {
+            "tipo": "bigode",
+            "cor": "#1A120C"
+          }
+        ]
+      },
+      "cor_legenda": "#7CC4FF"
+    },
+    "neide": {
+      "nome": "Dona Neide",
+      "papel": "mãe da Bia e da Lara (58 anos); a casa dela ia a leilão e o Ricardo pagou a dívida; assinou como testemunha a venda da ilha sem saber do golpe",
+      "personalidade": "orgulhosa, quer o melhor pras filhas do jeito dela, odeia escândalo",
+      "voz": {
+        "descricao": "mulher brasileira de uns 58 anos, voz firme de mãe que manda",
+        "instruct": "female, middle-aged, low pitch"
+      },
+      "visual": {
+        "altura": 0.9,
+        "corpo": "#6A3FA0",
+        "cabeca": "#F2D5BD",
+        "olhos": "sonolentos",
+        "sobrancelhas": "finas",
+        "cilios": true,
+        "acessorios": [
+          {
+            "tipo": "cabelo_curto",
+            "cor": "#BDBDC4"
+          },
+          {
+            "tipo": "oculos",
+            "cor": "#6B4A2E"
+          }
+        ]
+      },
+      "cor_legenda": "#C9A0FF"
+    },
+    "carol": {
+      "nome": "Carol",
+      "papel": "a mulher da bandana vermelha (33 anos): casou com o noivo há 7 anos, quando ele se chamava Rodrigo; ele vendeu a padaria do pai dela e sumiu; mandou a foto pra Lara",
+      "personalidade": "cansada, firme, sem medo dele; só quer que ele pare",
+      "voz": {
+        "descricao": "mulher brasileira de uns 33 anos, voz grave e cansada",
+        "instruct": "female, young adult, low pitch"
+      },
+      "visual": {
+        "corpo": "#C8322E",
+        "cabeca": "#E9C9A8",
+        "olhos": "redondos",
+        "sobrancelhas": "grossas",
+        "cilios": true,
+        "acessorios": [
+          {
+            "tipo": "bandana",
+            "cor": "#C8322E"
+          }
+        ]
+      },
+      "cor_legenda": "#FF6B5A"
+    },
+    "theo": {
+      "nome": "Theo",
+      "papel": "filho da Carol, 6 anos; é filho do noivo (não fala até a parte 7, se falar)",
+      "personalidade": "quieto, curioso",
+      "voz": {
+        "descricao": "menino de 6 anos",
+        "instruct": "male, child, high pitch"
+      },
+      "visual": {
+        "altura": 0.62,
+        "corpo": "#3FA06A",
+        "cabeca": "#E9C9A8",
+        "olhos": "redondos",
+        "sobrancelhas": "finas",
+        "bochechas": "#F4A7A3",
+        "acessorios": [
+          {
+            "tipo": "bone",
+            "cor": "#C8322E"
+          }
+        ]
+      },
+      "cor_legenda": "#9BE07A"
+    },
+    "sandra": {
+      "nome": "Dra. Sandra",
+      "papel": "a juíza de paz que chega com os convidados no domingo (60 anos); na parte 7 descobre-se que é delegada, chamada pela Bia pelo rádio do farol",
+      "personalidade": "séria, poucas palavras, observa tudo",
+      "voz": {
+        "descricao": "mulher brasileira de uns 60 anos, voz grave e calma de autoridade",
+        "instruct": "female, elderly, low pitch"
+      },
+      "visual": {
+        "altura": 0.92,
+        "corpo": "#202024",
+        "cabeca": "#EADFCB",
+        "olhos": "ovais",
+        "sobrancelhas": "grossas",
+        "cilios": true,
+        "acessorios": [
+          {
+            "tipo": "cabelo_curto",
+            "cor": "#E8E8EC"
+          },
+          {
+            "tipo": "oculos",
+            "cor": "#222222"
+          }
+        ]
+      },
+      "cor_legenda": "#B8E0FF"
+    }
+  },
+  "fatos": [
+    "Ilha do Farol: ilha pequena com praia, um morro (o único lugar com sinal de celular) e o farol do avô Tonico numa ilhota com cais. Só se chega de barco.",
+    "O casamento da Bia com o Ricardo é no domingo às 17h, na praia; 80 convidados chegam de barco no domingo à tarde.",
+    "O avô Tonico deixou a ilha pra Bia e pediu pra nunca vender."
+  ],
+  "ganchos_abertos": [
+    "Quem é a mulher da bandana vermelha que desceu do barco à meia-noite dizendo que é a Carol?",
+    "Quem é o menino que veio com ela?",
+    "Por que um empresário pagaria a dívida da família da noiva?"
+  ]
+}
