@@ -434,7 +434,8 @@
     "multiplicação de força"
    ],
    "gancho": "Seu pé faz pouca força. O óleo multiplica.",
-   "status": "roteiro"
+   "status": "produzido",
+   "dia": "2026-11-17"
   },
   {
    "n": 26,
@@ -451,7 +452,7 @@
    ],
    "gancho": "Ele enche mais rápido do que você consegue piscar.",
    "estilo": "fato impossível",
-   "status": "pendente"
+   "status": "roteiro"
   },
   {
    "n": 27,
