@@ -418,9 +418,9 @@
      0.13
     ],
     "pos": [
-     0.07,
+     -0.064,
      0.077,
-     0.016
+     0.018
     ],
     "cor": "#455A64"
    },
@@ -433,13 +433,13 @@
      0.018
     ],
     "pos": [
-     0.07,
+     -0.064,
      0.17800000000000002,
-     0.016
+     0.018
     ],
     "giro": [
      0,
-     -60,
+     -45,
      0
     ],
     "cor": "#212121"
@@ -804,38 +804,38 @@
      0.0018
     ],
     "pos": [
-     0.0015,
+     -0.002,
      0.0135,
-     -0.019
+     -0.024
     ],
     "cor": "#FFB300",
     "sem_contorno": true,
     "oculta": true,
     "caminho": [
      [
-      -0.0665,
+      -0.07,
       0.0,
-      0.089
+      0.085
      ],
      [
-      -0.0575,
+      -0.062,
       0.0,
-      0.022
+      0.046
      ],
      [
-      0.0605,
+      -0.054,
       0.0,
-      0.022
+      0.027
      ],
      [
-      0.0665,
+      0.064,
       0.0,
-      0.031
+      0.027
      ],
      [
-      0.0665,
+      0.07,
       0.0,
-      -0.089
+      -0.084
      ]
     ]
    },
@@ -2422,8 +2422,8 @@
       0.576
      ],
      "alvo": [
-      0.056,
-      1.16,
+      0.072,
+      1.2,
       -0.128
      ],
      "movimento": "aproximar"
@@ -2455,9 +2455,9 @@
      "de": "f2",
      "tipo": "detalhe",
      "camera": [
-      -0.096,
-      1.8,
-      1.152
+      -0.064,
+      1.672,
+      0.928
      ],
      "alvo": [
       0.0,
@@ -2715,7 +2715,7 @@
      "tipo": "gas",
      "quantidade": 6,
      "velocidade": 0.45,
-     "intensidade": 0.3,
+     "intensidade": 0.12,
      "de": "f6:gas",
      "ate": "f6:explodiu",
      "caminho": [
@@ -2747,7 +2747,7 @@
      "tipo": "gas",
      "quantidade": 6,
      "velocidade": 0.45,
-     "intensidade": 0.3,
+     "intensidade": 0.12,
      "de": "f6:gas",
      "ate": "f6:explodiu",
      "caminho": [
@@ -2779,7 +2779,7 @@
      "tipo": "gas",
      "quantidade": 6,
      "velocidade": 0.5,
-     "intensidade": 0.25,
+     "intensidade": 0.12,
      "de": "f4:gas",
      "ate": "f6:explodiu"
     }
@@ -2956,7 +2956,7 @@
      "intensidade": -0.3
     },
     {
-     "de": "f5:alavanca",
+     "de": "f5:mao",
      "tipo": "detalhe",
      "camera": [
       0.12,
@@ -3003,14 +3003,14 @@
     },
     {
      "de": "f6:rosto",
-     "tipo": "close",
+     "tipo": "medio",
      "camera": [
       0.0,
       2.85,
       2.35
      ],
      "alvo": "guarda",
-     "movimento": "zoom_rapido"
+     "movimento": "tremer"
     }
    ],
    "sons": [
@@ -3070,7 +3070,7 @@
      "de": "f3:trem",
      "ate": "f4",
      "efeito": "circular",
-     "alvo": "coluna_p"
+     "alvo": "lanterna_p"
     },
     {
      "de": "f6:explodiu",
@@ -3219,7 +3219,7 @@
      "tipo": "eletricidade",
      "quantidade": 9,
      "velocidade": 1.6,
-     "intensidade": 0.4,
+     "intensidade": 0.25,
      "de": "f8:tempo",
      "ate": "f8:fim+0.3"
     },
@@ -3424,20 +3424,6 @@
      "peca": "b_verm8",
      "faz": "aparecer",
      "de": "f10:vermelho"
-    },
-    {
-     "peca": "a_verm5",
-     "faz": "pulsar",
-     "intensidade": 0.7,
-     "de": "f10:vermelho",
-     "ate": "f10:fim"
-    },
-    {
-     "peca": "b_verm8",
-     "faz": "pulsar",
-     "intensidade": 0.7,
-     "de": "f10:vermelho",
-     "ate": "f10:fim"
     },
     {
      "peca": "a_verm5",
@@ -3650,7 +3636,7 @@
      "tipo": "eletricidade",
      "quantidade": 7,
      "velocidade": 1.4,
-     "intensidade": 0.4,
+     "intensidade": 0.15,
      "de": "f15:sente",
      "ate": "f15:esperando+0.4"
     },
@@ -3660,7 +3646,7 @@
      "tipo": "eletricidade",
      "quantidade": 9,
      "velocidade": 1.6,
-     "intensidade": 0.4,
+     "intensidade": 0.25,
      "de": "f15:chama",
      "ate": "f15:fim"
     },
@@ -3806,6 +3792,26 @@
     {
      "peca": "a_verm12",
      "faz": "aparecer",
+     "de": "f17"
+    },
+    {
+     "peca": "poste_m1",
+     "faz": "sumir",
+     "de": "f17"
+    },
+    {
+     "peca": "cab_m1",
+     "faz": "sumir",
+     "de": "f17"
+    },
+    {
+     "peca": "poste_m2",
+     "faz": "sumir",
+     "de": "f17"
+    },
+    {
+     "peca": "cab_m2",
+     "faz": "sumir",
      "de": "f17"
     },
     {
@@ -3978,13 +3984,13 @@
      "de": "f7:eletrica",
      "tipo": "detalhe",
      "camera": [
-      -0.144,
-      1.32,
-      0.544
+      0.0,
+      1.336,
+      0.992
      ],
      "alvo": [
-      0.096,
-      1.24,
+      0.0,
+      1.224,
       -0.064
      ],
      "movimento": "aproximar",
@@ -4010,9 +4016,9 @@
      "de": "f8:tempo",
      "tipo": "detalhe",
      "camera": [
-      -0.096,
-      1.8,
-      1.152
+      -0.064,
+      1.672,
+      0.928
      ],
      "alvo": [
       0.0,
@@ -4034,9 +4040,9 @@
      "de": "f9:abrisse",
      "tipo": "detalhe",
      "camera": [
-      -0.096,
-      1.8,
-      1.152
+      -0.064,
+      1.672,
+      0.928
      ],
      "alvo": [
       0.0,
@@ -4050,9 +4056,9 @@
      "de": "f10",
      "tipo": "detalhe",
      "camera": [
-      -0.096,
-      1.8,
-      1.152
+      -0.064,
+      1.672,
+      0.928
      ],
      "alvo": [
       0.0,
@@ -4066,13 +4072,13 @@
      "de": "f10:vermelho",
      "tipo": "detalhe",
      "camera": [
-      -0.144,
-      1.32,
-      0.544
+      0.0,
+      1.336,
+      0.992
      ],
      "alvo": [
-      0.096,
-      1.24,
+      0.0,
+      1.224,
       -0.064
      ],
      "movimento": "arco",
@@ -4091,24 +4097,24 @@
      "de": "f11:dois",
      "tipo": "detalhe",
      "camera": [
-      -0.144,
-      1.32,
-      0.544
+      0.0,
+      1.336,
+      0.992
      ],
      "alvo": [
-      0.096,
-      1.24,
+      0.0,
+      1.224,
       -0.064
      ],
-     "movimento": "zoom_rapido"
+     "movimento": "aproximar"
     },
     {
      "de": "f11:mesmo",
      "tipo": "detalhe",
      "camera": [
-      -0.096,
-      1.8,
-      1.152
+      -0.064,
+      1.672,
+      0.928
      ],
      "alvo": [
       0.0,
@@ -4144,9 +4150,9 @@
      "de": "f12:corta",
      "tipo": "detalhe",
      "camera": [
-      -0.096,
-      1.8,
-      1.152
+      -0.064,
+      1.672,
+      0.928
      ],
      "alvo": [
       0.0,
@@ -4210,14 +4216,14 @@
      "de": "f14:ima",
      "tipo": "detalhe",
      "camera": [
-      0.208,
-      1.272,
-      0.576
+      0.384,
+      1.24,
+      0.272
      ],
      "alvo": [
       0.032,
-      1.032,
-      0.112
+      1.029,
+      0.096
      ],
      "movimento": "arco",
      "intensidade": 0.4
@@ -4242,9 +4248,9 @@
      "de": "f15:chama",
      "tipo": "detalhe",
      "camera": [
-      -0.096,
-      1.8,
-      1.152
+      -0.064,
+      1.672,
+      0.928
      ],
      "alvo": [
       0.0,
@@ -4282,14 +4288,14 @@
      "de": "f17:talvez",
      "tipo": "detalhe",
      "camera": [
-      0.208,
-      1.272,
-      0.576
+      0.384,
+      1.24,
+      0.272
      ],
      "alvo": [
       0.032,
-      1.032,
-      0.112
+      1.029,
+      0.096
      ],
      "movimento": "aproximar"
     },
@@ -4448,7 +4454,7 @@
      "de": "f10:amarelo",
      "ate": "f10:vermelho",
      "efeito": "circular",
-     "alvo": "b_amar7"
+     "alvo": "cab_b"
     },
     {
      "de": "f11:verdes",
@@ -4501,7 +4507,7 @@
      "ate": "f10:vermelho"
     },
     {
-     "alvo": "cab_a",
+     "alvo": "chassi_a",
      "texto": "Todos parados",
      "de": "f10:vermelho",
      "ate": "f10:fim"

@@ -452,7 +452,8 @@
    ],
    "gancho": "Ele enche mais rápido do que você consegue piscar.",
    "estilo": "fato impossível",
-   "status": "roteiro"
+   "status": "produzido",
+   "dia": "2026-11-18"
   },
   {
    "n": 27,
@@ -469,7 +470,7 @@
    ],
    "gancho": "O primeiro semáforo funcionava a gás e explodiu.",
    "estilo": "dúvida comum",
-   "status": "pendente"
+   "status": "roteiro"
   },
   {
    "n": 28,
