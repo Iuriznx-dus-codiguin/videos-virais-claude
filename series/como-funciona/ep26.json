@@ -1150,7 +1150,7 @@
   {
    "id": "f2",
    "quem": "tito",
-   "texto": "E por que, logo depois, ele já MURCHA sozinho?",
+   "texto": "E por que, logo depois, ele já ESVAZIA sozinho?",
    "pausa_depois": 0.3
   },
   {
@@ -1343,19 +1343,19 @@
     {
      "peca": "saco",
      "faz": "sumir",
-     "de": "f2:murcha"
+     "de": "f2:esvazia"
     },
     {
      "peca": "murcho",
      "faz": "aparecer",
-     "de": "f2:murcha+0.2"
+     "de": "f2:esvazia+0.2"
     },
     {
      "peca": "piv_corpo",
      "faz": "girar_para",
      "eixo": "z",
      "angulo": 18,
-     "de": "f2:murcha+0.3",
+     "de": "f2:esvazia+0.3",
      "ate": "f2:fim+0.3"
     }
    ],
@@ -1467,7 +1467,7 @@
      "volume": 0.4
     },
     {
-     "de": "f2:murcha",
+     "de": "f2:esvazia",
      "som": "sopro",
      "volume": 0.6
     }
@@ -1484,7 +1484,7 @@
      "cor": "#FFE14A"
     },
     {
-     "de": "f2:murcha",
+     "de": "f2:esvazia",
      "ate": "f2:fim+0.3",
      "efeito": "circular",
      "alvo": "murcho"
