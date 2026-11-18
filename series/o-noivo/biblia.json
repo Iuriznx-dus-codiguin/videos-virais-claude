@@ -15,7 +15,8 @@
         "descricao": "mulher brasileira de uns 24 anos, voz clara e expressiva, de quem conta uma fofoca séria pra uma amiga",
         "instruct": "female, young adult, moderate pitch",
         "amostra": "Se o noivo da sua irmã tiver outra esposa, você conta ou fica quieta? Eu vou te contar o que eu fiz.",
-        "realce": true
+        "realce": true,
+        "semente": 1
       },
       "visual": {
         "altura": 0.95,
@@ -39,7 +40,8 @@
       "personalidade": "doce, apaixonada, defende o noivo de todo mundo; mais esperta do que parece (na parte 7 mostra que tinha um plano)",
       "voz": {
         "descricao": "mulher brasileira de uns 30 anos, voz doce e emotiva",
-        "instruct": "female, young adult, high pitch"
+        "instruct": "female, young adult, high pitch",
+        "semente": 2
       },
       "visual": {
         "altura": 0.97,
@@ -68,7 +70,8 @@
       "personalidade": "simpático, calmo, sempre tem uma explicação pronta; só perde a calma quando está sozinho com a Lara",
       "voz": {
         "descricao": "homem brasileiro de uns 38 anos, voz grave, macia e segura",
-        "instruct": "male, middle-aged, low pitch"
+        "instruct": "male, middle-aged, low pitch",
+        "semente": 1
       },
       "visual": {
         "altura": 1.05,
@@ -95,7 +98,8 @@
       "personalidade": "orgulhosa, quer o melhor pras filhas do jeito dela, odeia escândalo",
       "voz": {
         "descricao": "mulher brasileira de uns 58 anos, voz firme de mãe que manda",
-        "instruct": "female, middle-aged, low pitch"
+        "instruct": "female, middle-aged, low pitch",
+        "semente": 1
       },
       "visual": {
         "altura": 0.9,
@@ -123,7 +127,8 @@
       "personalidade": "cansada, firme, sem medo dele; só quer que ele pare",
       "voz": {
         "descricao": "mulher brasileira de uns 33 anos, voz grave e cansada",
-        "instruct": "female, young adult, low pitch"
+        "instruct": "female, young adult, low pitch",
+        "semente": 1
       },
       "visual": {
         "corpo": "#C8322E",
