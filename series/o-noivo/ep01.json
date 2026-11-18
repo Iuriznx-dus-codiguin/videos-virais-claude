@@ -162,15 +162,15 @@
             6
           ],
           "olhando": [
-            -1,
-            1.6,
-            9.2
+            8.5,
+            1.0,
+            2.0
           ],
           "expressao": "desconfiado"
         },
         "bia": {
           "em": [
-            -4,
+            -2.4,
             9.6
           ],
           "olhando": [
@@ -182,7 +182,7 @@
         },
         "ricardo": {
           "em": [
-            -4.2,
+            -2.6,
             8.6
           ],
           "olhando": [
@@ -245,33 +245,41 @@
           "de": "inicio",
           "tipo": "geral",
           "alvo": [
-            0,
-            1.5,
-            7.5
+            0.2,
+            1.8,
+            8.6
           ],
           "camera": [
-            9.5,
-            5.5,
-            23
+            8.5,
+            3.2,
+            2.0
           ],
           "movimento": "arco",
-          "intensidade": 0.35
+          "intensidade": 0.2
         },
         {
           "de": "f1:OUTRA",
           "tipo": "close",
           "alvo": "lara",
-          "lado": "frente",
           "movimento": "zoom_rapido",
-          "intensidade": 0.3
+          "intensidade": 0.3,
+          "camera": [
+            5.63,
+            2.8,
+            3.18
+          ]
         },
         {
           "de": "f2",
           "tipo": "medio",
           "alvo": "lara",
-          "lado": "tres_quartos_direita",
           "movimento": "aproximar",
-          "intensidade": 0.3
+          "intensidade": 0.3,
+          "camera": [
+            4.98,
+            2.6,
+            1.62
+          ]
         }
       ],
       "rotulos": [
@@ -432,19 +440,19 @@
       "planos": [
         {
           "de": "f4",
-          "tipo": "close",
-          "alvo": "ricardo",
-          "lado": "tres_quartos_direita",
+          "tipo": "medio",
+          "alvo": [
+            -0.9,
+            2.3,
+            9.0
+          ],
+          "camera": [
+            4.46,
+            2.4,
+            6.32
+          ],
           "movimento": "travelling",
-          "intensidade": 0.3
-        },
-        {
-          "de": "f4:Bia",
-          "tipo": "close",
-          "alvo": "bia",
-          "lado": "frente",
-          "movimento": "aproximar",
-          "intensidade": 0.3
+          "intensidade": 0.25
         },
         {
           "de": "f5",
@@ -459,14 +467,14 @@
           "de": "f6",
           "tipo": "medio",
           "alvo": [
-            -0.9,
-            2.2,
-            9
+            -1.1,
+            2.3,
+            9.0
           ],
           "camera": [
-            -7,
-            2.4,
-            12
+            -8.0,
+            2.5,
+            12.6
           ],
           "movimento": "aproximar",
           "intensidade": 0.3
@@ -501,13 +509,15 @@
           "alvo": "ricardo",
           "texto": "RICARDO · O NOIVO",
           "de": "f4:Ricardo",
-          "ate": "f4:Bia"
+          "ate": "f4:Bia",
+          "altura": 0.47
         },
         {
           "alvo": "bia",
           "texto": "BIA · A NOIVA",
           "de": "f4:Bia+0.2",
-          "ate": "f4:fim"
+          "ate": "f4:fim",
+          "altura": 0.47
         }
       ],
       "insercoes": [
@@ -630,7 +640,8 @@
           "alvo": "neide",
           "texto": "DONA NEIDE · MÃE",
           "de": "f8:Dona",
-          "ate": "f8:fim+0.3"
+          "ate": "f8:fim+0.3",
+          "altura": 0.47
         }
       ],
       "manchetes": [
@@ -841,8 +852,9 @@
           "quem": "ricardo",
           "faz": "largar",
           "para": [
-            4,
-            6
+            4.0,
+            0.4,
+            6.0
           ],
           "de": "f14:escorrega"
         },
@@ -965,9 +977,13 @@
           "de": "f15",
           "tipo": "close",
           "alvo": "ricardo",
-          "lado": "tres_quartos_direita",
           "movimento": "aproximar",
-          "intensidade": 0.3
+          "intensidade": 0.3,
+          "camera": [
+            4.52,
+            2.8,
+            3.45
+          ]
         },
         {
           "de": "f16",
@@ -1021,8 +1037,8 @@
       "personagens": {
         "ricardo": {
           "em": [
-            6.8,
-            5.8
+            7.4,
+            8.2
           ],
           "olhando": [
             4.6,
@@ -1129,7 +1145,7 @@
           "de": "f17",
           "tipo": "medio",
           "alvo": [
-            5,
+            5.0,
             2.3,
             6.6
           ],
@@ -1139,7 +1155,7 @@
             11
           ],
           "movimento": "travelling",
-          "intensidade": 0.3
+          "intensidade": 0.2
         },
         {
           "de": "f18",
@@ -1368,8 +1384,7 @@
       ],
       "relogio": {
         "de": "f19",
-        "hora": "23:59",
-        "ate_hora": "00:00"
+        "hora": "00:00"
       },
       "efeitos": [
         {
