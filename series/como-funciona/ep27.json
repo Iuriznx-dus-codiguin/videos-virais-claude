@@ -1,0 +1,4548 @@
+{
+ "serie": "como-funciona",
+ "parte": 27,
+ "titulo": "Como o semáforo sabe a hora de ficar verde?",
+ "musica": "curiosidade",
+ "personagens": {
+  "knight": {
+   "nome": "John Peake Knight",
+   "papel": "engenheiro de ferrovias inglês; em dezembro de 1868 pôs na frente do Parlamento, em Londres, o primeiro semáforo de rua: braços de sinal de trem de dia e lâmpada a gás vermelha e verde de noite, trocados à mão por um guarda; semanas depois, gás vazando por baixo da calçada fez a lâmpada explodir e queimou o rosto do guarda; não fala",
+   "visual": {
+    "altura": 1,
+    "corpo": "#3B3B4F",
+    "cabeca": "#F2D5BD",
+    "olhos": "redondos",
+    "sobrancelhas": "grossas",
+    "acessorios": [
+     {
+      "tipo": "cartola",
+      "cor": "#212121"
+     },
+     {
+      "tipo": "bigode",
+      "cor": "#5D4037"
+     },
+     {
+      "tipo": "colete",
+      "cor": "#6D4C41"
+     }
+    ]
+   }
+  },
+  "guarda": {
+   "nome": "Guarda de Londres",
+   "papel": "policial que trocava o sinal na alavanca; não fala",
+   "visual": {
+    "altura": 1,
+    "corpo": "#1A237E",
+    "cabeca": "#F2D5BD",
+    "olhos": "redondos",
+    "acessorios": [
+     {
+      "tipo": "capacete",
+      "cor": "#1A237E"
+     }
+    ]
+   }
+  }
+ },
+ "modelos": {
+  "cruzamento": [
+   {
+    "id": "asfalto",
+    "forma": "caixa",
+    "tam": [
+     0.48,
+     0.008,
+     0.44
+    ],
+    "pos": [
+     0,
+     0.004,
+     0
+    ],
+    "cor": "#37474F"
+   },
+   {
+    "id": "calc_fe",
+    "forma": "caixa",
+    "tam": [
+     0.19,
+     0.012,
+     0.22
+    ],
+    "pos": [
+     -0.145,
+     0.006,
+     0.11
+    ],
+    "cor": "#B0BEC5"
+   },
+   {
+    "id": "calc_fd",
+    "forma": "caixa",
+    "tam": [
+     0.19,
+     0.012,
+     0.22
+    ],
+    "pos": [
+     0.145,
+     0.006,
+     0.11
+    ],
+    "cor": "#B0BEC5"
+   },
+   {
+    "id": "calc_te",
+    "forma": "caixa",
+    "tam": [
+     0.19,
+     0.012,
+     0.12
+    ],
+    "pos": [
+     -0.145,
+     0.006,
+     -0.16
+    ],
+    "cor": "#B0BEC5"
+   },
+   {
+    "id": "calc_td",
+    "forma": "caixa",
+    "tam": [
+     0.19,
+     0.012,
+     0.12
+    ],
+    "pos": [
+     0.145,
+     0.006,
+     -0.16
+    ],
+    "cor": "#B0BEC5"
+   },
+   {
+    "id": "faixa_z0",
+    "forma": "caixa",
+    "tam": [
+     0.003,
+     0.001,
+     0.03
+    ],
+    "pos": [
+     0,
+     0.0085,
+     0.045
+    ],
+    "cor": "#FFD600",
+    "sem_contorno": true
+   },
+   {
+    "id": "faixa_z1",
+    "forma": "caixa",
+    "tam": [
+     0.003,
+     0.001,
+     0.03
+    ],
+    "pos": [
+     0,
+     0.0085,
+     0.105
+    ],
+    "cor": "#FFD600",
+    "sem_contorno": true
+   },
+   {
+    "id": "faixa_z2",
+    "forma": "caixa",
+    "tam": [
+     0.003,
+     0.001,
+     0.03
+    ],
+    "pos": [
+     0,
+     0.0085,
+     0.165
+    ],
+    "cor": "#FFD600",
+    "sem_contorno": true
+   },
+   {
+    "id": "faixa_z3",
+    "forma": "caixa",
+    "tam": [
+     0.003,
+     0.001,
+     0.03
+    ],
+    "pos": [
+     0,
+     0.0085,
+     -0.135
+    ],
+    "cor": "#FFD600",
+    "sem_contorno": true
+   },
+   {
+    "id": "faixa_z4",
+    "forma": "caixa",
+    "tam": [
+     0.003,
+     0.001,
+     0.03
+    ],
+    "pos": [
+     0,
+     0.0085,
+     -0.195
+    ],
+    "cor": "#FFD600",
+    "sem_contorno": true
+   },
+   {
+    "id": "faixa_x0",
+    "forma": "caixa",
+    "tam": [
+     0.03,
+     0.001,
+     0.003
+    ],
+    "pos": [
+     -0.09,
+     0.0085,
+     -0.05
+    ],
+    "cor": "#FFD600",
+    "sem_contorno": true
+   },
+   {
+    "id": "faixa_x1",
+    "forma": "caixa",
+    "tam": [
+     0.03,
+     0.001,
+     0.003
+    ],
+    "pos": [
+     -0.15,
+     0.0085,
+     -0.05
+    ],
+    "cor": "#FFD600",
+    "sem_contorno": true
+   },
+   {
+    "id": "faixa_x2",
+    "forma": "caixa",
+    "tam": [
+     0.03,
+     0.001,
+     0.003
+    ],
+    "pos": [
+     -0.21,
+     0.0085,
+     -0.05
+    ],
+    "cor": "#FFD600",
+    "sem_contorno": true
+   },
+   {
+    "id": "faixa_x3",
+    "forma": "caixa",
+    "tam": [
+     0.03,
+     0.001,
+     0.003
+    ],
+    "pos": [
+     0.09,
+     0.0085,
+     -0.05
+    ],
+    "cor": "#FFD600",
+    "sem_contorno": true
+   },
+   {
+    "id": "faixa_x4",
+    "forma": "caixa",
+    "tam": [
+     0.03,
+     0.001,
+     0.003
+    ],
+    "pos": [
+     0.15,
+     0.0085,
+     -0.05
+    ],
+    "cor": "#FFD600",
+    "sem_contorno": true
+   },
+   {
+    "id": "faixa_x5",
+    "forma": "caixa",
+    "tam": [
+     0.03,
+     0.001,
+     0.003
+    ],
+    "pos": [
+     0.21,
+     0.0085,
+     -0.05
+    ],
+    "cor": "#FFD600",
+    "sem_contorno": true
+   },
+   {
+    "id": "parada_a",
+    "forma": "caixa",
+    "tam": [
+     0.045,
+     0.001,
+     0.005
+    ],
+    "pos": [
+     0.025,
+     0.0085,
+     0.008
+    ],
+    "cor": "#FAFAFA",
+    "sem_contorno": true
+   },
+   {
+    "id": "parada_b",
+    "forma": "caixa",
+    "tam": [
+     0.005,
+     0.001,
+     0.045
+    ],
+    "pos": [
+     -0.058,
+     0.0085,
+     -0.025
+    ],
+    "cor": "#FAFAFA",
+    "sem_contorno": true
+   },
+   {
+    "id": "poste_a",
+    "forma": "cilindro",
+    "tam": [
+     0.004,
+     0.13
+    ],
+    "pos": [
+     0.068,
+     0.077,
+     -0.112
+    ],
+    "cor": "#455A64"
+   },
+   {
+    "id": "cab_a",
+    "forma": "caixa",
+    "tam": [
+     0.026,
+     0.072,
+     0.018
+    ],
+    "pos": [
+     0.068,
+     0.17800000000000002,
+     -0.112
+    ],
+    "giro": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#212121"
+   },
+   {
+    "id": "a_off_verm",
+    "forma": "esfera",
+    "tam": [
+     0.0075
+    ],
+    "pos": [
+     0,
+     0.022,
+     0.0095
+    ],
+    "cor": "#4A1414",
+    "sem_contorno": true,
+    "pai": "cab_a"
+   },
+   {
+    "id": "a_off_amar",
+    "forma": "esfera",
+    "tam": [
+     0.0075
+    ],
+    "pos": [
+     0,
+     0.0,
+     0.0095
+    ],
+    "cor": "#4A3C08",
+    "sem_contorno": true,
+    "pai": "cab_a"
+   },
+   {
+    "id": "a_off_verde",
+    "forma": "esfera",
+    "tam": [
+     0.0075
+    ],
+    "pos": [
+     0,
+     -0.022,
+     0.0095
+    ],
+    "cor": "#0E3B20",
+    "sem_contorno": true,
+    "pai": "cab_a"
+   },
+   {
+    "id": "poste_b",
+    "forma": "cilindro",
+    "tam": [
+     0.004,
+     0.13
+    ],
+    "pos": [
+     0.07,
+     0.077,
+     0.016
+    ],
+    "cor": "#455A64"
+   },
+   {
+    "id": "cab_b",
+    "forma": "caixa",
+    "tam": [
+     0.026,
+     0.072,
+     0.018
+    ],
+    "pos": [
+     0.07,
+     0.17800000000000002,
+     0.016
+    ],
+    "giro": [
+     0,
+     -60,
+     0
+    ],
+    "cor": "#212121"
+   },
+   {
+    "id": "b_off_verm",
+    "forma": "esfera",
+    "tam": [
+     0.0075
+    ],
+    "pos": [
+     0,
+     0.022,
+     0.0095
+    ],
+    "cor": "#4A1414",
+    "sem_contorno": true,
+    "pai": "cab_b"
+   },
+   {
+    "id": "b_off_amar",
+    "forma": "esfera",
+    "tam": [
+     0.0075
+    ],
+    "pos": [
+     0,
+     0.0,
+     0.0095
+    ],
+    "cor": "#4A3C08",
+    "sem_contorno": true,
+    "pai": "cab_b"
+   },
+   {
+    "id": "b_off_verde",
+    "forma": "esfera",
+    "tam": [
+     0.0075
+    ],
+    "pos": [
+     0,
+     -0.022,
+     0.0095
+    ],
+    "cor": "#0E3B20",
+    "sem_contorno": true,
+    "pai": "cab_b"
+   },
+   {
+    "id": "poste_m1",
+    "forma": "cilindro",
+    "tam": [
+     0.003,
+     0.085
+    ],
+    "pos": [
+     0.068,
+     0.05450000000000001,
+     0.17
+    ],
+    "cor": "#455A64",
+    "oculta": true
+   },
+   {
+    "id": "cab_m1",
+    "forma": "caixa",
+    "tam": [
+     0.015,
+     0.031,
+     0.012
+    ],
+    "pos": [
+     0.068,
+     0.1125,
+     0.17
+    ],
+    "giro": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#212121",
+    "oculta": true
+   },
+   {
+    "id": "m1_off_verm",
+    "forma": "esfera",
+    "tam": [
+     0.0048
+    ],
+    "pos": [
+     0,
+     0.0075,
+     0.0066
+    ],
+    "cor": "#4A1414",
+    "sem_contorno": true,
+    "pai": "cab_m1"
+   },
+   {
+    "id": "m1_off_verde",
+    "forma": "esfera",
+    "tam": [
+     0.0048
+    ],
+    "pos": [
+     0,
+     -0.0075,
+     0.0066
+    ],
+    "cor": "#0E3B20",
+    "sem_contorno": true,
+    "pai": "cab_m1"
+   },
+   {
+    "id": "poste_m2",
+    "forma": "cilindro",
+    "tam": [
+     0.003,
+     0.085
+    ],
+    "pos": [
+     0.068,
+     0.05450000000000001,
+     0.105
+    ],
+    "cor": "#455A64",
+    "oculta": true
+   },
+   {
+    "id": "cab_m2",
+    "forma": "caixa",
+    "tam": [
+     0.015,
+     0.031,
+     0.012
+    ],
+    "pos": [
+     0.068,
+     0.1125,
+     0.105
+    ],
+    "giro": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#212121",
+    "oculta": true
+   },
+   {
+    "id": "m2_off_verm",
+    "forma": "esfera",
+    "tam": [
+     0.0048
+    ],
+    "pos": [
+     0,
+     0.0075,
+     0.0066
+    ],
+    "cor": "#4A1414",
+    "sem_contorno": true,
+    "pai": "cab_m2"
+   },
+   {
+    "id": "m2_off_verde",
+    "forma": "esfera",
+    "tam": [
+     0.0048
+    ],
+    "pos": [
+     0,
+     -0.0075,
+     0.0066
+    ],
+    "cor": "#0E3B20",
+    "sem_contorno": true,
+    "pai": "cab_m2"
+   },
+   {
+    "id": "a_verm0",
+    "forma": "esfera",
+    "tam": [
+     0.0083
+    ],
+    "pos": [
+     0,
+     0.022,
+     0.0099
+    ],
+    "cor": "#FF1744",
+    "sem_contorno": true,
+    "pai": "cab_a"
+   },
+   {
+    "id": "b_verde0",
+    "forma": "esfera",
+    "tam": [
+     0.0083
+    ],
+    "pos": [
+     0,
+     -0.022,
+     0.0099
+    ],
+    "cor": "#00E676",
+    "sem_contorno": true,
+    "pai": "cab_b"
+   },
+   {
+    "id": "m1_verm0",
+    "forma": "esfera",
+    "tam": [
+     0.0052
+    ],
+    "pos": [
+     0,
+     0.0075,
+     0.007
+    ],
+    "cor": "#FF1744",
+    "sem_contorno": true,
+    "pai": "cab_m1"
+   },
+   {
+    "id": "m2_verm0",
+    "forma": "esfera",
+    "tam": [
+     0.0052
+    ],
+    "pos": [
+     0,
+     0.0075,
+     0.007
+    ],
+    "cor": "#FF1744",
+    "sem_contorno": true,
+    "pai": "cab_m2"
+   },
+   {
+    "id": "caixa_ctrl",
+    "forma": "caixa",
+    "tam": [
+     0.04,
+     0.06,
+     0.028
+    ],
+    "pos": [
+     -0.085,
+     0.041999999999999996,
+     0.075
+    ],
+    "cor": "#78909C",
+    "oculta": true
+   },
+   {
+    "id": "relogio",
+    "forma": "cilindro",
+    "tam": [
+     0.011,
+     0.003
+    ],
+    "pos": [
+     0,
+     0.013,
+     0.0145
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#FAFAFA",
+    "sem_contorno": true,
+    "pai": "caixa_ctrl"
+   },
+   {
+    "id": "piv_ponteiro",
+    "forma": "esfera",
+    "tam": [
+     0.0018
+    ],
+    "pos": [
+     0,
+     0.013,
+     0.0165
+    ],
+    "cor": "#212121",
+    "sem_contorno": true,
+    "pai": "caixa_ctrl"
+   },
+   {
+    "id": "ponteiro",
+    "forma": "caixa",
+    "tam": [
+     0.0022,
+     0.009,
+     0.001
+    ],
+    "pos": [
+     0,
+     0.0045,
+     0
+    ],
+    "cor": "#D32F2F",
+    "sem_contorno": true,
+    "pai": "piv_ponteiro"
+   },
+   {
+    "id": "vigia",
+    "forma": "caixa",
+    "tam": [
+     0.026,
+     0.02,
+     0.004
+    ],
+    "pos": [
+     0,
+     -0.013,
+     -0.004
+    ],
+    "cor": "#2E7D32",
+    "sem_contorno": true,
+    "pai": "caixa_ctrl"
+   },
+   {
+    "id": "olho",
+    "forma": "esfera",
+    "tam": [
+     0.0065
+    ],
+    "pos": [
+     0,
+     -0.013,
+     0.003
+    ],
+    "cor": "#FFFFFF",
+    "sem_contorno": true,
+    "pai": "caixa_ctrl"
+   },
+   {
+    "id": "pupila",
+    "forma": "esfera",
+    "tam": [
+     0.0032
+    ],
+    "pos": [
+     0,
+     -0.013,
+     0.0085
+    ],
+    "cor": "#111111",
+    "sem_contorno": true,
+    "pai": "caixa_ctrl"
+   },
+   {
+    "id": "cabo",
+    "forma": "tubo",
+    "tam": [
+     0.0018
+    ],
+    "pos": [
+     0.0015,
+     0.0135,
+     -0.019
+    ],
+    "cor": "#FFB300",
+    "sem_contorno": true,
+    "oculta": true,
+    "caminho": [
+     [
+      -0.0665,
+      0.0,
+      0.089
+     ],
+     [
+      -0.0575,
+      0.0,
+      0.022
+     ],
+     [
+      0.0605,
+      0.0,
+      0.022
+     ],
+     [
+      0.0665,
+      0.0,
+      0.031
+     ],
+     [
+      0.0665,
+      0.0,
+      -0.089
+     ]
+    ]
+   },
+   {
+    "id": "laco",
+    "forma": "toro",
+    "tam": [
+     0.031,
+     0.0016
+    ],
+    "pos": [
+     0.025,
+     0.0088,
+     0.05
+    ],
+    "cor": "#FFB300",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "campo",
+    "forma": "cilindro",
+    "tam": [
+     0.033,
+     0.024
+    ],
+    "pos": [
+     0.025,
+     0.02,
+     0.05
+    ],
+    "cor": "#80D8FF",
+    "opacidade": 0.22,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "fio_laco",
+    "forma": "tubo",
+    "tam": [
+     0.0016
+    ],
+    "pos": [
+     -0.035,
+     0.011,
+     0.059
+    ],
+    "cor": "#FFB300",
+    "sem_contorno": true,
+    "oculta": true,
+    "caminho": [
+     [
+      0.029,
+      -0.0022,
+      -0.009
+     ],
+     [
+      -0.011,
+      -0.0022,
+      -0.009
+     ],
+     [
+      -0.017,
+      0.0025,
+      -0.003
+     ],
+     [
+      -0.03,
+      0.0025,
+      0.009
+     ]
+    ]
+   },
+   {
+    "id": "carro_a",
+    "forma": "esfera",
+    "tam": [
+     0.002
+    ],
+    "pos": [
+     0.025,
+     0.008,
+     0.17
+    ],
+    "cor": "#95A5A6",
+    "sem_contorno": true
+   },
+   {
+    "id": "chassi_a",
+    "forma": "caixa",
+    "tam": [
+     0.04,
+     0.016,
+     0.075
+    ],
+    "pos": [
+     0,
+     0.017,
+     0
+    ],
+    "cor": "#E53935",
+    "pai": "carro_a"
+   },
+   {
+    "id": "cabine_a",
+    "forma": "caixa",
+    "tam": [
+     0.034,
+     0.016,
+     0.036
+    ],
+    "pos": [
+     0,
+     0.033,
+     0.006
+    ],
+    "cor": "#E53935",
+    "pai": "carro_a"
+   },
+   {
+    "id": "vidro_at",
+    "forma": "caixa",
+    "tam": [
+     0.028,
+     0.011,
+     0.002
+    ],
+    "pos": [
+     0,
+     0.033,
+     0.0245
+    ],
+    "cor": "#B3E5FC",
+    "sem_contorno": true,
+    "pai": "carro_a"
+   },
+   {
+    "id": "vidro_af",
+    "forma": "caixa",
+    "tam": [
+     0.028,
+     0.011,
+     0.002
+    ],
+    "pos": [
+     0,
+     0.033,
+     -0.0125
+    ],
+    "cor": "#B3E5FC",
+    "sem_contorno": true,
+    "pai": "carro_a"
+   },
+   {
+    "id": "roda_a0",
+    "forma": "cilindro",
+    "tam": [
+     0.0085,
+     0.006
+    ],
+    "pos": [
+     0.0215,
+     0.0085,
+     0.024
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#212121",
+    "pai": "carro_a"
+   },
+   {
+    "id": "roda_a1",
+    "forma": "cilindro",
+    "tam": [
+     0.0085,
+     0.006
+    ],
+    "pos": [
+     -0.0215,
+     0.0085,
+     0.024
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#212121",
+    "pai": "carro_a"
+   },
+   {
+    "id": "roda_a2",
+    "forma": "cilindro",
+    "tam": [
+     0.0085,
+     0.006
+    ],
+    "pos": [
+     0.0215,
+     0.0085,
+     -0.024
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#212121",
+    "pai": "carro_a"
+   },
+   {
+    "id": "roda_a3",
+    "forma": "cilindro",
+    "tam": [
+     0.0085,
+     0.006
+    ],
+    "pos": [
+     -0.0215,
+     0.0085,
+     -0.024
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#212121",
+    "pai": "carro_a"
+   },
+   {
+    "id": "lanterna_a0",
+    "forma": "esfera",
+    "tam": [
+     0.0035
+    ],
+    "pos": [
+     0.013,
+     0.02,
+     0.0377
+    ],
+    "cor": "#FF1744",
+    "sem_contorno": true,
+    "pai": "carro_a"
+   },
+   {
+    "id": "lanterna_a1",
+    "forma": "esfera",
+    "tam": [
+     0.0035
+    ],
+    "pos": [
+     -0.013,
+     0.02,
+     0.0377
+    ],
+    "cor": "#FF1744",
+    "sem_contorno": true,
+    "pai": "carro_a"
+   },
+   {
+    "id": "carro_b",
+    "forma": "esfera",
+    "tam": [
+     0.002
+    ],
+    "pos": [
+     -0.2,
+     0.008,
+     -0.025
+    ],
+    "cor": "#95A5A6",
+    "sem_contorno": true
+   },
+   {
+    "id": "chassi_b",
+    "forma": "caixa",
+    "tam": [
+     0.075,
+     0.016,
+     0.04
+    ],
+    "pos": [
+     0,
+     0.017,
+     0
+    ],
+    "cor": "#1E88E5",
+    "pai": "carro_b"
+   },
+   {
+    "id": "cabine_b",
+    "forma": "caixa",
+    "tam": [
+     0.036,
+     0.016,
+     0.034
+    ],
+    "pos": [
+     -0.006,
+     0.033,
+     0
+    ],
+    "cor": "#1E88E5",
+    "pai": "carro_b"
+   },
+   {
+    "id": "vidro_bf",
+    "forma": "caixa",
+    "tam": [
+     0.002,
+     0.011,
+     0.028
+    ],
+    "pos": [
+     0.0125,
+     0.033,
+     0
+    ],
+    "cor": "#B3E5FC",
+    "sem_contorno": true,
+    "pai": "carro_b"
+   },
+   {
+    "id": "vidro_bt",
+    "forma": "caixa",
+    "tam": [
+     0.002,
+     0.011,
+     0.028
+    ],
+    "pos": [
+     -0.0245,
+     0.033,
+     0
+    ],
+    "cor": "#B3E5FC",
+    "sem_contorno": true,
+    "pai": "carro_b"
+   },
+   {
+    "id": "roda_b0",
+    "forma": "cilindro",
+    "tam": [
+     0.0085,
+     0.006
+    ],
+    "pos": [
+     0.024,
+     0.0085,
+     0.0215
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#212121",
+    "pai": "carro_b"
+   },
+   {
+    "id": "roda_b1",
+    "forma": "cilindro",
+    "tam": [
+     0.0085,
+     0.006
+    ],
+    "pos": [
+     -0.024,
+     0.0085,
+     0.0215
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#212121",
+    "pai": "carro_b"
+   },
+   {
+    "id": "roda_b2",
+    "forma": "cilindro",
+    "tam": [
+     0.0085,
+     0.006
+    ],
+    "pos": [
+     0.024,
+     0.0085,
+     -0.0215
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#212121",
+    "pai": "carro_b"
+   },
+   {
+    "id": "roda_b3",
+    "forma": "cilindro",
+    "tam": [
+     0.0085,
+     0.006
+    ],
+    "pos": [
+     -0.024,
+     0.0085,
+     -0.0215
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#212121",
+    "pai": "carro_b"
+   },
+   {
+    "id": "farol_b0",
+    "forma": "esfera",
+    "tam": [
+     0.0035
+    ],
+    "pos": [
+     0.0377,
+     0.02,
+     0.013
+    ],
+    "cor": "#FFF59D",
+    "sem_contorno": true,
+    "pai": "carro_b"
+   },
+   {
+    "id": "farol_b1",
+    "forma": "esfera",
+    "tam": [
+     0.0035
+    ],
+    "pos": [
+     0.0377,
+     0.02,
+     -0.013
+    ],
+    "cor": "#FFF59D",
+    "sem_contorno": true,
+    "pai": "carro_b"
+   },
+   {
+    "id": "moto",
+    "forma": "esfera",
+    "tam": [
+     0.002
+    ],
+    "pos": [
+     0.025,
+     0.008,
+     0.17
+    ],
+    "cor": "#95A5A6",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "roda_m1",
+    "forma": "cilindro",
+    "tam": [
+     0.0085,
+     0.004
+    ],
+    "pos": [
+     0,
+     0.0085,
+     -0.018
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#212121",
+    "pai": "moto"
+   },
+   {
+    "id": "roda_m2",
+    "forma": "cilindro",
+    "tam": [
+     0.0085,
+     0.004
+    ],
+    "pos": [
+     0,
+     0.0085,
+     0.018
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#212121",
+    "pai": "moto"
+   },
+   {
+    "id": "corpo_m",
+    "forma": "caixa",
+    "tam": [
+     0.009,
+     0.011,
+     0.03
+    ],
+    "pos": [
+     0,
+     0.019,
+     0
+    ],
+    "cor": "#FB8C00",
+    "pai": "moto"
+   },
+   {
+    "id": "guidao",
+    "forma": "caixa",
+    "tam": [
+     0.022,
+     0.003,
+     0.003
+    ],
+    "pos": [
+     0,
+     0.03,
+     -0.013
+    ],
+    "cor": "#424242",
+    "sem_contorno": true,
+    "pai": "moto"
+   },
+   {
+    "id": "piloto",
+    "forma": "capsula",
+    "tam": [
+     0.006,
+     0.016
+    ],
+    "pos": [
+     0,
+     0.036,
+     0.003
+    ],
+    "cor": "#3949AB",
+    "pai": "moto"
+   },
+   {
+    "id": "capacete_m",
+    "forma": "esfera",
+    "tam": [
+     0.0068
+    ],
+    "pos": [
+     0,
+     0.052,
+     0.0
+    ],
+    "cor": "#263238",
+    "pai": "moto"
+   },
+   {
+    "id": "b_amar1",
+    "forma": "esfera",
+    "tam": [
+     0.0083
+    ],
+    "pos": [
+     0,
+     0.0,
+     0.0099
+    ],
+    "cor": "#FFC400",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "cab_b"
+   },
+   {
+    "id": "b_verm2",
+    "forma": "esfera",
+    "tam": [
+     0.0083
+    ],
+    "pos": [
+     0,
+     0.022,
+     0.0099
+    ],
+    "cor": "#FF1744",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "cab_b"
+   },
+   {
+    "id": "a_verde1",
+    "forma": "esfera",
+    "tam": [
+     0.0083
+    ],
+    "pos": [
+     0,
+     -0.022,
+     0.0099
+    ],
+    "cor": "#00E676",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "cab_a"
+   },
+   {
+    "id": "b_verm3",
+    "forma": "esfera",
+    "tam": [
+     0.0083
+    ],
+    "pos": [
+     0,
+     0.022,
+     0.0099
+    ],
+    "cor": "#FF1744",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "cab_b"
+   },
+   {
+    "id": "a_verde2",
+    "forma": "esfera",
+    "tam": [
+     0.0083
+    ],
+    "pos": [
+     0,
+     -0.022,
+     0.0099
+    ],
+    "cor": "#00E676",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "cab_a"
+   },
+   {
+    "id": "a_verm3",
+    "forma": "esfera",
+    "tam": [
+     0.0083
+    ],
+    "pos": [
+     0,
+     0.022,
+     0.0099
+    ],
+    "cor": "#FF1744",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "cab_a"
+   },
+   {
+    "id": "b_verde4",
+    "forma": "esfera",
+    "tam": [
+     0.0083
+    ],
+    "pos": [
+     0,
+     -0.022,
+     0.0099
+    ],
+    "cor": "#00E676",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "cab_b"
+   },
+   {
+    "id": "b_verm5",
+    "forma": "esfera",
+    "tam": [
+     0.0083
+    ],
+    "pos": [
+     0,
+     0.022,
+     0.0099
+    ],
+    "cor": "#FF1744",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "cab_b"
+   },
+   {
+    "id": "a_verde4",
+    "forma": "esfera",
+    "tam": [
+     0.0083
+    ],
+    "pos": [
+     0,
+     -0.022,
+     0.0099
+    ],
+    "cor": "#00E676",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "cab_a"
+   },
+   {
+    "id": "a_verm5",
+    "forma": "esfera",
+    "tam": [
+     0.0083
+    ],
+    "pos": [
+     0,
+     0.022,
+     0.0099
+    ],
+    "cor": "#FF1744",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "cab_a"
+   },
+   {
+    "id": "b_verde6",
+    "forma": "esfera",
+    "tam": [
+     0.0083
+    ],
+    "pos": [
+     0,
+     -0.022,
+     0.0099
+    ],
+    "cor": "#00E676",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "cab_b"
+   },
+   {
+    "id": "b_amar7",
+    "forma": "esfera",
+    "tam": [
+     0.0083
+    ],
+    "pos": [
+     0,
+     0.0,
+     0.0099
+    ],
+    "cor": "#FFC400",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "cab_b"
+   },
+   {
+    "id": "b_verm8",
+    "forma": "esfera",
+    "tam": [
+     0.0083
+    ],
+    "pos": [
+     0,
+     0.022,
+     0.0099
+    ],
+    "cor": "#FF1744",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "cab_b"
+   },
+   {
+    "id": "a_verde6",
+    "forma": "esfera",
+    "tam": [
+     0.0083
+    ],
+    "pos": [
+     0,
+     -0.022,
+     0.0099
+    ],
+    "cor": "#00E676",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "cab_a"
+   },
+   {
+    "id": "b_verde9",
+    "forma": "esfera",
+    "tam": [
+     0.0083
+    ],
+    "pos": [
+     0,
+     -0.022,
+     0.0099
+    ],
+    "cor": "#00E676",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "cab_b"
+   },
+   {
+    "id": "a_amar7",
+    "forma": "esfera",
+    "tam": [
+     0.0083
+    ],
+    "pos": [
+     0,
+     0.0,
+     0.0099
+    ],
+    "cor": "#FFC400",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "cab_a"
+   },
+   {
+    "id": "b_amar10",
+    "forma": "esfera",
+    "tam": [
+     0.0083
+    ],
+    "pos": [
+     0,
+     0.0,
+     0.0099
+    ],
+    "cor": "#FFC400",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "cab_b"
+   },
+   {
+    "id": "a_verm8",
+    "forma": "esfera",
+    "tam": [
+     0.0083
+    ],
+    "pos": [
+     0,
+     0.022,
+     0.0099
+    ],
+    "cor": "#FF1744",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "cab_a"
+   },
+   {
+    "id": "b_verde11",
+    "forma": "esfera",
+    "tam": [
+     0.0083
+    ],
+    "pos": [
+     0,
+     -0.022,
+     0.0099
+    ],
+    "cor": "#00E676",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "cab_b"
+   },
+   {
+    "id": "b_amar12",
+    "forma": "esfera",
+    "tam": [
+     0.0083
+    ],
+    "pos": [
+     0,
+     0.0,
+     0.0099
+    ],
+    "cor": "#FFC400",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "cab_b"
+   },
+   {
+    "id": "b_verm13",
+    "forma": "esfera",
+    "tam": [
+     0.0083
+    ],
+    "pos": [
+     0,
+     0.022,
+     0.0099
+    ],
+    "cor": "#FF1744",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "cab_b"
+   },
+   {
+    "id": "a_verde9",
+    "forma": "esfera",
+    "tam": [
+     0.0083
+    ],
+    "pos": [
+     0,
+     -0.022,
+     0.0099
+    ],
+    "cor": "#00E676",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "cab_a"
+   },
+   {
+    "id": "a_verm10",
+    "forma": "esfera",
+    "tam": [
+     0.0083
+    ],
+    "pos": [
+     0,
+     0.022,
+     0.0099
+    ],
+    "cor": "#FF1744",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "cab_a"
+   },
+   {
+    "id": "m1_verde1",
+    "forma": "esfera",
+    "tam": [
+     0.0052
+    ],
+    "pos": [
+     0,
+     -0.0075,
+     0.007
+    ],
+    "cor": "#00E676",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "cab_m1"
+   },
+   {
+    "id": "m2_verde1",
+    "forma": "esfera",
+    "tam": [
+     0.0052
+    ],
+    "pos": [
+     0,
+     -0.0075,
+     0.007
+    ],
+    "cor": "#00E676",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "cab_m2"
+   },
+   {
+    "id": "a_verde11",
+    "forma": "esfera",
+    "tam": [
+     0.0083
+    ],
+    "pos": [
+     0,
+     -0.022,
+     0.0099
+    ],
+    "cor": "#00E676",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "cab_a"
+   },
+   {
+    "id": "a_verm12",
+    "forma": "esfera",
+    "tam": [
+     0.0083
+    ],
+    "pos": [
+     0,
+     0.022,
+     0.0099
+    ],
+    "cor": "#FF1744",
+    "sem_contorno": true,
+    "oculta": true,
+    "pai": "cab_a"
+   }
+  ],
+  "oficina_1868": [
+   {
+    "id": "base_p",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.014,
+     0.05
+    ],
+    "pos": [
+     0,
+     0.007,
+     0
+    ],
+    "cor": "#263B32"
+   },
+   {
+    "id": "coluna_p",
+    "forma": "cilindro",
+    "tam": [
+     0.01,
+     0.19
+    ],
+    "pos": [
+     0,
+     0.109,
+     0
+    ],
+    "cor": "#2E5E4E"
+   },
+   {
+    "id": "anel_p1",
+    "forma": "toro",
+    "tam": [
+     0.013,
+     0.0028
+    ],
+    "pos": [
+     0,
+     0.06,
+     0
+    ],
+    "cor": "#C9A227",
+    "sem_contorno": true
+   },
+   {
+    "id": "anel_p2",
+    "forma": "toro",
+    "tam": [
+     0.013,
+     0.0028
+    ],
+    "pos": [
+     0,
+     0.183,
+     0
+    ],
+    "cor": "#C9A227",
+    "sem_contorno": true
+   },
+   {
+    "id": "piv_be",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     -0.011,
+     0.19,
+     0.004
+    ],
+    "giro": [
+     0,
+     0,
+     45
+    ],
+    "cor": "#2E5E4E",
+    "sem_contorno": true
+   },
+   {
+    "id": "braco_e",
+    "forma": "caixa",
+    "tam": [
+     0.07,
+     0.011,
+     0.004
+    ],
+    "pos": [
+     -0.035,
+     0,
+     0
+    ],
+    "cor": "#C62828",
+    "pai": "piv_be"
+   },
+   {
+    "id": "faixa_e",
+    "forma": "caixa",
+    "tam": [
+     0.007,
+     0.0115,
+     0.0045
+    ],
+    "pos": [
+     -0.055,
+     0,
+     0
+    ],
+    "cor": "#FAFAFA",
+    "sem_contorno": true,
+    "pai": "piv_be"
+   },
+   {
+    "id": "piv_bd",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     0.011,
+     0.19,
+     0.004
+    ],
+    "giro": [
+     0,
+     0,
+     -45
+    ],
+    "cor": "#2E5E4E",
+    "sem_contorno": true
+   },
+   {
+    "id": "braco_d",
+    "forma": "caixa",
+    "tam": [
+     0.07,
+     0.011,
+     0.004
+    ],
+    "pos": [
+     0.035,
+     0,
+     0
+    ],
+    "cor": "#C62828",
+    "pai": "piv_bd"
+   },
+   {
+    "id": "faixa_d",
+    "forma": "caixa",
+    "tam": [
+     0.007,
+     0.0115,
+     0.0045
+    ],
+    "pos": [
+     0.055,
+     0,
+     0
+    ],
+    "cor": "#FAFAFA",
+    "sem_contorno": true,
+    "pai": "piv_bd"
+   },
+   {
+    "id": "lanterna_p",
+    "forma": "caixa",
+    "tam": [
+     0.024,
+     0.026,
+     0.024
+    ],
+    "pos": [
+     0,
+     0.218,
+     0
+    ],
+    "cor": "#263238"
+   },
+   {
+    "id": "teto_lant",
+    "forma": "cone",
+    "tam": [
+     0.018,
+     0.016
+    ],
+    "pos": [
+     0,
+     0.239,
+     0
+    ],
+    "cor": "#263238"
+   },
+   {
+    "id": "lente_p",
+    "forma": "esfera",
+    "tam": [
+     0.009
+    ],
+    "pos": [
+     0,
+     0.218,
+     0.011
+    ],
+    "cor": "#4E342E",
+    "sem_contorno": true
+   },
+   {
+    "id": "lente_verm",
+    "forma": "esfera",
+    "tam": [
+     0.0095
+    ],
+    "pos": [
+     0,
+     0.218,
+     0.0115
+    ],
+    "cor": "#E53935",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "lente_verde",
+    "forma": "esfera",
+    "tam": [
+     0.0095
+    ],
+    "pos": [
+     0,
+     0.218,
+     0.0118
+    ],
+    "cor": "#43A047",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "lente_verm2",
+    "forma": "esfera",
+    "tam": [
+     0.0095
+    ],
+    "pos": [
+     0,
+     0.218,
+     0.0121
+    ],
+    "cor": "#E53935",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "cano_p",
+    "forma": "tubo",
+    "tam": [
+     0.0035
+    ],
+    "pos": [
+     -0.09,
+     0.1,
+     -0.016
+    ],
+    "cor": "#8D6E63",
+    "caminho": [
+     [
+      -0.08,
+      -0.096,
+      -0.004
+     ],
+     [
+      0.06,
+      -0.096,
+      -0.004
+     ],
+     [
+      0.078,
+      -0.084,
+      0.004
+     ],
+     [
+      0.078,
+      0.105,
+      0.004
+     ]
+    ]
+   },
+   {
+    "id": "piv_alav",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     0.03,
+     0.014,
+     0.018
+    ],
+    "cor": "#5D4037",
+    "sem_contorno": true
+   },
+   {
+    "id": "haste_alav",
+    "forma": "caixa",
+    "tam": [
+     0.004,
+     0.05,
+     0.004
+    ],
+    "pos": [
+     0,
+     0.025,
+     0
+    ],
+    "cor": "#5D4037",
+    "pai": "piv_alav"
+   },
+   {
+    "id": "pomo_alav",
+    "forma": "esfera",
+    "tam": [
+     0.006
+    ],
+    "pos": [
+     0,
+     0.05,
+     0
+    ],
+    "cor": "#212121",
+    "pai": "piv_alav"
+   }
+  ]
+ },
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "tito",
+   "texto": "Você para no vermelho e, do nada, ele fica VERDE. Como ele sabe a hora?",
+   "tom": "surpreso"
+  },
+  {
+   "id": "f2",
+   "quem": "tito",
+   "texto": "E o primeiro semáforo do mundo nem era elétrico: ele EXPLODIU.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f3",
+   "quem": "tito",
+   "texto": "Em 1868, em Londres, o engenheiro John Peake Knight pôs um sinal de TREM no meio das carroças.",
+   "off": true
+  },
+  {
+   "id": "f4",
+   "quem": "tito",
+   "texto": "De dia, braços diziam pare. De noite, uma lâmpada a GÁS ficava vermelha ou verde.",
+   "off": true
+  },
+  {
+   "id": "f5",
+   "quem": "tito",
+   "texto": "E um guarda trocava tudo na mão, numa ALAVANCA.",
+   "off": true
+  },
+  {
+   "id": "f6",
+   "quem": "tito",
+   "texto": "MAS o gás vazou por baixo da calçada, e a lâmpada explodiu no rosto do GUARDA.",
+   "off": true,
+   "tom": "tenso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f7",
+   "quem": "tito",
+   "texto": "O semáforo só voltou em 1914, nos Estados Unidos, com luz ELÉTRICA."
+  },
+  {
+   "id": "f8",
+   "quem": "tito",
+   "texto": "Hoje, quem manda é uma CAIXA na esquina, com um relógio contando o tempo de cada cor."
+  },
+  {
+   "id": "f9",
+   "quem": "tito",
+   "texto": "MAS se um lado abrisse no instante em que o outro fecha, quem passou no finzinho BATERIA.",
+   "tom": "tenso"
+  },
+  {
+   "id": "f10",
+   "quem": "tito",
+   "texto": "Por isso existe o AMARELO, e até um segundinho de vermelho para todo mundo.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f11",
+   "quem": "tito",
+   "texto": "E SE um defeito acendesse os dois VERDES ao mesmo tempo?",
+   "tom": "tenso"
+  },
+  {
+   "id": "f12",
+   "quem": "tito",
+   "texto": "A caixa tem um VIGIA para isso: viu dois verdes, corta tudo e deixa o sinal piscando.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f13",
+   "quem": "tito",
+   "texto": "Em muita esquina, é só o relógio. Em outras, tem um FIO enrolado, escondido no asfalto."
+  },
+  {
+   "id": "f14",
+   "quem": "tito",
+   "texto": "Ele não sente o peso: o fio vira um ímã fraquinho, e o METAL do carro mexe nele."
+  },
+  {
+   "id": "f15",
+   "quem": "tito",
+   "texto": "A caixa sente a mudança, sabe que tem alguém ESPERANDO e chama o verde para o seu lado.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f16",
+   "quem": "tito",
+   "texto": "Na avenida, as caixas ainda combinam: um sinal abre logo depois do outro. É a ONDA VERDE.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f17",
+   "quem": "tito",
+   "texto": "Ficou num vermelho que não acabava NUNCA? Talvez o fio nem tenha te visto: moto e bicicleta têm pouco metal."
+  }
+ ],
+ "chamada": {
+  "pergunta": "E agora, topa construir uma escada rolante?",
+  "texto": "Comenta",
+  "destaque": "ESCADA"
+ },
+ "postagem": {
+  "titulo": "Como funciona o semáforo? Ele sabe que você chegou",
+  "descricao": "Como funciona o semáforo por dentro: a caixa de controle com o relógio, o amarelo e o instante de vermelho para todos, o vigia que impede dois verdes e o fio enrolado no asfalto que sente o metal do carro. E o primeiro semáforo do mundo, a gás, que explodiu em Londres.",
+  "hashtags": [
+   "comofunciona",
+   "semaforo",
+   "transito",
+   "curiosidades"
+  ],
+  "comentario": "Eu jurava que o semáforo sentia o peso do carro. Você também achava?",
+  "capa": "f11:verdes+0.5"
+ },
+ "cenas": [
+  {
+   "id": "gancho",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "desconfiado"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "cruzamento",
+     "em": "pedestal",
+     "escala": 1.6
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "carro_b",
+     "faz": "mover",
+     "desloc": [
+      0.4,
+      0.0,
+      0.0
+     ],
+     "de": "inicio",
+     "ate": "inicio+1.7"
+    },
+    {
+     "peca": "carro_a",
+     "faz": "mover",
+     "desloc": [
+      0.0,
+      0.0,
+      -0.12
+     ],
+     "de": "inicio",
+     "ate": "inicio+1.3"
+    },
+    {
+     "peca": "b_verde0",
+     "faz": "sumir",
+     "de": "f1:vermelho"
+    },
+    {
+     "peca": "b_amar1",
+     "faz": "aparecer",
+     "de": "f1:vermelho"
+    },
+    {
+     "peca": "b_amar1",
+     "faz": "sumir",
+     "de": "f1:nada"
+    },
+    {
+     "peca": "b_verm2",
+     "faz": "aparecer",
+     "de": "f1:nada"
+    },
+    {
+     "peca": "a_verm0",
+     "faz": "sumir",
+     "de": "f1:verde"
+    },
+    {
+     "peca": "a_verde1",
+     "faz": "aparecer",
+     "de": "f1:verde"
+    },
+    {
+     "peca": "carro_a",
+     "faz": "mover",
+     "desloc": [
+      0.0,
+      0.0,
+      -0.225
+     ],
+     "de": "f1:verde+0.5",
+     "ate": "f1:hora+0.3"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "desconfiado",
+     "de": "inicio"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "maquete",
+     "expressao": "surpreso",
+     "de": "f1:verde"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f1:como-0.3"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "cab_a",
+     "olhar": "maquete",
+     "expressao": "desconfiado",
+     "de": "f2"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f2:explodiu"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "camera": [
+      0.056,
+      1.112,
+      0.576
+     ],
+     "alvo": [
+      0.056,
+      1.16,
+      -0.128
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f1:verde-0.15",
+     "tipo": "detalhe",
+     "camera": [
+      0.048,
+      1.272,
+      0.192
+     ],
+     "alvo": [
+      0.109,
+      1.272,
+      -0.179
+     ],
+     "movimento": "zoom_rapido"
+    },
+    {
+     "de": "f1:como",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f2",
+     "tipo": "detalhe",
+     "camera": [
+      -0.096,
+      1.8,
+      1.152
+     ],
+     "alvo": [
+      0.0,
+      1.048,
+      -0.032
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f2:explodiu",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido"
+    }
+   ],
+   "sons": [
+    {
+     "de": "inicio",
+     "som": "buzina",
+     "volume": 0.4
+    },
+    {
+     "de": "f1:vermelho",
+     "som": "clique",
+     "volume": 0.6
+    },
+    {
+     "de": "f1:verde",
+     "som": "ding",
+     "volume": 0.8
+    },
+    {
+     "de": "f1:como",
+     "som": "tensao_sobe",
+     "volume": 0.4
+    },
+    {
+     "de": "f2:explodiu",
+     "som": "impacto",
+     "volume": 1.0
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f1:verde",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f2:explodiu",
+     "efeito": "flash"
+    },
+    {
+     "de": "f2:explodiu",
+     "ate": "f2:fim+0.3",
+     "efeito": "tremor",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f2:explodiu",
+     "ate": "f2:fim+0.4",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "cab_a",
+     "texto": "Semáforo",
+     "de": "f1:verde",
+     "ate": "f1:como"
+    }
+   ]
+  },
+  {
+   "id": "knight",
+   "cenario": "oficina",
+   "ambiente": "oficina",
+   "filtro": "sepia",
+   "de": "f3",
+   "personagens": {
+    "knight": {
+     "em": [
+      -1.0,
+      -0.3
+     ],
+     "olhando": [
+      1.2,
+      2.2,
+      3.0
+     ],
+     "expressao": "serio"
+    },
+    "guarda": {
+     "em": [
+      2.2,
+      0.9
+     ],
+     "olhando": [
+      0.0,
+      1.15,
+      -1.05
+     ],
+     "expressao": "neutro"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "oficina_1868",
+     "em": [
+      0,
+      -1.05
+     ],
+     "alt": 0.92,
+     "escala": 1.5
+    },
+    {
+     "tipo": "particulas",
+     "particula": "fagulhas",
+     "em": [
+      0,
+      -1.05
+     ],
+     "alt": 1.25,
+     "raio": 0.06,
+     "altura": 0.25,
+     "quantas": 18,
+     "aparece": "f6:explodiu",
+     "some": "f6:fim+0.3"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "faiscas",
+     "em": [
+      0,
+      -1.05
+     ],
+     "alt": 1.25,
+     "raio": 0.05,
+     "altura": 0.1,
+     "quantas": 8,
+     "aparece": "f6:explodiu",
+     "some": "f6:explodiu+0.8"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f3:1868",
+     "ate": "f3:trem",
+     "grande": "1868",
+     "pequeno": "John Peake Knight · Londres"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "piv_be",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": -45,
+     "de": "f4:bracos",
+     "ate": "f4:bracos+0.4"
+    },
+    {
+     "peca": "piv_bd",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": 45,
+     "de": "f4:bracos",
+     "ate": "f4:bracos+0.4"
+    },
+    {
+     "peca": "lente_verm",
+     "faz": "aparecer",
+     "de": "f4:vermelha"
+    },
+    {
+     "peca": "lente_verm",
+     "faz": "sumir",
+     "de": "f4:verde"
+    },
+    {
+     "peca": "lente_verde",
+     "faz": "aparecer",
+     "de": "f4:verde"
+    },
+    {
+     "peca": "piv_alav",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": -35,
+     "de": "f5:alavanca",
+     "ate": "f5:alavanca+0.3"
+    },
+    {
+     "peca": "piv_be",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": 45,
+     "de": "f5:alavanca+0.1",
+     "ate": "f5:alavanca+0.5"
+    },
+    {
+     "peca": "piv_bd",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": -45,
+     "de": "f5:alavanca+0.1",
+     "ate": "f5:alavanca+0.5"
+    },
+    {
+     "peca": "lente_verde",
+     "faz": "sumir",
+     "de": "f5:alavanca+0.2"
+    },
+    {
+     "peca": "lente_verm2",
+     "faz": "aparecer",
+     "de": "f5:alavanca+0.2"
+    },
+    {
+     "peca": "lanterna_p",
+     "faz": "aquecer",
+     "intensidade": 1.2,
+     "de": "f6:explodiu",
+     "ate": "f6:explodiu+0.4"
+    },
+    {
+     "peca": "lanterna_p",
+     "faz": "tremer",
+     "intensidade": 0.8,
+     "de": "f6:explodiu",
+     "ate": "f6:explodiu+0.6"
+    },
+    {
+     "peca": "lente_verm2",
+     "faz": "sumir",
+     "de": "f6:explodiu"
+    },
+    {
+     "peca": "teto_lant",
+     "faz": "mover",
+     "desloc": [
+      0.02,
+      0.05,
+      0.01
+     ],
+     "de": "f6:explodiu",
+     "ate": "f6:explodiu+0.3"
+    },
+    {
+     "peca": "oficina_1868",
+     "faz": "fluxo",
+     "tipo": "gas",
+     "quantidade": 6,
+     "velocidade": 0.45,
+     "intensidade": 0.3,
+     "de": "f6:gas",
+     "ate": "f6:explodiu",
+     "caminho": [
+      [
+       0.012,
+       0.012,
+       0.022
+      ],
+      [
+       0.03,
+       0.06,
+       0.035
+      ],
+      [
+       0.02,
+       0.13,
+       0.03
+      ],
+      [
+       0.008,
+       0.2,
+       0.02
+      ]
+     ]
+    },
+    {
+     "peca": "oficina_1868",
+     "faz": "fluxo",
+     "tipo": "gas",
+     "quantidade": 6,
+     "velocidade": 0.45,
+     "intensidade": 0.3,
+     "de": "f6:gas",
+     "ate": "f6:explodiu",
+     "caminho": [
+      [
+       -0.014,
+       0.012,
+       0.022
+      ],
+      [
+       -0.035,
+       0.07,
+       0.03
+      ],
+      [
+       -0.022,
+       0.15,
+       0.025
+      ],
+      [
+       -0.006,
+       0.205,
+       0.018
+      ]
+     ]
+    },
+    {
+     "peca": "cano_p",
+     "faz": "fluxo",
+     "tipo": "gas",
+     "quantidade": 6,
+     "velocidade": 0.5,
+     "intensidade": 0.25,
+     "de": "f4:gas",
+     "ate": "f6:explodiu"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "knight",
+     "faz": "virar",
+     "para": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "olhar": "camera",
+     "expressao": "serio",
+     "de": "f3"
+    },
+    {
+     "quem": "knight",
+     "faz": "virar",
+     "para": [
+      0.3,
+      2.85,
+      2.2
+     ],
+     "olhar": "camera",
+     "expressao": "determinado",
+     "de": "f3:knight-0.3"
+    },
+    {
+     "quem": "knight",
+     "faz": "estender_mao",
+     "para": "oficina_1868",
+     "olhar": "oficina_1868",
+     "expressao": "feliz",
+     "de": "f3:trem"
+    },
+    {
+     "quem": "knight",
+     "olhar": "oficina_1868",
+     "expressao": "feliz",
+     "de": "f4"
+    },
+    {
+     "quem": "guarda",
+     "faz": "andar",
+     "para": [
+      0.55,
+      -0.6
+     ],
+     "olhar": "oficina_1868",
+     "expressao": "neutro",
+     "de": "f4:noite"
+    },
+    {
+     "quem": "guarda",
+     "faz": "virar",
+     "para": [
+      0.0,
+      2.85,
+      2.35
+     ],
+     "olhar": "camera",
+     "expressao": "serio",
+     "de": "f5"
+    },
+    {
+     "quem": "guarda",
+     "faz": "puxar",
+     "para": "oficina_1868",
+     "olhar": "oficina_1868",
+     "expressao": "serio",
+     "de": "f5:mao"
+    },
+    {
+     "quem": "guarda",
+     "olhar": "oficina_1868",
+     "expressao": "desconfiado",
+     "de": "f6:gas"
+    },
+    {
+     "quem": "guarda",
+     "faz": "susto",
+     "olhar": "camera",
+     "expressao": "medo",
+     "de": "f6:explodiu"
+    },
+    {
+     "quem": "guarda",
+     "faz": "maos_na_cabeca",
+     "olhar": "camera",
+     "expressao": "medo",
+     "de": "f6:rosto"
+    },
+    {
+     "quem": "knight",
+     "faz": "susto",
+     "olhar": "oficina_1868",
+     "expressao": "medo",
+     "de": "f6:explodiu"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "camera": [
+      0.9,
+      2.85,
+      3.9
+     ],
+     "alvo": [
+      -0.4,
+      2.2,
+      -0.7
+     ],
+     "movimento": "arco",
+     "intensidade": 0.6,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f3:knight",
+     "tipo": "close",
+     "camera": [
+      0.3,
+      2.85,
+      2.2
+     ],
+     "alvo": "knight",
+     "movimento": "travelling",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f3:trem",
+     "tipo": "detalhe",
+     "camera": [
+      0.12,
+      1.3,
+      -0.22
+     ],
+     "alvo": [
+      0.0,
+      1.14,
+      -1.05
+     ],
+     "movimento": "arco",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f4:noite",
+     "tipo": "detalhe",
+     "camera": [
+      0.08,
+      1.3,
+      -0.62
+     ],
+     "alvo": [
+      0.0,
+      1.24,
+      -1.05
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f5",
+     "tipo": "close",
+     "camera": [
+      0.0,
+      2.85,
+      2.35
+     ],
+     "alvo": "guarda",
+     "movimento": "travelling",
+     "intensidade": -0.3
+    },
+    {
+     "de": "f5:alavanca",
+     "tipo": "detalhe",
+     "camera": [
+      0.12,
+      1.3,
+      -0.22
+     ],
+     "alvo": [
+      0.0,
+      1.14,
+      -1.05
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f6",
+     "tipo": "detalhe",
+     "camera": [
+      0.14,
+      1.06,
+      -0.62
+     ],
+     "alvo": [
+      0.0,
+      0.98,
+      -1.05
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f6:explodiu-0.1",
+     "tipo": "detalhe",
+     "camera": [
+      0.08,
+      1.3,
+      -0.62
+     ],
+     "alvo": [
+      0.0,
+      1.24,
+      -1.05
+     ],
+     "movimento": "zoom_rapido"
+    },
+    {
+     "de": "f6:rosto",
+     "tipo": "close",
+     "camera": [
+      0.0,
+      2.85,
+      2.35
+     ],
+     "alvo": "guarda",
+     "movimento": "zoom_rapido"
+    }
+   ],
+   "sons": [
+    {
+     "de": "f3:1868",
+     "som": "pop",
+     "volume": 0.6
+    },
+    {
+     "de": "f3:trem",
+     "som": "ding",
+     "volume": 0.6
+    },
+    {
+     "de": "f4:bracos",
+     "som": "engrenagem",
+     "volume": 0.6
+    },
+    {
+     "de": "f4:vermelha",
+     "som": "isqueiro",
+     "volume": 0.6
+    },
+    {
+     "de": "f4:verde",
+     "som": "clique",
+     "volume": 0.6
+    },
+    {
+     "de": "f5:alavanca",
+     "som": "engrenagem",
+     "volume": 0.7
+    },
+    {
+     "de": "f6",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f6:gas",
+     "som": "chiado",
+     "volume": 0.5
+    },
+    {
+     "de": "f6:explodiu",
+     "som": "impacto",
+     "volume": 1.0
+    },
+    {
+     "de": "f6:explodiu",
+     "som": "fogo",
+     "volume": 0.7
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f3:trem",
+     "ate": "f4",
+     "efeito": "circular",
+     "alvo": "coluna_p"
+    },
+    {
+     "de": "f6:explodiu",
+     "efeito": "flash"
+    },
+    {
+     "de": "f6:explodiu",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f6:explodiu",
+     "ate": "f6:explodiu+0.6",
+     "efeito": "tremor",
+     "intensidade": 0.7
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "braco_d",
+     "texto": "Braços",
+     "de": "f4:bracos",
+     "ate": "f4:noite"
+    },
+    {
+     "alvo": "lanterna_p",
+     "texto": "Gás",
+     "de": "f4:gas",
+     "ate": "f4:fim"
+    },
+    {
+     "alvo": "haste_alav",
+     "texto": "Alavanca",
+     "de": "f5:alavanca",
+     "ate": "f5:fim"
+    },
+    {
+     "alvo": "base_p",
+     "texto": "Vazamento",
+     "de": "f6:vazou",
+     "ate": "f6:explodiu",
+     "cor": "#FF8A65"
+    }
+   ]
+  },
+  {
+   "id": "por_dentro",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "de": "f7",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "feliz"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "cruzamento",
+     "em": "pedestal",
+     "escala": 1.6
+    },
+    {
+     "tipo": "particulas",
+     "particula": "faiscas",
+     "em": [
+      0.0,
+      -0.056
+     ],
+     "alt": 1.064,
+     "raio": 0.05,
+     "altura": 0.04,
+     "quantas": 8,
+     "aparece": "f9:bateria",
+     "some": "f9:bateria+0.7"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f16:onda",
+     "ate": "f16:fim+0.3",
+     "grande": "ONDA VERDE",
+     "pequeno": "um sinal abre logo depois do outro, no ritmo do carro"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "carro_a",
+     "faz": "mover",
+     "desloc": [
+      0.0,
+      0.0,
+      -0.12
+     ],
+     "de": "inicio",
+     "ate": "inicio+0.04"
+    },
+    {
+     "peca": "a_verm0",
+     "faz": "pulsar",
+     "intensidade": 0.8,
+     "de": "f7:eletrica",
+     "ate": "f7:eletrica+0.9"
+    },
+    {
+     "peca": "b_verde0",
+     "faz": "pulsar",
+     "intensidade": 0.8,
+     "de": "f7:eletrica",
+     "ate": "f7:eletrica+0.9"
+    },
+    {
+     "peca": "carro_b",
+     "faz": "mover",
+     "desloc": [
+      0.4,
+      0.0,
+      0.0
+     ],
+     "de": "f7:eletrica+0.2",
+     "ate": "f7:eletrica+1.8"
+    },
+    {
+     "peca": "caixa_ctrl",
+     "faz": "aparecer",
+     "de": "f8:caixa"
+    },
+    {
+     "peca": "piv_ponteiro",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -1.0,
+     "de": "f8:relogio",
+     "ate": "f8:fim+0.4"
+    },
+    {
+     "peca": "cabo",
+     "faz": "aparecer",
+     "de": "f8:tempo"
+    },
+    {
+     "peca": "cabo",
+     "faz": "fluxo",
+     "tipo": "eletricidade",
+     "quantidade": 9,
+     "velocidade": 1.6,
+     "intensidade": 0.4,
+     "de": "f8:tempo",
+     "ate": "f8:fim+0.3"
+    },
+    {
+     "peca": "b_verde0",
+     "faz": "sumir",
+     "de": "f8:cor"
+    },
+    {
+     "peca": "b_verm3",
+     "faz": "aparecer",
+     "de": "f8:cor"
+    },
+    {
+     "peca": "a_verm0",
+     "faz": "sumir",
+     "de": "f8:cor"
+    },
+    {
+     "peca": "a_verde2",
+     "faz": "aparecer",
+     "de": "f8:cor"
+    },
+    {
+     "peca": "carro_a",
+     "faz": "mover",
+     "desloc": [
+      0.0,
+      0.0,
+      -0.225
+     ],
+     "de": "f8:cor+0.3",
+     "ate": "f8:cor+1.6"
+    },
+    {
+     "peca": "carro_a",
+     "faz": "mover",
+     "desloc": [
+      0.0,
+      0.0,
+      0.225
+     ],
+     "de": "f9",
+     "ate": "f9+0.04"
+    },
+    {
+     "peca": "carro_b",
+     "faz": "mover",
+     "desloc": [
+      -0.4,
+      0.0,
+      0.0
+     ],
+     "de": "f9",
+     "ate": "f9+0.04"
+    },
+    {
+     "peca": "a_verde2",
+     "faz": "sumir",
+     "de": "f9"
+    },
+    {
+     "peca": "a_verm3",
+     "faz": "aparecer",
+     "de": "f9"
+    },
+    {
+     "peca": "b_verm3",
+     "faz": "sumir",
+     "de": "f9"
+    },
+    {
+     "peca": "b_verde4",
+     "faz": "aparecer",
+     "de": "f9"
+    },
+    {
+     "peca": "carro_b",
+     "faz": "mover",
+     "desloc": [
+      0.222,
+      0.0,
+      0.0
+     ],
+     "de": "f9:abrisse-0.4",
+     "ate": "f9:bateria"
+    },
+    {
+     "peca": "b_verde4",
+     "faz": "sumir",
+     "de": "f9:instante"
+    },
+    {
+     "peca": "b_verm5",
+     "faz": "aparecer",
+     "de": "f9:instante"
+    },
+    {
+     "peca": "a_verm3",
+     "faz": "sumir",
+     "de": "f9:instante"
+    },
+    {
+     "peca": "a_verde4",
+     "faz": "aparecer",
+     "de": "f9:instante"
+    },
+    {
+     "peca": "carro_a",
+     "faz": "mover",
+     "desloc": [
+      0.0,
+      0.0,
+      -0.016
+     ],
+     "de": "f9:bateria-0.5",
+     "ate": "f9:bateria"
+    },
+    {
+     "peca": "carro_a",
+     "faz": "tremer",
+     "intensidade": 0.7,
+     "de": "f9:bateria",
+     "ate": "f9:bateria+0.4"
+    },
+    {
+     "peca": "carro_b",
+     "faz": "tremer",
+     "intensidade": 0.7,
+     "de": "f9:bateria",
+     "ate": "f9:bateria+0.4"
+    },
+    {
+     "peca": "carro_a",
+     "faz": "mover",
+     "desloc": [
+      0.0,
+      0.0,
+      0.016
+     ],
+     "de": "f10",
+     "ate": "f10+0.04"
+    },
+    {
+     "peca": "carro_b",
+     "faz": "mover",
+     "desloc": [
+      -0.222,
+      0.0,
+      0.0
+     ],
+     "de": "f10",
+     "ate": "f10+0.04"
+    },
+    {
+     "peca": "a_verde4",
+     "faz": "sumir",
+     "de": "f10"
+    },
+    {
+     "peca": "a_verm5",
+     "faz": "aparecer",
+     "de": "f10"
+    },
+    {
+     "peca": "b_verm5",
+     "faz": "sumir",
+     "de": "f10"
+    },
+    {
+     "peca": "b_verde6",
+     "faz": "aparecer",
+     "de": "f10"
+    },
+    {
+     "peca": "carro_b",
+     "faz": "mover",
+     "desloc": [
+      0.4,
+      0.0,
+      0.0
+     ],
+     "de": "f10:existe",
+     "ate": "f10:segundinho"
+    },
+    {
+     "peca": "b_verde6",
+     "faz": "sumir",
+     "de": "f10:amarelo"
+    },
+    {
+     "peca": "b_amar7",
+     "faz": "aparecer",
+     "de": "f10:amarelo"
+    },
+    {
+     "peca": "b_amar7",
+     "faz": "sumir",
+     "de": "f10:vermelho"
+    },
+    {
+     "peca": "b_verm8",
+     "faz": "aparecer",
+     "de": "f10:vermelho"
+    },
+    {
+     "peca": "a_verm5",
+     "faz": "pulsar",
+     "intensidade": 0.7,
+     "de": "f10:vermelho",
+     "ate": "f10:fim"
+    },
+    {
+     "peca": "b_verm8",
+     "faz": "pulsar",
+     "intensidade": 0.7,
+     "de": "f10:vermelho",
+     "ate": "f10:fim"
+    },
+    {
+     "peca": "a_verm5",
+     "faz": "sumir",
+     "de": "f10:fim+0.1"
+    },
+    {
+     "peca": "a_verde6",
+     "faz": "aparecer",
+     "de": "f10:fim+0.1"
+    },
+    {
+     "peca": "carro_a",
+     "faz": "mover",
+     "desloc": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "de": "f11",
+     "ate": "f11+0.04"
+    },
+    {
+     "peca": "carro_b",
+     "faz": "mover",
+     "desloc": [
+      -0.295,
+      0.0,
+      0.0
+     ],
+     "de": "f11",
+     "ate": "f11+0.04"
+    },
+    {
+     "peca": "b_verm8",
+     "faz": "sumir",
+     "de": "f11:verdes"
+    },
+    {
+     "peca": "b_verde9",
+     "faz": "aparecer",
+     "de": "f11:verdes"
+    },
+    {
+     "peca": "carro_a",
+     "faz": "mover",
+     "desloc": [
+      0.0,
+      0.0,
+      -0.02
+     ],
+     "de": "f11:verdes+0.3",
+     "ate": "f12:vigia"
+    },
+    {
+     "peca": "carro_b",
+     "faz": "mover",
+     "desloc": [
+      0.057,
+      0.0,
+      0.0
+     ],
+     "de": "f11:verdes+0.3",
+     "ate": "f12:vigia"
+    },
+    {
+     "peca": "caixa_ctrl",
+     "faz": "transparente",
+     "opacidade": 0.3,
+     "de": "f12:vigia",
+     "ate": "f12:vigia+0.5"
+    },
+    {
+     "peca": "olho",
+     "faz": "tremer",
+     "intensidade": 0.5,
+     "de": "f12:viu",
+     "ate": "f12:viu+0.5"
+    },
+    {
+     "peca": "a_verde6",
+     "faz": "sumir",
+     "de": "f12:corta"
+    },
+    {
+     "peca": "a_amar7",
+     "faz": "aparecer",
+     "de": "f12:corta"
+    },
+    {
+     "peca": "b_verde9",
+     "faz": "sumir",
+     "de": "f12:corta"
+    },
+    {
+     "peca": "b_amar10",
+     "faz": "aparecer",
+     "de": "f12:corta"
+    },
+    {
+     "peca": "a_amar7",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "f12:corta+0.2",
+     "ate": "f12:fim+0.5"
+    },
+    {
+     "peca": "b_amar10",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "f12:corta+0.2",
+     "ate": "f12:fim+0.5"
+    },
+    {
+     "peca": "carro_a",
+     "faz": "mover",
+     "desloc": [
+      0.0,
+      0.0,
+      0.14
+     ],
+     "de": "f13",
+     "ate": "f13+0.04"
+    },
+    {
+     "peca": "carro_b",
+     "faz": "mover",
+     "desloc": [
+      0.238,
+      0.0,
+      0.0
+     ],
+     "de": "f13",
+     "ate": "f13+0.04"
+    },
+    {
+     "peca": "a_amar7",
+     "faz": "sumir",
+     "de": "f13"
+    },
+    {
+     "peca": "a_verm8",
+     "faz": "aparecer",
+     "de": "f13"
+    },
+    {
+     "peca": "b_amar10",
+     "faz": "sumir",
+     "de": "f13"
+    },
+    {
+     "peca": "b_verde11",
+     "faz": "aparecer",
+     "de": "f13"
+    },
+    {
+     "peca": "caixa_ctrl",
+     "faz": "transparente",
+     "opacidade": 1,
+     "de": "f13",
+     "ate": "f13+0.05"
+    },
+    {
+     "peca": "piv_ponteiro",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -1.0,
+     "de": "f13:relogio",
+     "ate": "f13:outras"
+    },
+    {
+     "peca": "laco",
+     "faz": "aparecer",
+     "de": "f13:fio"
+    },
+    {
+     "peca": "fio_laco",
+     "faz": "aparecer",
+     "de": "f13:enrolado"
+    },
+    {
+     "peca": "campo",
+     "faz": "aparecer",
+     "de": "f14:ima"
+    },
+    {
+     "peca": "campo",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "f14:metal+0.3",
+     "ate": "f15:mudanca"
+    },
+    {
+     "peca": "laco",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "f14:metal+0.3",
+     "ate": "f15:mudanca"
+    },
+    {
+     "peca": "campo",
+     "faz": "tremer",
+     "intensidade": 0.4,
+     "de": "f14:metal+0.3",
+     "ate": "f14:nele+0.4"
+    },
+    {
+     "peca": "fio_laco",
+     "faz": "fluxo",
+     "tipo": "eletricidade",
+     "quantidade": 7,
+     "velocidade": 1.4,
+     "intensidade": 0.4,
+     "de": "f15:sente",
+     "ate": "f15:esperando+0.4"
+    },
+    {
+     "peca": "cabo",
+     "faz": "fluxo",
+     "tipo": "eletricidade",
+     "quantidade": 9,
+     "velocidade": 1.6,
+     "intensidade": 0.4,
+     "de": "f15:chama",
+     "ate": "f15:fim"
+    },
+    {
+     "peca": "carro_a",
+     "faz": "mover",
+     "desloc": [
+      0.0,
+      0.0,
+      -0.12
+     ],
+     "de": "f14:metal-0.7",
+     "ate": "f14:metal+0.3"
+    },
+    {
+     "peca": "b_verde11",
+     "faz": "sumir",
+     "de": "f15:esperando"
+    },
+    {
+     "peca": "b_amar12",
+     "faz": "aparecer",
+     "de": "f15:esperando"
+    },
+    {
+     "peca": "b_amar12",
+     "faz": "sumir",
+     "de": "f15:chama"
+    },
+    {
+     "peca": "b_verm13",
+     "faz": "aparecer",
+     "de": "f15:chama"
+    },
+    {
+     "peca": "a_verm8",
+     "faz": "sumir",
+     "de": "f15:verde"
+    },
+    {
+     "peca": "a_verde9",
+     "faz": "aparecer",
+     "de": "f15:verde"
+    },
+    {
+     "peca": "carro_a",
+     "faz": "mover",
+     "desloc": [
+      0.0,
+      0.0,
+      -0.225
+     ],
+     "de": "f15:lado",
+     "ate": "f15:fim+0.9"
+    },
+    {
+     "peca": "carro_a",
+     "faz": "mover",
+     "desloc": [
+      0.0,
+      0.0,
+      0.375
+     ],
+     "de": "f16",
+     "ate": "f16+0.04"
+    },
+    {
+     "peca": "a_verde9",
+     "faz": "sumir",
+     "de": "f16"
+    },
+    {
+     "peca": "a_verm10",
+     "faz": "aparecer",
+     "de": "f16"
+    },
+    {
+     "peca": "poste_m1",
+     "faz": "aparecer",
+     "de": "f16:avenida"
+    },
+    {
+     "peca": "cab_m1",
+     "faz": "aparecer",
+     "de": "f16:avenida"
+    },
+    {
+     "peca": "poste_m2",
+     "faz": "aparecer",
+     "de": "f16:avenida+0.2"
+    },
+    {
+     "peca": "cab_m2",
+     "faz": "aparecer",
+     "de": "f16:avenida+0.2"
+    },
+    {
+     "peca": "m1_verm0",
+     "faz": "sumir",
+     "de": "f16:abre"
+    },
+    {
+     "peca": "m1_verde1",
+     "faz": "aparecer",
+     "de": "f16:abre"
+    },
+    {
+     "peca": "m2_verm0",
+     "faz": "sumir",
+     "de": "f16:abre+0.7"
+    },
+    {
+     "peca": "m2_verde1",
+     "faz": "aparecer",
+     "de": "f16:abre+0.7"
+    },
+    {
+     "peca": "a_verm10",
+     "faz": "sumir",
+     "de": "f16:abre+1.4"
+    },
+    {
+     "peca": "a_verde11",
+     "faz": "aparecer",
+     "de": "f16:abre+1.4"
+    },
+    {
+     "peca": "carro_a",
+     "faz": "mover",
+     "desloc": [
+      0.0,
+      0.0,
+      -0.375
+     ],
+     "de": "f16:abre+0.2",
+     "ate": "f16:abre+3.0"
+    },
+    {
+     "peca": "a_verde11",
+     "faz": "sumir",
+     "de": "f17"
+    },
+    {
+     "peca": "a_verm12",
+     "faz": "aparecer",
+     "de": "f17"
+    },
+    {
+     "peca": "moto",
+     "faz": "aparecer",
+     "de": "f17:talvez-0.4"
+    },
+    {
+     "peca": "moto",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0,
+      -0.12
+     ],
+     "de": "f17:talvez",
+     "ate": "f17:visto"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.75,
+      2,
+      5.9
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f7"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "cab_a",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f7:eletrica"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "caixa_ctrl",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f8:caixa+0.2"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "serio",
+     "de": "f9"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "maquete",
+     "expressao": "surpreso",
+     "de": "f9:bateria"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "cab_b",
+     "olhar": "maquete",
+     "expressao": "aliviado",
+     "de": "f10:amarelo"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "nervoso",
+     "de": "f11"
+    },
+    {
+     "quem": "tito",
+     "faz": "maos_na_cabeca",
+     "olhar": "camera",
+     "expressao": "medo",
+     "de": "f11:verdes+0.6"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "caixa_ctrl",
+     "olhar": "maquete",
+     "expressao": "aliviado",
+     "de": "f12:vigia"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f13"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "laco",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f13:fio+0.2"
+    },
+    {
+     "quem": "tito",
+     "faz": "bracos_cruzados",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f14"
+    },
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "surpreso",
+     "de": "f14:metal"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "caixa_ctrl",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f15:caixa"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f16"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f17"
+    },
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f17:moto-0.2"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "camera": [
+      -0.75,
+      2,
+      5.9
+     ],
+     "alvo": [
+      -0.75,
+      1.5,
+      0.3
+     ],
+     "movimento": "arco",
+     "intensidade": 0.5,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f7:eletrica",
+     "tipo": "detalhe",
+     "camera": [
+      -0.144,
+      1.32,
+      0.544
+     ],
+     "alvo": [
+      0.096,
+      1.24,
+      -0.064
+     ],
+     "movimento": "aproximar",
+     "transicao": "zoom"
+    },
+    {
+     "de": "f8:caixa",
+     "tipo": "detalhe",
+     "camera": [
+      -0.08,
+      1.136,
+      0.48
+     ],
+     "alvo": [
+      -0.136,
+      1.072,
+      0.12
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f8:tempo",
+     "tipo": "detalhe",
+     "camera": [
+      -0.096,
+      1.8,
+      1.152
+     ],
+     "alvo": [
+      0.0,
+      1.048,
+      -0.032
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f9",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f9:abrisse",
+     "tipo": "detalhe",
+     "camera": [
+      -0.096,
+      1.8,
+      1.152
+     ],
+     "alvo": [
+      0.0,
+      1.048,
+      -0.032
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f10",
+     "tipo": "detalhe",
+     "camera": [
+      -0.096,
+      1.8,
+      1.152
+     ],
+     "alvo": [
+      0.0,
+      1.048,
+      -0.032
+     ],
+     "movimento": "aproximar",
+     "transicao": "varrer"
+    },
+    {
+     "de": "f10:vermelho",
+     "tipo": "detalhe",
+     "camera": [
+      -0.144,
+      1.32,
+      0.544
+     ],
+     "alvo": [
+      0.096,
+      1.24,
+      -0.064
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f11",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": 0.3,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f11:dois",
+     "tipo": "detalhe",
+     "camera": [
+      -0.144,
+      1.32,
+      0.544
+     ],
+     "alvo": [
+      0.096,
+      1.24,
+      -0.064
+     ],
+     "movimento": "zoom_rapido"
+    },
+    {
+     "de": "f11:mesmo",
+     "tipo": "detalhe",
+     "camera": [
+      -0.096,
+      1.8,
+      1.152
+     ],
+     "alvo": [
+      0.0,
+      1.048,
+      -0.032
+     ],
+     "movimento": "tremer"
+    },
+    {
+     "de": "f12",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "dolly_zoom"
+    },
+    {
+     "de": "f12:vigia",
+     "tipo": "detalhe",
+     "camera": [
+      -0.08,
+      1.136,
+      0.48
+     ],
+     "alvo": [
+      -0.136,
+      1.072,
+      0.12
+     ],
+     "movimento": "aproximar",
+     "transicao": "zoom"
+    },
+    {
+     "de": "f12:corta",
+     "tipo": "detalhe",
+     "camera": [
+      -0.096,
+      1.8,
+      1.152
+     ],
+     "alvo": [
+      0.0,
+      1.048,
+      -0.032
+     ],
+     "movimento": "arco",
+     "intensidade": -0.3
+    },
+    {
+     "de": "f13",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": -0.3,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f13:relogio",
+     "tipo": "detalhe",
+     "camera": [
+      -0.08,
+      1.136,
+      0.48
+     ],
+     "alvo": [
+      -0.136,
+      1.072,
+      0.12
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f13:fio",
+     "tipo": "detalhe",
+     "camera": [
+      0.16,
+      1.176,
+      0.336
+     ],
+     "alvo": [
+      0.032,
+      1.019,
+      0.096
+     ],
+     "movimento": "aproximar",
+     "transicao": "zoom"
+    },
+    {
+     "de": "f14",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": 0.3,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f14:ima",
+     "tipo": "detalhe",
+     "camera": [
+      0.208,
+      1.272,
+      0.576
+     ],
+     "alvo": [
+      0.032,
+      1.032,
+      0.112
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f15",
+     "tipo": "detalhe",
+     "camera": [
+      -0.032,
+      1.192,
+      0.432
+     ],
+     "alvo": [
+      -0.048,
+      1.032,
+      0.096
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f15:chama",
+     "tipo": "detalhe",
+     "camera": [
+      -0.096,
+      1.8,
+      1.152
+     ],
+     "alvo": [
+      0.0,
+      1.048,
+      -0.032
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f16",
+     "tipo": "detalhe",
+     "camera": [
+      0.048,
+      1.272,
+      0.768
+     ],
+     "alvo": [
+      0.072,
+      1.112,
+      -0.032
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f17",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f17:talvez",
+     "tipo": "detalhe",
+     "camera": [
+      0.208,
+      1.272,
+      0.576
+     ],
+     "alvo": [
+      0.032,
+      1.032,
+      0.112
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f17:moto",
+     "tipo": "aberto",
+     "camera": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "alvo": [
+      -0.9,
+      1.5,
+      0.3
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    }
+   ],
+   "sons": [
+    {
+     "de": "f7:eletrica",
+     "som": "zap",
+     "volume": 0.7
+    },
+    {
+     "de": "f8:caixa",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f8:relogio",
+     "som": "engrenagem",
+     "volume": 0.5
+    },
+    {
+     "de": "f8:cor",
+     "som": "clique",
+     "volume": 0.7
+    },
+    {
+     "de": "f9",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f9:abrisse",
+     "som": "buzina",
+     "volume": 0.5
+    },
+    {
+     "de": "f9:bateria",
+     "som": "impacto",
+     "volume": 1.0
+    },
+    {
+     "de": "f10:amarelo",
+     "som": "ding",
+     "volume": 0.7
+    },
+    {
+     "de": "f10:vermelho",
+     "som": "clique",
+     "volume": 0.6
+    },
+    {
+     "de": "f11",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f11:verdes",
+     "som": "alarme",
+     "volume": 0.5
+    },
+    {
+     "de": "f11:mesmo",
+     "som": "buzina",
+     "volume": 0.6
+    },
+    {
+     "de": "f12:vigia",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f12:corta",
+     "som": "zap",
+     "volume": 0.7
+    },
+    {
+     "de": "f13:fio",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f14:ima",
+     "som": "ding",
+     "volume": 0.6
+    },
+    {
+     "de": "f14:metal+0.3",
+     "som": "bip",
+     "volume": 0.6
+    },
+    {
+     "de": "f15:sente",
+     "som": "zap",
+     "volume": 0.5
+    },
+    {
+     "de": "f15:verde",
+     "som": "ding",
+     "volume": 0.7
+    },
+    {
+     "de": "f16:avenida",
+     "som": "pop",
+     "volume": 0.6
+    },
+    {
+     "de": "f16:abre",
+     "som": "clique",
+     "volume": 0.5
+    },
+    {
+     "de": "f16:onda",
+     "som": "ding",
+     "volume": 0.7
+    },
+    {
+     "de": "f17:visto",
+     "som": "bip",
+     "volume": 0.3
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f8:caixa",
+     "ate": "f8:tempo",
+     "efeito": "circular",
+     "alvo": "caixa_ctrl"
+    },
+    {
+     "de": "f9:bateria",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f9:bateria",
+     "ate": "f9:bateria+0.5",
+     "efeito": "tremor",
+     "intensidade": 0.6
+    },
+    {
+     "de": "f10:amarelo",
+     "ate": "f10:vermelho",
+     "efeito": "circular",
+     "alvo": "b_amar7"
+    },
+    {
+     "de": "f11:verdes",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f11:mesmo",
+     "ate": "f12:vigia",
+     "efeito": "letreiro",
+     "texto": "PERIGO!",
+     "cor": "#FF3B30",
+     "altura": 0.22
+    },
+    {
+     "de": "f11:mesmo",
+     "ate": "f11:fim+0.4",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f12:vigia+0.3",
+     "ate": "f12:corta",
+     "efeito": "circular",
+     "alvo": "olho"
+    },
+    {
+     "de": "f13:fio",
+     "ate": "f13:fim+0.2",
+     "efeito": "circular",
+     "alvo": "laco"
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "caixa_ctrl",
+     "texto": "Caixa",
+     "de": "f8:caixa",
+     "ate": "f8:relogio"
+    },
+    {
+     "alvo": "relogio",
+     "texto": "Relógio",
+     "de": "f8:relogio",
+     "ate": "f8:tempo"
+    },
+    {
+     "alvo": "cab_b",
+     "texto": "Amarelo",
+     "de": "f10:amarelo",
+     "ate": "f10:vermelho"
+    },
+    {
+     "alvo": "cab_a",
+     "texto": "Todos parados",
+     "de": "f10:vermelho",
+     "ate": "f10:fim"
+    },
+    {
+     "alvo": "olho",
+     "texto": "Vigia",
+     "de": "f12:vigia+0.3",
+     "ate": "f12:corta"
+    },
+    {
+     "alvo": "relogio",
+     "texto": "Relógio",
+     "de": "f13:relogio",
+     "ate": "f13:outras"
+    },
+    {
+     "alvo": "laco",
+     "texto": "Fio",
+     "de": "f13:fio",
+     "ate": "f13:fim"
+    },
+    {
+     "alvo": "campo",
+     "texto": "Ímã",
+     "de": "f14:ima",
+     "ate": "f14:metal"
+    },
+    {
+     "alvo": "chassi_a",
+     "texto": "Metal",
+     "de": "f14:metal",
+     "ate": "f14:fim"
+    },
+    {
+     "alvo": "corpo_m",
+     "texto": "Pouco metal",
+     "de": "f17:visto",
+     "ate": "f17:moto"
+    }
+   ]
+  }
+ ]
+}
