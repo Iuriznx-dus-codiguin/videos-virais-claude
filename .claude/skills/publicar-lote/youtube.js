@@ -215,7 +215,8 @@ window.__autoRun = (cfg) => {
       const aviso = caixas.find((e) => /Ainda estamos verificando/.test(e.innerText));
       if (aviso) { const ok = qa('ytcp-button, button', aviso).filter(visivel).find((b) => /^Ok$/i.test(b.innerText.trim())); if (ok) { ok.click(); st.avisos.push('aviso de verificação em andamento: ok'); } }
       // upload rápido: em vez de "Vídeo programado" aparece "Processando vídeo ... ficará público em <data> às <hora>" (só tem Fechar)
-      return caixas.find((e) => /Vídeo programado|Processando vídeo[\s\S]*ficará público em/.test(e.innerText));
+      // só a confirmação DESTE vídeo (a do anterior pode ter ficado aberta atrás)
+      return caixas.find((e) => /Vídeo programado|Processando vídeo[\s\S]*ficará público em/.test(e.innerText) && e.innerText.includes(cfg.titulo.slice(0, 30)));
     }, 90000, 'confirmação');
     st.confirmacao = conf.innerText.replace(/\s+/g, ' ').slice(0, 200);
     st.link = ((conf.querySelector('a[href*="shorts/"], a[href*="youtu"]') || {}).href || st.link || '').replace(/\?.*$/, '');
@@ -230,11 +231,14 @@ window.__autoRun = (cfg) => {
 window.__rodarFila = (lista) => {
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   const visivel = (e) => { if (!e) return false; const r = e.getBoundingClientRect(); return r.width > 0 && r.height > 0; };
-  const fecharConfirmacoes = () => {
-    for (const d of [...document.querySelectorAll('tp-yt-paper-dialog, ytcp-dialog')].filter(visivel)) {
-      if (!/Vídeo programado|Processando vídeo/.test(d.innerText)) continue;
-      const b = [...d.querySelectorAll('ytcp-button, button')].filter(visivel).find((x) => /^Fechar$/i.test(x.innerText.trim()));
-      if (b) (b.querySelector('button') || b).click();
+  const abertas = () => [...document.querySelectorAll('tp-yt-paper-dialog, ytcp-dialog')].filter(visivel).filter((d) => /Vídeo programado|Processando vídeo/.test(d.innerText));
+  const fecharConfirmacoes = async () => {
+    for (let i = 0; i < 6 && abertas().length; i++) {
+      for (const d of abertas()) {
+        const b = [...d.querySelectorAll('ytcp-button, button')].filter(visivel).find((x) => /^Fechar$/i.test(x.innerText.trim()));
+        if (b) (b.querySelector('button') || b).click();
+      }
+      await sleep(800);
     }
   };
   if (window.__fila && !window.__fila.fim) return 'já tem fila rodando: ' + window.__fila.atual;
@@ -244,8 +248,8 @@ window.__rodarFila = (lista) => {
       const cfg = lista[i], prox = lista[i + 1];
       if (prox) { window.__prebaixar(prox.video); window.__prebaixar(prox.capa); }
       fila.atual = cfg.nome;
-      fecharConfirmacoes();
-      await sleep(2000);
+      await fecharConfirmacoes();
+      await sleep(1500);
       window.__autoRun(Object.assign({}, cfg, {programar: true}));
       try { await window.__auto.run; } catch (e) {}
       const a = window.__auto;
@@ -254,8 +258,8 @@ window.__rodarFila = (lista) => {
       fila.feitos++;
       delete window.__pre[cfg.video]; delete window.__pre[cfg.capa];
       await sleep(1500);
-      fecharConfirmacoes();
-      await sleep(3000);
+      await fecharConfirmacoes();
+      await sleep(2000);
     }
     fila.fim = true; fila.atual = null;
   })();
