@@ -1,0 +1,1228 @@
+{
+  "serie": "o-noivo",
+  "parte": 3,
+  "titulo": "O preço da ilha",
+  "musica": "misterio",
+  "falas": [
+    {
+      "id": "f1",
+      "quem": "lara",
+      "off": true,
+      "texto": "Se o noivo da sua irmã pagar a dívida da sua mãe, não agradeça.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f2",
+      "quem": "lara",
+      "off": true,
+      "texto": "Eu sou a Lara. Hoje às cinco, minha irmã casa com o Ricardo."
+    },
+    {
+      "id": "f3",
+      "quem": "lara",
+      "off": true,
+      "texto": "E um favor desse tamanho sempre deixa RASTRO."
+    },
+    {
+      "id": "f4",
+      "quem": "lara",
+      "off": true,
+      "texto": "Mas só se eu achar o rastro antes do sim.",
+      "tom": "serio"
+    },
+    {
+      "id": "f5",
+      "quem": "lara",
+      "off": true,
+      "texto": "Seis da manhã, a Carol vai embora. E a minha mãe confessa."
+    },
+    {
+      "id": "f6",
+      "quem": "neide",
+      "texto": "A casa ia a leilão, filha. Ele pagou TUDO.",
+      "tom": "triste"
+    },
+    {
+      "id": "f7",
+      "quem": "lara",
+      "off": true,
+      "texto": "Meu primeiro instinto é achar que ele é só generoso."
+    },
+    {
+      "id": "f8",
+      "quem": "lara",
+      "off": true,
+      "texto": "Não. Generoso não ameaça ninguém no cais de madrugada.",
+      "tom": "serio"
+    },
+    {
+      "id": "f9",
+      "quem": "lara",
+      "off": true,
+      "texto": "Faltam onze horas pro sim. E aqui embaixo não pega sinal."
+    },
+    {
+      "id": "f10",
+      "quem": "lara",
+      "off": true,
+      "texto": "Então eu subo no morro e pesquiso o nome da ilha."
+    },
+    {
+      "id": "f11",
+      "quem": "lara",
+      "off": true,
+      "texto": "Um resort ofereceu doze milhões. E a minha irmã disse NÃO."
+    },
+    {
+      "id": "f12",
+      "quem": "lara",
+      "off": true,
+      "texto": "Porque o vovô pediu pra nunca vender o farol."
+    },
+    {
+      "id": "f13",
+      "quem": "lara",
+      "off": true,
+      "texto": "Só que hoje ela casa em comunhão total. Tudo vira dos dois.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f14",
+      "quem": "lara",
+      "off": true,
+      "texto": "Ou seja: ele pagou trezentos mil pra ganhar seis MILHÕES.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f15",
+      "quem": "lara",
+      "off": true,
+      "texto": "Então eu desço e fico de olho no Ricardo."
+    },
+    {
+      "id": "f16",
+      "quem": "ricardo",
+      "texto": "Bom dia, cunhada. Dormiu BEM?",
+      "tom": "calmo"
+    },
+    {
+      "id": "f17",
+      "quem": "lara",
+      "off": true,
+      "texto": "Eu tento falar com a Bia."
+    },
+    {
+      "id": "f18",
+      "quem": "bia",
+      "texto": "Hoje não, Lara. Por favor.",
+      "tom": "cansado"
+    },
+    {
+      "id": "f19",
+      "quem": "lara",
+      "off": true,
+      "texto": "Então os noivos descem pra beira do mar, de mãos dadas.",
+      "tom": "aliviado"
+    },
+    {
+      "id": "f20",
+      "quem": "lara",
+      "off": true,
+      "texto": "Por um minuto, ele parece só um noivo apaixonado.",
+      "tom": "aliviado"
+    },
+    {
+      "id": "f21",
+      "quem": "lara",
+      "off": true,
+      "texto": "Só que o celular dele ficou na areia. E acendeu.",
+      "tom": "tenso",
+      "pausa_depois": 0.4
+    },
+    {
+      "id": "f22",
+      "quem": "lara",
+      "off": true,
+      "texto": "Ele não quer a Bia. Quer a ILHA.",
+      "tom": "tenso"
+    }
+  ],
+  "cenas": [
+    {
+      "cenario": "ilhota_farol",
+      "luz": "por_do_sol",
+      "ambiente": "mar",
+      "id": "cais",
+      "de": "inicio",
+      "personagens": {
+        "lara": {
+          "em": [
+            2.4,
+            7.0
+          ],
+          "olhando": [
+            0.6,
+            2.2,
+            8.4
+          ],
+          "expressao": "desconfiado"
+        },
+        "neide": {
+          "em": [
+            0.2,
+            7.6
+          ],
+          "olhando": [
+            2.0,
+            2.2,
+            9.0
+          ],
+          "expressao": "nervoso"
+        },
+        "ricardo": {
+          "em": [
+            1.2,
+            0.8
+          ],
+          "olhando": [
+            0.0,
+            15.0,
+            -4.0
+          ],
+          "expressao": "serio"
+        },
+        "carol": {
+          "em": [
+            3.0,
+            12.6
+          ],
+          "olhando": [
+            2.4,
+            1.6,
+            7.0
+          ],
+          "expressao": "triste"
+        },
+        "theo": {
+          "em": [
+            3.8,
+            12.9
+          ],
+          "olhando": [
+            2.4,
+            1.0,
+            7.0
+          ],
+          "expressao": "neutro"
+        }
+      },
+      "acoes": [
+        {
+          "quem": "carol",
+          "faz": "andar",
+          "para": [
+            3.0,
+            15.2
+          ],
+          "de": "f5:embora",
+          "velocidade": 0.7
+        },
+        {
+          "quem": "theo",
+          "faz": "andar",
+          "para": [
+            3.6,
+            15.6
+          ],
+          "de": "f5:embora",
+          "velocidade": 0.7
+        },
+        {
+          "quem": "neide",
+          "expressao": "triste",
+          "de": "f5:confessa"
+        },
+        {
+          "quem": "lara",
+          "expressao": "surpreso",
+          "de": "f6:TUDO"
+        },
+        {
+          "quem": "lara",
+          "faz": "virar",
+          "para": [
+            1.2,
+            2.6,
+            0.8
+          ],
+          "de": "f7"
+        },
+        {
+          "quem": "ricardo",
+          "faz": "virar",
+          "para": [
+            2.4,
+            2.6,
+            7.0
+          ],
+          "de": "f7"
+        },
+        {
+          "quem": "ricardo",
+          "expressao": "feliz",
+          "de": "f7"
+        },
+        {
+          "quem": "ricardo",
+          "faz": "acenar",
+          "de": "f7:generoso-0.6"
+        },
+        {
+          "quem": "lara",
+          "expressao": "bravo",
+          "de": "f8"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "farol",
+          "em": "farol",
+          "ilhota": false,
+          "modo": "gira"
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            3,
+            17
+          ],
+          "giro": 90,
+          "luzes": true
+        }
+      ],
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "medio",
+          "alvo": [
+            1.3,
+            2.6,
+            6.0
+          ],
+          "camera": [
+            1.3,
+            3.4,
+            15.4
+          ],
+          "movimento": "descer",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f1:agradeça",
+          "tipo": "close",
+          "alvo": "lara",
+          "camera": [
+            1.0,
+            2.8,
+            9.7
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f2",
+          "tipo": "medio",
+          "alvo": "lara",
+          "camera": [
+            0.2,
+            2.7,
+            10.6
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f2:Ricardo",
+          "tipo": "aberto",
+          "alvo": [
+            -0.6,
+            8.0,
+            -4.0
+          ],
+          "camera": [
+            3.4,
+            1.3,
+            4.6
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f3",
+          "tipo": "aberto",
+          "alvo": [
+            1.3,
+            2.3,
+            7.3
+          ],
+          "camera": [
+            -5.0,
+            3.0,
+            10.8
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f4",
+          "tipo": "medio",
+          "alvo": "neide",
+          "camera": [
+            2.3,
+            2.7,
+            11.6
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f5",
+          "tipo": "medio",
+          "alvo": [
+            3.3,
+            2.2,
+            12.7
+          ],
+          "camera": [
+            2.2,
+            2.6,
+            8.6
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.25,
+          "transicao": "chicote"
+        },
+        {
+          "de": "f5:minha",
+          "tipo": "close",
+          "alvo": "neide",
+          "camera": [
+            1.6,
+            2.7,
+            10.3
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f7",
+          "tipo": "medio",
+          "alvo": "ricardo",
+          "camera": [
+            2.0,
+            2.9,
+            4.6
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f8",
+          "tipo": "close",
+          "alvo": "lara",
+          "camera": [
+            2.0,
+            2.8,
+            4.0
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f9",
+          "tipo": "geral",
+          "alvo": [
+            1.0,
+            1.4,
+            6.0
+          ],
+          "camera": [
+            -11.0,
+            8.0,
+            17.0
+          ],
+          "movimento": "arco",
+          "intensidade": 0.25
+        }
+      ],
+      "rotulos": [
+        {
+          "alvo": "lara",
+          "texto": "LARA · IRMÃ DA NOIVA",
+          "de": "f2:Lara",
+          "ate": "f2:Ricardo",
+          "altura": 0.47
+        },
+        {
+          "alvo": "neide",
+          "texto": "DONA NEIDE · MÃE",
+          "de": "f4",
+          "ate": "f4:fim+0.2",
+          "altura": 0.47
+        },
+        {
+          "alvo": "carol",
+          "texto": "CAROL · 1ª ESPOSA DELE",
+          "de": "f5:Carol",
+          "ate": "f5:minha",
+          "altura": 0.47
+        },
+        {
+          "alvo": "ricardo",
+          "texto": "RICARDO · O NOIVO",
+          "de": "f7",
+          "ate": "f7:fim+0.2",
+          "altura": 0.47
+        }
+      ],
+      "insercoes": [
+        {
+          "de": "f6:Ele",
+          "ate": "f7",
+          "tipo": "bilhete",
+          "titulo": "AVISO DE LEILÃO",
+          "linhas": [
+            "Casa da Rua do Porto, 12",
+            "Dívida: R$ 300.000,00",
+            "QUITADA POR:",
+            "RICARDO MENDES"
+          ]
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "inicio",
+          "ate": "f2",
+          "texto": "O NOIVO PAGOU *R$ 300 MIL*"
+        },
+        {
+          "de": "f2",
+          "ate": "f3",
+          "texto": "A IRMÃ *CASA HOJE*"
+        },
+        {
+          "de": "f3",
+          "ate": "f5",
+          "texto": "TODO FAVOR TEM *UM PREÇO*"
+        },
+        {
+          "de": "f5",
+          "ate": "f7",
+          "texto": "A MÃE *CONFESSA*"
+        },
+        {
+          "de": "f7",
+          "ate": "f8",
+          "texto": "UM NOIVO *GENEROSO*?"
+        },
+        {
+          "de": "f8",
+          "ate": "f9",
+          "texto": "ELE ME *AMEAÇOU*"
+        },
+        {
+          "de": "f9",
+          "texto": "*SEM SINAL* NA ILHA"
+        }
+      ],
+      "relogio": {
+        "de": "inicio",
+        "hora": "06:00",
+        "ate_hora": "06:04"
+      },
+      "efeitos": [
+        {
+          "de": "f1:agradeça",
+          "ate": "f1:agradeça+0.6",
+          "efeito": "linhas"
+        }
+      ],
+      "sons": [
+        {
+          "de": "f1:agradeça",
+          "som": "impacto",
+          "volume": 0.3
+        },
+        {
+          "de": "f8",
+          "som": "susto",
+          "volume": 0.3
+        }
+      ]
+    },
+    {
+      "cenario": "mirante",
+      "luz": "dia",
+      "ambiente": "mar",
+      "id": "morro",
+      "de": "f10",
+      "personagens": {
+        "lara": {
+          "em": [
+            0.2,
+            -2.6
+          ],
+          "olhando": [
+            0.0,
+            1.6,
+            10.0
+          ],
+          "expressao": "determinado"
+        }
+      },
+      "acoes": [
+        {
+          "quem": "lara",
+          "expressao": "surpreso",
+          "de": "f11:NÃO"
+        },
+        {
+          "quem": "lara",
+          "expressao": "desconfiado",
+          "de": "f13"
+        },
+        {
+          "quem": "lara",
+          "expressao": "bravo",
+          "de": "f14:MILHÕES"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "farol",
+          "em": [
+            -16,
+            85
+          ],
+          "alt": -35,
+          "escala": 1.3,
+          "modo": "gira"
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            9,
+            56
+          ],
+          "giro": 90,
+          "alt": -35,
+          "luzes": false
+        }
+      ],
+      "planos": [
+        {
+          "de": "f10",
+          "tipo": "aberto",
+          "alvo": "lara",
+          "camera": [
+            -3.6,
+            2.6,
+            4.8
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.4,
+          "transicao": "desfoque"
+        },
+        {
+          "de": "f11:NÃO",
+          "tipo": "close",
+          "alvo": "lara",
+          "lado": "frente",
+          "movimento": "zoom_rapido",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f12",
+          "tipo": "detalhe",
+          "alvo": [
+            -16.0,
+            -20.0,
+            85.0
+          ],
+          "camera": [
+            0.6,
+            3.2,
+            3.6
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f13",
+          "tipo": "close",
+          "alvo": "lara",
+          "lado": "tres_quartos_direita",
+          "movimento": "aproximar",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f14",
+          "tipo": "geral",
+          "alvo": [
+            -3.0,
+            -28.0,
+            66.0
+          ],
+          "camera": [
+            1.0,
+            2.3,
+            0.8
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f14:MILHÕES-0.3",
+          "tipo": "close",
+          "alvo": "lara",
+          "lado": "frente",
+          "movimento": "zoom_rapido",
+          "intensidade": 0.3
+        }
+      ],
+      "insercoes": [
+        {
+          "de": "f10:pesquiso",
+          "ate": "f11:NÃO",
+          "tipo": "celular",
+          "titulo": "Ilha do Farol",
+          "linhas": [
+            "Resort oferece R$ 12 milhões pela ilha",
+            "Herdeira recusa: \"meu avô pediu\""
+          ]
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f10",
+          "ate": "f12",
+          "texto": "A ILHA VALE *R$ 12 MILHÕES*"
+        },
+        {
+          "de": "f12",
+          "ate": "f13",
+          "texto": "O VOVÔ PEDIU: *NUNCA VENDA*"
+        },
+        {
+          "de": "f13",
+          "ate": "f14",
+          "texto": "COMUNHÃO TOTAL: *METADE É DELE*"
+        },
+        {
+          "de": "f14",
+          "texto": "R$ 300 MIL POR *R$ 6 MILHÕES*"
+        }
+      ],
+      "relogio": {
+        "de": "f10",
+        "hora": "06:40"
+      },
+      "efeitos": [
+        {
+          "de": "f14:MILHÕES",
+          "ate": "f14:MILHÕES+0.6",
+          "efeito": "linhas"
+        }
+      ],
+      "sons": [
+        {
+          "de": "f14:MILHÕES",
+          "som": "impacto",
+          "volume": 0.4
+        }
+      ]
+    },
+    {
+      "cenario": "praia",
+      "luz": "dia",
+      "ambiente": "mar",
+      "id": "praia",
+      "de": "f15",
+      "personagens": {
+        "lara": {
+          "em": [
+            3.8,
+            6.0
+          ],
+          "olhando": [
+            0.4,
+            1.6,
+            8.2
+          ],
+          "expressao": "desconfiado"
+        },
+        "ricardo": {
+          "em": [
+            0.4,
+            8.2
+          ],
+          "olhando": [
+            3.8,
+            1.6,
+            6.0
+          ],
+          "expressao": "feliz",
+          "segura": "pacote"
+        },
+        "bia": {
+          "em": [
+            -0.6,
+            9.8
+          ],
+          "olhando": [
+            0.4,
+            1.6,
+            8.2
+          ],
+          "expressao": "feliz"
+        },
+        "neide": {
+          "em": [
+            -3.0,
+            1.0
+          ],
+          "olhando": [
+            -1.0,
+            1.0,
+            3.2
+          ],
+          "expressao": "neutro"
+        }
+      },
+      "acoes": [
+        {
+          "quem": "neide",
+          "faz": "arrumar",
+          "de": "f15"
+        },
+        {
+          "quem": "lara",
+          "faz": "virar",
+          "para": [
+            -0.6,
+            2.4,
+            9.8
+          ],
+          "de": "f17"
+        },
+        {
+          "quem": "bia",
+          "olhar": [
+            3.8,
+            2.4,
+            6.0
+          ],
+          "expressao": "cansado",
+          "de": "f17:Bia"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "farol",
+          "em": [
+            -20,
+            90
+          ],
+          "modo": "gira",
+          "escala": 1.2
+        }
+      ],
+      "planos": [
+        {
+          "de": "f15",
+          "tipo": "geral",
+          "alvo": [
+            1.2,
+            1.8,
+            7.4
+          ],
+          "camera": [
+            4.6,
+            3.4,
+            13.5
+          ],
+          "movimento": "arco",
+          "intensidade": 0.2,
+          "transicao": "desfoque"
+        },
+        {
+          "de": "f16",
+          "tipo": "close",
+          "alvo": "ricardo",
+          "camera": [
+            3.4,
+            2.8,
+            8.06
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f17",
+          "tipo": "medio",
+          "alvo": "lara",
+          "camera": [
+            -0.38,
+            2.7,
+            6.42
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f18",
+          "tipo": "close",
+          "alvo": "bia",
+          "camera": [
+            2.39,
+            2.8,
+            9.5
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.3
+        }
+      ],
+      "rotulos": [
+        {
+          "alvo": "bia",
+          "texto": "BIA · A NOIVA",
+          "de": "f18",
+          "ate": "f18:fim+0.2",
+          "altura": 0.47
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f15",
+          "ate": "f16",
+          "texto": "DE OLHO *NO NOIVO*"
+        },
+        {
+          "de": "f16",
+          "ate": "f17",
+          "texto": "\"DORMIU *BEM*?\""
+        },
+        {
+          "de": "f17",
+          "texto": "A NOIVA *NÃO QUER OUVIR*"
+        }
+      ],
+      "relogio": {
+        "de": "f15",
+        "hora": "09:30"
+      },
+      "efeitos": [
+        {
+          "de": "f15",
+          "ate": "f15:fim",
+          "efeito": "letreiro",
+          "texto": "DIA DO CASAMENTO",
+          "altura": 0.25
+        }
+      ],
+      "sons": [
+        {
+          "de": "f16:BEM",
+          "som": "tensao_sobe",
+          "volume": 0.25
+        }
+      ]
+    },
+    {
+      "cenario": "praia",
+      "luz": "dia",
+      "ambiente": "mar",
+      "id": "alivio",
+      "de": "f19",
+      "filtro": "quente",
+      "personagens": {
+        "ricardo": {
+          "em": [
+            0.4,
+            8.2
+          ],
+          "olhando": [
+            0.6,
+            1.6,
+            30.0
+          ],
+          "expressao": "feliz"
+        },
+        "bia": {
+          "em": [
+            -0.6,
+            9.8
+          ],
+          "olhando": [
+            0.0,
+            1.6,
+            30.0
+          ],
+          "expressao": "feliz"
+        }
+      },
+      "acoes": [
+        {
+          "quem": "ricardo",
+          "faz": "andar",
+          "para": [
+            0.9,
+            11.4
+          ],
+          "de": "f19",
+          "velocidade": 0.6
+        },
+        {
+          "quem": "bia",
+          "faz": "andar",
+          "para": [
+            -0.2,
+            11.6
+          ],
+          "de": "f19",
+          "velocidade": 0.6
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "farol",
+          "em": [
+            -20,
+            90
+          ],
+          "modo": "gira",
+          "escala": 1.2
+        }
+      ],
+      "planos": [
+        {
+          "de": "f19",
+          "tipo": "aberto",
+          "alvo": [
+            0.2,
+            1.8,
+            10.0
+          ],
+          "camera": [
+            10.5,
+            3.4,
+            4.6
+          ],
+          "movimento": "arco",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f20",
+          "tipo": "medio",
+          "alvo": [
+            0.35,
+            2.4,
+            11.4
+          ],
+          "camera": [
+            2.0,
+            2.6,
+            18.5
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.25
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f19",
+          "texto": "SÓ UM NOIVO *APAIXONADO*?",
+          "cor": "#2FD27A"
+        }
+      ],
+      "relogio": {
+        "de": "f19",
+        "hora": "09:42"
+      }
+    },
+    {
+      "cenario": "praia",
+      "luz": "dia",
+      "ambiente": "mar",
+      "id": "virada",
+      "de": "f21",
+      "filtro": "dramatico",
+      "personagens": {
+        "lara": {
+          "em": [
+            3.8,
+            6.0
+          ],
+          "olhando": [
+            2.6,
+            0.0,
+            7.0
+          ],
+          "expressao": "desconfiado"
+        },
+        "ricardo": {
+          "em": [
+            0.9,
+            11.4
+          ],
+          "olhando": [
+            0.6,
+            1.6,
+            30.0
+          ],
+          "expressao": "feliz"
+        },
+        "bia": {
+          "em": [
+            -0.2,
+            11.6
+          ],
+          "olhando": [
+            0.0,
+            1.6,
+            30.0
+          ],
+          "expressao": "feliz"
+        }
+      },
+      "acoes": [
+        {
+          "quem": "lara",
+          "expressao": "surpreso",
+          "de": "f21:acendeu"
+        },
+        {
+          "quem": "lara",
+          "olhar": [
+            0.9,
+            2.4,
+            11.4
+          ],
+          "expressao": "bravo",
+          "de": "f22"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "farol",
+          "em": [
+            -20,
+            90
+          ],
+          "modo": "gira",
+          "escala": 1.2
+        }
+      ],
+      "planos": [
+        {
+          "de": "f21",
+          "tipo": "medio",
+          "alvo": "lara",
+          "camera": [
+            0.03,
+            2.4,
+            7.35
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f22",
+          "tipo": "close",
+          "alvo": "lara",
+          "lado": "frente",
+          "movimento": "dolly_zoom",
+          "intensidade": 0.8,
+          "transicao": "zoom"
+        },
+        {
+          "de": "f22:fim+0.3",
+          "tipo": "close",
+          "alvo": "lara",
+          "lado": "frente",
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        }
+      ],
+      "insercoes": [
+        {
+          "de": "f21:acendeu",
+          "ate": "f22",
+          "tipo": "celular",
+          "titulo": "Lembrete",
+          "linhas": [
+            "Comprador confirmado",
+            "Segunda, 9h: assinatura da ilha"
+          ]
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f21",
+          "ate": "f22",
+          "texto": "O CELULAR *ACENDEU*"
+        },
+        {
+          "de": "f22",
+          "texto": "ELE QUER *A ILHA*"
+        }
+      ],
+      "relogio": {
+        "de": "f21",
+        "hora": "09:44"
+      },
+      "efeitos": [
+        {
+          "de": "f21:acendeu",
+          "ate": "fim",
+          "efeito": "barras"
+        },
+        {
+          "de": "f22:ILHA",
+          "ate": "f22:fim+0.4",
+          "efeito": "destacar",
+          "alvo": "lara"
+        }
+      ],
+      "sons": [
+        {
+          "de": "f21:acendeu",
+          "som": "bip",
+          "volume": 0.35
+        },
+        {
+          "de": "f22:ILHA",
+          "som": "impacto",
+          "volume": 0.45
+        }
+      ]
+    }
+  ],
+  "chamada": {
+    "pergunta": "Pegava o celular dele ou contava pra Bia?",
+    "texto": "COMENTA",
+    "destaque": "PARTE 4"
+  },
+  "postagem": {
+    "titulo": "O noivo pagou a dívida da minha mãe. Por quê?",
+    "descricao": "No dia do casamento da irmã, numa ilha sem sinal, a Lara descobre que o noivo pagou R$ 300 mil da dívida da mãe dela. E que um resort quer comprar a ilha da família por R$ 12 milhões.",
+    "hashtags": [
+      "casamento",
+      "heranca",
+      "novelinha",
+      "animacao"
+    ],
+    "comentario": "Eu pegava o celular dele na hora. E você: pegava ou contava pra Bia?",
+    "capa": "f14:MILHÕES+0.3"
+  }
+}

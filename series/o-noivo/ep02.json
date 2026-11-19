@@ -15,7 +15,8 @@
       "id": "f2",
       "quem": "lara",
       "off": true,
-      "texto": "Eu sou a Lara, irmã da noiva. E a Carol é a prova VIVA."
+      "texto": "Eu sou a Lara, irmã da noiva. E a Carol é a prova VIVA.",
+      "semente": 102
     },
     {
       "id": "f3",
@@ -61,13 +62,15 @@
       "id": "f9",
       "quem": "lara",
       "off": true,
-      "texto": "Faltam dezessete horas pro casamento. E o barco dela sai às seis."
+      "texto": "Faltam dezessete horas pro casamento. E o barco dela sai às seis.",
+      "semente": 102
     },
     {
       "id": "f10",
       "quem": "lara",
       "off": true,
-      "texto": "Então a Carol me dá a certidão do Theo."
+      "texto": "Então a Carol me dá a certidão do menino.",
+      "semente": 203
     },
     {
       "id": "f11",
@@ -168,8 +171,8 @@
       "personagens": {
         "lara": {
           "em": [
-            1.0,
-            6.0
+            1,
+            6
           ],
           "olhando": [
             2.6,
@@ -184,9 +187,9 @@
             9.6
           ],
           "olhando": [
-            1.0,
+            1,
             1.6,
-            6.0
+            6
           ],
           "expressao": "serio"
         },
@@ -196,21 +199,21 @@
             10.5
           ],
           "olhando": [
-            1.0,
-            1.0,
-            6.0
+            1,
+            1,
+            6
           ],
           "expressao": "neutro"
         },
         "ricardo": {
           "em": [
             3.4,
-            -1.0
+            -1
           ],
           "olhando": [
-            2.0,
+            2,
             1.6,
-            8.0
+            8
           ],
           "expressao": "serio"
         }
@@ -416,7 +419,7 @@
           "olhando": [
             0.6,
             1.6,
-            15.0
+            15
           ],
           "expressao": "feliz"
         },
@@ -426,9 +429,9 @@
             8.6
           ],
           "olhando": [
-            0.0,
+            0,
             1.6,
-            15.0
+            15
           ],
           "expressao": "feliz"
         }
@@ -438,8 +441,8 @@
           "quem": "ricardo",
           "faz": "andar",
           "para": [
-            -6.0,
-            2.0
+            -6,
+            2
           ],
           "de": "f7:sumiu-0.6",
           "velocidade": 0.9
@@ -453,9 +456,9 @@
           "quem": "carol",
           "faz": "virar",
           "para": [
-            -6.0,
+            -6,
             1.6,
-            2.0
+            2
           ],
           "de": "f7:sumiu+0.3"
         }
@@ -550,11 +553,11 @@
         "theo": {
           "em": [
             3.8,
-            9.0
+            9
           ],
           "olhando": [
-            3.0,
-            1.0,
+            3,
+            1,
             6.6
           ],
           "expressao": "neutro"
@@ -571,8 +574,8 @@
           "faz": "estender_mao",
           "para": [
             1.5,
-            2.0,
-            7.0
+            2,
+            7
           ],
           "de": "f10:certidão-0.6"
         },
@@ -617,13 +620,13 @@
           "de": "f9",
           "tipo": "aberto",
           "alvo": [
-            3.0,
+            3,
             1.4,
-            15.0
+            15
           ],
           "camera": [
             -2.2,
-            3.0,
+            3,
             7.2
           ],
           "movimento": "aproximar",
@@ -634,7 +637,7 @@
           "tipo": "medio",
           "alvo": [
             2.05,
-            2.0,
+            2,
             8.25
           ],
           "camera": [
@@ -731,12 +734,12 @@
         "lara": {
           "em": [
             2.2,
-            1.0
+            1
           ],
           "olhando": [
             1.4,
             1.6,
-            9.0
+            9
           ],
           "expressao": "determinado"
         },
@@ -748,7 +751,7 @@
           "olhando": [
             0.4,
             1.6,
-            9.0
+            9
           ],
           "expressao": "cansado"
         },
@@ -760,14 +763,14 @@
           "olhando": [
             0.4,
             1.6,
-            9.0
+            9
           ],
           "expressao": "desconfiado"
         },
         "ricardo": {
           "em": [
             0.2,
-            9.0
+            9
           ],
           "olhando": [
             0.6,
@@ -779,12 +782,12 @@
         "carol": {
           "em": [
             2.8,
-            10.0
+            10
           ],
           "olhando": [
             0.2,
             1.6,
-            5.0
+            5
           ],
           "expressao": "serio"
         },
@@ -795,8 +798,8 @@
           ],
           "olhando": [
             0.4,
-            1.0,
-            5.0
+            1,
+            5
           ],
           "expressao": "neutro"
         }
@@ -837,8 +840,8 @@
           "expressao": "bravo",
           "olhar": [
             2.8,
-            2.0,
-            10.0
+            2,
+            10
           ],
           "de": "f16"
         },
@@ -847,8 +850,8 @@
           "expressao": "bravo",
           "olhar": [
             2.8,
-            2.0,
-            10.0
+            2,
+            10
           ],
           "de": "f16"
         },
@@ -901,8 +904,8 @@
           ],
           "camera": [
             -6.5,
-            5.0,
-            12.0
+            5,
+            12
           ],
           "movimento": "aproximar",
           "intensidade": 0.2,
@@ -1056,9 +1059,9 @@
             4.6
           ],
           "olhando": [
-            3.0,
+            3,
             1.6,
-            15.0
+            15
           ],
           "expressao": "aliviado"
         },
@@ -1068,9 +1071,9 @@
             5.2
           ],
           "olhando": [
-            0.0,
+            0,
             1.6,
-            -2.0
+            -2
           ],
           "expressao": "triste"
         },
@@ -1080,16 +1083,16 @@
             4.6
           ],
           "olhando": [
-            0.0,
+            0,
             1.6,
-            -2.0
+            -2
           ],
           "expressao": "serio"
         },
         "ricardo": {
           "em": [
             0.2,
-            9.0
+            9
           ],
           "olhando": [
             2.4,
@@ -1101,12 +1104,12 @@
         "carol": {
           "em": [
             2.8,
-            10.0
+            10
           ],
           "olhando": [
-            3.0,
+            3,
             1.6,
-            16.0
+            16
           ],
           "expressao": "triste"
         },
@@ -1116,9 +1119,9 @@
             9.6
           ],
           "olhando": [
-            3.0,
-            1.0,
-            16.0
+            3,
+            1,
+            16
           ],
           "expressao": "neutro"
         }
@@ -1148,7 +1151,7 @@
           "quem": "carol",
           "faz": "andar",
           "para": [
-            3.0,
+            3,
             14.6
           ],
           "de": "f19",
@@ -1187,14 +1190,14 @@
           "de": "f19",
           "tipo": "geral",
           "alvo": [
-            1.0,
+            1,
             1.4,
-            6.0
+            6
           ],
           "camera": [
-            -11.0,
-            8.0,
-            17.0
+            -11,
+            8,
+            17
           ],
           "movimento": "arco",
           "intensidade": 0.25
@@ -1235,7 +1238,7 @@
         "lara": {
           "em": [
             1.4,
-            6.0
+            6
           ],
           "olhando": [
             0.6,
@@ -1252,7 +1255,7 @@
           "olhando": [
             1.4,
             1.6,
-            6.0
+            6
           ],
           "expressao": "serio"
         }
@@ -1306,7 +1309,7 @@
           "de": "f21",
           "tipo": "medio",
           "alvo": [
-            1.0,
+            1,
             2.2,
             7.4
           ],
