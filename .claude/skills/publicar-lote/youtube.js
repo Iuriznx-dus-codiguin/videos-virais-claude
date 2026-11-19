@@ -185,9 +185,15 @@ window.__autoRun = (cfg) => {
       celula.click();
       await sleep(900);
     }
-    hora.focus(); hora.select();
-    document.execCommand('insertText', false, cfg.hora);
-    hora.dispatchEvent(new KeyboardEvent('keydown', {key: 'Enter', code: 'Enter', keyCode: 13, bubbles: true}));
+    // a hora abre uma lista de 15 em 15 min: clicar o item certo pega; digitar às vezes deixa lixo ("00:12")
+    hora.click(); hora.focus(); await sleep(800);
+    const itemHora = [...document.querySelectorAll('tp-yt-paper-item, [role=option]')].filter(visivel).find((e) => e.innerText.trim() === cfg.hora);
+    if (itemHora) { itemHora.scrollIntoView({block: 'center'}); await sleep(200); itemHora.click(); await sleep(600); }
+    if (hora.value !== cfg.hora) {
+      hora.focus(); hora.setSelectionRange(0, hora.value.length);
+      document.execCommand('insertText', false, cfg.hora);
+      hora.dispatchEvent(new KeyboardEvent('keydown', {key: 'Enter', code: 'Enter', keyCode: 13, bubbles: true}));
+    }
     hora.blur(); await sleep(500);
     const fuso = q('#timezone-select-button', R());
     if (fuso) {
