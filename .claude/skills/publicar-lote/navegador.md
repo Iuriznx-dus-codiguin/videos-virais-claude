@@ -57,8 +57,9 @@ window.__fechar = async () => { const f = [...document.querySelectorAll('ytcp-bu
 await __carregar('<commit>');
 ```
 3. As playlists precisam existir antes: **Criar → Nova playlist**, visibilidade Pública; para série em ordem, "Ordem padrão dos vídeos" = **Data de publicação (mais antiga)**. Depois **Adicionar vídeos → Escolher vídeos do canal** e marque as partes que já saíram.
-4. Para cada vídeo, na ordem do lote: `python3 .claude/skills/publicar-lote/cfg_youtube.py <nome>` imprime `__autoRun({...})`. Rode `await __fechar();` e essa linha com `javascript_tool`.
-5. Acompanhe a cada ~10–15 s: `JSON.stringify({fase: __auto.fase, erro: __auto.erro, avisos: __auto.avisos, conf: __auto.conferencia, agenda: __auto.conferenciaAgenda, confirmacao: __auto.confirmacao, ok: __auto.ok, link: __auto.link})`. Leva ~1 min por vídeo.
+4. **Vários de uma vez (o normal):** `python3 .claude/skills/publicar-lote/cfg_youtube.py --fila <primeiro>..<ultimo>` imprime `__rodarFila([...])` com os vídeos nessa faixa, na ordem de horário. Cole com `javascript_tool` e deixe a aba **em primeiro plano** (aba de fundo tem os timers freados pelo Chrome). A fila pré-baixa o próximo vídeo enquanto preenche o atual e para no primeiro que não sair `programado` com a data e a hora certas. Acompanhe com `JSON.stringify({atual: __fila.atual, feitos: __fila.feitos, parou: __fila.parou, fase: __auto.fase, erro: __auto.erro, res: __fila.resultados.map(r => [r.nome, r.ok, r.link])})` e marque cada um que saiu ok. Depois de consertar um que parou, retome com `__rodarFila(__fila.lista.slice(__fila.feitos + 1))`. Pare a faixa antes de uma série que ainda não tem playlist e crie a playlist antes.
+   **Um só:** `cfg_youtube.py <nome>` imprime `__autoRun({...})`; rode `await __fechar();` e essa linha.
+5. Acompanhe um só a cada ~10–15 s: `JSON.stringify({fase: __auto.fase, erro: __auto.erro, avisos: __auto.avisos, conf: __auto.conferencia, agenda: __auto.conferenciaAgenda, confirmacao: __auto.confirmacao, ok: __auto.ok, link: __auto.link})`. Leva de 1 a 4 min por vídeo, conforme a velocidade de download do PC do Iuri (já foi de 100 KB/s a vários MB/s).
    - `programado` com `ok: true`: a mensagem "Vídeo programado" bateu com dia e hora. Marque `npm run fila -- marcar <nome> --youtube=programado --url=<link>`.
    - `conferir data e hora`: algo não bateu (data, hora ou fuso). Tire print, acerte com cliques (`__auto.alvos` tem as coordenadas) e clique em Programar.
    - `erro`: leia `__auto.erro`; `cfg.desde` (detalhes | playlist | avancado | elementos | visibilidade) retoma do passo sem reenviar.
@@ -67,9 +68,10 @@ await __carregar('<commit>');
    - Diálogos são `position: fixed` (`offsetParent` é nulo): veja visibilidade pelo tamanho do retângulo.
    - "Conteúdo alterado" e tags ficam em **Mostrar mais** (`#toggle-button`); a seção some do DOM quando fecha. As tags viram chips depois de `insertText` + `blur`.
    - **Vídeo relacionado** (em Elementos do vídeo): a lista só mostra vídeos **públicos**, então a parte anterior ainda programada não aparece; o script usa a mais recente pública da mesma série.
-   - Hora: `insertText` no campo e Enter funciona. Fuso: "Fuso horário" sem nada escolhido é o horário local; o script escolhe "(GMT-0300) Horário local" para ficar explícito.
+   - Hora: o campo abre uma lista de 15 em 15 min; o script clica o item ("12:00"). Só `insertText` às vezes deixa lixo ("00:12"). Fuso: "Fuso horário" sem nada escolhido é o horário local; o script escolhe "(GMT-0300) Horário local" para ficar explícito.
    - Ao clicar em Programar com a verificação ainda rodando, aparece "Ainda estamos verificando seu conteúdo": o script clica em Ok e segue.
-   - A data é digitada no calendário (`#datepicker-trigger`) como "16 de nov. de 2026". Esse caminho ainda não foi testado: se falhar, para em `conferir data e hora`.
+   - Data: abre `#datepicker-trigger` e clica o `span.calendar-day` do mês certo (`ytcp-scrollable-calendar .calendar-month[aria-label="nov. de 2026"]`). Digitar a data no campo e dar Enter não pega.
+   - A confirmação pode vir como "Vídeo programado" ou, quando o envio termina antes do processamento, "Processando vídeo ... ficará público em <data> às <hora>". As duas valem; o script confere pelo título do vídeo porque a confirmação do anterior pode ficar aberta atrás.
    - Se o PC do Iuri dormir no meio, o navegador desconecta: pare, avise e retome depois pelo `npm run fila -- lote` (os já programados não voltam para o lote).
 
 ## Instagram (Meta Business Suite)
