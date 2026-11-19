@@ -916,12 +916,12 @@
           "tipo": "medio",
           "alvo": "ricardo",
           "camera": [
-            3.57,
-            2.7,
-            6.17
+            4.95,
+            2.9,
+            5.0
           ],
           "movimento": "aproximar",
-          "intensidade": 0.35
+          "intensidade": 0.2
         },
         {
           "de": "f14",
@@ -940,9 +940,9 @@
           "tipo": "close",
           "alvo": "ricardo",
           "camera": [
-            -1.4,
+            -1.7,
             2.8,
-            6.6
+            6.2
           ],
           "movimento": "travelling",
           "intensidade": 0.25
@@ -1003,8 +1003,7 @@
           "alvo": "ricardo",
           "texto": "RICARDO · O NOIVO",
           "de": "f13:Ricardo",
-          "ate": "f13:fim+0.2",
-          "altura": 0.47
+          "ate": "f13:fim+0.2"
         }
       ],
       "manchetes": [
@@ -1323,11 +1322,11 @@
         },
         {
           "de": "f22",
-          "tipo": "close",
+          "tipo": "medio",
           "alvo": "ricardo",
           "lado": "frente",
           "movimento": "zoom_rapido",
-          "intensidade": 0.25
+          "intensidade": 0.3
         },
         {
           "de": "f23",
