@@ -242,7 +242,8 @@ window.__rodarFila = (lista) => {
     }
   };
   if (window.__fila && !window.__fila.fim) return 'já tem fila rodando: ' + window.__fila.atual;
-  const fila = window.__fila = {total: lista.length, feitos: 0, atual: null, resultados: [], parou: null, fim: false};
+  // lista fica guardada: para retomar depois de um conserto, __rodarFila(__fila.lista.slice(__fila.feitos + 1))
+  const fila = window.__fila = {total: lista.length, feitos: 0, atual: null, resultados: [], parou: null, fim: false, lista};
   fila.run = (async () => {
     for (let i = 0; i < lista.length; i++) {
       const cfg = lista[i], prox = lista[i + 1];
