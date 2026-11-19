@@ -236,10 +236,27 @@ export const instanteDaPublicacao = (dia: string, hora: string): string => {
 
 /** Vídeos prontos ficam no ramo por este tempo; depois são apagados (o histórico do git guarda, mas não se paga por isso a cada sessão). */
 const DIAS_GUARDADOS = 10;
+/**
+ * Vídeo que ainda não foi programado no YouTube (publicacao/<nome>.json, da skill publicar-lote) fica até este prazo:
+ * o Iuri sobe os acumulados a cada poucos dias pelo navegador e o link direto precisa do arquivo no ramo.
+ * Passou disso, sai mesmo assim (`npm run fila -- resgatar <nome>@<commit>` busca no histórico).
+ */
+const DIAS_MAXIMO = 45;
+
+const jaSaiuNoYoutube = (pasta: string, nome: string) => {
+	const arquivo = join(pasta, 'publicacao', `${nome}.json`);
+	if (!existsSync(arquivo)) return false;
+	try {
+		const status = (JSON.parse(readFileSync(arquivo, 'utf8')) as {youtube?: {status?: string}}).youtube?.status;
+		return status === 'programado' || status === 'publicado' || status === 'pulado';
+	} catch {
+		return false;
+	}
+};
 
 /**
  * Entrega um episódio pronto: guarda o vídeo e o texto de publicação no ramo de dados (pasta videos/)
- * e a série (estado, roteiro, regras). A publicação é manual: o Iuri baixa o vídeo e posta.
+ * e a série (estado, roteiro, regras). A publicação é pelo navegador (skill publicar-lote), que lê de videos/.
  */
 export const entregar = (serie: string, parte: number, dia: string, hora: string, video?: string, semVoz = false, juntei = false) => {
 	if (!semVoz && !existsSync(join(PASTA_SERIES, serie, 'vozes', `${nomeEpisodio(parte)}.json`))) {
@@ -258,9 +275,12 @@ export const entregar = (serie: string, parte: number, dia: string, hora: string
 		const dir = join(pasta, 'videos');
 		mkdirSync(dir, {recursive: true});
 		const limite = Date.now() - DIAS_GUARDADOS * 86_400_000;
+		const limiteMaximo = Date.now() - DIAS_MAXIMO * 86_400_000;
 		for (const n of readdirSync(dir).filter((x) => x.endsWith('.json'))) {
 			const velho = JSON.parse(readFileSync(join(dir, n), 'utf8')) as ItemFila;
-			if (Date.parse(`${velho.dia}T12:00:00Z`) < limite) for (const ext of ['json', 'mp4', 'md']) rmSync(join(dir, n.replace(/json$/, ext)), {force: true});
+			const quando = Date.parse(`${velho.dia}T12:00:00Z`);
+			const sai = quando < limiteMaximo || (quando < limite && jaSaiuNoYoutube(pasta, n.replace(/\.json$/, '')));
+			if (sai) for (const ext of ['json', 'mp4', 'md']) rmSync(join(dir, n.replace(/json$/, ext)), {force: true});
 		}
 		cpSync(arquivo, join(dir, `${nome}.mp4`));
 		const item: ItemFila = {serie, parte, dia, hora, publicar_apos: instanteDaPublicacao(dia, hora), status: 'pendente'};

@@ -439,20 +439,36 @@ describe('entrega dos vídeos', () => {
 		assert.equal(semBaixar.codigo, 1, 'pasta que não veio do baixar não troca a do ramo');
 	});
 
-	it('apaga da pasta videos o que passou de 10 dias', async () => {
+	it('apaga da pasta videos o que já foi programado no YouTube e passou de 10 dias; o que ninguém programou fica até 45 dias', async () => {
 		const {remoto, extra} = novoRemoto();
 		const raiz = montarRaiz();
 		const serie = join(raiz, 'public', 'series', 'ilha-perdida');
-		cpSync(join(serie, 'ep01.json'), join(serie, 'ep02.json'));
-		writeFileSync(join(raiz, 'out', 'ilha-perdida-ep02.mp4'), Buffer.alloc(2048, 3));
-		const velho = await rodar(raiz, 'http://x', 'dados.ts', ['entregar', 'ilha-perdida', '1', '--dia=2026-10-01', '--hora=18:00', '--sem-voz'], extra);
-		assert.equal(velho.codigo, 0, velho.saida);
-		const hoje = new Date().toISOString().slice(0, 10);
-		const novo = await rodar(raiz, 'http://x', 'dados.ts', ['entregar', 'ilha-perdida', '2', `--dia=${hoje}`, '--hora=18:00', '--sem-voz'], extra);
-		assert.equal(novo.codigo, 0, novo.saida);
+		for (const n of [2, 3, 4]) {
+			cpSync(join(serie, 'ep01.json'), join(serie, `ep0${n}.json`));
+			writeFileSync(join(raiz, 'out', `ilha-perdida-ep0${n}.mp4`), Buffer.alloc(2048, n));
+		}
+		const diaAtras = (d: number) => new Date(Date.now() - d * 86_400_000).toISOString().slice(0, 10);
+		const entregar = async (parte: number, dia: string) => {
+			const r = await rodar(raiz, 'http://x', 'dados.ts', ['entregar', 'ilha-perdida', String(parte), `--dia=${dia}`, '--hora=18:00', '--sem-voz'], extra);
+			assert.equal(r.codigo, 0, r.saida);
+		};
+		await entregar(1, diaAtras(15));
+		// a skill publicar-lote marcou a parte 1 como programada no YouTube
+		const marcar = mkdtempSync(join(tmpdir(), 'shorts-marcar-'));
+		git(marcar, 'clone', '--quiet', '--branch', 'dados', remoto, marcar);
+		mkdirSync(join(marcar, 'publicacao'));
+		writeFileSync(join(marcar, 'publicacao', 'ilha-perdida-ep01.json'), JSON.stringify({nome: 'ilha-perdida-ep01', youtube: {status: 'programado', em: '2026-11-01T00:00:00Z'}}));
+		git(marcar, 'add', '-A');
+		git(marcar, '-c', 'user.name=t', '-c', 'user.email=t@t', 'commit', '--quiet', '-m', 'marca');
+		git(marcar, 'push', '--quiet', 'origin', 'dados');
+		await entregar(2, diaAtras(15));
+		await entregar(3, diaAtras(60));
+		await entregar(4, diaAtras(0));
 		const conferir = mkdtempSync(join(tmpdir(), 'shorts-conferir-'));
 		git(conferir, 'clone', '--quiet', '--branch', 'dados', remoto, conferir);
-		assert.ok(!existsSync(join(conferir, 'videos', 'ilha-perdida-ep01.mp4')));
-		assert.ok(existsSync(join(conferir, 'videos', 'ilha-perdida-ep02.mp4')));
+		assert.ok(!existsSync(join(conferir, 'videos', 'ilha-perdida-ep01.mp4')), 'programado e com mais de 10 dias: sai');
+		assert.ok(existsSync(join(conferir, 'videos', 'ilha-perdida-ep02.mp4')), 'ninguém programou ainda: fica');
+		assert.ok(!existsSync(join(conferir, 'videos', 'ilha-perdida-ep03.mp4')), 'passou de 45 dias: sai mesmo sem programar');
+		assert.ok(existsSync(join(conferir, 'videos', 'ilha-perdida-ep04.mp4')));
 	});
 });
