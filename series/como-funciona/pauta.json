@@ -470,7 +470,8 @@
    ],
    "gancho": "O primeiro semáforo funcionava a gás e explodiu.",
    "estilo": "dúvida comum",
-   "status": "roteiro"
+   "status": "produzido",
+   "dia": "2026-11-19"
   },
   {
    "n": 28,
@@ -486,7 +487,7 @@
     "corrimão sincronizado"
    ],
    "gancho": "Os degraus somem no chão porque andam em trilhos diferentes.",
-   "status": "pendente"
+   "status": "roteiro"
   },
   {
    "n": 29,
