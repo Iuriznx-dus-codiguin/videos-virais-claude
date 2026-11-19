@@ -137,9 +137,10 @@ window.__autoRun = (cfg) => {
         if (!add) st.avisos.push('relacionado: sem botão Adicionar (já tem?)');
         else {
           add.click();
-          await sleep(2500);
-          const caixa = qa('ytcp-video-pick-dialog, tp-yt-paper-dialog', document).filter(visivel).at(-1);
-          const cards = caixa ? qa('ytcp-entity-card', caixa).filter(visivel) : [];
+          await sleep(1500);
+          // os cards do seletor chegam devagar em PC lento: espera até 12 s aparecerem
+          let caixa, cards = [];
+          await esperar(() => { caixa = qa('ytcp-video-pick-dialog, tp-yt-paper-dialog', document).filter(visivel).at(-1); cards = caixa ? qa('ytcp-entity-card', caixa).filter(visivel) : []; return cards.length; }, 12000, 'cards').catch(() => {});
           const texto = (e) => e.innerText.replace(/\s+/g, ' ').trim();
           let achado;
           for (const p of [...cfg.relacionado, cfg.serieRe].filter(Boolean)) { achado = cards.find((e) => new RegExp(p, 'i').test(texto(e))); if (achado) break; }
@@ -207,7 +208,8 @@ window.__autoRun = (cfg) => {
       const caixas = qa('tp-yt-paper-dialog, ytcp-dialog', document).filter(visivel);
       const aviso = caixas.find((e) => /Ainda estamos verificando/.test(e.innerText));
       if (aviso) { const ok = qa('ytcp-button, button', aviso).filter(visivel).find((b) => /^Ok$/i.test(b.innerText.trim())); if (ok) { ok.click(); st.avisos.push('aviso de verificação em andamento: ok'); } }
-      return caixas.find((e) => /Vídeo programado/.test(e.innerText));
+      // upload rápido: em vez de "Vídeo programado" aparece "Processando vídeo ... ficará público em <data> às <hora>" (só tem Fechar)
+      return caixas.find((e) => /Vídeo programado|Processando vídeo[\s\S]*ficará público em/.test(e.innerText));
     }, 90000, 'confirmação');
     st.confirmacao = conf.innerText.replace(/\s+/g, ' ').slice(0, 200);
     st.link = ((conf.querySelector('a[href*="shorts/"], a[href*="youtu"]') || {}).href || st.link || '').replace(/\?.*$/, '');
@@ -215,5 +217,42 @@ window.__autoRun = (cfg) => {
     L(st.ok ? 'programado' : 'programado com horário diferente');
   } catch (e) { st.erro = String((e && e.message) || e); L('erro'); } })();
   return 'iniciado ' + cfg.nome;
+};
+// Fila: roda vários cfgs (de cfg_youtube.py --json) um vídeo por vez, pré-baixando o próximo enquanto preenche o atual.
+// Para no primeiro que não sair 'programado' com a data e a hora certas. Acompanhe por
+// __fila.atual / __fila.feitos / __fila.resultados / __fila.parou / __fila.fim.
+window.__rodarFila = (lista) => {
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+  const visivel = (e) => { if (!e) return false; const r = e.getBoundingClientRect(); return r.width > 0 && r.height > 0; };
+  const fecharConfirmacoes = () => {
+    for (const d of [...document.querySelectorAll('tp-yt-paper-dialog, ytcp-dialog')].filter(visivel)) {
+      if (!/Vídeo programado|Processando vídeo/.test(d.innerText)) continue;
+      const b = [...d.querySelectorAll('ytcp-button, button')].filter(visivel).find((x) => /^Fechar$/i.test(x.innerText.trim()));
+      if (b) (b.querySelector('button') || b).click();
+    }
+  };
+  if (window.__fila && !window.__fila.fim) return 'já tem fila rodando: ' + window.__fila.atual;
+  const fila = window.__fila = {total: lista.length, feitos: 0, atual: null, resultados: [], parou: null, fim: false};
+  fila.run = (async () => {
+    for (let i = 0; i < lista.length; i++) {
+      const cfg = lista[i], prox = lista[i + 1];
+      if (prox) { window.__prebaixar(prox.video); window.__prebaixar(prox.capa); }
+      fila.atual = cfg.nome;
+      fecharConfirmacoes();
+      await sleep(2000);
+      window.__autoRun(Object.assign({}, cfg, {programar: true}));
+      try { await window.__auto.run; } catch (e) {}
+      const a = window.__auto;
+      fila.resultados.push({nome: cfg.nome, fase: a.fase, ok: !!a.ok, link: a.link || null, erro: a.erro, avisos: a.avisos, relacionado: a.relacionado || null, confirmacao: a.confirmacao || null});
+      if (!(a.fase === 'programado' && a.ok)) { fila.parou = cfg.nome; break; }
+      fila.feitos++;
+      delete window.__pre[cfg.video]; delete window.__pre[cfg.capa];
+      await sleep(1500);
+      fecharConfirmacoes();
+      await sleep(3000);
+    }
+    fila.fim = true; fila.atual = null;
+  })();
+  return 'fila com ' + lista.length;
 };
 'carregado';
