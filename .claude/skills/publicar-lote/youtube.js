@@ -17,6 +17,26 @@ window.__abrirEnvio = async () => {
   for (let i = 0; i < 20; i++) { await new Promise((r) => setTimeout(r, 300)); if (document.querySelector('input[type=file][name=Filedata]')) return 'aberto'; }
   return 'sem campo';
 };
+// Download com cache: a linha do Iuri baixa do GitHub a ~100 KB/s, então os próximos vídeos vão baixando enquanto um é preenchido.
+// __prebaixar(url) devolve uma Promise<Blob>; chamar de novo com a mesma url reaproveita. __pre[url].lidos mostra o progresso.
+window.__pre = window.__pre || {};
+window.__prebaixar = (url) => {
+  const p = window.__pre[url];
+  if (p && !p.erro) return p.promessa;
+  const reg = {lidos: 0, total: 0, erro: null};
+  reg.promessa = (async () => {
+    const r = await fetch(url);
+    if (!r.ok) throw new Error('download ' + r.status + ' ' + url);
+    reg.total = Number(r.headers.get('content-length')) || 0;
+    const leitor = r.body.getReader();
+    const partes = [];
+    for (;;) { const {done, value} = await leitor.read(); if (done) break; partes.push(value); reg.lidos += value.length; }
+    return new Blob(partes);
+  })();
+  reg.promessa.catch((e) => { reg.erro = String(e); });
+  window.__pre[url] = reg;
+  return reg.promessa;
+};
 window.__autoRun = (cfg) => {
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   async function esperar(fn, ms = 60000, oque = '') {
@@ -32,7 +52,10 @@ window.__autoRun = (cfg) => {
   const visivel = (e) => { if (!e) return false; const r = e.getBoundingClientRect(); return r.width > 0 && r.height > 0; };
   const porTexto = (sel, re, raiz) => qa(sel, raiz || document).filter(visivel).find((e) => re.test(e.innerText.trim()));
   const escrever = (el, texto) => { el.focus(); document.execCommand('selectAll'); document.execCommand('insertText', false, texto); };
-  const arquivo = async (url, nome, tipo) => { const r = await fetch(url); if (!r.ok) throw new Error('download ' + r.status); return new File([await r.blob()], nome, {type: tipo}); };
+  const arquivo = async (url, nome, tipo) => {
+    const blob = await window.__prebaixar(url);
+    return new File([blob], nome, {type: tipo});
+  };
   const colocar = (campo, f) => { const dt = new DataTransfer(); dt.items.add(f); campo.files = dt.files; campo.dispatchEvent(new Event('input', {bubbles: true})); campo.dispatchEvent(new Event('change', {bubbles: true})); };
   const PASSOS = ['enviar', 'detalhes', 'playlist', 'avancado', 'elementos', 'visibilidade'];
   const inicio = Math.max(0, PASSOS.indexOf(cfg.desde || 'enviar'));
@@ -149,15 +172,17 @@ window.__autoRun = (cfg) => {
     const R = () => q('ytcp-uploads-review');
     const agenda = () => q('#second-container', R()).innerText.replace(/\s+/g, ' ');
     if (!agenda().includes(dataCurta)) {
+      // o calendário é um tp-yt-paper-dialog com ytcp-scrollable-calendar; digitar no campo dele não pega, clicar no dia pega
       q('#datepicker-trigger', R()).click();
+      const rotuloMes = `${MESES[mes - 1]} de ${ano}`;
+      const celula = await esperar(() => {
+        const m = qa('ytcp-scrollable-calendar .calendar-month', document).find((e) => e.getAttribute('aria-label') === rotuloMes);
+        return m && [...m.querySelectorAll('span.calendar-day')].find((d) => d.textContent.trim() === String(dia));
+      }, 8000, 'dia no calendário');
+      celula.scrollIntoView({block: 'center'});
+      await sleep(300);
+      celula.click();
       await sleep(900);
-      const caixa = await esperar(() => qa('ytcp-date-picker, tp-yt-paper-dialog', document).filter(visivel).find((e) => e.querySelector('input')), 5000, 'calendário');
-      const campo = caixa.querySelector('input');
-      campo.focus(); campo.select();
-      document.execCommand('insertText', false, dataCurta);
-      campo.dispatchEvent(new KeyboardEvent('keydown', {key: 'Enter', code: 'Enter', keyCode: 13, bubbles: true}));
-      await sleep(900);
-      if (visivel(caixa)) { document.body.dispatchEvent(new KeyboardEvent('keydown', {key: 'Escape', code: 'Escape', keyCode: 27, bubbles: true})); await sleep(500); }
     }
     hora.focus(); hora.select();
     document.execCommand('insertText', false, cfg.hora);
