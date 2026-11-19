@@ -93,6 +93,8 @@ export interface ItemFila {
 	video: string;
 	publicacao: Publicacao;
 	textos: Textos;
+	/** Commit de onde o vídeo foi resgatado, quando a produção já tirou ele de videos/ antes de sair (publicacao/resgatados.json). */
+	origem?: string;
 }
 
 // ---------- datas ----------
@@ -355,7 +357,58 @@ const lerItens = (pasta: string): ItemFila[] => {
 			textos: lerTextos(readFileSync(md, 'utf8')),
 		});
 	}
+	// a produção limpa videos/ depois de uns dias, saindo ou não: os resgatados voltam pela versão guardada no histórico
+	for (const [nome, commit] of Object.entries(lerResgatados(pasta))) {
+		if (itens.some((i) => i.nome === nome)) continue;
+		const r = lerDoHistorico(pasta, nome, commit);
+		const arqPub = join(pasta, 'publicacao', `${nome}.json`);
+		itens.push({
+			nome,
+			serie: r.entrega.serie,
+			parte: r.entrega.parte,
+			fluxo: formato(r.entrega.serie) === 'avulso' ? `avulso:${r.entrega.serie}` : 'historias',
+			planejado: r.entrega.publicar_apos,
+			video: r.video,
+			publicacao: existsSync(arqPub) ? lerJson<Publicacao>(arqPub) : {nome},
+			textos: lerTextos(r.md),
+			origem: commit,
+		});
+	}
 	return itens;
+};
+
+const arqResgatados = (pasta: string) => join(pasta, 'publicacao', 'resgatados.json');
+const lerResgatados = (pasta: string): Record<string, string> => (existsSync(arqResgatados(pasta)) ? lerJson<Record<string, string>>(arqResgatados(pasta)) : {});
+/** Lê a entrega de um vídeo num commit antigo do ramo (o clone é raso: busca só esse commit, sem baixar o mp4). */
+const lerDoHistorico = (pasta: string, nome: string, commit: string) => {
+	try {
+		git(pasta, 'cat-file', '-e', `${commit}^{commit}`);
+	} catch {
+		git(pasta, 'fetch', '--quiet', '--depth', '1', '--filter=blob:none', 'origin', commit);
+	}
+	const video = /^\S+ blob (\S+)\t/.exec(git(pasta, 'ls-tree', commit, `videos/${nome}.mp4`))?.[1];
+	if (!video) throw new Error(`${nome}: não tem videos/${nome}.mp4 no commit ${commit}`);
+	return {entrega: JSON.parse(git(pasta, 'show', `${commit}:videos/${nome}.json`)) as Entrega, md: git(pasta, 'show', `${commit}:videos/${nome}.md`), video};
+};
+
+/** Devolve à fila um vídeo que a produção tirou de videos/ antes de sair: resgatar <nome>@<commit em que ele ainda estava>. */
+export const resgatar = (alvos: string[]) => {
+	const pasta = abrir();
+	try {
+		const lista = lerResgatados(pasta);
+		for (const a of alvos) {
+			const [nome, commit] = a.split('@');
+			if (!nome || !commit) throw new Error(`use resgatar <nome>@<commit> (veio "${a}")`);
+			const r = lerDoHistorico(pasta, nome, commit);
+			lista[nome] = commit;
+			console.log(`${nome}: ${r.entrega.serie} parte ${r.entrega.parte}, combinado para ${textoDoHorario(r.entrega.publicar_apos)} (commit ${commit.slice(0, 7)})`);
+		}
+		mkdirSync(join(pasta, 'publicacao'), {recursive: true});
+		writeFileSync(arqResgatados(pasta), `${JSON.stringify(lista, null, 2)}\n`);
+		console.log(enviar(pasta, `fila: resgata ${alvos.map((a) => a.split('@')[0]).join(', ')}`) ? 'salvo no ramo dados (publicacao/resgatados.json)' : 'nada mudou');
+	} finally {
+		rmSync(pasta, {recursive: true, force: true});
+	}
 };
 
 const opcoes = (args: string[]) => ({
@@ -448,7 +501,7 @@ export const montarLote = (agora = Date.now(), saida = join(RAIZ, 'out', 'lote')
 				rotulo: t.rotulo,
 				fluxo: item.fluxo,
 				planejado: textoDoHorario(item.planejado),
-				video: linkDireto(commit, `videos/${item.nome}.mp4`),
+				video: linkDireto(item.origem ?? commit, `videos/${item.nome}.mp4`),
 				capa: existsSync(join(pasta, 'publicacao', 'capas', `${item.nome}.jpg`)) ? linkDireto(commit, `publicacao/capas/${item.nome}.jpg`) : undefined,
 				segundo_da_capa: t.segundoDaCapa,
 				comentario: t.comentario,
@@ -587,7 +640,8 @@ if (process.argv[1] && import.meta.filename === process.argv[1]) {
 		else if (comando === 'lote') montarLote(agoraDe(opc));
 		else if (comando === 'marcar') marcar(pos, opc, agoraDe(opc));
 		else if (comando === 'contas') definirContas(opc);
-		else throw new Error('comandos: (nada) | lote | marcar | contas');
+		else if (comando === 'resgatar') resgatar(pos);
+		else throw new Error('comandos: (nada) | lote | marcar | contas | resgatar');
 	} catch (e) {
 		console.error(e instanceof Error ? e.message : e);
 		process.exit(1);
