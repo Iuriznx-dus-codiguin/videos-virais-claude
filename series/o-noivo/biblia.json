@@ -196,6 +196,33 @@
         ]
       },
       "cor_legenda": "#B8E0FF"
+    },
+    "comprador": {
+      "nome": "Comprador",
+      "papel": "o homem do resort que vai comprar a Ilha do Farol; chega no domingo de terno, com uma pasta, como convidado do casamento (não fala)",
+      "personalidade": "frio, educado, só olha o relógio e a pasta",
+      "voz": {
+        "descricao": "homem brasileiro de uns 50 anos, voz seca",
+        "instruct": "male, middle-aged, moderate pitch"
+      },
+      "visual": {
+        "altura": 1.0,
+        "corpo": "#4A4F5C",
+        "cabeca": "#D9B48F",
+        "olhos": "ovais",
+        "sobrancelhas": "grossas",
+        "acessorios": [
+          {
+            "tipo": "cabelo_curto",
+            "cor": "#8A8A8A"
+          },
+          {
+            "tipo": "oculos",
+            "cor": "#111111"
+          }
+        ]
+      },
+      "cor_legenda": "#CFCFCF"
     }
   },
   "fatos": [

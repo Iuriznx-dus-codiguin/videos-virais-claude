@@ -1,0 +1,1145 @@
+{
+  "serie": "o-noivo",
+  "parte": 6,
+  "titulo": "O rádio do farol",
+  "musica": "misterio",
+  "falas": [
+    {
+      "id": "f1",
+      "quem": "lara",
+      "off": true,
+      "texto": "Se você precisar chamar a polícia numa ilha sem sinal, não use o celular.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f2",
+      "quem": "lara",
+      "off": true,
+      "texto": "Porque o farol do meu avô tem um RÁDIO que ainda funciona."
+    },
+    {
+      "id": "f3",
+      "quem": "lara",
+      "off": true,
+      "texto": "Mas só se ninguém te seguir lá pra cima.",
+      "tom": "serio"
+    },
+    {
+      "id": "f4",
+      "quem": "lara",
+      "off": true,
+      "texto": "Eu sou a Lara. Minha irmã casa às cinco com um golpista."
+    },
+    {
+      "id": "f5",
+      "quem": "lara",
+      "off": true,
+      "texto": "E mesmo sabendo de tudo, ela disse que o casamento continua."
+    },
+    {
+      "id": "f6",
+      "quem": "lara",
+      "off": true,
+      "texto": "Duas da tarde. Oitenta convidados descem do barco das flores."
+    },
+    {
+      "id": "f7",
+      "quem": "sandra",
+      "texto": "Cadê os noivos? Eu caso às cinco em ponto.",
+      "tom": "serio"
+    },
+    {
+      "id": "f8",
+      "quem": "lara",
+      "off": true,
+      "texto": "Meu primeiro instinto é contar tudo pra juíza ali no cais."
+    },
+    {
+      "id": "f9",
+      "quem": "lara",
+      "off": true,
+      "texto": "Não. Sem a polícia, eu sou só a irmã do escândalo.",
+      "tom": "serio"
+    },
+    {
+      "id": "f10",
+      "quem": "lara",
+      "off": true,
+      "texto": "Então eu subo os cento e vinte degraus do farol."
+    },
+    {
+      "id": "f11",
+      "quem": "lara",
+      "off": true,
+      "texto": "O rádio do vovô tá coberto de poeira. Mas LIGA."
+    },
+    {
+      "id": "f12",
+      "quem": "lara",
+      "texto": "Polícia? Emergência na Ilha do Farol. Câmbio.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f13",
+      "quem": "lara",
+      "off": true,
+      "texto": "Só chiado. E aí eu escuto passos na escada.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f14",
+      "quem": "ricardo",
+      "texto": "Pode chamar, cunhada. Eu espero.",
+      "tom": "calmo"
+    },
+    {
+      "id": "f15",
+      "quem": "ricardo",
+      "texto": "Até eles chegarem, a ilha já foi VENDIDA.",
+      "tom": "calmo"
+    },
+    {
+      "id": "f16",
+      "quem": "lara",
+      "off": true,
+      "texto": "E pela janela eu vejo o comprador. De terno, com a pasta, como convidado."
+    },
+    {
+      "id": "f17",
+      "quem": "lara",
+      "off": true,
+      "texto": "Mas a assinatura é só segunda às nove. Eu ainda tenho um dia.",
+      "tom": "aliviado"
+    },
+    {
+      "id": "f18",
+      "quem": "lara",
+      "off": true,
+      "texto": "Dá tempo de sobra pra polícia chegar.",
+      "tom": "aliviado"
+    },
+    {
+      "id": "f19",
+      "quem": "ricardo",
+      "texto": "Segunda? Não, cunhada. Mudou.",
+      "tom": "calmo"
+    },
+    {
+      "id": "f20",
+      "quem": "ricardo",
+      "texto": "Ele assina comigo no altar. Logo depois do sim.",
+      "tom": "calmo"
+    },
+    {
+      "id": "f21",
+      "quem": "lara",
+      "off": true,
+      "texto": "A venda é hoje. No ALTAR.",
+      "tom": "tenso"
+    }
+  ],
+  "cenas": [
+    {
+      "cenario": "ilhota_farol",
+      "luz": "dia",
+      "ambiente": "mar",
+      "id": "cais",
+      "de": "inicio",
+      "personagens": {
+        "lara": {
+          "em": [
+            -1.6,
+            4.0
+          ],
+          "olhando": [
+            2.4,
+            2.0,
+            9.8
+          ],
+          "expressao": "desconfiado"
+        },
+        "bia": {
+          "em": [
+            0.6,
+            6.0
+          ],
+          "olhando": [
+            2.4,
+            2.4,
+            9.8
+          ],
+          "expressao": "feliz"
+        },
+        "ricardo": {
+          "em": [
+            1.8,
+            6.4
+          ],
+          "olhando": [
+            2.4,
+            2.4,
+            9.8
+          ],
+          "expressao": "feliz"
+        },
+        "sandra": {
+          "em": [
+            2.6,
+            10.8
+          ],
+          "olhando": [
+            0.6,
+            2.4,
+            6.0
+          ],
+          "expressao": "serio"
+        },
+        "comprador": {
+          "em": [
+            3.8,
+            10.4
+          ],
+          "olhando": [
+            1.8,
+            2.4,
+            6.4
+          ],
+          "expressao": "serio",
+          "segura": "pacote"
+        }
+      },
+      "acoes": [
+        {
+          "quem": "sandra",
+          "faz": "andar",
+          "para": [
+            2.4,
+            9.8
+          ],
+          "de": "inicio",
+          "velocidade": 0.5
+        },
+        {
+          "quem": "lara",
+          "faz": "andar",
+          "para": [
+            -0.8,
+            5.6
+          ],
+          "de": "f8:instinto",
+          "velocidade": 0.6
+        },
+        {
+          "quem": "lara",
+          "expressao": "determinado",
+          "de": "f8"
+        },
+        {
+          "quem": "lara",
+          "expressao": "serio",
+          "de": "f9"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "farol",
+          "em": "farol",
+          "ilhota": false,
+          "modo": "apagado"
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            3,
+            17
+          ],
+          "giro": 90,
+          "luzes": false
+        }
+      ],
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "aberto",
+          "alvo": [
+            1.6,
+            1.8,
+            8.6
+          ],
+          "camera": [
+            -9.0,
+            5.5,
+            18.5
+          ],
+          "movimento": "arco",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f1:não",
+          "tipo": "close",
+          "alvo": "ricardo",
+          "camera": [
+            0.36,
+            3.0,
+            9.48
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f2",
+          "tipo": "medio",
+          "alvo": [
+            0.0,
+            12.0,
+            -4.0
+          ],
+          "camera": [
+            -3.0,
+            2.2,
+            5.5
+          ],
+          "movimento": "subir",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f3",
+          "tipo": "medio",
+          "alvo": "lara",
+          "camera": [
+            -1.63,
+            2.8,
+            8.4
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f4",
+          "tipo": "close",
+          "alvo": "lara",
+          "camera": [
+            -1.62,
+            2.8,
+            7.0
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f5",
+          "tipo": "close",
+          "alvo": "bia",
+          "camera": [
+            0.1,
+            2.8,
+            8.96
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f6",
+          "tipo": "aberto",
+          "alvo": [
+            2.9,
+            2.0,
+            10.4
+          ],
+          "camera": [
+            -3.0,
+            3.2,
+            8.5
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.25,
+          "transicao": "chicote"
+        },
+        {
+          "de": "f7",
+          "tipo": "close",
+          "alvo": "sandra",
+          "camera": [
+            2.9,
+            2.8,
+            6.84
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f8",
+          "tipo": "medio",
+          "alvo": "lara",
+          "camera": [
+            -1.63,
+            2.8,
+            8.4
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f9",
+          "tipo": "close",
+          "alvo": "lara",
+          "camera": [
+            -0.68,
+            2.8,
+            8.6
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.3
+        }
+      ],
+      "rotulos": [
+        {
+          "alvo": "ricardo",
+          "texto": "RICARDO · O NOIVO",
+          "de": "f1:não",
+          "ate": "f2"
+        },
+        {
+          "alvo": "lara",
+          "texto": "LARA · IRMÃ DA NOIVA",
+          "de": "f4",
+          "ate": "f4:irmã",
+          "altura": 0.47
+        },
+        {
+          "alvo": "bia",
+          "texto": "BIA · A NOIVA",
+          "de": "f5",
+          "ate": "f5:fim+0.2",
+          "altura": 0.47
+        },
+        {
+          "alvo": "sandra",
+          "texto": "DRA. SANDRA · JUÍZA",
+          "de": "f7",
+          "ate": "f7:fim+0.2",
+          "altura": 0.47
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "inicio",
+          "ate": "f2",
+          "texto": "ILHA *SEM SINAL*"
+        },
+        {
+          "de": "f2",
+          "ate": "f3",
+          "texto": "O RÁDIO *DO VOVÔ*"
+        },
+        {
+          "de": "f3",
+          "ate": "f4",
+          "texto": "NINGUÉM PODE *ME SEGUIR*"
+        },
+        {
+          "de": "f4",
+          "ate": "f5",
+          "texto": "A IRMÃ CASA *COM UM GOLPISTA*"
+        },
+        {
+          "de": "f5",
+          "ate": "f6",
+          "texto": "\"O CASAMENTO *CONTINUA*\""
+        },
+        {
+          "de": "f6",
+          "ate": "f8",
+          "texto": "*80 CONVIDADOS*"
+        },
+        {
+          "de": "f8",
+          "ate": "f9",
+          "texto": "CONTAR *PRA JUÍZA*?"
+        },
+        {
+          "de": "f9",
+          "texto": "SEM PROVA, *NÃO*"
+        }
+      ],
+      "relogio": {
+        "de": "inicio",
+        "hora": "14:00"
+      },
+      "efeitos": [
+        {
+          "de": "f9",
+          "ate": "f9+0.6",
+          "efeito": "linhas"
+        }
+      ],
+      "sons": [
+        {
+          "de": "f1:não",
+          "som": "impacto",
+          "volume": 0.3
+        },
+        {
+          "de": "f9",
+          "som": "susto",
+          "volume": 0.3
+        }
+      ]
+    },
+    {
+      "cenario": "sala_farol",
+      "luz": "dia",
+      "id": "radio",
+      "de": "f10",
+      "personagens": {
+        "lara": {
+          "em": [
+            -2.3,
+            0.75
+          ],
+          "olhando": [
+            1.6,
+            1.15,
+            -2.1
+          ],
+          "expressao": "determinado",
+          "escala": 0.6
+        }
+      },
+      "acoes": [
+        {
+          "quem": "lara",
+          "faz": "andar",
+          "para": [
+            0.95,
+            -1.05
+          ],
+          "de": "f10",
+          "velocidade": 0.7
+        },
+        {
+          "quem": "lara",
+          "faz": "estender_mao",
+          "para": [
+            1.6,
+            1.15,
+            -2.1
+          ],
+          "de": "f11:LIGA-0.4"
+        },
+        {
+          "quem": "lara",
+          "expressao": "nervoso",
+          "de": "f12"
+        },
+        {
+          "quem": "lara",
+          "faz": "virar",
+          "para": [
+            -2.3,
+            1.5,
+            0.75
+          ],
+          "de": "f13:passos"
+        },
+        {
+          "quem": "lara",
+          "expressao": "medo",
+          "de": "f13:passos"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "particulas",
+          "particula": "poeira",
+          "em": [
+            1.4,
+            -1.6
+          ],
+          "alt": 0.9,
+          "raio": 0.8,
+          "altura": 1.2
+        }
+      ],
+      "planos": [
+        {
+          "de": "f10",
+          "tipo": "aberto",
+          "alvo": "lara",
+          "camera": [
+            -0.6,
+            1.7,
+            -2.9
+          ],
+          "movimento": "acompanhar",
+          "intensidade": 0.2,
+          "transicao": "desfoque"
+        },
+        {
+          "de": "f11",
+          "tipo": "close",
+          "alvo": "lara",
+          "camera": [
+            -0.25,
+            1.5,
+            -2.85
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f11:LIGA",
+          "tipo": "close",
+          "alvo": "lara",
+          "camera": [
+            -0.25,
+            1.5,
+            -2.85
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f13",
+          "tipo": "close",
+          "alvo": "lara",
+          "camera": [
+            -0.25,
+            1.5,
+            -2.85
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f13:passos",
+          "tipo": "close",
+          "alvo": "lara",
+          "camera": [
+            -0.94,
+            1.55,
+            -1.25
+          ],
+          "movimento": "tremer",
+          "intensidade": 0.15
+        }
+      ],
+      "insercoes": [
+        {
+          "de": "f12",
+          "ate": "f12:fim+0.3",
+          "tipo": "radio",
+          "titulo": "RÁDIO DO FAROL",
+          "quem": "lara"
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f10",
+          "ate": "f11",
+          "texto": "SUBINDO *O FAROL*"
+        },
+        {
+          "de": "f11",
+          "ate": "f12",
+          "texto": "O RÁDIO *AINDA LIGA*"
+        },
+        {
+          "de": "f12",
+          "ate": "f13",
+          "texto": "CHAMANDO *A POLÍCIA*"
+        },
+        {
+          "de": "f13",
+          "texto": "*PASSOS* NA ESCADA"
+        }
+      ],
+      "relogio": {
+        "de": "f10",
+        "hora": "14:20"
+      },
+      "sons": [
+        {
+          "de": "f11:LIGA",
+          "som": "chiado",
+          "volume": 0.35
+        },
+        {
+          "de": "f13",
+          "som": "chiado",
+          "volume": 0.3
+        },
+        {
+          "de": "f13:passos",
+          "som": "tensao_sobe",
+          "volume": 0.3
+        }
+      ]
+    },
+    {
+      "cenario": "sala_farol",
+      "luz": "dia",
+      "id": "porta",
+      "de": "f14",
+      "personagens": {
+        "lara": {
+          "em": [
+            0.95,
+            -1.05
+          ],
+          "olhando": [
+            -2.3,
+            1.6,
+            0.75
+          ],
+          "expressao": "medo",
+          "escala": 0.6
+        },
+        "ricardo": {
+          "em": [
+            -2.3,
+            0.75
+          ],
+          "olhando": [
+            0.95,
+            1.6,
+            -1.05
+          ],
+          "expressao": "feliz",
+          "escala": 0.6
+        }
+      },
+      "acoes": [
+        {
+          "quem": "ricardo",
+          "expressao": "serio",
+          "de": "f15:VENDIDA"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "particulas",
+          "particula": "poeira",
+          "em": [
+            1.4,
+            -1.6
+          ],
+          "alt": 0.9,
+          "raio": 0.8,
+          "altura": 1.2
+        }
+      ],
+      "planos": [
+        {
+          "de": "f14",
+          "tipo": "close",
+          "alvo": "ricardo",
+          "camera": [
+            0.25,
+            1.7,
+            1.75
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f15",
+          "tipo": "medio",
+          "alvo": "ricardo",
+          "camera": [
+            0.6,
+            1.7,
+            2.3
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.25
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f14",
+          "ate": "f15",
+          "texto": "\"PODE *CHAMAR*\""
+        },
+        {
+          "de": "f15",
+          "texto": "A ILHA *JÁ FOI VENDIDA*?"
+        }
+      ],
+      "relogio": {
+        "de": "f14",
+        "hora": "14:21"
+      }
+    },
+    {
+      "cenario": "ilhota_farol",
+      "luz": "dia",
+      "ambiente": "mar",
+      "id": "janela",
+      "de": "f16",
+      "personagens": {
+        "comprador": {
+          "em": [
+            3.8,
+            10.4
+          ],
+          "olhando": [
+            1.8,
+            2.4,
+            6.4
+          ],
+          "expressao": "serio",
+          "segura": "pacote"
+        },
+        "sandra": {
+          "em": [
+            2.4,
+            9.8
+          ],
+          "olhando": [
+            0.6,
+            2.4,
+            6.0
+          ],
+          "expressao": "serio"
+        }
+      },
+      "acoes": [],
+      "objetos": [
+        {
+          "tipo": "farol",
+          "em": "farol",
+          "ilhota": false,
+          "modo": "apagado"
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            3,
+            17
+          ],
+          "giro": 90,
+          "luzes": false
+        }
+      ],
+      "planos": [
+        {
+          "de": "f16",
+          "tipo": "medio",
+          "alvo": [
+            3.8,
+            1.8,
+            10.4
+          ],
+          "camera": [
+            0.8,
+            12.5,
+            -1.6
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.3,
+          "transicao": "zoom"
+        }
+      ],
+      "rotulos": [
+        {
+          "alvo": "comprador",
+          "texto": "O COMPRADOR",
+          "de": "f16:comprador",
+          "ate": "f16:fim+0.2"
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f16",
+          "texto": "O COMPRADOR *É CONVIDADO*"
+        }
+      ],
+      "relogio": {
+        "de": "f16",
+        "hora": "14:22"
+      },
+      "efeitos": [
+        {
+          "de": "f16:pasta",
+          "ate": "f16:fim+0.3",
+          "efeito": "circular",
+          "alvo": "comprador"
+        }
+      ]
+    },
+    {
+      "cenario": "sala_farol",
+      "luz": "dia",
+      "id": "alivio",
+      "de": "f17",
+      "filtro": "quente",
+      "personagens": {
+        "lara": {
+          "em": [
+            0.95,
+            -1.05
+          ],
+          "olhando": [
+            -2.3,
+            1.6,
+            0.75
+          ],
+          "expressao": "aliviado",
+          "escala": 0.6
+        },
+        "ricardo": {
+          "em": [
+            -2.3,
+            0.75
+          ],
+          "olhando": [
+            0.95,
+            1.6,
+            -1.05
+          ],
+          "expressao": "serio",
+          "escala": 0.6
+        }
+      },
+      "acoes": [],
+      "objetos": [
+        {
+          "tipo": "particulas",
+          "particula": "poeira",
+          "em": [
+            1.4,
+            -1.6
+          ],
+          "alt": 0.9,
+          "raio": 0.8,
+          "altura": 1.2
+        }
+      ],
+      "planos": [
+        {
+          "de": "f17",
+          "tipo": "close",
+          "alvo": "lara",
+          "camera": [
+            -0.94,
+            1.55,
+            -1.25
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f18",
+          "tipo": "medio",
+          "alvo": "ricardo",
+          "camera": [
+            0.6,
+            1.7,
+            2.3
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.2
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f17",
+          "ate": "f18",
+          "texto": "ASSINATURA SÓ *SEGUNDA*",
+          "cor": "#2FD27A"
+        },
+        {
+          "de": "f18",
+          "texto": "DÁ TEMPO *DA POLÍCIA CHEGAR*",
+          "cor": "#2FD27A"
+        }
+      ],
+      "relogio": {
+        "de": "f17",
+        "hora": "14:23"
+      }
+    },
+    {
+      "cenario": "sala_farol",
+      "luz": "dia",
+      "id": "virada",
+      "de": "f19",
+      "filtro": "dramatico",
+      "personagens": {
+        "lara": {
+          "em": [
+            0.95,
+            -1.05
+          ],
+          "olhando": [
+            -2.3,
+            1.6,
+            0.75
+          ],
+          "expressao": "aliviado",
+          "escala": 0.6
+        },
+        "ricardo": {
+          "em": [
+            -2.3,
+            0.75
+          ],
+          "olhando": [
+            0.95,
+            1.6,
+            -1.05
+          ],
+          "expressao": "feliz",
+          "escala": 0.6
+        }
+      },
+      "acoes": [
+        {
+          "quem": "lara",
+          "expressao": "surpreso",
+          "de": "f19:Mudou"
+        },
+        {
+          "quem": "lara",
+          "expressao": "medo",
+          "de": "f21:ALTAR"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "particulas",
+          "particula": "poeira",
+          "em": [
+            1.4,
+            -1.6
+          ],
+          "alt": 0.9,
+          "raio": 0.8,
+          "altura": 1.2
+        }
+      ],
+      "planos": [
+        {
+          "de": "f19",
+          "tipo": "close",
+          "alvo": "ricardo",
+          "camera": [
+            0.25,
+            1.7,
+            1.75
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f20",
+          "tipo": "medio",
+          "alvo": "ricardo",
+          "camera": [
+            0.6,
+            1.7,
+            2.3
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f21",
+          "tipo": "close",
+          "alvo": "lara",
+          "camera": [
+            -0.94,
+            1.55,
+            -1.25
+          ],
+          "movimento": "dolly_zoom",
+          "intensidade": 0.8,
+          "transicao": "zoom"
+        },
+        {
+          "de": "f21:fim+0.3",
+          "tipo": "close",
+          "alvo": "lara",
+          "camera": [
+            -0.94,
+            1.55,
+            -1.25
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        }
+      ],
+      "insercoes": [
+        {
+          "de": "f20:altar",
+          "ate": "f21",
+          "tipo": "bilhete",
+          "titulo": "PROMESSA DE VENDA",
+          "linhas": [
+            "Ilha do Farol",
+            "Assinatura: HOJE, 17h",
+            "Local: no altar"
+          ]
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f19",
+          "ate": "f21",
+          "texto": "\"*MUDOU*\""
+        },
+        {
+          "de": "f21",
+          "texto": "A VENDA É *NO ALTAR*"
+        }
+      ],
+      "relogio": {
+        "de": "f19",
+        "hora": "14:24"
+      },
+      "efeitos": [
+        {
+          "de": "f19:Mudou",
+          "ate": "fim",
+          "efeito": "barras"
+        },
+        {
+          "de": "f21:ALTAR",
+          "ate": "f21:fim+0.4",
+          "efeito": "destacar",
+          "alvo": "lara"
+        }
+      ],
+      "sons": [
+        {
+          "de": "f19:Mudou",
+          "som": "tensao_sobe",
+          "volume": 0.3
+        },
+        {
+          "de": "f21:ALTAR",
+          "som": "impacto",
+          "volume": 0.45
+        }
+      ]
+    }
+  ],
+  "chamada": {
+    "pergunta": "A Lara interrompe o casamento ou confia na Bia?",
+    "texto": "COMENTA",
+    "destaque": "PARTE 7"
+  },
+  "postagem": {
+    "titulo": "Subi no farol pra chamar a polícia e ele me seguiu",
+    "descricao": "Numa ilha sem sinal, a irmã da noiva sobe no farol do avô para chamar a polícia pelo rádio antigo, horas antes do casamento com um golpista.",
+    "hashtags": [
+      "farol",
+      "casamento",
+      "novelinha",
+      "animacao"
+    ],
+    "comentario": "Eu interrompia o casamento na hora. E você: interrompia ou confiava na Bia?",
+    "capa": "f9+0.3"
+  }
+}
