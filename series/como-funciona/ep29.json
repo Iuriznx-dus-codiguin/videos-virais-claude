@@ -1,0 +1,3874 @@
+{
+ "serie": "como-funciona",
+ "parte": 29,
+ "titulo": "E se o cabo do elevador arrebentar?",
+ "musica": "curiosidade",
+ "personagens": {
+  "otis": {
+   "nome": "Elisha Otis",
+   "papel": "mecânico americano; em 1853, numa fábrica de camas em Yonkers, Nova York, fez um freio de segurança com uma mola de carroça que trava a plataforma em trilhos com dentes se a corda arrebenta; em 1854, numa feira em Nova York, subiu na plataforma e mandou cortar a corda; não fala",
+   "visual": {
+    "altura": 1,
+    "corpo": "#37474F",
+    "cabeca": "#F2D5BD",
+    "olhos": "redondos",
+    "sobrancelhas": "grossas",
+    "acessorios": [
+     {
+      "tipo": "cabelo_curto",
+      "cor": "#3E2723"
+     },
+     {
+      "tipo": "bigode",
+      "cor": "#3E2723"
+     },
+     {
+      "tipo": "colete",
+      "cor": "#795548"
+     },
+     {
+      "tipo": "lenco",
+      "cor": "#C62828"
+     }
+    ]
+   }
+  }
+ },
+ "modelos": {
+  "elevador": [
+   {
+    "id": "piso",
+    "forma": "caixa",
+    "tam": [
+     0.34,
+     0.02,
+     0.25
+    ],
+    "pos": [
+     0,
+     0.01,
+     0
+    ],
+    "cor": "#37474F"
+   },
+   {
+    "id": "fundo",
+    "forma": "caixa",
+    "tam": [
+     0.34,
+     0.58,
+     0.006
+    ],
+    "pos": [
+     0,
+     0.31,
+     -0.12
+    ],
+    "cor": "#1C2A33"
+   },
+   {
+    "id": "coluna_fe",
+    "forma": "cilindro",
+    "tam": [
+     0.006,
+     0.58
+    ],
+    "pos": [
+     -0.165,
+     0.31,
+     0.12
+    ],
+    "cor": "#78909C"
+   },
+   {
+    "id": "coluna_fd",
+    "forma": "cilindro",
+    "tam": [
+     0.006,
+     0.58
+    ],
+    "pos": [
+     0.165,
+     0.31,
+     0.12
+    ],
+    "cor": "#78909C"
+   },
+   {
+    "id": "coluna_te",
+    "forma": "cilindro",
+    "tam": [
+     0.006,
+     0.58
+    ],
+    "pos": [
+     -0.165,
+     0.31,
+     -0.115
+    ],
+    "cor": "#78909C"
+   },
+   {
+    "id": "coluna_td",
+    "forma": "cilindro",
+    "tam": [
+     0.006,
+     0.58
+    ],
+    "pos": [
+     0.165,
+     0.31,
+     -0.115
+    ],
+    "cor": "#78909C"
+   },
+   {
+    "id": "laje",
+    "forma": "caixa",
+    "tam": [
+     0.34,
+     0.09999999999999998,
+     0.25
+    ],
+    "pos": [
+     0,
+     0.6499999999999999,
+     0
+    ],
+    "cor": "#546E7A"
+   },
+   {
+    "id": "trilho_e",
+    "forma": "caixa",
+    "tam": [
+     0.01,
+     0.58,
+     0.014
+    ],
+    "pos": [
+     -0.112,
+     0.31,
+     0
+    ],
+    "cor": "#B0BEC5"
+   },
+   {
+    "id": "trilho_d",
+    "forma": "caixa",
+    "tam": [
+     0.01,
+     0.58,
+     0.014
+    ],
+    "pos": [
+     0.042,
+     0.31,
+     0
+    ],
+    "cor": "#B0BEC5"
+   },
+   {
+    "id": "trilho_cw1",
+    "forma": "caixa",
+    "tam": [
+     0.006,
+     0.58,
+     0.01
+    ],
+    "pos": [
+     0.074,
+     0.31,
+     0
+    ],
+    "cor": "#78909C"
+   },
+   {
+    "id": "trilho_cw2",
+    "forma": "caixa",
+    "tam": [
+     0.006,
+     0.58,
+     0.01
+    ],
+    "pos": [
+     0.136,
+     0.31,
+     0
+    ],
+    "cor": "#78909C"
+   },
+   {
+    "id": "piv_cab",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     -0.035,
+     0.36,
+     0
+    ],
+    "cor": "#FFB300",
+    "sem_contorno": true
+   },
+   {
+    "id": "cabine",
+    "forma": "caixa",
+    "tam": [
+     0.14,
+     0.17,
+     0.13
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#FFB300",
+    "pai": "piv_cab"
+   },
+   {
+    "id": "porta",
+    "forma": "caixa",
+    "tam": [
+     0.075,
+     0.13,
+     0.004
+    ],
+    "pos": [
+     0,
+     -0.012,
+     0.066
+    ],
+    "cor": "#CFD8DC",
+    "pai": "piv_cab"
+   },
+   {
+    "id": "janela",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.045,
+     0.003
+    ],
+    "pos": [
+     0,
+     0.02,
+     0.0685
+    ],
+    "cor": "#81D4FA",
+    "opacidade": 0.45,
+    "sem_contorno": true,
+    "pai": "piv_cab"
+   },
+   {
+    "id": "passageiro",
+    "forma": "esfera",
+    "tam": [
+     0.015
+    ],
+    "pos": [
+     0,
+     0.016,
+     0.05
+    ],
+    "cor": "#E53935",
+    "pai": "piv_cab"
+   },
+   {
+    "id": "fresta_porta",
+    "forma": "caixa",
+    "tam": [
+     0.002,
+     0.13,
+     0.005
+    ],
+    "pos": [
+     0,
+     -0.012,
+     0.0672
+    ],
+    "cor": "#455A64",
+    "sem_contorno": true,
+    "pai": "piv_cab"
+   },
+   {
+    "id": "freio_e",
+    "forma": "caixa",
+    "tam": [
+     0.018,
+     0.03,
+     0.03
+    ],
+    "pos": [
+     -0.072,
+     -0.07,
+     0
+    ],
+    "cor": "#E53935",
+    "pai": "piv_cab",
+    "oculta": true
+   },
+   {
+    "id": "freio_d",
+    "forma": "caixa",
+    "tam": [
+     0.018,
+     0.03,
+     0.03
+    ],
+    "pos": [
+     0.072,
+     -0.07,
+     0
+    ],
+    "cor": "#E53935",
+    "pai": "piv_cab",
+    "oculta": true
+   },
+   {
+    "id": "braco_lim",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.006,
+     0.006
+    ],
+    "pos": [
+     -0.095,
+     0.06,
+     0.03
+    ],
+    "cor": "#E53935",
+    "pai": "piv_cab",
+    "oculta": true
+   },
+   {
+    "id": "cabo_c0",
+    "forma": "tubo",
+    "tam": [
+     0.0028
+    ],
+    "pos": [
+     -0.011,
+     0.2025,
+     0
+    ],
+    "cor": "#263238",
+    "caminho": [
+     [
+      0,
+      -0.11750000000000002,
+      0
+     ],
+     [
+      0,
+      0.11750000000000002,
+      0
+     ]
+    ],
+    "pai": "piv_cab",
+    "sem_contorno": true
+   },
+   {
+    "id": "cabo_c1",
+    "forma": "tubo",
+    "tam": [
+     0.0028
+    ],
+    "pos": [
+     0.0,
+     0.2025,
+     0
+    ],
+    "cor": "#263238",
+    "caminho": [
+     [
+      0,
+      -0.11750000000000002,
+      0
+     ],
+     [
+      0,
+      0.11750000000000002,
+      0
+     ]
+    ],
+    "pai": "piv_cab",
+    "sem_contorno": true
+   },
+   {
+    "id": "cabo_c2",
+    "forma": "tubo",
+    "tam": [
+     0.0028
+    ],
+    "pos": [
+     0.011,
+     0.2025,
+     0
+    ],
+    "cor": "#263238",
+    "caminho": [
+     [
+      0,
+      -0.11750000000000002,
+      0
+     ],
+     [
+      0,
+      0.11750000000000002,
+      0
+     ]
+    ],
+    "pai": "piv_cab",
+    "sem_contorno": true
+   },
+   {
+    "id": "cabo_cb0",
+    "forma": "tubo",
+    "tam": [
+     0.0028
+    ],
+    "pos": [
+     -0.011,
+     0.2025,
+     0
+    ],
+    "cor": "#263238",
+    "caminho": [
+     [
+      0,
+      -0.11750000000000002,
+      0
+     ],
+     [
+      0,
+      0.11750000000000002,
+      0
+     ]
+    ],
+    "pai": "piv_cab",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "cabo_cb1",
+    "forma": "tubo",
+    "tam": [
+     0.0028
+    ],
+    "pos": [
+     0.0,
+     0.2025,
+     0
+    ],
+    "cor": "#263238",
+    "caminho": [
+     [
+      0,
+      -0.11750000000000002,
+      0
+     ],
+     [
+      0,
+      0.11750000000000002,
+      0
+     ]
+    ],
+    "pai": "piv_cab",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "cabo_cb2",
+    "forma": "tubo",
+    "tam": [
+     0.0028
+    ],
+    "pos": [
+     0.011,
+     0.2025,
+     0
+    ],
+    "cor": "#263238",
+    "caminho": [
+     [
+      0,
+      -0.11750000000000002,
+      0
+     ],
+     [
+      0,
+      0.11750000000000002,
+      0
+     ]
+    ],
+    "pai": "piv_cab",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "piv_cw",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     0.105,
+     0.3,
+     0
+    ],
+    "cor": "#90A4AE",
+    "sem_contorno": true
+   },
+   {
+    "id": "contrapeso",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.13,
+     0.05
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#90A4AE",
+    "pai": "piv_cw"
+   },
+   {
+    "id": "faixa_cw0",
+    "forma": "caixa",
+    "tam": [
+     0.052,
+     0.006,
+     0.052
+    ],
+    "pos": [
+     0,
+     -0.04,
+     0
+    ],
+    "cor": "#455A64",
+    "sem_contorno": true,
+    "pai": "piv_cw"
+   },
+   {
+    "id": "faixa_cw1",
+    "forma": "caixa",
+    "tam": [
+     0.052,
+     0.006,
+     0.052
+    ],
+    "pos": [
+     0,
+     0.0,
+     0
+    ],
+    "cor": "#455A64",
+    "sem_contorno": true,
+    "pai": "piv_cw"
+   },
+   {
+    "id": "faixa_cw2",
+    "forma": "caixa",
+    "tam": [
+     0.052,
+     0.006,
+     0.052
+    ],
+    "pos": [
+     0,
+     0.04,
+     0
+    ],
+    "cor": "#455A64",
+    "sem_contorno": true,
+    "pai": "piv_cw"
+   },
+   {
+    "id": "cabo_w0",
+    "forma": "tubo",
+    "tam": [
+     0.0028
+    ],
+    "pos": [
+     -0.009,
+     0.22250000000000003,
+     0
+    ],
+    "cor": "#263238",
+    "caminho": [
+     [
+      0,
+      -0.15750000000000003,
+      0
+     ],
+     [
+      0,
+      0.15750000000000003,
+      0
+     ]
+    ],
+    "pai": "piv_cw",
+    "sem_contorno": true
+   },
+   {
+    "id": "cabo_w1",
+    "forma": "tubo",
+    "tam": [
+     0.0028
+    ],
+    "pos": [
+     0.009,
+     0.22250000000000003,
+     0
+    ],
+    "cor": "#263238",
+    "caminho": [
+     [
+      0,
+      -0.15750000000000003,
+      0
+     ],
+     [
+      0,
+      0.15750000000000003,
+      0
+     ]
+    ],
+    "pai": "piv_cw",
+    "sem_contorno": true
+   },
+   {
+    "id": "motor",
+    "forma": "cilindro",
+    "tam": [
+     0.076,
+     0.07
+    ],
+    "pos": [
+     0.035,
+     0.775,
+     -0.06
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#1E88E5"
+   },
+   {
+    "id": "base_motor",
+    "forma": "caixa",
+    "tam": [
+     0.12,
+     0.015000000000000116,
+     0.12
+    ],
+    "pos": [
+     0.035,
+     0.7025,
+     -0.05
+    ],
+    "cor": "#455A64"
+   },
+   {
+    "id": "piv_polia",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     0.035,
+     0.775,
+     0.0
+    ],
+    "cor": "#ECEFF1",
+    "sem_contorno": true
+   },
+   {
+    "id": "polia",
+    "forma": "cilindro",
+    "tam": [
+     0.07,
+     0.03
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#ECEFF1",
+    "pai": "piv_polia"
+   },
+   {
+    "id": "raio_polia",
+    "forma": "caixa",
+    "tam": [
+     0.11,
+     0.012,
+     0.034
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#546E7A",
+    "pai": "piv_polia"
+   },
+   {
+    "id": "raio_polia2",
+    "forma": "caixa",
+    "tam": [
+     0.012,
+     0.11,
+     0.034
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#546E7A",
+    "pai": "piv_polia"
+   },
+   {
+    "id": "cubo_polia",
+    "forma": "cilindro",
+    "tam": [
+     0.014,
+     0.036
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#263238",
+    "pai": "piv_polia"
+   },
+   {
+    "id": "cabo_volta",
+    "forma": "toro",
+    "tam": [
+     0.07300000000000001,
+     0.0035
+    ],
+    "pos": [
+     0.035,
+     0.775,
+     0
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#263238",
+    "sem_contorno": true
+   },
+   {
+    "id": "cabo_sup_c",
+    "forma": "tubo",
+    "tam": [
+     0.0034
+    ],
+    "pos": [
+     -0.035,
+     0.735,
+     0
+    ],
+    "cor": "#263238",
+    "sem_contorno": true,
+    "caminho": [
+     [
+      0,
+      -0.040000000000000036,
+      0
+     ],
+     [
+      0,
+      0.040000000000000036,
+      0
+     ]
+    ]
+   },
+   {
+    "id": "cabo_sup_w",
+    "forma": "tubo",
+    "tam": [
+     0.0034
+    ],
+    "pos": [
+     0.105,
+     0.735,
+     0
+    ],
+    "cor": "#263238",
+    "sem_contorno": true,
+    "caminho": [
+     [
+      0,
+      -0.040000000000000036,
+      0
+     ],
+     [
+      0,
+      0.040000000000000036,
+      0
+     ]
+    ]
+   },
+   {
+    "id": "piv_lim",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     -0.12,
+     0.735,
+     0.03
+    ],
+    "cor": "#E53935",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "limitador",
+    "forma": "cilindro",
+    "tam": [
+     0.03,
+     0.016
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#E53935",
+    "pai": "piv_lim",
+    "oculta": true
+   },
+   {
+    "id": "raio_lim",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.007,
+     0.02
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#7F0000",
+    "pai": "piv_lim",
+    "oculta": true
+   },
+   {
+    "id": "suporte_lim",
+    "forma": "caixa",
+    "tam": [
+     0.012,
+     0.03500000000000003,
+     0.012
+    ],
+    "pos": [
+     -0.12,
+     0.7175,
+     0.012
+    ],
+    "cor": "#455A64",
+    "oculta": true
+   },
+   {
+    "id": "cabo_lim",
+    "forma": "tubo",
+    "tam": [
+     0.0025
+    ],
+    "pos": [
+     -0.15,
+     0.3825,
+     0.03
+    ],
+    "cor": "#B71C1C",
+    "sem_contorno": true,
+    "caminho": [
+     [
+      0,
+      0.3525,
+      0
+     ],
+     [
+      0,
+      -0.35250000000000004,
+      0
+     ]
+    ],
+    "oculta": true
+   },
+   {
+    "id": "tensor_lim",
+    "forma": "cilindro",
+    "tam": [
+     0.016,
+     0.012
+    ],
+    "pos": [
+     -0.134,
+     0.036,
+     0.03
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#E53935",
+    "oculta": true
+   }
+  ],
+  "oficina_1853": [
+   {
+    "id": "base_o",
+    "forma": "caixa",
+    "tam": [
+     0.22,
+     0.012,
+     0.08
+    ],
+    "pos": [
+     0,
+     0.006,
+     0
+    ],
+    "cor": "#5D4037"
+   },
+   {
+    "id": "trilho_oe",
+    "forma": "caixa",
+    "tam": [
+     0.014,
+     0.3,
+     0.022
+    ],
+    "pos": [
+     -0.083,
+     0.162,
+     0
+    ],
+    "cor": "#8D6E63"
+   },
+   {
+    "id": "trilho_od",
+    "forma": "caixa",
+    "tam": [
+     0.014,
+     0.3,
+     0.022
+    ],
+    "pos": [
+     0.083,
+     0.162,
+     0
+    ],
+    "cor": "#8D6E63"
+   },
+   {
+    "id": "dente_e0",
+    "forma": "caixa",
+    "tam": [
+     0.008,
+     0.008,
+     0.018
+    ],
+    "pos": [
+     -0.0745,
+     0.04,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     45
+    ],
+    "cor": "#5D4037",
+    "sem_contorno": true
+   },
+   {
+    "id": "dente_d0",
+    "forma": "caixa",
+    "tam": [
+     0.008,
+     0.008,
+     0.018
+    ],
+    "pos": [
+     0.0745,
+     0.04,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     45
+    ],
+    "cor": "#5D4037",
+    "sem_contorno": true
+   },
+   {
+    "id": "dente_e1",
+    "forma": "caixa",
+    "tam": [
+     0.008,
+     0.008,
+     0.018
+    ],
+    "pos": [
+     -0.0745,
+     0.065,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     45
+    ],
+    "cor": "#5D4037",
+    "sem_contorno": true
+   },
+   {
+    "id": "dente_d1",
+    "forma": "caixa",
+    "tam": [
+     0.008,
+     0.008,
+     0.018
+    ],
+    "pos": [
+     0.0745,
+     0.065,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     45
+    ],
+    "cor": "#5D4037",
+    "sem_contorno": true
+   },
+   {
+    "id": "dente_e2",
+    "forma": "caixa",
+    "tam": [
+     0.008,
+     0.008,
+     0.018
+    ],
+    "pos": [
+     -0.0745,
+     0.09,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     45
+    ],
+    "cor": "#5D4037",
+    "sem_contorno": true
+   },
+   {
+    "id": "dente_d2",
+    "forma": "caixa",
+    "tam": [
+     0.008,
+     0.008,
+     0.018
+    ],
+    "pos": [
+     0.0745,
+     0.09,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     45
+    ],
+    "cor": "#5D4037",
+    "sem_contorno": true
+   },
+   {
+    "id": "dente_e3",
+    "forma": "caixa",
+    "tam": [
+     0.008,
+     0.008,
+     0.018
+    ],
+    "pos": [
+     -0.0745,
+     0.115,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     45
+    ],
+    "cor": "#5D4037",
+    "sem_contorno": true
+   },
+   {
+    "id": "dente_d3",
+    "forma": "caixa",
+    "tam": [
+     0.008,
+     0.008,
+     0.018
+    ],
+    "pos": [
+     0.0745,
+     0.115,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     45
+    ],
+    "cor": "#5D4037",
+    "sem_contorno": true
+   },
+   {
+    "id": "dente_e4",
+    "forma": "caixa",
+    "tam": [
+     0.008,
+     0.008,
+     0.018
+    ],
+    "pos": [
+     -0.0745,
+     0.14,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     45
+    ],
+    "cor": "#5D4037",
+    "sem_contorno": true
+   },
+   {
+    "id": "dente_d4",
+    "forma": "caixa",
+    "tam": [
+     0.008,
+     0.008,
+     0.018
+    ],
+    "pos": [
+     0.0745,
+     0.14,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     45
+    ],
+    "cor": "#5D4037",
+    "sem_contorno": true
+   },
+   {
+    "id": "dente_e5",
+    "forma": "caixa",
+    "tam": [
+     0.008,
+     0.008,
+     0.018
+    ],
+    "pos": [
+     -0.0745,
+     0.165,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     45
+    ],
+    "cor": "#5D4037",
+    "sem_contorno": true
+   },
+   {
+    "id": "dente_d5",
+    "forma": "caixa",
+    "tam": [
+     0.008,
+     0.008,
+     0.018
+    ],
+    "pos": [
+     0.0745,
+     0.165,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     45
+    ],
+    "cor": "#5D4037",
+    "sem_contorno": true
+   },
+   {
+    "id": "dente_e6",
+    "forma": "caixa",
+    "tam": [
+     0.008,
+     0.008,
+     0.018
+    ],
+    "pos": [
+     -0.0745,
+     0.19,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     45
+    ],
+    "cor": "#5D4037",
+    "sem_contorno": true
+   },
+   {
+    "id": "dente_d6",
+    "forma": "caixa",
+    "tam": [
+     0.008,
+     0.008,
+     0.018
+    ],
+    "pos": [
+     0.0745,
+     0.19,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     45
+    ],
+    "cor": "#5D4037",
+    "sem_contorno": true
+   },
+   {
+    "id": "dente_e7",
+    "forma": "caixa",
+    "tam": [
+     0.008,
+     0.008,
+     0.018
+    ],
+    "pos": [
+     -0.0745,
+     0.215,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     45
+    ],
+    "cor": "#5D4037",
+    "sem_contorno": true
+   },
+   {
+    "id": "dente_d7",
+    "forma": "caixa",
+    "tam": [
+     0.008,
+     0.008,
+     0.018
+    ],
+    "pos": [
+     0.0745,
+     0.215,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     45
+    ],
+    "cor": "#5D4037",
+    "sem_contorno": true
+   },
+   {
+    "id": "dente_e8",
+    "forma": "caixa",
+    "tam": [
+     0.008,
+     0.008,
+     0.018
+    ],
+    "pos": [
+     -0.0745,
+     0.24,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     45
+    ],
+    "cor": "#5D4037",
+    "sem_contorno": true
+   },
+   {
+    "id": "dente_d8",
+    "forma": "caixa",
+    "tam": [
+     0.008,
+     0.008,
+     0.018
+    ],
+    "pos": [
+     0.0745,
+     0.24,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     45
+    ],
+    "cor": "#5D4037",
+    "sem_contorno": true
+   },
+   {
+    "id": "dente_e9",
+    "forma": "caixa",
+    "tam": [
+     0.008,
+     0.008,
+     0.018
+    ],
+    "pos": [
+     -0.0745,
+     0.265,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     45
+    ],
+    "cor": "#5D4037",
+    "sem_contorno": true
+   },
+   {
+    "id": "dente_d9",
+    "forma": "caixa",
+    "tam": [
+     0.008,
+     0.008,
+     0.018
+    ],
+    "pos": [
+     0.0745,
+     0.265,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     45
+    ],
+    "cor": "#5D4037",
+    "sem_contorno": true
+   },
+   {
+    "id": "dente_e10",
+    "forma": "caixa",
+    "tam": [
+     0.008,
+     0.008,
+     0.018
+    ],
+    "pos": [
+     -0.0745,
+     0.29,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     45
+    ],
+    "cor": "#5D4037",
+    "sem_contorno": true
+   },
+   {
+    "id": "dente_d10",
+    "forma": "caixa",
+    "tam": [
+     0.008,
+     0.008,
+     0.018
+    ],
+    "pos": [
+     0.0745,
+     0.29,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     45
+    ],
+    "cor": "#5D4037",
+    "sem_contorno": true
+   },
+   {
+    "id": "viga_o",
+    "forma": "caixa",
+    "tam": [
+     0.2,
+     0.016,
+     0.03
+    ],
+    "pos": [
+     0,
+     0.32,
+     0
+    ],
+    "cor": "#5D4037"
+   },
+   {
+    "id": "roldana",
+    "forma": "cilindro",
+    "tam": [
+     0.018,
+     0.012
+    ],
+    "pos": [
+     0,
+     0.346,
+     0
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#9E9E9E"
+   },
+   {
+    "id": "piv_pl",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     0,
+     0.2,
+     0
+    ],
+    "cor": "#BCAAA4",
+    "sem_contorno": true
+   },
+   {
+    "id": "plataforma",
+    "forma": "caixa",
+    "tam": [
+     0.13,
+     0.012,
+     0.07
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#BCAAA4",
+    "pai": "piv_pl"
+   },
+   {
+    "id": "caixote_o",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.045,
+     0.045
+    ],
+    "pos": [
+     -0.03,
+     0.0285,
+     0
+    ],
+    "cor": "#D7A86E",
+    "pai": "piv_pl"
+   },
+   {
+    "id": "haste_pe",
+    "forma": "caixa",
+    "tam": [
+     0.006,
+     0.09,
+     0.006
+    ],
+    "pos": [
+     -0.058,
+     0.05,
+     0
+    ],
+    "cor": "#5D4037",
+    "pai": "piv_pl"
+   },
+   {
+    "id": "haste_pd",
+    "forma": "caixa",
+    "tam": [
+     0.006,
+     0.09,
+     0.006
+    ],
+    "pos": [
+     0.058,
+     0.05,
+     0
+    ],
+    "cor": "#5D4037",
+    "pai": "piv_pl"
+   },
+   {
+    "id": "trave_p",
+    "forma": "caixa",
+    "tam": [
+     0.122,
+     0.008,
+     0.012
+    ],
+    "pos": [
+     0,
+     0.094,
+     0
+    ],
+    "cor": "#5D4037",
+    "pai": "piv_pl"
+   },
+   {
+    "id": "mini_corpo",
+    "forma": "capsula",
+    "tam": [
+     0.008,
+     0.022
+    ],
+    "pos": [
+     0.03,
+     0.025,
+     0.01
+    ],
+    "cor": "#37474F",
+    "pai": "piv_pl",
+    "oculta": true
+   },
+   {
+    "id": "mini_cabeca",
+    "forma": "esfera",
+    "tam": [
+     0.009
+    ],
+    "pos": [
+     0.03,
+     0.05,
+     0.01
+    ],
+    "cor": "#F2D5BD",
+    "pai": "piv_pl",
+    "oculta": true
+   },
+   {
+    "id": "mini_cartola",
+    "forma": "cilindro",
+    "tam": [
+     0.0075,
+     0.014
+    ],
+    "pos": [
+     0.03,
+     0.064,
+     0.01
+    ],
+    "cor": "#212121",
+    "pai": "piv_pl",
+    "oculta": true
+   },
+   {
+    "id": "piv_me",
+    "forma": "esfera",
+    "tam": [
+     0.004
+    ],
+    "pos": [
+     0,
+     0.30000000000000004,
+     0.012
+    ],
+    "giro": [
+     0,
+     0,
+     30
+    ],
+    "cor": "#424242",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "mola_e",
+    "forma": "caixa",
+    "tam": [
+     0.075,
+     0.009,
+     0.014
+    ],
+    "pos": [
+     -0.0375,
+     0,
+     0
+    ],
+    "cor": "#263238",
+    "pai": "piv_me",
+    "oculta": true
+   },
+   {
+    "id": "piv_md",
+    "forma": "esfera",
+    "tam": [
+     0.004
+    ],
+    "pos": [
+     0,
+     0.30000000000000004,
+     0.012
+    ],
+    "giro": [
+     0,
+     0,
+     -30
+    ],
+    "cor": "#424242",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "mola_d",
+    "forma": "caixa",
+    "tam": [
+     0.075,
+     0.009,
+     0.014
+    ],
+    "pos": [
+     0.0375,
+     0,
+     0
+    ],
+    "cor": "#263238",
+    "pai": "piv_md",
+    "oculta": true
+   },
+   {
+    "id": "presilha",
+    "forma": "caixa",
+    "tam": [
+     0.008,
+     0.012,
+     0.008
+    ],
+    "pos": [
+     0,
+     0.29700000000000004,
+     0.012
+    ],
+    "cor": "#424242",
+    "oculta": true
+   },
+   {
+    "id": "corda0",
+    "forma": "tubo",
+    "tam": [
+     0.0028
+    ],
+    "pos": [
+     0,
+     0.322,
+     0.0
+    ],
+    "cor": "#C8B48A",
+    "sem_contorno": true,
+    "caminho": [
+     [
+      0,
+      -0.023999999999999966,
+      0
+     ],
+     [
+      0,
+      0.023999999999999966,
+      0
+     ]
+    ]
+   },
+   {
+    "id": "corda1",
+    "forma": "tubo",
+    "tam": [
+     0.0028
+    ],
+    "pos": [
+     0,
+     0.323,
+     0.012
+    ],
+    "cor": "#C8B48A",
+    "sem_contorno": true,
+    "caminho": [
+     [
+      0,
+      -0.022999999999999965,
+      0
+     ],
+     [
+      0,
+      0.022999999999999965,
+      0
+     ]
+    ],
+    "oculta": true
+   },
+   {
+    "id": "corda2",
+    "forma": "tubo",
+    "tam": [
+     0.0028
+    ],
+    "pos": [
+     0,
+     0.323,
+     0.012
+    ],
+    "cor": "#C8B48A",
+    "sem_contorno": true,
+    "caminho": [
+     [
+      0,
+      -0.022999999999999965,
+      0
+     ],
+     [
+      0,
+      0.022999999999999965,
+      0
+     ]
+    ],
+    "oculta": true
+   }
+  ]
+ },
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "tito",
+   "texto": "E SE o cabo do elevador ARREBENTAR, com você lá dentro?",
+   "tom": "tenso"
+  },
+  {
+   "id": "f2",
+   "quem": "tito",
+   "texto": "Ele despenca? Quem respondeu isso mandou cortar a corda com ELE em cima.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f3",
+   "quem": "tito",
+   "texto": "Em 1853, Elisha Otis precisava subir máquinas pesadas numa fábrica de CAMAS, em Nova York.",
+   "off": true
+  },
+  {
+   "id": "f4",
+   "quem": "tito",
+   "texto": "As plataformas ficavam penduradas numa corda. MAS quando a corda arrebentava, caía TUDO.",
+   "off": true,
+   "tom": "tenso",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f5",
+   "quem": "tito",
+   "texto": "Então ele pegou uma MOLA de carroça e prendeu no teto da plataforma.",
+   "off": true
+  },
+  {
+   "id": "f6",
+   "quem": "tito",
+   "texto": "Com a corda puxando, a mola ficava dobrada. Se a corda soltasse, ela abria e cravava nos DENTES do trilho.",
+   "off": true
+  },
+  {
+   "id": "f7",
+   "quem": "tito",
+   "texto": "Em 1854, numa feira em Nova York, ele subiu lá no alto e mandou CORTAR a corda.",
+   "off": true,
+   "tom": "tenso"
+  },
+  {
+   "id": "f8",
+   "quem": "tito",
+   "texto": "A plataforma caiu só uns centímetros e PAROU.",
+   "off": true,
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f9",
+   "quem": "tito",
+   "texto": "Hoje, a cabine fica pendurada em vários cabos de AÇO, que passam numa POLIA com motor, lá em cima."
+  },
+  {
+   "id": "f10",
+   "quem": "tito",
+   "texto": "Do outro lado desce um bloco de ferro, o CONTRAPESO: ele pesa a cabine mais metade das pessoas que cabem nela."
+  },
+  {
+   "id": "f11",
+   "quem": "tito",
+   "texto": "Um sobe enquanto o outro desce, que nem uma gangorra. Por isso o motor só puxa a DIFERENÇA.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f12",
+   "quem": "tito",
+   "texto": "MAS e se o motor falhar, e a cabine começar a descer rápido DEMAIS?",
+   "tom": "tenso"
+  },
+  {
+   "id": "f13",
+   "quem": "tito",
+   "texto": "Lá em cima, uma rodinha com um cabo só dela vigia a velocidade: é o LIMITADOR."
+  },
+  {
+   "id": "f14",
+   "quem": "tito",
+   "texto": "Passou do limite, ela trava o cabo, que puxa duas CUNHAS de aço contra os trilhos. E a cabine para.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f15",
+   "quem": "tito",
+   "texto": "É a ideia do Otis até hoje: travar nos TRILHOS. Se o cabo arrebentar, ela trava do mesmo jeito.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f16",
+   "quem": "tito",
+   "texto": "E repara: o contrapeso pesa mais que a cabine vazia. Vazio, o elevador não quer cair. Ele quer SUBIR."
+  }
+ ],
+ "chamada": {
+  "pergunta": "E agora, topa construir um avião?",
+  "texto": "Comenta",
+  "destaque": "AVIÃO"
+ },
+ "postagem": {
+  "titulo": "Como funciona o elevador? Se o cabo arrebentar, ele cai?",
+  "descricao": "Como funciona o elevador por dentro: os cabos de aço, a polia com motor, o contrapeso que pesa a cabine mais metade da lotação, o limitador de velocidade e as cunhas que travam a cabine nos trilhos. E a feira de 1854 em que Elisha Otis mandou cortar a corda com ele em cima.",
+  "hashtags": [
+   "comofunciona",
+   "elevador",
+   "engenharia",
+   "curiosidades"
+  ],
+  "comentario": "Eu jurava que, se o cabo arrebentasse, o elevador despencava. Você também achava?",
+  "capa": "f12:demais+0.3"
+ },
+ "cenas": [
+  {
+   "id": "gancho",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "nervoso"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "elevador",
+     "em": "pedestal",
+     "escala": 1.6
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "piv_cab",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.05,
+      0
+     ],
+     "de": "inicio",
+     "ate": "inicio+0.05"
+    },
+    {
+     "peca": "piv_cw",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.05,
+      0
+     ],
+     "de": "inicio",
+     "ate": "inicio+0.05"
+    },
+    {
+     "peca": "piv_cab",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.05,
+      0
+     ],
+     "de": "inicio+0.06",
+     "ate": "f1:arrebentar"
+    },
+    {
+     "peca": "piv_cw",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.05,
+      0
+     ],
+     "de": "inicio+0.06",
+     "ate": "f1:arrebentar"
+    },
+    {
+     "peca": "piv_polia",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -0.5,
+     "de": "inicio",
+     "ate": "f1:arrebentar"
+    },
+    {
+     "peca": "cabo_c0",
+     "faz": "sumir",
+     "de": "f1:arrebentar"
+    },
+    {
+     "peca": "cabo_c1",
+     "faz": "sumir",
+     "de": "f1:arrebentar"
+    },
+    {
+     "peca": "cabo_c2",
+     "faz": "sumir",
+     "de": "f1:arrebentar"
+    },
+    {
+     "peca": "cabine",
+     "faz": "tremer",
+     "intensidade": 0.8,
+     "de": "f1:arrebentar",
+     "ate": "f1:arrebentar+0.3"
+    },
+    {
+     "peca": "piv_cw",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.03,
+      0
+     ],
+     "de": "f1:arrebentar",
+     "ate": "f1:arrebentar+0.3"
+    },
+    {
+     "peca": "piv_cab",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.075,
+      0
+     ],
+     "de": "f1:arrebentar+0.15",
+     "ate": "f1:voce"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "nervoso",
+     "de": "inicio"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "maquete",
+     "expressao": "medo",
+     "de": "f1:arrebentar"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "medo",
+     "de": "f1:voce-0.3"
+    },
+    {
+     "quem": "tito",
+     "faz": "bracos_cruzados",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f2"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "maquete",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f2:cortar"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "camera": [
+      0.32,
+      1.832,
+      1.76
+     ],
+     "alvo": [
+      -0.016,
+      1.8,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f1:arrebentar-0.1",
+     "tipo": "detalhe",
+     "camera": [
+      0.192,
+      1.8,
+      1.12
+     ],
+     "alvo": [
+      -0.032,
+      1.752,
+      0.0
+     ],
+     "movimento": "zoom_rapido"
+    },
+    {
+     "de": "f1:voce",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f2",
+     "tipo": "detalhe",
+     "camera": [
+      0.416,
+      1.704,
+      2.32
+     ],
+     "alvo": [
+      0.0,
+      1.656,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": -0.4
+    },
+    {
+     "de": "f2:cortar",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido"
+    }
+   ],
+   "sons": [
+    {
+     "de": "inicio",
+     "som": "engrenagem",
+     "volume": 0.5
+    },
+    {
+     "de": "f1:arrebentar",
+     "som": "impacto",
+     "volume": 1.0
+    },
+    {
+     "de": "f1:arrebentar+0.15",
+     "som": "queda",
+     "volume": 0.8
+    },
+    {
+     "de": "f1:voce",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f2:cortar",
+     "som": "clique",
+     "volume": 0.6
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f1:arrebentar",
+     "efeito": "flash"
+    },
+    {
+     "de": "f1:arrebentar",
+     "ate": "f1:arrebentar+0.4",
+     "efeito": "tremor",
+     "intensidade": 0.6
+    },
+    {
+     "de": "f1:arrebentar",
+     "ate": "f1:voce",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "cabo_c1",
+     "texto": "Cabo",
+     "de": "inicio+0.3",
+     "ate": "f1:arrebentar"
+    }
+   ]
+  },
+  {
+   "id": "otis",
+   "cenario": "oficina",
+   "ambiente": "oficina",
+   "filtro": "sepia",
+   "de": "f3",
+   "personagens": {
+    "otis": {
+     "em": [
+      -1.0,
+      -0.3
+     ],
+     "olhando": [
+      1.2,
+      2.2,
+      3.0
+     ],
+     "expressao": "serio"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "oficina_1853",
+     "em": [
+      0,
+      -1.05
+     ],
+     "alt": 0.92,
+     "escala": 1.5
+    },
+    {
+     "tipo": "particulas",
+     "particula": "poeira",
+     "em": [
+      0,
+      -1.05
+     ],
+     "alt": 0.95,
+     "raio": 0.12,
+     "altura": 0.12,
+     "quantas": 24,
+     "aparece": "f4:tudo",
+     "some": "f4:fim+0.4"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f3:1853",
+     "ate": "f3:pesadas",
+     "grande": "1853",
+     "pequeno": "Elisha Otis · Nova York, EUA"
+    },
+    {
+     "de": "f7:1854",
+     "ate": "f7:subiu",
+     "grande": "1854",
+     "pequeno": "Feira de Nova York"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "corda0",
+     "faz": "sumir",
+     "de": "f4:arrebentava"
+    },
+    {
+     "peca": "piv_pl",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.182,
+      0
+     ],
+     "de": "f4:arrebentava+0.1",
+     "ate": "f4:tudo"
+    },
+    {
+     "peca": "caixote_o",
+     "faz": "tremer",
+     "intensidade": 0.8,
+     "de": "f4:tudo",
+     "ate": "f4:tudo+0.4"
+    },
+    {
+     "peca": "piv_pl",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.182,
+      0
+     ],
+     "de": "f5",
+     "ate": "f5+0.05"
+    },
+    {
+     "peca": "piv_me",
+     "faz": "aparecer",
+     "de": "f5:mola"
+    },
+    {
+     "peca": "mola_e",
+     "faz": "aparecer",
+     "de": "f5:mola"
+    },
+    {
+     "peca": "piv_md",
+     "faz": "aparecer",
+     "de": "f5:mola"
+    },
+    {
+     "peca": "mola_d",
+     "faz": "aparecer",
+     "de": "f5:mola"
+    },
+    {
+     "peca": "presilha",
+     "faz": "aparecer",
+     "de": "f5:mola"
+    },
+    {
+     "peca": "corda1",
+     "faz": "aparecer",
+     "de": "f5:mola+0.2"
+    },
+    {
+     "peca": "corda1",
+     "faz": "sumir",
+     "de": "f6:soltasse"
+    },
+    {
+     "peca": "piv_pl",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.012,
+      0
+     ],
+     "de": "f6:soltasse+0.05",
+     "ate": "f6:soltasse+0.25"
+    },
+    {
+     "peca": "piv_me",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.012,
+      0
+     ],
+     "de": "f6:soltasse+0.05",
+     "ate": "f6:soltasse+0.25"
+    },
+    {
+     "peca": "piv_md",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.012,
+      0
+     ],
+     "de": "f6:soltasse+0.05",
+     "ate": "f6:soltasse+0.25"
+    },
+    {
+     "peca": "presilha",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.012,
+      0
+     ],
+     "de": "f6:soltasse+0.05",
+     "ate": "f6:soltasse+0.25"
+    },
+    {
+     "peca": "piv_me",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": -30,
+     "de": "f6:abria",
+     "ate": "f6:abria+0.2"
+    },
+    {
+     "peca": "piv_md",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": 30,
+     "de": "f6:abria",
+     "ate": "f6:abria+0.2"
+    },
+    {
+     "peca": "piv_pl",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.012,
+      0
+     ],
+     "de": "f7",
+     "ate": "f7+0.05"
+    },
+    {
+     "peca": "piv_me",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.012,
+      0
+     ],
+     "de": "f7",
+     "ate": "f7+0.05"
+    },
+    {
+     "peca": "piv_md",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.012,
+      0
+     ],
+     "de": "f7",
+     "ate": "f7+0.05"
+    },
+    {
+     "peca": "presilha",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.012,
+      0
+     ],
+     "de": "f7",
+     "ate": "f7+0.05"
+    },
+    {
+     "peca": "piv_me",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": 30,
+     "de": "f7",
+     "ate": "f7+0.05"
+    },
+    {
+     "peca": "piv_md",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": -30,
+     "de": "f7",
+     "ate": "f7+0.05"
+    },
+    {
+     "peca": "corda2",
+     "faz": "aparecer",
+     "de": "f7+0.06"
+    },
+    {
+     "peca": "mini_corpo",
+     "faz": "aparecer",
+     "de": "f7:alto"
+    },
+    {
+     "peca": "mini_cabeca",
+     "faz": "aparecer",
+     "de": "f7:alto"
+    },
+    {
+     "peca": "mini_cartola",
+     "faz": "aparecer",
+     "de": "f7:alto"
+    },
+    {
+     "peca": "corda2",
+     "faz": "sumir",
+     "de": "f7:cortar"
+    },
+    {
+     "peca": "piv_pl",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.014,
+      0
+     ],
+     "de": "f8:caiu",
+     "ate": "f8:centimetros"
+    },
+    {
+     "peca": "piv_me",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.014,
+      0
+     ],
+     "de": "f8:caiu",
+     "ate": "f8:centimetros"
+    },
+    {
+     "peca": "piv_md",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.014,
+      0
+     ],
+     "de": "f8:caiu",
+     "ate": "f8:centimetros"
+    },
+    {
+     "peca": "presilha",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.014,
+      0
+     ],
+     "de": "f8:caiu",
+     "ate": "f8:centimetros"
+    },
+    {
+     "peca": "piv_me",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": -30,
+     "de": "f8:caiu",
+     "ate": "f8:caiu+0.2"
+    },
+    {
+     "peca": "piv_md",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": 30,
+     "de": "f8:caiu",
+     "ate": "f8:caiu+0.2"
+    },
+    {
+     "peca": "plataforma",
+     "faz": "tremer",
+     "intensidade": 0.5,
+     "de": "f8:parou",
+     "ate": "f8:parou+0.3"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "otis",
+     "faz": "virar",
+     "para": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "olhar": "camera",
+     "expressao": "serio",
+     "de": "f3"
+    },
+    {
+     "quem": "otis",
+     "faz": "estender_mao",
+     "para": "oficina_1853",
+     "olhar": "oficina_1853",
+     "expressao": "determinado",
+     "de": "f3:camas"
+    },
+    {
+     "quem": "otis",
+     "olhar": "oficina_1853",
+     "expressao": "serio",
+     "de": "f4"
+    },
+    {
+     "quem": "otis",
+     "faz": "susto",
+     "olhar": "oficina_1853",
+     "expressao": "medo",
+     "de": "f4:tudo"
+    },
+    {
+     "quem": "otis",
+     "faz": "virar",
+     "para": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "olhar": "camera",
+     "expressao": "determinado",
+     "de": "f4:tudo+0.5"
+    },
+    {
+     "quem": "otis",
+     "faz": "estender_mao",
+     "para": "oficina_1853",
+     "olhar": "oficina_1853",
+     "expressao": "feliz",
+     "de": "f5:mola+0.2"
+    },
+    {
+     "quem": "otis",
+     "olhar": "oficina_1853",
+     "expressao": "feliz",
+     "de": "f6"
+    },
+    {
+     "quem": "otis",
+     "faz": "virar",
+     "para": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "olhar": "camera",
+     "expressao": "determinado",
+     "de": "f7"
+    },
+    {
+     "quem": "otis",
+     "faz": "apontar",
+     "para": "oficina_1853",
+     "olhar": "oficina_1853",
+     "expressao": "serio",
+     "de": "f7:mandou"
+    },
+    {
+     "quem": "otis",
+     "faz": "virar",
+     "para": [
+      0.3,
+      2.85,
+      2.2
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f8:parou"
+    },
+    {
+     "quem": "otis",
+     "faz": "acenar",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f8:parou+0.3"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "camera": [
+      0.9,
+      2.85,
+      3.9
+     ],
+     "alvo": [
+      -0.4,
+      2.2,
+      -0.7
+     ],
+     "movimento": "arco",
+     "intensidade": 0.6,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f3:otis",
+     "tipo": "medio",
+     "camera": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "alvo": "otis",
+     "movimento": "travelling",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f3:camas",
+     "tipo": "detalhe",
+     "camera": [
+      0.16,
+      1.28,
+      -0.12
+     ],
+     "alvo": [
+      0.0,
+      1.17,
+      -1.05
+     ],
+     "movimento": "arco",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f4:mas",
+     "tipo": "detalhe",
+     "camera": [
+      0.16,
+      1.28,
+      -0.12
+     ],
+     "alvo": [
+      0.0,
+      1.17,
+      -1.05
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f4:tudo-0.1",
+     "tipo": "detalhe",
+     "camera": [
+      0.2,
+      1.12,
+      -0.38
+     ],
+     "alvo": [
+      0.0,
+      1.08,
+      -1.05
+     ],
+     "movimento": "zoom_rapido"
+    },
+    {
+     "de": "f5",
+     "tipo": "medio",
+     "camera": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "alvo": "otis",
+     "movimento": "zoom_rapido"
+    },
+    {
+     "de": "f5:mola",
+     "tipo": "detalhe",
+     "camera": [
+      0.12,
+      1.4,
+      -0.2
+     ],
+     "alvo": [
+      0.0,
+      1.35,
+      -1.05
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f6:soltasse-0.3",
+     "tipo": "detalhe",
+     "camera": [
+      0.2,
+      1.42,
+      -0.5
+     ],
+     "alvo": [
+      0.07,
+      1.355,
+      -1.05
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f7",
+     "tipo": "medio",
+     "camera": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "alvo": "otis",
+     "movimento": "travelling",
+     "intensidade": -0.3
+    },
+    {
+     "de": "f7:alto",
+     "tipo": "detalhe",
+     "camera": [
+      0.16,
+      1.28,
+      -0.12
+     ],
+     "alvo": [
+      0.0,
+      1.17,
+      -1.05
+     ],
+     "movimento": "arco",
+     "intensidade": -0.4
+    },
+    {
+     "de": "f8:caiu-0.1",
+     "tipo": "detalhe",
+     "camera": [
+      0.2,
+      1.42,
+      -0.5
+     ],
+     "alvo": [
+      0.07,
+      1.355,
+      -1.05
+     ],
+     "movimento": "zoom_rapido"
+    },
+    {
+     "de": "f8:parou",
+     "tipo": "close",
+     "camera": [
+      0.3,
+      2.85,
+      2.2
+     ],
+     "alvo": "otis",
+     "movimento": "travelling",
+     "intensidade": 0.3
+    }
+   ],
+   "sons": [
+    {
+     "de": "f3:1853",
+     "som": "pop",
+     "volume": 0.6
+    },
+    {
+     "de": "f3:camas",
+     "som": "engrenagem",
+     "volume": 0.5
+    },
+    {
+     "de": "f4:mas",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f4:arrebentava",
+     "som": "galho",
+     "volume": 0.9
+    },
+    {
+     "de": "f4:tudo",
+     "som": "impacto",
+     "volume": 1.0
+    },
+    {
+     "de": "f5:mola",
+     "som": "ding",
+     "volume": 0.7
+    },
+    {
+     "de": "f6:soltasse",
+     "som": "galho",
+     "volume": 0.6
+    },
+    {
+     "de": "f6:abria",
+     "som": "clique",
+     "volume": 0.9
+    },
+    {
+     "de": "f7:1854",
+     "som": "pop",
+     "volume": 0.6
+    },
+    {
+     "de": "f7:cortar",
+     "som": "galho",
+     "volume": 0.9
+    },
+    {
+     "de": "f8:caiu",
+     "som": "clique",
+     "volume": 0.9
+    },
+    {
+     "de": "f8:parou",
+     "som": "ding",
+     "volume": 0.8
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f3:camas",
+     "ate": "f3:fim",
+     "efeito": "circular",
+     "alvo": "plataforma"
+    },
+    {
+     "de": "f4:tudo",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f4:tudo",
+     "ate": "f4:tudo+0.5",
+     "efeito": "tremor",
+     "intensidade": 0.7
+    },
+    {
+     "de": "f8:caiu+0.2",
+     "efeito": "zoom_soco"
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "corda0",
+     "texto": "Corda",
+     "de": "f4:penduradas",
+     "ate": "f4:arrebentava"
+    },
+    {
+     "alvo": "mola_e",
+     "texto": "Mola",
+     "de": "f5:mola",
+     "ate": "f5:fim"
+    },
+    {
+     "alvo": "dente_d10",
+     "texto": "Dentes",
+     "de": "f6:dentes",
+     "ate": "f6:fim+0.2"
+    }
+   ]
+  },
+  {
+   "id": "por_dentro",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "de": "f9",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "feliz"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "elevador",
+     "em": "pedestal",
+     "escala": 1.6
+    },
+    {
+     "tipo": "particulas",
+     "particula": "faiscas",
+     "em": [
+      -0.179,
+      0.0
+     ],
+     "alt": 1.352,
+     "raio": 0.045,
+     "altura": 0.06,
+     "quantas": 10,
+     "aparece": "f14:cunhas",
+     "some": "f14:cunhas+0.8"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "faiscas",
+     "em": [
+      0.067,
+      0.0
+     ],
+     "alt": 1.352,
+     "raio": 0.045,
+     "altura": 0.06,
+     "quantas": 10,
+     "aparece": "f14:cunhas",
+     "some": "f14:cunhas+0.8"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f11:diferenca",
+     "ate": "f11:fim+0.3",
+     "grande": "CONTRA­PESO",
+     "pequeno": "pesa a cabine mais metade da lotação"
+    },
+    {
+     "de": "f15:trilhos",
+     "ate": "f15:arrebentar",
+     "grande": "FREIO",
+     "pequeno": "de segurança: cunhas nos trilhos"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "piv_cab",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.02,
+      0
+     ],
+     "de": "f9:polia",
+     "ate": "f9:fim"
+    },
+    {
+     "peca": "piv_cw",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.02,
+      0
+     ],
+     "de": "f9:polia",
+     "ate": "f9:fim"
+    },
+    {
+     "peca": "piv_polia",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -0.25,
+     "de": "f9:polia",
+     "ate": "f9:fim"
+    },
+    {
+     "peca": "motor",
+     "faz": "tremer",
+     "intensidade": 0.3,
+     "de": "f9:motor",
+     "ate": "f9:fim"
+    },
+    {
+     "peca": "contrapeso",
+     "faz": "pulsar",
+     "intensidade": 0.7,
+     "de": "f10:contrapeso",
+     "ate": "f10:contrapeso+0.9"
+    },
+    {
+     "peca": "piv_cab",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.03,
+      0
+     ],
+     "de": "f11:sobe",
+     "ate": "f11:desce+0.5"
+    },
+    {
+     "peca": "piv_cw",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.03,
+      0
+     ],
+     "de": "f11:sobe",
+     "ate": "f11:desce+0.5"
+    },
+    {
+     "peca": "piv_polia",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -0.35,
+     "de": "f11:sobe",
+     "ate": "f11:desce+0.5"
+    },
+    {
+     "peca": "piv_cab",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.02,
+      0
+     ],
+     "de": "f11:gangorra",
+     "ate": "f11:gangorra+0.6"
+    },
+    {
+     "peca": "piv_cw",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.02,
+      0
+     ],
+     "de": "f11:gangorra",
+     "ate": "f11:gangorra+0.6"
+    },
+    {
+     "peca": "piv_polia",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": 0.25,
+     "de": "f11:gangorra",
+     "ate": "f11:gangorra+0.6"
+    },
+    {
+     "peca": "motor",
+     "faz": "tremer",
+     "intensidade": 0.7,
+     "de": "f12:falhar",
+     "ate": "f12:falhar+0.5"
+    },
+    {
+     "peca": "piv_cab",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.1,
+      0
+     ],
+     "de": "f12:descer",
+     "ate": "f12:fim+0.2"
+    },
+    {
+     "peca": "piv_cw",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.1,
+      0
+     ],
+     "de": "f12:descer",
+     "ate": "f12:fim+0.2"
+    },
+    {
+     "peca": "piv_polia",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": 1.4,
+     "de": "f12:descer",
+     "ate": "f12:fim+0.2"
+    },
+    {
+     "peca": "piv_cab",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.07,
+      0
+     ],
+     "de": "f13",
+     "ate": "f13+0.05"
+    },
+    {
+     "peca": "piv_cw",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.07,
+      0
+     ],
+     "de": "f13",
+     "ate": "f13+0.05"
+    },
+    {
+     "peca": "piv_lim",
+     "faz": "aparecer",
+     "de": "f13:rodinha"
+    },
+    {
+     "peca": "limitador",
+     "faz": "aparecer",
+     "de": "f13:rodinha"
+    },
+    {
+     "peca": "raio_lim",
+     "faz": "aparecer",
+     "de": "f13:rodinha"
+    },
+    {
+     "peca": "suporte_lim",
+     "faz": "aparecer",
+     "de": "f13:rodinha"
+    },
+    {
+     "peca": "cabo_lim",
+     "faz": "aparecer",
+     "de": "f13:cabo"
+    },
+    {
+     "peca": "tensor_lim",
+     "faz": "aparecer",
+     "de": "f13:cabo"
+    },
+    {
+     "peca": "braco_lim",
+     "faz": "aparecer",
+     "de": "f13:cabo"
+    },
+    {
+     "peca": "piv_lim",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": 0.6,
+     "de": "f13:cabo",
+     "ate": "f14:limite"
+    },
+    {
+     "peca": "piv_lim",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": 1.6,
+     "de": "f14:limite",
+     "ate": "f14:trava"
+    },
+    {
+     "peca": "piv_cab",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.06,
+      0
+     ],
+     "de": "f14:limite-0.4",
+     "ate": "f14:cunhas+0.2"
+    },
+    {
+     "peca": "piv_cw",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.06,
+      0
+     ],
+     "de": "f14:limite-0.4",
+     "ate": "f14:cunhas+0.2"
+    },
+    {
+     "peca": "piv_polia",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": 1.2,
+     "de": "f14:limite-0.4",
+     "ate": "f14:cunhas+0.2"
+    },
+    {
+     "peca": "limitador",
+     "faz": "tremer",
+     "intensidade": 0.6,
+     "de": "f14:trava",
+     "ate": "f14:trava+0.3"
+    },
+    {
+     "peca": "freio_e",
+     "faz": "aparecer",
+     "de": "f14:cunhas-0.2"
+    },
+    {
+     "peca": "freio_d",
+     "faz": "aparecer",
+     "de": "f14:cunhas-0.2"
+    },
+    {
+     "peca": "freio_e",
+     "faz": "aquecer",
+     "intensidade": 0.6,
+     "de": "f14:cunhas",
+     "ate": "f14:para"
+    },
+    {
+     "peca": "cabine",
+     "faz": "tremer",
+     "intensidade": 0.5,
+     "de": "f14:cunhas",
+     "ate": "f14:cunhas+0.4"
+    },
+    {
+     "peca": "trilho_e",
+     "faz": "pulsar",
+     "intensidade": 0.8,
+     "de": "f15:trilhos",
+     "ate": "f15:trilhos+0.9"
+    },
+    {
+     "peca": "trilho_d",
+     "faz": "pulsar",
+     "intensidade": 0.8,
+     "de": "f15:trilhos",
+     "ate": "f15:trilhos+0.9"
+    },
+    {
+     "peca": "cabo_c0",
+     "faz": "sumir",
+     "de": "f15:arrebentar"
+    },
+    {
+     "peca": "cabo_c1",
+     "faz": "sumir",
+     "de": "f15:arrebentar"
+    },
+    {
+     "peca": "cabo_c2",
+     "faz": "sumir",
+     "de": "f15:arrebentar"
+    },
+    {
+     "peca": "cabine",
+     "faz": "tremer",
+     "intensidade": 0.4,
+     "de": "f15:arrebentar",
+     "ate": "f15:arrebentar+0.3"
+    },
+    {
+     "peca": "freio_e",
+     "faz": "tremer",
+     "intensidade": 0.4,
+     "de": "f15:arrebentar",
+     "ate": "f15:arrebentar+0.3"
+    },
+    {
+     "peca": "cabo_cb0",
+     "faz": "aparecer",
+     "de": "f16"
+    },
+    {
+     "peca": "cabo_cb1",
+     "faz": "aparecer",
+     "de": "f16"
+    },
+    {
+     "peca": "cabo_cb2",
+     "faz": "aparecer",
+     "de": "f16"
+    },
+    {
+     "peca": "freio_e",
+     "faz": "sumir",
+     "de": "f16"
+    },
+    {
+     "peca": "freio_d",
+     "faz": "sumir",
+     "de": "f16"
+    },
+    {
+     "peca": "passageiro",
+     "faz": "sumir",
+     "de": "f16:vazia"
+    },
+    {
+     "peca": "piv_cab",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.09,
+      0
+     ],
+     "de": "f16:subir-0.2",
+     "ate": "f16:fim+1.0"
+    },
+    {
+     "peca": "piv_cw",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.09,
+      0
+     ],
+     "de": "f16:subir-0.2",
+     "ate": "f16:fim+1.0"
+    },
+    {
+     "peca": "piv_polia",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -0.6,
+     "de": "f16:subir-0.2",
+     "ate": "f16:fim+1.0"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.75,
+      2,
+      5.9
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f9"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "polia",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f9:polia"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "contrapeso",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f10:contrapeso"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f11:diferenca-0.4"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "nervoso",
+     "de": "f12"
+    },
+    {
+     "quem": "tito",
+     "faz": "maos_na_cabeca",
+     "olhar": "camera",
+     "expressao": "medo",
+     "de": "f12:demais"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "limitador",
+     "olhar": "maquete",
+     "expressao": "aliviado",
+     "de": "f13:rodinha"
+    },
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "surpreso",
+     "de": "f14:cunhas"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f15"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "trilho_e",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f15:trilhos"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f16"
+    },
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f16:vazio-0.2"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "cabine",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f16:subir"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "camera": [
+      -0.75,
+      2,
+      5.9
+     ],
+     "alvo": [
+      -0.75,
+      1.5,
+      0.3
+     ],
+     "movimento": "arco",
+     "intensidade": 0.5,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f9:aco",
+     "tipo": "detalhe",
+     "camera": [
+      0.192,
+      1.8,
+      1.12
+     ],
+     "alvo": [
+      -0.032,
+      1.752,
+      0.0
+     ],
+     "movimento": "aproximar",
+     "transicao": "zoom"
+    },
+    {
+     "de": "f9:polia",
+     "tipo": "detalhe",
+     "camera": [
+      0.32,
+      2.28,
+      1.056
+     ],
+     "alvo": [
+      0.032,
+      2.152,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f10",
+     "tipo": "detalhe",
+     "camera": [
+      0.256,
+      1.528,
+      0.896
+     ],
+     "alvo": [
+      0.16,
+      1.48,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": -0.4
+    },
+    {
+     "de": "f10:pesa",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": 0.3,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f11",
+     "tipo": "detalhe",
+     "camera": [
+      0.416,
+      1.8,
+      2.048
+     ],
+     "alvo": [
+      0.048,
+      1.752,
+      0.0
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f11:diferenca",
+     "tipo": "detalhe",
+     "camera": [
+      0.416,
+      1.704,
+      2.32
+     ],
+     "alvo": [
+      0.0,
+      1.656,
+      0.0
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f12",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "dolly_zoom",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f12:descer",
+     "tipo": "detalhe",
+     "camera": [
+      0.416,
+      1.704,
+      2.32
+     ],
+     "alvo": [
+      0.0,
+      1.656,
+      0.0
+     ],
+     "movimento": "tremer"
+    },
+    {
+     "de": "f13",
+     "tipo": "detalhe",
+     "camera": [
+      -0.448,
+      2.28,
+      0.928
+     ],
+     "alvo": [
+      -0.192,
+      2.12,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "zoom"
+    },
+    {
+     "de": "f14",
+     "tipo": "detalhe",
+     "camera": [
+      -0.288,
+      1.448,
+      1.152
+     ],
+     "alvo": [
+      -0.128,
+      1.416,
+      0.0
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f14:para",
+     "tipo": "detalhe",
+     "camera": [
+      0.256,
+      1.64,
+      1.056
+     ],
+     "alvo": [
+      -0.048,
+      1.544,
+      0.0
+     ],
+     "movimento": "zoom_rapido"
+    },
+    {
+     "de": "f15",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": -0.3,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f15:trilhos",
+     "tipo": "detalhe",
+     "camera": [
+      0.416,
+      1.704,
+      2.32
+     ],
+     "alvo": [
+      0.0,
+      1.656,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f16",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f16:vazio",
+     "tipo": "aberto",
+     "camera": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "alvo": [
+      -0.9,
+      1.5,
+      0.3
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    }
+   ],
+   "sons": [
+    {
+     "de": "f9:aco",
+     "som": "pop",
+     "volume": 0.6
+    },
+    {
+     "de": "f9:polia",
+     "som": "engrenagem",
+     "volume": 0.6
+    },
+    {
+     "de": "f10:contrapeso",
+     "som": "ding",
+     "volume": 0.7
+    },
+    {
+     "de": "f11:sobe",
+     "som": "engrenagem",
+     "volume": 0.5
+    },
+    {
+     "de": "f11:diferenca",
+     "som": "pop",
+     "volume": 0.6
+    },
+    {
+     "de": "f12",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f12:falhar",
+     "som": "zap",
+     "volume": 0.6
+    },
+    {
+     "de": "f12:descer",
+     "som": "queda",
+     "volume": 0.8
+    },
+    {
+     "de": "f12:demais",
+     "som": "alarme",
+     "volume": 0.5
+    },
+    {
+     "de": "f13:rodinha",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f14:trava",
+     "som": "clique",
+     "volume": 0.9
+    },
+    {
+     "de": "f14:cunhas",
+     "som": "chiado",
+     "volume": 0.8
+    },
+    {
+     "de": "f14:para",
+     "som": "impacto",
+     "volume": 0.8
+    },
+    {
+     "de": "f15:trilhos",
+     "som": "ding",
+     "volume": 0.7
+    },
+    {
+     "de": "f15:arrebentar",
+     "som": "impacto",
+     "volume": 0.7
+    },
+    {
+     "de": "f16:subir",
+     "som": "whoosh",
+     "volume": 0.5
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f9:polia",
+     "ate": "f9:fim",
+     "efeito": "circular",
+     "alvo": "polia"
+    },
+    {
+     "de": "f10:contrapeso",
+     "ate": "f10:pesa",
+     "efeito": "circular",
+     "alvo": "contrapeso"
+    },
+    {
+     "de": "f12:descer",
+     "ate": "f12:fim+0.3",
+     "efeito": "letreiro",
+     "texto": "PERIGO!",
+     "cor": "#FF3B30",
+     "altura": 0.2
+    },
+    {
+     "de": "f12:demais",
+     "ate": "f12:fim+0.3",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f13:rodinha",
+     "ate": "f13:limitador",
+     "efeito": "circular",
+     "alvo": "limitador"
+    },
+    {
+     "de": "f14:cunhas",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f14:cunhas",
+     "ate": "f14:cunhas+0.4",
+     "efeito": "tremor",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f14:cunhas+0.1",
+     "ate": "f14:para",
+     "efeito": "circular",
+     "alvo": "freio_e"
+    },
+    {
+     "de": "f15:arrebentar",
+     "efeito": "flash"
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "cabo_c1",
+     "texto": "Cabos de aço",
+     "de": "f9:aco",
+     "ate": "f9:polia"
+    },
+    {
+     "alvo": "polia",
+     "texto": "Polia",
+     "de": "f9:polia",
+     "ate": "f9:motor"
+    },
+    {
+     "alvo": "motor",
+     "texto": "Motor",
+     "de": "f9:motor",
+     "ate": "f9:fim"
+    },
+    {
+     "alvo": "contrapeso",
+     "texto": "Contrapeso",
+     "de": "f10:contrapeso",
+     "ate": "f10:pesa"
+    },
+    {
+     "alvo": "limitador",
+     "texto": "Limitador",
+     "de": "f13:limitador",
+     "ate": "f13:fim+0.2"
+    },
+    {
+     "alvo": "freio_e",
+     "texto": "Cunhas",
+     "de": "f14:cunhas",
+     "ate": "f14:para"
+    },
+    {
+     "alvo": "cabine",
+     "texto": "Vazia",
+     "de": "f16:vazia+0.2",
+     "ate": "f16:subir"
+    }
+   ]
+  }
+ ]
+}
