@@ -522,7 +522,8 @@
     "empuxo e arrasto"
    ],
    "gancho": "Um avião de 400 toneladas fica no ar por causa do formato da asa.",
-   "status": "pendente"
+   "status": "produzido",
+   "dia": "2026-11-21"
   },
   {
    "n": 31,
@@ -538,7 +539,7 @@
     "barragem"
    ],
    "gancho": "A luz da sua casa provavelmente veio de água caindo.",
-   "status": "pendente"
+   "status": "roteiro"
   },
   {
    "n": 32,
