@@ -639,7 +639,7 @@
           "transicao": "desfoque"
         },
         {
-          "de": "f8",
+          "de": "f8+0.7",
           "tipo": "medio",
           "alvo": "lara",
           "camera": [
@@ -696,11 +696,11 @@
           ],
           "camera": [
             -0.6,
-            2.8,
-            11.0
+            2.9,
+            12.2
           ],
           "movimento": "travelling",
-          "intensidade": 0.2
+          "intensidade": 0.12
         },
         {
           "de": "f13",
