@@ -487,7 +487,8 @@
     "corrimão sincronizado"
    ],
    "gancho": "Os degraus somem no chão porque andam em trilhos diferentes.",
-   "status": "roteiro"
+   "status": "produzido",
+   "dia": "2026-11-20"
   },
   {
    "n": 29,
@@ -667,6 +668,335 @@
     "amortecedor de massa"
    ],
    "gancho": "Prédios muito altos balançam de propósito, e têm um peso gigante para segurar.",
+   "status": "pendente"
+  },
+  {
+   "n": 40,
+   "id": "para-raios",
+   "nome": "Para-raios",
+   "curto": "PARA-RAIOS",
+   "framework": "laboratorio",
+   "invencao": "Benjamin Franklin, Filadélfia, 1752",
+   "conceitos": [
+    "ponta que chama o raio",
+    "cabo de cobre até o chão",
+    "aterramento",
+    "raio cai sim duas vezes no mesmo lugar"
+   ],
+   "gancho": "O Cristo Redentor leva vários raios por ano, e por isso tem para-raios.",
+   "estilo": "mito",
+   "status": "pendente"
+  },
+  {
+   "n": 41,
+   "id": "navio",
+   "nome": "Como o navio de aço flutua",
+   "curto": "NAVIO",
+   "framework": "voce_constroi",
+   "invencao": "Princípio de Arquimedes (séc. III a.C.); cascos de ferro no século XIX",
+   "conceitos": [
+    "empuxo",
+    "casco oco empurra a água",
+    "lastro",
+    "compartimentos fechados"
+   ],
+   "gancho": "Um navio de aço gigante flutua porque é quase todo ar por dentro.",
+   "status": "pendente"
+  },
+  {
+   "n": 42,
+   "id": "eclusa",
+   "nome": "Eclusa",
+   "curto": "ECLUSA",
+   "framework": "voce_constroi",
+   "invencao": "Eclusas desde a China antiga; Canal do Panamá, 1914; Tucuruí, no Brasil",
+   "conceitos": [
+    "câmara com duas comportas",
+    "encher e esvaziar só com a gravidade",
+    "sem bomba",
+    "nível do rio"
+   ],
+   "gancho": "O navio sobe dezenas de metros sem motor nenhum, só com a água do próprio rio.",
+   "status": "pendente"
+  },
+  {
+   "n": 43,
+   "id": "garrafa-termica",
+   "nome": "Garrafa térmica",
+   "curto": "GARRAFA",
+   "framework": "laboratorio",
+   "invencao": "James Dewar, Londres, 1892 (frasco de vácuo para guardar gases gelados)",
+   "conceitos": [
+    "vácuo não deixa o calor passar",
+    "parede dupla de vidro",
+    "espelho que devolve o calor",
+    "tampa"
+   ],
+   "gancho": "A mesma garrafa mantém o café quente e o suco gelado.",
+   "estilo": "dúvida comum",
+   "status": "pendente"
+  },
+  {
+   "n": 44,
+   "id": "cinto-de-seguranca",
+   "nome": "Cinto de segurança",
+   "curto": "CINTO",
+   "framework": "laboratorio",
+   "invencao": "Nils Bohlin, Volvo, Suécia, 1959 (cinto de três pontos); a Volvo liberou a patente",
+   "conceitos": [
+    "inércia",
+    "trava que sente o tranco",
+    "três pontos espalham a força",
+    "pré-tensionador"
+   ],
+   "gancho": "A Volvo abriu a patente para qualquer fábrica usar de graça.",
+   "estilo": "E SE",
+   "status": "pendente"
+  },
+  {
+   "n": 45,
+   "id": "turbina-eolica",
+   "nome": "Turbina eólica",
+   "curto": "EÓLICA",
+   "framework": "voce_constroi",
+   "invencao": "Moinhos de vento há séculos; turbinas modernas a partir dos anos 1980",
+   "conceitos": [
+    "pás que funcionam como asas",
+    "caixa que multiplica o giro",
+    "gerador",
+    "vira para o lado do vento"
+   ],
+   "gancho": "Uma pá de turbina pode ser mais comprida que a asa inteira de um avião gigante.",
+   "status": "pendente"
+  },
+  {
+   "n": 46,
+   "id": "tratamento-de-agua",
+   "nome": "Estação de tratamento de água",
+   "curto": "ÁGUA",
+   "framework": "voce_constroi",
+   "invencao": "Filtros de areia em Londres, 1829; cloro na água a partir do começo do século XX",
+   "conceitos": [
+    "coagulação",
+    "decantação",
+    "filtro de areia",
+    "cloro"
+   ],
+   "gancho": "A água da torneira já foi água barrenta de rio, e passou por areia antes de chegar.",
+   "status": "pendente"
+  },
+  {
+   "n": 47,
+   "id": "codigo-de-barras",
+   "nome": "Código de barras",
+   "curto": "CÓDIGO",
+   "framework": "laboratorio",
+   "invencao": "Norman Woodland e Bernard Silver, patente de 1952; primeiro produto lido em 1974 (um chiclete)",
+   "conceitos": [
+    "listras de luz e sombra",
+    "laser e sensor",
+    "números",
+    "dígito que confere"
+   ],
+   "gancho": "A ideia veio de um código Morse desenhado na areia da praia.",
+   "estilo": "dúvida comum",
+   "status": "pendente"
+  },
+  {
+   "n": 48,
+   "id": "montanha-russa",
+   "nome": "Montanha-russa",
+   "curto": "MONTANHA",
+   "framework": "voce_constroi",
+   "invencao": "Rampas de gelo na Rússia (séc. XVII); LaMarcus Thompson, Coney Island, 1884",
+   "conceitos": [
+    "altura vira velocidade",
+    "corrente que sobe o carrinho",
+    "rodas por cima e por baixo do trilho",
+    "freios no fim"
+   ],
+   "gancho": "Depois da primeira subida, ela não tem motor nenhum.",
+   "status": "pendente"
+  },
+  {
+   "n": 49,
+   "id": "raio-x",
+   "nome": "Raio X",
+   "curto": "RAIO-X",
+   "framework": "laboratorio",
+   "invencao": "Wilhelm Röntgen, Alemanha, 1895 (a primeira foto foi da mão da esposa)",
+   "conceitos": [
+    "raio invisível atravessa a pele",
+    "osso segura o raio",
+    "chapa que escurece",
+    "chumbo protege"
+   ],
+   "gancho": "A primeira radiografia foi da mão da esposa dele, com a aliança.",
+   "estilo": "fato impossível",
+   "status": "pendente"
+  },
+  {
+   "n": 50,
+   "id": "sifao",
+   "nome": "Sifão da pia",
+   "curto": "SIFÃO",
+   "framework": "voce_constroi",
+   "invencao": "Sifão em S patenteado por Alexander Cumming em 1775 (na privada)",
+   "conceitos": [
+    "curva que guarda água",
+    "selo d'água contra o cheiro",
+    "respiro",
+    "ralo"
+   ],
+   "gancho": "O cano da pia é torto de propósito: a água parada na curva segura o cheiro do esgoto.",
+   "status": "pendente"
+  },
+  {
+   "n": 51,
+   "id": "metro",
+   "nome": "Metrô",
+   "curto": "METRÔ",
+   "framework": "voce_constroi",
+   "invencao": "Metrô de Londres, 1863; São Paulo, 1974",
+   "conceitos": [
+    "túnel",
+    "trilho que leva a eletricidade",
+    "sinal por trechos",
+    "portas e plataforma"
+   ],
+   "gancho": "O primeiro metrô do mundo era puxado por locomotiva a vapor, debaixo da terra.",
+   "status": "pendente"
+  },
+  {
+   "n": 52,
+   "id": "velcro",
+   "nome": "Velcro",
+   "curto": "VELCRO",
+   "framework": "laboratorio",
+   "invencao": "George de Mestral, Suíça, ideia em 1941 com carrapichos no pelo do cachorro; patente em 1955",
+   "conceitos": [
+    "ganchinhos",
+    "laços",
+    "milhares de pontos de agarre",
+    "náilon"
+   ],
+   "gancho": "Ele foi inventado depois de um passeio com o cachorro cheio de carrapicho.",
+   "estilo": "fato impossível",
+   "status": "pendente"
+  },
+  {
+   "n": 53,
+   "id": "trem",
+   "nome": "Trem",
+   "curto": "TREM",
+   "framework": "voce_constroi",
+   "invencao": "Ferrovias desde 1825 (Stockton e Darlington, Inglaterra)",
+   "conceitos": [
+    "roda cônica que faz a curva sozinha",
+    "friso da roda",
+    "trilho de aço",
+    "dormentes e brita"
+   ],
+   "gancho": "A roda do trem não é reta: é um cone, e é isso que faz ele virar sem sair do trilho.",
+   "status": "pendente"
+  },
+  {
+   "n": 54,
+   "id": "telefone",
+   "nome": "Telefone",
+   "curto": "TELEFONE",
+   "framework": "laboratorio",
+   "invencao": "Alexander Graham Bell, patente de 1876 (Antonio Meucci também reivindicou)",
+   "conceitos": [
+    "voz vira vibração",
+    "vibração vira corrente",
+    "o fio leva",
+    "alto-falante volta a ser som"
+   ],
+   "gancho": "A primeira frase ao telefone foi um chamado para o assistente, na sala ao lado.",
+   "estilo": "dúvida comum",
+   "status": "pendente"
+  },
+  {
+   "n": 55,
+   "id": "foguete",
+   "nome": "Foguete",
+   "curto": "FOGUETE",
+   "framework": "voce_constroi",
+   "invencao": "Robert Goddard, primeiro foguete a combustível líquido, 1926",
+   "conceitos": [
+    "ação e reação",
+    "combustível e oxigênio a bordo",
+    "bocal",
+    "estágios que se soltam"
+   ],
+   "gancho": "No espaço não tem ar para empurrar, e mesmo assim o foguete acelera.",
+   "status": "pendente"
+  },
+  {
+   "n": 56,
+   "id": "pilha",
+   "nome": "Pilha",
+   "curto": "PILHA",
+   "framework": "laboratorio",
+   "invencao": "Alessandro Volta, Itália, 1800 (pilha de discos de zinco e cobre)",
+   "conceitos": [
+    "dois metais diferentes",
+    "pasta que conduz",
+    "elétrons de um lado para o outro",
+    "acaba quando o metal se gasta"
+   ],
+   "gancho": "A primeira pilha era literalmente uma pilha de discos de metal e papel molhado em água salgada.",
+   "estilo": "mito",
+   "status": "pendente"
+  },
+  {
+   "n": 57,
+   "id": "aterro-sanitario",
+   "nome": "Aterro sanitário",
+   "curto": "ATERRO",
+   "framework": "voce_constroi",
+   "invencao": "Aterros controlados a partir dos anos 1930-1940",
+   "conceitos": [
+    "manta que impermeabiliza",
+    "chorume tratado",
+    "gás que vira energia",
+    "camadas de terra"
+   ],
+   "gancho": "O lixo de um aterro solta gás que pode virar eletricidade.",
+   "status": "pendente"
+  },
+  {
+   "n": 58,
+   "id": "pneu",
+   "nome": "Pneu",
+   "curto": "PNEU",
+   "framework": "laboratorio",
+   "invencao": "Robert Thomson patenteou em 1845; John Boyd Dunlop fez o que pegou, em 1888, para o triciclo do filho",
+   "conceitos": [
+    "ar comprimido segura o peso",
+    "borracha vulcanizada",
+    "sulcos que tiram a água",
+    "cintas de aço"
+   ],
+   "gancho": "Quem segura o carro não é a borracha: é o ar lá dentro.",
+   "estilo": "fato impossível",
+   "status": "pendente"
+  },
+  {
+   "n": 59,
+   "id": "helicoptero",
+   "nome": "Helicóptero",
+   "curto": "HELICÓPTERO",
+   "framework": "voce_constroi",
+   "invencao": "Igor Sikorsky, VS-300, 1939; ideia antiga de Leonardo da Vinci",
+   "conceitos": [
+    "pás são asas girando",
+    "rotor de cauda contra o giro",
+    "inclinar o rotor para andar",
+    "autorrotação"
+   ],
+   "gancho": "Sem a hélice do rabo, o helicóptero giraria feito pião.",
    "status": "pendente"
   }
  ]
