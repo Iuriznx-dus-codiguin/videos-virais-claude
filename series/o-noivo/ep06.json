@@ -276,12 +276,12 @@
         },
         {
           "de": "f1:não",
-          "tipo": "close",
+          "tipo": "medio",
           "alvo": "ricardo",
           "camera": [
-            0.36,
+            0.0,
             3.0,
-            9.48
+            9.6
           ],
           "movimento": "zoom_rapido",
           "intensidade": 0.25
@@ -403,28 +403,25 @@
           "alvo": "lara",
           "texto": "LARA · IRMÃ DA NOIVA",
           "de": "f4",
-          "ate": "f4:irmã",
-          "altura": 0.47
+          "ate": "f4:irmã"
         },
         {
           "alvo": "bia",
           "texto": "BIA · A NOIVA",
           "de": "f5",
-          "ate": "f5:fim+0.2",
-          "altura": 0.47
+          "ate": "f5+1.3"
         },
         {
           "alvo": "sandra",
           "texto": "DRA. SANDRA · JUÍZA",
           "de": "f7",
-          "ate": "f7:fim+0.2",
-          "altura": 0.47
+          "ate": "f7+1.3"
         }
       ],
       "manchetes": [
         {
           "de": "inicio",
-          "ate": "f2",
+          "ate": "f1:não",
           "texto": "ILHA *SEM SINAL*"
         },
         {
@@ -438,19 +435,24 @@
           "texto": "NINGUÉM PODE *ME SEGUIR*"
         },
         {
-          "de": "f4",
+          "de": "f4:irmã",
           "ate": "f5",
           "texto": "A IRMÃ CASA *COM UM GOLPISTA*"
         },
         {
-          "de": "f5",
+          "de": "f5+1.3",
           "ate": "f6",
           "texto": "\"O CASAMENTO *CONTINUA*\""
         },
         {
           "de": "f6",
-          "ate": "f8",
+          "ate": "f7",
           "texto": "*80 CONVIDADOS*"
+        },
+        {
+          "de": "f7+1.3",
+          "ate": "f8",
+          "texto": "A *JUÍZA* CHEGOU"
         },
         {
           "de": "f8",
@@ -852,6 +854,7 @@
       "manchetes": [
         {
           "de": "f16",
+          "ate": "f16:comprador",
           "texto": "O COMPRADOR *É CONVIDADO*"
         }
       ],
