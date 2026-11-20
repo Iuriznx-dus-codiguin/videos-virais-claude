@@ -252,24 +252,24 @@
         },
         {
           "de": "f2",
-          "tipo": "close",
+          "tipo": "medio",
           "alvo": "neide",
           "camera": [
-            -0.76,
+            -0.1,
             1.7,
-            -1.62
+            -0.83
           ],
           "movimento": "aproximar",
           "intensidade": 0.3
         },
         {
           "de": "f3",
-          "tipo": "medio",
-          "alvo": "lara",
+          "tipo": "close",
+          "alvo": "neide",
           "camera": [
-            0.2,
-            1.75,
-            -4.87
+            -0.76,
+            1.7,
+            -1.62
           ],
           "movimento": "travelling",
           "intensidade": 0.2
@@ -293,14 +293,13 @@
           "texto": "DONA NEIDE · MÃE",
           "de": "f2",
           "ate": "f2:fim+0.2",
-          "altura": 0.47
+          "altura": 0.72
         },
         {
           "alvo": "lara",
           "texto": "LARA · IRMÃ DA NOIVA",
           "de": "f4",
-          "ate": "f4:irmã",
-          "altura": 0.47
+          "ate": "f4:irmã"
         }
       ],
       "manchetes": [
@@ -318,10 +317,6 @@
           "de": "f3",
           "ate": "f4",
           "texto": "A VERDADE *INTEIRA*"
-        },
-        {
-          "de": "f4",
-          "texto": "A IRMÃ *CASA HOJE*"
         }
       ],
       "relogio": {
@@ -401,13 +396,13 @@
           "transicao": "chicote"
         },
         {
-          "de": "f4:mentiroso",
-          "tipo": "close",
+          "de": "f4:com",
+          "tipo": "medio",
           "alvo": "ricardo",
           "camera": [
-            1.6,
+            1.5,
             2.9,
-            14.6
+            15.6
           ],
           "movimento": "zoom_rapido",
           "intensidade": 0.25
@@ -417,13 +412,14 @@
         {
           "alvo": "ricardo",
           "texto": "RICARDO · O NOIVO",
-          "de": "f4:mentiroso",
+          "de": "f4:com",
           "ate": "f4:fim+0.2"
         }
       ],
       "manchetes": [
         {
           "de": "f4:irmã",
+          "ate": "f4:com",
           "texto": "CASAMENTO *ÀS 17H*"
         }
       ],
@@ -566,12 +562,12 @@
         },
         {
           "de": "f6",
-          "tipo": "medio",
+          "tipo": "close",
           "alvo": "lara",
           "camera": [
-            0.2,
+            0.75,
             1.75,
-            -4.87
+            -5.6
           ],
           "movimento": "travelling",
           "intensidade": 0.25
@@ -590,12 +586,12 @@
         },
         {
           "de": "f8",
-          "tipo": "medio",
+          "tipo": "close",
           "alvo": "lara",
           "camera": [
-            0.2,
+            0.75,
             1.75,
-            -4.87
+            -5.6
           ],
           "movimento": "aproximar",
           "intensidade": 0.2
@@ -869,12 +865,12 @@
       "planos": [
         {
           "de": "f15",
-          "tipo": "close",
+          "tipo": "medio",
           "alvo": "bia",
           "camera": [
-            0.9,
-            2.0,
-            6.2
+            0.8,
+            2.7,
+            4.6
           ],
           "movimento": "aproximar",
           "intensidade": 0.25,
@@ -939,14 +935,19 @@
           "texto": "BIA · A NOIVA",
           "de": "f15:Bia",
           "ate": "f15:fim+0.3",
-          "altura": 0.47
+          "altura": 0.72
         }
       ],
       "manchetes": [
         {
           "de": "f15",
-          "ate": "f17",
+          "ate": "f16",
           "texto": "A NOIVA *PRECISA SABER*"
+        },
+        {
+          "de": "f16:praia",
+          "ate": "f17",
+          "texto": "A GENTE *CONTA TUDO*"
         },
         {
           "de": "f17",
@@ -973,7 +974,7 @@
           "ate": "f16:praia",
           "efeito": "letreiro",
           "texto": "20 MINUTOS DEPOIS",
-          "altura": 0.25
+          "altura": 0.3
         }
       ]
     },
@@ -1235,6 +1236,6 @@
       "animacao"
     ],
     "comentario": "Eu acho que a Bia tem um plano. E você: cega de amor ou plano?",
-    "capa": "f7+0.3"
+    "capa": "f5+0.5"
   }
 }

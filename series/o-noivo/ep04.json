@@ -90,7 +90,7 @@
       "id": "f14",
       "quem": "lara",
       "off": true,
-      "texto": "Pronto. Agora eu sou a irmã CIUMENTA.",
+      "texto": "Pronto. Agora eu sou a CIUMENTA da família.",
       "tom": "triste"
     },
     {
@@ -110,7 +110,8 @@
       "id": "f17",
       "quem": "lara",
       "off": true,
-      "texto": "A do Ricardo tem senha. Três números."
+      "texto": "A do Ricardo tem senha. Três números.",
+      "semente": 102
     },
     {
       "id": "f18",
@@ -200,8 +201,8 @@
         },
         "neide": {
           "em": [
-            -3.5,
-            7.2
+            0.9,
+            0.6
           ],
           "olhando": [
             3.6,
@@ -236,9 +237,9 @@
           "quem": "neide",
           "faz": "virar",
           "para": [
-            -7.0,
+            0.0,
             2.4,
-            3.0
+            -6.0
           ],
           "de": "f5:instinto"
         },
@@ -294,12 +295,12 @@
         },
         {
           "de": "f2",
-          "tipo": "close",
+          "tipo": "medio",
           "alvo": "lara",
           "camera": [
-            3.7,
+            3.65,
             2.8,
-            8.2
+            9.6
           ],
           "movimento": "travelling",
           "intensidade": 0.25
@@ -349,12 +350,12 @@
           "tipo": "aberto",
           "alvo": "lara",
           "camera": [
-            8.6,
-            2.9,
-            8.0
+            4.3,
+            3.0,
+            13.1
           ],
-          "movimento": "travelling",
-          "intensidade": 0.3
+          "movimento": "acompanhar",
+          "intensidade": 0.25
         },
         {
           "de": "f6",
@@ -374,8 +375,7 @@
           "alvo": "lara",
           "texto": "LARA · IRMÃ DA NOIVA",
           "de": "f2",
-          "ate": "f2:irmã",
-          "altura": 0.47
+          "ate": "f2:irmã"
         }
       ],
       "insercoes": [
@@ -397,7 +397,7 @@
           "texto": "O NOIVO *MENTIU*"
         },
         {
-          "de": "f2",
+          "de": "f2:irmã",
           "ate": "f3",
           "texto": "CASAMENTO *HOJE, 17H*"
         },
@@ -744,8 +744,7 @@
           "alvo": "bia",
           "texto": "BIA · A NOIVA",
           "de": "f9",
-          "ate": "f9:fim+0.2",
-          "altura": 0.47
+          "ate": "f9:fim+0.2"
         },
         {
           "alvo": "ricardo",
@@ -756,13 +755,13 @@
       ],
       "manchetes": [
         {
-          "de": "f7",
+          "de": "f7:sozinha",
           "ate": "f8",
           "texto": "A NOIVA *SOZINHA*"
         },
         {
           "de": "f8",
-          "ate": "f10",
+          "ate": "f9",
           "texto": "A PROVA *NA MÃO DELA*"
         },
         {
@@ -795,7 +794,7 @@
           "ate": "f7:sozinha",
           "efeito": "letreiro",
           "texto": "MEIA HORA DEPOIS",
-          "altura": 0.25
+          "altura": 0.21
         }
       ],
       "sons": [
@@ -837,11 +836,6 @@
           ],
           "de": "f16",
           "velocidade": 0.8
-        },
-        {
-          "quem": "lara",
-          "faz": "arrumar",
-          "de": "f17"
         },
         {
           "quem": "lara",
@@ -911,12 +905,16 @@
         },
         {
           "de": "f17",
-          "tipo": "close",
-          "alvo": "lara",
+          "tipo": "medio",
+          "alvo": [
+            -0.9,
+            1.35,
+            2.9
+          ],
           "camera": [
-            -0.6,
+            -0.4,
             1.4,
-            4.4
+            7.4
           ],
           "movimento": "aproximar",
           "intensidade": 0.25
@@ -926,9 +924,9 @@
           "tipo": "medio",
           "alvo": "lara",
           "camera": [
-            1.2,
-            1.5,
-            3.9
+            0.8,
+            1.1,
+            5.6
           ],
           "movimento": "travelling",
           "intensidade": 0.2
@@ -938,9 +936,9 @@
           "tipo": "close",
           "alvo": "lara",
           "camera": [
-            -0.6,
-            1.4,
-            4.4
+            -0.7,
+            1.0,
+            5.0
           ],
           "movimento": "zoom_rapido",
           "intensidade": 0.3
@@ -950,9 +948,9 @@
           "tipo": "medio",
           "alvo": "lara",
           "camera": [
+            0.4,
             1.3,
-            1.2,
-            4.0
+            5.2
           ],
           "movimento": "aproximar",
           "intensidade": 0.25

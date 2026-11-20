@@ -197,9 +197,9 @@
             12.6
           ],
           "olhando": [
-            2.4,
+            4.6,
             1.6,
-            7.0
+            17.0
           ],
           "expressao": "triste"
         },
@@ -209,9 +209,9 @@
             12.9
           ],
           "olhando": [
-            2.4,
+            4.8,
             1.0,
-            7.0
+            17.0
           ],
           "expressao": "neutro"
         }
@@ -388,15 +388,11 @@
         {
           "de": "f5",
           "tipo": "medio",
-          "alvo": [
-            3.3,
-            2.2,
-            12.7
-          ],
+          "alvo": "carol",
           "camera": [
-            2.2,
-            2.6,
-            8.6
+            6.2,
+            3.0,
+            17.0
           ],
           "movimento": "travelling",
           "intensidade": 0.25,
@@ -468,21 +464,21 @@
           "texto": "DONA NEIDE · MÃE",
           "de": "f4",
           "ate": "f4:fim+0.2",
-          "altura": 0.47
+          "altura": 0.72
         },
         {
           "alvo": "carol",
           "texto": "CAROL · 1ª ESPOSA DELE",
           "de": "f5:Carol",
           "ate": "f5:minha",
-          "altura": 0.47
+          "altura": 0.72
         },
         {
           "alvo": "ricardo",
           "texto": "RICARDO · O NOIVO",
           "de": "f7",
           "ate": "f7:fim+0.2",
-          "altura": 0.47
+          "altura": 0.72
         }
       ],
       "insercoes": [
@@ -926,7 +922,7 @@
           "ate": "f15:olho",
           "efeito": "letreiro",
           "texto": "3 HORAS DEPOIS",
-          "altura": 0.25
+          "altura": 0.21
         }
       ],
       "sons": [
