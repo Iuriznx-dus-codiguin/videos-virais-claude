@@ -1,0 +1,1683 @@
+{
+  "serie": "o-noivo",
+  "parte": 7,
+  "titulo": "Sim ou não",
+  "musica": "tensao",
+  "falas": [
+    {
+      "id": "f1",
+      "quem": "lara",
+      "off": true,
+      "texto": "Se você descobrir que o noivo é golpista na hora do sim, não grite.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f2",
+      "quem": "lara",
+      "off": true,
+      "texto": "Porque todo golpista assina alguma coisa. E assinatura é PROVA."
+    },
+    {
+      "id": "f3",
+      "quem": "lara",
+      "off": true,
+      "texto": "Mas só se ninguém estragar tudo antes da hora.",
+      "tom": "serio"
+    },
+    {
+      "id": "f4",
+      "quem": "lara",
+      "off": true,
+      "texto": "Eu sou a Lara. Cinco da tarde: minha irmã casa com um golpista."
+    },
+    {
+      "id": "f5",
+      "quem": "sandra",
+      "texto": "Se alguém é contra este casamento, fale agora.",
+      "tom": "serio"
+    },
+    {
+      "id": "f6",
+      "quem": "lara",
+      "off": true,
+      "texto": "Meu primeiro instinto é abrir a boca e contar TUDO."
+    },
+    {
+      "id": "f7",
+      "quem": "lara",
+      "off": true,
+      "texto": "Mas minha irmã, a noiva, segura a minha mão."
+    },
+    {
+      "id": "f8",
+      "quem": "bia",
+      "texto": "Calma, Lara. Ainda não.",
+      "tom": "serio"
+    },
+    {
+      "id": "f9",
+      "quem": "lara",
+      "off": true,
+      "texto": "Assinou o casamento, ele vende a ilha. Doze milhões, ali na areia.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f10",
+      "quem": "lara",
+      "off": true,
+      "texto": "E ele assina o livro: Ricardo Mendes."
+    },
+    {
+      "id": "f11",
+      "quem": "bia",
+      "texto": "Agora eu sou CONTRA. O nome dele é Rodrigo Paiva.",
+      "tom": "bravo"
+    },
+    {
+      "id": "f12",
+      "quem": "lara",
+      "off": true,
+      "texto": "E a juíza? A Dra. Sandra é DELEGADA."
+    },
+    {
+      "id": "f13",
+      "quem": "bia",
+      "texto": "Eu chamei a polícia pelo rádio do farol. De madrugada.",
+      "tom": "serio"
+    },
+    {
+      "id": "f14",
+      "quem": "lara",
+      "off": true,
+      "texto": "E do barco das flores desce a Carol, com o filho dele."
+    },
+    {
+      "id": "f15",
+      "quem": "sandra",
+      "texto": "Nome falso no livro é crime, Rodrigo. Flagrante.",
+      "tom": "serio"
+    },
+    {
+      "id": "f16",
+      "quem": "lara",
+      "off": true,
+      "texto": "Só que ele larga a caneta e corre pro cais.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f17",
+      "quem": "lara",
+      "off": true,
+      "texto": "Se ele chegar no barco, some de novo.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f18",
+      "quem": "ricardo",
+      "texto": "Fica com a ilha, Bia. Eu fico com o barco.",
+      "tom": "calmo"
+    },
+    {
+      "id": "f19",
+      "quem": "neide",
+      "texto": "Procurando a chave, RODRIGO?",
+      "tom": "serio"
+    },
+    {
+      "id": "f20",
+      "quem": "lara",
+      "off": true,
+      "texto": "Minha mãe. A testemunha que ele comprou."
+    },
+    {
+      "id": "f21",
+      "quem": "lara",
+      "off": true,
+      "texto": "A venda caiu. A ilha continua da família.",
+      "tom": "aliviado"
+    },
+    {
+      "id": "f22",
+      "quem": "lara",
+      "off": true,
+      "texto": "Minha irmã jogou o buquê no mar. Pro VOVÔ.",
+      "tom": "aliviado"
+    }
+  ],
+  "cenas": [
+    {
+      "cenario": "praia",
+      "luz": "entardecer",
+      "ambiente": "mar",
+      "id": "altar",
+      "de": "inicio",
+      "personagens": {
+        "sandra": {
+          "em": [
+            0.0,
+            10.6
+          ],
+          "olhando": [
+            0.0,
+            2.2,
+            5.0
+          ],
+          "expressao": "serio"
+        },
+        "bia": {
+          "em": [
+            -1.1,
+            8.8
+          ],
+          "olhando": [
+            0.6,
+            2.4,
+            6.0
+          ],
+          "expressao": "serio"
+        },
+        "ricardo": {
+          "em": [
+            1.1,
+            8.8
+          ],
+          "olhando": [
+            -0.6,
+            2.4,
+            6.0
+          ],
+          "expressao": "feliz"
+        },
+        "lara": {
+          "em": [
+            -2.7,
+            9.7
+          ],
+          "olhando": [
+            -1.4,
+            2.4,
+            5.0
+          ],
+          "expressao": "nervoso"
+        },
+        "comprador": {
+          "em": [
+            4.2,
+            7.4
+          ],
+          "olhando": [
+            2.0,
+            2.4,
+            3.0
+          ],
+          "expressao": "serio",
+          "segura": "pacote"
+        },
+        "neide": {
+          "em": [
+            1.6,
+            5.4
+          ],
+          "olhando": [
+            0.4,
+            2.4,
+            9.4
+          ],
+          "expressao": "serio",
+          "segura": "isqueiro"
+        }
+      },
+      "acoes": [
+        {
+          "quem": "lara",
+          "faz": "andar",
+          "para": [
+            -2.9,
+            8.6
+          ],
+          "de": "f6",
+          "velocidade": 0.5
+        },
+        {
+          "quem": "lara",
+          "expressao": "determinado",
+          "de": "f6"
+        },
+        {
+          "quem": "bia",
+          "faz": "estender_mao",
+          "para": [
+            -2.6,
+            1.5,
+            8.7
+          ],
+          "de": "f7:segura"
+        },
+        {
+          "quem": "lara",
+          "expressao": "surpreso",
+          "de": "f7:segura+0.4"
+        },
+        {
+          "quem": "comprador",
+          "faz": "erguer",
+          "de": "f9:Doze"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "caixote",
+          "em": [
+            0.0,
+            9.75
+          ]
+        },
+        {
+          "tipo": "tronco",
+          "em": [
+            -2.4,
+            4.3
+          ]
+        },
+        {
+          "tipo": "tronco",
+          "em": [
+            2.4,
+            4.3
+          ]
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            10,
+            17
+          ],
+          "giro": 160,
+          "luzes": false
+        },
+        {
+          "tipo": "farol",
+          "em": [
+            -20,
+            90
+          ],
+          "modo": "gira",
+          "escala": 1.2
+        }
+      ],
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "aberto",
+          "alvo": [
+            0.0,
+            2.0,
+            8.5
+          ],
+          "camera": [
+            0.0,
+            5.0,
+            -4.0
+          ],
+          "movimento": "arco",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f2",
+          "tipo": "close",
+          "alvo": "ricardo",
+          "camera": [
+            -0.46,
+            2.9,
+            6.25
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f2:PROVA",
+          "tipo": "close",
+          "alvo": "ricardo",
+          "camera": [
+            -0.46,
+            2.9,
+            6.25
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f3",
+          "tipo": "medio",
+          "alvo": "comprador",
+          "camera": [
+            2.2,
+            2.8,
+            3.5
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f4",
+          "tipo": "close",
+          "alvo": "lara",
+          "camera": [
+            -2.0,
+            2.8,
+            6.9
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f4:irmã",
+          "tipo": "close",
+          "alvo": "bia",
+          "camera": [
+            -0.2,
+            2.8,
+            6.0
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f5",
+          "tipo": "close",
+          "alvo": "sandra",
+          "camera": [
+            0.0,
+            3.0,
+            7.5
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f6",
+          "tipo": "medio",
+          "alvo": "lara",
+          "camera": [
+            -2.9,
+            2.8,
+            5.0
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.25,
+          "transicao": "chicote"
+        },
+        {
+          "de": "f6:TUDO",
+          "tipo": "close",
+          "alvo": "lara",
+          "camera": [
+            -1.75,
+            2.8,
+            5.83
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f7",
+          "tipo": "medio",
+          "alvo": [
+            -2.0,
+            2.3,
+            8.7
+          ],
+          "camera": [
+            -4.2,
+            2.9,
+            2.4
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f8",
+          "tipo": "close",
+          "alvo": "bia",
+          "camera": [
+            -0.2,
+            2.8,
+            6.0
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f9",
+          "tipo": "medio",
+          "alvo": "comprador",
+          "camera": [
+            2.2,
+            2.8,
+            3.5
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.25
+        }
+      ],
+      "rotulos": [
+        {
+          "alvo": "ricardo",
+          "texto": "RICARDO · O NOIVO",
+          "de": "f2",
+          "ate": "f2:PROVA"
+        },
+        {
+          "alvo": "comprador",
+          "texto": "O COMPRADOR",
+          "de": "f3",
+          "ate": "f3:fim"
+        },
+        {
+          "alvo": "lara",
+          "texto": "LARA · IRMÃ DA NOIVA",
+          "de": "f4",
+          "ate": "f4:irmã"
+        },
+        {
+          "alvo": "sandra",
+          "texto": "DRA. SANDRA · JUÍZA",
+          "de": "f5",
+          "ate": "f5+1.3"
+        },
+        {
+          "alvo": "bia",
+          "texto": "BIA · A NOIVA",
+          "de": "f4:irmã",
+          "ate": "f4:fim+0.2"
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "inicio",
+          "ate": "f2",
+          "texto": "O NOIVO É *GOLPISTA*"
+        },
+        {
+          "de": "f2",
+          "ate": "f3",
+          "texto": "ELE PRECISA *ASSINAR*"
+        },
+        {
+          "de": "f3",
+          "ate": "f4",
+          "texto": "SEM *ESTRAGAR* NADA"
+        },
+        {
+          "de": "f4",
+          "ate": "f5",
+          "texto": "17H · *O SIM*"
+        },
+        {
+          "de": "f5",
+          "ate": "f6",
+          "texto": "ALGUÉM É *CONTRA*?"
+        },
+        {
+          "de": "f6",
+          "ate": "f7",
+          "texto": "CONTAR *TUDO*?"
+        },
+        {
+          "de": "f7",
+          "ate": "f9",
+          "texto": "\"*AINDA NÃO*\""
+        },
+        {
+          "de": "f9",
+          "texto": "*R$ 12 MILHÕES* NO ALTAR"
+        }
+      ],
+      "relogio": {
+        "de": "inicio",
+        "hora": "17:00",
+        "ate_hora": "17:02"
+      },
+      "efeitos": [
+        {
+          "de": "f9:Doze",
+          "ate": "f9:fim+0.2",
+          "efeito": "circular",
+          "alvo": "comprador"
+        }
+      ],
+      "sons": [
+        {
+          "de": "f2:PROVA",
+          "som": "impacto",
+          "volume": 0.3
+        },
+        {
+          "de": "f7:segura",
+          "som": "susto",
+          "volume": 0.25
+        }
+      ]
+    },
+    {
+      "cenario": "praia",
+      "luz": "entardecer",
+      "ambiente": "mar",
+      "id": "livro",
+      "de": "f10",
+      "personagens": {
+        "sandra": {
+          "em": [
+            0.0,
+            10.6
+          ],
+          "olhando": [
+            0.0,
+            2.2,
+            5.0
+          ],
+          "expressao": "serio"
+        },
+        "bia": {
+          "em": [
+            -1.1,
+            8.8
+          ],
+          "olhando": [
+            0.6,
+            2.4,
+            6.0
+          ],
+          "expressao": "serio"
+        },
+        "ricardo": {
+          "em": [
+            1.1,
+            8.8
+          ],
+          "olhando": [
+            -0.6,
+            2.4,
+            6.0
+          ],
+          "expressao": "feliz"
+        },
+        "lara": {
+          "em": [
+            -2.9,
+            8.6
+          ],
+          "olhando": [
+            -1.4,
+            2.4,
+            5.0
+          ],
+          "expressao": "nervoso"
+        },
+        "comprador": {
+          "em": [
+            4.2,
+            7.4
+          ],
+          "olhando": [
+            2.0,
+            2.4,
+            3.0
+          ],
+          "expressao": "serio",
+          "segura": "pacote"
+        },
+        "neide": {
+          "em": [
+            1.6,
+            5.4
+          ],
+          "olhando": [
+            0.4,
+            2.4,
+            9.4
+          ],
+          "expressao": "serio",
+          "segura": "isqueiro"
+        }
+      },
+      "acoes": [
+        {
+          "quem": "ricardo",
+          "faz": "estender_mao",
+          "para": [
+            0.0,
+            1.0,
+            9.75
+          ],
+          "de": "f10"
+        },
+        {
+          "quem": "bia",
+          "expressao": "bravo",
+          "de": "f11"
+        },
+        {
+          "quem": "ricardo",
+          "expressao": "surpreso",
+          "de": "f11:CONTRA"
+        },
+        {
+          "quem": "lara",
+          "expressao": "surpreso",
+          "de": "f11:CONTRA"
+        },
+        {
+          "quem": "ricardo",
+          "expressao": "nervoso",
+          "de": "f12"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "caixote",
+          "em": [
+            0.0,
+            9.75
+          ]
+        },
+        {
+          "tipo": "tronco",
+          "em": [
+            -2.4,
+            4.3
+          ]
+        },
+        {
+          "tipo": "tronco",
+          "em": [
+            2.4,
+            4.3
+          ]
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            10,
+            17
+          ],
+          "giro": 160,
+          "luzes": false
+        },
+        {
+          "tipo": "farol",
+          "em": [
+            -20,
+            90
+          ],
+          "modo": "gira",
+          "escala": 1.2
+        }
+      ],
+      "planos": [
+        {
+          "de": "f10",
+          "tipo": "close",
+          "alvo": "lara",
+          "camera": [
+            -1.75,
+            2.8,
+            5.83
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f11",
+          "tipo": "close",
+          "alvo": "bia",
+          "camera": [
+            -0.2,
+            2.8,
+            6.0
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f11:Rodrigo",
+          "tipo": "close",
+          "alvo": "ricardo",
+          "camera": [
+            -0.46,
+            2.9,
+            6.25
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f12",
+          "tipo": "close",
+          "alvo": "sandra",
+          "camera": [
+            0.0,
+            3.0,
+            7.5
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f12:DELEGADA",
+          "tipo": "close",
+          "alvo": "sandra",
+          "camera": [
+            0.0,
+            3.0,
+            7.5
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.3
+        }
+      ],
+      "insercoes": [
+        {
+          "de": "f10",
+          "ate": "f10:fim+0.2",
+          "tipo": "bilhete",
+          "titulo": "LIVRO DE CASAMENTO",
+          "linhas": [
+            "Ilha do Farol · domingo, 17h",
+            "Noivo: Ricardo Mendes",
+            "Noiva: ____________"
+          ]
+        }
+      ],
+      "rotulos": [
+        {
+          "alvo": "sandra",
+          "texto": "DRA. SANDRA · DELEGADA",
+          "de": "f12:DELEGADA",
+          "ate": "f12:fim+0.2"
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f10",
+          "ate": "f11",
+          "texto": "ELE ASSINOU *O NOME FALSO*"
+        },
+        {
+          "de": "f11",
+          "ate": "f12",
+          "texto": "A NOIVA *É CONTRA*"
+        },
+        {
+          "de": "f12",
+          "texto": "A JUÍZA É *DELEGADA*",
+          "cor": "#2FD27A"
+        }
+      ],
+      "relogio": {
+        "de": "f10",
+        "hora": "17:03"
+      },
+      "efeitos": [
+        {
+          "de": "f11:CONTRA",
+          "ate": "f11:CONTRA+0.6",
+          "efeito": "linhas"
+        },
+        {
+          "de": "f12:DELEGADA",
+          "ate": "f12:DELEGADA+0.6",
+          "efeito": "linhas",
+          "cor": "#2FD27A"
+        }
+      ],
+      "sons": [
+        {
+          "de": "f11:CONTRA",
+          "som": "impacto",
+          "volume": 0.4
+        },
+        {
+          "de": "f12:DELEGADA",
+          "som": "impacto",
+          "volume": 0.3
+        }
+      ]
+    },
+    {
+      "cenario": "sala_farol",
+      "luz": "noite",
+      "id": "lembranca",
+      "de": "f13",
+      "filtro": "sepia",
+      "personagens": {
+        "bia": {
+          "em": [
+            0.95,
+            -1.05
+          ],
+          "olhando": [
+            1.6,
+            1.15,
+            -2.1
+          ],
+          "expressao": "determinado",
+          "escala": 0.6
+        }
+      },
+      "acoes": [
+        {
+          "quem": "bia",
+          "faz": "estender_mao",
+          "para": [
+            1.6,
+            1.15,
+            -2.1
+          ],
+          "de": "f13:rádio-0.3"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "particulas",
+          "particula": "poeira",
+          "em": [
+            1.4,
+            -1.6
+          ],
+          "alt": 0.9,
+          "raio": 0.8,
+          "altura": 1.2
+        }
+      ],
+      "planos": [
+        {
+          "de": "f13",
+          "tipo": "medio",
+          "alvo": "bia",
+          "camera": [
+            -0.6,
+            1.7,
+            -2.9
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2,
+          "transicao": "desfoque"
+        },
+        {
+          "de": "f13:farol",
+          "tipo": "close",
+          "alvo": "bia",
+          "camera": [
+            -0.25,
+            1.5,
+            -2.85
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f13",
+          "texto": "PELO *RÁDIO DO FAROL*"
+        }
+      ],
+      "relogio": {
+        "de": "f13",
+        "hora": "03:40"
+      },
+      "sons": [
+        {
+          "de": "f13:rádio",
+          "som": "chiado",
+          "volume": 0.3
+        }
+      ]
+    },
+    {
+      "cenario": "praia",
+      "luz": "entardecer",
+      "ambiente": "mar",
+      "id": "carol",
+      "de": "f14",
+      "personagens": {
+        "sandra": {
+          "em": [
+            0.0,
+            10.6
+          ],
+          "olhando": [
+            0.0,
+            2.2,
+            5.0
+          ],
+          "expressao": "serio"
+        },
+        "bia": {
+          "em": [
+            -1.1,
+            8.8
+          ],
+          "olhando": [
+            0.6,
+            2.4,
+            6.0
+          ],
+          "expressao": "determinado"
+        },
+        "ricardo": {
+          "em": [
+            1.1,
+            8.8
+          ],
+          "olhando": [
+            -0.6,
+            2.4,
+            6.0
+          ],
+          "expressao": "nervoso"
+        },
+        "lara": {
+          "em": [
+            -2.9,
+            8.6
+          ],
+          "olhando": [
+            -1.4,
+            2.4,
+            5.0
+          ],
+          "expressao": "surpreso"
+        },
+        "comprador": {
+          "em": [
+            4.2,
+            7.4
+          ],
+          "olhando": [
+            2.0,
+            2.4,
+            3.0
+          ],
+          "expressao": "serio",
+          "segura": "pacote"
+        },
+        "neide": {
+          "em": [
+            1.6,
+            5.4
+          ],
+          "olhando": [
+            0.4,
+            2.4,
+            9.4
+          ],
+          "expressao": "serio",
+          "segura": "isqueiro"
+        },
+        "carol": {
+          "em": [
+            0.3,
+            -0.5
+          ],
+          "olhando": [
+            1.1,
+            2.4,
+            8.8
+          ],
+          "expressao": "serio"
+        },
+        "theo": {
+          "em": [
+            1.1,
+            -0.9
+          ],
+          "olhando": [
+            1.1,
+            1.6,
+            8.8
+          ],
+          "expressao": "serio"
+        }
+      },
+      "acoes": [
+        {
+          "quem": "carol",
+          "faz": "andar",
+          "para": [
+            0.3,
+            5.0
+          ],
+          "de": "f14",
+          "velocidade": 0.8
+        },
+        {
+          "quem": "theo",
+          "faz": "andar",
+          "para": [
+            0.7,
+            4.4
+          ],
+          "de": "f14",
+          "velocidade": 0.8
+        },
+        {
+          "quem": "ricardo",
+          "faz": "largar",
+          "para": [
+            0.0,
+            1.0,
+            9.75
+          ],
+          "de": "f16"
+        },
+        {
+          "quem": "ricardo",
+          "expressao": "medo",
+          "de": "f15:Flagrante"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "caixote",
+          "em": [
+            0.0,
+            9.75
+          ]
+        },
+        {
+          "tipo": "tronco",
+          "em": [
+            -2.4,
+            4.3
+          ]
+        },
+        {
+          "tipo": "tronco",
+          "em": [
+            2.4,
+            4.3
+          ]
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            10,
+            17
+          ],
+          "giro": 160,
+          "luzes": false
+        },
+        {
+          "tipo": "farol",
+          "em": [
+            -20,
+            90
+          ],
+          "modo": "gira",
+          "escala": 1.2
+        }
+      ],
+      "planos": [
+        {
+          "de": "f14",
+          "tipo": "aberto",
+          "alvo": "carol",
+          "camera": [
+            0.2,
+            2.9,
+            8.3
+          ],
+          "movimento": "acompanhar",
+          "intensidade": 0.2,
+          "transicao": "desfoque"
+        },
+        {
+          "de": "f15",
+          "tipo": "medio",
+          "alvo": "sandra",
+          "camera": [
+            0.0,
+            3.0,
+            6.4
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f15:Flagrante",
+          "tipo": "close",
+          "alvo": "ricardo",
+          "camera": [
+            -0.46,
+            2.9,
+            6.25
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f16",
+          "tipo": "medio",
+          "alvo": "ricardo",
+          "camera": [
+            -0.46,
+            2.9,
+            6.25
+          ],
+          "movimento": "tremer",
+          "intensidade": 0.15
+        }
+      ],
+      "rotulos": [
+        {
+          "alvo": "carol",
+          "texto": "CAROL · A PRIMEIRA ESPOSA",
+          "de": "f14:Carol",
+          "ate": "f14:fim+0.2"
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f14",
+          "ate": "f15",
+          "texto": "*A CAROL* VOLTOU"
+        },
+        {
+          "de": "f15",
+          "texto": "NOME FALSO = *FLAGRANTE*"
+        }
+      ],
+      "relogio": {
+        "de": "f14",
+        "hora": "17:04"
+      },
+      "sons": [
+        {
+          "de": "f15:Flagrante",
+          "som": "impacto",
+          "volume": 0.35
+        },
+        {
+          "de": "f16:corre",
+          "som": "tensao_sobe",
+          "volume": 0.3
+        }
+      ]
+    },
+    {
+      "cenario": "ilhota_farol",
+      "luz": "dia",
+      "ambiente": "mar",
+      "id": "cais",
+      "de": "f16:corre",
+      "personagens": {
+        "ricardo": {
+          "em": [
+            0.6,
+            4.0
+          ],
+          "olhando": [
+            -2.0,
+            2.4,
+            6.0
+          ],
+          "expressao": "medo"
+        }
+      },
+      "acoes": [
+        {
+          "quem": "ricardo",
+          "faz": "correr",
+          "para": [
+            3.1,
+            14.6
+          ],
+          "de": "f16:corre"
+        },
+        {
+          "quem": "ricardo",
+          "faz": "virar",
+          "para": [
+            -2.0,
+            2.4,
+            6.0
+          ],
+          "de": "f18-0.4"
+        },
+        {
+          "quem": "ricardo",
+          "expressao": "feliz",
+          "de": "f18"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "farol",
+          "em": "farol",
+          "ilhota": false,
+          "modo": "apagado"
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            3,
+            17
+          ],
+          "giro": 90,
+          "luzes": false
+        }
+      ],
+      "planos": [
+        {
+          "de": "f16:corre",
+          "tipo": "aberto",
+          "alvo": "ricardo",
+          "camera": [
+            9.5,
+            3.0,
+            10.0
+          ],
+          "movimento": "acompanhar",
+          "intensidade": 0.25,
+          "transicao": "chicote"
+        },
+        {
+          "de": "f18",
+          "tipo": "close",
+          "alvo": "ricardo",
+          "camera": [
+            1.6,
+            2.9,
+            12.0
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f16:corre",
+          "ate": "f17",
+          "texto": "ELE *FUGIU*"
+        },
+        {
+          "de": "f17",
+          "ate": "f18",
+          "texto": "SE CHEGAR NO BARCO, *SOME*"
+        },
+        {
+          "de": "f18",
+          "texto": "ELE *ESCAPOU*?"
+        }
+      ],
+      "relogio": {
+        "de": "f16:corre",
+        "hora": "17:06"
+      }
+    },
+    {
+      "cenario": "ilhota_farol",
+      "luz": "dia",
+      "ambiente": "mar",
+      "id": "virada",
+      "de": "f19",
+      "filtro": "dramatico",
+      "personagens": {
+        "ricardo": {
+          "em": [
+            3.1,
+            14.6
+          ],
+          "olhando": [
+            -2.0,
+            2.4,
+            6.0
+          ],
+          "expressao": "feliz"
+        },
+        "neide": {
+          "em": [
+            2.6,
+            10.8
+          ],
+          "olhando": [
+            3.1,
+            2.4,
+            14.6
+          ],
+          "expressao": "determinado",
+          "segura": "isqueiro"
+        }
+      },
+      "acoes": [
+        {
+          "quem": "ricardo",
+          "faz": "virar",
+          "para": [
+            2.6,
+            2.4,
+            10.8
+          ],
+          "de": "f19:chave"
+        },
+        {
+          "quem": "neide",
+          "faz": "erguer",
+          "para": [
+            3.1,
+            2.6,
+            14.6
+          ],
+          "de": "f19:chave"
+        },
+        {
+          "quem": "ricardo",
+          "expressao": "surpreso",
+          "de": "f19:RODRIGO"
+        },
+        {
+          "quem": "ricardo",
+          "expressao": "medo",
+          "de": "f20"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "farol",
+          "em": "farol",
+          "ilhota": false,
+          "modo": "apagado"
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            3,
+            17
+          ],
+          "giro": 90,
+          "luzes": false
+        }
+      ],
+      "planos": [
+        {
+          "de": "f19",
+          "tipo": "close",
+          "alvo": "neide",
+          "camera": [
+            3.5,
+            2.6,
+            13.6
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2,
+          "transicao": "zoom"
+        },
+        {
+          "de": "f20",
+          "tipo": "close",
+          "alvo": "ricardo",
+          "camera": [
+            3.0,
+            2.9,
+            11.9
+          ],
+          "movimento": "dolly_zoom",
+          "intensidade": 0.8
+        }
+      ],
+      "rotulos": [
+        {
+          "alvo": "neide",
+          "texto": "DONA NEIDE · A MÃE",
+          "de": "f19:chave",
+          "ate": "f19:fim+0.3"
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f19",
+          "ate": "f20",
+          "texto": "A CHAVE *TÁ COM A MÃE*"
+        },
+        {
+          "de": "f20",
+          "texto": "A TESTEMUNHA *VIROU*",
+          "cor": "#2FD27A"
+        }
+      ],
+      "relogio": {
+        "de": "f19",
+        "hora": "17:07"
+      },
+      "efeitos": [
+        {
+          "de": "f19",
+          "ate": "f20:fim+0.3",
+          "efeito": "barras"
+        },
+        {
+          "de": "f19:RODRIGO",
+          "ate": "f19:fim+0.5",
+          "efeito": "destacar",
+          "alvo": "neide"
+        }
+      ],
+      "sons": [
+        {
+          "de": "f19:RODRIGO",
+          "som": "impacto",
+          "volume": 0.45
+        },
+        {
+          "de": "f20",
+          "som": "tensao_sobe",
+          "volume": 0.25
+        }
+      ]
+    },
+    {
+      "cenario": "praia",
+      "luz": "por_do_sol",
+      "ambiente": "mar",
+      "id": "fim",
+      "de": "f21",
+      "filtro": "quente",
+      "personagens": {
+        "bia": {
+          "em": [
+            0.6,
+            10.6
+          ],
+          "olhando": [
+            0.4,
+            2.0,
+            30.0
+          ],
+          "expressao": "aliviado"
+        },
+        "lara": {
+          "em": [
+            -1.0,
+            10.0
+          ],
+          "olhando": [
+            0.4,
+            2.0,
+            30.0
+          ],
+          "expressao": "aliviado"
+        },
+        "neide": {
+          "em": [
+            -2.2,
+            9.6
+          ],
+          "olhando": [
+            0.4,
+            2.0,
+            30.0
+          ],
+          "expressao": "aliviado"
+        },
+        "carol": {
+          "em": [
+            1.9,
+            9.9
+          ],
+          "olhando": [
+            0.4,
+            2.0,
+            30.0
+          ],
+          "expressao": "aliviado"
+        },
+        "theo": {
+          "em": [
+            2.7,
+            9.6
+          ],
+          "olhando": [
+            0.4,
+            2.0,
+            30.0
+          ],
+          "expressao": "feliz"
+        }
+      },
+      "acoes": [
+        {
+          "quem": "bia",
+          "faz": "puxar",
+          "para": [
+            0.6,
+            3.0,
+            16.0
+          ],
+          "de": "f22:jogou"
+        },
+        {
+          "quem": "bia",
+          "expressao": "feliz",
+          "de": "f22:mar"
+        },
+        {
+          "quem": "lara",
+          "expressao": "feliz",
+          "de": "f22:Pro"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "farol",
+          "em": [
+            -20,
+            90
+          ],
+          "modo": "gira",
+          "escala": 1.2
+        },
+        {
+          "tipo": "particulas",
+          "particula": "folhas",
+          "cor": "#FFB3C7",
+          "em": [
+            0.6,
+            13.0
+          ],
+          "alt": 3.0,
+          "raio": 1.6,
+          "altura": 3.0,
+          "aparece": "f22:jogou+0.4"
+        }
+      ],
+      "planos": [
+        {
+          "de": "f21",
+          "tipo": "aberto",
+          "alvo": [
+            0.0,
+            2.0,
+            10.2
+          ],
+          "camera": [
+            0.2,
+            3.0,
+            22.0
+          ],
+          "movimento": "arco",
+          "intensidade": 0.2,
+          "transicao": "desfoque"
+        },
+        {
+          "de": "f22",
+          "tipo": "close",
+          "alvo": "bia",
+          "camera": [
+            0.3,
+            2.8,
+            13.6
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f22:Pro",
+          "tipo": "close",
+          "alvo": "lara",
+          "camera": [
+            -2.4,
+            2.8,
+            12.8
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.15
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f21",
+          "ate": "f22",
+          "texto": "A ILHA *FICA*",
+          "cor": "#2FD27A"
+        },
+        {
+          "de": "f22",
+          "texto": "PRO *VOVÔ*",
+          "cor": "#2FD27A"
+        }
+      ],
+      "relogio": {
+        "de": "f21",
+        "hora": "18:10"
+      },
+      "efeitos": [
+        {
+          "de": "f21",
+          "ate": "f21+1.6",
+          "efeito": "letreiro",
+          "texto": "18H",
+          "altura": 0.22
+        }
+      ]
+    }
+  ],
+  "chamada": {
+    "pergunta": "Quem errou mais: a mãe ou a Bia?",
+    "texto": "COMENTA",
+    "destaque": "FIM"
+  },
+  "postagem": {
+    "titulo": "Ela deixou o noivo golpista assinar no altar",
+    "descricao": "Final da novelinha: na ilha que o avô deixou, a noiva descobre que o noivo é um golpista que quer vender a ilha logo depois do sim. O que ela faz no altar?",
+    "hashtags": [
+      "casamento",
+      "golpe",
+      "novelinha",
+      "animacao"
+    ],
+    "comentario": "Pra mim quem errou mais foi a mãe. E você: a mãe ou a Bia?",
+    "capa": "f11:CONTRA+0.3"
+  }
+}

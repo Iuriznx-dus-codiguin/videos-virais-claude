@@ -175,7 +175,8 @@
       "personalidade": "séria, poucas palavras, observa tudo",
       "voz": {
         "descricao": "mulher brasileira de uns 60 anos, voz grave e calma de autoridade",
-        "instruct": "female, elderly, low pitch"
+        "instruct": "female, elderly, low pitch",
+        "semente": 1
       },
       "visual": {
         "altura": 0.92,
@@ -206,7 +207,7 @@
         "instruct": "male, middle-aged, moderate pitch"
       },
       "visual": {
-        "altura": 1.0,
+        "altura": 1,
         "corpo": "#4A4F5C",
         "cabeca": "#D9B48F",
         "olhos": "ovais",
