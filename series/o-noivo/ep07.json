@@ -324,12 +324,12 @@
         },
         {
           "de": "f2",
-          "tipo": "close",
+          "tipo": "medio",
           "alvo": "ricardo",
           "camera": [
-            -0.46,
+            -1.14,
             2.9,
-            6.25
+            5.13
           ],
           "movimento": "aproximar",
           "intensidade": 0.2
@@ -465,13 +465,15 @@
           "alvo": "ricardo",
           "texto": "RICARDO · O NOIVO",
           "de": "f2",
-          "ate": "f2:PROVA"
+          "ate": "f2:PROVA",
+          "altura": 0.72
         },
         {
           "alvo": "comprador",
           "texto": "O COMPRADOR",
           "de": "f3",
-          "ate": "f3:fim"
+          "ate": "f3:fim",
+          "altura": 0.72
         },
         {
           "alvo": "lara",
@@ -509,12 +511,7 @@
           "texto": "SEM *ESTRAGAR* NADA"
         },
         {
-          "de": "f4",
-          "ate": "f5",
-          "texto": "17H · *O SIM*"
-        },
-        {
-          "de": "f5",
+          "de": "f5+1.3",
           "ate": "f6",
           "texto": "ALGUÉM É *CONTRA*?"
         },
@@ -810,8 +807,8 @@
         },
         {
           "de": "f12",
-          "texto": "A JUÍZA É *DELEGADA*",
-          "cor": "#2FD27A"
+          "ate": "f12:DELEGADA",
+          "texto": "E A *JUÍZA*?"
         }
       ],
       "relogio": {
@@ -865,18 +862,7 @@
           "escala": 0.6
         }
       },
-      "acoes": [
-        {
-          "quem": "bia",
-          "faz": "estender_mao",
-          "para": [
-            1.6,
-            1.15,
-            -2.1
-          ],
-          "de": "f13:rádio-0.3"
-        }
-      ],
+      "acoes": [],
       "objetos": [
         {
           "tipo": "particulas",
@@ -915,6 +901,15 @@
           ],
           "movimento": "aproximar",
           "intensidade": 0.2
+        }
+      ],
+      "insercoes": [
+        {
+          "de": "f13:farol",
+          "ate": "f13:fim+0.2",
+          "tipo": "radio",
+          "titulo": "RÁDIO DO FAROL",
+          "quem": "bia"
         }
       ],
       "manchetes": [
@@ -1339,8 +1334,8 @@
         },
         "neide": {
           "em": [
-            2.6,
-            10.8
+            2.4,
+            9.8
           ],
           "olhando": [
             3.1,
@@ -1356,9 +1351,9 @@
           "quem": "ricardo",
           "faz": "virar",
           "para": [
-            2.6,
             2.4,
-            10.8
+            2.4,
+            9.8
           ],
           "de": "f19:chave"
         },
@@ -1419,12 +1414,12 @@
           "tipo": "close",
           "alvo": "ricardo",
           "camera": [
+            2.95,
             3.0,
-            2.9,
-            11.9
+            11.4
           ],
           "movimento": "dolly_zoom",
-          "intensidade": 0.8
+          "intensidade": 0.55
         }
       ],
       "rotulos": [
@@ -1438,8 +1433,8 @@
       "manchetes": [
         {
           "de": "f19",
-          "ate": "f20",
-          "texto": "A CHAVE *TÁ COM A MÃE*"
+          "ate": "f19:chave",
+          "texto": "A *CHAVE* DO BARCO"
         },
         {
           "de": "f20",
