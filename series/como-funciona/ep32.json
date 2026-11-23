@@ -1,0 +1,3173 @@
+{
+ "serie": "como-funciona",
+ "parte": 32,
+ "titulo": "Nada se mexe no painel solar. Como ele faz eletricidade?",
+ "musica": "curiosidade",
+ "personagens": {
+  "becquerel": {
+   "nome": "Edmond Becquerel",
+   "papel": "físico francês; em 1839, aos 19 anos, no laboratório do pai em Paris, mergulhou duas placas de metal num líquido e viu que a luz batendo numa delas fazia corrente (efeito fotovoltaico); não fala",
+   "visual": {
+    "altura": 1,
+    "corpo": "#263238",
+    "cabeca": "#F5D6C0",
+    "olhos": "redondos",
+    "sobrancelhas": "finas",
+    "acessorios": [
+     {
+      "tipo": "cabelo_curto",
+      "cor": "#4E342E"
+     },
+     {
+      "tipo": "colete",
+      "cor": "#6D4C41"
+     },
+     {
+      "tipo": "lenco",
+      "cor": "#1565C0"
+     }
+    ]
+   }
+  }
+ },
+ "modelos": {
+  "painel": [
+   {
+    "id": "base_a",
+    "forma": "caixa",
+    "tam": [
+     0.4,
+     0.02,
+     0.28
+    ],
+    "pos": [
+     0.03,
+     0.01,
+     0
+    ],
+    "cor": "#7CB342"
+   },
+   {
+    "id": "suporte_a",
+    "forma": "caixa",
+    "tam": [
+     0.03,
+     0.1,
+     0.03
+    ],
+    "pos": [
+     -0.06,
+     0.06,
+     -0.02
+    ],
+    "cor": "#607D8B"
+   },
+   {
+    "id": "painel",
+    "forma": "placa",
+    "tam": [
+     0.22,
+     0.18
+    ],
+    "pos": [
+     -0.06,
+     0.15,
+     0
+    ],
+    "giro": [
+     -60,
+     0,
+     0
+    ],
+    "cor": "#1A237E"
+   },
+   {
+    "id": "grade_v0",
+    "forma": "caixa",
+    "tam": [
+     0.004,
+     0.18,
+     0.004
+    ],
+    "pos": [
+     -0.055,
+     0,
+     0.017
+    ],
+    "cor": "#B0BEC5",
+    "pai": "painel",
+    "sem_contorno": true
+   },
+   {
+    "id": "grade_v1",
+    "forma": "caixa",
+    "tam": [
+     0.004,
+     0.18,
+     0.004
+    ],
+    "pos": [
+     0.0,
+     0,
+     0.017
+    ],
+    "cor": "#B0BEC5",
+    "pai": "painel",
+    "sem_contorno": true
+   },
+   {
+    "id": "grade_v2",
+    "forma": "caixa",
+    "tam": [
+     0.004,
+     0.18,
+     0.004
+    ],
+    "pos": [
+     0.055,
+     0,
+     0.017
+    ],
+    "cor": "#B0BEC5",
+    "pai": "painel",
+    "sem_contorno": true
+   },
+   {
+    "id": "grade_h0",
+    "forma": "caixa",
+    "tam": [
+     0.22,
+     0.004,
+     0.004
+    ],
+    "pos": [
+     0,
+     -0.045,
+     0.017
+    ],
+    "cor": "#B0BEC5",
+    "pai": "painel",
+    "sem_contorno": true
+   },
+   {
+    "id": "grade_h1",
+    "forma": "caixa",
+    "tam": [
+     0.22,
+     0.004,
+     0.004
+    ],
+    "pos": [
+     0,
+     0.045,
+     0.017
+    ],
+    "cor": "#B0BEC5",
+    "pai": "painel",
+    "sem_contorno": true
+   },
+   {
+    "id": "sol_a",
+    "forma": "esfera",
+    "tam": [
+     0.045
+    ],
+    "pos": [
+     -0.1,
+     0.4,
+     0.03
+    ],
+    "cor": "#FFD600"
+   },
+   {
+    "id": "raio_a0",
+    "forma": "cone",
+    "tam": [
+     0.009,
+     0.024
+    ],
+    "pos": [
+     0.062,
+     0.0,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     -90
+    ],
+    "cor": "#FFB300",
+    "pai": "sol_a"
+   },
+   {
+    "id": "raio_a1",
+    "forma": "cone",
+    "tam": [
+     0.009,
+     0.024
+    ],
+    "pos": [
+     0.044,
+     0.044,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     -45
+    ],
+    "cor": "#FFB300",
+    "pai": "sol_a"
+   },
+   {
+    "id": "raio_a2",
+    "forma": "cone",
+    "tam": [
+     0.009,
+     0.024
+    ],
+    "pos": [
+     0.0,
+     0.062,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#FFB300",
+    "pai": "sol_a"
+   },
+   {
+    "id": "raio_a3",
+    "forma": "cone",
+    "tam": [
+     0.009,
+     0.024
+    ],
+    "pos": [
+     -0.044,
+     0.044,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     45
+    ],
+    "cor": "#FFB300",
+    "pai": "sol_a"
+   },
+   {
+    "id": "raio_a4",
+    "forma": "cone",
+    "tam": [
+     0.009,
+     0.024
+    ],
+    "pos": [
+     -0.062,
+     0.0,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#FFB300",
+    "pai": "sol_a"
+   },
+   {
+    "id": "raio_a5",
+    "forma": "cone",
+    "tam": [
+     0.009,
+     0.024
+    ],
+    "pos": [
+     -0.044,
+     -0.044,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     135
+    ],
+    "cor": "#FFB300",
+    "pai": "sol_a"
+   },
+   {
+    "id": "raio_a6",
+    "forma": "cone",
+    "tam": [
+     0.009,
+     0.024
+    ],
+    "pos": [
+     -0.0,
+     -0.062,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     180
+    ],
+    "cor": "#FFB300",
+    "pai": "sol_a"
+   },
+   {
+    "id": "raio_a7",
+    "forma": "cone",
+    "tam": [
+     0.009,
+     0.024
+    ],
+    "pos": [
+     0.044,
+     -0.044,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     225
+    ],
+    "cor": "#FFB300",
+    "pai": "sol_a"
+   },
+   {
+    "id": "base_v",
+    "forma": "caixa",
+    "tam": [
+     0.07,
+     0.02,
+     0.07
+    ],
+    "pos": [
+     0.15,
+     0.03,
+     0.09
+    ],
+    "cor": "#455A64"
+   },
+   {
+    "id": "haste_v",
+    "forma": "cilindro",
+    "tam": [
+     0.008,
+     0.11
+    ],
+    "pos": [
+     0.15,
+     0.095,
+     0.09
+    ],
+    "cor": "#455A64"
+   },
+   {
+    "id": "motor_v",
+    "forma": "cilindro",
+    "tam": [
+     0.024,
+     0.04
+    ],
+    "pos": [
+     0.15,
+     0.16,
+     0.078
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#ECEFF1"
+   },
+   {
+    "id": "piv_fan",
+    "forma": "esfera",
+    "tam": [
+     0.004
+    ],
+    "pos": [
+     0.15,
+     0.16,
+     0.102
+    ],
+    "cor": "#ECEFF1",
+    "sem_contorno": true
+   },
+   {
+    "id": "pa_v0",
+    "forma": "caixa",
+    "tam": [
+     0.026,
+     0.12,
+     0.004
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#4FC3F7",
+    "pai": "piv_fan"
+   },
+   {
+    "id": "pa_v1",
+    "forma": "caixa",
+    "tam": [
+     0.026,
+     0.12,
+     0.004
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     60
+    ],
+    "cor": "#4FC3F7",
+    "pai": "piv_fan"
+   },
+   {
+    "id": "pa_v2",
+    "forma": "caixa",
+    "tam": [
+     0.026,
+     0.12,
+     0.004
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     120
+    ],
+    "cor": "#4FC3F7",
+    "pai": "piv_fan"
+   },
+   {
+    "id": "miolo_v",
+    "forma": "esfera",
+    "tam": [
+     0.013
+    ],
+    "pos": [
+     0,
+     0,
+     0.004
+    ],
+    "cor": "#E53935",
+    "pai": "piv_fan"
+   },
+   {
+    "id": "fio_a",
+    "forma": "tubo",
+    "tam": [
+     0.0035
+    ],
+    "pos": [
+     0.06,
+     0.04,
+     0.05
+    ],
+    "cor": "#263238",
+    "sem_contorno": true,
+    "caminho": [
+     [
+      -0.04,
+      0.07,
+      -0.02
+     ],
+     [
+      -0.02,
+      -0.01,
+      0.01
+     ],
+     [
+      0.04,
+      -0.015,
+      0.03
+     ],
+     [
+      0.09,
+      0.0,
+      0.04
+     ]
+    ]
+   }
+  ],
+  "experimento_1839": [
+   {
+    "id": "base_l",
+    "forma": "caixa",
+    "tam": [
+     0.17,
+     0.012,
+     0.09
+    ],
+    "pos": [
+     0.01,
+     0.006,
+     0
+    ],
+    "cor": "#5D4037"
+   },
+   {
+    "id": "copo",
+    "forma": "cilindro",
+    "tam": [
+     0.032,
+     0.09
+    ],
+    "pos": [
+     -0.04,
+     0.057,
+     0
+    ],
+    "cor": "#E1F5FE",
+    "opacidade": 0.3
+   },
+   {
+    "id": "liquido",
+    "forma": "cilindro",
+    "tam": [
+     0.029,
+     0.06
+    ],
+    "pos": [
+     -0.04,
+     0.042,
+     0
+    ],
+    "cor": "#81D4FA",
+    "opacidade": 0.75,
+    "sem_contorno": true
+   },
+   {
+    "id": "placa_a",
+    "forma": "caixa",
+    "tam": [
+     0.004,
+     0.085,
+     0.028
+    ],
+    "pos": [
+     -0.054,
+     0.07,
+     0
+    ],
+    "cor": "#9E9E9E"
+   },
+   {
+    "id": "placa_b",
+    "forma": "caixa",
+    "tam": [
+     0.004,
+     0.085,
+     0.028
+    ],
+    "pos": [
+     -0.026,
+     0.07,
+     0
+    ],
+    "cor": "#F5F5F5"
+   },
+   {
+    "id": "medidor",
+    "forma": "caixa",
+    "tam": [
+     0.06,
+     0.055,
+     0.028
+    ],
+    "pos": [
+     0.04,
+     0.0395,
+     -0.015
+    ],
+    "cor": "#6D4C41"
+   },
+   {
+    "id": "mostrador",
+    "forma": "caixa",
+    "tam": [
+     0.048,
+     0.036,
+     0.003
+    ],
+    "pos": [
+     0.04,
+     0.042,
+     0.0
+    ],
+    "cor": "#FFF8E1",
+    "sem_contorno": true
+   },
+   {
+    "id": "piv_ponteiro",
+    "forma": "esfera",
+    "tam": [
+     0.004
+    ],
+    "pos": [
+     0.04,
+     0.028,
+     0.003
+    ],
+    "giro": [
+     0,
+     0,
+     45
+    ],
+    "cor": "#3E2723",
+    "sem_contorno": true
+   },
+   {
+    "id": "ponteiro",
+    "forma": "caixa",
+    "tam": [
+     0.0035,
+     0.028,
+     0.002
+    ],
+    "pos": [
+     0,
+     0.014,
+     0
+    ],
+    "cor": "#C62828",
+    "pai": "piv_ponteiro",
+    "sem_contorno": true
+   },
+   {
+    "id": "bocal_l",
+    "forma": "cilindro",
+    "tam": [
+     0.007,
+     0.03
+    ],
+    "pos": [
+     0.075,
+     0.027,
+     0.03
+    ],
+    "cor": "#5D4037"
+   },
+   {
+    "id": "lampadinha",
+    "forma": "esfera",
+    "tam": [
+     0.016
+    ],
+    "pos": [
+     0.075,
+     0.058,
+     0.03
+    ],
+    "cor": "#FFFDE7",
+    "sem_contorno": true
+   },
+   {
+    "id": "fio_la",
+    "forma": "tubo",
+    "tam": [
+     0.0025
+    ],
+    "pos": [
+     -0.02,
+     0.111,
+     -0.004
+    ],
+    "cor": "#3E2723",
+    "sem_contorno": true,
+    "caminho": [
+     [
+      -0.034,
+      0.001,
+      0.004
+     ],
+     [
+      -0.03,
+      0.029,
+      0.004
+     ],
+     [
+      0.02,
+      0.014,
+      0.004
+     ],
+     [
+      0.045,
+      -0.044,
+      -0.011
+     ]
+    ]
+   },
+   {
+    "id": "fio_lb",
+    "forma": "tubo",
+    "tam": [
+     0.0025
+    ],
+    "pos": [
+     0.017,
+     0.101,
+     -0.004
+    ],
+    "cor": "#3E2723",
+    "sem_contorno": true,
+    "caminho": [
+     [
+      -0.043,
+      0.011,
+      0.004
+     ],
+     [
+      -0.017,
+      0.034,
+      0.009
+     ],
+     [
+      0.023,
+      -0.011,
+      -0.001
+     ],
+     [
+      0.038,
+      -0.034,
+      -0.011
+     ]
+    ]
+   },
+   {
+    "id": "fio_lc",
+    "forma": "tubo",
+    "tam": [
+     0.0025
+    ],
+    "pos": [
+     0.073,
+     0.021,
+     0.013
+    ],
+    "cor": "#3E2723",
+    "sem_contorno": true,
+    "caminho": [
+     [
+      -0.003,
+      0.009,
+      -0.023
+     ],
+     [
+      0.002,
+      -0.005,
+      0.007
+     ],
+     [
+      0.002,
+      -0.005,
+      0.017
+     ]
+    ]
+   }
+  ],
+  "celula": [
+   {
+    "id": "suporte",
+    "forma": "caixa",
+    "tam": [
+     0.32,
+     0.05,
+     0.2
+    ],
+    "pos": [
+     0,
+     0.025,
+     0
+    ],
+    "cor": "#37474F"
+   },
+   {
+    "id": "fundo",
+    "forma": "caixa",
+    "tam": [
+     0.28,
+     0.012,
+     0.18
+    ],
+    "pos": [
+     0,
+     0.056,
+     0
+    ],
+    "cor": "#78909C"
+   },
+   {
+    "id": "silicio",
+    "forma": "caixa",
+    "tam": [
+     0.28,
+     0.14,
+     0.18
+    ],
+    "pos": [
+     0,
+     0.132,
+     0
+    ],
+    "cor": "#B0BEC5"
+   },
+   {
+    "id": "camada_p",
+    "forma": "caixa",
+    "tam": [
+     0.28,
+     0.09,
+     0.18
+    ],
+    "pos": [
+     0,
+     0.107,
+     0
+    ],
+    "cor": "#9575CD",
+    "oculta": true
+   },
+   {
+    "id": "camada_n",
+    "forma": "caixa",
+    "tam": [
+     0.28,
+     0.05,
+     0.18
+    ],
+    "pos": [
+     0,
+     0.177,
+     0
+    ],
+    "cor": "#4DB6AC",
+    "oculta": true
+   },
+   {
+    "id": "divisa",
+    "forma": "caixa",
+    "tam": [
+     0.284,
+     0.006,
+     0.184
+    ],
+    "pos": [
+     0,
+     0.152,
+     0
+    ],
+    "cor": "#FFFFFF",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "sobra0",
+    "forma": "esfera",
+    "tam": [
+     0.008
+    ],
+    "pos": [
+     -0.1,
+     0.172,
+     0.097
+    ],
+    "cor": "#FFEB3B",
+    "oculta": true
+   },
+   {
+    "id": "sobra1",
+    "forma": "esfera",
+    "tam": [
+     0.008
+    ],
+    "pos": [
+     -0.035,
+     0.186,
+     0.097
+    ],
+    "cor": "#FFEB3B",
+    "oculta": true
+   },
+   {
+    "id": "sobra2",
+    "forma": "esfera",
+    "tam": [
+     0.008
+    ],
+    "pos": [
+     0.035,
+     0.172,
+     0.097
+    ],
+    "cor": "#FFEB3B",
+    "oculta": true
+   },
+   {
+    "id": "sobra3",
+    "forma": "esfera",
+    "tam": [
+     0.008
+    ],
+    "pos": [
+     0.1,
+     0.186,
+     0.097
+    ],
+    "cor": "#FFEB3B",
+    "oculta": true
+   },
+   {
+    "id": "falta0",
+    "forma": "toro",
+    "tam": [
+     0.009,
+     0.0028
+    ],
+    "pos": [
+     -0.1,
+     0.09,
+     0.097
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#311B92",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "falta1",
+    "forma": "toro",
+    "tam": [
+     0.009,
+     0.0028
+    ],
+    "pos": [
+     -0.035,
+     0.122,
+     0.097
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#311B92",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "falta2",
+    "forma": "toro",
+    "tam": [
+     0.009,
+     0.0028
+    ],
+    "pos": [
+     0.035,
+     0.09,
+     0.097
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#311B92",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "falta3",
+    "forma": "toro",
+    "tam": [
+     0.009,
+     0.0028
+    ],
+    "pos": [
+     0.1,
+     0.122,
+     0.097
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#311B92",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "seta0",
+    "forma": "seta",
+    "tam": [
+     0.05,
+     0.005
+    ],
+    "pos": [
+     -0.07,
+     0.152,
+     0.101
+    ],
+    "cor": "#00C853",
+    "oculta": true
+   },
+   {
+    "id": "seta1",
+    "forma": "seta",
+    "tam": [
+     0.05,
+     0.005
+    ],
+    "pos": [
+     0.0,
+     0.152,
+     0.101
+    ],
+    "cor": "#00C853",
+    "oculta": true
+   },
+   {
+    "id": "seta2",
+    "forma": "seta",
+    "tam": [
+     0.05,
+     0.005
+    ],
+    "pos": [
+     0.07,
+     0.152,
+     0.101
+    ],
+    "cor": "#00C853",
+    "oculta": true
+   },
+   {
+    "id": "e1",
+    "forma": "esfera",
+    "tam": [
+     0.016
+    ],
+    "pos": [
+     0.0,
+     0.12,
+     0.101
+    ],
+    "cor": "#FFEB3B",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "e2",
+    "forma": "esfera",
+    "tam": [
+     0.016
+    ],
+    "pos": [
+     0.035,
+     0.085,
+     0.107
+    ],
+    "cor": "#FFEB3B",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "dedo0",
+    "forma": "caixa",
+    "tam": [
+     0.012,
+     0.012,
+     0.18
+    ],
+    "pos": [
+     -0.09,
+     0.217,
+     0
+    ],
+    "cor": "#ECEFF1",
+    "oculta": true
+   },
+   {
+    "id": "dedo1",
+    "forma": "caixa",
+    "tam": [
+     0.012,
+     0.012,
+     0.18
+    ],
+    "pos": [
+     -0.03,
+     0.217,
+     0
+    ],
+    "cor": "#ECEFF1",
+    "oculta": true
+   },
+   {
+    "id": "dedo2",
+    "forma": "caixa",
+    "tam": [
+     0.012,
+     0.012,
+     0.18
+    ],
+    "pos": [
+     0.03,
+     0.217,
+     0
+    ],
+    "cor": "#ECEFF1",
+    "oculta": true
+   },
+   {
+    "id": "dedo3",
+    "forma": "caixa",
+    "tam": [
+     0.012,
+     0.012,
+     0.18
+    ],
+    "pos": [
+     0.09,
+     0.217,
+     0
+    ],
+    "cor": "#ECEFF1",
+    "oculta": true
+   },
+   {
+    "id": "pelicula",
+    "forma": "caixa",
+    "tam": [
+     0.282,
+     0.008,
+     0.182
+    ],
+    "pos": [
+     0,
+     0.206,
+     0
+    ],
+    "cor": "#1A237E",
+    "oculta": true
+   },
+   {
+    "id": "fio",
+    "forma": "tubo",
+    "tam": [
+     0.004
+    ],
+    "pos": [
+     0.19,
+     0.2,
+     0
+    ],
+    "cor": "#263238",
+    "sem_contorno": true,
+    "caminho": [
+     [
+      -0.07,
+      0.014,
+      0
+     ],
+     [
+      -0.04,
+      0.08,
+      0
+     ],
+     [
+      0.0,
+      0.13,
+      0
+     ],
+     [
+      0.04,
+      0.1,
+      0
+     ],
+     [
+      0.06,
+      -0.02,
+      0
+     ],
+     [
+      0.03,
+      -0.14,
+      0
+     ],
+     [
+      -0.05,
+      -0.144,
+      0
+     ]
+    ]
+   },
+   {
+    "id": "bocal",
+    "forma": "cilindro",
+    "tam": [
+     0.012,
+     0.03
+    ],
+    "pos": [
+     0.19,
+     0.345,
+     0
+    ],
+    "cor": "#455A64"
+   },
+   {
+    "id": "lampada",
+    "forma": "esfera",
+    "tam": [
+     0.028
+    ],
+    "pos": [
+     0.19,
+     0.385,
+     0
+    ],
+    "cor": "#FFF59D"
+   },
+   {
+    "id": "sol",
+    "forma": "esfera",
+    "tam": [
+     0.045
+    ],
+    "pos": [
+     -0.11,
+     0.4,
+     -0.04
+    ],
+    "cor": "#FFD600"
+   },
+   {
+    "id": "raio0",
+    "forma": "cone",
+    "tam": [
+     0.009,
+     0.024
+    ],
+    "pos": [
+     0.062,
+     0.0,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     -90
+    ],
+    "cor": "#FFB300",
+    "pai": "sol"
+   },
+   {
+    "id": "raio1",
+    "forma": "cone",
+    "tam": [
+     0.009,
+     0.024
+    ],
+    "pos": [
+     0.044,
+     0.044,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     -45
+    ],
+    "cor": "#FFB300",
+    "pai": "sol"
+   },
+   {
+    "id": "raio2",
+    "forma": "cone",
+    "tam": [
+     0.009,
+     0.024
+    ],
+    "pos": [
+     0.0,
+     0.062,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#FFB300",
+    "pai": "sol"
+   },
+   {
+    "id": "raio3",
+    "forma": "cone",
+    "tam": [
+     0.009,
+     0.024
+    ],
+    "pos": [
+     -0.044,
+     0.044,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     45
+    ],
+    "cor": "#FFB300",
+    "pai": "sol"
+   },
+   {
+    "id": "raio4",
+    "forma": "cone",
+    "tam": [
+     0.009,
+     0.024
+    ],
+    "pos": [
+     -0.062,
+     0.0,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#FFB300",
+    "pai": "sol"
+   },
+   {
+    "id": "raio5",
+    "forma": "cone",
+    "tam": [
+     0.009,
+     0.024
+    ],
+    "pos": [
+     -0.044,
+     -0.044,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     135
+    ],
+    "cor": "#FFB300",
+    "pai": "sol"
+   },
+   {
+    "id": "raio6",
+    "forma": "cone",
+    "tam": [
+     0.009,
+     0.024
+    ],
+    "pos": [
+     -0.0,
+     -0.062,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     180
+    ],
+    "cor": "#FFB300",
+    "pai": "sol"
+   },
+   {
+    "id": "raio7",
+    "forma": "cone",
+    "tam": [
+     0.009,
+     0.024
+    ],
+    "pos": [
+     0.044,
+     -0.044,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     225
+    ],
+    "cor": "#FFB300",
+    "pai": "sol"
+   },
+   {
+    "id": "piv_sat",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     0.06,
+     0.48,
+     -0.02
+    ],
+    "cor": "#CFD8DC",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "sat_corpo",
+    "forma": "esfera",
+    "tam": [
+     0.024
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#CFD8DC",
+    "pai": "piv_sat",
+    "oculta": true
+   },
+   {
+    "id": "antena0",
+    "forma": "cilindro",
+    "tam": [
+     0.0025,
+     0.07
+    ],
+    "pos": [
+     0.048,
+     0.027,
+     -0.01
+    ],
+    "giro": [
+     0,
+     0,
+     -60
+    ],
+    "cor": "#90A4AE",
+    "pai": "piv_sat",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "antena1",
+    "forma": "cilindro",
+    "tam": [
+     0.0025,
+     0.07
+    ],
+    "pos": [
+     -0.048,
+     0.027,
+     -0.01
+    ],
+    "giro": [
+     0,
+     0,
+     60
+    ],
+    "cor": "#90A4AE",
+    "pai": "piv_sat",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "antena2",
+    "forma": "cilindro",
+    "tam": [
+     0.0025,
+     0.07
+    ],
+    "pos": [
+     -0.048,
+     -0.028,
+     -0.01
+    ],
+    "giro": [
+     0,
+     0,
+     120
+    ],
+    "cor": "#90A4AE",
+    "pai": "piv_sat",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "antena3",
+    "forma": "cilindro",
+    "tam": [
+     0.0025,
+     0.07
+    ],
+    "pos": [
+     0.048,
+     -0.028,
+     -0.01
+    ],
+    "giro": [
+     0,
+     0,
+     240
+    ],
+    "cor": "#90A4AE",
+    "pai": "piv_sat",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "sat_cel0",
+    "forma": "caixa",
+    "tam": [
+     0.012,
+     0.012,
+     0.004
+    ],
+    "pos": [
+     -0.011,
+     0.006,
+     0.022
+    ],
+    "cor": "#1A237E",
+    "pai": "piv_sat",
+    "oculta": true
+   },
+   {
+    "id": "sat_cel1",
+    "forma": "caixa",
+    "tam": [
+     0.012,
+     0.012,
+     0.004
+    ],
+    "pos": [
+     0.011,
+     0.006,
+     0.022
+    ],
+    "cor": "#1A237E",
+    "pai": "piv_sat",
+    "oculta": true
+   },
+   {
+    "id": "sat_cel2",
+    "forma": "caixa",
+    "tam": [
+     0.012,
+     0.012,
+     0.004
+    ],
+    "pos": [
+     0.0,
+     -0.012,
+     0.022
+    ],
+    "cor": "#1A237E",
+    "pai": "piv_sat",
+    "oculta": true
+   }
+  ]
+ },
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "tito",
+   "texto": "Esse painel não tem NENHUMA peça que se mexe. Então como ele gira esse ventilador?",
+   "tom": "surpreso"
+  },
+  {
+   "id": "f2",
+   "quem": "tito",
+   "texto": "Em 1839, em Paris, um rapaz de 19 anos mergulhou duas placas de metal num LÍQUIDO.",
+   "off": true
+  },
+  {
+   "id": "f3",
+   "quem": "tito",
+   "texto": "Quando a luz do sol batia numa delas, o ponteiro do medidor MEXIA. A luz estava fazendo corrente!",
+   "off": true
+  },
+  {
+   "id": "f4",
+   "quem": "tito",
+   "texto": "MAS era uma corrente tão fraquinha que não acendia NADA.",
+   "off": true,
+   "tom": "tenso",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f5",
+   "quem": "tito",
+   "texto": "Hoje, o painel é feito de SILÍCIO, um material que vem da areia."
+  },
+  {
+   "id": "f6",
+   "quem": "tito",
+   "texto": "Cada pacotinho de luz que bate no silício solta um ELÉTRON, uma bolinha de eletricidade."
+  },
+  {
+   "id": "f7",
+   "quem": "tito",
+   "texto": "MAS o elétron solto volta para o lugar dele num piscar de olhos, e não sobra corrente NENHUMA.",
+   "tom": "tenso",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f8",
+   "quem": "tito",
+   "texto": "Por isso a placa tem DUAS camadas: uma com elétron sobrando, e outra com elétron faltando."
+  },
+  {
+   "id": "f9",
+   "quem": "tito",
+   "texto": "Na divisa entre elas nasce uma LADEIRA invisível, que empurra o elétron solto para cima e não deixa ele voltar."
+  },
+  {
+   "id": "f10",
+   "quem": "tito",
+   "texto": "Lá em cima, fios de PRATA bem fininhos recolhem os elétrons, que dão a volta pelo fio e acendem a lâmpada.",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f11",
+   "quem": "tito",
+   "texto": "SÓ QUE o silício brilha que nem espelho, e devolve um monte de luz para o CÉU."
+  },
+  {
+   "id": "f12",
+   "quem": "tito",
+   "texto": "Então ele ganha uma película que segura a luz. É ela que deixa o painel AZUL escuro.",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f13",
+   "quem": "tito",
+   "texto": "Isso se chama efeito FOTOVOLTAICO: luz que vira voltagem, a força da eletricidade.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f14",
+   "quem": "tito",
+   "texto": "E repara: em 1958, um satélite com painel solar foi para o espaço. E está lá em cima até HOJE.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f15",
+   "quem": "tito",
+   "texto": "Nenhuma peça se mexe no painel. Quem anda são só os ELÉTRONS.",
+   "tom": "feliz"
+  }
+ ],
+ "chamada": {
+  "pergunta": "E o celular? Como a sua voz chega do outro lado?",
+  "texto": "Comenta",
+  "destaque": "CELULAR"
+ },
+ "postagem": {
+  "titulo": "Como funciona o painel solar? Nada se mexe lá dentro",
+  "descricao": "Como funciona o painel solar por dentro: a luz solta elétrons no silício, as duas camadas empurram a eletricidade para um lado só, os fios de prata recolhem a corrente e a película antirreflexo deixa o painel azul. E o rapaz de 19 anos que descobriu o efeito fotovoltaico em 1839.",
+  "hashtags": [
+   "comofunciona",
+   "painelsolar",
+   "energiasolar",
+   "fisica",
+   "curiosidades"
+  ],
+  "comentario": "Eu achava que o painel era azul só de enfeite. Você sabia que é a película que segura a luz?",
+  "capa": "f1:mexe"
+ },
+ "cenas": [
+  {
+   "id": "gancho",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "desconfiado"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "painel",
+     "em": "pedestal"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "piv_fan",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": 2.5,
+     "de": "inicio",
+     "ate": "f1:fim+1"
+    },
+    {
+     "peca": "fio_a",
+     "faz": "fluxo",
+     "tipo": "eletricidade",
+     "quantidade": 5,
+     "velocidade": 1.2,
+     "intensidade": 0.25,
+     "de": "inicio",
+     "ate": "f1:fim+1"
+    },
+    {
+     "peca": "sol_a",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 4,
+     "velocidade": 0.9,
+     "intensidade": 0.35,
+     "de": "inicio",
+     "ate": "f1:fim+1",
+     "caminho": [
+      [
+       0,
+       0,
+       0
+      ],
+      [
+       -0.01,
+       -0.23,
+       -0.01
+      ]
+     ]
+    },
+    {
+     "peca": "sol_a",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 4,
+     "velocidade": 0.9,
+     "intensidade": 0.35,
+     "de": "inicio",
+     "ate": "f1:fim+1",
+     "caminho": [
+      [
+       0,
+       0,
+       0
+      ],
+      [
+       0.05,
+       -0.25,
+       0.0
+      ]
+     ]
+    },
+    {
+     "peca": "sol_a",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 4,
+     "velocidade": 0.9,
+     "intensidade": 0.35,
+     "de": "inicio",
+     "ate": "f1:fim+1",
+     "caminho": [
+      [
+       0,
+       0,
+       0
+      ],
+      [
+       0.1,
+       -0.27,
+       0.01
+      ]
+     ]
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "desconfiado",
+     "de": "inicio"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f1:entao-0.4"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "motor_v",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f1:ventilador"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "camera": [
+      0.28,
+      1.42,
+      1.2
+     ],
+     "alvo": [
+      0.0,
+      1.23,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f1:entao",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    }
+   ],
+   "sons": [
+    {
+     "de": "inicio",
+     "som": "sopro",
+     "volume": 0.35
+    },
+    {
+     "de": "f1:nenhuma",
+     "som": "clique",
+     "volume": 0.5
+    }
+   ],
+   "efeitos": [],
+   "rotulos": [
+    {
+     "alvo": "painel",
+     "texto": "Painel",
+     "de": "f1:painel",
+     "ate": "f1:entao"
+    }
+   ]
+  },
+  {
+   "id": "paris_1839",
+   "cenario": "oficina",
+   "ambiente": "oficina",
+   "filtro": "sepia",
+   "de": "f2",
+   "personagens": {
+    "becquerel": {
+     "em": [
+      -1.0,
+      -0.3
+     ],
+     "olhando": [
+      1.2,
+      2.2,
+      3.0
+     ],
+     "expressao": "serio"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "experimento_1839",
+     "em": [
+      0,
+      -1.05
+     ],
+     "alt": 0.92,
+     "escala": 1.5
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f2:1839",
+     "ate": "f2:placas",
+     "grande": "1839",
+     "pequeno": "Edmond Becquerel · Paris, França"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "placa_b",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 5,
+     "velocidade": 0.9,
+     "intensidade": 0.35,
+     "de": "f3:luz",
+     "ate": "f4:fim+0.5",
+     "caminho": [
+      [
+       -0.12,
+       0.22,
+       0.16
+      ],
+      [
+       0.0,
+       0.03,
+       0.0
+      ]
+     ]
+    },
+    {
+     "peca": "placa_b",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 5,
+     "velocidade": 0.9,
+     "intensidade": 0.35,
+     "de": "f3:luz",
+     "ate": "f4:fim+0.5",
+     "caminho": [
+      [
+       -0.12,
+       0.22,
+       0.16
+      ],
+      [
+       0.0,
+       -0.01,
+       0.0
+      ]
+     ]
+    },
+    {
+     "peca": "piv_ponteiro",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": -35,
+     "de": "f3:mexia",
+     "ate": "f3:mexia+0.35"
+    },
+    {
+     "peca": "piv_ponteiro",
+     "faz": "tremer",
+     "intensidade": 0.3,
+     "de": "f3:mexia+0.35",
+     "ate": "f3:corrente"
+    },
+    {
+     "peca": "lampadinha",
+     "faz": "pulsar",
+     "intensidade": 0.25,
+     "de": "f4:fraquinha",
+     "ate": "f4:fraquinha+0.25"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "becquerel",
+     "faz": "virar",
+     "para": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "olhar": "camera",
+     "expressao": "determinado",
+     "de": "f2"
+    },
+    {
+     "quem": "becquerel",
+     "faz": "estender_mao",
+     "para": "experimento_1839",
+     "olhar": "experimento_1839",
+     "expressao": "determinado",
+     "de": "f2:placas"
+    },
+    {
+     "quem": "becquerel",
+     "olhar": "experimento_1839",
+     "expressao": "serio",
+     "de": "f3"
+    },
+    {
+     "quem": "becquerel",
+     "faz": "virar",
+     "para": [
+      0.3,
+      2.85,
+      2.2
+     ],
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f3:corrente-0.4"
+    },
+    {
+     "quem": "becquerel",
+     "olhar": "experimento_1839",
+     "expressao": "serio",
+     "de": "f4"
+    },
+    {
+     "quem": "becquerel",
+     "faz": "virar",
+     "para": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "olhar": "camera",
+     "expressao": "triste",
+     "de": "f4:nada-0.4"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "camera": [
+      0.9,
+      2.85,
+      3.9
+     ],
+     "alvo": [
+      -0.4,
+      2.2,
+      -0.7
+     ],
+     "movimento": "arco",
+     "intensidade": 0.6,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f2:rapaz",
+     "tipo": "medio",
+     "camera": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "alvo": "becquerel",
+     "movimento": "travelling",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f2:placas",
+     "tipo": "detalhe",
+     "camera": [
+      0.12,
+      1.2,
+      -0.25
+     ],
+     "alvo": [
+      0.01,
+      1.02,
+      -1.05
+     ],
+     "movimento": "arco",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f3:ponteiro",
+     "tipo": "detalhe",
+     "camera": [
+      0.12,
+      1.04,
+      -0.62
+     ],
+     "alvo": [
+      0.05,
+      0.99,
+      -1.05
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f3:corrente",
+     "tipo": "close",
+     "camera": [
+      0.3,
+      2.85,
+      2.2
+     ],
+     "alvo": "becquerel",
+     "movimento": "travelling",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f4",
+     "tipo": "detalhe",
+     "camera": [
+      0.2,
+      1.08,
+      -0.55
+     ],
+     "alvo": [
+      0.07,
+      1.0,
+      -1.03
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f4:nada",
+     "tipo": "medio",
+     "camera": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "alvo": "becquerel",
+     "movimento": "zoom_rapido"
+    }
+   ],
+   "sons": [
+    {
+     "de": "f2:1839",
+     "som": "pop",
+     "volume": 0.6
+    },
+    {
+     "de": "f2:liquido",
+     "som": "agua",
+     "volume": 0.5
+    },
+    {
+     "de": "f3:luz",
+     "som": "ding",
+     "volume": 0.5
+    },
+    {
+     "de": "f3:mexia",
+     "som": "clique",
+     "volume": 0.8
+    },
+    {
+     "de": "f4:mas",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f4:nada",
+     "som": "impacto",
+     "volume": 0.7
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f2:placas",
+     "ate": "f2:fim",
+     "efeito": "circular",
+     "alvo": "placa_b"
+    },
+    {
+     "de": "f3:mexia",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f4:nada",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f4:nada",
+     "ate": "f4:nada+0.4",
+     "efeito": "tremor",
+     "intensidade": 0.4
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "placa_b",
+     "texto": "Placas",
+     "de": "f2:placas",
+     "ate": "f2:fim"
+    },
+    {
+     "alvo": "ponteiro",
+     "texto": "Medidor",
+     "de": "f3:ponteiro",
+     "ate": "f3:corrente"
+    },
+    {
+     "alvo": "lampadinha",
+     "texto": "Apagada",
+     "de": "f4:acendia",
+     "ate": "f4:fim"
+    }
+   ]
+  },
+  {
+   "id": "por_dentro",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "de": "f5",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "feliz"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "celula",
+     "em": "pedestal"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f13:fotovoltaico",
+     "ate": "f13:fim+0.3",
+     "grande": "FOTO­VOLTAICO",
+     "pequeno": "luz que vira voltagem"
+    },
+    {
+     "de": "f14:espaco",
+     "ate": "f14:fim+0.3",
+     "grande": "# ANOS",
+     "contar": [
+      0,
+      68
+     ],
+     "pequeno": "no espaço: o satélite Vanguard 1, de 1958"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "sol",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.35,
+     "de": "inicio",
+     "ate": "f15:fim+1",
+     "caminho": [
+      [
+       0,
+       0,
+       0
+      ],
+      [
+       0.05,
+       -0.19,
+       0.08
+      ]
+     ]
+    },
+    {
+     "peca": "sol",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.35,
+     "de": "inicio",
+     "ate": "f15:fim+1",
+     "caminho": [
+      [
+       0,
+       0,
+       0
+      ],
+      [
+       0.13,
+       -0.19,
+       0.04
+      ]
+     ]
+    },
+    {
+     "peca": "sol",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.35,
+     "de": "inicio",
+     "ate": "f15:fim+1",
+     "caminho": [
+      [
+       0,
+       0,
+       0
+      ],
+      [
+       0.19,
+       -0.19,
+       0.0
+      ]
+     ]
+    },
+    {
+     "peca": "e1",
+     "faz": "aparecer",
+     "de": "f6:eletron"
+    },
+    {
+     "peca": "e1",
+     "faz": "mover",
+     "desloc": [
+      0.035,
+      0.045,
+      0
+     ],
+     "de": "f6:bolinha",
+     "ate": "f6:bolinha+0.5"
+    },
+    {
+     "peca": "e1",
+     "faz": "mover",
+     "desloc": [
+      -0.035,
+      -0.045,
+      0
+     ],
+     "de": "f7:volta",
+     "ate": "f7:volta+0.3"
+    },
+    {
+     "peca": "e1",
+     "faz": "sumir",
+     "de": "f7:piscar"
+    },
+    {
+     "peca": "silicio",
+     "faz": "sumir",
+     "de": "f8:duas"
+    },
+    {
+     "peca": "camada_p",
+     "faz": "aparecer",
+     "de": "f8:duas"
+    },
+    {
+     "peca": "camada_n",
+     "faz": "aparecer",
+     "de": "f8:duas"
+    },
+    {
+     "peca": "sobra0",
+     "faz": "aparecer",
+     "de": "f8:sobrando+0.0"
+    },
+    {
+     "peca": "sobra1",
+     "faz": "aparecer",
+     "de": "f8:sobrando+0.12"
+    },
+    {
+     "peca": "sobra2",
+     "faz": "aparecer",
+     "de": "f8:sobrando+0.24"
+    },
+    {
+     "peca": "sobra3",
+     "faz": "aparecer",
+     "de": "f8:sobrando+0.36"
+    },
+    {
+     "peca": "falta0",
+     "faz": "aparecer",
+     "de": "f8:faltando+0.0"
+    },
+    {
+     "peca": "falta1",
+     "faz": "aparecer",
+     "de": "f8:faltando+0.12"
+    },
+    {
+     "peca": "falta2",
+     "faz": "aparecer",
+     "de": "f8:faltando+0.24"
+    },
+    {
+     "peca": "falta3",
+     "faz": "aparecer",
+     "de": "f8:faltando+0.36"
+    },
+    {
+     "peca": "divisa",
+     "faz": "aparecer",
+     "de": "f9:divisa"
+    },
+    {
+     "peca": "divisa",
+     "faz": "pulsar",
+     "intensidade": 0.8,
+     "de": "f9:divisa",
+     "ate": "f9:fim"
+    },
+    {
+     "peca": "seta0",
+     "faz": "aparecer",
+     "de": "f9:ladeira+0.0"
+    },
+    {
+     "peca": "seta1",
+     "faz": "aparecer",
+     "de": "f9:ladeira+0.12"
+    },
+    {
+     "peca": "seta2",
+     "faz": "aparecer",
+     "de": "f9:ladeira+0.24"
+    },
+    {
+     "peca": "e2",
+     "faz": "aparecer",
+     "de": "f9:empurra"
+    },
+    {
+     "peca": "e2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.1,
+      0
+     ],
+     "de": "f9:cima",
+     "ate": "f9:cima+0.5"
+    },
+    {
+     "peca": "e2",
+     "faz": "tremer",
+     "intensidade": 0.3,
+     "de": "f9:voltar",
+     "ate": "f9:fim+0.2"
+    },
+    {
+     "peca": "seta0",
+     "faz": "sumir",
+     "de": "f10"
+    },
+    {
+     "peca": "seta1",
+     "faz": "sumir",
+     "de": "f10"
+    },
+    {
+     "peca": "seta2",
+     "faz": "sumir",
+     "de": "f10"
+    },
+    {
+     "peca": "dedo0",
+     "faz": "aparecer",
+     "de": "f10:prata+0.0"
+    },
+    {
+     "peca": "dedo1",
+     "faz": "aparecer",
+     "de": "f10:prata+0.1"
+    },
+    {
+     "peca": "dedo2",
+     "faz": "aparecer",
+     "de": "f10:prata+0.2"
+    },
+    {
+     "peca": "dedo3",
+     "faz": "aparecer",
+     "de": "f10:prata+0.3"
+    },
+    {
+     "peca": "fio",
+     "faz": "fluxo",
+     "tipo": "eletricidade",
+     "quantidade": 8,
+     "velocidade": 0.9,
+     "intensidade": 0.25,
+     "de": "f10:volta",
+     "ate": "f15:fim+1"
+    },
+    {
+     "peca": "lampada",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "f10:acendem",
+     "ate": "f15:fim+1"
+    },
+    {
+     "peca": "sol",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.35,
+     "de": "f11:brilha",
+     "ate": "f12:segura",
+     "caminho": [
+      [
+       0.13,
+       -0.19,
+       0.04
+      ],
+      [
+       0.35,
+       0.22,
+       0.18
+      ]
+     ]
+    },
+    {
+     "peca": "sol",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.35,
+     "de": "f11:brilha",
+     "ate": "f12:segura",
+     "caminho": [
+      [
+       0.19,
+       -0.19,
+       0.0
+      ],
+      [
+       0.41,
+       0.2,
+       0.1
+      ]
+     ]
+    },
+    {
+     "peca": "pelicula",
+     "faz": "aparecer",
+     "de": "f12:pelicula"
+    },
+    {
+     "peca": "piv_sat",
+     "faz": "aparecer",
+     "de": "f14:satelite"
+    },
+    {
+     "peca": "sat_corpo",
+     "faz": "aparecer",
+     "de": "f14:satelite"
+    },
+    {
+     "peca": "antena0",
+     "faz": "aparecer",
+     "de": "f14:satelite"
+    },
+    {
+     "peca": "antena1",
+     "faz": "aparecer",
+     "de": "f14:satelite"
+    },
+    {
+     "peca": "antena2",
+     "faz": "aparecer",
+     "de": "f14:satelite"
+    },
+    {
+     "peca": "antena3",
+     "faz": "aparecer",
+     "de": "f14:satelite"
+    },
+    {
+     "peca": "sat_cel0",
+     "faz": "aparecer",
+     "de": "f14:satelite"
+    },
+    {
+     "peca": "sat_cel1",
+     "faz": "aparecer",
+     "de": "f14:satelite"
+    },
+    {
+     "peca": "sat_cel2",
+     "faz": "aparecer",
+     "de": "f14:satelite"
+    },
+    {
+     "peca": "piv_sat",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 0.25,
+     "de": "f14:satelite",
+     "ate": "f15:fim+1"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "silicio",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f5:silicio"
+    },
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f6"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "nervoso",
+     "de": "f7"
+    },
+    {
+     "quem": "tito",
+     "faz": "maos_na_cabeca",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f7:nenhuma"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "camada_n",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f8:duas+0.2"
+    },
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "determinado",
+     "de": "f9"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "lampada",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f10:acendem"
+    },
+    {
+     "quem": "tito",
+     "faz": "bracos_cruzados",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f11"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "pelicula",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f12:pelicula+0.2"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f13"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "sat_corpo",
+     "olhar": "maquete",
+     "expressao": "surpreso",
+     "de": "f14:satelite+0.3"
+    },
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f14:fim+0.1"
+    },
+    {
+     "quem": "tito",
+     "faz": "acenar",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f15:eletrons"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "camera": [
+      0.12,
+      1.6,
+      0.95
+     ],
+     "alvo": [
+      0.04,
+      1.2,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.5,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f5:areia",
+     "tipo": "detalhe",
+     "camera": [
+      0.02,
+      1.2,
+      1.0
+     ],
+     "alvo": [
+      0.02,
+      1.135,
+      0.0
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f6:bate",
+     "tipo": "detalhe",
+     "camera": [
+      0.08,
+      1.36,
+      0.85
+     ],
+     "alvo": [
+      0.0,
+      1.18,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f7:volta",
+     "tipo": "detalhe",
+     "camera": [
+      0.08,
+      1.36,
+      0.85
+     ],
+     "alvo": [
+      0.0,
+      1.18,
+      0.0
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f7:nenhuma",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "dolly_zoom",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f8",
+     "tipo": "detalhe",
+     "camera": [
+      0.02,
+      1.2,
+      1.0
+     ],
+     "alvo": [
+      0.02,
+      1.135,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f9:divisa",
+     "tipo": "detalhe",
+     "camera": [
+      0.1,
+      1.19,
+      0.62
+     ],
+     "alvo": [
+      0.03,
+      1.15,
+      0.0
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f10",
+     "tipo": "detalhe",
+     "camera": [
+      0.08,
+      1.55,
+      0.7
+     ],
+     "alvo": [
+      0.0,
+      1.2,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3,
+     "transicao": "zoom"
+    },
+    {
+     "de": "f10:volta",
+     "tipo": "detalhe",
+     "camera": [
+      0.4,
+      1.42,
+      0.85
+     ],
+     "alvo": [
+      0.15,
+      1.29,
+      0.0
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f11",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f11:espelho",
+     "tipo": "detalhe",
+     "camera": [
+      -0.3,
+      1.42,
+      0.95
+     ],
+     "alvo": [
+      0.02,
+      1.36,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f12:pelicula",
+     "tipo": "detalhe",
+     "camera": [
+      0.08,
+      1.55,
+      0.7
+     ],
+     "alvo": [
+      0.0,
+      1.2,
+      0.0
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f12:azul",
+     "tipo": "aberto",
+     "camera": [
+      0.12,
+      1.6,
+      0.95
+     ],
+     "alvo": [
+      0.04,
+      1.2,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": -0.4
+    },
+    {
+     "de": "f13",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f14",
+     "tipo": "detalhe",
+     "camera": [
+      0.0,
+      1.5,
+      0.85
+     ],
+     "alvo": [
+      -0.03,
+      1.42,
+      -0.03
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f14:espaco",
+     "tipo": "aberto",
+     "camera": [
+      0.12,
+      1.6,
+      0.95
+     ],
+     "alvo": [
+      0.04,
+      1.2,
+      0.0
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f15",
+     "tipo": "aberto",
+     "camera": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "alvo": [
+      -0.9,
+      1.5,
+      0.3
+     ],
+     "movimento": "arco",
+     "intensidade": 0.5,
+     "transicao": "chicote"
+    }
+   ],
+   "sons": [
+    {
+     "de": "f5:silicio",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f6:eletron",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f6:bolinha",
+     "som": "bip",
+     "volume": 0.5
+    },
+    {
+     "de": "f7",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f7:volta",
+     "som": "clique",
+     "volume": 0.7
+    },
+    {
+     "de": "f7:nenhuma",
+     "som": "impacto",
+     "volume": 0.9
+    },
+    {
+     "de": "f8:duas",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f8:sobrando",
+     "som": "pop",
+     "volume": 0.5
+    },
+    {
+     "de": "f8:faltando",
+     "som": "pop",
+     "volume": 0.5
+    },
+    {
+     "de": "f9:ladeira",
+     "som": "ding",
+     "volume": 0.7
+    },
+    {
+     "de": "f9:cima",
+     "som": "zap",
+     "volume": 0.5
+    },
+    {
+     "de": "f10:prata",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f10:acendem",
+     "som": "ding",
+     "volume": 0.8
+    },
+    {
+     "de": "f11",
+     "som": "tensao_sobe",
+     "volume": 0.4
+    },
+    {
+     "de": "f11:ceu",
+     "som": "chiado",
+     "volume": 0.4
+    },
+    {
+     "de": "f12:pelicula",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f12:azul",
+     "som": "ding",
+     "volume": 0.7
+    },
+    {
+     "de": "f13:fotovoltaico",
+     "som": "ding",
+     "volume": 0.6
+    },
+    {
+     "de": "f14:satelite",
+     "som": "bip",
+     "volume": 0.6
+    },
+    {
+     "de": "f15:eletrons",
+     "som": "zap",
+     "volume": 0.5
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f5:silicio",
+     "ate": "f5:fim",
+     "efeito": "circular",
+     "alvo": "silicio"
+    },
+    {
+     "de": "f6:eletron",
+     "ate": "f6:fim",
+     "efeito": "circular",
+     "alvo": "e1"
+    },
+    {
+     "de": "f7:nenhuma",
+     "ate": "f7:fim+0.3",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f9:empurra",
+     "ate": "f9:fim",
+     "efeito": "circular",
+     "alvo": "e2"
+    },
+    {
+     "de": "f10:prata",
+     "ate": "f10:volta",
+     "efeito": "circular",
+     "alvo": "dedo2"
+    },
+    {
+     "de": "f11:ceu",
+     "efeito": "zoom_soco"
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "silicio",
+     "texto": "Silício",
+     "de": "f5:silicio",
+     "ate": "f5:fim"
+    },
+    {
+     "alvo": "e1",
+     "texto": "Elétron",
+     "de": "f6:eletron",
+     "ate": "f6:fim"
+    },
+    {
+     "alvo": "camada_n",
+     "texto": "Sobrando",
+     "de": "f8:sobrando",
+     "ate": "f8:fim+0.2"
+    },
+    {
+     "alvo": "camada_p",
+     "texto": "Faltando",
+     "de": "f8:faltando",
+     "ate": "f8:fim+0.2"
+    },
+    {
+     "alvo": "divisa",
+     "texto": "Ladeira",
+     "de": "f9:ladeira",
+     "ate": "f9:fim"
+    },
+    {
+     "alvo": "dedo3",
+     "texto": "Prata",
+     "de": "f10:prata",
+     "ate": "f10:volta"
+    },
+    {
+     "alvo": "lampada",
+     "texto": "Acesa",
+     "de": "f10:acendem",
+     "ate": "f10:fim+0.2"
+    },
+    {
+     "alvo": "pelicula",
+     "texto": "Película",
+     "de": "f12:pelicula",
+     "ate": "f12:azul"
+    },
+    {
+     "alvo": "sat_corpo",
+     "texto": "Satélite",
+     "de": "f14:satelite",
+     "ate": "f14:espaco"
+    }
+   ]
+  }
+ ]
+}
