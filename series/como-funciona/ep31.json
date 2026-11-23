@@ -951,7 +951,7 @@
    "curiosidades"
   ],
   "comentario": "Eu não fazia ideia de que a luz daqui de casa vinha de água caindo. Você sabia?",
-  "capa": "f9:quebra+0.2"
+  "capa": "f9:quebra+0.5"
  },
  "cenas": [
   {
@@ -1441,17 +1441,17 @@
     {
      "peca": "casa0",
      "faz": "aparecer",
-     "de": "f11:cidade"
+     "de": "f11:longe"
     },
     {
      "peca": "casa1",
      "faz": "aparecer",
-     "de": "f11:cidade"
+     "de": "f11:longe"
     },
     {
      "peca": "casa2",
      "faz": "aparecer",
-     "de": "f11:cidade"
+     "de": "f11:longe"
     },
     {
      "peca": "fio_ger",
@@ -1785,14 +1785,14 @@
      "de": "f6",
      "tipo": "detalhe",
      "camera": [
-      -0.08,
-      1.2,
-      0.6
+      -0.15,
+      1.34,
+      0.95
      ],
      "alvo": [
       0.0,
       1.12,
-      -0.08
+      -0.1
      ],
      "movimento": "aproximar",
      "transicao": "varrer"
@@ -1815,21 +1815,6 @@
     },
     {
      "de": "f7",
-     "tipo": "detalhe",
-     "camera": [
-      0.52,
-      1.2,
-      0.38
-     ],
-     "alvo": [
-      0.12,
-      1.09,
-      0.15
-     ],
-     "movimento": "fixo"
-    },
-    {
-     "de": "f7:nada",
      "tipo": "medio",
      "alvo": "tito",
      "lado": "tres_quartos_direita",
@@ -1908,6 +1893,15 @@
      "transicao": "varrer"
     },
     {
+     "de": "f10:caixa",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": 0.3,
+     "transicao": "chicote"
+    },
+    {
      "de": "f10:quase",
      "tipo": "detalhe",
      "camera": [
@@ -1932,7 +1926,7 @@
      "transicao": "chicote"
     },
     {
-     "de": "f11:cidade",
+     "de": "f11:longe",
      "tipo": "detalhe",
      "camera": [
       0.36,
@@ -2177,7 +2171,7 @@
     },
     {
      "de": "f10:turbina",
-     "ate": "f10:quase",
+     "ate": "f10:caixa",
      "efeito": "circular",
      "alvo": "casa_forca"
     },
@@ -2239,7 +2233,7 @@
      "alvo": "casa_forca",
      "texto": "Turbina",
      "de": "f10:turbina",
-     "ate": "f10:quase"
+     "ate": "f10:caixa"
     },
     {
      "alvo": "linha",
