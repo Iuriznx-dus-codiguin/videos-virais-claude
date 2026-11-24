@@ -215,9 +215,12 @@ window.__autoRun = (cfg) => {
       const aviso = caixas.find((e) => /Ainda estamos verificando/.test(e.innerText));
       if (aviso) { const ok = qa('ytcp-button, button', aviso).filter(visivel).find((b) => /^Ok$/i.test(b.innerText.trim())); if (ok) { ok.click(); st.avisos.push('aviso de verificação em andamento: ok'); } }
       // upload rápido: em vez de "Vídeo programado" aparece "Processando vídeo ... ficará público em <data> às <hora>" (só tem Fechar)
-      // só a confirmação DESTE vídeo (a do anterior pode ter ficado aberta atrás)
-      return caixas.find((e) => /Vídeo programado|Processando vídeo[\s\S]*ficará público em/.test(e.innerText) && e.innerText.includes(cfg.titulo.slice(0, 30)));
-    }, 90000, 'confirmação');
+      // só a confirmação DESTE vídeo (a do anterior pode ter ficado aberta atrás). Com o envio ainda subindo aparece
+      // "Enviando vídeo ... ficará público em <data> ... Envio em N%": espera terminar (PC com upload lento leva minutos)
+      const c = caixas.find((e) => /Vídeo programado|ficará público em/.test(e.innerText) && e.innerText.includes(cfg.titulo.slice(0, 30)));
+      if (c && /Enviando vídeo/.test(c.innerText)) { st.envio = (c.innerText.match(/Envio em \d+%/) || [''])[0]; return null; }
+      return c;
+    }, 25 * 60000, 'confirmação');
     st.confirmacao = conf.innerText.replace(/\s+/g, ' ').slice(0, 200);
     st.link = ((conf.querySelector('a[href*="shorts/"], a[href*="youtu"]') || {}).href || st.link || '').replace(/\?.*$/, '');
     st.ok = st.confirmacao.includes(esperado);
