@@ -1,43 +1,15 @@
 // Praia da ilha (a mesma do teste aprovado): areia, mar em volta, coqueiros e a mata ao fundo.
+// 24/11: mar com ondas e brilho do sol (detalhes.tsx), capim na beira da mata, conchas e
+// pedrinhas na areia e gaivotas de dia. As marcas não mudam.
 import React from 'react';
 import * as THREE from 'three';
-import {Malha, anel, basico, cilindro, memo, toon, toro} from '../base';
-import {RAMPA_GLSL, clima} from '../luzes';
+import {Malha, basico, cilindro, toon, toro} from '../base';
+import {clima} from '../luzes';
+import {Capim, Gaivotas, Mar, Pedrinhas} from '../detalhes';
 import {Arbusto, Nuvem, Palmeira, Pedra} from '../natureza';
 
 export const NIVEL_MAR = -0.12;
 const RAIO = 13;
-
-const marMat = (nomeClima: string, perto: boolean) =>
-	memo(`mar${nomeClima}${perto}`, () => {
-		const c = clima(nomeClima).mar;
-		return new THREE.ShaderMaterial({
-			fog: false,
-			uniforms: {
-				cores: {value: (perto ? c : [c[1], c[1], c[2], c[3], c[4]]).map((x) => new THREE.Color(x))},
-				paradas: {value: [0, 0.3, 0.62, 0.86, 1]},
-				dist: {value: new THREE.Vector2(12, 250)},
-			},
-			vertexShader: /* glsl */ `
-				varying vec3 vMundo;
-				void main() {
-					vec4 m = modelMatrix * vec4(position, 1.0);
-					vMundo = m.xyz;
-					gl_Position = projectionMatrix * viewMatrix * m;
-				}`,
-			fragmentShader: /* glsl */ `
-				uniform vec3 cores[5];
-				uniform float paradas[5];
-				uniform vec2 dist;
-				varying vec3 vMundo;
-				${RAMPA_GLSL}
-				void main() {
-					float f = clamp((distance(vMundo, cameraPosition) - dist.x) / (dist.y - dist.x), 0.0, 1.0);
-					gl_FragColor = vec4(rampa(cores, paradas, f), 1.0);
-					#include <colorspace_fragment>
-				}`,
-		});
-	});
 
 const PALMEIRAS = [
 	{x: -6.5, z: -5.5, altura: 7.5, inclinacao: 0.35, direcao: 0.6},
@@ -81,8 +53,9 @@ const Estatico: React.FC<{nomeClima: string}> = React.memo(({nomeClima}) => {
 		<>
 			<Malha g={cilindro(RAIO + 0.4, RAIO, 0.8, 72)} m={toon('#F2D19B')} position={[0, -0.4, 0]} contorno={0.06} sombra={false} />
 			<Malha g={cilindro(RAIO + 1.5, RAIO + 1.0, 0.5, 72)} m={toon('#D9B07A')} position={[0, -0.35, 0]} sombra={false} />
-			<mesh geometry={anel(RAIO + 1.0, RAIO + 6.0)} material={marMat(nomeClima, true)} position={[0, NIVEL_MAR + 0.002, 0]} />
-			<mesh geometry={anel(RAIO + 6.0, 320, 128)} material={marMat(nomeClima, false)} position={[0, NIVEL_MAR, 0]} />
+			<Capim chave="praia-mata" regiao={{retangulo: [-11.5, -12, 11.5, -5.8]}} quantos={130} cor="#5E8F3A" semente={41} />
+			<Pedrinhas chave="praia-conchas" regiao={{retangulo: [-11, -5, 11, 11.5]}} quantos={70} cor="#F7E7CF" semente={42} tamanho={0.06} />
+			<Pedrinhas chave="praia-pedras" regiao={{retangulo: [-11, -5, 11, 11.5]}} quantos={40} cor="#B39A7A" semente={43} />
 			<Nuvem pos={[-60, 34, -170]} escala={9} cor={c.nuvem} />
 			<Nuvem pos={[35, 46, -190]} escala={12} cor={c.nuvem} />
 			<Nuvem pos={[80, 26, -150]} escala={7} cor={c.nuvem} />
@@ -109,7 +82,9 @@ const Espuma: React.FC<{t: number}> = ({t}) => {
 
 export const Praia: React.FC<{t: number; nomeClima: string}> = ({t, nomeClima}) => (
 	<>
+		<Mar nomeClima={nomeClima} t={t} y={NIVEL_MAR} raio={320} raioInterno={RAIO + 1.0} />
 		<Estatico nomeClima={nomeClima} />
 		<Espuma t={t} />
+		{nomeClima.startsWith('noite') ? null : <Gaivotas t={t} centro={[-3, 12, 22]} quantas={4} raio={12} />}
 	</>
 );

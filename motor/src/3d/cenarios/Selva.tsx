@@ -1,11 +1,16 @@
 // Selva: clareira com fogueira no meio, trilha vindo de +z, árvores altas em volta, o arbusto
 // enorme com um buraco escuro (toca do gigante) e a árvore gigante de raízes altas.
+// 24/11: capim no chão da mata (fora da clareira e da trilha) e pedrinhas em volta da fogueira.
 import React from 'react';
 import {aleatorio} from '../../util/mat';
 import {Malha, basico, cilindro, decalque, disco, esfera, ico, toon, toro} from '../base';
+import {Capim, Pedrinhas} from '../detalhes';
 import {Arbusto, Arvore, Cipo, Samambaia} from '../natureza';
 
 const CORES = {tronco: '#5E4433', folha: '#2F6B3A', folhaEscura: '#1F4D2C'};
+
+/** A trilha (de +z até a clareira) fica sem capim. */
+const TRILHA: [number, number, number][] = Array.from({length: 7}, (_, i) => [-0.2 - (i / 6) * 1.0, 3 + (i / 6) * 11, 1.5]);
 
 /** Fica fora da clareira, da trilha, da toca e da árvore das raízes? */
 const livre = (x: number, z: number) => {
@@ -119,6 +124,8 @@ const Estatico: React.FC = React.memo(() => (
 		{ARVORES.slice(0, 14).map((a, i) => (
 			<Cipo key={i} x={a.x + 0.9} z={a.z + 0.5} topo={a.altura - 0.5} comp={3 + (i % 4)} cor="#4A6B2E" folha="#3F8A45" />
 		))}
+		<Capim chave="selva" regiao={{centro: [0, 0], rMin: 4.4, rMax: 18, evitar: TRILHA}} quantos={260} cor="#3F7A35" semente={61} />
+		<Pedrinhas chave="selva" regiao={{centro: [0, 0], rMin: 2.0, rMax: 4.0}} quantos={45} cor="#7A6A55" semente={62} />
 		<Arbusto x={-1.9} z={2.4} r={0.9} cor="#2A5E36" giro={0.4} />
 		<Arbusto x={-2.9} z={3.1} r={1.0} cor="#1F4D2C" giro={1.2} />
 		<Toca />
