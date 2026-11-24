@@ -58,6 +58,16 @@ const aplicarMovimento = (q: {pos: V3; alvo: V3; fov: number}, plano: PlanoTempo
 			fov = (2 * Math.atan(Math.tan((fov * Math.PI) / 360) / z) * 180) / Math.PI;
 			break;
 		}
+		case undefined: {
+			// sem movimento pedido: a câmera nunca fica morta (24/11, pedido do Iuri). Aproxima devagar
+			// (~7% da distância no plano) e desliza um pouco de lado, como um operador de câmera.
+			const u2 = clamp((t - plano.ini) / Math.max(dur, 1.2));
+			const ap = 0.07 * (1 - (1 - u2) ** 2);
+			const lado = norm3([-rel[2], 0, rel[0]]);
+			const sinal = Math.round(plano.ini * 7) % 2 === 0 ? 1 : -1;
+			pos = add3(lerp3(pos, alvo, ap), mul3(lado, sinal * 0.035 * dist * u2));
+			break;
+		}
 		default:
 			break;
 	}
@@ -398,7 +408,8 @@ const cameraBase = (cena: CenaTempo, sim: SimulacaoCena, t: number, aspecto: num
 		}
 
 		if (plano.camera !== undefined) {
-			const c = Array.isArray(plano.camera) ? plano.camera : (pontoDoCenario(cena, plano.camera) ?? [0, 2, 10]);
+			const bruta = plano.camera as number[] | string;
+			const c: V3 = Array.isArray(bruta) ? (bruta.length === 2 ? [bruta[0], 1.7, bruta[1]] : (bruta as V3)) : (pontoDoCenario(cena, bruta) ?? [0, 2, 10]);
 			const ap = plano.movimento === 'aproximar' ? 0.3 * k * u : plano.movimento === 'afastar' ? -0.2 * k * u : 0;
 			return {pos: lerp3(c, aT, ap), alvo: aT, fov: ELEV[tipo]?.fov ?? ENQ[tipo]?.fov ?? 45};
 		}
@@ -512,8 +523,16 @@ const cameraBase = (cena: CenaTempo, sim: SimulacaoCena, t: number, aspecto: num
 	}
 	let {pos, alvo, fov} = aplicarTransicao(aplicarMovimento(quadro(t, desvio), plano, t), plano, t);
 
-	// câmera na mão: respiração leve, mais forte no tremer
-	const mao = plano.movimento === 'tremer' ? 0.05 * k : 0.012;
+	// pouso no corte: o plano novo entra ~6% mais fechado e assenta em 0,4 s (dá impacto a cada corte;
+	// não vale nas transições, que já têm o próprio movimento)
+	if ((!plano.transicao || plano.transicao === 'corte') && plano.movimento !== 'fixo' && plano.fim - plano.ini >= 0.9) {
+		const e = clamp((t - plano.ini) / 0.4);
+		const z = 1 + 0.065 * (1 - e) ** 3;
+		fov = (2 * Math.atan(Math.tan((fov * Math.PI) / 360) / z) * 180) / Math.PI;
+	}
+
+	// câmera na mão: respiração leve (um pouco mais solta nos planos de perto), mais forte no tremer
+	const mao = plano.movimento === 'tremer' ? 0.05 * k : plano.movimento === 'fixo' ? 0.004 : tipo === 'close' || tipo === 'medio' || tipo === 'ombro' ? 0.02 : 0.015;
 	const dist = len3(sub3(pos, alvo));
 	const amp = mao * Math.sqrt(Math.max(dist, 0.5));
 	pos = add3(pos, [amp * ruido(t * 0.9, 1), amp * 0.7 * ruido(t * 0.8, 2), amp * ruido(t * 0.7, 3)]);

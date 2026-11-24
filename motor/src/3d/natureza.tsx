@@ -4,6 +4,7 @@ import React from 'react';
 import * as THREE from 'three';
 import {V3, aleatorio, lerp} from '../util/mat';
 import {Contorno, Malha, basico, cilindro, esfera, geo, ico, toon} from './base';
+import {Rocha} from './detalhes';
 
 export interface DefPalmeira {
 	x: number;
@@ -75,9 +76,10 @@ export const Arbusto: React.FC<{x: number; z: number; r: number; cor: string; gi
 	</group>
 ));
 
+/** Pedra irregular (24/11: era um icosaedro liso; agora rocha facetada com topo mais claro). */
 export const Pedra: React.FC<{x: number; z: number; r: number; cor?: string; giro?: number; achatada?: number; y?: number}> = React.memo(
 	({x, z, r, cor = '#8C8A99', giro = 0, achatada = 0.6, y = 0}) => (
-		<Malha g={ico(r, 0)} m={toon(cor)} position={[x, y + r * 0.2, z]} scale={[1, achatada, 0.85]} rotation={[0, giro, 0]} contorno={0.04} />
+		<Rocha pos={[x, y + r * 0.15, z]} escala={[r, r * achatada * 1.25, r * 0.85]} giro={giro} variacao={Math.round(Math.abs(giro * 7 + x))} cor={cor} contorno={0.03} />
 	),
 );
 

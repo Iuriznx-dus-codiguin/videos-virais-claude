@@ -43,6 +43,17 @@ Pedido do Iuri em 11/11: mais profissional e que prenda até o fim. Estes recurs
 - **Câmera colada em objeto pequeno não funciona** (monitor, interfone, livro viram mancha sem detalhe): mostre o objeto com uma inserção e deixe o 3D para pessoas e lugares.
 - **Vulto e suspeito:** cabeça escura (`cabeca` bem escura na bíblia) não recebe a luz do rosto e vira silhueta; o acessório `capuz` cobre a cabeça e deixa o rosto no escuro.
 
+## Visual de filme (24/11)
+Pedido do Iuri em 24/11: mais bonito e bem acabado, câmera melhor, mais chamativo. O motor agora faz sozinho, em todo plano, sem campo nenhum: fundo desfocado com foco em quem está no plano (close, médio, ombro, detalhe), névoa de distância nos lugares abertos, nuvens andando no céu, brilho em luz acesa (lâmpada, fogo, sol), cor de cinema por clima, contorno de luz nos personagens e textura em chão e paredes. O que muda na hora de escrever as cenas:
+- **Fundo atrás de todo close:** close e médio precisam de cenário atrás do rosto (parede com móveis, mar, árvores, outra pessoa), nunca só céu liso. Escolha a câmera e o lado (`npm run catalogo -- <cenario>`) que põem o cenário atrás; ele sai borrado e o rosto salta. Em plano aberto, deixe alguém ou um objeto perto da câmera quando der, para ter camadas.
+- **`desfoque` no plano** (multiplica o padrão): `0` quando o fundo precisa ser lido (a porta que abriu atrás, o vulto no fundo, a pista plantada); `1.5` para isolar o rosto num momento forte. Sem o campo, o padrão já serve.
+- **Aberto bonito a cada ~10 s:** alterne close colado com um plano aberto do cenário inteiro (céu, mar, prédio). É o plano que mostra a produção e dá respiro antes do próximo susto.
+- **Câmera viva por padrão:** plano sem `movimento` aproxima devagar com uma deriva de lado, e o corte seco entra 6% mais fechado e assenta. `fixo` agora é parada de verdade: só quando o quadro parado é a ideia (susto que congela, câmera de vigilância). As regras de movimento abaixo continuam valendo.
+- **Legenda e rótulo fogem dos rostos sozinhos** (sobem ou descem conforme onde estão as cabeças). Não precisa trocar de plano por isso; `altura` no rótulo ainda manda quando você quiser.
+- **Roupa de cada personagem:** `visual.roupa` na bíblia (veja a `nova-minisserie`). Série antiga sem roupa continua funcionando.
+- **Noite com luz que se vê:** cena noturna perto de fogueira, lampião, janela acesa ou poste, com `filtro: "frio"` ou nenhum. `dramatico` e `noir` à noite já saem mais leves para não escurecer o quadro.
+- **Ponto sempre com 3 números** `[x, y, z]` (gesto `para`, `virar`, alvo de câmera, `circular`). O motor agora salva 2 números pondo a altura do peito, mas a altura certa é sua.
+
 ## Regras de uso
 - **Movimento em todo plano**, escolhido pelo que a fala pede: `travelling` em quem anda ou conversa, `arco` nas aberturas e chegadas, `zoom_rapido` em susto e ênfase, `dolly_zoom` uma vez só (a virada), `aproximar` em suspense lento, `fixo` só em plano curto de reação. Nunca mais de dois planos seguidos com o mesmo movimento.
 - **Transições:** pelo menos 3 estilos diferentes por parte, mas no máximo 1 a cada 3 cortes (o resto é corte seco, que dá ritmo). Nunca dois `chicote` seguidos. Em diálogo de dois personagens, corte seco entre eles; transição só quando muda o lugar, o tempo ou o assunto.
@@ -57,7 +68,7 @@ Pedido do Iuri em 11/11: mais profissional e que prenda até o fim. Estes recurs
 - Som: `chicote`, `zoom` e `varrer` já tocam um whoosh sozinhos; não ponha outro.
 
 ## Conferir antes do render
-Além do enquadramento, gere quadros nos cortes com transição (0,1 s antes e depois), no meio de cada `letreiro`, `circular` e `destacar` e no plano do `dolly_zoom`: `npm run quadro -- <serie> <parte> <segundos...> --escala=0.4`. O círculo precisa abraçar o objeto certo e o letreiro não pode tampar o rosto de quem fala (ele fica a 30% da altura; mude com `"altura"`, de 0 = topo a 1 = pé, ou ponha num plano aberto).
+Além do enquadramento, gere quadros nos cortes com transição (0,1 s antes e depois), no meio de cada `letreiro`, `circular` e `destacar` e no plano do `dolly_zoom`: `npm run quadro -- <serie> <parte> <segundos...> --escala=0.4`. Em cada close, confira que há cenário borrado atrás (não céu liso) e que o `desfoque` não escondeu a pista. O círculo precisa abraçar o objeto certo e o letreiro não pode tampar o rosto de quem fala (ele fica a 30% da altura; mude com `"altura"`, de 0 = topo a 1 = pé, ou ponha num plano aberto).
 
 ## Exemplo (parte 6 do Voo 818 refeita em 01/11)
 Gancho com `arco` sobre o acampamento → `zoom` para o geral seguinte → `chicote` para o close do Davi → "sabe DEMAIS" com `zoom_rapido` + `linhas` → `chicote` para o farol com `circular` nele. "Aí eu vou" com `dolly_zoom` no Otávio, `letreiro` "2 DIAS". Cena da jangada entra com `desfoque` + `letreiro` "FIM DA TARDE" e `filtro: "quente"`. Virada: `zoom` no close do Davi, `barras` até o fim, `dolly_zoom` + `destacar` no Otávio, `linhas` em "MECÂNICO".

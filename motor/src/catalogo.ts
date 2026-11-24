@@ -352,7 +352,7 @@ export const MOVIMENTOS = [
 
 /** O que cada movimento de câmera faz (o catálogo mostra; vale para qualquer tipo de plano, inclusive com "camera"). */
 export const USO_MOVIMENTOS: Record<(typeof MOVIMENTOS)[number], string> = {
-	fixo: 'parada (só a respiração de câmera na mão)',
+	fixo: 'parada de verdade (desliga a aproximação lenta automática e o pouso no corte); sem "movimento" o plano já aproxima devagar sozinho',
 	aproximar: 'chega mais perto devagar',
 	afastar: 'se afasta devagar',
 	acompanhar: 'segue o alvo que anda',

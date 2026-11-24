@@ -7,7 +7,7 @@ import {MEDIDAS, Pose} from '../animacao/pose';
 import {EstadoPalito, pernasDaPose} from '../animacao/simulacao';
 import type {Acessorio, VisualPersonagem} from '../roteiro/tipos';
 import {clamp} from '../util/mat';
-import {Contorno, Malha, basico, brilho, caixa, capsula, cilindro, cone, esfera, geo, haloMat, toon, toro} from './base';
+import {Contorno, Malha, basico, brilho, caixa, capsula, cilindro, cone, esfera, geo, haloMat, toonPersonagem as toon, toro} from './base';
 import {clima} from './luzes';
 
 const RC = MEDIDAS.raioCabeca;
@@ -69,11 +69,18 @@ const Rosto: React.FC<{p: Pose; v: VisualPersonagem}> = ({p, v}) => {
 					<React.Fragment key={lado}>
 						<group {...olho}>
 							<mesh geometry={esfera(1, 18, 12)} material={preto} scale={[sx, sy, 0.035]} />
+							{/* brilho do olho: um grande em cima e um pequeno embaixo (olho "vivo") */}
 							<mesh
-								geometry={esfera(0.021, 10, 7)}
+								geometry={esfera(0.028, 12, 8)}
 								material={basico('#FFFFFF')}
-								position={[0.022 * p.olho, 0.032 * p.olho * p.olhoY, 0.03]}
+								position={[0.024 * p.olho, 0.034 * p.olho * p.olhoY, 0.03]}
 								visible={p.palpebra > 0.55 && p.olhoY > 0.6}
+							/>
+							<mesh
+								geometry={esfera(0.011, 8, 6)}
+								material={basico('#FFFFFF')}
+								position={[-0.022 * p.olho, -0.036 * p.olho * p.olhoY, 0.03]}
+								visible={p.palpebra > 0.7 && p.olhoY > 0.75}
 							/>
 							{v.cilios
 								? [0, 1].map((k) => (
@@ -119,7 +126,34 @@ const Bandana: React.FC<{cor: string; p: Pose}> = ({cor, p}) => (
 	</group>
 );
 
-const capaCabelo = () => geo('capaCabelo', () => new THREE.SphereGeometry(RC * 1.05, 32, 16, 0, Math.PI * 2, 0, Math.PI * 0.3));
+/**
+ * Capa do cabelo com a borda da frente recortada em mechas pontudas (franja desenhada), em vez de
+ * uma linha reta de capacete; atrás e dos lados a borda desce um pouco mais.
+ */
+const capaCabelo = () =>
+	geo('capaCabelo2', () => {
+		const g = new THREE.SphereGeometry(RC * 1.05, 64, 18, 0, Math.PI * 2, 0, Math.PI * 0.34);
+		const p = g.getAttribute('position') as THREE.BufferAttribute;
+		const v = new THREE.Vector3();
+		const R = RC * 1.05;
+		for (let i = 0; i < p.count; i++) {
+			v.fromBufferAttribute(p, i);
+			const teta = Math.acos(Math.min(1, Math.max(-1, v.y / R)));
+			const fi = Math.atan2(v.x, v.z); // 0 = testa
+			// quanto da borda este vértice é (0 no alto, 1 na borda)
+			const borda = Math.min(1, Math.max(0, (teta - Math.PI * 0.22) / (Math.PI * 0.12)));
+			if (borda <= 0) continue;
+			const frente = Math.max(0, Math.cos(fi));
+			const dente = Math.abs(((fi / (Math.PI * 2)) * 18 + 0.5) % 1 - 0.5) * 2; // 0 na ponta, 1 no vão
+			// na frente: pontas descem e vãos sobem; atrás: a borda desce para cobrir a nuca
+			const novo = teta + borda * (Math.PI * (0.05 * (1 - frente) + frente * (0.045 - 0.075 * dente)));
+			const r = Math.sqrt(v.x * v.x + v.z * v.z) || 1;
+			const rr = R * Math.sin(novo);
+			p.setXYZ(i, (v.x / r) * rr, R * Math.cos(novo), (v.z / r) * rr);
+		}
+		g.computeVertexNormals();
+		return g;
+	});
 const nucaCabelo = () => geo('nucaCabelo', () => new THREE.SphereGeometry(RC * 1.05, 24, 14, Math.PI * 0.95, Math.PI * 1.1, Math.PI * 0.25, Math.PI * 0.5));
 
 const RaboDeCavalo: React.FC<{cor: string; p: Pose}> = ({cor, p}) => {
@@ -149,6 +183,13 @@ const CabeloCurto: React.FC<{cor: string}> = ({cor}) => (
 	<group position={[0, MEDIDAS.pescocoCabeca, 0]}>
 		<Malha g={capaCabelo()} m={toon(cor)} contorno={0.015} />
 		<Malha g={nucaCabelo()} m={toon(cor)} contorno={0.015} />
+		{/* topete de lado: duas mechas por cima da testa */}
+		{[
+			[-0.1, 0.33, 0.22, 0.6, 0.13],
+			[0.09, 0.35, 0.2, -0.35, 0.11],
+		].map(([x, y, z, r, larg], k) => (
+			<Malha key={k} g={esfera(1, 12, 8)} m={toon(cor)} position={[x, y, z]} rotation={[0.55, 0, r]} scale={[larg, 0.06, 0.08]} contorno={0.01} sombra={false} />
+		))}
 	</group>
 );
 
@@ -176,7 +217,10 @@ const Capuz: React.FC<{cor: string}> = ({cor}) => {
 const capuzes = new Map<string, THREE.Material>();
 const memoCapuz = (cor: string) => {
 	if (!capuzes.has(cor)) {
-		const m = toon(cor).clone();
+		const orig = toon(cor);
+		const m = orig.clone();
+		m.onBeforeCompile = orig.onBeforeCompile;
+		m.customProgramCacheKey = orig.customProgramCacheKey;
 		m.side = THREE.DoubleSide;
 		capuzes.set(cor, m);
 	}
@@ -312,6 +356,67 @@ const AcessoriosTronco: React.FC<{lista: Acessorio[]}> = ({lista}) => (
 	</>
 );
 
+/**
+ * Roupa por cima do corpo palito (opcional na bíblia, `visual.roupa`): o tronco ganha volume e a
+ * roupa ganha peças que identificam o personagem de longe. vestido (corpete e saia rodada), terno
+ * (paletó com lapela, camisa e gravata), camisa (gola e botões, manga curta), jaleco (avental longo
+ * de médico/cientista), uniforme (camisa com bolsos e cinto). `cor` é a roupa, `cor2` o detalhe
+ * (gravata, faixa, cinto), `sapato` a cor do sapato.
+ */
+const Roupa: React.FC<{r: NonNullable<VisualPersonagem['roupa']>}> = ({r}) => {
+	const C = MEDIDAS.coluna;
+	const cor = r.cor ?? '#2B3550';
+	const cor2 = r.cor2 ?? (r.tipo === 'terno' ? '#B3243A' : '#F4F1EA');
+	const m = toon(cor);
+	const tronco = r.tipo === 'vestido' ? 0.1 : 0.118;
+	return (
+		<>
+			{/* tronco com volume (do quadril ao peito) */}
+			<Malha g={capsula(tronco, C * 0.66, 14)} m={m} position={[0, C * 0.5, 0]} contorno={0.018} />
+			{r.tipo === 'vestido' ? (
+				<>
+					{/* saia rodada até o joelho, com barra de outra cor */}
+					<Malha g={cilindro(0.38, 0.13, 0.78, 22)} m={m} position={[0, -0.25, 0]} contorno={0.018} />
+					<Malha g={cilindro(0.39, 0.385, 0.06, 22)} m={toon(cor2)} position={[0, -0.62, 0]} sombra={false} />
+					<Malha g={toro(0.11, 0.025, 18, 6)} m={toon(cor2)} position={[0, C * 0.2, 0]} sombra={false} />
+				</>
+			) : null}
+			{r.tipo === 'jaleco' ? <Malha g={cilindro(0.2, 0.13, 0.6, 18)} m={m} position={[0, -0.16, 0]} contorno={0.016} /> : null}
+			{r.tipo === 'terno' || r.tipo === 'jaleco' ? (
+				<>
+					{/* camisa em V no peito, lapelas e (no terno) gravata */}
+					<Malha g={cone(0.075, 0.3, 3)} m={toon('#F4F1EA')} position={[0, C * 0.8, 0.098]} rotation={[0.12 + Math.PI, 0, 0]} scale={[1, 1, 0.35]} sombra={false} />
+					{[1, -1].map((l) => (
+						<Malha key={l} g={caixa(0.045, 0.3, 0.02)} m={toon(escurecer(cor, 0.78))} position={[0.055 * l, C * 0.78, 0.112]} rotation={[0.1, 0, -0.32 * l]} sombra={false} />
+					))}
+					{r.tipo === 'terno' ? (
+						<>
+							<Malha g={caixa(0.04, 0.22, 0.02)} m={toon(cor2)} position={[0, C * 0.72, 0.118]} rotation={[0.08, 0, 0]} sombra={false} />
+							<Malha g={cone(0.03, 0.05, 4)} m={toon(cor2)} position={[0, C * 0.6, 0.12]} rotation={[Math.PI, 0, 0]} sombra={false} />
+						</>
+					) : null}
+				</>
+			) : null}
+			{r.tipo === 'camisa' || r.tipo === 'uniforme' ? (
+				<>
+					<Malha g={toro(0.085, 0.022, 18, 6)} m={toon(cor2)} position={[0, C * 0.95, 0.01]} rotation={[0.25, 0, 0]} sombra={false} />
+					{[0.82, 0.68, 0.54].map((k) => (
+						<mesh key={k} geometry={esfera(0.012, 6, 5)} material={toon(cor2)} position={[0, C * k, 0.12]} />
+					))}
+				</>
+			) : null}
+			{r.tipo === 'uniforme' ? (
+				<>
+					{[1, -1].map((l) => (
+						<Malha key={l} g={caixa(0.07, 0.06, 0.02)} m={toon(escurecer(cor, 0.8))} position={[0.06 * l, C * 0.78, 0.112]} sombra={false} />
+					))}
+					<Malha g={cilindro(0.122, 0.122, 0.04, 16)} m={toon(r.cor2 ?? '#2A2A2A')} position={[0, C * 0.2, 0]} sombra={false} />
+				</>
+			) : null}
+		</>
+	);
+};
+
 /** Objeto na mão direita, alinhado ao antebraço (a ponta do antebraço fica em y = -0.44). */
 const ObjetoNaMao: React.FC<{tipo: string; luz: number}> = ({tipo, luz}) => {
 	if (tipo === 'lanca')
@@ -404,11 +509,16 @@ export const Boneco: React.FC<{e: EstadoPalito; nomeClima: string}> = ({e, nomeC
 	const cabeca = toon(v.cabeca, escuro ? undefined : clima(nomeClima).reforcoRosto);
 	const pernas = pernasDaPose(p);
 	const acess = v.acessorios ?? [];
+	// sapato um pouco mais escuro que o corpo (ou da cor pedida na roupa): o pé deixa de sumir no chão
+	const sapato = toon(v.roupa?.sapato ?? escurecer(v.corpo, 0.55));
+	const roupa = v.roupa;
+	const manga = roupa && roupa.tipo !== 'vestido' ? toon(roupa.cor ?? '#2B3550') : null;
 	return (
 		<group position={[e.x, 0, e.z]} rotation={[0, e.yaw, 0]} scale={e.escala}>
 			<group position={[p.lateral, p.altQuadril, p.avanco]}>
 				<group rotation={[p.incl, p.torcer, p.rolar, 'XZY']}>
 					<Malha g={capsula(0.075, MEDIDAS.coluna)} m={corpo} position={[0, MEDIDAS.coluna / 2, 0]} contorno={0.022} />
+					{roupa ? <Roupa r={roupa} /> : null}
 					<AcessoriosTronco lista={acess} />
 					<group position={[0, MEDIDAS.coluna, 0]} rotation={[p.cabPitch, p.cabYaw, p.cabRoll, 'YXZ']}>
 						<Malha g={esfera(RC, 32, 21)} m={cabeca} position={[0, MEDIDAS.pescocoCabeca, 0]} contorno={0.024} />
@@ -423,8 +533,10 @@ export const Boneco: React.FC<{e: EstadoPalito; nomeClima: string}> = ({e, nomeC
 						return (
 							<group key={lado} position={[MEDIDAS.ombroX * lado, MEDIDAS.ombroY, 0]} rotation={[-ombro, giro, lado * abre, 'XZY']}>
 								<Malha g={capsula(0.062, MEDIDAS.braco)} m={corpo} position={[0, -MEDIDAS.braco / 2, 0]} contorno={0.02} />
+								{manga ? <Malha g={capsula(0.082, MEDIDAS.braco * (roupa?.tipo === 'camisa' ? 0.45 : 0.92))} m={manga} position={[0, -MEDIDAS.braco * (roupa?.tipo === 'camisa' ? 0.24 : 0.48), 0]} contorno={0.016} /> : null}
 								<group position={[0, -MEDIDAS.braco, 0]} rotation={[-cotov, 0, 0]}>
 									<Malha g={capsula(0.058, 0.42)} m={corpo} position={[0, -0.21, 0]} contorno={0.02} />
+									{manga && roupa?.tipo !== 'camisa' ? <Malha g={capsula(0.077, 0.3)} m={manga} position={[0, -0.15, 0]} contorno={0.016} /> : null}
 									<Malha g={esfera(0.085, 14, 9)} m={corpo} position={[0, -MEDIDAS.antebraco, 0]} contorno={0.02} />
 									{lado === -1 && e.segura ? <ObjetoNaMao tipo={e.segura} luz={e.luz} /> : null}
 								</group>
@@ -441,7 +553,7 @@ export const Boneco: React.FC<{e: EstadoPalito; nomeClima: string}> = ({e, nomeC
 								<Malha g={capsula(0.064, MEDIDAS.canela)} m={corpo} position={[0, -MEDIDAS.canela / 2, 0]} contorno={0.02} />
 								{acess.some((a) => a.tipo === 'tala' && (a.lado === 'E' ? 1 : -1) === lado) ? <Tala /> : null}
 								<group position={[0, -MEDIDAS.canela, 0]} rotation={[ang.coxa - ang.joelho, 0, -lado * p.abrePernas]}>
-									<Malha g={esfera(1, 14, 9)} m={corpo} position={[0, 0.005, 0.06]} scale={[0.085, 0.07, 0.16]} contorno={0.02} />
+									<Malha g={esfera(1, 14, 9)} m={sapato} position={[0, 0.005, 0.06]} scale={[0.085, 0.07, 0.16]} contorno={0.02} />
 								</group>
 							</group>
 						</group>

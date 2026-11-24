@@ -19,6 +19,8 @@ Decisão do Iuri (11/11): **toda minissérie tem episódio final com o desfecho 
 4. **A verdade** (o segredo, o culpado, o motivo) decidida antes da parte 1, e revelada aos poucos: um passo do mistério por parte. A última parte **fecha tudo**: quem fez, por quê, o que acontece com cada personagem, e uma última imagem que dá a sensação de fim (não um novo mistério). A chamada da última parte é uma pergunta de opinião sobre a história inteira, com COMENTA "FIM".
 5. Só cenários que existem: `cd motor && npm run catalogo` (e `npm run catalogo -- <cenario>` para marcas, pontos e câmeras). Se a história pedir um lugar que não existe, adapte a história a um cenário pronto e avise o Iuri no resumo que um cenário novo melhoraria (é trabalho de código, numa sessão normal, não na rotina das 3h).
 6. 3 a 6 personagens, cada um com um traço visual que se reconhece de longe (bigode, capacete, capuz, cor do corpo) e uma voz diferente. Narrador fixo da série.
+7. Cada personagem com `visual.roupa` (24/11): `{"tipo": "vestido" | "terno" | "camisa" | "jaleco" | "uniforme", "cor", "cor2", "sapato"}` (`cor2` = gravata, barra do vestido, gola ou cinto). Silhuetas diferentes entre si (não dois vestidos da mesma cor, não dois ternos iguais) e roupa que conta quem a pessoa é: noiva de vestido claro, médica de jaleco, segurança de uniforme, rico de terno escuro com gravata de cor. A cor do corpo palito continua em `corpo`.
+8. Prefira os cenários mais detalhados do catálogo para a parte com mais cenas, e anote nas `regras.md` quais câmeras põem o cenário atrás do close (o motor desfoca o fundo, então close contra céu liso fica vazio).
 
 ## 2. Arquivos (`motor/public/series/<serie>/`, nome curto com hífen, ex.: `apartamento-0`)
 Modelo completo: `public/series/apartamento-0/`.

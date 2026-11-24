@@ -19,6 +19,7 @@ if (!so) {
 	console.log('\nAÇÕES (campo "faz"):');
 	for (const [n, a] of Object.entries(ACOES)) console.log(`  ${n} [${a.tipo}${a.duracao ? ` ${a.duracao}s` : ''}]: ${a.descricao}`);
 	console.log(`\nPLANOS: ${PLANOS.join(', ')}\nLADOS: ${LADOS.join(', ')}`);
+	console.log('VISUAL DE FILME (automático em todo plano desde 24/11): fundo desfocado no close/médio/detalhe com foco no alvo ("desfoque" no plano: 0 = tudo nítido, 1.5 = fundo mais borrado), névoa de distância nos lugares abertos, nuvens, brilho em luz acesa, cor por clima, contraluz nos personagens; sem "movimento" a câmera aproxima devagar; corte seco entra 6% mais fechado e assenta; legenda e etiqueta fogem dos rostos');
 	console.log('MOVIMENTOS (campo "movimento" do plano; "intensidade" aumenta ou diminui):');
 	for (const m of MOVIMENTOS) console.log(`  ${m}: ${USO_MOVIMENTOS[m]}`);
 	console.log('TRANSIÇÕES (campo "transicao" do plano: como ele entra; o plano anterior sai no mesmo estilo):');
@@ -47,4 +48,5 @@ if (!so) {
 	console.log('  ANIMAÇÕES (campo "animacoes" da cena):');
 	for (const [n, d] of Object.entries(ANIMACOES_PECA)) console.log(`    ${n}: ${d}`);
 	console.log(`  ACESSÓRIOS de personagem: ${ACESSORIOS.join(', ')} (curativo: cruz de esparadrapo na bochecha; tala: perna imobilizada, "lado": "D" ou "E", e quem tem tala manca com "mancar")`);
+	console.log('  ROUPA de personagem ("roupa" no visual da bíblia): {"tipo": vestido | terno | camisa | jaleco | uniforme, "cor", "cor2" (gravata, barra, gola, cinto), "sapato"}; o corpo palito continua com a cor de "corpo"');
 }
