@@ -85,6 +85,16 @@ O Instagram só agenda Reels pelo computador no Meta Business Suite (perfil prof
 7. Marque: `npm run fila -- marcar <nome> --instagram=programado`. O link do Reel só existe depois que sai; ele entra no `conferir`.
 8. Trocar um agendado: Planejador → o post → Excluir (o Iuri aprovou a troca no lote) → programe o novo no mesmo horário.
 
+### O que funcionou (24/11/2026)
+- **Conta:** o seletor do topo mostra o perfil (ex.: historiasdestick). Cada fluxo tem o seu perfil (`instagram.conta` do lote); se o perfil não aparece no seletor, peça ao Iuri para ligá-lo ao Business Suite.
+- **Vídeo:** o CSP do Business Suite bloqueia o `fetch` do raw. Plano B: injete um botão fixo na página (`window.open('https://example.com/', 'ajudante')` no `onclick`), clique nele com o `computer` (precisa ser clique de verdade). Na aba ajudante, defina `__baixar(url, nome, tipo)` que baixa e faz `opener.postMessage({tipo:'arquivo', nome, arquivo: new File([blob], nome, {type})}, 'https://business.facebook.com')`, e um ouvinte para `{tipo:'baixar', url, nome}` vindo do Business Suite. No Business Suite, um ouvinte guarda os arquivos em `window.__recebidos[nome]`. Mude o título da ajudante para "Ajudante de envio (não feche)".
+- **Lista:** suba `publicacao/fila/instagram.json` no ramo dados (nome, conta, video, legenda, data `mm/dd/aaaa`, h, m, ap) e mande a ajudante buscar e repassar (`{tipo:'lista'}`).
+- **Composer:** o botão "Create reel" (na página de agendados também) abre o composer sem recarregar a página, então as variáveis continuam. Antes de clicar em "Add Video", sobrescreva `HTMLInputElement.prototype.click`: se for `type=file` e houver `window.__arquivoPendente`, ponha o arquivo com DataTransfer e dispare `input`/`change` em vez de abrir o seletor. O envio termina quando o texto mostra `1080 x 1920 100%`.
+- **Legenda:** foque `[contenteditable=true][aria-label^="Describe your reel"]` e dispare um `ClipboardEvent('paste')` com o texto em `text/plain`.
+- **Agendar:** "Next" duas vezes até "Scheduling options"; clique no "Schedule" de cima (o de baixo é o botão final). Data e hora com ações reais do `computer`: clique três vezes no campo da data, clique no dia no calendário; clique no spinbutton das horas e digite, por exemplo, `300P` (vira 3:00 PM); confira os minutos (clique e digite `00`). Leia os campos (`aria-valuenow`) antes do botão final. **Não** use setter de valor + Enter sintético na data: a aba travou.
+- **Fim:** "Schedule" de baixo → aviso "Your reel has been published according to your chosen publishing options" e a página vai para os agendados.
+- **Abas em segundo plano** têm timers muito lentos: não rode a fila do YouTube e o Business Suite ao mesmo tempo esperando velocidade; deixe a aba que está trabalhando em primeiro plano.
+
 ## Comentário fixado (depois que o vídeo sai)
 - **YouTube:** abra o link do Short, painel de comentários, publique o `comentario` do lote, depois ⋮ no seu comentário → **Fixar**.
 - **Instagram:** abra o Reel no perfil (instagram.com), comente o `comentario`. Se o menu do comentário tiver **Fixar**, fixe; se não tiver na versão web, deixe só comentado e diga ao Iuri para fixar pelo app.
