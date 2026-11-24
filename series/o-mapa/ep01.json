@@ -139,9 +139,9 @@
             9.2
           ],
           "olhando": [
-            0.7,
-            0.3,
-            8.4
+            -1.0,
+            1.5,
+            9.8
           ],
           "expressao": "surpreso"
         },
@@ -151,11 +151,12 @@
             9.8
           ],
           "olhando": [
-            0.7,
-            0.2,
-            8.4
+            2.6,
+            1.8,
+            9.2
           ],
-          "expressao": "surpreso"
+          "expressao": "surpreso",
+          "segura": "garrafa"
         },
         "jonas": {
           "em": [
@@ -172,21 +173,6 @@
       },
       "acoes": [
         {
-          "quem": "duda",
-          "faz": "agachar",
-          "de": "inicio"
-        },
-        {
-          "quem": "duda",
-          "faz": "pegar",
-          "item": "garrafa",
-          "para": [
-            0.7,
-            8.4
-          ],
-          "de": "f1:garrafa"
-        },
-        {
           "quem": "nico",
           "expressao": "feliz",
           "de": "f2"
@@ -198,14 +184,6 @@
         }
       ],
       "objetos": [
-        {
-          "tipo": "garrafa",
-          "em": [
-            0.7,
-            8.4
-          ],
-          "some": "f1:garrafa+0.5"
-        },
         {
           "tipo": "barco",
           "em": [
@@ -232,13 +210,13 @@
           "tipo": "drone",
           "alvo": [
             0.0,
-            0.8,
+            1.2,
             10.4
           ],
           "camera": [
-            0.6,
-            13.0,
-            -1.5
+            1.0,
+            7.5,
+            -0.5
           ],
           "movimento": "descer",
           "intensidade": 0.3
@@ -248,9 +226,9 @@
           "tipo": "close",
           "alvo": "duda",
           "camera": [
-            1.43,
-            1.8,
-            10.71
+            1.57,
+            2.1,
+            10.92
           ],
           "movimento": "aproximar",
           "intensidade": 0.25
@@ -832,11 +810,11 @@
         },
         "jonas": {
           "em": [
-            -2.4,
-            12.2
+            -3.2,
+            9.4
           ],
           "olhando": [
-            -2.3,
+            -4.2,
             1.6,
             4.2
           ],
@@ -852,7 +830,7 @@
             6.2
           ],
           "de": "f11",
-          "velocidade": 0.6
+          "velocidade": 0.9
         },
         {
           "quem": "jonas",
@@ -862,7 +840,7 @@
             2.4,
             9.5
           ],
-          "de": "f12:Jonas"
+          "de": "f11:bicicleta"
         },
         {
           "quem": "nico",
@@ -1101,14 +1079,14 @@
           "de": "f16",
           "tipo": "aberto",
           "alvo": [
-            -0.8,
-            1.8,
-            9.2
+            -0.6,
+            2.2,
+            8.4
           ],
           "camera": [
-            -7.8,
-            3.4,
-            14.5
+            0.4,
+            6.5,
+            26.0
           ],
           "movimento": "travelling",
           "intensidade": 0.25,
