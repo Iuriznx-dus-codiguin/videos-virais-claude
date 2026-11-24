@@ -1,0 +1,3830 @@
+{
+ "serie": "como-funciona",
+ "parte": 33,
+ "titulo": "Por onde passa a sua voz numa ligação de celular?",
+ "musica": "curiosidade",
+ "personagens": {
+  "cooper": {
+   "nome": "Martin Cooper",
+   "papel": "engenheiro da Motorola; em 3 de abril de 1973, em Nova York, fez a primeira ligação de um celular de mão (o protótipo DynaTAC, de mais de 1 kg) para Joel Engel, do Bell Labs, o concorrente; não fala",
+   "visual": {
+    "altura": 1,
+    "corpo": "#37474F",
+    "cabeca": "#F5D6C0",
+    "olhos": "redondos",
+    "sobrancelhas": "finas",
+    "acessorios": [
+     {
+      "tipo": "cabelo_curto",
+      "cor": "#3E2723"
+     },
+     {
+      "tipo": "lenco",
+      "cor": "#B71C1C"
+     }
+    ]
+   }
+  }
+ },
+ "modelos": {
+  "ligacao": [
+   {
+    "id": "chao_g",
+    "forma": "caixa",
+    "tam": [
+     0.38,
+     0.02,
+     0.24
+    ],
+    "pos": [
+     0,
+     0.01,
+     0
+    ],
+    "cor": "#9CCC65"
+   },
+   {
+    "id": "casa_g0",
+    "forma": "caixa",
+    "tam": [
+     0.034,
+     0.027200000000000002,
+     0.034
+    ],
+    "pos": [
+     -0.06,
+     0.0336,
+     -0.07
+    ],
+    "cor": "#FFF3E0"
+   },
+   {
+    "id": "casa_g0_teto",
+    "forma": "cone",
+    "tam": [
+     0.0272,
+     0.0204
+    ],
+    "pos": [
+     0,
+     0.0238,
+     0
+    ],
+    "cor": "#D84315",
+    "pai": "casa_g0"
+   },
+   {
+    "id": "casa_g1",
+    "forma": "caixa",
+    "tam": [
+     0.034,
+     0.027200000000000002,
+     0.034
+    ],
+    "pos": [
+     0.0,
+     0.0336,
+     -0.09
+    ],
+    "cor": "#E3F2FD"
+   },
+   {
+    "id": "casa_g1_teto",
+    "forma": "cone",
+    "tam": [
+     0.0272,
+     0.0204
+    ],
+    "pos": [
+     0,
+     0.0238,
+     0
+    ],
+    "cor": "#D84315",
+    "pai": "casa_g1"
+   },
+   {
+    "id": "casa_g2",
+    "forma": "caixa",
+    "tam": [
+     0.034,
+     0.027200000000000002,
+     0.034
+    ],
+    "pos": [
+     0.06,
+     0.0336,
+     -0.07
+    ],
+    "cor": "#F3E5F5"
+   },
+   {
+    "id": "casa_g2_teto",
+    "forma": "cone",
+    "tam": [
+     0.0272,
+     0.0204
+    ],
+    "pos": [
+     0,
+     0.0238,
+     0
+    ],
+    "cor": "#D84315",
+    "pai": "casa_g2"
+   },
+   {
+    "id": "tel_voce",
+    "forma": "caixa",
+    "tam": [
+     0.045,
+     0.09,
+     0.009
+    ],
+    "pos": [
+     -0.11,
+     0.065,
+     0.05
+    ],
+    "cor": "#263238"
+   },
+   {
+    "id": "tel_voce_tela",
+    "forma": "caixa",
+    "tam": [
+     0.0342,
+     0.0702,
+     0.002
+    ],
+    "pos": [
+     0,
+     0.002,
+     0.0055
+    ],
+    "cor": "#4FC3F7",
+    "pai": "tel_voce",
+    "sem_contorno": true
+   },
+   {
+    "id": "tel_amigo",
+    "forma": "caixa",
+    "tam": [
+     0.045,
+     0.09,
+     0.009
+    ],
+    "pos": [
+     0.11,
+     0.065,
+     0.05
+    ],
+    "cor": "#37474F"
+   },
+   {
+    "id": "tel_amigo_tela",
+    "forma": "caixa",
+    "tam": [
+     0.0342,
+     0.0702,
+     0.002
+    ],
+    "pos": [
+     0,
+     0.002,
+     0.0055
+    ],
+    "cor": "#A5D6A7",
+    "pai": "tel_amigo",
+    "sem_contorno": true
+   }
+  ],
+  "telefone_1973": [
+   {
+    "id": "base_t",
+    "forma": "caixa",
+    "tam": [
+     0.17,
+     0.01,
+     0.08
+    ],
+    "pos": [
+     0.0,
+     0.005,
+     0
+    ],
+    "cor": "#5D4037"
+   },
+   {
+    "id": "tijolo",
+    "forma": "caixa",
+    "tam": [
+     0.034,
+     0.11,
+     0.022
+    ],
+    "pos": [
+     -0.045,
+     0.065,
+     0
+    ],
+    "cor": "#D7CCC8"
+   },
+   {
+    "id": "antena_t",
+    "forma": "cilindro",
+    "tam": [
+     0.003,
+     0.045
+    ],
+    "pos": [
+     -0.036,
+     0.1425,
+     0
+    ],
+    "cor": "#424242"
+   },
+   {
+    "id": "fone_t",
+    "forma": "caixa",
+    "tam": [
+     0.018,
+     0.006,
+     0.002
+    ],
+    "pos": [
+     0,
+     0.042,
+     0.0115
+    ],
+    "cor": "#5D4037",
+    "pai": "tijolo",
+    "sem_contorno": true
+   },
+   {
+    "id": "tecla00",
+    "forma": "caixa",
+    "tam": [
+     0.006,
+     0.006,
+     0.003
+    ],
+    "pos": [
+     -0.009,
+     0.004,
+     0.0115
+    ],
+    "cor": "#6D4C41",
+    "pai": "tijolo",
+    "sem_contorno": true
+   },
+   {
+    "id": "tecla01",
+    "forma": "caixa",
+    "tam": [
+     0.006,
+     0.006,
+     0.003
+    ],
+    "pos": [
+     0.0,
+     0.004,
+     0.0115
+    ],
+    "cor": "#6D4C41",
+    "pai": "tijolo",
+    "sem_contorno": true
+   },
+   {
+    "id": "tecla02",
+    "forma": "caixa",
+    "tam": [
+     0.006,
+     0.006,
+     0.003
+    ],
+    "pos": [
+     0.009,
+     0.004,
+     0.0115
+    ],
+    "cor": "#6D4C41",
+    "pai": "tijolo",
+    "sem_contorno": true
+   },
+   {
+    "id": "tecla10",
+    "forma": "caixa",
+    "tam": [
+     0.006,
+     0.006,
+     0.003
+    ],
+    "pos": [
+     -0.009,
+     -0.008,
+     0.0115
+    ],
+    "cor": "#6D4C41",
+    "pai": "tijolo",
+    "sem_contorno": true
+   },
+   {
+    "id": "tecla11",
+    "forma": "caixa",
+    "tam": [
+     0.006,
+     0.006,
+     0.003
+    ],
+    "pos": [
+     0.0,
+     -0.008,
+     0.0115
+    ],
+    "cor": "#6D4C41",
+    "pai": "tijolo",
+    "sem_contorno": true
+   },
+   {
+    "id": "tecla12",
+    "forma": "caixa",
+    "tam": [
+     0.006,
+     0.006,
+     0.003
+    ],
+    "pos": [
+     0.009,
+     -0.008,
+     0.0115
+    ],
+    "cor": "#6D4C41",
+    "pai": "tijolo",
+    "sem_contorno": true
+   },
+   {
+    "id": "tecla20",
+    "forma": "caixa",
+    "tam": [
+     0.006,
+     0.006,
+     0.003
+    ],
+    "pos": [
+     -0.009,
+     -0.02,
+     0.0115
+    ],
+    "cor": "#6D4C41",
+    "pai": "tijolo",
+    "sem_contorno": true
+   },
+   {
+    "id": "tecla21",
+    "forma": "caixa",
+    "tam": [
+     0.006,
+     0.006,
+     0.003
+    ],
+    "pos": [
+     0.0,
+     -0.02,
+     0.0115
+    ],
+    "cor": "#6D4C41",
+    "pai": "tijolo",
+    "sem_contorno": true
+   },
+   {
+    "id": "tecla22",
+    "forma": "caixa",
+    "tam": [
+     0.006,
+     0.006,
+     0.003
+    ],
+    "pos": [
+     0.009,
+     -0.02,
+     0.0115
+    ],
+    "cor": "#6D4C41",
+    "pai": "tijolo",
+    "sem_contorno": true
+   },
+   {
+    "id": "bateria_t",
+    "forma": "caixa",
+    "tam": [
+     0.04,
+     0.026,
+     0.02
+    ],
+    "pos": [
+     0.012,
+     0.023,
+     0.02
+    ],
+    "cor": "#455A64"
+   },
+   {
+    "id": "polo_t",
+    "forma": "caixa",
+    "tam": [
+     0.004,
+     0.01,
+     0.01
+    ],
+    "pos": [
+     0.034,
+     0.023,
+     0.02
+    ],
+    "cor": "#455A64"
+   },
+   {
+    "id": "carga0",
+    "forma": "caixa",
+    "tam": [
+     0.008,
+     0.016,
+     0.003
+    ],
+    "pos": [
+     -0.011,
+     0,
+     0.0105
+    ],
+    "cor": "#66BB6A",
+    "pai": "bateria_t",
+    "sem_contorno": true
+   },
+   {
+    "id": "carga1",
+    "forma": "caixa",
+    "tam": [
+     0.008,
+     0.016,
+     0.003
+    ],
+    "pos": [
+     0.0,
+     0,
+     0.0105
+    ],
+    "cor": "#66BB6A",
+    "pai": "bateria_t",
+    "sem_contorno": true
+   },
+   {
+    "id": "carga2",
+    "forma": "caixa",
+    "tam": [
+     0.008,
+     0.016,
+     0.003
+    ],
+    "pos": [
+     0.011,
+     0,
+     0.0105
+    ],
+    "cor": "#66BB6A",
+    "pai": "bateria_t",
+    "sem_contorno": true
+   },
+   {
+    "id": "rival_base",
+    "forma": "caixa",
+    "tam": [
+     0.04,
+     0.02,
+     0.032
+    ],
+    "pos": [
+     0.062,
+     0.02,
+     -0.012
+    ],
+    "cor": "#212121"
+   },
+   {
+    "id": "rival_fone",
+    "forma": "capsula",
+    "tam": [
+     0.007,
+     0.03
+    ],
+    "pos": [
+     0.062,
+     0.039,
+     -0.012
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#212121"
+   },
+   {
+    "id": "rival_disco",
+    "forma": "toro",
+    "tam": [
+     0.009,
+     0.0025
+    ],
+    "pos": [
+     0.062,
+     0.02,
+     0.0045
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#ECEFF1",
+    "sem_contorno": true
+   }
+  ],
+  "celular_aberto": [
+   {
+    "id": "suporte_c",
+    "forma": "caixa",
+    "tam": [
+     0.2,
+     0.02,
+     0.1
+    ],
+    "pos": [
+     0,
+     0.01,
+     0
+    ],
+    "cor": "#37474F"
+   },
+   {
+    "id": "casca",
+    "forma": "caixa",
+    "tam": [
+     0.16,
+     0.32,
+     0.03
+    ],
+    "pos": [
+     0,
+     0.18,
+     0
+    ],
+    "cor": "#212121"
+   },
+   {
+    "id": "tela_c",
+    "forma": "caixa",
+    "tam": [
+     0.142,
+     0.29,
+     0.003
+    ],
+    "pos": [
+     0,
+     0.18,
+     0.0165
+    ],
+    "cor": "#4FC3F7",
+    "sem_contorno": true
+   },
+   {
+    "id": "placa_c",
+    "forma": "caixa",
+    "tam": [
+     0.13,
+     0.11,
+     0.004
+    ],
+    "pos": [
+     0,
+     0.245,
+     -0.008
+    ],
+    "cor": "#2E7D32",
+    "sem_contorno": true
+   },
+   {
+    "id": "microfone",
+    "forma": "cilindro",
+    "tam": [
+     0.013,
+     0.014
+    ],
+    "pos": [
+     0,
+     0.045,
+     0.004
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#B0BEC5"
+   },
+   {
+    "id": "chip",
+    "forma": "caixa",
+    "tam": [
+     0.046,
+     0.046,
+     0.008
+    ],
+    "pos": [
+     0,
+     0.245,
+     0.0
+    ],
+    "cor": "#263238"
+   },
+   {
+    "id": "antena_c",
+    "forma": "caixa",
+    "tam": [
+     0.13,
+     0.009,
+     0.01
+    ],
+    "pos": [
+     0,
+     0.322,
+     0.0
+    ],
+    "cor": "#FFC107"
+   },
+   {
+    "id": "trilha1",
+    "forma": "tubo",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     0.015,
+     0.139,
+     0.004
+    ],
+    "cor": "#FFB300",
+    "sem_contorno": true,
+    "caminho": [
+     [
+      -0.015,
+      -0.084,
+      0.0
+     ],
+     [
+      0.015,
+      -0.049,
+      0.0
+     ],
+     [
+      0.015,
+      0.051,
+      0.0
+     ],
+     [
+      -0.015,
+      0.083,
+      0.0
+     ]
+    ]
+   },
+   {
+    "id": "trilha2",
+    "forma": "tubo",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     -0.01,
+     0.296,
+     0.004
+    ],
+    "cor": "#FFB300",
+    "sem_contorno": true,
+    "caminho": [
+     [
+      0.01,
+      -0.028,
+      0.0
+     ],
+     [
+      -0.01,
+      -0.006,
+      0.0
+     ],
+     [
+      -0.01,
+      0.014,
+      0.0
+     ],
+     [
+      0.01,
+      0.022,
+      0.0
+     ]
+    ]
+   },
+   {
+    "id": "onda0",
+    "forma": "toro",
+    "tam": [
+     0.045,
+     0.004
+    ],
+    "pos": [
+     0.0,
+     0.33,
+     0.02
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#FFF59D",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "onda1",
+    "forma": "toro",
+    "tam": [
+     0.08,
+     0.004
+    ],
+    "pos": [
+     0.0,
+     0.33,
+     0.02
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#FFF59D",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "onda2",
+    "forma": "toro",
+    "tam": [
+     0.115,
+     0.004
+    ],
+    "pos": [
+     0.0,
+     0.33,
+     0.02
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#FFF59D",
+    "sem_contorno": true,
+    "oculta": true
+   }
+  ],
+  "cidade": [
+   {
+    "id": "chao_c",
+    "forma": "caixa",
+    "tam": [
+     0.4,
+     0.02,
+     0.27
+    ],
+    "pos": [
+     0,
+     0.01,
+     0
+    ],
+    "cor": "#9CCC65"
+   },
+   {
+    "id": "celula1",
+    "forma": "cilindro",
+    "tam": [
+     0.098,
+     0.004
+    ],
+    "pos": [
+     -0.095,
+     0.022,
+     0
+    ],
+    "cor": "#4FC3F7",
+    "opacidade": 0.5,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "celula2",
+    "forma": "cilindro",
+    "tam": [
+     0.098,
+     0.004
+    ],
+    "pos": [
+     0.095,
+     0.022,
+     0
+    ],
+    "cor": "#FFB74D",
+    "opacidade": 0.5,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "casa0",
+    "forma": "caixa",
+    "tam": [
+     0.03,
+     0.024,
+     0.03
+    ],
+    "pos": [
+     -0.165,
+     0.032,
+     -0.1
+    ],
+    "cor": "#FFF3E0"
+   },
+   {
+    "id": "casa0_teto",
+    "forma": "cone",
+    "tam": [
+     0.024,
+     0.018
+    ],
+    "pos": [
+     0,
+     0.021,
+     0
+    ],
+    "cor": "#D84315",
+    "pai": "casa0"
+   },
+   {
+    "id": "casa1",
+    "forma": "caixa",
+    "tam": [
+     0.03,
+     0.024,
+     0.03
+    ],
+    "pos": [
+     -0.035,
+     0.032,
+     -0.105
+    ],
+    "cor": "#E3F2FD"
+   },
+   {
+    "id": "casa1_teto",
+    "forma": "cone",
+    "tam": [
+     0.024,
+     0.018
+    ],
+    "pos": [
+     0,
+     0.021,
+     0
+    ],
+    "cor": "#D84315",
+    "pai": "casa1"
+   },
+   {
+    "id": "casa2",
+    "forma": "caixa",
+    "tam": [
+     0.03,
+     0.024,
+     0.03
+    ],
+    "pos": [
+     0.035,
+     0.032,
+     -0.105
+    ],
+    "cor": "#F3E5F5"
+   },
+   {
+    "id": "casa2_teto",
+    "forma": "cone",
+    "tam": [
+     0.024,
+     0.018
+    ],
+    "pos": [
+     0,
+     0.021,
+     0
+    ],
+    "cor": "#D84315",
+    "pai": "casa2"
+   },
+   {
+    "id": "casa3",
+    "forma": "caixa",
+    "tam": [
+     0.03,
+     0.024,
+     0.03
+    ],
+    "pos": [
+     0.165,
+     0.032,
+     -0.1
+    ],
+    "cor": "#FFFDE7"
+   },
+   {
+    "id": "casa3_teto",
+    "forma": "cone",
+    "tam": [
+     0.024,
+     0.018
+    ],
+    "pos": [
+     0,
+     0.021,
+     0
+    ],
+    "cor": "#D84315",
+    "pai": "casa3"
+   },
+   {
+    "id": "torre1",
+    "forma": "cilindro",
+    "tam": [
+     0.005,
+     0.2,
+     0.012
+    ],
+    "pos": [
+     -0.095,
+     0.12,
+     -0.045
+    ],
+    "cor": "#90A4AE",
+    "oculta": true
+   },
+   {
+    "id": "antena1_0",
+    "forma": "caixa",
+    "tam": [
+     0.01,
+     0.03,
+     0.005
+    ],
+    "pos": [
+     0.0,
+     0.08,
+     0.012
+    ],
+    "giro": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#ECEFF1",
+    "pai": "torre1",
+    "oculta": true
+   },
+   {
+    "id": "antena1_1",
+    "forma": "caixa",
+    "tam": [
+     0.01,
+     0.03,
+     0.005
+    ],
+    "pos": [
+     0.0104,
+     0.08,
+     -0.006
+    ],
+    "giro": [
+     0,
+     120,
+     0
+    ],
+    "cor": "#ECEFF1",
+    "pai": "torre1",
+    "oculta": true
+   },
+   {
+    "id": "antena1_2",
+    "forma": "caixa",
+    "tam": [
+     0.01,
+     0.03,
+     0.005
+    ],
+    "pos": [
+     -0.0104,
+     0.08,
+     -0.006
+    ],
+    "giro": [
+     0,
+     240,
+     0
+    ],
+    "cor": "#ECEFF1",
+    "pai": "torre1",
+    "oculta": true
+   },
+   {
+    "id": "ponta1",
+    "forma": "esfera",
+    "tam": [
+     0.007
+    ],
+    "pos": [
+     0,
+     0.103,
+     0
+    ],
+    "cor": "#E53935",
+    "pai": "torre1",
+    "oculta": true
+   },
+   {
+    "id": "torre2",
+    "forma": "cilindro",
+    "tam": [
+     0.005,
+     0.2,
+     0.012
+    ],
+    "pos": [
+     0.095,
+     0.12,
+     -0.045
+    ],
+    "cor": "#90A4AE",
+    "oculta": true
+   },
+   {
+    "id": "antena2_0",
+    "forma": "caixa",
+    "tam": [
+     0.01,
+     0.03,
+     0.005
+    ],
+    "pos": [
+     0.0,
+     0.08,
+     0.012
+    ],
+    "giro": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#ECEFF1",
+    "pai": "torre2",
+    "oculta": true
+   },
+   {
+    "id": "antena2_1",
+    "forma": "caixa",
+    "tam": [
+     0.01,
+     0.03,
+     0.005
+    ],
+    "pos": [
+     0.0104,
+     0.08,
+     -0.006
+    ],
+    "giro": [
+     0,
+     120,
+     0
+    ],
+    "cor": "#ECEFF1",
+    "pai": "torre2",
+    "oculta": true
+   },
+   {
+    "id": "antena2_2",
+    "forma": "caixa",
+    "tam": [
+     0.01,
+     0.03,
+     0.005
+    ],
+    "pos": [
+     -0.0104,
+     0.08,
+     -0.006
+    ],
+    "giro": [
+     0,
+     240,
+     0
+    ],
+    "cor": "#ECEFF1",
+    "pai": "torre2",
+    "oculta": true
+   },
+   {
+    "id": "ponta2",
+    "forma": "esfera",
+    "tam": [
+     0.007
+    ],
+    "pos": [
+     0,
+     0.103,
+     0
+    ],
+    "cor": "#E53935",
+    "pai": "torre2",
+    "oculta": true
+   },
+   {
+    "id": "cabo",
+    "forma": "tubo",
+    "tam": [
+     0.0045
+    ],
+    "pos": [
+     0.0,
+     0.024,
+     -0.062
+    ],
+    "cor": "#212121",
+    "sem_contorno": true,
+    "caminho": [
+     [
+      -0.095,
+      0.0,
+      0.017
+     ],
+     [
+      -0.055,
+      0.0,
+      -0.018
+     ],
+     [
+      0.055,
+      0.0,
+      -0.018
+     ],
+     [
+      0.095,
+      0.0,
+      0.017
+     ]
+    ],
+    "oculta": true
+   },
+   {
+    "id": "tel_a",
+    "forma": "caixa",
+    "tam": [
+     0.034,
+     0.065,
+     0.009
+    ],
+    "pos": [
+     -0.15,
+     0.0525,
+     0.03
+    ],
+    "cor": "#263238"
+   },
+   {
+    "id": "tel_a_tela",
+    "forma": "caixa",
+    "tam": [
+     0.0258,
+     0.0507,
+     0.002
+    ],
+    "pos": [
+     0,
+     0.002,
+     0.0055
+    ],
+    "cor": "#4FC3F7",
+    "pai": "tel_a",
+    "sem_contorno": true
+   },
+   {
+    "id": "tel_b",
+    "forma": "caixa",
+    "tam": [
+     0.034,
+     0.065,
+     0.009
+    ],
+    "pos": [
+     0.15,
+     0.0525,
+     0.03
+    ],
+    "cor": "#37474F"
+   },
+   {
+    "id": "tel_b_tela",
+    "forma": "caixa",
+    "tam": [
+     0.0258,
+     0.0507,
+     0.002
+    ],
+    "pos": [
+     0,
+     0.002,
+     0.0055
+    ],
+    "cor": "#A5D6A7",
+    "pai": "tel_b",
+    "sem_contorno": true
+   },
+   {
+    "id": "tel_lado",
+    "forma": "caixa",
+    "tam": [
+     0.034,
+     0.065,
+     0.009
+    ],
+    "pos": [
+     -0.115,
+     0.0525,
+     0.04
+    ],
+    "cor": "#5D4037",
+    "oculta": true
+   },
+   {
+    "id": "tel_lado_tela",
+    "forma": "caixa",
+    "tam": [
+     0.0258,
+     0.0507,
+     0.002
+    ],
+    "pos": [
+     0,
+     0.002,
+     0.0055
+    ],
+    "cor": "#FFE082",
+    "pai": "tel_lado",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "tel_x0",
+    "forma": "caixa",
+    "tam": [
+     0.034,
+     0.065,
+     0.009
+    ],
+    "pos": [
+     -0.07,
+     0.0525,
+     0.04
+    ],
+    "cor": "#6A1B9A",
+    "oculta": true
+   },
+   {
+    "id": "tel_x0_tela",
+    "forma": "caixa",
+    "tam": [
+     0.0258,
+     0.0507,
+     0.002
+    ],
+    "pos": [
+     0,
+     0.002,
+     0.0055
+    ],
+    "cor": "#4FC3F7",
+    "pai": "tel_x0",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "tel_x1",
+    "forma": "caixa",
+    "tam": [
+     0.034,
+     0.065,
+     0.009
+    ],
+    "pos": [
+     -0.13,
+     0.0525,
+     -0.035
+    ],
+    "cor": "#C62828",
+    "oculta": true
+   },
+   {
+    "id": "tel_x1_tela",
+    "forma": "caixa",
+    "tam": [
+     0.0258,
+     0.0507,
+     0.002
+    ],
+    "pos": [
+     0,
+     0.002,
+     0.0055
+    ],
+    "cor": "#4FC3F7",
+    "pai": "tel_x1",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "tel_x2",
+    "forma": "caixa",
+    "tam": [
+     0.034,
+     0.065,
+     0.009
+    ],
+    "pos": [
+     -0.05,
+     0.0525,
+     -0.02
+    ],
+    "cor": "#00838F",
+    "oculta": true
+   },
+   {
+    "id": "tel_x2_tela",
+    "forma": "caixa",
+    "tam": [
+     0.0258,
+     0.0507,
+     0.002
+    ],
+    "pos": [
+     0,
+     0.002,
+     0.0055
+    ],
+    "cor": "#4FC3F7",
+    "pai": "tel_x2",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "carro",
+    "forma": "caixa",
+    "tam": [
+     0.055,
+     0.022,
+     0.032
+    ],
+    "pos": [
+     -0.115,
+     0.042,
+     0.105
+    ],
+    "cor": "#E53935",
+    "oculta": true
+   },
+   {
+    "id": "carro_teto",
+    "forma": "caixa",
+    "tam": [
+     0.03,
+     0.016,
+     0.028
+    ],
+    "pos": [
+     -0.004,
+     0.019,
+     0
+    ],
+    "cor": "#EF9A9A",
+    "pai": "carro",
+    "oculta": true
+   },
+   {
+    "id": "roda0",
+    "forma": "cilindro",
+    "tam": [
+     0.009,
+     0.006
+    ],
+    "pos": [
+     -0.018,
+     -0.011,
+     0.017
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#212121",
+    "pai": "carro",
+    "oculta": true
+   },
+   {
+    "id": "roda1",
+    "forma": "cilindro",
+    "tam": [
+     0.009,
+     0.006
+    ],
+    "pos": [
+     0.018,
+     -0.011,
+     0.017
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#212121",
+    "pai": "carro",
+    "oculta": true
+   },
+   {
+    "id": "roda2",
+    "forma": "cilindro",
+    "tam": [
+     0.009,
+     0.006
+    ],
+    "pos": [
+     -0.018,
+     -0.011,
+     -0.017
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#212121",
+    "pai": "carro",
+    "oculta": true
+   },
+   {
+    "id": "roda3",
+    "forma": "cilindro",
+    "tam": [
+     0.009,
+     0.006
+    ],
+    "pos": [
+     0.018,
+     -0.011,
+     -0.017
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#212121",
+    "pai": "carro",
+    "oculta": true
+   }
+  ]
+ },
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "tito",
+   "texto": "Sem fio nenhum, a sua voz sai do outro lado da cidade. Por onde ela PASSA?",
+   "tom": "surpreso"
+  },
+  {
+   "id": "f2",
+   "quem": "tito",
+   "texto": "Em 1973, em Nova York, um engenheiro apareceu com um telefone sem fio do tamanho de um TIJOLO.",
+   "off": true
+  },
+  {
+   "id": "f3",
+   "quem": "tito",
+   "texto": "E a primeira ligação de celular da história foi para o RIVAL dele, só para provar que tinha chegado na frente.",
+   "off": true
+  },
+  {
+   "id": "f4",
+   "quem": "tito",
+   "texto": "MAS o tijolo pesava mais de um QUILO, e a bateria não durava nem uma hora.",
+   "off": true,
+   "tom": "tenso",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f5",
+   "quem": "tito",
+   "texto": "Hoje, quando você fala, o microfone transforma a sua voz em ELETRICIDADE."
+  },
+  {
+   "id": "f6",
+   "quem": "tito",
+   "texto": "Um chip vira essa eletricidade em números, e a antena solta tudo no ar como ONDA de rádio."
+  },
+  {
+   "id": "f7",
+   "quem": "tito",
+   "texto": "MAS o celular é pequeno, e a onda dele é fraca. Ela não atravessa uma CIDADE inteira.",
+   "tom": "tenso",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f8",
+   "quem": "tito",
+   "texto": "Por isso a cidade é dividida em pedacinhos, e cada pedacinho tem a sua TORRE."
+  },
+  {
+   "id": "f9",
+   "quem": "tito",
+   "texto": "Cada pedacinho se chama CÉLULA. É daí que vem o nome: CELULAR!",
+   "tom": "feliz",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f10",
+   "quem": "tito",
+   "texto": "A torre pega a sua voz e manda por um CABO até a torre perto da outra pessoa, que solta no ar de novo."
+  },
+  {
+   "id": "f11",
+   "quem": "tito",
+   "texto": "SÓ QUE você está num carro, e sai do pedacinho da sua torre. A ligação CAI?",
+   "tom": "tenso"
+  },
+  {
+   "id": "f12",
+   "quem": "tito",
+   "texto": "Não! O celular procura a torre mais FORTE e passa a conversa para ela, sem você perceber.",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f13",
+   "quem": "tito",
+   "texto": "MAS milhares de pessoas falam ao mesmo tempo. Por que as vozes não se MISTURAM?",
+   "tom": "tenso"
+  },
+  {
+   "id": "f14",
+   "quem": "tito",
+   "texto": "Porque cada conversa ganha um CANAL só dela, como se fosse uma rádio diferente.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f15",
+   "quem": "tito",
+   "texto": "E repara: mesmo se a outra pessoa estiver do seu LADO, a sua voz vai até a torre e volta.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f16",
+   "quem": "tito",
+   "texto": "Ar, torre, cabo, torre e ar de novo. Esse é o caminho da sua voz, em menos de um SEGUNDO.",
+   "tom": "feliz"
+  }
+ ],
+ "chamada": {
+  "pergunta": "E agora, topa construir um GPS?",
+  "texto": "Comenta",
+  "destaque": "GPS"
+ },
+ "postagem": {
+  "titulo": "Como funciona o celular? O caminho da sua voz",
+  "descricao": "Como funciona o celular por dentro: o microfone transforma a voz em eletricidade, o chip em números e a antena em onda de rádio, e as torres de cada célula levam a ligação até o outro lado. E a primeira ligação de celular da história, em 1973, foi para o rival.",
+  "hashtags": [
+   "comofunciona",
+   "celular",
+   "tecnologia",
+   "curiosidades"
+  ],
+  "comentario": "Eu achava que a voz ia direto de um celular para o outro. Você também?",
+  "capa": "f1:passa"
+ },
+ "cenas": [
+  {
+   "id": "gancho",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "desconfiado"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "ligacao",
+     "em": "pedestal"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "ligacao",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 8,
+     "velocidade": 0.7,
+     "intensidade": 0.6,
+     "de": "inicio-3",
+     "ate": "f1:fim+1",
+     "caminho": [
+      [
+       -0.11,
+       0.118,
+       0.05
+      ],
+      [
+       -0.07,
+       0.2,
+       0.05
+      ],
+      [
+       0.0,
+       0.24,
+       0.04
+      ],
+      [
+       0.07,
+       0.2,
+       0.05
+      ],
+      [
+       0.11,
+       0.118,
+       0.05
+      ]
+     ]
+    },
+    {
+     "peca": "tel_amigo_tela",
+     "faz": "pulsar",
+     "intensidade": 0.9,
+     "de": "inicio+0.6",
+     "ate": "f1:fim+1"
+    },
+    {
+     "peca": "tel_voce",
+     "faz": "tremer",
+     "intensidade": 0.15,
+     "de": "inicio",
+     "ate": "f1:cidade"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "desconfiado",
+     "de": "inicio"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "tel_amigo",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f1:por-0.3"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "camera": [
+      0.04,
+      1.17,
+      0.95
+     ],
+     "alvo": [
+      0.0,
+      1.11,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f1:por",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    }
+   ],
+   "sons": [
+    {
+     "de": "inicio",
+     "som": "bip",
+     "volume": 0.45
+    },
+    {
+     "de": "f1:outro",
+     "som": "bip",
+     "volume": 0.35
+    }
+   ],
+   "efeitos": [],
+   "rotulos": [
+    {
+     "alvo": "tel_voce",
+     "texto": "Você",
+     "de": "f1:voz",
+     "ate": "f1:por"
+    },
+    {
+     "alvo": "tel_amigo",
+     "texto": "Outro lado",
+     "de": "f1:outro",
+     "ate": "f1:por"
+    }
+   ]
+  },
+  {
+   "id": "nova_york_1973",
+   "cenario": "oficina",
+   "ambiente": "oficina",
+   "filtro": "sepia",
+   "de": "f2",
+   "personagens": {
+    "cooper": {
+     "em": [
+      -1.0,
+      -0.3
+     ],
+     "olhando": [
+      1.2,
+      2.2,
+      3.0
+     ],
+     "expressao": "serio"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "telefone_1973",
+     "em": [
+      0,
+      -1.05
+     ],
+     "alt": 0.92,
+     "escala": 1.5
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f2:1973",
+     "ate": "f2:telefone",
+     "grande": "1973",
+     "pequeno": "Martin Cooper · Nova York, EUA"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "telefone_1973",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 6,
+     "velocidade": 0.9,
+     "intensidade": 0.35,
+     "de": "f3:ligacao",
+     "ate": "f3:provar",
+     "caminho": [
+      [
+       -0.036,
+       0.17,
+       0
+      ],
+      [
+       0.0,
+       0.2,
+       -0.006
+      ],
+      [
+       0.04,
+       0.13,
+       -0.01
+      ],
+      [
+       0.062,
+       0.05,
+       -0.012
+      ]
+     ]
+    },
+    {
+     "peca": "rival_base",
+     "faz": "tremer",
+     "intensidade": 0.6,
+     "de": "f3:rival",
+     "ate": "f3:provar"
+    },
+    {
+     "peca": "rival_fone",
+     "faz": "tremer",
+     "intensidade": 0.6,
+     "de": "f3:rival",
+     "ate": "f3:provar"
+    },
+    {
+     "peca": "antena_t",
+     "faz": "pulsar",
+     "intensidade": 0.6,
+     "de": "f3:ligacao",
+     "ate": "f3:provar"
+    },
+    {
+     "peca": "carga2",
+     "faz": "sumir",
+     "de": "f4:bateria+0.2"
+    },
+    {
+     "peca": "carga1",
+     "faz": "sumir",
+     "de": "f4:bateria+0.5"
+    },
+    {
+     "peca": "carga0",
+     "faz": "sumir",
+     "de": "f4:bateria+0.8"
+    },
+    {
+     "peca": "bateria_t",
+     "faz": "tremer",
+     "intensidade": 0.4,
+     "de": "f4:hora",
+     "ate": "f4:fim+0.2"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "cooper",
+     "faz": "virar",
+     "para": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "olhar": "camera",
+     "expressao": "determinado",
+     "de": "f2"
+    },
+    {
+     "quem": "cooper",
+     "faz": "estender_mao",
+     "para": "telefone_1973",
+     "olhar": "telefone_1973",
+     "expressao": "feliz",
+     "de": "f2:telefone"
+    },
+    {
+     "quem": "cooper",
+     "olhar": "telefone_1973",
+     "expressao": "feliz",
+     "de": "f3"
+    },
+    {
+     "quem": "cooper",
+     "faz": "virar",
+     "para": [
+      0.3,
+      2.85,
+      2.2
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f3:provar-0.4"
+    },
+    {
+     "quem": "cooper",
+     "olhar": "telefone_1973",
+     "expressao": "serio",
+     "de": "f4"
+    },
+    {
+     "quem": "cooper",
+     "faz": "virar",
+     "para": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "olhar": "camera",
+     "expressao": "cansado",
+     "de": "f4:nem-0.4"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "camera": [
+      0.9,
+      2.85,
+      3.9
+     ],
+     "alvo": [
+      -0.4,
+      2.2,
+      -0.7
+     ],
+     "movimento": "arco",
+     "intensidade": 0.6,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f2:engenheiro",
+     "tipo": "medio",
+     "camera": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "alvo": "cooper",
+     "movimento": "travelling",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f2:tamanho",
+     "tipo": "detalhe",
+     "camera": [
+      -0.03,
+      1.09,
+      -0.55
+     ],
+     "alvo": [
+      -0.065,
+      1.03,
+      -1.05
+     ],
+     "movimento": "arco",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f3:ligacao",
+     "tipo": "detalhe",
+     "camera": [
+      0.06,
+      1.17,
+      -0.3
+     ],
+     "alvo": [
+      0.0,
+      1.0,
+      -1.05
+     ],
+     "movimento": "arco",
+     "intensidade": -0.4
+    },
+    {
+     "de": "f3:rival",
+     "tipo": "detalhe",
+     "camera": [
+      0.15,
+      1.03,
+      -0.66
+     ],
+     "alvo": [
+      0.093,
+      0.96,
+      -1.07
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f3:provar",
+     "tipo": "close",
+     "camera": [
+      0.3,
+      2.85,
+      2.2
+     ],
+     "alvo": "cooper",
+     "movimento": "travelling",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f4",
+     "tipo": "detalhe",
+     "camera": [
+      -0.03,
+      1.09,
+      -0.55
+     ],
+     "alvo": [
+      -0.065,
+      1.03,
+      -1.05
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f4:bateria",
+     "tipo": "detalhe",
+     "camera": [
+      0.05,
+      1.0,
+      -0.68
+     ],
+     "alvo": [
+      0.018,
+      0.955,
+      -1.02
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f4:nem",
+     "tipo": "medio",
+     "camera": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "alvo": "cooper",
+     "movimento": "zoom_rapido"
+    }
+   ],
+   "sons": [
+    {
+     "de": "f2:1973",
+     "som": "pop",
+     "volume": 0.6
+    },
+    {
+     "de": "f2:tijolo",
+     "som": "clique",
+     "volume": 0.7
+    },
+    {
+     "de": "f3:ligacao",
+     "som": "bip",
+     "volume": 0.5
+    },
+    {
+     "de": "f3:rival",
+     "som": "bip",
+     "volume": 0.6
+    },
+    {
+     "de": "f3:rival+0.45",
+     "som": "bip",
+     "volume": 0.6
+    },
+    {
+     "de": "f4:mas",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f4:quilo",
+     "som": "impacto",
+     "volume": 0.5
+    },
+    {
+     "de": "f4:hora",
+     "som": "impacto",
+     "volume": 0.7
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f2:tijolo",
+     "ate": "f2:fim",
+     "efeito": "circular",
+     "alvo": "tijolo"
+    },
+    {
+     "de": "f3:rival",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f4:hora",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f4:hora",
+     "ate": "f4:hora+0.4",
+     "efeito": "tremor",
+     "intensidade": 0.4
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "tijolo",
+     "texto": "Celular",
+     "de": "f2:tijolo",
+     "ate": "f2:fim"
+    },
+    {
+     "alvo": "rival_base",
+     "texto": "Rival",
+     "de": "f3:rival",
+     "ate": "f3:provar"
+    },
+    {
+     "alvo": "tijolo",
+     "texto": "1,1 kg",
+     "de": "f4:quilo",
+     "ate": "f4:bateria"
+    },
+    {
+     "alvo": "bateria_t",
+     "texto": "Bateria",
+     "de": "f4:bateria",
+     "ate": "f4:nem"
+    }
+   ]
+  },
+  {
+   "id": "por_dentro",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "de": "f5",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "feliz"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "celular_aberto",
+     "em": "pedestal"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "casca",
+     "faz": "transparente",
+     "opacidade": 0.22,
+     "de": "f5:quando",
+     "ate": "f5:quando+0.6"
+    },
+    {
+     "peca": "tela_c",
+     "faz": "sumir",
+     "de": "f5:quando"
+    },
+    {
+     "peca": "celular_aberto",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "quantidade": 6,
+     "velocidade": 0.9,
+     "intensidade": 0.3,
+     "de": "f5:fala",
+     "ate": "f6:chip",
+     "caminho": [
+      [
+       -0.16,
+       0.02,
+       0.1
+      ],
+      [
+       -0.08,
+       0.035,
+       0.06
+      ],
+      [
+       0.0,
+       0.045,
+       0.015
+      ]
+     ]
+    },
+    {
+     "peca": "microfone",
+     "faz": "pulsar",
+     "intensidade": 0.7,
+     "de": "f5:microfone",
+     "ate": "f5:fim"
+    },
+    {
+     "peca": "trilha1",
+     "faz": "fluxo",
+     "tipo": "eletricidade",
+     "quantidade": 6,
+     "velocidade": 1.0,
+     "intensidade": 0.3,
+     "de": "f5:eletricidade",
+     "ate": "f7:fim"
+    },
+    {
+     "peca": "chip",
+     "faz": "pulsar",
+     "intensidade": 0.8,
+     "de": "f6:chip",
+     "ate": "f7:fim"
+    },
+    {
+     "peca": "trilha2",
+     "faz": "fluxo",
+     "tipo": "eletricidade",
+     "quantidade": 4,
+     "velocidade": 1.0,
+     "intensidade": 0.3,
+     "de": "f6:antena",
+     "ate": "f7:fim"
+    },
+    {
+     "peca": "antena_c",
+     "faz": "pulsar",
+     "intensidade": 0.8,
+     "de": "f6:antena",
+     "ate": "f7:fim"
+    },
+    {
+     "peca": "onda0",
+     "faz": "aparecer",
+     "de": "f6:onda+0.0"
+    },
+    {
+     "peca": "onda1",
+     "faz": "aparecer",
+     "de": "f6:onda+0.18"
+    },
+    {
+     "peca": "onda2",
+     "faz": "aparecer",
+     "de": "f6:onda+0.36"
+    },
+    {
+     "peca": "onda0",
+     "faz": "pulsar",
+     "intensidade": 0.8,
+     "de": "f6:onda+0.3",
+     "ate": "f7:fim"
+    },
+    {
+     "peca": "onda1",
+     "faz": "pulsar",
+     "intensidade": 0.8,
+     "de": "f6:onda+0.48",
+     "ate": "f7:fim"
+    },
+    {
+     "peca": "onda2",
+     "faz": "pulsar",
+     "intensidade": 0.8,
+     "de": "f6:onda+0.66",
+     "ate": "f7:fim"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "casca",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f5:quando"
+    },
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f6"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "antena_c",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f6:onda"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "camera": [
+      0.07,
+      1.22,
+      0.78
+     ],
+     "alvo": [
+      0.0,
+      1.18,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.5,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f5:microfone",
+     "tipo": "detalhe",
+     "camera": [
+      0.06,
+      1.12,
+      0.55
+     ],
+     "alvo": [
+      0.0,
+      1.08,
+      0.0
+     ],
+     "movimento": "aproximar",
+     "transicao": "zoom"
+    },
+    {
+     "de": "f6",
+     "tipo": "detalhe",
+     "camera": [
+      0.05,
+      1.26,
+      0.5
+     ],
+     "alvo": [
+      0.0,
+      1.24,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f6:antena",
+     "tipo": "detalhe",
+     "camera": [
+      -0.05,
+      1.36,
+      0.85
+     ],
+     "alvo": [
+      0.0,
+      1.3,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": -0.4
+    }
+   ],
+   "sons": [
+    {
+     "de": "f5:microfone",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f5:eletricidade",
+     "som": "zap",
+     "volume": 0.5
+    },
+    {
+     "de": "f6:chip",
+     "som": "bip",
+     "volume": 0.6
+    },
+    {
+     "de": "f6:numeros",
+     "som": "clique",
+     "volume": 0.5
+    },
+    {
+     "de": "f6:onda",
+     "som": "ding",
+     "volume": 0.7
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f5:microfone",
+     "ate": "f5:fim",
+     "efeito": "circular",
+     "alvo": "microfone"
+    },
+    {
+     "de": "f6:chip",
+     "ate": "f6:antena",
+     "efeito": "circular",
+     "alvo": "chip"
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "microfone",
+     "texto": "Microfone",
+     "de": "f5:microfone",
+     "ate": "f5:fim"
+    },
+    {
+     "alvo": "chip",
+     "texto": "Chip",
+     "de": "f6:chip",
+     "ate": "f6:antena"
+    },
+    {
+     "alvo": "antena_c",
+     "texto": "Antena",
+     "de": "f6:antena",
+     "ate": "f6:fim"
+    }
+   ]
+  },
+  {
+   "id": "rede",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "de": "f7",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "nervoso"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "cidade",
+     "em": "pedestal"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f9:nome",
+     "ate": "f9:fim+0.3",
+     "grande": "CELULAR",
+     "pequeno": "a cidade dividida em células"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "cidade",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 6,
+     "velocidade": 0.7,
+     "intensidade": 0.35,
+     "de": "inicio",
+     "ate": "f8:pedacinhos",
+     "caminho": [
+      [
+       -0.15,
+       0.093,
+       0.03
+      ],
+      [
+       -0.1,
+       0.12,
+       0.03
+      ],
+      [
+       -0.04,
+       0.1,
+       0.03
+      ]
+     ]
+    },
+    {
+     "peca": "celula1",
+     "faz": "aparecer",
+     "de": "f8:pedacinhos+0.0"
+    },
+    {
+     "peca": "celula2",
+     "faz": "aparecer",
+     "de": "f8:pedacinhos+0.25"
+    },
+    {
+     "peca": "torre1",
+     "faz": "crescer",
+     "de": "f8:torre+0.0",
+     "ate": "f8:torre+0.6"
+    },
+    {
+     "peca": "antena1_0",
+     "faz": "aparecer",
+     "de": "f8:torre+0.6"
+    },
+    {
+     "peca": "antena1_1",
+     "faz": "aparecer",
+     "de": "f8:torre+0.6"
+    },
+    {
+     "peca": "antena1_2",
+     "faz": "aparecer",
+     "de": "f8:torre+0.6"
+    },
+    {
+     "peca": "ponta1",
+     "faz": "aparecer",
+     "de": "f8:torre+0.6"
+    },
+    {
+     "peca": "torre2",
+     "faz": "crescer",
+     "de": "f8:torre+0.2",
+     "ate": "f8:torre+0.8"
+    },
+    {
+     "peca": "antena2_0",
+     "faz": "aparecer",
+     "de": "f8:torre+0.8"
+    },
+    {
+     "peca": "antena2_1",
+     "faz": "aparecer",
+     "de": "f8:torre+0.8"
+    },
+    {
+     "peca": "antena2_2",
+     "faz": "aparecer",
+     "de": "f8:torre+0.8"
+    },
+    {
+     "peca": "ponta2",
+     "faz": "aparecer",
+     "de": "f8:torre+0.8"
+    },
+    {
+     "peca": "celula1",
+     "faz": "pulsar",
+     "intensidade": 0.8,
+     "de": "f9:celula",
+     "ate": "f9:nome"
+    },
+    {
+     "peca": "celula2",
+     "faz": "pulsar",
+     "intensidade": 0.8,
+     "de": "f9:celula",
+     "ate": "f9:nome"
+    },
+    {
+     "peca": "cidade",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.4,
+     "de": "f10",
+     "ate": "f10:fim+0.4",
+     "caminho": [
+      [
+       -0.15,
+       0.093,
+       0.03
+      ],
+      [
+       -0.122,
+       0.23,
+       -0.007
+      ],
+      [
+       -0.095,
+       0.2,
+       -0.045
+      ]
+     ]
+    },
+    {
+     "peca": "cabo",
+     "faz": "aparecer",
+     "de": "f10:cabo"
+    },
+    {
+     "peca": "cidade",
+     "faz": "fluxo",
+     "tipo": "eletricidade",
+     "quantidade": 7,
+     "velocidade": 0.7,
+     "intensidade": 0.3,
+     "de": "f10:cabo",
+     "ate": "f10:fim+0.4",
+     "caminho": [
+      [
+       -0.095,
+       0.2,
+       -0.045
+      ],
+      [
+       -0.095,
+       0.03,
+       -0.045
+      ],
+      [
+       -0.055,
+       0.024,
+       -0.08
+      ],
+      [
+       0.055,
+       0.024,
+       -0.08
+      ],
+      [
+       0.095,
+       0.03,
+       -0.045
+      ],
+      [
+       0.095,
+       0.2,
+       -0.045
+      ]
+     ]
+    },
+    {
+     "peca": "cidade",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.4,
+     "de": "f10:perto",
+     "ate": "f10:fim+0.4",
+     "caminho": [
+      [
+       0.095,
+       0.2,
+       -0.045
+      ],
+      [
+       0.122,
+       0.23,
+       -0.007
+      ],
+      [
+       0.15,
+       0.093,
+       0.03
+      ]
+     ]
+    },
+    {
+     "peca": "tel_b_tela",
+     "faz": "pulsar",
+     "intensidade": 0.9,
+     "de": "f10:solta",
+     "ate": "f10:fim+0.4"
+    },
+    {
+     "peca": "carro",
+     "faz": "aparecer",
+     "de": "f11:carro"
+    },
+    {
+     "peca": "carro_teto",
+     "faz": "aparecer",
+     "de": "f11:carro"
+    },
+    {
+     "peca": "roda0",
+     "faz": "aparecer",
+     "de": "f11:carro"
+    },
+    {
+     "peca": "roda1",
+     "faz": "aparecer",
+     "de": "f11:carro"
+    },
+    {
+     "peca": "roda2",
+     "faz": "aparecer",
+     "de": "f11:carro"
+    },
+    {
+     "peca": "roda3",
+     "faz": "aparecer",
+     "de": "f11:carro"
+    },
+    {
+     "peca": "cidade",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.4,
+     "de": "f11:carro",
+     "ate": "f11:sai+0.3",
+     "caminho": [
+      [
+       -0.115,
+       0.075,
+       0.105
+      ],
+      [
+       -0.105,
+       0.23,
+       0.03
+      ],
+      [
+       -0.095,
+       0.2,
+       -0.045
+      ]
+     ]
+    },
+    {
+     "peca": "carro",
+     "faz": "mover",
+     "desloc": [
+      0.215,
+      0,
+      0
+     ],
+     "de": "f11:sai",
+     "ate": "f12:forte"
+    },
+    {
+     "peca": "celula2",
+     "faz": "pulsar",
+     "intensidade": 0.8,
+     "de": "f12:forte",
+     "ate": "f12:fim"
+    },
+    {
+     "peca": "cidade",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.4,
+     "de": "f12:passa",
+     "ate": "f12:fim+0.3",
+     "caminho": [
+      [
+       0.1,
+       0.075,
+       0.105
+      ],
+      [
+       0.098,
+       0.23,
+       0.03
+      ],
+      [
+       0.095,
+       0.2,
+       -0.045
+      ]
+     ]
+    },
+    {
+     "peca": "carro",
+     "faz": "sumir",
+     "de": "f13"
+    },
+    {
+     "peca": "tel_x0",
+     "faz": "aparecer",
+     "de": "f13:milhares+0.0"
+    },
+    {
+     "peca": "tel_x1",
+     "faz": "aparecer",
+     "de": "f13:milhares+0.15"
+    },
+    {
+     "peca": "tel_x2",
+     "faz": "aparecer",
+     "de": "f13:milhares+0.3"
+    },
+    {
+     "peca": "tel_x0_tela",
+     "faz": "aparecer",
+     "de": "f13:milhares+0.0"
+    },
+    {
+     "peca": "tel_x1_tela",
+     "faz": "aparecer",
+     "de": "f13:milhares+0.15"
+    },
+    {
+     "peca": "tel_x2_tela",
+     "faz": "aparecer",
+     "de": "f13:milhares+0.3"
+    },
+    {
+     "peca": "cidade",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "quantidade": 5,
+     "velocidade": 0.9,
+     "intensidade": 0.3,
+     "de": "f13:mesmo",
+     "ate": "f14:canal",
+     "caminho": [
+      [
+       -0.15,
+       0.093,
+       0.03
+      ],
+      [
+       -0.122,
+       0.22,
+       -0.007
+      ],
+      [
+       -0.095,
+       0.2,
+       -0.045
+      ]
+     ]
+    },
+    {
+     "peca": "cidade",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "quantidade": 5,
+     "velocidade": 0.9,
+     "intensidade": 0.3,
+     "de": "f13:mesmo",
+     "ate": "f14:canal",
+     "caminho": [
+      [
+       -0.07,
+       0.093,
+       0.04
+      ],
+      [
+       -0.083,
+       0.22,
+       -0.002
+      ],
+      [
+       -0.095,
+       0.2,
+       -0.045
+      ]
+     ]
+    },
+    {
+     "peca": "cidade",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "quantidade": 5,
+     "velocidade": 0.9,
+     "intensidade": 0.3,
+     "de": "f13:mesmo",
+     "ate": "f14:canal",
+     "caminho": [
+      [
+       -0.13,
+       0.093,
+       -0.035
+      ],
+      [
+       -0.113,
+       0.22,
+       -0.04
+      ],
+      [
+       -0.095,
+       0.2,
+       -0.045
+      ]
+     ]
+    },
+    {
+     "peca": "cidade",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "quantidade": 5,
+     "velocidade": 0.9,
+     "intensidade": 0.3,
+     "de": "f13:mesmo",
+     "ate": "f14:canal",
+     "caminho": [
+      [
+       -0.05,
+       0.093,
+       -0.02
+      ],
+      [
+       -0.073,
+       0.22,
+       -0.033
+      ],
+      [
+       -0.095,
+       0.2,
+       -0.045
+      ]
+     ]
+    },
+    {
+     "peca": "torre1",
+     "faz": "tremer",
+     "intensidade": 0.5,
+     "de": "f13:misturam",
+     "ate": "f14:canal"
+    },
+    {
+     "peca": "cidade",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.3,
+     "de": "f14:canal",
+     "ate": "f14:fim+0.4",
+     "caminho": [
+      [
+       -0.15,
+       0.093,
+       0.03
+      ],
+      [
+       -0.122,
+       0.22,
+       -0.007
+      ],
+      [
+       -0.095,
+       0.2,
+       -0.045
+      ]
+     ]
+    },
+    {
+     "peca": "cidade",
+     "faz": "fluxo",
+     "tipo": "gas",
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.3,
+     "de": "f14:canal",
+     "ate": "f14:fim+0.4",
+     "caminho": [
+      [
+       -0.07,
+       0.093,
+       0.04
+      ],
+      [
+       -0.083,
+       0.22,
+       -0.002
+      ],
+      [
+       -0.095,
+       0.2,
+       -0.045
+      ]
+     ]
+    },
+    {
+     "peca": "cidade",
+     "faz": "fluxo",
+     "tipo": "calor",
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.3,
+     "de": "f14:canal",
+     "ate": "f14:fim+0.4",
+     "caminho": [
+      [
+       -0.13,
+       0.093,
+       -0.035
+      ],
+      [
+       -0.113,
+       0.22,
+       -0.04
+      ],
+      [
+       -0.095,
+       0.2,
+       -0.045
+      ]
+     ]
+    },
+    {
+     "peca": "cidade",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.25,
+     "de": "f14:canal",
+     "ate": "f14:fim+0.4",
+     "caminho": [
+      [
+       -0.05,
+       0.093,
+       -0.02
+      ],
+      [
+       -0.073,
+       0.22,
+       -0.033
+      ],
+      [
+       -0.095,
+       0.2,
+       -0.045
+      ]
+     ]
+    },
+    {
+     "peca": "tel_x0",
+     "faz": "sumir",
+     "de": "f15"
+    },
+    {
+     "peca": "tel_x1",
+     "faz": "sumir",
+     "de": "f15"
+    },
+    {
+     "peca": "tel_x2",
+     "faz": "sumir",
+     "de": "f15"
+    },
+    {
+     "peca": "tel_lado",
+     "faz": "aparecer",
+     "de": "f15:lado"
+    },
+    {
+     "peca": "tel_lado_tela",
+     "faz": "aparecer",
+     "de": "f15:lado"
+    },
+    {
+     "peca": "cidade",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 7,
+     "velocidade": 0.6,
+     "intensidade": 0.4,
+     "de": "f15:sua",
+     "ate": "f15:fim+0.4",
+     "caminho": [
+      [
+       -0.15,
+       0.093,
+       0.03
+      ],
+      [
+       -0.13,
+       0.15,
+       0.0
+      ],
+      [
+       -0.095,
+       0.2,
+       -0.045
+      ],
+      [
+       -0.105,
+       0.15,
+       0.01
+      ],
+      [
+       -0.115,
+       0.093,
+       0.04
+      ]
+     ]
+    },
+    {
+     "peca": "tel_lado_tela",
+     "faz": "pulsar",
+     "intensidade": 0.9,
+     "de": "f15:volta",
+     "ate": "f15:fim+0.4"
+    },
+    {
+     "peca": "cidade",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 10,
+     "velocidade": 0.35,
+     "intensidade": 0.38,
+     "de": "f16",
+     "ate": "f16:fim+1",
+     "caminho": [
+      [
+       -0.15,
+       0.093,
+       0.03
+      ],
+      [
+       -0.122,
+       0.23,
+       -0.007
+      ],
+      [
+       -0.095,
+       0.2,
+       -0.045
+      ],
+      [
+       -0.095,
+       0.03,
+       -0.045
+      ],
+      [
+       -0.055,
+       0.024,
+       -0.08
+      ],
+      [
+       0.055,
+       0.024,
+       -0.08
+      ],
+      [
+       0.095,
+       0.03,
+       -0.045
+      ],
+      [
+       0.095,
+       0.2,
+       -0.045
+      ],
+      [
+       0.122,
+       0.23,
+       -0.007
+      ],
+      [
+       0.15,
+       0.093,
+       0.03
+      ]
+     ]
+    },
+    {
+     "peca": "tel_b_tela",
+     "faz": "pulsar",
+     "intensidade": 0.9,
+     "de": "f16:caminho",
+     "ate": "f16:fim+1"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "nervoso",
+     "de": "inicio"
+    },
+    {
+     "quem": "tito",
+     "faz": "maos_na_cabeca",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f7:cidade",
+     "ate": "f8"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "torre1",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f8:torre+0.3"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f9"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "tel_b",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f10:perto"
+    },
+    {
+     "quem": "tito",
+     "faz": "bracos_cruzados",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f11",
+     "ate": "f12"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "torre2",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f12:forte"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "nervoso",
+     "de": "f13"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "torre1",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f14:canal"
+    },
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "surpreso",
+     "de": "f15:lado"
+    },
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f15:fim+0.1"
+    },
+    {
+     "quem": "tito",
+     "faz": "acenar",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f16:segundo"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "camera": [
+      -0.06,
+      1.32,
+      0.72
+     ],
+     "alvo": [
+      -0.1,
+      1.1,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3,
+     "transicao": "zoom"
+    },
+    {
+     "de": "f7:onda",
+     "tipo": "detalhe",
+     "camera": [
+      0.02,
+      1.4,
+      0.95
+     ],
+     "alvo": [
+      0.0,
+      1.08,
+      0.03
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f7:cidade",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "dolly_zoom",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f8",
+     "tipo": "aberto",
+     "camera": [
+      0.0,
+      1.5,
+      0.95
+     ],
+     "alvo": [
+      0.0,
+      1.09,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f8:cada",
+     "tipo": "detalhe",
+     "camera": [
+      0.02,
+      1.4,
+      0.95
+     ],
+     "alvo": [
+      0.0,
+      1.08,
+      0.03
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f9",
+     "tipo": "aberto",
+     "camera": [
+      0.0,
+      1.78,
+      0.5
+     ],
+     "alvo": [
+      0.0,
+      1.02,
+      -0.01
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f9:nome",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": 0.3,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f10",
+     "tipo": "detalhe",
+     "camera": [
+      -0.06,
+      1.32,
+      0.72
+     ],
+     "alvo": [
+      -0.1,
+      1.1,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f10:cabo",
+     "tipo": "aberto",
+     "camera": [
+      0.0,
+      1.5,
+      0.95
+     ],
+     "alvo": [
+      0.0,
+      1.09,
+      0.0
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f10:perto",
+     "tipo": "detalhe",
+     "camera": [
+      0.14,
+      1.38,
+      0.75
+     ],
+     "alvo": [
+      0.1,
+      1.1,
+      -0.01
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f11",
+     "tipo": "detalhe",
+     "camera": [
+      -0.25,
+      1.3,
+      0.62
+     ],
+     "alvo": [
+      -0.11,
+      1.11,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f11:carro",
+     "tipo": "detalhe",
+     "camera": [
+      0.02,
+      1.4,
+      0.95
+     ],
+     "alvo": [
+      0.0,
+      1.08,
+      0.03
+     ],
+     "movimento": "arco",
+     "intensidade": -0.3
+    },
+    {
+     "de": "f11:cai",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f12:celular",
+     "tipo": "detalhe",
+     "camera": [
+      0.02,
+      1.4,
+      0.95
+     ],
+     "alvo": [
+      0.0,
+      1.08,
+      0.03
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f12:passa",
+     "tipo": "detalhe",
+     "camera": [
+      0.14,
+      1.38,
+      0.75
+     ],
+     "alvo": [
+      0.1,
+      1.1,
+      -0.01
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f13",
+     "tipo": "detalhe",
+     "camera": [
+      -0.25,
+      1.3,
+      0.62
+     ],
+     "alvo": [
+      -0.11,
+      1.11,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f13:por",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f14",
+     "tipo": "detalhe",
+     "camera": [
+      -0.06,
+      1.32,
+      0.72
+     ],
+     "alvo": [
+      -0.1,
+      1.1,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": -0.3
+    },
+    {
+     "de": "f14:como",
+     "tipo": "aberto",
+     "camera": [
+      0.0,
+      1.78,
+      0.5
+     ],
+     "alvo": [
+      0.0,
+      1.02,
+      -0.01
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f15",
+     "tipo": "aberto",
+     "camera": [
+      0.0,
+      1.5,
+      0.95
+     ],
+     "alvo": [
+      0.0,
+      1.09,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": -0.4,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f15:lado",
+     "tipo": "detalhe",
+     "camera": [
+      -0.25,
+      1.3,
+      0.62
+     ],
+     "alvo": [
+      -0.11,
+      1.11,
+      0.0
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f15:vai",
+     "tipo": "detalhe",
+     "camera": [
+      -0.06,
+      1.32,
+      0.72
+     ],
+     "alvo": [
+      -0.1,
+      1.1,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f16",
+     "tipo": "aberto",
+     "camera": [
+      0.0,
+      1.5,
+      0.95
+     ],
+     "alvo": [
+      0.0,
+      1.09,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f16:caminho",
+     "tipo": "aberto",
+     "camera": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "alvo": [
+      -0.9,
+      1.5,
+      0.3
+     ],
+     "movimento": "arco",
+     "intensidade": 0.5,
+     "transicao": "chicote"
+    }
+   ],
+   "sons": [
+    {
+     "de": "f7",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f7:fraca",
+     "som": "chiado",
+     "volume": 0.4
+    },
+    {
+     "de": "f7:cidade",
+     "som": "impacto",
+     "volume": 0.9
+    },
+    {
+     "de": "f8:pedacinhos",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f8:torre",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f9:celula",
+     "som": "ding",
+     "volume": 0.6
+    },
+    {
+     "de": "f9:nome",
+     "som": "ding",
+     "volume": 0.8
+    },
+    {
+     "de": "f10:cabo",
+     "som": "zap",
+     "volume": 0.5
+    },
+    {
+     "de": "f10:solta",
+     "som": "bip",
+     "volume": 0.6
+    },
+    {
+     "de": "f11",
+     "som": "tensao_sobe",
+     "volume": 0.4
+    },
+    {
+     "de": "f11:carro",
+     "som": "buzina",
+     "volume": 0.4
+    },
+    {
+     "de": "f11:cai",
+     "som": "impacto",
+     "volume": 0.7
+    },
+    {
+     "de": "f12:forte",
+     "som": "ding",
+     "volume": 0.7
+    },
+    {
+     "de": "f13",
+     "som": "tensao_sobe",
+     "volume": 0.4
+    },
+    {
+     "de": "f13:misturam",
+     "som": "chiado",
+     "volume": 0.5
+    },
+    {
+     "de": "f14:canal",
+     "som": "ding",
+     "volume": 0.7
+    },
+    {
+     "de": "f15:lado",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f15:volta",
+     "som": "bip",
+     "volume": 0.6
+    },
+    {
+     "de": "f16:segundo",
+     "som": "ding",
+     "volume": 0.6
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f7:cidade",
+     "ate": "f7:fim+0.3",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f8:torre",
+     "ate": "f8:fim",
+     "efeito": "circular",
+     "alvo": "torre1"
+    },
+    {
+     "de": "f11:cai",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f12:forte",
+     "ate": "f12:fim",
+     "efeito": "circular",
+     "alvo": "torre2"
+    },
+    {
+     "de": "f13:misturam",
+     "ate": "f13:misturam+0.4",
+     "efeito": "tremor",
+     "intensidade": 0.4
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "tel_a",
+     "texto": "Fraca",
+     "de": "f7:fraca",
+     "ate": "f7:cidade"
+    },
+    {
+     "alvo": "torre1",
+     "texto": "Torre",
+     "de": "f8:torre",
+     "ate": "f8:fim"
+    },
+    {
+     "alvo": "celula1",
+     "texto": "Célula",
+     "de": "f9:celula",
+     "ate": "f9:nome"
+    },
+    {
+     "alvo": "cabo",
+     "texto": "Cabo",
+     "de": "f10:cabo",
+     "ate": "f10:perto"
+    },
+    {
+     "alvo": "carro",
+     "texto": "Você",
+     "de": "f11:carro",
+     "ate": "f11:cai"
+    },
+    {
+     "alvo": "torre2",
+     "texto": "Mais forte",
+     "de": "f12:forte",
+     "ate": "f12:fim"
+    },
+    {
+     "alvo": "torre1",
+     "texto": "Canais",
+     "de": "f14:canal",
+     "ate": "f14:fim"
+    },
+    {
+     "alvo": "tel_lado",
+     "texto": "Do lado",
+     "de": "f15:lado",
+     "ate": "f15:fim"
+    }
+   ]
+  }
+ ]
+}
