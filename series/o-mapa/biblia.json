@@ -1,0 +1,165 @@
+{
+  "serie": "o-mapa",
+  "titulo": "O MAPA",
+  "genero": "aventura / caça ao tesouro (8 batidas clássicas)",
+  "partes": 7,
+  "rotulo_parte": "PARTE",
+  "sinopse": "O Nico (15) e a irmã Duda (11) acham na praia uma garrafa com o mapa de 40 barras de ouro escondidas em 1962 na Ilha das Gaivotas, e um aviso do faroleiro: 'Não confie em quem te levar até a ilha.' O único barco é o do Seu Jonas. Sete partes, de sábado às 6h até a tempestade de domingo à noite.",
+  "narrador": "nico",
+  "personagens": {
+    "nico": {
+      "nome": "Nico",
+      "papel": "narrador e protagonista (15 anos): achou a garrafa com o mapa; fala com 'você' no gancho e conta o resto em primeira pessoa, no presente",
+      "personalidade": "corajoso, impulsivo, quer viralizar tudo; protege a irmã e faz piada quando está com medo",
+      "voz": {
+        "descricao": "menino brasileiro de 15 anos, voz animada de quem conta uma aventura pros amigos",
+        "instruct": "male, teenager, moderate pitch",
+        "amostra": "Se você achar um mapa do tesouro numa garrafa, não poste na internet. Eu vou te contar por quê.",
+        "realce": true
+      },
+      "visual": {
+        "altura": 0.88,
+        "corpo": "#2E7FD8",
+        "cabeca": "#F2D5BD",
+        "olhos": "redondos",
+        "sobrancelhas": "grossas",
+        "acessorios": [
+          {
+            "tipo": "bone",
+            "cor": "#D63030"
+          },
+          {
+            "tipo": "mochila",
+            "cor": "#2F6B3A"
+          }
+        ]
+      },
+      "cor_legenda": "#FFD60A"
+    },
+    "duda": {
+      "nome": "Duda",
+      "papel": "irmã do Nico (11 anos): a cabeça da dupla, resolve os enigmas do mapa e faz as contas",
+      "personalidade": "desconfiada, esperta, fala pouco e certo; não confia em adulto que faz favor de graça",
+      "voz": {
+        "descricao": "menina brasileira de 11 anos, voz aguda e decidida",
+        "instruct": "female, teenager, high pitch"
+      },
+      "visual": {
+        "altura": 0.72,
+        "corpo": "#F4C430",
+        "cabeca": "#E9C9A8",
+        "olhos": "redondos",
+        "sobrancelhas": "finas",
+        "cilios": true,
+        "bochechas": "#F4A7A3",
+        "acessorios": [
+          {
+            "tipo": "oculos",
+            "cor": "#D63384"
+          },
+          {
+            "tipo": "rabo_de_cavalo",
+            "cor": "#4A2C1A"
+          }
+        ]
+      },
+      "cor_legenda": "#FF9EC7"
+    },
+    "jonas": {
+      "nome": "Seu Jonas",
+      "papel": "pescador (65 anos), dono do barco Tubarão II, o único que vai até a Ilha das Gaivotas; na verdade é filho do Severino, o ladrão de 1962, e caça o ouro há 40 anos",
+      "personalidade": "simpático, brincalhão, avô de todo mundo; calmo até o ouro aparecer",
+      "voz": {
+        "descricao": "homem brasileiro de 65 anos, voz grave e rouca de pescador, simpática",
+        "instruct": "male, elderly, low pitch"
+      },
+      "visual": {
+        "altura": 1.02,
+        "corpo": "#3E6E8E",
+        "cabeca": "#D9A882",
+        "olhos": "sonolentos",
+        "sobrancelhas": "grossas",
+        "acessorios": [
+          {
+            "tipo": "bandana",
+            "cor": "#1F3F7A"
+          },
+          {
+            "tipo": "bigode",
+            "cor": "#ECECEC"
+          },
+          {
+            "tipo": "colete",
+            "cor": "#FF7A1A"
+          }
+        ]
+      },
+      "cor_legenda": "#7CC4FF"
+    },
+    "marina": {
+      "nome": "Marina",
+      "papel": "mergulhadora e caçadora de tesouro (35 anos) que o Seu Jonas chama de 'Marina Caveira'; na verdade é neta do faroleiro Aurélio e quer o ouro no museu para limpar o nome do avô",
+      "personalidade": "seca, direta, assusta no começo; corajosa e leal quando confia",
+      "voz": {
+        "descricao": "mulher brasileira de 35 anos, voz grave, firme e seca",
+        "instruct": "female, young adult, low pitch"
+      },
+      "visual": {
+        "altura": 0.98,
+        "corpo": "#1C3B3A",
+        "cabeca": "#C99A76",
+        "olhos": "ovais",
+        "sobrancelhas": "grossas",
+        "cilios": true,
+        "acessorios": [
+          {
+            "tipo": "bandana",
+            "cor": "#111111"
+          },
+          {
+            "tipo": "rabo_de_cavalo",
+            "cor": "#1A120C"
+          }
+        ]
+      },
+      "cor_legenda": "#7CF0C8"
+    },
+    "aurelio": {
+      "nome": "Aurélio",
+      "papel": "o faroleiro da Ilha das Gaivotas em 1962 (aparece só em lembrança, em sépia): salvou o ouro do Santa Clara dos ladrões, escondeu e jogou 3 garrafas com o mapa no mar",
+      "personalidade": "calado, honesto, teimoso",
+      "voz": {
+        "descricao": "homem brasileiro de uns 50 anos, voz grave e calma",
+        "instruct": "male, middle-aged, low pitch"
+      },
+      "visual": {
+        "altura": 1.0,
+        "corpo": "#22324A",
+        "cabeca": "#E9C9A8",
+        "olhos": "ovais",
+        "sobrancelhas": "grossas",
+        "acessorios": [
+          {
+            "tipo": "bone",
+            "cor": "#1A2238"
+          },
+          {
+            "tipo": "bigode",
+            "cor": "#2A1A12"
+          }
+        ]
+      },
+      "cor_legenda": "#E8D3A0"
+    }
+  },
+  "fatos": [
+    "Ilha das Gaivotas: ilha deserta a 40 minutos de barco da vila, com praia, mata fechada, a figueira gigante de raízes altas (a 'árvore que chora': pinga água das raízes) e o farol apagado desde 1962 numa ilhota com cais. Ninguém mora lá.",
+    "1962: o navio Santa Clara afundou perto da ilha com 40 barras de ouro (12 kg cada, quase meia tonelada). O ouro sumiu e o faroleiro Aurélio levou a culpa.",
+    "Parte 1: sábado, 6h, o Nico e a Duda acham na praia da vila uma garrafa com o mapa e um bilhete: 'Quem achar: 40 barras de ouro na Ilha das Gaivotas. Entregue ao museu. Não confie em quem te levar até a ilha. — Aurélio, faroleiro, 1962.'",
+    "Uma tempestade chega domingo às 18h; depois dela, uma semana sem barco para a ilha.",
+    "O único pescador que vai até a ilha é o Seu Jonas, no barco Tubarão II; ele se ofereceu para levar os dois de graça."
+  ],
+  "ganchos_abertos": [
+    "Como o Seu Jonas sabia do mapa do faroleiro se ninguém contou pra ele?"
+  ]
+}

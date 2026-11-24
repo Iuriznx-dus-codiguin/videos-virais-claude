@@ -1,0 +1,1330 @@
+{
+  "serie": "o-mapa",
+  "parte": 1,
+  "titulo": "A garrafa",
+  "musica": "misterio",
+  "falas": [
+    {
+      "id": "f1",
+      "quem": "nico",
+      "off": true,
+      "texto": "Se você achar um mapa do tesouro dentro de uma garrafa, não poste na INTERNET.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f2",
+      "quem": "nico",
+      "off": true,
+      "texto": "Porque tem gente caçando esse ouro há mais de sessenta anos. E o mapa é seu."
+    },
+    {
+      "id": "f3",
+      "quem": "nico",
+      "off": true,
+      "texto": "Mas só se você não confiar na pessoa ERRADA.",
+      "tom": "serio"
+    },
+    {
+      "id": "f4",
+      "quem": "nico",
+      "off": true,
+      "texto": "Eu sou o Nico. Sábado, seis da manhã, essa garrafa chegou na areia."
+    },
+    {
+      "id": "f5",
+      "quem": "duda",
+      "texto": "Nico, tem um papel aqui DENTRO!",
+      "tom": "animado"
+    },
+    {
+      "id": "f6",
+      "quem": "nico",
+      "off": true,
+      "texto": "Um mapa da Ilha das Gaivotas, assinado pelo faroleiro da ilha."
+    },
+    {
+      "id": "f7",
+      "quem": "duda",
+      "texto": "Quarenta barras de ouro. E não confie em quem te levar até a ilha.",
+      "tom": "serio"
+    },
+    {
+      "id": "f8",
+      "quem": "nico",
+      "off": true,
+      "texto": "Meu primeiro instinto é tirar uma foto e postar."
+    },
+    {
+      "id": "f9",
+      "quem": "nico",
+      "off": true,
+      "texto": "Não. Mapa na internet enche a ilha de caçador.",
+      "tom": "serio"
+    },
+    {
+      "id": "f10",
+      "quem": "nico",
+      "off": true,
+      "texto": "E tem pior: domingo às seis chega uma tempestade. Depois, uma semana sem barco.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f11",
+      "quem": "nico",
+      "off": true,
+      "texto": "Primeiro problema: barco. Eu tenho quinze anos e uma bicicleta."
+    },
+    {
+      "id": "f12",
+      "quem": "nico",
+      "off": true,
+      "texto": "E o único pescador que vai até a ilha é o Seu Jonas."
+    },
+    {
+      "id": "f13",
+      "quem": "jonas",
+      "texto": "Ilha das Gaivotas? Eu levo vocês. De graça.",
+      "tom": "animado"
+    },
+    {
+      "id": "f14",
+      "quem": "duda",
+      "texto": "Ninguém faz nada de graça, Nico.",
+      "tom": "serio"
+    },
+    {
+      "id": "f15",
+      "quem": "nico",
+      "off": true,
+      "texto": "Mas é ele ou esperar uma semana. Até lá, outro acha o ouro."
+    },
+    {
+      "id": "f16",
+      "quem": "nico",
+      "off": true,
+      "texto": "Então ele dá colete, enche o tanque e aponta a ilha.",
+      "tom": "aliviado"
+    },
+    {
+      "id": "f17",
+      "quem": "jonas",
+      "texto": "Quarenta minutos de mar. Eu conheço essa água desde criança.",
+      "tom": "calmo"
+    },
+    {
+      "id": "f18",
+      "quem": "jonas",
+      "texto": "E guarda bem esse mapa do faroleiro, menino.",
+      "tom": "calmo"
+    },
+    {
+      "id": "f19",
+      "quem": "nico",
+      "off": true,
+      "texto": "Ninguém tinha contado do MAPA pra ele.",
+      "tom": "tenso"
+    }
+  ],
+  "cenas": [
+    {
+      "cenario": "praia",
+      "luz": "dia",
+      "ambiente": "mar",
+      "id": "gancho",
+      "de": "inicio",
+      "personagens": {
+        "nico": {
+          "em": [
+            2.6,
+            9.2
+          ],
+          "olhando": [
+            0.7,
+            0.3,
+            8.4
+          ],
+          "expressao": "surpreso"
+        },
+        "duda": {
+          "em": [
+            -1.0,
+            9.8
+          ],
+          "olhando": [
+            0.7,
+            0.2,
+            8.4
+          ],
+          "expressao": "surpreso"
+        },
+        "jonas": {
+          "em": [
+            -2.4,
+            12.2
+          ],
+          "olhando": [
+            0.7,
+            1.6,
+            9.5
+          ],
+          "expressao": "desconfiado"
+        }
+      },
+      "acoes": [
+        {
+          "quem": "duda",
+          "faz": "agachar",
+          "de": "inicio"
+        },
+        {
+          "quem": "duda",
+          "faz": "pegar",
+          "item": "garrafa",
+          "para": [
+            0.7,
+            8.4
+          ],
+          "de": "f1:garrafa"
+        },
+        {
+          "quem": "nico",
+          "expressao": "feliz",
+          "de": "f2"
+        },
+        {
+          "quem": "nico",
+          "expressao": "serio",
+          "de": "f3"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "garrafa",
+          "em": [
+            0.7,
+            8.4
+          ],
+          "some": "f1:garrafa+0.5"
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            -6.5,
+            18.5
+          ],
+          "giro": 10,
+          "luzes": false,
+          "caixas": false
+        },
+        {
+          "tipo": "farol",
+          "em": [
+            -20,
+            95
+          ],
+          "modo": "apagado",
+          "escala": 1.1
+        }
+      ],
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "drone",
+          "alvo": [
+            0.0,
+            0.8,
+            10.4
+          ],
+          "camera": [
+            0.6,
+            13.0,
+            -1.5
+          ],
+          "movimento": "descer",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f1:garrafa",
+          "tipo": "close",
+          "alvo": "duda",
+          "camera": [
+            1.43,
+            1.8,
+            10.71
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f2",
+          "tipo": "detalhe",
+          "alvo": [
+            -20,
+            6,
+            95
+          ],
+          "camera": [
+            0.6,
+            2.4,
+            9.0
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.3,
+          "transicao": "chicote"
+        },
+        {
+          "de": "f2:mapa",
+          "tipo": "medio",
+          "alvo": "nico",
+          "camera": [
+            -1.46,
+            2.6,
+            7.49
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f3:ERRADA",
+          "tipo": "close",
+          "alvo": "nico",
+          "camera": [
+            -0.16,
+            2.5,
+            8.04
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.3
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "f1:INTERNET",
+          "ate": "f1:INTERNET+0.6",
+          "efeito": "linhas"
+        },
+        {
+          "de": "f2+0.2",
+          "ate": "f2:mapa",
+          "efeito": "letreiro",
+          "texto": "ILHA DAS GAIVOTAS",
+          "altura": 0.3
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "inicio",
+          "ate": "f2",
+          "texto": "ACHEI UM *MAPA DO TESOURO*"
+        },
+        {
+          "de": "f2:mapa",
+          "ate": "f3",
+          "texto": "O MAPA *É SEU*"
+        },
+        {
+          "de": "f3",
+          "texto": "CUIDADO *EM QUEM CONFIA*"
+        }
+      ],
+      "sons": [
+        {
+          "de": "f1:INTERNET",
+          "som": "impacto",
+          "volume": 0.3
+        },
+        {
+          "de": "f3:ERRADA",
+          "som": "susto",
+          "volume": 0.3
+        }
+      ]
+    },
+    {
+      "cenario": "praia",
+      "luz": "dia",
+      "ambiente": "mar",
+      "id": "garrafa",
+      "de": "f4",
+      "personagens": {
+        "nico": {
+          "em": [
+            2.6,
+            9.2
+          ],
+          "olhando": [
+            -1.0,
+            1.6,
+            9.8
+          ],
+          "expressao": "feliz"
+        },
+        "duda": {
+          "em": [
+            -1.0,
+            9.8
+          ],
+          "olhando": [
+            2.6,
+            1.8,
+            9.2
+          ],
+          "expressao": "surpreso",
+          "segura": "garrafa"
+        },
+        "jonas": {
+          "em": [
+            -2.4,
+            12.2
+          ],
+          "olhando": [
+            0.7,
+            1.6,
+            9.5
+          ],
+          "expressao": "desconfiado"
+        }
+      },
+      "acoes": [
+        {
+          "quem": "duda",
+          "expressao": "feliz",
+          "de": "f5:DENTRO"
+        },
+        {
+          "quem": "duda",
+          "expressao": "serio",
+          "de": "f7"
+        },
+        {
+          "quem": "nico",
+          "expressao": "surpreso",
+          "de": "f7:ouro"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "barco",
+          "em": [
+            -6.5,
+            18.5
+          ],
+          "giro": 10,
+          "luzes": false,
+          "caixas": false
+        },
+        {
+          "tipo": "farol",
+          "em": [
+            -20,
+            95
+          ],
+          "modo": "apagado",
+          "escala": 1.1
+        }
+      ],
+      "planos": [
+        {
+          "de": "f4",
+          "tipo": "medio",
+          "alvo": "nico",
+          "camera": [
+            -1.46,
+            2.6,
+            7.49
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f5",
+          "tipo": "close",
+          "alvo": "duda",
+          "camera": [
+            1.57,
+            2.1,
+            10.92
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f7",
+          "tipo": "close",
+          "alvo": "duda",
+          "camera": [
+            1.57,
+            2.1,
+            10.92
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f7:ouro",
+          "tipo": "close",
+          "alvo": "nico",
+          "camera": [
+            -0.16,
+            2.5,
+            8.04
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.25
+        }
+      ],
+      "rotulos": [
+        {
+          "alvo": "nico",
+          "texto": "NICO · 15 ANOS",
+          "de": "f4:Nico",
+          "ate": "f4:manhã",
+          "altura": 0.72
+        },
+        {
+          "alvo": "duda",
+          "texto": "DUDA · 11 ANOS",
+          "de": "f5",
+          "ate": "f5:fim+0.2"
+        }
+      ],
+      "insercoes": [
+        {
+          "de": "f6",
+          "ate": "f7:ouro",
+          "tipo": "bilhete",
+          "titulo": "MAPA · ILHA DAS GAIVOTAS",
+          "linhas": [
+            "Do farol, 300 passos até a árvore que chora.",
+            "Ali: 40 barras de ouro. Entregue ao museu.",
+            "NÃO CONFIE em quem te levar até a ilha.",
+            "— Aurélio, faroleiro, 1962"
+          ]
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f4:manhã",
+          "ate": "f5",
+          "texto": "A GARRAFA *CHEGOU NA AREIA*"
+        },
+        {
+          "de": "f7:ouro",
+          "texto": "*40 BARRAS* DE OURO"
+        }
+      ],
+      "relogio": {
+        "de": "f4",
+        "hora": "06:04",
+        "ate_hora": "06:06"
+      },
+      "sons": [
+        {
+          "de": "f5:DENTRO",
+          "som": "pop",
+          "volume": 0.35
+        },
+        {
+          "de": "f7:ouro",
+          "som": "tensao_sobe",
+          "volume": 0.3
+        }
+      ]
+    },
+    {
+      "cenario": "praia",
+      "luz": "dia",
+      "ambiente": "mar",
+      "id": "instinto",
+      "de": "f8",
+      "personagens": {
+        "nico": {
+          "em": [
+            2.6,
+            9.2
+          ],
+          "olhando": [
+            -1.0,
+            1.6,
+            9.8
+          ],
+          "expressao": "feliz"
+        },
+        "duda": {
+          "em": [
+            -1.0,
+            9.8
+          ],
+          "olhando": [
+            2.6,
+            1.8,
+            9.2
+          ],
+          "expressao": "desconfiado",
+          "segura": "garrafa"
+        },
+        "jonas": {
+          "em": [
+            -2.4,
+            12.2
+          ],
+          "olhando": [
+            0.7,
+            1.6,
+            9.5
+          ],
+          "expressao": "desconfiado"
+        }
+      },
+      "acoes": [
+        {
+          "quem": "nico",
+          "expressao": "serio",
+          "de": "f9"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "barco",
+          "em": [
+            -6.5,
+            18.5
+          ],
+          "giro": 10,
+          "luzes": false,
+          "caixas": false
+        },
+        {
+          "tipo": "farol",
+          "em": [
+            -20,
+            95
+          ],
+          "modo": "apagado",
+          "escala": 1.1
+        }
+      ],
+      "planos": [
+        {
+          "de": "f8",
+          "tipo": "close",
+          "alvo": "nico",
+          "camera": [
+            -0.16,
+            2.5,
+            8.04
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f9",
+          "tipo": "close",
+          "alvo": "nico",
+          "camera": [
+            -0.16,
+            2.5,
+            8.04
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.3
+        }
+      ],
+      "insercoes": [
+        {
+          "de": "f8:foto",
+          "ate": "f8:fim+0.2",
+          "tipo": "celular",
+          "titulo": "Nova publicação",
+          "linhas": [
+            "ACHEI UM MAPA DO TESOURO!!!",
+            "#tesouro #ouro #ilha"
+          ]
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f8",
+          "ate": "f9",
+          "texto": "POSTAR *A FOTO*?"
+        },
+        {
+          "de": "f9",
+          "texto": "*NÃO* POSTA"
+        }
+      ],
+      "relogio": {
+        "de": "f8",
+        "hora": "06:07"
+      },
+      "efeitos": [
+        {
+          "de": "f9",
+          "ate": "f9+0.6",
+          "efeito": "linhas"
+        }
+      ],
+      "sons": [
+        {
+          "de": "f9",
+          "som": "susto",
+          "volume": 0.3
+        }
+      ]
+    },
+    {
+      "cenario": "praia",
+      "luz": "dia",
+      "ambiente": "mar",
+      "id": "relogio",
+      "de": "f10",
+      "filtro": "frio",
+      "personagens": {
+        "nico": {
+          "em": [
+            2.6,
+            9.2
+          ],
+          "olhando": [
+            -20,
+            4,
+            95
+          ],
+          "expressao": "nervoso"
+        },
+        "duda": {
+          "em": [
+            -1.0,
+            9.8
+          ],
+          "olhando": [
+            -20,
+            4,
+            95
+          ],
+          "expressao": "nervoso",
+          "segura": "garrafa"
+        },
+        "jonas": {
+          "em": [
+            -2.4,
+            12.2
+          ],
+          "olhando": [
+            0.7,
+            1.6,
+            9.5
+          ],
+          "expressao": "desconfiado"
+        }
+      },
+      "acoes": [],
+      "objetos": [
+        {
+          "tipo": "barco",
+          "em": [
+            -6.5,
+            18.5
+          ],
+          "giro": 10,
+          "luzes": false,
+          "caixas": false
+        },
+        {
+          "tipo": "farol",
+          "em": [
+            -20,
+            95
+          ],
+          "modo": "apagado",
+          "escala": 1.1
+        }
+      ],
+      "planos": [
+        {
+          "de": "f10",
+          "tipo": "detalhe",
+          "alvo": [
+            -20,
+            6,
+            95
+          ],
+          "camera": [
+            0.6,
+            2.2,
+            11.6
+          ],
+          "movimento": "afastar",
+          "intensidade": 0.3,
+          "transicao": "zoom"
+        },
+        {
+          "de": "f10:Depois",
+          "tipo": "aberto",
+          "alvo": [
+            0.8,
+            1.8,
+            9.5
+          ],
+          "camera": [
+            8.5,
+            5.0,
+            19.0
+          ],
+          "movimento": "arco",
+          "intensidade": -0.2
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f10",
+          "ate": "f10:Depois",
+          "texto": "*36 HORAS* ATÉ A TEMPESTADE"
+        },
+        {
+          "de": "f10:Depois",
+          "texto": "UMA SEMANA *SEM BARCO*"
+        }
+      ],
+      "relogio": {
+        "de": "f10",
+        "hora": "06:08"
+      },
+      "sons": [
+        {
+          "de": "f10:tempestade",
+          "som": "trovao",
+          "volume": 0.3
+        }
+      ]
+    },
+    {
+      "cenario": "praia",
+      "luz": "dia",
+      "ambiente": "mar",
+      "id": "corrente",
+      "de": "f11",
+      "personagens": {
+        "nico": {
+          "em": [
+            2.6,
+            9.2
+          ],
+          "olhando": [
+            -3.8,
+            2.4,
+            6.2
+          ],
+          "expressao": "serio"
+        },
+        "duda": {
+          "em": [
+            -1.0,
+            9.8
+          ],
+          "olhando": [
+            -3.8,
+            2.4,
+            6.2
+          ],
+          "expressao": "desconfiado",
+          "segura": "garrafa"
+        },
+        "jonas": {
+          "em": [
+            -2.4,
+            12.2
+          ],
+          "olhando": [
+            -2.3,
+            1.6,
+            4.2
+          ],
+          "expressao": "feliz"
+        }
+      },
+      "acoes": [
+        {
+          "quem": "jonas",
+          "faz": "andar",
+          "para": [
+            -3.8,
+            6.2
+          ],
+          "de": "f11",
+          "velocidade": 0.6
+        },
+        {
+          "quem": "jonas",
+          "faz": "virar",
+          "para": [
+            0.7,
+            2.4,
+            9.5
+          ],
+          "de": "f12:Jonas"
+        },
+        {
+          "quem": "nico",
+          "expressao": "feliz",
+          "de": "f13:graça"
+        },
+        {
+          "quem": "nico",
+          "expressao": "determinado",
+          "de": "f15"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "barco",
+          "em": [
+            -6.5,
+            18.5
+          ],
+          "giro": 10,
+          "luzes": false,
+          "caixas": false
+        },
+        {
+          "tipo": "farol",
+          "em": [
+            -20,
+            95
+          ],
+          "modo": "apagado",
+          "escala": 1.1
+        }
+      ],
+      "planos": [
+        {
+          "de": "f11",
+          "tipo": "close",
+          "alvo": "nico",
+          "camera": [
+            -0.12,
+            2.5,
+            7.93
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f12",
+          "tipo": "medio",
+          "alvo": "jonas",
+          "camera": [
+            0.11,
+            2.9,
+            8.21
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.25,
+          "transicao": "chicote"
+        },
+        {
+          "de": "f13",
+          "tipo": "close",
+          "alvo": "jonas",
+          "camera": [
+            -1.29,
+            2.8,
+            7.85
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f14",
+          "tipo": "close",
+          "alvo": "duda",
+          "camera": [
+            -3.14,
+            2.1,
+            8.0
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f15",
+          "tipo": "aberto",
+          "alvo": [
+            -0.6,
+            1.8,
+            8.8
+          ],
+          "camera": [
+            -0.9,
+            3.4,
+            1.6
+          ],
+          "movimento": "arco",
+          "intensidade": 0.2
+        }
+      ],
+      "rotulos": [
+        {
+          "alvo": "jonas",
+          "texto": "SEU JONAS · PESCADOR",
+          "de": "f12:Jonas",
+          "ate": "f12:fim+0.3",
+          "altura": 0.72
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f11",
+          "ate": "f12",
+          "texto": "PROBLEMA 1: *BARCO*"
+        },
+        {
+          "de": "f12:fim+0.3",
+          "ate": "f14",
+          "texto": "\"*DE GRAÇA*\""
+        },
+        {
+          "de": "f14",
+          "ate": "f15",
+          "texto": "DE GRAÇA *POR QUÊ*?"
+        },
+        {
+          "de": "f15",
+          "texto": "OU ELE, OU *UMA SEMANA*"
+        }
+      ],
+      "relogio": {
+        "de": "f11",
+        "hora": "06:20"
+      },
+      "sons": [
+        {
+          "de": "f14:graça",
+          "som": "tensao_sobe",
+          "volume": 0.25
+        }
+      ]
+    },
+    {
+      "cenario": "praia",
+      "luz": "dia",
+      "ambiente": "mar",
+      "id": "alivio",
+      "de": "f16",
+      "filtro": "quente",
+      "personagens": {
+        "nico": {
+          "em": [
+            2.6,
+            9.2
+          ],
+          "olhando": [
+            -20,
+            4,
+            95
+          ],
+          "expressao": "feliz"
+        },
+        "duda": {
+          "em": [
+            -1.0,
+            9.8
+          ],
+          "olhando": [
+            -20,
+            4,
+            95
+          ],
+          "expressao": "aliviado",
+          "segura": "garrafa"
+        },
+        "jonas": {
+          "em": [
+            -3.8,
+            6.2
+          ],
+          "olhando": [
+            0.7,
+            2.4,
+            9.5
+          ],
+          "expressao": "feliz"
+        }
+      },
+      "acoes": [
+        {
+          "quem": "jonas",
+          "faz": "apontar",
+          "para": [
+            -20,
+            6,
+            95
+          ],
+          "de": "f16:aponta"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "barco",
+          "em": [
+            -6.5,
+            18.5
+          ],
+          "giro": 10,
+          "luzes": false,
+          "caixas": false
+        },
+        {
+          "tipo": "farol",
+          "em": [
+            -20,
+            95
+          ],
+          "modo": "apagado",
+          "escala": 1.1
+        },
+        {
+          "tipo": "particulas",
+          "particula": "folhas",
+          "em": [
+            0,
+            8.5
+          ],
+          "alt": 0.5,
+          "raio": 6,
+          "altura": 6,
+          "quantas": 25
+        }
+      ],
+      "planos": [
+        {
+          "de": "f16",
+          "tipo": "aberto",
+          "alvo": [
+            -0.8,
+            1.8,
+            9.2
+          ],
+          "camera": [
+            -7.8,
+            3.4,
+            14.5
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.25,
+          "transicao": "desfoque"
+        },
+        {
+          "de": "f17",
+          "tipo": "close",
+          "alvo": "jonas",
+          "camera": [
+            -1.29,
+            2.8,
+            7.85
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f16",
+          "ate": "f17",
+          "texto": "TANQUE CHEIO, *COLETE NO CORPO*",
+          "cor": "#2FD27A"
+        },
+        {
+          "de": "f17",
+          "texto": "*40 MINUTOS* DE MAR",
+          "cor": "#2FD27A"
+        }
+      ],
+      "relogio": {
+        "de": "f16",
+        "hora": "06:31"
+      }
+    },
+    {
+      "cenario": "praia",
+      "luz": "dia",
+      "ambiente": "mar",
+      "id": "virada",
+      "de": "f18",
+      "filtro": "dramatico",
+      "personagens": {
+        "nico": {
+          "em": [
+            2.6,
+            9.2
+          ],
+          "olhando": [
+            -3.8,
+            2.4,
+            6.2
+          ],
+          "expressao": "feliz"
+        },
+        "duda": {
+          "em": [
+            -1.0,
+            9.8
+          ],
+          "olhando": [
+            -3.8,
+            2.4,
+            6.2
+          ],
+          "expressao": "aliviado",
+          "segura": "garrafa"
+        },
+        "jonas": {
+          "em": [
+            -3.8,
+            6.2
+          ],
+          "olhando": [
+            0.7,
+            2.4,
+            9.5
+          ],
+          "expressao": "feliz"
+        }
+      },
+      "acoes": [
+        {
+          "quem": "jonas",
+          "expressao": "serio",
+          "de": "f18:mapa"
+        },
+        {
+          "quem": "nico",
+          "expressao": "surpreso",
+          "de": "f19"
+        },
+        {
+          "quem": "duda",
+          "expressao": "medo",
+          "de": "f19"
+        }
+      ],
+      "objetos": [
+        {
+          "tipo": "barco",
+          "em": [
+            -6.5,
+            18.5
+          ],
+          "giro": 10,
+          "luzes": false,
+          "caixas": false
+        },
+        {
+          "tipo": "farol",
+          "em": [
+            -20,
+            95
+          ],
+          "modo": "apagado",
+          "escala": 1.1
+        }
+      ],
+      "planos": [
+        {
+          "de": "f18",
+          "tipo": "close",
+          "alvo": "jonas",
+          "camera": [
+            -1.29,
+            2.8,
+            7.85
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f19",
+          "tipo": "close",
+          "alvo": "nico",
+          "camera": [
+            -0.12,
+            2.5,
+            7.93
+          ],
+          "movimento": "dolly_zoom",
+          "intensidade": 0.8,
+          "transicao": "zoom"
+        },
+        {
+          "de": "f19:fim+0.3",
+          "tipo": "close",
+          "alvo": "nico",
+          "camera": [
+            -0.12,
+            2.5,
+            7.93
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f18",
+          "ate": "f19",
+          "texto": "\"O MAPA *DO FAROLEIRO*\""
+        },
+        {
+          "de": "f19",
+          "texto": "COMO ELE *SABIA*?"
+        }
+      ],
+      "relogio": {
+        "de": "f18",
+        "hora": "06:32"
+      },
+      "efeitos": [
+        {
+          "de": "f18:mapa",
+          "ate": "fim",
+          "efeito": "barras"
+        },
+        {
+          "de": "f19:MAPA",
+          "ate": "f19:fim+0.4",
+          "efeito": "destacar",
+          "alvo": "nico"
+        }
+      ],
+      "sons": [
+        {
+          "de": "f18:mapa",
+          "som": "tensao_sobe",
+          "volume": 0.3
+        },
+        {
+          "de": "f19:MAPA",
+          "som": "impacto",
+          "volume": 0.45
+        }
+      ]
+    }
+  ],
+  "chamada": {
+    "pergunta": "Entrava no barco do Seu Jonas ou não?",
+    "texto": "COMENTA",
+    "destaque": "PARTE 2"
+  },
+  "postagem": {
+    "titulo": "Achei um mapa do tesouro numa garrafa na praia",
+    "descricao": "Dois irmãos acham na praia uma garrafa com o mapa de 40 barras de ouro escondidas numa ilha em 1962, e um aviso do faroleiro: não confie em quem te levar até lá. O único barco é do pescador simpático da vila.",
+    "hashtags": [
+      "tesouro",
+      "aventura",
+      "misterio",
+      "animacao"
+    ],
+    "comentario": "Eu não entrava. Mas sem barco, o ouro ficava pra outro. E você: entrava ou não?",
+    "capa": "f5:DENTRO+0.2"
+  }
+}

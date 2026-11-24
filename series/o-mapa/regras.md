@@ -1,0 +1,10 @@
+# Regras da série O Mapa
+
+Cada linha vem de uma correção do Iuri ou de uma decisão do projeto. A skill aplicar-correcoes mantém este arquivo curto.
+
+- (2026-11-24) Minissérie de 7 partes ("PARTE N/7" no selo), aventura / caça ao tesouro, com final fechado na parte 7. Nada de temporada 2: depois da 7, filme 16:9 e série nova.
+- (2026-11-24) Formato das 8 batidas clássicas de `estrutura.md`. O Nico é narrador e personagem: fala com "você" no gancho e conta o resto em primeira pessoa, no presente. Ele fala em cena no máximo 2 vezes por parte; o resto é narração (`off: true`). Uma piada curta por parte, do Nico.
+- (2026-11-24) Cenários: a praia da vila e a praia da ilha são o `praia` (de dia, sem destroços nem SOS), a mata da ilha é a `selva`, o esconderijo embaixo da figueira é o `raizes` (riscos na parede com o objeto `riscos`), o farol e o cais são o `ilhota_farol`, a sala da lente é a `sala_farol` (bonecos em escala 0.6) e a vista do alto (o recife, o barco, o farol) é o `mirante`. O mapa, os bilhetes, o jornal e a tábua das marés aparecem em inserção `bilhete`.
+- (2026-11-24) Aventura para todas as idades: sem sangue, sem arma e sem briga física; o perigo é a ilha, a noite, a tempestade e o Seu Jonas ficar com o ouro. O Seu Jonas é sempre simpático na frente das crianças até a parte 5.
+- (2026-11-24) A verdade (não revele antes da parte indicada): o Seu Jonas é filho do Severino, o ladrão de 1962 do barco Tubarão (o barco do Jonas é o Tubarão II, revelado na parte 4), e já morou embaixo da figueira em 1985 (parte 3). A Marina é neta do faroleiro Aurélio (parte 4) e nunca é vilã de verdade: o Jonas a chama de "Marina Caveira" e ela assusta nas partes 2 e 3, mas quem assiste não deve ver maldade nela. O ouro está um metro embaixo das raízes da figueira (achado na parte 5). O plano da maré falha na parte 6 e o farol aceso fecha a história na parte 7.
+- (2026-11-24) Números fixos: 40 barras de ouro de 12 kg (quase meia tonelada), 1962, 300 passos do farol até a figueira, 214 riscos na parede, a tempestade domingo às 18h, 40 minutos de barco da vila até a ilha.
