@@ -1,9 +1,12 @@
 // Mirante no alto da ilha: laje de pedra na beira de um penhasco, olhando o mar lá embaixo (+z).
 // O mar fica 35 m abaixo; ponha farol e barco com alt: -35. O farol fica em "farol" e o barco no cais.
+// 24/11: mar com ondas (detalhes.tsx), rochas irregulares, capim na grama e gaivotas
+// voando abaixo do penhasco. As marcas não mudam.
 import React from 'react';
 import * as THREE from 'three';
 import {aleatorio} from '../../util/mat';
 import {Malha, caixa, disco, geo, ico, toon} from '../base';
+import {Capim, Gaivotas, Mar, Rocha} from '../detalhes';
 import {Samambaia} from '../natureza';
 
 export const NIVEL_MAR = -35;
@@ -29,12 +32,12 @@ const Estatico: React.FC = React.memo(() => (
 		<Malha g={laje()} m={toon('#5B6370')} position={[0, 0, -3]} contorno={0.06} />
 		<Malha g={disco(7.05, 11)} m={toon('#4F6A45')} position={[0, 0.01, -4.2]} scale={[1, 1, 0.75]} sombra={false} />
 		{ROCHAS.map((p, i) => (
-			<Malha key={i} g={ico(1, 0)} m={toon(i % 2 ? '#4E5562' : '#5D6573')} position={[p.x, p.y, p.z]} scale={[p.s, p.s * 2.2, p.s]} rotation={[i, i * 2, 0]} contorno={0.06} sombra={false} />
+			<Rocha key={i} pos={[p.x, p.y, p.z]} escala={[p.s, p.s * 2.2, p.s]} giro={i * 2} variacao={i + 5} cor={i % 2 ? '#4E5562' : '#5D6573'} contorno={0.05} sombra={false} />
 		))}
+		<Capim chave="mirante" regiao={{centro: [0, -4.2], rMin: 3.6, rMax: 5.1}} quantos={80} cor="#5E8F3A" semente={51} />
 		{/* penhasco descendo até o mar */}
-		<Malha g={ico(1, 1)} m={toon('#4A505C')} position={[0, -21, -6]} scale={[14, 19, 10]} contorno={0.1} sombra={false} />
-		{/* mar, enseada e cais */}
-		<mesh geometry={disco(500, 48)} material={toon('#2A6A9A', [0.02, 0.07, 0.13])} position={[0, NIVEL_MAR, 0]} />
+		<Rocha pos={[0, -21, -6]} escala={[14, 19, 10]} variacao={3} cor="#4A505C" contorno={0.1} sombra={false} />
+		{/* enseada e cais (o mar vivo entra no componente de fora) */}
 		<Malha g={disco(1, 24)} m={toon('#D8C49A')} position={[10, NIVEL_MAR + 0.05, 38]} scale={[30, 1, 12]} sombra={false} />
 		<Malha g={caixa(2, 0.6, 16)} m={toon('#7A5A3E')} position={[14, NIVEL_MAR + 0.6, 52]} contorno={0.05} sombra={false} />
 		{[
@@ -54,4 +57,10 @@ const Estatico: React.FC = React.memo(() => (
 	</>
 ));
 
-export const Mirante: React.FC<{t: number; nomeClima: string}> = () => <Estatico />;
+export const Mirante: React.FC<{t: number; nomeClima: string}> = ({t, nomeClima}) => (
+	<>
+		<Mar nomeClima={nomeClima} t={t} y={NIVEL_MAR} raio={500} />
+		<Estatico />
+		{nomeClima.startsWith('noite') ? null : <Gaivotas t={t} centro={[2, -14, 22]} quantas={5} raio={14} />}
+	</>
+);

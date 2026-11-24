@@ -7,15 +7,97 @@ import type {V3} from '../util/mat';
 
 export const COR_CONTORNO = '#15121C';
 
-// Rampa de 3 tons (sombra, meio-tom, luz), igual à do teste aprovado.
+// Rampa de 3 tons (sombra, meio-tom, luz), igual à do teste aprovado, mas com as passagens entre
+// os tons levemente suavizadas (24/11: a divisão seca no meio do rosto parecia "mal feita").
 export const gradiente = (() => {
-	const t = new THREE.DataTexture(new Uint8Array([0, 0, 128, 255, 255]), 5, 1, THREE.RedFormat);
-	t.minFilter = THREE.NearestFilter;
-	t.magFilter = THREE.NearestFilter;
+	const n = 128;
+	const dados = new Uint8Array(n);
+	const passo = (a: number, b: number, x: number) => {
+		const k = Math.min(1, Math.max(0, (x - a) / (b - a)));
+		return k * k * (3 - 2 * k);
+	};
+	for (let i = 0; i < n; i++) {
+		const x = (i + 0.5) / n;
+		dados[i] = Math.round(255 * (0.5 * passo(0.37, 0.45, x) + 0.5 * passo(0.55, 0.64, x)));
+	}
+	const t = new THREE.DataTexture(dados, n, 1, THREE.RedFormat);
+	t.minFilter = THREE.LinearFilter;
+	t.magFilter = THREE.LinearFilter;
 	t.needsUpdate = true;
 	return t;
 })();
 
+/**
+ * Uniformes compartilhados por todos os materiais toon (atualizados a cada quadro pela Iluminacao):
+ * cor e força do contraluz nos personagens e força da textura do cenário.
+ */
+export const UNIFORMES_TOON = {
+	uRimCor: {value: new THREE.Color('#FFF2D0')},
+	uRimForca: {value: 0.35},
+	uTextura: {value: 1},
+};
+
+const RUIDO_GLSL = /* glsl */ `
+float hash3(vec3 p) {
+	p = fract(p * 0.3183099 + vec3(0.71, 0.113, 0.419));
+	p *= 17.0;
+	return fract(p.x * p.y * p.z * (p.x + p.y + p.z));
+}
+float ruido3(vec3 x) {
+	vec3 i = floor(x);
+	vec3 f = fract(x);
+	f = f * f * (3.0 - 2.0 * f);
+	return mix(
+		mix(mix(hash3(i), hash3(i + vec3(1, 0, 0)), f.x), mix(hash3(i + vec3(0, 1, 0)), hash3(i + vec3(1, 1, 0)), f.x), f.y),
+		mix(mix(hash3(i + vec3(0, 0, 1)), hash3(i + vec3(1, 0, 1)), f.x), mix(hash3(i + vec3(0, 1, 1)), hash3(i + vec3(1, 1, 1)), f.x), f.y),
+		f.z);
+}`;
+
+/**
+ * Remenda o MeshToonMaterial: (1) cenário ganha variação de cor pelo mundo (manchas grandes e grão
+ * fino, como pintura à mão: nenhuma superfície fica chapada); (2) personagem ganha contraluz na
+ * borda (recorta o boneco do fundo) e não ganha textura.
+ */
+const remendarToon = (m: THREE.MeshToonMaterial, personagem: boolean) => {
+	m.onBeforeCompile = (sh) => {
+		sh.uniforms.uRimCor = UNIFORMES_TOON.uRimCor;
+		sh.uniforms.uRimForca = UNIFORMES_TOON.uRimForca;
+		sh.uniforms.uTextura = UNIFORMES_TOON.uTextura;
+		sh.vertexShader = sh.vertexShader
+			.replace('#include <common>', '#include <common>\nvarying vec3 vPosMundo;')
+			.replace(
+				'#include <project_vertex>',
+				`#include <project_vertex>
+				#ifdef USE_INSTANCING
+					vPosMundo = (modelMatrix * instanceMatrix * vec4(transformed, 1.0)).xyz;
+				#else
+					vPosMundo = (modelMatrix * vec4(transformed, 1.0)).xyz;
+				#endif`,
+			);
+		sh.fragmentShader = sh.fragmentShader
+			.replace('#include <common>', `#include <common>\nvarying vec3 vPosMundo;\nuniform vec3 uRimCor;\nuniform float uRimForca;\nuniform float uTextura;\n${RUIDO_GLSL}`)
+			.replace(
+				'#include <color_fragment>',
+				personagem
+					? '#include <color_fragment>'
+					: `#include <color_fragment>
+					float manchas = ruido3(vPosMundo * 0.55) * 0.6 + ruido3(vPosMundo * 1.9) * 0.4;
+					float grao = ruido3(vPosMundo * 11.0);
+					diffuseColor.rgb *= 1.0 + uTextura * ((manchas - 0.5) * 0.17 + (grao - 0.5) * 0.06);`,
+			)
+			.replace(
+				'#include <opaque_fragment>',
+				personagem
+					? `float fres = 1.0 - clamp(dot(normalize(normal), normalize(vViewPosition)), 0.0, 1.0);
+					float aro = smoothstep(0.62, 0.8, fres);
+					outgoingLight += uRimCor * aro * uRimForca * (0.45 + 0.55 * diffuseColor.rgb);
+					#include <opaque_fragment>`
+					: '#include <opaque_fragment>',
+			);
+	};
+	m.customProgramCacheKey = () => (personagem ? 'toon-personagem' : 'toon-cenario');
+	return m;
+};
 export const linear = (r: number, g: number, b: number) => new THREE.Color().setRGB(r, g, b, THREE.LinearSRGBColorSpace);
 
 const cacheMat = new Map<string, THREE.Material>();
@@ -28,7 +110,15 @@ export const toon = (cor: string, emissivo?: V3) =>
 	memo(`toon${cor}${emissivo ?? ''}`, () => {
 		const m = new THREE.MeshToonMaterial({color: cor, gradientMap: gradiente});
 		if (emissivo) m.emissive = linear(...emissivo);
-		return m;
+		return remendarToon(m, false);
+	});
+
+/** Toon dos personagens (corpo, cabeça, cabelo, acessórios): sem textura e com contraluz na borda. */
+export const toonPersonagem = (cor: string, emissivo?: V3) =>
+	memo(`toonP${cor}${emissivo ?? ''}`, () => {
+		const m = new THREE.MeshToonMaterial({color: cor, gradientMap: gradiente});
+		if (emissivo) m.emissive = linear(...emissivo);
+		return remendarToon(m, true);
 	});
 
 /** Material que brilha sozinho (olhos do gigante, brasas, chamas). */
@@ -60,7 +150,7 @@ export const decalque = (cor: string) =>
 		m.polygonOffset = true;
 		m.polygonOffsetFactor = -2;
 		m.polygonOffsetUnits = -2;
-		return m;
+		return remendarToon(m, false);
 	});
 
 // --- geometrias ------------------------------------------------------------------------------

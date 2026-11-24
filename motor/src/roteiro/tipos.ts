@@ -99,6 +99,8 @@ export interface Plano {
 	camera?: Alvo;
 	/** Largura (m) do que precisa caber no quadro vertical nos planos geral, detalhe e drone (troca o padrão). */
 	tamanho?: number;
+	/** Multiplica o desfoque de fundo do plano (1 = padrão do tipo; 0 = tudo nítido; 1.5 = fundo bem borrado). */
+	desfoque?: number;
 }
 
 export interface Som {
@@ -358,6 +360,11 @@ export interface VisualPersonagem {
 	/** Cor das bochechas (rubor), opcional. */
 	bochechas?: string;
 	acessorios?: Acessorio[];
+	/**
+	 * Roupa por cima do corpo palito (opcional): vestido, terno, camisa, jaleco ou uniforme.
+	 * cor = roupa; cor2 = detalhe (gravata, barra, gola, cinto); sapato = cor do sapato.
+	 */
+	roupa?: {tipo: 'vestido' | 'terno' | 'camisa' | 'jaleco' | 'uniforme'; cor?: string; cor2?: string; sapato?: string};
 }
 
 export interface Voz {

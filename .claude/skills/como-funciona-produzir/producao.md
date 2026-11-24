@@ -42,6 +42,14 @@ O Shorts e o Reels decidem em menos de 1 s se mostram o vídeo para mais gente (
 - **Zona segura:** os botões do Shorts e do Reels ficam na faixa da direita (~150 px) e o título e a legenda da plataforma, nos ~400 px de baixo. A maquete e o Tito não ficam colados na borda direita, e letreiro, rótulo e cartão ficam fora dessas faixas (a legenda das falas já se ajusta sozinha). Letreiro alto demais some atrás do topo: deixe entre `altura` 0,15 e 0,6.
 - **Capa (`postagem.capa`):** a maquete no momento mais curioso (a falha, a peça que resolve) ou o close do Tito surpreso com uma palavra de impacto na legenda. Nunca um quadro de transição, da oficina escura ou da chamada. Confira com `npm run quadro -- como-funciona <n> <segundo> --escala=0.5`.
 
+## Acabamento de cinema no 3D (24/11)
+Pedido do Iuri em 24/11: mais bonito, sem nada mal acabado, câmera melhor. O motor agora faz sozinho em todo plano do Como Funciona: fundo desfocado com foco no alvo do plano, halo de luz nas peças que brilham, cor de cinema por cenário, textura leve nas superfícies e câmera que nunca fica morta. Na hora de montar as cenas:
+- **`detalhe` e `close` já isolam a peça** (o resto da maquete e o fundo borram). Quando o espectador precisa ler a maquete inteira de uma vez (o caminho da água, o circuito completo, a vista explodida), ponha `"desfoque": 0` nesse plano.
+- **Peça que acende ou esquenta** (resistência, LED, chama, filamento): `brilho` de 1,4 para cima ganha halo de luz. Ligue no momento da explicação, não desde o começo, para o halo virar um acontecimento na tela.
+- **Câmera:** plano sem `movimento` aproxima devagar com uma deriva de lado, e o corte seco entra 6% mais fechado e assenta. `fixo` agora é parada de verdade: use só quando a maquete precisa ficar imóvel para a animação ser lida (um fluxo fino, um ponteiro). As regras de movimento abaixo continuam valendo.
+- **Rótulos fogem dos rostos sozinhos** e a legenda sobe ou desce para não tampar cabeça; `altura` no rótulo ainda manda quando você quiser.
+- **Ponto sempre com 3 números** `[x, y, z]` em alvo de câmera, `circular` e gesto. O motor salva 2 números pondo a altura do peito, mas na maquete a altura certa é a da peça (tampo 1,0 + altura da peça).
+
 ## Regras de uso
 - **Movimento em todo plano:** `arco` nos detalhes da maquete, `travelling` no médio do Tito, `zoom_rapido` nos MAS/SÓ QUE, `dolly_zoom` uma vez só. Nunca mais de dois planos seguidos com o mesmo movimento (o vídeo de 31/10 tinha quase tudo `aproximar`: não repita).
 - **Transições:** no "você constrói", `varrer` em pelo menos metade dos "Então, você..." (no máximo um a cada dois cortes seguidos); no laboratório, `varrer` no máximo uma vez (no passo novo do por dentro); `zoom` para entrar no miolo da maquete; `chicote` para voltar ao Tito; o resto, corte seco. Pelo menos 3 estilos diferentes por vídeo.
@@ -52,7 +60,7 @@ O Shorts e o Reels decidem em menos de 1 s se mostram o vídeo para mais gente (
 - Som: `chicote`, `zoom` e `varrer` já tocam um whoosh sozinhos; não ponha outro.
 
 ## Conferir antes do render
-Além do `validar` e do enquadramento, gere quadros nos cortes com transição (0,1 s antes e depois), no meio de cada `circular`, `destacar` e `letreiro`, num momento com partícula ligada e no confete: `npm run quadro -- como-funciona <n> <segundos...> --escala=0.4`. O círculo precisa abraçar a peça certa (ele já pega o tamanho da peça), a partícula tem que sair da peça certa e o letreiro não pode tampar a maquete nem os olhos do Tito (ele fica a 30% da altura; mude com `"altura"`, de 0 = topo a 1 = pé).
+Além do `validar` e do enquadramento, gere quadros nos cortes com transição (0,1 s antes e depois), no meio de cada `circular`, `destacar` e `letreiro`, num momento com partícula ligada e no confete: `npm run quadro -- como-funciona <n> <segundos...> --escala=0.4`. Nos planos com `desfoque: 0`, confira que a maquete inteira está nítida; nos detalhes, que a peça explicada está em foco. O círculo precisa abraçar a peça certa (ele já pega o tamanho da peça), a partícula tem que sair da peça certa e o letreiro não pode tampar a maquete nem os olhos do Tito (ele fica a 30% da altura; mude com `"altura"`, de 0 = topo a 1 = pé).
 
 ## Exemplo (#6 Panela de pressão refeita em 01/11, no jeito do "você constrói")
 Abertura com `arco` na panela e `vapor` saindo quando a água ferve; cartões "# °C" contando de 20 a 100 e de 100 a 120; "Então, você coloca uma BORRACHA" com `varrer` + `circular` na borracha; "pode EXPLODIR" com `dolly_zoom` no Tito, `letreiro` "PERIGO!" vermelho e `linhas`; pino com `destacar` e jato de `vapor` quando chia; válvula com `circular`; "Parabéns!" com `arco`, `confete` e `iris` no fim.

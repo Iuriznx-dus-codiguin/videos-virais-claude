@@ -125,11 +125,12 @@ const Legenda: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: num
 	// filme: legenda menor, sempre no pé da tela, como em filme legendado
 	const margem = tela.filme ? 260 : 0;
 	const largura = tela.filme ? tela.w - 2 * margem : 1080 - MARGEM_ESQ - MARGEM_DIR - 20;
+	const y = tela.filme ? null : yDaLegenda(linha, g, t, baixa ? 1382 : 1190, tela, (linhasDaLegenda(g, largura) * 125) / 2 + 10);
 	return (
 		<div
 			style={{
 				position: 'absolute',
-				top: tela.filme ? '86%' : baixa ? '72%' : '62%',
+				top: tela.filme || y === null ? '86%' : y,
 				left: tela.filme ? margem : MARGEM_ESQ,
 				right: tela.filme ? margem : MARGEM_DIR,
 				display: 'flex',
@@ -275,9 +276,125 @@ const naTela = (linha: LinhaDoTempo, t: number, alvo: string | [number, number, 
 	return {x: ((v.x + 1) / 2) * LARGURA, y: ((1 - v.y) / 2) * ALTURA, raio, raioPeca};
 };
 
+// --- lugar livre na tela (24/11): legenda e etiqueta nunca em cima de rosto -----------------------
+
+interface Caixa {
+	x0: number;
+	x1: number;
+	y0: number;
+	y1: number;
+}
+
+const sobrepoe = (a: Caixa, b: Caixa, folga = 8) => Math.max(0, Math.min(a.x1, b.x1) - Math.max(a.x0, b.x0) + folga) * Math.max(0, Math.min(a.y1, b.y1) - Math.max(a.y0, b.y0) + folga);
+
+/** Rostos que aparecem no quadro (caixa em px em volta da cabeça de cada personagem visível). */
+const rostosNaTela = (linha: LinhaDoTempo, t: number, tela: Tela): Caixa[] => {
+	const cena = cenaNoTempo(linha, t);
+	const lista: Caixa[] = [];
+	for (const id of Object.keys(cena.personagens)) {
+		const p = naTela(linha, t, id, tela);
+		if (!p || p.raio < 12) continue;
+		if (p.x + p.raio < 0 || p.x - p.raio > tela.w || p.y + p.raio < 0 || p.y - p.raio > tela.h) continue;
+		lista.push({x0: p.x - p.raio, x1: p.x + p.raio, y0: p.y - p.raio * 1.05, y1: p.y + p.raio * 1.02});
+	}
+	return lista;
+};
+
+const lugarLegenda = new Map<string, number>();
+
+/**
+ * Centro (px) da legenda: o padrão do tipo de plano, ou o primeiro lugar da lista que não tapa
+ * nenhum rosto (medido no começo do trecho, para a legenda não pular no meio da frase).
+ * A faixa de baixo (abaixo de ~1560 px) é dos botões e do título da plataforma.
+ */
+const yDaLegenda = (linha: LinhaDoTempo, g: GrupoLegenda, t: number, padrao: number, tela: Tela, meiaAltura: number) => {
+	const cena = cenaNoTempo(linha, t);
+	const plano = cena.planos.find((p) => t >= p.ini && t < p.fim);
+	const ref = Math.max(g.ini, plano?.ini ?? g.ini) + 0.05;
+	const chave = `${g.ini.toFixed(3)}|${ref.toFixed(3)}|${padrao}`;
+	const salvo = lugarLegenda.get(chave);
+	if (salvo !== undefined) return salvo;
+	const rostos = rostosNaTela(linha, ref, tela);
+	const candidatos = [padrao, 1290, 1385, 1440, 1100, 1000].filter((y, i, a) => a.indexOf(y) === i && y + meiaAltura < 1590);
+	let melhor = padrao;
+	let menor = Infinity;
+	for (const y of candidatos) {
+		const caixa = {x0: MARGEM_ESQ, x1: tela.w - MARGEM_DIR, y0: y - meiaAltura, y1: y + meiaAltura};
+		const area = rostos.reduce((soma, r) => soma + sobrepoe(caixa, r), 0);
+		if (area < menor - 1) {
+			menor = area;
+			melhor = y;
+		}
+		if (area === 0) break;
+	}
+	lugarLegenda.set(chave, melhor);
+	return melhor;
+};
+
+/** Linhas que a frase ocupa na legenda (estimativa pela largura das palavras em Montserrat 900). */
+const linhasDaLegenda = (g: GrupoLegenda, largura: number) => {
+	let linhas = 1;
+	let x = 0;
+	for (const p of g.palavras) {
+		const w = textoNaTela(p.texto).length * 0.74 * (p.enfase ? 148 : 112) + 24;
+		if (x + w > largura && x > 0) {
+			linhas++;
+			x = w;
+		} else x += w;
+	}
+	return linhas;
+};
+
 /** Altura da etiqueta com duas linhas de texto e o primeiro y livre abaixo do selo da série. */
 const ALTURA_ETIQUETA = 150;
 const TOPO_LIVRE = 300;
+
+const lugarEtiqueta = new Map<string, number>();
+
+/**
+ * Altura da etiqueta: acima da cabeça (padrão) se ali não tapa rosto nem manchete nem legenda; se
+ * tapa, tenta embaixo do queixo, depois no alto, depois na altura do peito. Medido no começo da
+ * etiqueta e guardado (não pula).
+ */
+const lugarDaEtiqueta = (
+	linha: LinhaDoTempo,
+	r: {ini: number; fim: number; texto: string},
+	t: number,
+	padrao: number,
+	lado: string,
+	p: {x: number; y: number; raio: number},
+	alturaEtiqueta: number,
+	tela: Tela,
+) => {
+	const chave = `${r.ini.toFixed(3)}|${r.texto}`;
+	const salvo = lugarEtiqueta.get(chave);
+	if (salvo !== undefined) return salvo;
+	const ref = r.ini + 0.05;
+	const cena = cenaNoTempo(linha, ref);
+	const rostos = rostosNaTela(linha, ref, tela);
+	const bloqueios: Caixa[] = [...rostos];
+	if (cena.manchetes.some((m) => ref >= m.ini && ref < m.fim)) bloqueios.push({x0: 0, x1: tela.w, y0: 225, y1: 420});
+	// faixa da legenda (a do padrão do plano; a legenda pode descer, mas raramente sobe)
+	const tipo = tipoDoPlano(cena, ref);
+	const yLeg = tipo === 'close' || tipo === 'detalhe' || tipo === 'nuca' || tipo === 'ombro' ? 1382 : 1190;
+	bloqueios.push({x0: 0, x1: tela.w, y0: yLeg - 90, y1: yLeg + 90});
+	const largura = Math.min(560, r.texto.length * 33 + 60);
+	const x0 = lado === 'esquerda' ? 50 : tela.w - 50 - largura;
+	const caixa = (y: number): Caixa => ({x0, x1: x0 + largura, y0: y, y1: y + alturaEtiqueta});
+	const candidatos = [padrao, p.y + p.raio * 1.1 + 30, TOPO_LIVRE, p.y - alturaEtiqueta / 2, 1450].map((y) => clamp(y, TOPO_LIVRE, 1500));
+	let melhor = padrao;
+	let menor = Infinity;
+	for (const y of candidatos) {
+		const area = bloqueios.reduce((soma, b) => soma + sobrepoe(caixa(y), b, 4), 0);
+		if (area < menor - 1) {
+			menor = area;
+			melhor = y;
+		}
+		if (area === 0) break;
+	}
+	lugarEtiqueta.set(chave, melhor);
+	return melhor;
+};
 
 const Rotulos: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: number; tela: Tela}> = ({linha, t, frame, fps, tela}) => {
 	if (t >= linha.chamada.ini) return null;
@@ -301,12 +418,8 @@ const Rotulos: React.FC<{linha: LinhaDoTempo; t: number; frame: number; fps: num
 				// encosta no alto da cabeça; em ponto ou objeto, a linha vai até o próprio ponto
 				const px = p.x;
 				const py = p.raio ? p.y - p.raio * 0.9 : p.y;
-				const ly =
-					r.altura !== undefined
-						? r.altura * ALTURA
-						: p.raio
-							? clamp(p.y - p.raio - 50 * k - alturaEtiqueta - i * 20, topoLivre, pe)
-							: clamp(py - 170 * k - i * 20, topoLivre + 30, pe);
+				const lyPadrao = p.raio ? clamp(p.y - p.raio - 50 * k - alturaEtiqueta - i * 20, topoLivre, pe) : clamp(py - 170 * k - i * 20, topoLivre + 30, pe);
+				const ly = r.altura !== undefined ? r.altura * ALTURA : tela.filme ? lyPadrao : lugarDaEtiqueta(linha, r, t, lyPadrao, lado, p, alturaEtiqueta, tela);
 				const lx = lado === 'esquerda' ? 70 : LARGURA - 70;
 				const cor = r.cor ?? AMARELO;
 				// a linha sai da borda da etiqueta e vai até a peça

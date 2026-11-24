@@ -65,7 +65,11 @@ const filtroDoQuadro = (linha: LinhaDoTempo, t: number): {css: string; borraoH: 
 		else if (tr.tipo === 'desfoque') partes.push(`blur(${(26 * (tr.fase === 'saida' ? tr.p : 1 - tr.p)).toFixed(1)}px)`, `brightness(${(1 + 0.25 * f).toFixed(3)})`);
 	}
 	if (borraoH > 0.5) partes.unshift('url(#borrao-h)');
-	if (cena.filtro && FILTRO_CSS[cena.filtro]) partes.push(FILTRO_CSS[cena.filtro]);
+	if (cena.filtro && FILTRO_CSS[cena.filtro]) {
+		// noite: filtros que escurecem viram a versão sem escurecer (quadro preto era o bug mais comum)
+		const noite = cena.luz.startsWith('noite');
+		partes.push(noite && (cena.filtro === 'dramatico' || cena.filtro === 'noir') ? (cena.filtro === 'noir' ? 'grayscale(1) contrast(1.12)' : 'contrast(1.1) saturate(0.86)') : FILTRO_CSS[cena.filtro]);
+	}
 	return {css: partes.join(' '), borraoH};
 };
 

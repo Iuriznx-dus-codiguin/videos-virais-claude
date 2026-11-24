@@ -3,7 +3,8 @@
 import React from 'react';
 import * as THREE from 'three';
 import type {V3} from '../util/mat';
-import {esfera, linear, memo} from './base';
+import {UNIFORMES_TOON, esfera, linear, memo} from './base';
+import type {AjustePos} from './posprocesso';
 
 export interface Clima {
 	/** luz ambiente (cor das sombras), em RGB linear */
@@ -120,6 +121,27 @@ export const CLIMAS: Record<string, Clima> = {
 
 export const clima = (nome: string) => CLIMAS[nome] ?? CLIMAS.dia;
 
+/** Cor e névoa da pós-produção por clima (ver posprocesso.tsx); foco e desfoque vêm do plano. */
+type PosClima = Omit<AjustePos, 'foco' | 'desfoque'>;
+const POS: Record<string, PosClima> = {
+	dia: {nevoaCor: '#CFEFFF', nevoaDensidade: 0.007, nevoaInicio: 12, ganho: 1, saturacao: 1.1, contraste: 0.14, piso: 0, tomSombra: '#EEF3FF', tomLuz: '#FFF9F0', vinheta: 0.2, brilho: 0.9},
+	por_do_sol: {nevoaCor: '#FFB98A', nevoaDensidade: 0.009, nevoaInicio: 10, ganho: 1.02, saturacao: 1.08, contraste: 0.12, piso: 0.01, tomSombra: '#ECE6FF', tomLuz: '#FFF2E2', vinheta: 0.26, brilho: 1},
+	entardecer: {nevoaCor: '#E89A70', nevoaDensidade: 0.004, nevoaInicio: 10, ganho: 1.05, saturacao: 1.06, contraste: 0.1, piso: 0.02, tomSombra: '#E8E6FF', tomLuz: '#FFF0DE', vinheta: 0.24, brilho: 1},
+	// noite: ganho e piso seguram os rostos e o chão (o Iuri reclamou de quadro preto), vinheta fraca
+	noite: {nevoaCor: '#1A2A4A', nevoaDensidade: 0, nevoaInicio: 10, ganho: 1.2, saturacao: 1.02, contraste: 0.04, piso: 0.05, tomSombra: '#E2EBFF', tomLuz: '#FFFFFF', vinheta: 0.16, brilho: 1.15},
+	noite_cidade: {nevoaCor: '#2A3456', nevoaDensidade: 0, nevoaInicio: 10, ganho: 1.12, saturacao: 1.04, contraste: 0.06, piso: 0.04, tomSombra: '#E6ECFF', tomLuz: '#FFF6EA', vinheta: 0.18, brilho: 1.1},
+	estudio: {nevoaCor: '#16244A', nevoaDensidade: 0, nevoaInicio: 10, ganho: 1, saturacao: 1.06, contraste: 0.1, piso: 0.01, tomSombra: '#F0F4FF', tomLuz: '#FFFFFF', vinheta: 0.22, brilho: 0.9},
+	oficina: {nevoaCor: '#3A2A20', nevoaDensidade: 0, nevoaInicio: 10, ganho: 1.02, saturacao: 1.05, contraste: 0.1, piso: 0.015, tomSombra: '#F2EEFF', tomLuz: '#FFF4E4', vinheta: 0.28, brilho: 1},
+};
+
+/** Cenários fechados: sem névoa de distância (as paredes estão perto). */
+const FECHADOS = new Set(['cabine', 'adega', 'sala_farol', 'raizes', 'estudio', 'oficina']);
+
+export const posDoClima = (luz: string, cenario: string): PosClima => {
+	const p = POS[luz] ?? POS.dia;
+	return FECHADOS.has(cenario) ? {...p, nevoaDensidade: 0} : p;
+};
+
 export const RAMPA_GLSL = /* glsl */ `
 vec3 rampa(vec3 cores[5], float paradas[5], float f) {
 	vec3 c = cores[0];
@@ -146,6 +168,9 @@ const ceuMat = (nome: string) =>
 				brilho: {value: new THREE.Vector2(Math.cos(tam * 4), Math.cos(tam))},
 				forcaHalo: {value: c.astro.halo},
 				estrelas: {value: c.estrelas},
+				corNuvem: {value: new THREE.Color(c.nuvem)},
+				nuvens: {value: NUVENS[nome] ?? 0},
+				tempo: {value: 0},
 			},
 			vertexShader: /* glsl */ `
 				varying vec3 vDir;
@@ -164,6 +189,9 @@ const ceuMat = (nome: string) =>
 				uniform vec2 brilho;
 				uniform float forcaHalo;
 				uniform float estrelas;
+				uniform vec3 corNuvem;
+				uniform float nuvens;
+				uniform float tempo;
 				varying vec3 vDir;
 				${RAMPA_GLSL}
 				float hash(vec3 p) {
@@ -171,9 +199,38 @@ const ceuMat = (nome: string) =>
 					p *= 17.0;
 					return fract(p.x * p.y * p.z * (p.x + p.y + p.z));
 				}
+				float ruido2(vec2 x) {
+					vec2 i = floor(x);
+					vec2 f = fract(x);
+					f = f * f * (3.0 - 2.0 * f);
+					float a = hash(vec3(i, 1.0));
+					float b = hash(vec3(i + vec2(1.0, 0.0), 1.0));
+					float cc = hash(vec3(i + vec2(0.0, 1.0), 1.0));
+					float dd = hash(vec3(i + vec2(1.0, 1.0), 1.0));
+					return mix(mix(a, b, f.x), mix(cc, dd, f.x), f.y);
+				}
+				float fbm(vec2 p) {
+					float v = 0.0;
+					float a = 0.5;
+					for (int i = 0; i < 5; i++) {
+						v += a * ruido2(p);
+						p = p * 2.03 + vec2(1.7, 9.2);
+						a *= 0.5;
+					}
+					return v;
+				}
 				void main() {
 					vec3 d = normalize(vDir);
 					vec3 c = rampa(cores, paradas, clamp(d.y, 0.0, 1.0));
+					// nuvens de desenho: manchas fofas num plano alto, somem perto do horizonte
+					if (nuvens > 0.0 && d.y > 0.0) {
+						vec2 p = d.xz / (d.y + 0.18) * 1.3 + vec2(tempo * 0.012, tempo * 0.004);
+						float n = fbm(p);
+						float m = smoothstep(0.52, 0.68, n) * smoothstep(0.015, 0.22, d.y);
+						float topo = fbm(p + normalize(astro.xz + 0.001) * 0.08);
+						vec3 nuvem = corNuvem * (0.86 + 0.22 * smoothstep(0.45, 0.75, topo));
+						c = mix(c, nuvem, m * nuvens);
+					}
 					if (estrelas > 0.0 && d.y > 0.02) {
 						vec3 cel = floor(d * 260.0);
 						float h = hash(cel);
@@ -186,17 +243,22 @@ const ceuMat = (nome: string) =>
 					}
 					float dt = dot(d, astro);
 					c = mix(c, corAstro, clamp((dt - brilho.x) / (brilho.y - brilho.x), 0.0, 1.0) * forcaHalo);
-					c = mix(c, corAstro, clamp((dt - disco.x) / (disco.y - disco.x), 0.0, 1.0));
+					c = mix(c, corAstro * 1.9, clamp((dt - disco.x) / (disco.y - disco.x), 0.0, 1.0));
 					gl_FragColor = vec4(c, 1.0);
 					#include <colorspace_fragment>
 				}`,
 		});
 	});
 
-/** Esfera do céu que acompanha a câmera (desenhada antes de tudo, atrás de tudo). */
-export const Ceu: React.FC<{nome: string; posicao: V3}> = ({nome, posicao}) => (
-	<mesh geometry={esfera(500, 48, 24)} material={ceuMat(nome)} position={posicao} renderOrder={-1} frustumCulled={false} />
-);
+/** Quanto de nuvem cada céu tem (0 = nenhuma: estúdio e oficina não têm céu de verdade). */
+const NUVENS: Record<string, number> = {dia: 0.95, por_do_sol: 0.85, entardecer: 0.75, noite: 0.4, noite_cidade: 0.35};
+
+/** Esfera do céu que acompanha a câmera (desenhada antes de tudo, atrás de tudo); as nuvens andam com t. */
+export const Ceu: React.FC<{nome: string; posicao: V3; t?: number}> = ({nome, posicao, t = 0}) => {
+	const m = ceuMat(nome);
+	m.uniforms.tempo.value = t;
+	return <mesh geometry={esfera(500, 48, 24)} material={m} position={posicao} renderOrder={-1} frustumCulled={false} />;
+};
 
 const direcao = (v: V3, dist: number): V3 => {
 	const n = Math.hypot(...v);
@@ -211,9 +273,17 @@ export const Iluminacao: React.FC<{nome: string; foco: V3; alcanceSombra?: numbe
 	const alvo = React.useMemo(() => new THREE.Object3D(), []);
 	alvo.position.set(...foco);
 	alvo.updateMatrixWorld();
+	// contraluz na borda dos personagens: cor da luz de contra do clima, mais forte no escuro
+	UNIFORMES_TOON.uRimCor.value.set(c.contra.cor);
+	UNIFORMES_TOON.uRimForca.value = 0.28 + 0.35 * c.contra.intensidade;
+	// luz de céu e de chão no lugar da ambiente chapada: de cima um pouco mais clara e fria, de baixo
+	// mais escura e quente (o rebote do chão); a média continua a ambiente do clima
+	const [ar, ag, ab] = c.ambiente;
+	const ceuLuz = linear(ar * 1.18, ag * 1.18, ab * 1.22);
+	const chaoLuz = linear(ar * 0.86, ag * 0.8, ab * 0.7);
 	return (
 		<>
-			<ambientLight color={linear(...c.ambiente)} intensity={Math.PI} />
+			<hemisphereLight args={[ceuLuz, chaoLuz, Math.PI]} />
 			<primitive object={alvo} />
 			<directionalLight
 				position={[foco[0] + sol[0], foco[1] + sol[1], foco[2] + sol[2]]}

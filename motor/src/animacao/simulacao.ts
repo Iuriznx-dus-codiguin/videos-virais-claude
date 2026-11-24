@@ -292,7 +292,8 @@ export class SimulacaoCena {
 	/** Ponto 3D de um alvo no instante t (rosto, se for personagem). */
 	ponto(alvo: Alvo | null | undefined, t: number, camera?: V3, paraMirar = false): V3 | null {
 		if (alvo === null || alvo === undefined) return null;
-		if (Array.isArray(alvo)) return alvo;
+		// ponto com 2 números ([x, z]) vira [x, 1, z] (antes dava NaN e o personagem sumia: plano preto)
+		if (Array.isArray(alvo)) return (alvo as number[]).length === 2 ? [alvo[0], 1.0, (alvo as number[])[1]] : alvo;
 		if (alvo === 'camera') return camera ?? null;
 		if (this.atores.has(alvo)) {
 			const r = this.rosto(alvo, t);
