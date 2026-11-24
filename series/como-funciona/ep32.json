@@ -2224,7 +2224,7 @@
      "alvo": "lampadinha",
      "texto": "Apagada",
      "de": "f4:acendia",
-     "ate": "f4:fim"
+     "ate": "f4:nada"
     }
    ]
   },
@@ -2651,7 +2651,8 @@
      "faz": "maos_na_cabeca",
      "olhar": "camera",
      "expressao": "surpreso",
-     "de": "f7:nenhuma"
+     "de": "f7:nenhuma",
+     "ate": "f8"
     },
     {
      "quem": "tito",
@@ -2680,7 +2681,8 @@
      "faz": "bracos_cruzados",
      "olhar": "camera",
      "expressao": "desconfiado",
-     "de": "f11"
+     "de": "f11",
+     "ate": "f12"
     },
     {
      "quem": "tito",
