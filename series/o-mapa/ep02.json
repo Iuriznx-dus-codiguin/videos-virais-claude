@@ -159,7 +159,7 @@
           ],
           "olhando": [
             0.8,
-            0.3,
+            1.2,
             -0.7
           ],
           "expressao": "medo"
@@ -171,8 +171,8 @@
           ],
           "olhando": [
             0.8,
-            0.3,
-            -0.7
+            2.0,
+            -3.0
           ],
           "expressao": "desconfiado",
           "segura": "garrafa"
@@ -238,11 +238,6 @@
       ],
       "acoes": [
         {
-          "quem": "nico",
-          "faz": "agachar",
-          "de": "inicio"
-        },
-        {
           "quem": "jonas",
           "faz": "olhar_em_volta",
           "de": "f2"
@@ -296,9 +291,9 @@
           "tipo": "close",
           "alvo": "nico",
           "camera": [
-            -0.98,
-            1.5,
-            -1.56
+            -0.75,
+            1.6,
+            -2.09
           ],
           "movimento": "aproximar",
           "intensidade": 0.25
@@ -324,12 +319,12 @@
           "tipo": "close",
           "alvo": "duda",
           "camera": [
-            2.58,
+            2.83,
             1.9,
-            -1.86
+            -2.31
           ],
           "movimento": "zoom_rapido",
-          "intensidade": 0.25
+          "intensidade": 0.2
         }
       ],
       "efeitos": [
@@ -421,17 +416,17 @@
       },
       "rotulos": [
         {
-          "alvo": "nico",
-          "texto": "NICO · 15 ANOS",
-          "de": "f4+0.3",
-          "ate": "f4:Duda",
-          "altura": 0.72
-        },
-        {
           "alvo": "duda",
           "texto": "DUDA · 11 ANOS",
-          "de": "f4:Duda",
-          "ate": "f4:fim+0.2"
+          "de": "f4+0.2",
+          "ate": "f4:seguimos"
+        },
+        {
+          "alvo": "nico",
+          "texto": "NICO · 15 ANOS",
+          "de": "f4:seguimos",
+          "ate": "f4:fim+0.2",
+          "altura": 0.72
         },
         {
           "alvo": "jonas",
@@ -507,19 +502,6 @@
       "planos": [
         {
           "de": "f4",
-          "tipo": "medio",
-          "alvo": "nico",
-          "camera": [
-            -0.97,
-            2.6,
-            6.56
-          ],
-          "movimento": "travelling",
-          "intensidade": 0.25,
-          "transicao": "desfoque"
-        },
-        {
-          "de": "f4:Duda",
           "tipo": "close",
           "alvo": "duda",
           "camera": [
@@ -528,7 +510,20 @@
             10.12
           ],
           "movimento": "aproximar",
-          "intensidade": 0.2
+          "intensidade": 0.2,
+          "transicao": "desfoque"
+        },
+        {
+          "de": "f4:seguimos",
+          "tipo": "medio",
+          "alvo": "nico",
+          "camera": [
+            -0.97,
+            2.6,
+            6.56
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.25
         },
         {
           "de": "f5",
@@ -564,7 +559,7 @@
             10.12
           ],
           "movimento": "zoom_rapido",
-          "intensidade": 0.25
+          "intensidade": 0.2
         },
         {
           "de": "f8",
@@ -589,7 +584,7 @@
           "ate": "f8:ilha+0.6",
           "efeito": "letreiro",
           "texto": "ILHA DAS GAIVOTAS",
-          "altura": 0.22
+          "altura": 0.5
         }
       ],
       "sons": [
@@ -734,9 +729,9 @@
           "tipo": "close",
           "alvo": "duda",
           "camera": [
-            -1.03,
+            -1.32,
             2.1,
-            6.91
+            6.74
           ],
           "movimento": "aproximar",
           "intensidade": 0.2,
@@ -747,9 +742,9 @@
           "tipo": "close",
           "alvo": "duda",
           "camera": [
-            -1.03,
+            -1.32,
             2.1,
-            6.91
+            6.74
           ],
           "movimento": "travelling",
           "intensidade": 0.2
@@ -793,7 +788,7 @@
           ],
           "olhando": [
             0.8,
-            0.3,
+            1.2,
             -0.7
           ],
           "expressao": "surpreso"
@@ -805,8 +800,8 @@
           ],
           "olhando": [
             0.8,
-            0.3,
-            -0.7
+            2.0,
+            -3.0
           ],
           "expressao": "desconfiado",
           "segura": "garrafa"
@@ -919,21 +914,21 @@
           "tipo": "close",
           "alvo": "nico",
           "camera": [
-            -0.86,
+            -0.76,
             2.4,
-            -1.68
+            -2.29
           ],
           "movimento": "zoom_rapido",
-          "intensidade": 0.3
+          "intensidade": 0.2
         },
         {
-          "de": "f13",
+          "de": "f13:gritar",
           "tipo": "medio",
           "alvo": "nico",
           "camera": [
-            -0.76,
-            2.6,
-            -2.19
+            -1.08,
+            2.7,
+            -3.36
           ],
           "movimento": "aproximar",
           "intensidade": 0.2
@@ -943,12 +938,12 @@
           "tipo": "close",
           "alvo": "duda",
           "camera": [
-            2.58,
+            2.83,
             1.9,
-            -1.86
+            -2.31
           ],
           "movimento": "zoom_rapido",
-          "intensidade": 0.25
+          "intensidade": 0.2
         },
         {
           "de": "f14:esconde",
@@ -1036,9 +1031,9 @@
             5.0
           ],
           "olhando": [
-            0.3,
-            0.3,
-            5.6
+            -6.0,
+            2.4,
+            4.6
           ],
           "expressao": "feliz",
           "segura": "isqueiro"
@@ -1060,7 +1055,7 @@
             5.6
           ],
           "fogo": "chamas",
-          "acende": "f15:fogo",
+          "acende": "f15:acende+0.3",
           "some": "f18:fogo"
         },
         {
@@ -1071,7 +1066,7 @@
             5.6
           ],
           "alt": 0.3,
-          "aparece": "f15:fogo+0.8",
+          "aparece": "f15:acende+1.0",
           "some": "f18:fogo"
         },
         {
@@ -1110,8 +1105,8 @@
         }
       ],
       "relogio": {
-        "de": "f15",
-        "hora": "19:12"
+        "de": "f16",
+        "hora": "22:40"
       },
       "manchetes": [
         {
@@ -1153,12 +1148,12 @@
         {
           "quem": "jonas",
           "faz": "acender",
-          "de": "f15:fogo"
+          "de": "f15:acende"
         },
         {
           "quem": "jonas",
           "faz": "levantar",
-          "de": "f15:fogo+0.8"
+          "de": "f16"
         },
         {
           "quem": "jonas",
@@ -1215,13 +1210,13 @@
           "transicao": "desfoque"
         },
         {
-          "de": "f15:fogo",
+          "de": "f15:acende",
           "tipo": "close",
-          "alvo": "jonas",
+          "alvo": "duda",
           "camera": [
-            -0.04,
+            -1.02,
             1.7,
-            3.68
+            4.13
           ],
           "movimento": "aproximar",
           "intensidade": 0.2
@@ -1247,12 +1242,12 @@
           "tipo": "close",
           "alvo": "jonas",
           "camera": [
-            -0.8,
-            2.8,
-            4.85
+            -1.2,
+            2.9,
+            4.83
           ],
           "movimento": "zoom_rapido",
-          "intensidade": 0.25
+          "intensidade": 0.2
         },
         {
           "de": "f18",
@@ -1274,7 +1269,7 @@
       "efeitos": [
         {
           "de": "f15",
-          "ate": "f15:fogo",
+          "ate": "f15:Então",
           "efeito": "letreiro",
           "texto": "19H12",
           "altura": 0.22
@@ -1282,12 +1277,12 @@
       ],
       "sons": [
         {
-          "de": "f15:fogo",
+          "de": "f15:acende",
           "som": "isqueiro",
           "volume": 0.35
         },
         {
-          "de": "f15:fogo+0.3",
+          "de": "f15:acende+0.3",
           "som": "fogo",
           "volume": 0.3
         },
@@ -1440,9 +1435,9 @@
           "tipo": "close",
           "alvo": "nico",
           "camera": [
-            2.17,
-            1.7,
-            6.49
+            1.93,
+            1.8,
+            6.84
           ],
           "movimento": "aproximar",
           "intensidade": 0.2
@@ -1452,9 +1447,9 @@
           "tipo": "close",
           "alvo": "duda",
           "camera": [
-            2.12,
+            2.08,
             1.6,
-            5.03
+            4.62
           ],
           "movimento": "fixo"
         }
@@ -1507,7 +1502,7 @@
           ],
           "olhando": [
             4.25,
-            1.4,
+            2.0,
             5.8
           ],
           "expressao": "serio",
@@ -1566,7 +1561,7 @@
           "texto": "MARINA CAVEIRA",
           "de": "f22",
           "ate": "f22:fim+0.2",
-          "altura": 0.72
+          "altura": 0.62
         }
       ],
       "manchetes": [
@@ -1623,9 +1618,9 @@
           "tipo": "close",
           "alvo": "nico",
           "camera": [
-            2.17,
-            1.7,
-            6.49
+            1.93,
+            1.8,
+            6.84
           ],
           "movimento": "dolly_zoom",
           "intensidade": 0.8
@@ -1633,11 +1628,15 @@
         {
           "de": "f22",
           "tipo": "close",
-          "alvo": "marina",
+          "alvo": [
+            6.57,
+            2.15,
+            5.9
+          ],
           "camera": [
-            4.5,
-            2.8,
-            8.04
+            3.98,
+            2.9,
+            8.07
           ],
           "movimento": "aproximar",
           "intensidade": 0.2,
@@ -1649,9 +1648,9 @@
           "alvo": "nico",
           "lado": "frente",
           "camera": [
-            2.32,
-            1.6,
-            6.17
+            1.93,
+            1.8,
+            6.84
           ],
           "movimento": "aproximar",
           "intensidade": 0.2
