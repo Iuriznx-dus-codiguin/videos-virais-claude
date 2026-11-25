@@ -575,7 +575,8 @@
    ],
    "gancho": "A primeira ligação de celular foi para o concorrente.",
    "estilo": "dúvida comum",
-   "status": "roteiro"
+   "status": "produzido",
+   "dia": "2026-11-25"
   },
   {
    "n": 34,
@@ -591,7 +592,7 @@
     "relógio atômico e relatividade"
    ],
    "gancho": "Sem a teoria da relatividade, o GPS erraria quilômetros por dia.",
-   "status": "pendente"
+   "status": "roteiro"
   },
   {
    "n": 35,
