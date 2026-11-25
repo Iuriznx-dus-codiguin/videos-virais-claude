@@ -15,7 +15,8 @@
         "descricao": "menino brasileiro de 15 anos, voz animada de quem conta uma aventura pros amigos",
         "instruct": "male, teenager, moderate pitch",
         "amostra": "Se você achar um mapa do tesouro numa garrafa, não poste na internet. Eu vou te contar por quê.",
-        "realce": true
+        "realce": true,
+        "semente": 2
       },
       "visual": {
         "altura": 0.88,
@@ -42,7 +43,8 @@
       "personalidade": "desconfiada, esperta, fala pouco e certo; não confia em adulto que faz favor de graça",
       "voz": {
         "descricao": "menina brasileira de 11 anos, voz aguda e decidida",
-        "instruct": "female, teenager, high pitch"
+        "instruct": "female, teenager, high pitch",
+        "semente": 1
       },
       "visual": {
         "altura": 0.72,
@@ -71,7 +73,8 @@
       "personalidade": "simpático, brincalhão, avô de todo mundo; calmo até o ouro aparecer",
       "voz": {
         "descricao": "homem brasileiro de 65 anos, voz grave e rouca de pescador, simpática",
-        "instruct": "male, elderly, low pitch"
+        "instruct": "male, elderly, low pitch",
+        "semente": 1
       },
       "visual": {
         "altura": 1.02,
@@ -133,7 +136,7 @@
         "instruct": "male, middle-aged, low pitch"
       },
       "visual": {
-        "altura": 1.0,
+        "altura": 1,
         "corpo": "#22324A",
         "cabeca": "#E9C9A8",
         "olhos": "ovais",

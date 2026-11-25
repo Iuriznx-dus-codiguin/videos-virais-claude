@@ -1,0 +1,1704 @@
+{
+  "serie": "o-mapa",
+  "parte": 2,
+  "titulo": "A ilha",
+  "musica": "misterio",
+  "falas": [
+    {
+      "id": "f1",
+      "quem": "nico",
+      "off": true,
+      "texto": "Se você achar uma fogueira ainda quente numa ilha DESERTA, não grite: tem alguém aí?",
+      "tom": "tenso"
+    },
+    {
+      "id": "f2",
+      "quem": "nico",
+      "off": true,
+      "texto": "Porque quem acendeu ainda não sabe que você chegou."
+    },
+    {
+      "id": "f3",
+      "quem": "nico",
+      "off": true,
+      "texto": "Mas só se você souber ONDE essa pessoa está.",
+      "tom": "serio"
+    },
+    {
+      "id": "f4",
+      "quem": "nico",
+      "off": true,
+      "texto": "Minha irmã Duda e eu seguimos o mapa do tesouro de um faroleiro."
+    },
+    {
+      "id": "f5",
+      "quem": "nico",
+      "off": true,
+      "texto": "E o Seu Jonas, que trouxe a gente, já sabia do mapa."
+    },
+    {
+      "id": "f6",
+      "quem": "jonas",
+      "texto": "Todo pescador daqui conhece a lenda do faroleiro, menino!",
+      "tom": "animado"
+    },
+    {
+      "id": "f7",
+      "quem": "duda",
+      "texto": "Ele riu rápido DEMAIS, Nico.",
+      "tom": "serio"
+    },
+    {
+      "id": "f8",
+      "quem": "nico",
+      "off": true,
+      "texto": "Sete e vinte, a ilha. A tempestade chega amanhã às seis.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f9",
+      "quem": "duda",
+      "texto": "Do farol, trezentos passos até a árvore que CHORA."
+    },
+    {
+      "id": "f10",
+      "quem": "nico",
+      "off": true,
+      "texto": "Só que o mapa não diz pra que LADO."
+    },
+    {
+      "id": "f11",
+      "quem": "nico",
+      "off": true,
+      "texto": "A gente conta pela trilha."
+    },
+    {
+      "id": "f12",
+      "quem": "nico",
+      "off": true,
+      "texto": "Duzentos e dez passos... e uma fogueira ainda QUENTE.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f13",
+      "quem": "nico",
+      "off": true,
+      "texto": "Meu primeiro instinto é gritar se tem alguém aí."
+    },
+    {
+      "id": "f14",
+      "quem": "nico",
+      "off": true,
+      "texto": "Não. Quem se esconde numa ilha deserta não quer visita.",
+      "tom": "serio"
+    },
+    {
+      "id": "f15",
+      "quem": "nico",
+      "off": true,
+      "texto": "No escuro ninguém conta passo. Então o Seu Jonas acende um fogo."
+    },
+    {
+      "id": "f16",
+      "quem": "nico",
+      "off": true,
+      "texto": "Dez e quarenta, uma lanterna anda entre as árvores.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f17",
+      "quem": "jonas",
+      "texto": "É a Marina CAVEIRA. Ela não divide nada.",
+      "tom": "serio"
+    },
+    {
+      "id": "f18",
+      "quem": "nico",
+      "off": true,
+      "texto": "Ele apaga o fogo e some atrás dela."
+    },
+    {
+      "id": "f19",
+      "quem": "nico",
+      "off": true,
+      "texto": "A gente se esconde atrás do tronco, sem respirar."
+    },
+    {
+      "id": "f20",
+      "quem": "nico",
+      "off": true,
+      "texto": "A lanterna passa... e vai embora. Nunca fiquei tão quieto na vida.",
+      "tom": "aliviado"
+    },
+    {
+      "id": "f21",
+      "quem": "nico",
+      "off": true,
+      "texto": "Só que ninguém olhou pra TRÁS.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f22",
+      "quem": "marina",
+      "texto": "Então vocês acharam a OUTRA garrafa.",
+      "tom": "serio"
+    }
+  ],
+  "cenas": [
+    {
+      "id": "gancho",
+      "cenario": "selva",
+      "luz": "dia",
+      "ambiente": "selva",
+      "de": "inicio",
+      "personagens": {
+        "nico": {
+          "em": [
+            -0.5,
+            1.0
+          ],
+          "olhando": [
+            0.8,
+            0.3,
+            -0.7
+          ],
+          "expressao": "medo"
+        },
+        "duda": {
+          "em": [
+            2.1,
+            0.7
+          ],
+          "olhando": [
+            0.8,
+            0.3,
+            -0.7
+          ],
+          "expressao": "desconfiado",
+          "segura": "garrafa"
+        },
+        "jonas": {
+          "em": [
+            1.0,
+            -3.0
+          ],
+          "olhando": [
+            0.8,
+            0.6,
+            -0.7
+          ],
+          "expressao": "serio"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "fogueira",
+          "em": [
+            0.8,
+            -0.7
+          ],
+          "fogo": "brasas"
+        },
+        {
+          "tipo": "particulas",
+          "particula": "fumaca",
+          "em": [
+            0.8,
+            -0.7
+          ],
+          "alt": 0.2,
+          "raio": 0.35,
+          "altura": 5,
+          "quantas": 26
+        },
+        {
+          "tipo": "garrafa",
+          "em": [
+            -0.1,
+            -1.4
+          ]
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "inicio",
+          "ate": "f2",
+          "texto": "FOGUEIRA *AINDA QUENTE*"
+        },
+        {
+          "de": "f2",
+          "ate": "f3",
+          "texto": "ELE *NÃO SABE* QUE VOCÊ CHEGOU",
+          "cor": "#2FD27A"
+        },
+        {
+          "de": "f3",
+          "texto": "*ONDE* ELE ESTÁ?"
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "nico",
+          "faz": "agachar",
+          "de": "inicio"
+        },
+        {
+          "quem": "jonas",
+          "faz": "olhar_em_volta",
+          "de": "f2"
+        },
+        {
+          "quem": "duda",
+          "faz": "olhar_em_volta",
+          "de": "f3"
+        },
+        {
+          "quem": "duda",
+          "expressao": "medo",
+          "de": "f3"
+        }
+      ],
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "drone",
+          "alvo": [
+            0.8,
+            0.6,
+            0.4
+          ],
+          "camera": [
+            1.2,
+            7.0,
+            8.2
+          ],
+          "movimento": "descer",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f1:DESERTA",
+          "tipo": "detalhe",
+          "alvo": [
+            0.8,
+            0.15,
+            -0.7
+          ],
+          "camera": [
+            1.6,
+            1.3,
+            1.5
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f2",
+          "tipo": "close",
+          "alvo": "nico",
+          "camera": [
+            -0.98,
+            1.5,
+            -1.56
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f3",
+          "tipo": "aberto",
+          "alvo": [
+            0.8,
+            1.2,
+            -0.2
+          ],
+          "camera": [
+            -2.0,
+            3.6,
+            9.8
+          ],
+          "movimento": "arco",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f3:ONDE",
+          "tipo": "close",
+          "alvo": "duda",
+          "camera": [
+            2.58,
+            1.9,
+            -1.86
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.25
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "f1:DESERTA",
+          "ate": "f1:DESERTA+0.6",
+          "efeito": "linhas"
+        }
+      ],
+      "sons": [
+        {
+          "de": "inicio",
+          "som": "fogo",
+          "volume": 0.25
+        },
+        {
+          "de": "f3:ONDE",
+          "som": "susto",
+          "volume": 0.3
+        }
+      ]
+    },
+    {
+      "id": "cais",
+      "cenario": "ilhota_farol",
+      "luz": "dia",
+      "ambiente": "mar",
+      "de": "f4",
+      "personagens": {
+        "nico": {
+          "em": [
+            2.0,
+            8.6
+          ],
+          "olhando": [
+            0,
+            3.5,
+            -4
+          ],
+          "expressao": "feliz"
+        },
+        "duda": {
+          "em": [
+            4.3,
+            7.4
+          ],
+          "olhando": [
+            3.0,
+            2.4,
+            12.6
+          ],
+          "expressao": "desconfiado",
+          "segura": "garrafa"
+        },
+        "jonas": {
+          "em": [
+            3.0,
+            12.6
+          ],
+          "olhando": [
+            2.8,
+            2.2,
+            8.4
+          ],
+          "expressao": "feliz"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "farol",
+          "em": "farol",
+          "ilhota": false,
+          "modo": "apagado"
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            3,
+            17
+          ],
+          "giro": 90,
+          "luzes": false,
+          "caixas": false
+        }
+      ],
+      "relogio": {
+        "de": "f4",
+        "hora": "07:20"
+      },
+      "rotulos": [
+        {
+          "alvo": "nico",
+          "texto": "NICO · 15 ANOS",
+          "de": "f4+0.3",
+          "ate": "f4:Duda",
+          "altura": 0.72
+        },
+        {
+          "alvo": "duda",
+          "texto": "DUDA · 11 ANOS",
+          "de": "f4:Duda",
+          "ate": "f4:fim+0.2"
+        },
+        {
+          "alvo": "jonas",
+          "texto": "SEU JONAS · PESCADOR",
+          "de": "f5:Jonas",
+          "ate": "f5:fim+0.2",
+          "altura": 0.72
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f4",
+          "ate": "f5",
+          "texto": "UM MAPA *DE 1962*"
+        },
+        {
+          "de": "f5",
+          "ate": "f7",
+          "texto": "COMO ELE *SABIA DO MAPA*?"
+        },
+        {
+          "de": "f7",
+          "ate": "f8",
+          "texto": "RIU *RÁPIDO DEMAIS*"
+        },
+        {
+          "de": "f8",
+          "texto": "TEMPESTADE *AMANHÃ 18H*"
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "jonas",
+          "expressao": "feliz",
+          "de": "f6"
+        },
+        {
+          "quem": "jonas",
+          "faz": "acenar",
+          "de": "f6:lenda"
+        },
+        {
+          "quem": "duda",
+          "expressao": "desconfiado",
+          "de": "f7"
+        },
+        {
+          "quem": "nico",
+          "faz": "virar",
+          "para": [
+            0,
+            3.0,
+            -4
+          ],
+          "de": "f8"
+        },
+        {
+          "quem": "duda",
+          "faz": "virar",
+          "para": [
+            0,
+            3.0,
+            -4
+          ],
+          "de": "f8"
+        },
+        {
+          "quem": "nico",
+          "expressao": "nervoso",
+          "de": "f8:tempestade"
+        }
+      ],
+      "planos": [
+        {
+          "de": "f4",
+          "tipo": "medio",
+          "alvo": "nico",
+          "camera": [
+            -0.97,
+            2.6,
+            6.56
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.25,
+          "transicao": "desfoque"
+        },
+        {
+          "de": "f4:Duda",
+          "tipo": "close",
+          "alvo": "duda",
+          "camera": [
+            3.62,
+            2.2,
+            10.12
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f5",
+          "tipo": "medio",
+          "alvo": "jonas",
+          "camera": [
+            0.07,
+            3.0,
+            9.32
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f6",
+          "tipo": "close",
+          "alvo": "jonas",
+          "camera": [
+            3.64,
+            2.9,
+            9.67
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f7",
+          "tipo": "close",
+          "alvo": "duda",
+          "camera": [
+            3.62,
+            2.2,
+            10.12
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f8",
+          "tipo": "aberto",
+          "alvo": [
+            0.8,
+            5.5,
+            -3.0
+          ],
+          "camera": [
+            -4.2,
+            2.4,
+            14.5
+          ],
+          "movimento": "arco",
+          "intensidade": 0.25
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "f8",
+          "ate": "f8:ilha+0.6",
+          "efeito": "letreiro",
+          "texto": "ILHA DAS GAIVOTAS",
+          "altura": 0.22
+        }
+      ],
+      "sons": [
+        {
+          "de": "f6:lenda",
+          "som": "pop",
+          "volume": 0.25
+        },
+        {
+          "de": "f8:tempestade",
+          "som": "trovao",
+          "volume": 0.3
+        }
+      ]
+    },
+    {
+      "id": "trilha",
+      "cenario": "selva",
+      "luz": "dia",
+      "ambiente": "selva",
+      "de": "f9",
+      "personagens": {
+        "nico": {
+          "em": [
+            -1.8,
+            10.0
+          ],
+          "olhando": [
+            -0.6,
+            1.6,
+            4.0
+          ],
+          "expressao": "determinado"
+        },
+        "duda": {
+          "em": [
+            0.4,
+            9.2
+          ],
+          "olhando": [
+            -0.6,
+            1.6,
+            4.0
+          ],
+          "expressao": "serio",
+          "segura": "garrafa"
+        },
+        "jonas": {
+          "em": [
+            -0.6,
+            12.0
+          ],
+          "olhando": [
+            -0.6,
+            1.6,
+            4.0
+          ],
+          "expressao": "feliz"
+        }
+      },
+      "insercoes": [
+        {
+          "de": "f9",
+          "ate": "f9:fim+0.3",
+          "tipo": "bilhete",
+          "titulo": "MAPA · ILHA DAS GAIVOTAS",
+          "linhas": [
+            "Do farol, 300 passos até a árvore que chora.",
+            "Ali: 40 barras de ouro. Entregue ao museu.",
+            "— Aurélio, faroleiro, 1962"
+          ]
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f9",
+          "ate": "f10",
+          "texto": "*300 PASSOS* DO FAROL"
+        },
+        {
+          "de": "f10",
+          "ate": "f11",
+          "texto": "PRA QUE *LADO*?"
+        }
+      ],
+      "cartoes": [
+        {
+          "de": "f11",
+          "ate": "f12:QUENTE",
+          "grande": "# PASSOS",
+          "contar": [
+            1,
+            210
+          ]
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "duda",
+          "faz": "olhar_em_volta",
+          "de": "f10"
+        },
+        {
+          "quem": "duda",
+          "expressao": "nervoso",
+          "de": "f10:LADO"
+        },
+        {
+          "quem": "nico",
+          "faz": "andar",
+          "para": [
+            -1.2,
+            3.8
+          ],
+          "de": "f11",
+          "velocidade": 0.9
+        },
+        {
+          "quem": "duda",
+          "faz": "andar",
+          "para": [
+            0.2,
+            4.2
+          ],
+          "de": "f11+0.2",
+          "velocidade": 0.9
+        },
+        {
+          "quem": "jonas",
+          "faz": "andar",
+          "para": [
+            -0.4,
+            6.0
+          ],
+          "de": "f11+0.4",
+          "velocidade": 0.8
+        }
+      ],
+      "planos": [
+        {
+          "de": "f9",
+          "tipo": "close",
+          "alvo": "duda",
+          "camera": [
+            -1.03,
+            2.1,
+            6.91
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2,
+          "transicao": "chicote"
+        },
+        {
+          "de": "f10",
+          "tipo": "close",
+          "alvo": "duda",
+          "camera": [
+            -1.03,
+            2.1,
+            6.91
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f11",
+          "tipo": "aberto",
+          "alvo": [
+            -0.5,
+            1.6,
+            6.5
+          ],
+          "camera": [
+            0.6,
+            2.9,
+            1.2
+          ],
+          "movimento": "acompanhar",
+          "intensidade": 0.3
+        }
+      ],
+      "sons": [
+        {
+          "de": "f11",
+          "som": "folhas",
+          "volume": 0.3
+        }
+      ]
+    },
+    {
+      "id": "fogo_quente",
+      "cenario": "selva",
+      "luz": "dia",
+      "ambiente": "selva",
+      "de": "f12",
+      "personagens": {
+        "nico": {
+          "em": [
+            -0.5,
+            1.0
+          ],
+          "olhando": [
+            0.8,
+            0.3,
+            -0.7
+          ],
+          "expressao": "surpreso"
+        },
+        "duda": {
+          "em": [
+            2.1,
+            0.7
+          ],
+          "olhando": [
+            0.8,
+            0.3,
+            -0.7
+          ],
+          "expressao": "desconfiado",
+          "segura": "garrafa"
+        },
+        "jonas": {
+          "em": [
+            1.0,
+            -3.0
+          ],
+          "olhando": [
+            0.8,
+            0.6,
+            -0.7
+          ],
+          "expressao": "serio"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "fogueira",
+          "em": [
+            0.8,
+            -0.7
+          ],
+          "fogo": "brasas"
+        },
+        {
+          "tipo": "particulas",
+          "particula": "fumaca",
+          "em": [
+            0.8,
+            -0.7
+          ],
+          "alt": 0.2,
+          "raio": 0.35,
+          "altura": 5,
+          "quantas": 26
+        },
+        {
+          "tipo": "garrafa",
+          "em": [
+            -0.1,
+            -1.4
+          ]
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f12:QUENTE",
+          "ate": "f13",
+          "texto": "*TEM MAIS ALGUÉM* NA ILHA"
+        },
+        {
+          "de": "f13",
+          "ate": "f14",
+          "texto": "GRITAR *TEM ALGUÉM AÍ*?"
+        },
+        {
+          "de": "f14",
+          "texto": "*NÃO* GRITA"
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "nico",
+          "expressao": "determinado",
+          "de": "f13"
+        },
+        {
+          "quem": "duda",
+          "expressao": "bravo",
+          "de": "f14"
+        },
+        {
+          "quem": "nico",
+          "expressao": "nervoso",
+          "de": "f14:esconde"
+        },
+        {
+          "quem": "nico",
+          "faz": "olhar_em_volta",
+          "de": "f14:visita"
+        },
+        {
+          "quem": "jonas",
+          "faz": "olhar_em_volta",
+          "de": "f14:visita"
+        }
+      ],
+      "planos": [
+        {
+          "de": "f12",
+          "tipo": "detalhe",
+          "alvo": [
+            0.8,
+            0.15,
+            -0.7
+          ],
+          "camera": [
+            2.0,
+            1.5,
+            1.4
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.3,
+          "transicao": "chicote"
+        },
+        {
+          "de": "f12:QUENTE",
+          "tipo": "close",
+          "alvo": "nico",
+          "camera": [
+            -0.86,
+            2.4,
+            -1.68
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f13",
+          "tipo": "medio",
+          "alvo": "nico",
+          "camera": [
+            -0.76,
+            2.6,
+            -2.19
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f14",
+          "tipo": "close",
+          "alvo": "duda",
+          "camera": [
+            2.58,
+            1.9,
+            -1.86
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f14:esconde",
+          "tipo": "aberto",
+          "alvo": [
+            0.8,
+            1.2,
+            -0.4
+          ],
+          "camera": [
+            -1.0,
+            3.4,
+            10.6
+          ],
+          "movimento": "orbitar",
+          "intensidade": 0.25
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "f12:QUENTE",
+          "ate": "f12:fim+0.4",
+          "efeito": "circular",
+          "alvo": [
+            0.8,
+            0.15,
+            -0.7
+          ]
+        },
+        {
+          "de": "f14",
+          "ate": "f14+0.6",
+          "efeito": "linhas"
+        }
+      ],
+      "sons": [
+        {
+          "de": "f12:QUENTE",
+          "som": "impacto",
+          "volume": 0.35
+        },
+        {
+          "de": "f14",
+          "som": "susto",
+          "volume": 0.25
+        }
+      ]
+    },
+    {
+      "id": "noite",
+      "cenario": "selva",
+      "luz": "noite",
+      "ambiente": "noite",
+      "de": "f15",
+      "filtro": "frio",
+      "personagens": {
+        "nico": {
+          "em": [
+            1.2,
+            7.0
+          ],
+          "olhando": [
+            0.3,
+            0.4,
+            5.6
+          ],
+          "expressao": "cansado"
+        },
+        "duda": {
+          "em": [
+            -0.6,
+            7.1
+          ],
+          "olhando": [
+            0.3,
+            0.4,
+            5.6
+          ],
+          "expressao": "cansado",
+          "segura": "garrafa"
+        },
+        "jonas": {
+          "em": [
+            2.2,
+            5.0
+          ],
+          "olhando": [
+            0.3,
+            0.3,
+            5.6
+          ],
+          "expressao": "feliz",
+          "segura": "isqueiro"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "tronco",
+          "em": [
+            3.6,
+            5.6
+          ],
+          "giro": 90
+        },
+        {
+          "tipo": "fogueira",
+          "em": [
+            0.3,
+            5.6
+          ],
+          "fogo": "chamas",
+          "acende": "f15:fogo",
+          "some": "f18:fogo"
+        },
+        {
+          "tipo": "particulas",
+          "particula": "fagulhas",
+          "em": [
+            0.3,
+            5.6
+          ],
+          "alt": 0.3,
+          "aparece": "f15:fogo+0.8",
+          "some": "f18:fogo"
+        },
+        {
+          "tipo": "fogueira",
+          "em": [
+            0.3,
+            5.6
+          ],
+          "fogo": "apagada",
+          "aparece": "f18:fogo"
+        },
+        {
+          "tipo": "particulas",
+          "particula": "fumaca",
+          "em": [
+            0.3,
+            5.6
+          ],
+          "alt": 0.2,
+          "raio": 0.3,
+          "altura": 3,
+          "quantas": 12,
+          "aparece": "f18:fogo"
+        },
+        {
+          "tipo": "lanternas_mata",
+          "em": [
+            -7.2,
+            4.6
+          ],
+          "giro": 90,
+          "quantas": 1,
+          "largura": 6,
+          "vultos": false,
+          "aparece": "f16"
+        }
+      ],
+      "relogio": {
+        "de": "f15",
+        "hora": "19:12"
+      },
+      "manchetes": [
+        {
+          "de": "f15",
+          "ate": "f16",
+          "texto": "*NO ESCURO* NINGUÉM CONTA PASSO"
+        },
+        {
+          "de": "f16",
+          "ate": "f17",
+          "texto": "*UMA LANTERNA* NA MATA"
+        },
+        {
+          "de": "f17",
+          "ate": "f18",
+          "texto": "\"*MARINA CAVEIRA*\""
+        },
+        {
+          "de": "f18",
+          "texto": "O SEU JONAS *SUMIU*"
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "nico",
+          "faz": "sentar",
+          "de": "inicio"
+        },
+        {
+          "quem": "duda",
+          "faz": "sentar",
+          "de": "inicio"
+        },
+        {
+          "quem": "jonas",
+          "faz": "arrumar",
+          "de": "f15"
+        },
+        {
+          "quem": "jonas",
+          "faz": "acender",
+          "de": "f15:fogo"
+        },
+        {
+          "quem": "jonas",
+          "faz": "levantar",
+          "de": "f15:fogo+0.8"
+        },
+        {
+          "quem": "jonas",
+          "faz": "virar",
+          "para": [
+            -6.0,
+            2.4,
+            4.6
+          ],
+          "de": "f16:lanterna"
+        },
+        {
+          "quem": "jonas",
+          "expressao": "serio",
+          "de": "f16:lanterna"
+        },
+        {
+          "quem": "nico",
+          "expressao": "medo",
+          "de": "f16:lanterna"
+        },
+        {
+          "quem": "duda",
+          "expressao": "medo",
+          "de": "f16:lanterna"
+        },
+        {
+          "quem": "jonas",
+          "faz": "andar",
+          "para": [
+            -6.5,
+            8.5
+          ],
+          "de": "f18:some",
+          "velocidade": 1.0
+        }
+      ],
+      "planos": [
+        {
+          "de": "f15",
+          "tipo": "aberto",
+          "alvo": [
+            1.0,
+            1.0,
+            6.0
+          ],
+          "camera": [
+            0.9,
+            1.9,
+            -1.5
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.25,
+          "transicao": "desfoque"
+        },
+        {
+          "de": "f15:fogo",
+          "tipo": "close",
+          "alvo": "jonas",
+          "camera": [
+            -0.04,
+            1.7,
+            3.68
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f16",
+          "tipo": "aberto",
+          "alvo": [
+            -6.6,
+            1.3,
+            3.0
+          ],
+          "camera": [
+            1.0,
+            2.6,
+            3.4
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f17",
+          "tipo": "close",
+          "alvo": "jonas",
+          "camera": [
+            -0.8,
+            2.8,
+            4.85
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f18",
+          "tipo": "aberto",
+          "alvo": [
+            -2.4,
+            1.4,
+            7.0
+          ],
+          "camera": [
+            2.2,
+            3.0,
+            -0.5
+          ],
+          "movimento": "acompanhar",
+          "intensidade": 0.25
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "f15",
+          "ate": "f15:fogo",
+          "efeito": "letreiro",
+          "texto": "19H12",
+          "altura": 0.22
+        }
+      ],
+      "sons": [
+        {
+          "de": "f15:fogo",
+          "som": "isqueiro",
+          "volume": 0.35
+        },
+        {
+          "de": "f15:fogo+0.3",
+          "som": "fogo",
+          "volume": 0.3
+        },
+        {
+          "de": "f16:lanterna",
+          "som": "tensao_sobe",
+          "volume": 0.3
+        },
+        {
+          "de": "f18:apaga",
+          "som": "sopro",
+          "volume": 0.35
+        }
+      ]
+    },
+    {
+      "id": "escondidos",
+      "cenario": "selva",
+      "luz": "noite",
+      "ambiente": "noite",
+      "de": "f19",
+      "filtro": "frio",
+      "personagens": {
+        "nico": {
+          "em": [
+            4.3,
+            5.0
+          ],
+          "olhando": [
+            -6.0,
+            1.0,
+            4.8
+          ],
+          "expressao": "medo"
+        },
+        "duda": {
+          "em": [
+            4.2,
+            6.6
+          ],
+          "olhando": [
+            -6.0,
+            1.0,
+            4.8
+          ],
+          "expressao": "medo",
+          "segura": "garrafa"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "tronco",
+          "em": [
+            3.6,
+            5.6
+          ],
+          "giro": 90
+        },
+        {
+          "tipo": "fogueira",
+          "em": [
+            0.3,
+            5.6
+          ],
+          "fogo": "apagada"
+        },
+        {
+          "tipo": "particulas",
+          "particula": "fumaca",
+          "em": [
+            0.3,
+            5.6
+          ],
+          "alt": 0.2,
+          "raio": 0.3,
+          "altura": 3,
+          "quantas": 12
+        },
+        {
+          "tipo": "lanternas_mata",
+          "em": [
+            -7.2,
+            4.6
+          ],
+          "giro": 90,
+          "quantas": 1,
+          "largura": 6,
+          "vultos": false,
+          "some": "f20:embora+0.4"
+        }
+      ],
+      "relogio": {
+        "de": "f19",
+        "hora": "22:41"
+      },
+      "manchetes": [
+        {
+          "de": "f19",
+          "ate": "f20:embora",
+          "texto": "*SEM RESPIRAR*"
+        },
+        {
+          "de": "f20:embora",
+          "texto": "A LANTERNA *FOI EMBORA*",
+          "cor": "#2FD27A"
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "nico",
+          "faz": "esconder",
+          "de": "inicio"
+        },
+        {
+          "quem": "duda",
+          "faz": "esconder",
+          "de": "inicio"
+        },
+        {
+          "quem": "nico",
+          "expressao": "aliviado",
+          "de": "f20:embora"
+        },
+        {
+          "quem": "duda",
+          "expressao": "aliviado",
+          "de": "f20:embora+0.3"
+        }
+      ],
+      "planos": [
+        {
+          "de": "f19",
+          "tipo": "aberto",
+          "alvo": [
+            4.0,
+            0.9,
+            5.8
+          ],
+          "camera": [
+            1.6,
+            2.2,
+            1.6
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.25,
+          "transicao": "chicote"
+        },
+        {
+          "de": "f20",
+          "tipo": "close",
+          "alvo": "nico",
+          "camera": [
+            2.17,
+            1.7,
+            6.49
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f20:Nunca",
+          "tipo": "close",
+          "alvo": "duda",
+          "camera": [
+            2.12,
+            1.6,
+            5.03
+          ],
+          "movimento": "fixo"
+        }
+      ],
+      "sons": [
+        {
+          "de": "f19",
+          "som": "folhas",
+          "volume": 0.25
+        }
+      ]
+    },
+    {
+      "id": "virada",
+      "cenario": "selva",
+      "luz": "noite",
+      "ambiente": "noite",
+      "de": "f21",
+      "filtro": "frio",
+      "personagens": {
+        "nico": {
+          "em": [
+            4.3,
+            5.0
+          ],
+          "olhando": [
+            -6.0,
+            1.0,
+            4.8
+          ],
+          "expressao": "aliviado"
+        },
+        "duda": {
+          "em": [
+            4.2,
+            6.6
+          ],
+          "olhando": [
+            -6.0,
+            1.0,
+            4.8
+          ],
+          "expressao": "aliviado",
+          "segura": "garrafa"
+        },
+        "marina": {
+          "em": [
+            6.6,
+            5.9
+          ],
+          "olhando": [
+            4.25,
+            1.4,
+            5.8
+          ],
+          "expressao": "serio",
+          "segura": "lanterna"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "tronco",
+          "em": [
+            3.6,
+            5.6
+          ],
+          "giro": 90
+        },
+        {
+          "tipo": "fogueira",
+          "em": [
+            0.3,
+            5.6
+          ],
+          "fogo": "apagada"
+        },
+        {
+          "tipo": "particulas",
+          "particula": "fumaca",
+          "em": [
+            0.3,
+            5.6
+          ],
+          "alt": 0.2,
+          "raio": 0.3,
+          "altura": 3,
+          "quantas": 12
+        },
+        {
+          "tipo": "feixe_luz",
+          "de": [
+            6.3,
+            1.6,
+            5.8
+          ],
+          "em": [
+            4.25,
+            5.8
+          ],
+          "largura": 0.9,
+          "intensidade": 0.3,
+          "cor": "#FFE9B8",
+          "aparece": "f22"
+        }
+      ],
+      "rotulos": [
+        {
+          "alvo": "marina",
+          "texto": "MARINA CAVEIRA",
+          "de": "f22",
+          "ate": "f22:fim+0.2",
+          "altura": 0.72
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f21",
+          "ate": "f22",
+          "texto": "NINGUÉM OLHOU *PRA TRÁS*"
+        },
+        {
+          "de": "f22",
+          "texto": "\"A *OUTRA* GARRAFA\""
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "nico",
+          "faz": "esconder",
+          "de": "inicio"
+        },
+        {
+          "quem": "duda",
+          "faz": "esconder",
+          "de": "inicio"
+        },
+        {
+          "quem": "marina",
+          "faz": "acender",
+          "de": "f22"
+        },
+        {
+          "quem": "nico",
+          "faz": "susto",
+          "de": "f22"
+        },
+        {
+          "quem": "duda",
+          "faz": "susto",
+          "de": "f22"
+        },
+        {
+          "quem": "nico",
+          "expressao": "medo",
+          "de": "f22"
+        },
+        {
+          "quem": "duda",
+          "expressao": "medo",
+          "de": "f22"
+        }
+      ],
+      "planos": [
+        {
+          "de": "f21",
+          "tipo": "close",
+          "alvo": "nico",
+          "camera": [
+            2.17,
+            1.7,
+            6.49
+          ],
+          "movimento": "dolly_zoom",
+          "intensidade": 0.8
+        },
+        {
+          "de": "f22",
+          "tipo": "close",
+          "alvo": "marina",
+          "camera": [
+            4.5,
+            2.8,
+            8.04
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2,
+          "transicao": "zoom"
+        },
+        {
+          "de": "f22:fim+0.3",
+          "tipo": "close",
+          "alvo": "nico",
+          "lado": "frente",
+          "camera": [
+            2.32,
+            1.6,
+            6.17
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "f21",
+          "ate": "fim",
+          "efeito": "barras"
+        },
+        {
+          "de": "f22:OUTRA",
+          "ate": "f22:fim+0.3",
+          "efeito": "destacar",
+          "alvo": "marina"
+        }
+      ],
+      "sons": [
+        {
+          "de": "f21:TRÁS",
+          "som": "tensao_sobe",
+          "volume": 0.3
+        },
+        {
+          "de": "f22",
+          "som": "impacto",
+          "volume": 0.45
+        }
+      ]
+    }
+  ],
+  "chamada": {
+    "pergunta": "Corria pro Seu Jonas ou ouvia a Marina?",
+    "texto": "COMENTA",
+    "destaque": "PARTE 3"
+  },
+  "postagem": {
+    "titulo": "Achamos uma fogueira quente numa ilha deserta",
+    "descricao": "Dois irmãos seguem um mapa de 1962 até uma ilha deserta atrás de 40 barras de ouro. No meio da mata, uma fogueira ainda quente: eles não estão sozinhos.",
+    "hashtags": [
+      "ilhadeserta",
+      "tesouro",
+      "aventura",
+      "animacao"
+    ],
+    "comentario": "Eu ouvia a Marina. O Seu Jonas sabe coisa demais. E você: corria ou ouvia?",
+    "capa": "f12:QUENTE+0.3"
+  }
+}
