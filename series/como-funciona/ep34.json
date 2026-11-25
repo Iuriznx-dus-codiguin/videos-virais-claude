@@ -1,0 +1,3827 @@
+{
+ "serie": "como-funciona",
+ "parte": 34,
+ "titulo": "Construa um GPS do zero",
+ "musica": "curiosidade",
+ "modelos": {
+  "gps": [
+   {
+    "id": "chao",
+    "forma": "cilindro",
+    "tam": [
+     0.26,
+     0.02
+    ],
+    "pos": [
+     0.02,
+     0.01,
+     -0.01
+    ],
+    "cor": "#9CCC65"
+   },
+   {
+    "id": "casa0",
+    "forma": "caixa",
+    "tam": [
+     0.034,
+     0.027200000000000002,
+     0.034
+    ],
+    "pos": [
+     -0.17,
+     0.0336,
+     -0.17
+    ],
+    "cor": "#FFF3E0"
+   },
+   {
+    "id": "casa0_teto",
+    "forma": "cone",
+    "tam": [
+     0.0272,
+     0.0204
+    ],
+    "pos": [
+     0,
+     0.0238,
+     0
+    ],
+    "cor": "#D84315",
+    "pai": "casa0"
+   },
+   {
+    "id": "casa1",
+    "forma": "caixa",
+    "tam": [
+     0.034,
+     0.027200000000000002,
+     0.034
+    ],
+    "pos": [
+     0.19,
+     0.0336,
+     -0.14
+    ],
+    "cor": "#E3F2FD"
+   },
+   {
+    "id": "casa1_teto",
+    "forma": "cone",
+    "tam": [
+     0.0272,
+     0.0204
+    ],
+    "pos": [
+     0,
+     0.0238,
+     0
+    ],
+    "cor": "#D84315",
+    "pai": "casa1"
+   },
+   {
+    "id": "arv0",
+    "forma": "cilindro",
+    "tam": [
+     0.006,
+     0.03
+    ],
+    "pos": [
+     -0.2,
+     0.035,
+     0.06
+    ],
+    "cor": "#6D4C41"
+   },
+   {
+    "id": "arv0_copa",
+    "forma": "esfera",
+    "tam": [
+     0.022
+    ],
+    "pos": [
+     0,
+     0.03,
+     0
+    ],
+    "cor": "#43A047",
+    "pai": "arv0"
+   },
+   {
+    "id": "arv1",
+    "forma": "cilindro",
+    "tam": [
+     0.006,
+     0.03
+    ],
+    "pos": [
+     0.21,
+     0.035,
+     0.04
+    ],
+    "cor": "#6D4C41"
+   },
+   {
+    "id": "arv1_copa",
+    "forma": "esfera",
+    "tam": [
+     0.022
+    ],
+    "pos": [
+     0,
+     0.03,
+     0
+    ],
+    "cor": "#43A047",
+    "pai": "arv1"
+   },
+   {
+    "id": "arv2",
+    "forma": "cilindro",
+    "tam": [
+     0.006,
+     0.03
+    ],
+    "pos": [
+     0.08,
+     0.035,
+     -0.2
+    ],
+    "cor": "#6D4C41"
+   },
+   {
+    "id": "arv2_copa",
+    "forma": "esfera",
+    "tam": [
+     0.022
+    ],
+    "pos": [
+     0,
+     0.03,
+     0
+    ],
+    "cor": "#43A047",
+    "pai": "arv2"
+   },
+   {
+    "id": "cel",
+    "forma": "caixa",
+    "tam": [
+     0.038,
+     0.07,
+     0.009
+    ],
+    "pos": [
+     0.05,
+     0.055,
+     0.0
+    ],
+    "cor": "#263238"
+   },
+   {
+    "id": "cel_tela",
+    "forma": "caixa",
+    "tam": [
+     0.0289,
+     0.0546,
+     0.002
+    ],
+    "pos": [
+     0,
+     0.002,
+     0.0055
+    ],
+    "cor": "#4FC3F7",
+    "pai": "cel",
+    "sem_contorno": true
+   },
+   {
+    "id": "pt_p",
+    "forma": "cilindro",
+    "tam": [
+     0.026,
+     0.004
+    ],
+    "pos": [
+     0.05,
+     0.023,
+     0.0
+    ],
+    "cor": "#E53935",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "pt_q",
+    "forma": "cilindro",
+    "tam": [
+     0.026,
+     0.004
+    ],
+    "pos": [
+     -0.07,
+     0.023,
+     0.0
+    ],
+    "cor": "#E53935",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "fant_q",
+    "forma": "caixa",
+    "tam": [
+     0.038,
+     0.07,
+     0.009
+    ],
+    "pos": [
+     -0.07,
+     0.055,
+     0.0
+    ],
+    "cor": "#90A4AE",
+    "oculta": true,
+    "opacidade": 0.5
+   },
+   {
+    "id": "fant_q_tela",
+    "forma": "caixa",
+    "tam": [
+     0.0289,
+     0.0546,
+     0.002
+    ],
+    "pos": [
+     0,
+     0.002,
+     0.0055
+    ],
+    "cor": "#CFD8DC",
+    "pai": "fant_q",
+    "sem_contorno": true,
+    "opacidade": 0.5
+   },
+   {
+    "id": "sat1",
+    "forma": "caixa",
+    "tam": [
+     0.045,
+     0.045,
+     0.045
+    ],
+    "pos": [
+     -0.01,
+     0.36,
+     -0.09
+    ],
+    "cor": "#29B6F6"
+   },
+   {
+    "id": "sat1_painele",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.003,
+     0.032
+    ],
+    "pos": [
+     -0.048,
+     0,
+     0
+    ],
+    "cor": "#1A237E",
+    "pai": "sat1"
+   },
+   {
+    "id": "sat1_paineld",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.003,
+     0.032
+    ],
+    "pos": [
+     0.048,
+     0,
+     0
+    ],
+    "cor": "#1A237E",
+    "pai": "sat1"
+   },
+   {
+    "id": "sat1_antena",
+    "forma": "cone",
+    "tam": [
+     0.012,
+     0.02
+    ],
+    "pos": [
+     0,
+     -0.032,
+     0
+    ],
+    "giro": [
+     180,
+     0,
+     0
+    ],
+    "cor": "#ECEFF1",
+    "pai": "sat1"
+   },
+   {
+    "id": "sat1_relogio",
+    "forma": "cilindro",
+    "tam": [
+     0.016,
+     0.004
+    ],
+    "pos": [
+     0,
+     0,
+     0.024
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#FFFFFF",
+    "pai": "sat1",
+    "sem_contorno": true
+   },
+   {
+    "id": "sat1_piv",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     0,
+     0,
+     0.0275
+    ],
+    "cor": "#212121",
+    "pai": "sat1",
+    "sem_contorno": true
+   },
+   {
+    "id": "sat1_ponteiro",
+    "forma": "caixa",
+    "tam": [
+     0.0028,
+     0.013,
+     0.0015
+    ],
+    "pos": [
+     0,
+     0.0055,
+     0
+    ],
+    "cor": "#212121",
+    "pai": "sat1_piv",
+    "sem_contorno": true
+   },
+   {
+    "id": "sat1_atomico",
+    "forma": "toro",
+    "tam": [
+     0.019,
+     0.0035
+    ],
+    "pos": [
+     0,
+     0,
+     0.026
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#FFD54F",
+    "pai": "sat1",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "pe1",
+    "forma": "cilindro",
+    "tam": [
+     0.012,
+     0.004
+    ],
+    "pos": [
+     -0.01,
+     0.023,
+     -0.09
+    ],
+    "cor": "#29B6F6",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "coluna1",
+    "forma": "cilindro",
+    "tam": [
+     0.002,
+     0.31
+    ],
+    "pos": [
+     -0.01,
+     0.177,
+     -0.09
+    ],
+    "cor": "#29B6F6",
+    "opacidade": 0.45,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "circ1",
+    "forma": "toro",
+    "tam": [
+     0.1082,
+     0.004
+    ],
+    "pos": [
+     -0.01,
+     0.025,
+     -0.09
+    ],
+    "cor": "#29B6F6",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "sat2",
+    "forma": "caixa",
+    "tam": [
+     0.045,
+     0.045,
+     0.045
+    ],
+    "pos": [
+     -0.01,
+     0.47,
+     0.08
+    ],
+    "cor": "#FFA726",
+    "oculta": true
+   },
+   {
+    "id": "sat2_painele",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.003,
+     0.032
+    ],
+    "pos": [
+     -0.048,
+     0,
+     0
+    ],
+    "cor": "#1A237E",
+    "pai": "sat2"
+   },
+   {
+    "id": "sat2_paineld",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.003,
+     0.032
+    ],
+    "pos": [
+     0.048,
+     0,
+     0
+    ],
+    "cor": "#1A237E",
+    "pai": "sat2"
+   },
+   {
+    "id": "sat2_antena",
+    "forma": "cone",
+    "tam": [
+     0.012,
+     0.02
+    ],
+    "pos": [
+     0,
+     -0.032,
+     0
+    ],
+    "giro": [
+     180,
+     0,
+     0
+    ],
+    "cor": "#ECEFF1",
+    "pai": "sat2"
+   },
+   {
+    "id": "sat2_relogio",
+    "forma": "cilindro",
+    "tam": [
+     0.016,
+     0.004
+    ],
+    "pos": [
+     0,
+     0,
+     0.024
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#FFFFFF",
+    "pai": "sat2",
+    "sem_contorno": true
+   },
+   {
+    "id": "sat2_piv",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     0,
+     0,
+     0.0275
+    ],
+    "cor": "#212121",
+    "pai": "sat2",
+    "sem_contorno": true
+   },
+   {
+    "id": "sat2_ponteiro",
+    "forma": "caixa",
+    "tam": [
+     0.0028,
+     0.013,
+     0.0015
+    ],
+    "pos": [
+     0,
+     0.0055,
+     0
+    ],
+    "cor": "#212121",
+    "pai": "sat2_piv",
+    "sem_contorno": true
+   },
+   {
+    "id": "sat2_atomico",
+    "forma": "toro",
+    "tam": [
+     0.019,
+     0.0035
+    ],
+    "pos": [
+     0,
+     0,
+     0.026
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#FFD54F",
+    "pai": "sat2",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "pe2",
+    "forma": "cilindro",
+    "tam": [
+     0.012,
+     0.004
+    ],
+    "pos": [
+     -0.01,
+     0.023,
+     0.08
+    ],
+    "cor": "#FFA726",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "coluna2",
+    "forma": "cilindro",
+    "tam": [
+     0.002,
+     0.42
+    ],
+    "pos": [
+     -0.01,
+     0.232,
+     0.08
+    ],
+    "cor": "#FFA726",
+    "opacidade": 0.45,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "circ2",
+    "forma": "toro",
+    "tam": [
+     0.1,
+     0.004
+    ],
+    "pos": [
+     -0.01,
+     0.025,
+     0.08
+    ],
+    "cor": "#FFA726",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "sat3",
+    "forma": "caixa",
+    "tam": [
+     0.045,
+     0.045,
+     0.045
+    ],
+    "pos": [
+     0.11,
+     0.4,
+     0.06
+    ],
+    "cor": "#AB47BC",
+    "oculta": true
+   },
+   {
+    "id": "sat3_painele",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.003,
+     0.032
+    ],
+    "pos": [
+     -0.048,
+     0,
+     0
+    ],
+    "cor": "#1A237E",
+    "pai": "sat3"
+   },
+   {
+    "id": "sat3_paineld",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.003,
+     0.032
+    ],
+    "pos": [
+     0.048,
+     0,
+     0
+    ],
+    "cor": "#1A237E",
+    "pai": "sat3"
+   },
+   {
+    "id": "sat3_antena",
+    "forma": "cone",
+    "tam": [
+     0.012,
+     0.02
+    ],
+    "pos": [
+     0,
+     -0.032,
+     0
+    ],
+    "giro": [
+     180,
+     0,
+     0
+    ],
+    "cor": "#ECEFF1",
+    "pai": "sat3"
+   },
+   {
+    "id": "sat3_relogio",
+    "forma": "cilindro",
+    "tam": [
+     0.016,
+     0.004
+    ],
+    "pos": [
+     0,
+     0,
+     0.024
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#FFFFFF",
+    "pai": "sat3",
+    "sem_contorno": true
+   },
+   {
+    "id": "sat3_piv",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     0,
+     0,
+     0.0275
+    ],
+    "cor": "#212121",
+    "pai": "sat3",
+    "sem_contorno": true
+   },
+   {
+    "id": "sat3_ponteiro",
+    "forma": "caixa",
+    "tam": [
+     0.0028,
+     0.013,
+     0.0015
+    ],
+    "pos": [
+     0,
+     0.0055,
+     0
+    ],
+    "cor": "#212121",
+    "pai": "sat3_piv",
+    "sem_contorno": true
+   },
+   {
+    "id": "sat3_atomico",
+    "forma": "toro",
+    "tam": [
+     0.019,
+     0.0035
+    ],
+    "pos": [
+     0,
+     0,
+     0.026
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#FFD54F",
+    "pai": "sat3",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "pe3",
+    "forma": "cilindro",
+    "tam": [
+     0.012,
+     0.004
+    ],
+    "pos": [
+     0.11,
+     0.023,
+     0.06
+    ],
+    "cor": "#AB47BC",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "coluna3",
+    "forma": "cilindro",
+    "tam": [
+     0.002,
+     0.35
+    ],
+    "pos": [
+     0.11,
+     0.197,
+     0.06
+    ],
+    "cor": "#AB47BC",
+    "opacidade": 0.45,
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "circ3",
+    "forma": "toro",
+    "tam": [
+     0.0849,
+     0.004
+    ],
+    "pos": [
+     0.11,
+     0.025,
+     0.06
+    ],
+    "cor": "#AB47BC",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "sat4",
+    "forma": "caixa",
+    "tam": [
+     0.045,
+     0.045,
+     0.045
+    ],
+    "pos": [
+     -0.12,
+     0.52,
+     -0.13
+    ],
+    "cor": "#66BB6A",
+    "oculta": true
+   },
+   {
+    "id": "sat4_painele",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.003,
+     0.032
+    ],
+    "pos": [
+     -0.048,
+     0,
+     0
+    ],
+    "cor": "#1A237E",
+    "pai": "sat4"
+   },
+   {
+    "id": "sat4_paineld",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.003,
+     0.032
+    ],
+    "pos": [
+     0.048,
+     0,
+     0
+    ],
+    "cor": "#1A237E",
+    "pai": "sat4"
+   },
+   {
+    "id": "sat4_antena",
+    "forma": "cone",
+    "tam": [
+     0.012,
+     0.02
+    ],
+    "pos": [
+     0,
+     -0.032,
+     0
+    ],
+    "giro": [
+     180,
+     0,
+     0
+    ],
+    "cor": "#ECEFF1",
+    "pai": "sat4"
+   },
+   {
+    "id": "sat4_relogio",
+    "forma": "cilindro",
+    "tam": [
+     0.016,
+     0.004
+    ],
+    "pos": [
+     0,
+     0,
+     0.024
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#FFFFFF",
+    "pai": "sat4",
+    "sem_contorno": true
+   },
+   {
+    "id": "sat4_piv",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     0,
+     0,
+     0.0275
+    ],
+    "cor": "#212121",
+    "pai": "sat4",
+    "sem_contorno": true
+   },
+   {
+    "id": "sat4_ponteiro",
+    "forma": "caixa",
+    "tam": [
+     0.0028,
+     0.013,
+     0.0015
+    ],
+    "pos": [
+     0,
+     0.0055,
+     0
+    ],
+    "cor": "#212121",
+    "pai": "sat4_piv",
+    "sem_contorno": true
+   },
+   {
+    "id": "sat4_atomico",
+    "forma": "toro",
+    "tam": [
+     0.019,
+     0.0035
+    ],
+    "pos": [
+     0,
+     0,
+     0.026
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#FFD54F",
+    "pai": "sat4",
+    "sem_contorno": true
+   },
+   {
+    "id": "piv_fant",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     -0.01,
+     0.02,
+     -0.09
+    ],
+    "cor": "#9CCC65",
+    "sem_contorno": true
+   },
+   {
+    "id": "fant",
+    "forma": "caixa",
+    "tam": [
+     0.038,
+     0.07,
+     0.009
+    ],
+    "pos": [
+     0.06,
+     0.035,
+     0.09
+    ],
+    "cor": "#90A4AE",
+    "oculta": true,
+    "opacidade": 0.5,
+    "pai": "piv_fant"
+   },
+   {
+    "id": "fant_tela",
+    "forma": "caixa",
+    "tam": [
+     0.0289,
+     0.0546,
+     0.002
+    ],
+    "pos": [
+     0,
+     0.002,
+     0.0055
+    ],
+    "cor": "#CFD8DC",
+    "pai": "fant",
+    "sem_contorno": true,
+    "opacidade": 0.5
+   },
+   {
+    "id": "pin_errado",
+    "forma": "cone",
+    "tam": [
+     0.016,
+     0.04
+    ],
+    "pos": [
+     -0.12,
+     0.04,
+     0.15
+    ],
+    "giro": [
+     180,
+     0,
+     0
+    ],
+    "cor": "#E53935",
+    "oculta": true
+   },
+   {
+    "id": "pin_errado_bola",
+    "forma": "esfera",
+    "tam": [
+     0.019
+    ],
+    "pos": [
+     0,
+     -0.026,
+     0
+    ],
+    "cor": "#E53935",
+    "pai": "pin_errado"
+   },
+   {
+    "id": "pin_errado_furo",
+    "forma": "esfera",
+    "tam": [
+     0.007
+    ],
+    "pos": [
+     0,
+     -0.026,
+     0.016
+    ],
+    "cor": "#FFFFFF",
+    "pai": "pin_errado",
+    "sem_contorno": true
+   },
+   {
+    "id": "pin_longe",
+    "forma": "cone",
+    "tam": [
+     0.016,
+     0.04
+    ],
+    "pos": [
+     0.13,
+     0.04,
+     0.17
+    ],
+    "giro": [
+     180,
+     0,
+     0
+    ],
+    "cor": "#E53935",
+    "oculta": true
+   },
+   {
+    "id": "pin_longe_bola",
+    "forma": "esfera",
+    "tam": [
+     0.019
+    ],
+    "pos": [
+     0,
+     -0.026,
+     0
+    ],
+    "cor": "#E53935",
+    "pai": "pin_longe"
+   },
+   {
+    "id": "pin_longe_furo",
+    "forma": "esfera",
+    "tam": [
+     0.007
+    ],
+    "pos": [
+     0,
+     -0.026,
+     0.016
+    ],
+    "cor": "#FFFFFF",
+    "pai": "pin_longe",
+    "sem_contorno": true
+   },
+   {
+    "id": "globo_base",
+    "forma": "cilindro",
+    "tam": [
+     0.04,
+     0.012
+    ],
+    "pos": [
+     0.5,
+     0.006,
+     -0.2
+    ],
+    "cor": "#455A64",
+    "oculta": true
+   },
+   {
+    "id": "globo_haste",
+    "forma": "cilindro",
+    "tam": [
+     0.007,
+     0.135
+    ],
+    "pos": [
+     0,
+     0.068,
+     0
+    ],
+    "cor": "#78909C",
+    "pai": "globo_base"
+   },
+   {
+    "id": "terra",
+    "forma": "esfera",
+    "tam": [
+     0.075
+    ],
+    "pos": [
+     0,
+     0.21,
+     0
+    ],
+    "cor": "#1E88E5",
+    "pai": "globo_base"
+   },
+   {
+    "id": "continente0",
+    "forma": "esfera",
+    "tam": [
+     0.03
+    ],
+    "pos": [
+     0.0524,
+     0.026,
+     0.0191
+    ],
+    "cor": "#66BB6A",
+    "pai": "terra",
+    "sem_contorno": true
+   },
+   {
+    "id": "continente1",
+    "forma": "esfera",
+    "tam": [
+     0.03
+    ],
+    "pos": [
+     -0.0525,
+     0.0107,
+     0.0303
+    ],
+    "cor": "#66BB6A",
+    "pai": "terra",
+    "sem_contorno": true
+   },
+   {
+    "id": "continente2",
+    "forma": "esfera",
+    "tam": [
+     0.03
+    ],
+    "pos": [
+     -0.01,
+     -0.021,
+     -0.0569
+    ],
+    "cor": "#66BB6A",
+    "pai": "terra",
+    "sem_contorno": true
+   },
+   {
+    "id": "continente3",
+    "forma": "esfera",
+    "tam": [
+     0.03
+    ],
+    "pos": [
+     0.0076,
+     -0.0435,
+     0.0428
+    ],
+    "cor": "#66BB6A",
+    "pai": "terra",
+    "sem_contorno": true
+   },
+   {
+    "id": "continente4",
+    "forma": "esfera",
+    "tam": [
+     0.03
+    ],
+    "pos": [
+     0.0342,
+     0.0471,
+     -0.0198
+    ],
+    "cor": "#66BB6A",
+    "pai": "terra",
+    "sem_contorno": true
+   },
+   {
+    "id": "voce_longe",
+    "forma": "esfera",
+    "tam": [
+     0.011
+    ],
+    "pos": [
+     0.054,
+     0.0187,
+     0.0465
+    ],
+    "cor": "#E53935",
+    "pai": "terra",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "voce_ok",
+    "forma": "esfera",
+    "tam": [
+     0.013
+    ],
+    "pos": [
+     0.054,
+     0.0187,
+     0.0465
+    ],
+    "cor": "#00E676",
+    "pai": "terra",
+    "sem_contorno": true,
+    "oculta": true
+   },
+   {
+    "id": "orb0",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     0,
+     0.21,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#1E88E5",
+    "pai": "globo_base",
+    "sem_contorno": true
+   },
+   {
+    "id": "mini0_0",
+    "forma": "caixa",
+    "tam": [
+     0.016,
+     0.016,
+     0.016
+    ],
+    "pos": [
+     0.14,
+     0,
+     0.0
+    ],
+    "cor": "#FFCA28",
+    "pai": "orb0",
+    "oculta": true
+   },
+   {
+    "id": "mini0_0_p",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.002,
+     0.012
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#1A237E",
+    "pai": "mini0_0"
+   },
+   {
+    "id": "mini0_1",
+    "forma": "caixa",
+    "tam": [
+     0.016,
+     0.016,
+     0.016
+    ],
+    "pos": [
+     0.0,
+     0,
+     0.14
+    ],
+    "cor": "#FFCA28",
+    "pai": "orb0",
+    "oculta": true
+   },
+   {
+    "id": "mini0_1_p",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.002,
+     0.012
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#1A237E",
+    "pai": "mini0_1"
+   },
+   {
+    "id": "mini0_2",
+    "forma": "caixa",
+    "tam": [
+     0.016,
+     0.016,
+     0.016
+    ],
+    "pos": [
+     -0.14,
+     0,
+     0.0
+    ],
+    "cor": "#FFCA28",
+    "pai": "orb0",
+    "oculta": true
+   },
+   {
+    "id": "mini0_2_p",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.002,
+     0.012
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#1A237E",
+    "pai": "mini0_2"
+   },
+   {
+    "id": "mini0_3",
+    "forma": "caixa",
+    "tam": [
+     0.016,
+     0.016,
+     0.016
+    ],
+    "pos": [
+     -0.0,
+     0,
+     -0.14
+    ],
+    "cor": "#FFCA28",
+    "pai": "orb0",
+    "oculta": true
+   },
+   {
+    "id": "mini0_3_p",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.002,
+     0.012
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#1A237E",
+    "pai": "mini0_3"
+   },
+   {
+    "id": "orb1",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     0,
+     0.21,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     55
+    ],
+    "cor": "#1E88E5",
+    "pai": "globo_base",
+    "sem_contorno": true
+   },
+   {
+    "id": "mini1_0",
+    "forma": "caixa",
+    "tam": [
+     0.016,
+     0.016,
+     0.016
+    ],
+    "pos": [
+     0.1212,
+     0,
+     0.07
+    ],
+    "cor": "#FFCA28",
+    "pai": "orb1",
+    "oculta": true
+   },
+   {
+    "id": "mini1_0_p",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.002,
+     0.012
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#1A237E",
+    "pai": "mini1_0"
+   },
+   {
+    "id": "mini1_1",
+    "forma": "caixa",
+    "tam": [
+     0.016,
+     0.016,
+     0.016
+    ],
+    "pos": [
+     -0.07,
+     0,
+     0.1212
+    ],
+    "cor": "#FFCA28",
+    "pai": "orb1",
+    "oculta": true
+   },
+   {
+    "id": "mini1_1_p",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.002,
+     0.012
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#1A237E",
+    "pai": "mini1_1"
+   },
+   {
+    "id": "mini1_2",
+    "forma": "caixa",
+    "tam": [
+     0.016,
+     0.016,
+     0.016
+    ],
+    "pos": [
+     -0.1212,
+     0,
+     -0.07
+    ],
+    "cor": "#FFCA28",
+    "pai": "orb1",
+    "oculta": true
+   },
+   {
+    "id": "mini1_2_p",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.002,
+     0.012
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#1A237E",
+    "pai": "mini1_2"
+   },
+   {
+    "id": "mini1_3",
+    "forma": "caixa",
+    "tam": [
+     0.016,
+     0.016,
+     0.016
+    ],
+    "pos": [
+     0.07,
+     0,
+     -0.1212
+    ],
+    "cor": "#FFCA28",
+    "pai": "orb1",
+    "oculta": true
+   },
+   {
+    "id": "mini1_3_p",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.002,
+     0.012
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#1A237E",
+    "pai": "mini1_3"
+   },
+   {
+    "id": "orb2",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     0,
+     0.21,
+     0
+    ],
+    "giro": [
+     0,
+     70,
+     -55
+    ],
+    "cor": "#1E88E5",
+    "pai": "globo_base",
+    "sem_contorno": true
+   },
+   {
+    "id": "mini2_0",
+    "forma": "caixa",
+    "tam": [
+     0.016,
+     0.016,
+     0.016
+    ],
+    "pos": [
+     0.07,
+     0,
+     0.1212
+    ],
+    "cor": "#FFCA28",
+    "pai": "orb2",
+    "oculta": true
+   },
+   {
+    "id": "mini2_0_p",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.002,
+     0.012
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#1A237E",
+    "pai": "mini2_0"
+   },
+   {
+    "id": "mini2_1",
+    "forma": "caixa",
+    "tam": [
+     0.016,
+     0.016,
+     0.016
+    ],
+    "pos": [
+     -0.1212,
+     0,
+     0.07
+    ],
+    "cor": "#FFCA28",
+    "pai": "orb2",
+    "oculta": true
+   },
+   {
+    "id": "mini2_1_p",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.002,
+     0.012
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#1A237E",
+    "pai": "mini2_1"
+   },
+   {
+    "id": "mini2_2",
+    "forma": "caixa",
+    "tam": [
+     0.016,
+     0.016,
+     0.016
+    ],
+    "pos": [
+     -0.07,
+     0,
+     -0.1212
+    ],
+    "cor": "#FFCA28",
+    "pai": "orb2",
+    "oculta": true
+   },
+   {
+    "id": "mini2_2_p",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.002,
+     0.012
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#1A237E",
+    "pai": "mini2_2"
+   },
+   {
+    "id": "mini2_3",
+    "forma": "caixa",
+    "tam": [
+     0.016,
+     0.016,
+     0.016
+    ],
+    "pos": [
+     0.1212,
+     0,
+     -0.07
+    ],
+    "cor": "#FFCA28",
+    "pai": "orb2",
+    "oculta": true
+   },
+   {
+    "id": "mini2_3_p",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.002,
+     0.012
+    ],
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "cor": "#1A237E",
+    "pai": "mini2_3"
+   }
+  ]
+ },
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "tito",
+   "texto": "Sem internet e sem placa nenhuma, dá para o celular saber ONDE você está?",
+   "tom": "surpreso"
+  },
+  {
+   "id": "f2",
+   "quem": "tito",
+   "texto": "Se você puser no céu um satélite que grita a HORA sem parar, o celular só precisa escutar."
+  },
+  {
+   "id": "f3",
+   "quem": "tito",
+   "texto": "Pela demora do grito, ele sabe a distância, igual contar do relâmpago até o TROVÃO."
+  },
+  {
+   "id": "f4",
+   "quem": "tito",
+   "texto": "MAS a distância não diz a direção. Você pode estar em QUALQUER ponto desse círculo."
+  },
+  {
+   "id": "f5",
+   "quem": "tito",
+   "texto": "Então, você põe um SEGUNDO satélite. Os dois círculos se cruzam em só dois pontos.",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f6",
+   "quem": "tito",
+   "texto": "SÓ QUE ainda sobram DOIS lugares, e você só pode estar em um."
+  },
+  {
+   "id": "f7",
+   "quem": "tito",
+   "texto": "Então, você põe um terceiro. Só um ponto fica nos três círculos: VOCÊ!",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f8",
+   "quem": "tito",
+   "texto": "MAS o sinal voa a trezentos mil quilômetros por SEGUNDO.",
+   "tom": "tenso"
+  },
+  {
+   "id": "f9",
+   "quem": "tito",
+   "texto": "Se o relógio errar só um milionésimo de segundo, o mapa te mostra a trezentos METROS daqui."
+  },
+  {
+   "id": "f10",
+   "quem": "tito",
+   "texto": "Então, você põe em cada satélite um relógio ATÔMICO, o relógio mais certinho que existe.",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f11",
+   "quem": "tito",
+   "texto": "E um QUARTO satélite acerta o relógio barato do celular.",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f12",
+   "quem": "tito",
+   "texto": "SÓ QUE do outro lado do planeta ninguém vê esses SATÉLITES."
+  },
+  {
+   "id": "f13",
+   "quem": "tito",
+   "texto": "Então, você espalha uns TRINTA em volta da Terra. De qualquer lugar, sempre dá para ver pelo menos quatro.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f14",
+   "quem": "tito",
+   "texto": "MAS ainda falta o mais louco: lá em cima, o tempo passa mais RÁPIDO.",
+   "tom": "surpreso"
+  },
+  {
+   "id": "f15",
+   "quem": "tito",
+   "texto": "É a relatividade do Einstein. Sem corrigir, o mapa erraria mais de DEZ quilômetros por dia."
+  },
+  {
+   "id": "f16",
+   "quem": "tito",
+   "texto": "Então, você regula os relógios aqui embaixo mais DEVAGAR, e lá em cima eles batem certinho.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f17",
+   "quem": "tito",
+   "texto": "Parabéns! Você construiu um GPS, e o celular só precisou escutar.",
+   "tom": "feliz"
+  }
+ ],
+ "chamada": {
+  "pergunta": "E agora, topa construir uma ponte pendurada em cabos?",
+  "texto": "Comenta",
+  "destaque": "PONTE"
+ },
+ "postagem": {
+  "titulo": "Como funciona o GPS? Ele acha você sem internet",
+  "descricao": "Como funciona o GPS: o celular só escuta os satélites, mede quanto o sinal demora para chegar e cruza a distância de quatro deles, com relógio atômico a bordo. E sem a teoria da relatividade, o GPS erraria mais de 10 km por dia.",
+  "hashtags": [
+   "comofunciona",
+   "gps",
+   "satelite",
+   "ciencia",
+   "curiosidades"
+  ],
+  "comentario": "Eu achava que o celular mandava sinal para o satélite. Ele só escuta! Você sabia?",
+  "capa": "f7:circulos:fim+0.6"
+ },
+ "cenas": [
+  {
+   "id": "construcao",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "desconfiado"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "gps",
+     "em": "pedestal"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "faiscas",
+     "em": [
+      -0.12,
+      0.15
+     ],
+     "alt": 1.05,
+     "raio": 0.05,
+     "altura": 0.08,
+     "quantas": 10,
+     "aparece": "f9:metros",
+     "some": "f10"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "faiscas",
+     "em": [
+      -0.01,
+      -0.09
+     ],
+     "alt": 1.36,
+     "raio": 0.05,
+     "altura": 0.06,
+     "quantas": 10,
+     "aparece": "f14:rapido",
+     "some": "f15"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "confete",
+     "em": [
+      0,
+      0
+     ],
+     "alt": 1.5,
+     "raio": 1.4,
+     "aparece": "f17:parabens"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f8:trezentos",
+     "ate": "f8:fim+0.4",
+     "grande": "# MIL km",
+     "contar": [
+      0,
+      300
+     ],
+     "pequeno": "por segundo"
+    },
+    {
+     "de": "f15:dez",
+     "ate": "f15:fim+0.4",
+     "grande": "# km",
+     "contar": [
+      0,
+      11
+     ],
+     "pequeno": "de erro por dia, sem corrigir"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "sat1_piv",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -0.35,
+     "de": "inicio",
+     "ate": "f14:rapido"
+    },
+    {
+     "peca": "sat1_piv",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -0.35,
+     "de": "f16:certinho",
+     "ate": "f17:fim+2"
+    },
+    {
+     "peca": "sat2_piv",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -0.35,
+     "de": "inicio",
+     "ate": "f14:rapido"
+    },
+    {
+     "peca": "sat2_piv",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -0.35,
+     "de": "f16:certinho",
+     "ate": "f17:fim+2"
+    },
+    {
+     "peca": "sat3_piv",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -0.35,
+     "de": "inicio",
+     "ate": "f14:rapido"
+    },
+    {
+     "peca": "sat3_piv",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -0.35,
+     "de": "f16:certinho",
+     "ate": "f17:fim+2"
+    },
+    {
+     "peca": "sat4_piv",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -0.35,
+     "de": "inicio",
+     "ate": "f14:rapido"
+    },
+    {
+     "peca": "sat4_piv",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -0.35,
+     "de": "f16:certinho",
+     "ate": "f17:fim+2"
+    },
+    {
+     "peca": "sat1_piv",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -2.2,
+     "de": "f14:rapido",
+     "ate": "f16:devagar"
+    },
+    {
+     "peca": "sat1_piv",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -0.6,
+     "de": "f16:devagar",
+     "ate": "f16:cima"
+    },
+    {
+     "peca": "sat2_piv",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -2.2,
+     "de": "f14:rapido",
+     "ate": "f16:devagar"
+    },
+    {
+     "peca": "sat2_piv",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -0.6,
+     "de": "f16:devagar",
+     "ate": "f16:cima"
+    },
+    {
+     "peca": "sat3_piv",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -2.2,
+     "de": "f14:rapido",
+     "ate": "f16:devagar"
+    },
+    {
+     "peca": "sat3_piv",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -0.6,
+     "de": "f16:devagar",
+     "ate": "f16:cima"
+    },
+    {
+     "peca": "sat4_piv",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -2.2,
+     "de": "f14:rapido",
+     "ate": "f16:devagar"
+    },
+    {
+     "peca": "sat4_piv",
+     "faz": "girar",
+     "eixo": "z",
+     "voltas": -0.6,
+     "de": "f16:devagar",
+     "ate": "f16:cima"
+    },
+    {
+     "peca": "gps",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 7,
+     "velocidade": 0.7,
+     "intensidade": 0.45,
+     "de": "inicio-3",
+     "ate": "f4",
+     "caminho": [
+      [
+       -0.01,
+       0.315,
+       -0.09
+      ],
+      [
+       0.02,
+       0.227,
+       -0.045
+      ],
+      [
+       0.05,
+       0.098,
+       0.0
+      ]
+     ]
+    },
+    {
+     "peca": "cel_tela",
+     "faz": "pulsar",
+     "intensidade": 0.8,
+     "de": "inicio+0.4",
+     "ate": "f2:escutar+1"
+    },
+    {
+     "peca": "sat1",
+     "faz": "tremer",
+     "intensidade": 0.12,
+     "de": "f2:grita",
+     "ate": "f2:parar+0.3"
+    },
+    {
+     "peca": "gps",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 4,
+     "velocidade": 0.35,
+     "intensidade": 0.5,
+     "de": "f3",
+     "ate": "f3:fim+0.3",
+     "caminho": [
+      [
+       -0.01,
+       0.315,
+       -0.09
+      ],
+      [
+       0.02,
+       0.227,
+       -0.045
+      ],
+      [
+       0.05,
+       0.098,
+       0.0
+      ]
+     ]
+    },
+    {
+     "peca": "pe1",
+     "faz": "aparecer",
+     "de": "f4:direcao"
+    },
+    {
+     "peca": "coluna1",
+     "faz": "aparecer",
+     "de": "f4:direcao"
+    },
+    {
+     "peca": "circ1",
+     "faz": "aparecer",
+     "de": "f4:direcao"
+    },
+    {
+     "peca": "fant",
+     "faz": "aparecer",
+     "de": "f4:qualquer"
+    },
+    {
+     "peca": "piv_fant",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 0.42,
+     "de": "f4:qualquer",
+     "ate": "f4:fim+0.6"
+    },
+    {
+     "peca": "fant",
+     "faz": "sumir",
+     "de": "f5"
+    },
+    {
+     "peca": "circ1",
+     "faz": "pulsar",
+     "intensidade": 0.6,
+     "de": "f4:circulo",
+     "ate": "f4:fim+0.4"
+    },
+    {
+     "peca": "sat2",
+     "faz": "aparecer",
+     "de": "f5:segundo"
+    },
+    {
+     "peca": "gps",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 6,
+     "velocidade": 0.6,
+     "intensidade": 0.4,
+     "de": "f5:segundo+0.4",
+     "ate": "f7",
+     "caminho": [
+      [
+       -0.01,
+       0.425,
+       0.08
+      ],
+      [
+       0.02,
+       0.282,
+       0.04
+      ],
+      [
+       0.05,
+       0.098,
+       0.0
+      ]
+     ]
+    },
+    {
+     "peca": "pe2",
+     "faz": "aparecer",
+     "de": "f5:circulos"
+    },
+    {
+     "peca": "coluna2",
+     "faz": "aparecer",
+     "de": "f5:circulos"
+    },
+    {
+     "peca": "circ2",
+     "faz": "aparecer",
+     "de": "f5:circulos"
+    },
+    {
+     "peca": "pt_p",
+     "faz": "aparecer",
+     "de": "f5:cruzam"
+    },
+    {
+     "peca": "pt_q",
+     "faz": "aparecer",
+     "de": "f5:cruzam"
+    },
+    {
+     "peca": "pt_p",
+     "faz": "pulsar",
+     "intensidade": 0.8,
+     "de": "f5:pontos",
+     "ate": "f7:ponto"
+    },
+    {
+     "peca": "pt_q",
+     "faz": "pulsar",
+     "intensidade": 0.8,
+     "de": "f5:pontos",
+     "ate": "f7:ponto"
+    },
+    {
+     "peca": "fant_q",
+     "faz": "aparecer",
+     "de": "f6:dois"
+    },
+    {
+     "peca": "fant_q",
+     "faz": "tremer",
+     "intensidade": 0.2,
+     "de": "f6:dois",
+     "ate": "f6:fim"
+    },
+    {
+     "peca": "sat3",
+     "faz": "aparecer",
+     "de": "f7:terceiro"
+    },
+    {
+     "peca": "pe3",
+     "faz": "aparecer",
+     "de": "f7:circulos"
+    },
+    {
+     "peca": "coluna3",
+     "faz": "aparecer",
+     "de": "f7:circulos"
+    },
+    {
+     "peca": "circ3",
+     "faz": "aparecer",
+     "de": "f7:circulos"
+    },
+    {
+     "peca": "fant_q",
+     "faz": "sumir",
+     "de": "f7:circulos:fim+0.2"
+    },
+    {
+     "peca": "pt_q",
+     "faz": "sumir",
+     "de": "f7:circulos:fim+0.2"
+    },
+    {
+     "peca": "pt_p",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "f7:circulos:fim+0.2",
+     "ate": "f8"
+    },
+    {
+     "peca": "cel_tela",
+     "faz": "pulsar",
+     "intensidade": 0.9,
+     "de": "f7:circulos:fim+0.2",
+     "ate": "f8"
+    },
+    {
+     "peca": "gps",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 6,
+     "velocidade": 0.6,
+     "intensidade": 0.4,
+     "de": "f7",
+     "ate": "f8",
+     "caminho": [
+      [
+       -0.01,
+       0.315,
+       -0.09
+      ],
+      [
+       0.02,
+       0.227,
+       -0.045
+      ],
+      [
+       0.05,
+       0.098,
+       0.0
+      ]
+     ]
+    },
+    {
+     "peca": "gps",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 8,
+     "velocidade": 2.6,
+     "intensidade": 0.45,
+     "de": "f8",
+     "ate": "f9",
+     "caminho": [
+      [
+       -0.01,
+       0.315,
+       -0.09
+      ],
+      [
+       0.02,
+       0.227,
+       -0.045
+      ],
+      [
+       0.05,
+       0.098,
+       0.0
+      ]
+     ]
+    },
+    {
+     "peca": "gps",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 6,
+     "velocidade": 0.6,
+     "intensidade": 0.4,
+     "de": "f7",
+     "ate": "f8",
+     "caminho": [
+      [
+       -0.01,
+       0.425,
+       0.08
+      ],
+      [
+       0.02,
+       0.282,
+       0.04
+      ],
+      [
+       0.05,
+       0.098,
+       0.0
+      ]
+     ]
+    },
+    {
+     "peca": "gps",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 8,
+     "velocidade": 2.6,
+     "intensidade": 0.45,
+     "de": "f8",
+     "ate": "f9",
+     "caminho": [
+      [
+       -0.01,
+       0.425,
+       0.08
+      ],
+      [
+       0.02,
+       0.282,
+       0.04
+      ],
+      [
+       0.05,
+       0.098,
+       0.0
+      ]
+     ]
+    },
+    {
+     "peca": "gps",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.4,
+     "de": "f7",
+     "ate": "f8:segundo+0.8",
+     "caminho": [
+      [
+       0.11,
+       0.355,
+       0.06
+      ],
+      [
+       0.08,
+       0.246,
+       0.03
+      ],
+      [
+       0.05,
+       0.098,
+       0.0
+      ]
+     ]
+    },
+    {
+     "peca": "gps",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 8,
+     "velocidade": 2.6,
+     "intensidade": 0.45,
+     "de": "f8",
+     "ate": "f9",
+     "caminho": [
+      [
+       0.11,
+       0.355,
+       0.06
+      ],
+      [
+       0.08,
+       0.246,
+       0.03
+      ],
+      [
+       0.05,
+       0.098,
+       0.0
+      ]
+     ]
+    },
+    {
+     "peca": "pin_errado",
+     "faz": "aparecer",
+     "de": "f9:mapa+0.3"
+    },
+    {
+     "peca": "pin_errado",
+     "faz": "tremer",
+     "intensidade": 0.4,
+     "de": "f9:metros",
+     "ate": "f9:fim+0.4"
+    },
+    {
+     "peca": "pin_errado",
+     "faz": "sumir",
+     "de": "f10"
+    },
+    {
+     "peca": "sat1_atomico",
+     "faz": "aparecer",
+     "de": "f10:atomico"
+    },
+    {
+     "peca": "sat2_atomico",
+     "faz": "aparecer",
+     "de": "f10:atomico+0.2"
+    },
+    {
+     "peca": "sat3_atomico",
+     "faz": "aparecer",
+     "de": "f10:atomico+0.4"
+    },
+    {
+     "peca": "sat1_atomico",
+     "faz": "pulsar",
+     "intensidade": 0.7,
+     "de": "f10:certinho",
+     "ate": "f10:fim+0.4"
+    },
+    {
+     "peca": "sat2_atomico",
+     "faz": "pulsar",
+     "intensidade": 0.7,
+     "de": "f10:certinho",
+     "ate": "f10:fim+0.4"
+    },
+    {
+     "peca": "sat3_atomico",
+     "faz": "pulsar",
+     "intensidade": 0.7,
+     "de": "f10:certinho",
+     "ate": "f10:fim+0.4"
+    },
+    {
+     "peca": "sat4",
+     "faz": "aparecer",
+     "de": "f11:quarto"
+    },
+    {
+     "peca": "gps",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.35,
+     "de": "f10",
+     "ate": "f12:planeta",
+     "caminho": [
+      [
+       -0.01,
+       0.315,
+       -0.09
+      ],
+      [
+       0.02,
+       0.227,
+       -0.045
+      ],
+      [
+       0.05,
+       0.098,
+       0.0
+      ]
+     ]
+    },
+    {
+     "peca": "gps",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.35,
+     "de": "f10",
+     "ate": "f12:planeta",
+     "caminho": [
+      [
+       -0.01,
+       0.425,
+       0.08
+      ],
+      [
+       0.02,
+       0.282,
+       0.04
+      ],
+      [
+       0.05,
+       0.098,
+       0.0
+      ]
+     ]
+    },
+    {
+     "peca": "gps",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.35,
+     "de": "f10",
+     "ate": "f12:planeta",
+     "caminho": [
+      [
+       0.11,
+       0.355,
+       0.06
+      ],
+      [
+       0.08,
+       0.246,
+       0.03
+      ],
+      [
+       0.05,
+       0.098,
+       0.0
+      ]
+     ]
+    },
+    {
+     "peca": "gps",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 5,
+     "velocidade": 0.8,
+     "intensidade": 0.4,
+     "de": "f11:quarto+0.4",
+     "ate": "f12:planeta",
+     "caminho": [
+      [
+       -0.12,
+       0.475,
+       -0.13
+      ],
+      [
+       -0.035,
+       0.306,
+       -0.065
+      ],
+      [
+       0.05,
+       0.098,
+       0.0
+      ]
+     ]
+    },
+    {
+     "peca": "cel_tela",
+     "faz": "pulsar",
+     "intensidade": 0.9,
+     "de": "f11:barato",
+     "ate": "f11:fim+0.3"
+    },
+    {
+     "peca": "globo_base",
+     "faz": "aparecer",
+     "de": "f12:planeta-0.3"
+    },
+    {
+     "peca": "mini0_2",
+     "faz": "aparecer",
+     "de": "f12:planeta"
+    },
+    {
+     "peca": "mini2_2",
+     "faz": "aparecer",
+     "de": "f12:planeta"
+    },
+    {
+     "peca": "mini1_1",
+     "faz": "aparecer",
+     "de": "f12:planeta"
+    },
+    {
+     "peca": "voce_longe",
+     "faz": "aparecer",
+     "de": "f12:ninguem"
+    },
+    {
+     "peca": "voce_longe",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "f12:ninguem",
+     "ate": "f13:qualquer"
+    },
+    {
+     "peca": "voce_longe",
+     "faz": "sumir",
+     "de": "f13:qualquer"
+    },
+    {
+     "peca": "voce_ok",
+     "faz": "aparecer",
+     "de": "f13:qualquer+0.1"
+    },
+    {
+     "peca": "voce_ok",
+     "faz": "pulsar",
+     "intensidade": 0.8,
+     "de": "f13:quatro",
+     "ate": "f13:fim+0.4"
+    },
+    {
+     "peca": "mini0_0",
+     "faz": "aparecer",
+     "de": "f13:trinta"
+    },
+    {
+     "peca": "mini0_1",
+     "faz": "aparecer",
+     "de": "f13:trinta+0.08"
+    },
+    {
+     "peca": "mini0_3",
+     "faz": "aparecer",
+     "de": "f13:trinta+0.16"
+    },
+    {
+     "peca": "mini1_0",
+     "faz": "aparecer",
+     "de": "f13:trinta+0.24"
+    },
+    {
+     "peca": "mini1_2",
+     "faz": "aparecer",
+     "de": "f13:trinta+0.32"
+    },
+    {
+     "peca": "mini1_3",
+     "faz": "aparecer",
+     "de": "f13:trinta+0.4"
+    },
+    {
+     "peca": "mini2_0",
+     "faz": "aparecer",
+     "de": "f13:trinta+0.48"
+    },
+    {
+     "peca": "mini2_1",
+     "faz": "aparecer",
+     "de": "f13:trinta+0.56"
+    },
+    {
+     "peca": "mini2_3",
+     "faz": "aparecer",
+     "de": "f13:trinta+0.64"
+    },
+    {
+     "peca": "orb0",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 0.12,
+     "de": "f13:volta",
+     "ate": "f17:fim+2"
+    },
+    {
+     "peca": "orb1",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 0.15,
+     "de": "f13:volta",
+     "ate": "f17:fim+2"
+    },
+    {
+     "peca": "orb2",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 0.18,
+     "de": "f13:volta",
+     "ate": "f17:fim+2"
+    },
+    {
+     "peca": "sat1",
+     "faz": "tremer",
+     "intensidade": 0.25,
+     "de": "f14:rapido",
+     "ate": "f14:fim+0.4"
+    },
+    {
+     "peca": "pin_longe",
+     "faz": "aparecer",
+     "de": "f15:corrigir"
+    },
+    {
+     "peca": "pin_longe",
+     "faz": "mover",
+     "desloc": [
+      0.1,
+      0,
+      0.06
+     ],
+     "de": "f15:corrigir+0.3",
+     "ate": "f15:fim+0.4"
+    },
+    {
+     "peca": "pin_longe",
+     "faz": "sumir",
+     "de": "f16"
+    },
+    {
+     "peca": "sat1_atomico",
+     "faz": "pulsar",
+     "intensidade": 0.7,
+     "de": "f16:certinho",
+     "ate": "f16:fim+0.3"
+    },
+    {
+     "peca": "sat2_atomico",
+     "faz": "pulsar",
+     "intensidade": 0.7,
+     "de": "f16:certinho",
+     "ate": "f16:fim+0.3"
+    },
+    {
+     "peca": "sat3_atomico",
+     "faz": "pulsar",
+     "intensidade": 0.7,
+     "de": "f16:certinho",
+     "ate": "f16:fim+0.3"
+    },
+    {
+     "peca": "sat4_atomico",
+     "faz": "pulsar",
+     "intensidade": 0.7,
+     "de": "f16:certinho",
+     "ate": "f16:fim+0.3"
+    },
+    {
+     "peca": "gps",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 5,
+     "velocidade": 0.6,
+     "intensidade": 0.4,
+     "de": "f16:certinho",
+     "ate": "f17:fim+2",
+     "caminho": [
+      [
+       -0.01,
+       0.315,
+       -0.09
+      ],
+      [
+       0.02,
+       0.227,
+       -0.045
+      ],
+      [
+       0.05,
+       0.098,
+       0.0
+      ]
+     ]
+    },
+    {
+     "peca": "gps",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 5,
+     "velocidade": 0.6,
+     "intensidade": 0.4,
+     "de": "f16:certinho",
+     "ate": "f17:fim+2",
+     "caminho": [
+      [
+       -0.01,
+       0.425,
+       0.08
+      ],
+      [
+       0.02,
+       0.282,
+       0.04
+      ],
+      [
+       0.05,
+       0.098,
+       0.0
+      ]
+     ]
+    },
+    {
+     "peca": "gps",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 5,
+     "velocidade": 0.6,
+     "intensidade": 0.4,
+     "de": "f16:certinho",
+     "ate": "f17:fim+2",
+     "caminho": [
+      [
+       0.11,
+       0.355,
+       0.06
+      ],
+      [
+       0.08,
+       0.246,
+       0.03
+      ],
+      [
+       0.05,
+       0.098,
+       0.0
+      ]
+     ]
+    },
+    {
+     "peca": "gps",
+     "faz": "fluxo",
+     "tipo": "luz",
+     "quantidade": 5,
+     "velocidade": 0.6,
+     "intensidade": 0.4,
+     "de": "f16:certinho",
+     "ate": "f17:fim+2",
+     "caminho": [
+      [
+       -0.12,
+       0.475,
+       -0.13
+      ],
+      [
+       -0.035,
+       0.306,
+       -0.065
+      ],
+      [
+       0.05,
+       0.098,
+       0.0
+      ]
+     ]
+    },
+    {
+     "peca": "cel_tela",
+     "faz": "pulsar",
+     "intensidade": 0.8,
+     "de": "f17:parabens",
+     "ate": "f17:fim+2"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "desconfiado",
+     "de": "inicio"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f1:onde-0.4"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "sat1",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f2"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f3"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f3:trovao"
+    },
+    {
+     "quem": "tito",
+     "faz": "bracos_cruzados",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f4",
+     "ate": "f5"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "sat2",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f5:segundo+0.2"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f6"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "sat3",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f7:terceiro"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f8"
+    },
+    {
+     "quem": "tito",
+     "faz": "maos_na_cabeca",
+     "olhar": "camera",
+     "expressao": "nervoso",
+     "de": "f9",
+     "ate": "f10"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "sat1",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f10:atomico"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "sat4",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f11:quarto"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "serio",
+     "de": "f12"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "terra",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f13:trinta"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f14"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "serio",
+     "de": "f15"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "sat1",
+     "olhar": "maquete",
+     "expressao": "aliviado",
+     "de": "f16:devagar"
+    },
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f16:fim+0.1"
+    },
+    {
+     "quem": "tito",
+     "faz": "acenar",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f17:parabens"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "camera": [
+      0.16,
+      1.24,
+      0.84
+     ],
+     "alvo": [
+      0.02,
+      1.19,
+      -0.04
+     ],
+     "movimento": "arco",
+     "intensidade": 0.35
+    },
+    {
+     "de": "f1:onde-0.3",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f2",
+     "tipo": "detalhe",
+     "camera": [
+      -0.21,
+      1.34,
+      0.24
+     ],
+     "alvo": [
+      -0.01,
+      1.36,
+      -0.09
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f2:celular",
+     "tipo": "detalhe",
+     "camera": [
+      0.14,
+      1.12,
+      0.42
+     ],
+     "alvo": [
+      0.05,
+      1.06,
+      0.0
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f3",
+     "tipo": "detalhe",
+     "camera": [
+      0.75,
+      1.24,
+      0.45
+     ],
+     "alvo": [
+      0.02,
+      1.2,
+      -0.05
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.25
+    },
+    {
+     "de": "f3:igual",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f4",
+     "tipo": "detalhe",
+     "camera": [
+      0.02,
+      1.62,
+      0.56
+     ],
+     "alvo": [
+      -0.01,
+      1.0,
+      -0.02
+     ],
+     "movimento": "arco",
+     "intensidade": 0.25
+    },
+    {
+     "de": "f4:qualquer",
+     "tipo": "detalhe",
+     "camera": [
+      -0.3,
+      1.5,
+      0.48
+     ],
+     "alvo": [
+      -0.01,
+      1.0,
+      -0.04
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f5",
+     "tipo": "detalhe",
+     "camera": [
+      0.12,
+      1.6,
+      1.3
+     ],
+     "alvo": [
+      0.01,
+      1.3,
+      -0.02
+     ],
+     "movimento": "aproximar",
+     "transicao": "varrer"
+    },
+    {
+     "de": "f5:circulos",
+     "tipo": "detalhe",
+     "camera": [
+      0.0,
+      1.74,
+      0.68
+     ],
+     "alvo": [
+      -0.01,
+      1.0,
+      0.05
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f6",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f6:dois",
+     "tipo": "detalhe",
+     "camera": [
+      0.0,
+      1.74,
+      0.68
+     ],
+     "alvo": [
+      -0.01,
+      1.0,
+      0.05
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f7",
+     "tipo": "detalhe",
+     "camera": [
+      0.12,
+      1.6,
+      1.3
+     ],
+     "alvo": [
+      0.01,
+      1.3,
+      -0.02
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f7:ponto",
+     "tipo": "detalhe",
+     "camera": [
+      0.05,
+      1.86,
+      0.84
+     ],
+     "alvo": [
+      0.04,
+      1.0,
+      0.05
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f8",
+     "tipo": "detalhe",
+     "camera": [
+      0.12,
+      1.6,
+      1.3
+     ],
+     "alvo": [
+      0.01,
+      1.3,
+      -0.02
+     ],
+     "movimento": "tremer",
+     "transicao": "flash"
+    },
+    {
+     "de": "f9",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "dolly_zoom",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f9:mapa",
+     "tipo": "detalhe",
+     "camera": [
+      0.05,
+      1.86,
+      0.84
+     ],
+     "alvo": [
+      0.04,
+      1.0,
+      0.05
+     ],
+     "movimento": "tremer"
+    },
+    {
+     "de": "f10",
+     "tipo": "detalhe",
+     "camera": [
+      -0.21,
+      1.34,
+      0.24
+     ],
+     "alvo": [
+      -0.01,
+      1.36,
+      -0.09
+     ],
+     "movimento": "aproximar",
+     "transicao": "varrer"
+    },
+    {
+     "de": "f10:certinho",
+     "tipo": "detalhe",
+     "camera": [
+      0.12,
+      1.6,
+      1.3
+     ],
+     "alvo": [
+      0.01,
+      1.3,
+      -0.02
+     ],
+     "movimento": "arco",
+     "intensidade": -0.3
+    },
+    {
+     "de": "f11",
+     "tipo": "detalhe",
+     "camera": [
+      -0.4,
+      1.62,
+      1.15
+     ],
+     "alvo": [
+      -0.03,
+      1.33,
+      -0.04
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f11:barato",
+     "tipo": "detalhe",
+     "camera": [
+      0.14,
+      1.12,
+      0.42
+     ],
+     "alvo": [
+      0.05,
+      1.06,
+      0.0
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.25
+    },
+    {
+     "de": "f12",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f12:planeta",
+     "tipo": "detalhe",
+     "camera": [
+      0.66,
+      1.33,
+      0.9
+     ],
+     "alvo": [
+      0.5,
+      1.21,
+      -0.2
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f13",
+     "tipo": "detalhe",
+     "camera": [
+      0.66,
+      1.33,
+      0.9
+     ],
+     "alvo": [
+      0.5,
+      1.21,
+      -0.2
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f13:qualquer",
+     "tipo": "detalhe",
+     "camera": [
+      0.9,
+      1.3,
+      0.32
+     ],
+     "alvo": [
+      0.53,
+      1.21,
+      -0.2
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f14",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f14:cima",
+     "tipo": "detalhe",
+     "camera": [
+      -0.21,
+      1.34,
+      0.24
+     ],
+     "alvo": [
+      -0.01,
+      1.36,
+      -0.09
+     ],
+     "movimento": "tremer"
+    },
+    {
+     "de": "f15",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": 0.3,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f15:corrigir",
+     "tipo": "detalhe",
+     "camera": [
+      0.05,
+      1.86,
+      0.84
+     ],
+     "alvo": [
+      0.04,
+      1.0,
+      0.05
+     ],
+     "movimento": "afastar"
+    },
+    {
+     "de": "f16",
+     "tipo": "detalhe",
+     "camera": [
+      -0.21,
+      1.34,
+      0.24
+     ],
+     "alvo": [
+      -0.01,
+      1.36,
+      -0.09
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f16:cima",
+     "tipo": "detalhe",
+     "camera": [
+      0.12,
+      1.6,
+      1.3
+     ],
+     "alvo": [
+      0.01,
+      1.3,
+      -0.02
+     ],
+     "movimento": "arco",
+     "intensidade": -0.3,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f17",
+     "tipo": "aberto",
+     "camera": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "alvo": [
+      -0.9,
+      1.5,
+      0.3
+     ],
+     "movimento": "arco",
+     "intensidade": 0.5
+    }
+   ],
+   "sons": [
+    {
+     "de": "inicio",
+     "som": "bip",
+     "volume": 0.5
+    },
+    {
+     "de": "f2:hora",
+     "som": "bip",
+     "volume": 0.6
+    },
+    {
+     "de": "f3:relampago",
+     "som": "zap",
+     "volume": 0.5
+    },
+    {
+     "de": "f3:trovao",
+     "som": "trovao",
+     "volume": 0.8
+    },
+    {
+     "de": "f4:distancia",
+     "som": "tensao_sobe",
+     "volume": 0.4
+    },
+    {
+     "de": "f4:qualquer",
+     "som": "whoosh",
+     "volume": 0.5
+    },
+    {
+     "de": "f5:segundo",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f5:cruzam",
+     "som": "ding",
+     "volume": 0.6
+    },
+    {
+     "de": "f6:sobram",
+     "som": "tensao_sobe",
+     "volume": 0.4
+    },
+    {
+     "de": "f7:terceiro",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f7:circulos:fim+0.2",
+     "som": "ding",
+     "volume": 0.9
+    },
+    {
+     "de": "f8:voa",
+     "som": "whoosh",
+     "volume": 0.6
+    },
+    {
+     "de": "f8:trezentos",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f9:metros",
+     "som": "impacto",
+     "volume": 1.0
+    },
+    {
+     "de": "f10:atomico",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f10:certinho",
+     "som": "ding",
+     "volume": 0.6
+    },
+    {
+     "de": "f11:quarto",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f12:planeta",
+     "som": "tensao_sobe",
+     "volume": 0.4
+    },
+    {
+     "de": "f12:ninguem",
+     "som": "alarme",
+     "volume": 0.4
+    },
+    {
+     "de": "f13:trinta",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f13:volta",
+     "som": "whoosh",
+     "volume": 0.5
+    },
+    {
+     "de": "f14:rapido",
+     "som": "engrenagem",
+     "volume": 0.6
+    },
+    {
+     "de": "f15:dez",
+     "som": "impacto",
+     "volume": 0.8
+    },
+    {
+     "de": "f16:certinho",
+     "som": "ding",
+     "volume": 0.8
+    },
+    {
+     "de": "f17:parabens",
+     "som": "ding",
+     "volume": 0.9
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f2:satelite",
+     "ate": "f2:celular",
+     "efeito": "circular",
+     "alvo": "sat1"
+    },
+    {
+     "de": "f3:relampago",
+     "efeito": "flash"
+    },
+    {
+     "de": "f4:qualquer",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f5:segundo",
+     "ate": "f5:circulos",
+     "efeito": "circular",
+     "alvo": "sat2"
+    },
+    {
+     "de": "f6:dois",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f7:terceiro",
+     "ate": "f7:ponto",
+     "efeito": "circular",
+     "alvo": "sat3"
+    },
+    {
+     "de": "f7:circulos:fim+0.2",
+     "ate": "f7:fim+0.3",
+     "efeito": "circular",
+     "alvo": "cel"
+    },
+    {
+     "de": "f8:voa",
+     "ate": "f8:fim",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f9:metros",
+     "efeito": "flash"
+    },
+    {
+     "de": "f9:metros",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f10:atomico",
+     "ate": "f10:certinho",
+     "efeito": "circular",
+     "alvo": "sat1_relogio"
+    },
+    {
+     "de": "f11:quarto",
+     "ate": "f11:fim",
+     "efeito": "circular",
+     "alvo": "sat4"
+    },
+    {
+     "de": "f12:ninguem",
+     "ate": "f12:fim+0.3",
+     "efeito": "circular",
+     "alvo": "voce_longe"
+    },
+    {
+     "de": "f14:rapido",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f14:rapido",
+     "ate": "f14:fim",
+     "efeito": "tremor",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f15:dez",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f17:parabens",
+     "ate": "f17:fim+0.6",
+     "efeito": "linhas",
+     "intensidade": 0.6
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "sat1",
+     "texto": "Satélite",
+     "de": "f2:satelite",
+     "ate": "f2:celular"
+    },
+    {
+     "alvo": "circ1",
+     "texto": "Distância",
+     "de": "f4:direcao",
+     "ate": "f4:qualquer"
+    },
+    {
+     "alvo": "fant",
+     "texto": "Você?",
+     "de": "f4:qualquer+0.3",
+     "ate": "f4:fim+0.4"
+    },
+    {
+     "alvo": "fant_q",
+     "texto": "Aqui?",
+     "de": "f6:dois",
+     "ate": "f6:fim"
+    },
+    {
+     "alvo": "cel",
+     "texto": "Ou aqui?",
+     "de": "f6:dois+0.5",
+     "ate": "f6:fim"
+    },
+    {
+     "alvo": "cel",
+     "texto": "Você",
+     "de": "f7:circulos:fim+0.2",
+     "ate": "f7:fim+0.3"
+    },
+    {
+     "alvo": "pin_errado",
+     "texto": "300 m",
+     "de": "f9:metros",
+     "ate": "f9:fim+0.3",
+     "cor": "#FF8A65"
+    },
+    {
+     "alvo": "sat1_atomico",
+     "texto": "Atômico",
+     "de": "f10:atomico",
+     "ate": "f10:certinho"
+    },
+    {
+     "alvo": "sat4",
+     "texto": "Quarto",
+     "de": "f11:quarto",
+     "ate": "f11:fim"
+    },
+    {
+     "alvo": "voce_longe",
+     "texto": "Sem sinal",
+     "de": "f12:ninguem",
+     "ate": "f12:fim+0.3",
+     "cor": "#FF8A65"
+    },
+    {
+     "alvo": "voce_ok",
+     "texto": "Com sinal",
+     "de": "f13:quatro",
+     "ate": "f13:fim+0.3"
+    },
+    {
+     "alvo": "sat1_relogio",
+     "texto": "Adianta",
+     "de": "f14:rapido",
+     "ate": "f14:fim",
+     "cor": "#FF8A65"
+    },
+    {
+     "alvo": "sat1_relogio",
+     "texto": "Regulado",
+     "de": "f16:devagar",
+     "ate": "f16:cima"
+    }
+   ]
+  }
+ ]
+}
