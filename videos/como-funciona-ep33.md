@@ -23,7 +23,7 @@ E agora, topa construir um GPS? Segue o perfil pra ver o próximo.
 #comofunciona #celular #tecnologia #curiosidades
 
 ## Na hora de postar
-- Capa (nas duas): quadro de 3,6 s do vídeo, quando a legenda mostra "PASSA?".
+- Capa (nas duas): quadro de 2,5 s do vídeo, quando a legenda mostra "CIDADE".
 - YouTube, "Vídeo relacionado": COMO FUNCIONA #32.
 - YouTube, playlist: COMO FUNCIONA.
 - Comentário para postar e fixar nas duas, logo depois de publicar: Eu achava que a voz ia direto de um celular para o outro. Você também?
