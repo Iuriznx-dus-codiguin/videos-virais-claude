@@ -105,7 +105,8 @@
       "personalidade": "seca, direta, assusta no começo; corajosa e leal quando confia",
       "voz": {
         "descricao": "mulher brasileira de 35 anos, voz grave, firme e seca",
-        "instruct": "female, young adult, low pitch"
+        "instruct": "female, young adult, low pitch",
+        "semente": 1
       },
       "visual": {
         "altura": 0.98,
