@@ -204,9 +204,9 @@
      0.035
     ],
     "pos": [
-     0.55,
+     0.5,
      0.11750000000000001,
-     0.26
+     -0.3
     ],
     "cor": "#6D4C41"
    },
@@ -282,7 +282,8 @@
       0
      ]
     ],
-    "cor": "#8D6E63"
+    "cor": "#8D6E63",
+    "sem_contorno": true
    },
    {
     "id": "corda_t",
@@ -342,7 +343,8 @@
       0
      ]
     ],
-    "cor": "#8D6E63"
+    "cor": "#8D6E63",
+    "sem_contorno": true
    },
    {
     "id": "corda_funda_f",
@@ -403,6 +405,7 @@
      ]
     ],
     "cor": "#8D6E63",
+    "sem_contorno": true,
     "oculta": true
    },
    {
@@ -464,6 +467,7 @@
      ]
     ],
     "cor": "#8D6E63",
+    "sem_contorno": true,
     "oculta": true
    },
    {
@@ -575,12 +579,12 @@
     "id": "pessoa",
     "forma": "capsula",
     "tam": [
-     0.009,
-     0.022
+     0.012,
+     0.03
     ],
     "pos": [
      0.17,
-     0.1106,
+     0.1176,
      0.0
     ],
     "cor": "#FFB74D"
@@ -589,11 +593,11 @@
     "id": "pessoa_cabeca",
     "forma": "esfera",
     "tam": [
-     0.0095
+     0.013
     ],
     "pos": [
      0,
-     0.029,
+     0.039,
      0
     ],
     "cor": "#FFE0B2",
@@ -608,7 +612,7 @@
      0.034
     ],
     "pos": [
-     0.42,
+     0.37,
      0.127,
      0
     ],
@@ -978,7 +982,8 @@
      ]
     ],
     "cor": "#ECEFF1",
-    "oculta": true
+    "oculta": true,
+    "sem_contorno": true
    },
    {
     "id": "cabo_t",
@@ -1049,7 +1054,8 @@
      ]
     ],
     "cor": "#ECEFF1",
-    "oculta": true
+    "oculta": true,
+    "sem_contorno": true
    },
    {
     "id": "cabo2_f",
@@ -1120,7 +1126,8 @@
      ]
     ],
     "cor": "#ECEFF1",
-    "oculta": true
+    "oculta": true,
+    "sem_contorno": true
    },
    {
     "id": "cabo2_t",
@@ -1191,7 +1198,8 @@
      ]
     ],
     "cor": "#ECEFF1",
-    "oculta": true
+    "oculta": true,
+    "sem_contorno": true
    },
    {
     "id": "tras_e_f",
@@ -1232,7 +1240,8 @@
      ]
     ],
     "cor": "#ECEFF1",
-    "oculta": true
+    "oculta": true,
+    "sem_contorno": true
    },
    {
     "id": "anc_e_f",
@@ -1289,7 +1298,8 @@
      ]
     ],
     "cor": "#ECEFF1",
-    "oculta": true
+    "oculta": true,
+    "sem_contorno": true
    },
    {
     "id": "anc_e_t",
@@ -1346,7 +1356,8 @@
      ]
     ],
     "cor": "#ECEFF1",
-    "oculta": true
+    "oculta": true,
+    "sem_contorno": true
    },
    {
     "id": "anc_d_f",
@@ -1403,7 +1414,8 @@
      ]
     ],
     "cor": "#ECEFF1",
-    "oculta": true
+    "oculta": true,
+    "sem_contorno": true
    },
    {
     "id": "anc_d_t",
@@ -1430,7 +1442,7 @@
     ],
     "pos": [
      -0.15,
-     0.46,
+     0.45,
      0
     ],
     "giro": [
@@ -1450,7 +1462,7 @@
     ],
     "pos": [
      0.15,
-     0.46,
+     0.45,
      0
     ],
     "giro": [
@@ -2583,12 +2595,12 @@
     "id": "roda",
     "forma": "cilindro",
     "tam": [
-     0.016,
-     0.008
+     0.028,
+     0.012
     ],
     "pos": [
      -0.5499999999999999,
-     0.188,
+     0.2,
      0.08
     ],
     "giro": [
@@ -2603,13 +2615,13 @@
     "id": "roda_eixo",
     "forma": "caixa",
     "tam": [
-     0.026,
-     0.004,
-     0.003
+     0.046,
+     0.006,
+     0.004
     ],
     "pos": [
      0,
-     0.0045,
+     0.0065,
      0
     ],
     "cor": "#5D4037",
@@ -2644,7 +2656,8 @@
      0.55
     ],
     "cor": "#E0E0E0",
-    "oculta": true
+    "oculta": true,
+    "sem_contorno": true
    },
    {
     "id": "fio1",
@@ -2659,7 +2672,8 @@
      0.55
     ],
     "cor": "#E0E0E0",
-    "oculta": true
+    "oculta": true,
+    "sem_contorno": true
    },
    {
     "id": "fio2",
@@ -2674,7 +2688,8 @@
      0.5647
     ],
     "cor": "#E0E0E0",
-    "oculta": true
+    "oculta": true,
+    "sem_contorno": true
    },
    {
     "id": "fio3",
@@ -2689,7 +2704,8 @@
      0.5647
     ],
     "cor": "#E0E0E0",
-    "oculta": true
+    "oculta": true,
+    "sem_contorno": true
    },
    {
     "id": "fio4",
@@ -2704,7 +2720,8 @@
      0.55
     ],
     "cor": "#E0E0E0",
-    "oculta": true
+    "oculta": true,
+    "sem_contorno": true
    },
    {
     "id": "fio5",
@@ -2719,7 +2736,8 @@
      0.5353
     ],
     "cor": "#E0E0E0",
-    "oculta": true
+    "oculta": true,
+    "sem_contorno": true
    },
    {
     "id": "fio6",
@@ -2734,7 +2752,8 @@
      0.5353
     ],
     "cor": "#E0E0E0",
-    "oculta": true
+    "oculta": true,
+    "sem_contorno": true
    },
    {
     "id": "fio7",
@@ -2749,7 +2768,8 @@
      0.55
     ],
     "cor": "#E0E0E0",
-    "oculta": true
+    "oculta": true,
+    "sem_contorno": true
    },
    {
     "id": "fio8",
@@ -2764,7 +2784,8 @@
      0.5648
     ],
     "cor": "#E0E0E0",
-    "oculta": true
+    "oculta": true,
+    "sem_contorno": true
    },
    {
     "id": "fio9",
@@ -2779,7 +2800,8 @@
      0.5794
     ],
     "cor": "#E0E0E0",
-    "oculta": true
+    "oculta": true,
+    "sem_contorno": true
    },
    {
     "id": "fio10",
@@ -2794,7 +2816,8 @@
      0.5795
     ],
     "cor": "#E0E0E0",
-    "oculta": true
+    "oculta": true,
+    "sem_contorno": true
    },
    {
     "id": "fio11",
@@ -2809,7 +2832,8 @@
      0.5794
     ],
     "cor": "#E0E0E0",
-    "oculta": true
+    "oculta": true,
+    "sem_contorno": true
    },
    {
     "id": "fio12",
@@ -2824,7 +2848,8 @@
      0.5648
     ],
     "cor": "#E0E0E0",
-    "oculta": true
+    "oculta": true,
+    "sem_contorno": true
    },
    {
     "id": "fio13",
@@ -2839,7 +2864,8 @@
      0.55
     ],
     "cor": "#E0E0E0",
-    "oculta": true
+    "oculta": true,
+    "sem_contorno": true
    },
    {
     "id": "fio14",
@@ -2854,7 +2880,8 @@
      0.5353
     ],
     "cor": "#E0E0E0",
-    "oculta": true
+    "oculta": true,
+    "sem_contorno": true
    },
    {
     "id": "fio15",
@@ -2869,7 +2896,8 @@
      0.5206
     ],
     "cor": "#E0E0E0",
-    "oculta": true
+    "oculta": true,
+    "sem_contorno": true
    },
    {
     "id": "fio16",
@@ -2884,7 +2912,8 @@
      0.5205
     ],
     "cor": "#E0E0E0",
-    "oculta": true
+    "oculta": true,
+    "sem_contorno": true
    },
    {
     "id": "fio17",
@@ -2899,7 +2928,8 @@
      0.5206
     ],
     "cor": "#E0E0E0",
-    "oculta": true
+    "oculta": true,
+    "sem_contorno": true
    },
    {
     "id": "fio18",
@@ -2914,7 +2944,8 @@
      0.5353
     ],
     "cor": "#E0E0E0",
-    "oculta": true
+    "oculta": true,
+    "sem_contorno": true
    },
    {
     "id": "cinta1",
@@ -3473,7 +3504,7 @@
      "peca": "carro1",
      "faz": "mover",
      "desloc": [
-      -0.15999999999999998,
+      -0.11,
       0,
       0
      ],
@@ -4376,37 +4407,37 @@
       [
        -0.5499999999999999,
        0.176,
-       0.068
+       0.066
       ],
       [
        -0.22,
        0.411,
-       0.068
+       0.066
       ],
       [
        -0.11,
        0.2048,
-       0.068
+       0.066
       ],
       [
        0,
        0.136,
-       0.068
+       0.066
       ],
       [
        0.11,
        0.2048,
-       0.068
+       0.066
       ],
       [
        0.22,
        0.411,
-       0.068
+       0.066
       ],
       [
        0.5499999999999999,
        0.176,
-       0.068
+       0.066
       ]
      ]
     },
@@ -4720,13 +4751,13 @@
      "de": "inicio",
      "tipo": "detalhe",
      "camera": [
-      0.5,
-      1.3,
-      0.62
+      0.594,
+      1.589,
+      1.028
      ],
      "alvo": [
       0.0,
-      1.07,
+      1.06,
       0.0
      ],
      "movimento": "arco",
@@ -4744,13 +4775,13 @@
      "de": "f2",
      "tipo": "detalhe",
      "camera": [
-      0.5,
-      1.3,
-      0.62
+      0.594,
+      1.589,
+      1.028
      ],
      "alvo": [
       0.0,
-      1.07,
+      1.06,
       0.0
      ],
      "movimento": "aproximar"
@@ -4759,13 +4790,13 @@
      "de": "f2:pendurar",
      "tipo": "detalhe",
      "camera": [
-      -0.12,
-      1.17,
-      0.48
+      0.085,
+      1.25,
+      0.558
      ],
      "alvo": [
-      -0.08,
-      1.09,
+      -0.14,
+      1.1,
       0.0
      ],
      "movimento": "travelling",
@@ -4775,13 +4806,13 @@
      "de": "f3",
      "tipo": "detalhe",
      "camera": [
-      0.6,
-      1.2,
-      0.4
+      0.627,
+      1.357,
+      0.672
      ],
      "alvo": [
-      0.24,
-      1.09,
+      0.27,
+      1.11,
       0.0
      ],
      "movimento": "aproximar"
@@ -4791,12 +4822,12 @@
      "tipo": "detalhe",
      "camera": [
       0.0,
-      1.26,
-      1.15
+      1.398,
+      1.182
      ],
      "alvo": [
       0.0,
-      1.17,
+      1.19,
       0.0
      ],
      "movimento": "tremer"
@@ -4813,13 +4844,13 @@
      "de": "f4",
      "tipo": "detalhe",
      "camera": [
-      0.5,
-      1.1,
-      0.78
+      0.748,
+      1.325,
+      1.296
      ],
      "alvo": [
       0.0,
-      1.24,
+      1.22,
       0.0
      ],
      "movimento": "arco",
@@ -4831,12 +4862,12 @@
      "tipo": "detalhe",
      "camera": [
       0.0,
-      1.26,
-      1.15
+      1.398,
+      1.182
      ],
      "alvo": [
       0.0,
-      1.17,
+      1.19,
       0.0
      ],
      "movimento": "aproximar"
@@ -4845,13 +4876,13 @@
      "de": "f5",
      "tipo": "detalhe",
      "camera": [
-      0.2,
-      1.2,
-      0.45
+      0.411,
+      1.377,
+      0.754
      ],
      "alvo": [
-      0.02,
-      1.17,
+      0.06,
+      1.2,
       0.0
      ],
      "movimento": "arco",
@@ -4862,13 +4893,13 @@
      "de": "f5:pendurais",
      "tipo": "detalhe",
      "camera": [
-      1.3,
-      1.62,
-      1.05
+      1.527,
+      2.228,
+      1.82
      ],
      "alvo": [
       0.0,
-      1.16,
+      1.17,
       0.0
      ],
      "movimento": "aproximar"
@@ -4886,12 +4917,12 @@
      "tipo": "detalhe",
      "camera": [
       0.0,
-      1.26,
-      1.15
+      1.493,
+      1.379
      ],
      "alvo": [
       0.0,
-      1.17,
+      1.25,
       0.0
      ],
      "movimento": "aproximar"
@@ -4908,13 +4939,13 @@
      "de": "f7",
      "tipo": "detalhe",
      "camera": [
-      0.5,
-      1.1,
-      0.78
+      0.748,
+      1.325,
+      1.296
      ],
      "alvo": [
       0.0,
-      1.24,
+      1.22,
       0.0
      ],
      "movimento": "tremer"
@@ -4923,12 +4954,12 @@
      "de": "f8",
      "tipo": "detalhe",
      "camera": [
-      0.95,
-      1.36,
-      0.52
+      1.073,
+      1.556,
+      0.623
      ],
      "alvo": [
-      0.48,
+      0.45,
       1.2,
       0.0
      ],
@@ -4940,13 +4971,13 @@
      "de": "f8:ancoragem",
      "tipo": "detalhe",
      "camera": [
-      1.3,
-      1.62,
-      1.05
+      1.527,
+      2.228,
+      1.82
      ],
      "alvo": [
       0.0,
-      1.16,
+      1.17,
       0.0
      ],
      "movimento": "arco",
@@ -4965,12 +4996,12 @@
      "de": "f9:bloco",
      "tipo": "detalhe",
      "camera": [
-      0.95,
-      1.36,
-      0.52
+      1.073,
+      1.556,
+      0.623
      ],
      "alvo": [
-      0.48,
+      0.45,
       1.2,
       0.0
      ],
@@ -4980,13 +5011,13 @@
      "de": "f10",
      "tipo": "detalhe",
      "camera": [
-      0.36,
-      1.2,
-      0.92
+      0.396,
+      1.451,
+      1.089
      ],
      "alvo": [
       0.0,
-      1.13,
+      1.14,
       0.0
      ],
      "movimento": "arco",
@@ -4997,12 +5028,12 @@
      "tipo": "detalhe",
      "camera": [
       0.0,
-      1.26,
-      1.15
+      1.398,
+      1.182
      ],
      "alvo": [
       0.0,
-      1.17,
+      1.19,
       0.0
      ],
      "movimento": "tremer"
@@ -5019,13 +5050,13 @@
      "de": "f11:dancando",
      "tipo": "detalhe",
      "camera": [
-      0.36,
-      1.2,
-      0.92
+      0.396,
+      1.451,
+      1.089
      ],
      "alvo": [
       0.0,
-      1.13,
+      1.14,
       0.0
      ],
      "movimento": "tremer"
@@ -5034,13 +5065,13 @@
      "de": "f12",
      "tipo": "detalhe",
      "camera": [
-      0.34,
-      1.05,
-      0.52
+      0.06,
+      1.055,
+      0.849
      ],
      "alvo": [
-      0.0,
-      1.09,
+      0.06,
+      1.085,
       0.0
      ],
      "movimento": "arco",
@@ -5051,13 +5082,13 @@
      "de": "f12:dura",
      "tipo": "detalhe",
      "camera": [
-      0.36,
-      1.2,
-      0.92
+      0.396,
+      1.451,
+      1.089
      ],
      "alvo": [
       0.0,
-      1.13,
+      1.14,
       0.0
      ],
      "movimento": "aproximar"
@@ -5074,13 +5105,13 @@
      "de": "f14",
      "tipo": "detalhe",
      "camera": [
-      0.25,
-      1.5,
-      1.95
+      0.658,
+      1.791,
+      2.457
      ],
      "alvo": [
       0.0,
-      1.22,
+      1.25,
       0.0
      ],
      "movimento": "travelling",
@@ -5091,9 +5122,9 @@
      "de": "f14:milhares",
      "tipo": "detalhe",
      "camera": [
-      0.64,
-      1.32,
-      0.92
+      0.645,
+      1.385,
+      0.94
      ],
      "alvo": [
       0.42,
@@ -5108,9 +5139,9 @@
      "de": "f15",
      "tipo": "detalhe",
      "camera": [
-      -0.24,
-      1.3,
-      0.98
+      -0.23,
+      1.326,
+      1.229
      ],
      "alvo": [
       -0.42,
