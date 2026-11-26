@@ -90,7 +90,10 @@ window.__autoRun = (cfg) => {
         await esperar(() => caixa(), 30000, 'diálogo de playlists');
         await sleep(800);
         const alvo = cfg.playlist.trim().toLowerCase();
-        const cb = qa('ytcp-checkbox-lit', caixa()).find((e) => { let r = e; for (let i = 0; i < 4 && r && !(r.innerText || '').trim(); i++) r = r.parentElement; return (r?.innerText || '').trim().toLowerCase() === alvo; });
+        // a lista de playlists carrega depois do diálogo (lenta no PC do Iuri): procura por até 20 s
+        const achaCb = () => qa('ytcp-checkbox-lit', caixa()).find((e) => { let r = e; for (let i = 0; i < 4 && r && !(r.innerText || '').trim(); i++) r = r.parentElement; return (r?.innerText || '').trim().toLowerCase() === alvo; });
+        let cb = achaCb();
+        for (let t = 0; t < 40 && !cb; t++) { await sleep(500); cb = achaCb(); }
         if (!cb) throw new Error('playlist não existe: ' + cfg.playlist + ' (crie em Criar → Nova playlist e retome com desde: "playlist")');
         const box = cb.querySelector('[role=checkbox]') || cb;
         if (box.getAttribute('aria-checked') !== 'true') box.click();
