@@ -1561,7 +1561,7 @@
           "texto": "MARINA CAVEIRA",
           "de": "f22",
           "ate": "f22:fim+0.2",
-          "altura": 0.62
+          "altura": 0.72
         }
       ],
       "manchetes": [
@@ -1627,16 +1627,12 @@
         },
         {
           "de": "f22",
-          "tipo": "close",
-          "alvo": [
-            6.57,
-            2.15,
-            5.9
-          ],
+          "tipo": "medio",
+          "alvo": "marina",
           "camera": [
-            3.98,
+            3.36,
             2.9,
-            8.07
+            8.88
           ],
           "movimento": "aproximar",
           "intensidade": 0.2,

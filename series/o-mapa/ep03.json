@@ -820,7 +820,7 @@
         {
           "de": "f11",
           "ate": "f12",
-          "texto": "TEMPESTADE EM *19 HORAS*"
+          "texto": "*19 HORAS* PRA TEMPESTADE"
         },
         {
           "de": "f12",
@@ -836,6 +836,15 @@
             210,
             300
           ]
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "f11:tempestade",
+          "ate": "f11:fim+0.4",
+          "efeito": "letreiro",
+          "texto": "DOMINGO 18H",
+          "altura": 0.3
         }
       ],
       "acoes": [
@@ -916,8 +925,7 @@
             6.1
           ],
           "movimento": "aproximar",
-          "intensidade": 0.2,
-          "transicao": "chicote"
+          "intensidade": 0.2
         },
         {
           "de": "f10",
@@ -928,8 +936,8 @@
             2.6,
             8.4
           ],
-          "movimento": "aproximar",
-          "intensidade": 0.25
+          "movimento": "travelling",
+          "intensidade": 0.2
         },
         {
           "de": "f10:sorri",
@@ -1107,8 +1115,7 @@
             1.6
           ],
           "movimento": "arco",
-          "intensidade": 0.3,
-          "transicao": "zoom"
+          "intensidade": 0.3
         },
         {
           "de": "f13:pingando",
@@ -1489,8 +1496,8 @@
             1.15,
             0.1
           ],
-          "movimento": "aproximar",
-          "intensidade": 0.25
+          "movimento": "orbitar",
+          "intensidade": 0.2
         }
       ],
       "efeitos": [
