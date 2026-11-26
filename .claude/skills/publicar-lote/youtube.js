@@ -198,7 +198,10 @@ window.__autoRun = (cfg) => {
     const fuso = q('#timezone-select-button', R());
     if (fuso) {
       fuso.click(); await sleep(900);
-      const it = [...document.querySelectorAll('tp-yt-paper-item, [role=option]')].find((e) => /^\(GMT-0300\) Horário local/.test(e.innerText.trim()) && visivel(e));
+      // com o PC lento a lista demora a aparecer: espera até 6 s antes de desistir
+      const achaFuso = () => [...document.querySelectorAll('tp-yt-paper-item, [role=option]')].find((e) => /^\(GMT-0300\) Horário local/.test(e.innerText.trim()) && visivel(e));
+      let it = achaFuso();
+      for (let t = 0; t < 12 && !it; t++) { await sleep(500); it = achaFuso(); }
       if (it) it.click(); else st.avisos.push('fuso GMT-0300 não achado');
       await sleep(800);
     }
