@@ -87,7 +87,7 @@ window.__autoRun = (cfg) => {
         (await esperar(() => q('ytcp-video-metadata-playlists ytcp-dropdown-trigger, ytcp-video-metadata-playlists [role=button]'), 10000, 'botão de playlist')).click();
         await sleep(1500);
         const caixa = () => qa('ytcp-playlist-dialog tp-yt-paper-dialog, ytcp-playlist-dialog', document).filter(visivel).at(-1);
-        await esperar(() => caixa(), 10000, 'diálogo de playlists');
+        await esperar(() => caixa(), 30000, 'diálogo de playlists');
         await sleep(800);
         const alvo = cfg.playlist.trim().toLowerCase();
         const cb = qa('ytcp-checkbox-lit', caixa()).find((e) => { let r = e; for (let i = 0; i < 4 && r && !(r.innerText || '').trim(); i++) r = r.parentElement; return (r?.innerText || '').trim().toLowerCase() === alvo; });
