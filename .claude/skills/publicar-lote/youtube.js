@@ -166,7 +166,7 @@ window.__autoRun = (cfg) => {
     if (!q('ytcp-uploads-review #datepicker-trigger')) { exp.click(); await sleep(1200); }
     const hora = await esperar(() => q('ytcp-uploads-review #time-of-day-container input'), 10000, 'campo da hora');
     hora.scrollIntoView({block: 'center'}); await sleep(500);
-    st.link = (q('a[href*="shorts/"], a[href*="youtu.be"]') || {}).href;
+    st.link = ([...qa('a[href]')].map((a) => a.href).find((h) => /youtube\.com\/shorts\/[\w-]{11}|youtu\.be\/[\w-]{11}/.test(h))) || '';
     st.agenda = q('ytcp-uploads-review #second-container').innerText.replace(/\s+/g, ' ');
     L('agendando');
     const MESES = ['jan.', 'fev.', 'mar.', 'abr.', 'mai.', 'jun.', 'jul.', 'ago.', 'set.', 'out.', 'nov.', 'dez.'];
@@ -228,7 +228,9 @@ window.__autoRun = (cfg) => {
       return c;
     }, 25 * 60000, 'confirmação');
     st.confirmacao = conf.innerText.replace(/\s+/g, ' ').slice(0, 200);
-    st.link = ((conf.querySelector('a[href*="shorts/"], a[href*="youtu"]') || {}).href || st.link || '').replace(/\?.*$/, '');
+    // a confirmação "Processando vídeo" também tem link de ajuda (support.google.com/youtube): pegue só o do vídeo
+    const ehVideo = (h) => /youtube\.com\/shorts\/[\w-]{11}|youtu\.be\/[\w-]{11}/.test(h || '');
+    st.link = (([...conf.querySelectorAll('a[href]')].map((a) => a.href).find(ehVideo)) || (ehVideo(st.link) ? st.link : '') || '').replace(/\?.*$/, '');
     st.ok = st.confirmacao.includes(esperado);
     L(st.ok ? 'programado' : 'programado com horário diferente');
   } catch (e) { st.erro = String((e && e.message) || e); L('erro'); } })();
