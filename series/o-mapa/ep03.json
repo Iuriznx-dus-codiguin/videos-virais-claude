@@ -163,13 +163,13 @@
       "personagens": {
         "nico": {
           "em": [
-            -0.9,
-            0.85
+            0.15,
+            -0.95
           ],
           "olhando": [
-            0.6,
+            0.1,
             1.0,
-            2.2
+            1.3
           ],
           "expressao": "medo",
           "escala": 0.75
@@ -289,16 +289,12 @@
       "planos": [
         {
           "de": "inicio",
-          "tipo": "aberto",
-          "alvo": [
-            0.1,
-            1.3,
-            -0.6
-          ],
+          "tipo": "medio",
+          "alvo": "nico",
           "camera": [
-            0.35,
-            2.05,
-            2.0
+            0.1,
+            1.25,
+            1.45
           ],
           "movimento": "descer",
           "intensidade": 0.3
@@ -308,9 +304,9 @@
           "tipo": "close",
           "alvo": "nico",
           "camera": [
-            0.79,
+            0.1,
             1.0,
-            1.06
+            1.05
           ],
           "movimento": "zoom_rapido",
           "intensidade": 0.2
@@ -320,12 +316,12 @@
           "tipo": "detalhe",
           "alvo": [
             0.15,
-            1.85,
+            2.05,
             -1.85
           ],
           "camera": [
             0.4,
-            1.75,
+            1.95,
             0.3
           ],
           "movimento": "aproximar",
@@ -336,17 +332,17 @@
           "tipo": "detalhe",
           "alvo": [
             -0.9,
-            1.85,
+            2.05,
             -1.85
           ],
           "alvo2": [
             1.15,
-            1.55,
+            2.0,
             -1.85
           ],
           "camera": [
             0.4,
-            1.75,
+            2.0,
             0.3
           ],
           "movimento": "panoramica"
@@ -356,9 +352,9 @@
           "tipo": "close",
           "alvo": "duda",
           "camera": [
-            0.1,
+            -0.05,
             1.0,
-            0.82
+            1.0
           ],
           "movimento": "zoom_rapido",
           "intensidade": 0.2
@@ -505,7 +501,7 @@
         {
           "alvo": "duda",
           "texto": "DUDA · 11 ANOS",
-          "de": "f4:Duda",
+          "de": "f4:Duda+0.1",
           "ate": "f4:fim+0.2"
         },
         {
@@ -513,7 +509,7 @@
           "texto": "MARINA CAVEIRA",
           "de": "f5:Marina",
           "ate": "f5:fim+0.2",
-          "altura": 0.62
+          "altura": 0.72
         },
         {
           "alvo": "jonas",
@@ -524,11 +520,6 @@
         }
       ],
       "manchetes": [
-        {
-          "de": "f4",
-          "ate": "f5",
-          "texto": "*40 BARRAS* DE OURO DE 1962"
-        },
         {
           "de": "f5",
           "ate": "f7",
@@ -638,33 +629,37 @@
       "planos": [
         {
           "de": "f4",
-          "tipo": "medio",
-          "alvo": [
-            4.35,
-            1.0,
-            5.6
-          ],
+          "tipo": "close",
+          "alvo": "nico",
           "camera": [
-            8.6,
-            1.9,
-            9.6
+            6.5,
+            1.8,
+            7.04
           ],
-          "movimento": "travelling",
+          "movimento": "aproximar",
           "intensidade": 0.2,
           "transicao": "desfoque"
         },
         {
-          "de": "f5",
+          "de": "f4:Duda",
           "tipo": "close",
-          "alvo": [
-            7.17,
-            2.15,
-            5.2
-          ],
+          "alvo": "duda",
           "camera": [
-            5.04,
+            7.05,
+            1.6,
+            7.15
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f5",
+          "tipo": "medio",
+          "alvo": "marina",
+          "camera": [
+            3.76,
             2.9,
-            7.82
+            7.94
           ],
           "movimento": "zoom_rapido",
           "intensidade": 0.2
@@ -824,6 +819,7 @@
         },
         {
           "de": "f12",
+          "ate": "f12:passos",
           "texto": "FALTAM *90 PASSOS*"
         }
       ],
@@ -836,15 +832,6 @@
             210,
             300
           ]
-        }
-      ],
-      "efeitos": [
-        {
-          "de": "f11:tempestade",
-          "ate": "f11:fim+0.4",
-          "efeito": "letreiro",
-          "texto": "DOMINGO 18H",
-          "altura": 0.3
         }
       ],
       "acoes": [
@@ -1012,8 +999,8 @@
       "personagens": {
         "nico": {
           "em": [
-            -2.4,
-            3.6
+            -1.8,
+            0.4
           ],
           "olhando": [
             -6.2,
@@ -1024,12 +1011,12 @@
         },
         "duda": {
           "em": [
-            -1.2,
-            3.0
+            -3.45,
+            1.0
           ],
           "olhando": [
             -6.2,
-            1.6,
+            4.5,
             -4.0
           ],
           "expressao": "surpreso",
@@ -1037,8 +1024,8 @@
         },
         "jonas": {
           "em": [
-            1.0,
-            1.6
+            0.4,
+            -1.0
           ],
           "olhando": [
             -6.2,
@@ -1053,15 +1040,15 @@
         {
           "tipo": "feixe_luz",
           "de": [
-            -1.5,
+            -3.3,
             1.5,
-            2.6
+            0.7
           ],
           "em": [
-            -5.7,
-            -3.4
+            -5.9,
+            -3.3
           ],
-          "alt": 1.2,
+          "alt": 2.6,
           "largura": 1.0,
           "intensidade": 0.3,
           "cor": "#FFE9B8"
@@ -1080,16 +1067,6 @@
       ],
       "acoes": [
         {
-          "quem": "duda",
-          "faz": "erguer",
-          "para": [
-            -5.7,
-            1.2,
-            -3.4
-          ],
-          "de": "inicio"
-        },
-        {
           "quem": "nico",
           "faz": "apontar",
           "para": [
@@ -1103,44 +1080,36 @@
       "planos": [
         {
           "de": "f13",
-          "tipo": "aberto",
-          "alvo": [
-            -5.8,
-            2.4,
-            -3.6
-          ],
+          "tipo": "medio",
+          "alvo": "duda",
           "camera": [
-            -1.5,
-            2.6,
-            1.6
+            -4.3,
+            1.25,
+            -1.6
           ],
-          "movimento": "arco",
-          "intensidade": 0.3
+          "movimento": "aproximar",
+          "intensidade": 0.2
         },
         {
           "de": "f13:pingando",
-          "tipo": "detalhe",
-          "alvo": [
-            -5.6,
-            1.2,
-            -3.4
-          ],
+          "tipo": "close",
+          "alvo": "nico",
           "camera": [
-            -2.6,
-            1.7,
-            -0.6
+            -3.95,
+            2.1,
+            -1.69
           ],
-          "movimento": "aproximar",
-          "intensidade": 0.3
+          "movimento": "zoom_rapido",
+          "intensidade": 0.2
         },
         {
           "de": "f14",
           "tipo": "close",
           "alvo": "duda",
           "camera": [
-            -3.29,
+            -4.72,
             1.9,
-            0.85
+            -1.49
           ],
           "movimento": "zoom_rapido",
           "intensidade": 0.2
@@ -1302,13 +1271,13 @@
       "personagens": {
         "nico": {
           "em": [
-            -0.9,
-            0.85
+            -0.55,
+            0.05
           ],
           "olhando": [
-            0.8,
             1.0,
-            2.0
+            1.0,
+            1.8
           ],
           "expressao": "surpreso",
           "escala": 0.75
@@ -1396,8 +1365,13 @@
       "manchetes": [
         {
           "de": "f16",
+          "ate": "f16:catorze",
+          "texto": "*RISCOS* NA PAREDE"
+        },
+        {
+          "de": "f17",
           "ate": "f18",
-          "texto": "*214 RISCOS* NA PAREDE"
+          "texto": "*214 DIAS* AQUI DENTRO"
         },
         {
           "de": "f18",
@@ -1468,9 +1442,9 @@
           "tipo": "close",
           "alvo": "nico",
           "camera": [
-            0.79,
+            -0.38,
             1.0,
-            1.06
+            1.84
           ],
           "movimento": "zoom_rapido",
           "intensidade": 0.2
@@ -1480,9 +1454,9 @@
           "tipo": "close",
           "alvo": "duda",
           "camera": [
-            0.1,
+            -0.22,
             1.0,
-            0.82
+            1.17
           ],
           "movimento": "aproximar",
           "intensidade": 0.2
@@ -1492,24 +1466,12 @@
           "tipo": "close",
           "alvo": "jonas",
           "camera": [
-            -0.17,
+            -0.71,
             1.15,
-            0.1
+            1.11
           ],
           "movimento": "orbitar",
           "intensidade": 0.2
-        }
-      ],
-      "efeitos": [
-        {
-          "de": "f16:catorze",
-          "ate": "f16:fim+0.3",
-          "efeito": "circular",
-          "alvo": [
-            0.15,
-            1.85,
-            -1.85
-          ]
         }
       ],
       "sons": [
@@ -1535,13 +1497,13 @@
       "personagens": {
         "nico": {
           "em": [
-            -0.9,
-            0.85
+            -0.55,
+            0.05
           ],
           "olhando": [
-            0.8,
+            1.0,
             0.3,
-            2.0
+            1.8
           ],
           "expressao": "cansado",
           "escala": 0.75
@@ -1670,9 +1632,9 @@
           "tipo": "medio",
           "alvo": "nico",
           "camera": [
-            0.79,
-            1.0,
-            1.06
+            -0.38,
+            0.75,
+            1.84
           ],
           "movimento": "travelling",
           "intensidade": 0.2,
@@ -1683,26 +1645,22 @@
           "tipo": "close",
           "alvo": "duda",
           "camera": [
-            0.1,
+            -0.22,
             1.0,
-            0.82
+            1.17
           ],
           "movimento": "fixo"
         },
         {
           "de": "f22",
-          "tipo": "aberto",
-          "alvo": [
-            0.1,
-            0.9,
-            -0.4
-          ],
+          "tipo": "close",
+          "alvo": "nico",
           "camera": [
-            0.3,
-            1.8,
-            2.05
+            -0.38,
+            1.0,
+            1.84
           ],
-          "movimento": "travelling",
+          "movimento": "aproximar",
           "intensidade": 0.15
         }
       ],
@@ -1723,13 +1681,13 @@
       "personagens": {
         "nico": {
           "em": [
-            -0.9,
-            0.85
+            -0.55,
+            0.05
           ],
           "olhando": [
-            0.8,
             1.0,
-            2.0
+            1.0,
+            1.8
           ],
           "expressao": "aliviado",
           "escala": 0.75
@@ -1866,9 +1824,9 @@
           "tipo": "close",
           "alvo": "duda",
           "camera": [
-            0.35,
+            -0.22,
             1.0,
-            -1.49
+            1.17
           ],
           "movimento": "aproximar",
           "intensidade": 0.2
@@ -1877,13 +1835,13 @@
           "de": "f23:riscos",
           "tipo": "detalhe",
           "alvo": [
-            1.15,
-            1.55,
+            -0.5,
+            1.9,
             -1.85
           ],
           "camera": [
-            0.4,
-            1.6,
+            0.1,
+            1.8,
             0.3
           ],
           "movimento": "zoom_rapido",
@@ -1895,9 +1853,9 @@
           "tipo": "close",
           "alvo": "nico",
           "camera": [
-            0.79,
+            -0.38,
             1.0,
-            1.06
+            1.84
           ],
           "movimento": "dolly_zoom",
           "intensidade": 0.8
@@ -1907,9 +1865,9 @@
           "tipo": "close",
           "alvo": "jonas",
           "camera": [
-            -0.17,
+            -0.71,
             1.15,
-            0.1
+            1.11
           ],
           "movimento": "zoom_rapido",
           "intensidade": 0.2
@@ -1920,9 +1878,9 @@
           "alvo": "nico",
           "lado": "frente",
           "camera": [
-            0.79,
+            -0.38,
             1.0,
-            1.06
+            1.84
           ],
           "movimento": "aproximar",
           "intensidade": 0.2
@@ -1933,16 +1891,6 @@
           "de": "f23",
           "ate": "fim",
           "efeito": "barras"
-        },
-        {
-          "de": "f23:riscos",
-          "ate": "f23:fim",
-          "efeito": "circular",
-          "alvo": [
-            1.15,
-            1.55,
-            -1.85
-          ]
         },
         {
           "de": "f24:morou",
