@@ -352,9 +352,9 @@
           "tipo": "close",
           "alvo": "duda",
           "camera": [
-            -0.05,
+            0.48,
             1.0,
-            1.0
+            0.0
           ],
           "movimento": "zoom_rapido",
           "intensidade": 0.2
@@ -695,19 +695,15 @@
         },
         {
           "de": "f7:corre",
-          "tipo": "aberto",
-          "alvo": [
-            7.6,
-            1.5,
-            7.0
-          ],
+          "tipo": "medio",
+          "alvo": "marina",
           "camera": [
-            5.0,
-            2.6,
-            1.2
+            3.76,
+            2.9,
+            7.94
           ],
-          "movimento": "acompanhar",
-          "intensidade": 0.25
+          "movimento": "zoom_rapido",
+          "intensidade": 0.2
         },
         {
           "de": "f8+0.9",
@@ -1454,9 +1450,9 @@
           "tipo": "close",
           "alvo": "duda",
           "camera": [
-            -0.22,
+            0.35,
             1.0,
-            1.17
+            -1.49
           ],
           "movimento": "aproximar",
           "intensidade": 0.2
@@ -1824,9 +1820,9 @@
           "tipo": "close",
           "alvo": "duda",
           "camera": [
-            -0.22,
+            0.35,
             1.0,
-            1.17
+            -1.49
           ],
           "movimento": "aproximar",
           "intensidade": 0.2
