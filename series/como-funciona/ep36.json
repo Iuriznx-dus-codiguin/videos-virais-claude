@@ -1,0 +1,4887 @@
+{
+ "serie": "como-funciona",
+ "parte": 36,
+ "titulo": "Cave um túnel debaixo de um rio",
+ "musica": "curiosidade",
+ "modelos": {
+  "tunel": [
+   {
+    "id": "terra_tras",
+    "forma": "caixa",
+    "tam": [
+     1.2,
+     0.16,
+     0.2
+    ],
+    "pos": [
+     0,
+     0.08,
+     -0.1
+    ],
+    "cor": "#6D4C41"
+   },
+   {
+    "id": "terra_frente",
+    "forma": "caixa",
+    "tam": [
+     1.2,
+     0.16,
+     0.2
+    ],
+    "pos": [
+     0,
+     0.08,
+     0.1
+    ],
+    "cor": "#A1887F",
+    "opacidade": 0.32
+   },
+   {
+    "id": "margem_e_tras",
+    "forma": "caixa",
+    "tam": [
+     0.42,
+     0.1,
+     0.2
+    ],
+    "pos": [
+     -0.39,
+     0.21000000000000002,
+     -0.1
+    ],
+    "cor": "#6D4C41"
+   },
+   {
+    "id": "margem_e_frente",
+    "forma": "caixa",
+    "tam": [
+     0.42,
+     0.1,
+     0.2
+    ],
+    "pos": [
+     -0.39,
+     0.21000000000000002,
+     0.1
+    ],
+    "cor": "#A1887F",
+    "opacidade": 0.32
+   },
+   {
+    "id": "grama_e",
+    "forma": "caixa",
+    "tam": [
+     0.42,
+     0.012,
+     0.4
+    ],
+    "pos": [
+     -0.39,
+     0.266,
+     0
+    ],
+    "cor": "#8BC34A"
+   },
+   {
+    "id": "estrada_e",
+    "forma": "caixa",
+    "tam": [
+     0.42,
+     0.005,
+     0.05
+    ],
+    "pos": [
+     -0.39,
+     0.2745,
+     0.06
+    ],
+    "cor": "#546E7A"
+   },
+   {
+    "id": "faixa_e",
+    "forma": "caixa",
+    "tam": [
+     0.39,
+     0.0015,
+     0.004
+    ],
+    "pos": [
+     -0.39,
+     0.2775,
+     0.06
+    ],
+    "cor": "#FFEB3B",
+    "sem_contorno": true
+   },
+   {
+    "id": "margem_d_tras",
+    "forma": "caixa",
+    "tam": [
+     0.42,
+     0.1,
+     0.2
+    ],
+    "pos": [
+     0.39,
+     0.21000000000000002,
+     -0.1
+    ],
+    "cor": "#6D4C41"
+   },
+   {
+    "id": "margem_d_frente",
+    "forma": "caixa",
+    "tam": [
+     0.42,
+     0.1,
+     0.2
+    ],
+    "pos": [
+     0.39,
+     0.21000000000000002,
+     0.1
+    ],
+    "cor": "#A1887F",
+    "opacidade": 0.32
+   },
+   {
+    "id": "grama_d",
+    "forma": "caixa",
+    "tam": [
+     0.42,
+     0.012,
+     0.4
+    ],
+    "pos": [
+     0.39,
+     0.266,
+     0
+    ],
+    "cor": "#8BC34A"
+   },
+   {
+    "id": "estrada_d",
+    "forma": "caixa",
+    "tam": [
+     0.42,
+     0.005,
+     0.05
+    ],
+    "pos": [
+     0.39,
+     0.2745,
+     0.06
+    ],
+    "cor": "#546E7A"
+   },
+   {
+    "id": "faixa_d",
+    "forma": "caixa",
+    "tam": [
+     0.39,
+     0.0015,
+     0.004
+    ],
+    "pos": [
+     0.39,
+     0.2775,
+     0.06
+    ],
+    "cor": "#FFEB3B",
+    "sem_contorno": true
+   },
+   {
+    "id": "rio",
+    "forma": "caixa",
+    "tam": [
+     0.36,
+     0.07599999999999998,
+     0.4
+    ],
+    "pos": [
+     0,
+     0.198,
+     0
+    ],
+    "cor": "#29B6F6",
+    "opacidade": 0.82
+   },
+   {
+    "id": "arv0",
+    "forma": "cilindro",
+    "tam": [
+     0.007,
+     0.035
+    ],
+    "pos": [
+     -0.48,
+     0.28950000000000004,
+     -0.12
+    ],
+    "cor": "#6D4C41"
+   },
+   {
+    "id": "arv0_copa",
+    "forma": "esfera",
+    "tam": [
+     0.026
+    ],
+    "pos": [
+     0,
+     0.035500000000000004,
+     0
+    ],
+    "cor": "#43A047",
+    "pai": "arv0"
+   },
+   {
+    "id": "arv1",
+    "forma": "cilindro",
+    "tam": [
+     0.007,
+     0.035
+    ],
+    "pos": [
+     -0.3,
+     0.28950000000000004,
+     -0.15
+    ],
+    "cor": "#6D4C41"
+   },
+   {
+    "id": "arv1_copa",
+    "forma": "esfera",
+    "tam": [
+     0.026
+    ],
+    "pos": [
+     0,
+     0.035500000000000004,
+     0
+    ],
+    "cor": "#43A047",
+    "pai": "arv1"
+   },
+   {
+    "id": "arv2",
+    "forma": "cilindro",
+    "tam": [
+     0.007,
+     0.03
+    ],
+    "pos": [
+     0.28,
+     0.28700000000000003,
+     -0.16
+    ],
+    "cor": "#6D4C41"
+   },
+   {
+    "id": "arv2_copa",
+    "forma": "esfera",
+    "tam": [
+     0.026
+    ],
+    "pos": [
+     0,
+     0.033,
+     0
+    ],
+    "cor": "#43A047",
+    "pai": "arv2"
+   },
+   {
+    "id": "arv3",
+    "forma": "cilindro",
+    "tam": [
+     0.007,
+     0.035
+    ],
+    "pos": [
+     0.5,
+     0.28950000000000004,
+     -0.1
+    ],
+    "cor": "#6D4C41"
+   },
+   {
+    "id": "arv3_copa",
+    "forma": "esfera",
+    "tam": [
+     0.026
+    ],
+    "pos": [
+     0,
+     0.035500000000000004,
+     0
+    ],
+    "cor": "#43A047",
+    "pai": "arv3"
+   },
+   {
+    "id": "barco",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.018,
+     0.1
+    ],
+    "pos": [
+     0.06,
+     0.242,
+     -0.14
+    ],
+    "cor": "#FFFFFF"
+   },
+   {
+    "id": "barco_cabine",
+    "forma": "caixa",
+    "tam": [
+     0.034,
+     0.02,
+     0.03
+    ],
+    "pos": [
+     0,
+     0.019,
+     -0.015
+    ],
+    "cor": "#FF7043",
+    "pai": "barco"
+   },
+   {
+    "id": "barco_faixa",
+    "forma": "caixa",
+    "tam": [
+     0.052,
+     0.004,
+     0.102
+    ],
+    "pos": [
+     0,
+     -0.004,
+     0
+    ],
+    "cor": "#1E88E5",
+    "pai": "barco",
+    "sem_contorno": true
+   },
+   {
+    "id": "carro",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.016,
+     0.03
+    ],
+    "pos": [
+     -0.235,
+     0.292,
+     0.06
+    ],
+    "cor": "#E53935"
+   },
+   {
+    "id": "carro_cabine",
+    "forma": "caixa",
+    "tam": [
+     0.025,
+     0.0128,
+     0.027
+    ],
+    "pos": [
+     0.003,
+     0.0136,
+     0
+    ],
+    "cor": "#B3E5FC",
+    "pai": "carro"
+   },
+   {
+    "id": "carro_roda0",
+    "forma": "cilindro",
+    "tam": [
+     0.008,
+     0.005
+    ],
+    "pos": [
+     -0.016,
+     -0.007,
+     0.016
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#212121",
+    "pai": "carro"
+   },
+   {
+    "id": "carro_roda1",
+    "forma": "cilindro",
+    "tam": [
+     0.008,
+     0.005
+    ],
+    "pos": [
+     0.016,
+     -0.007,
+     0.016
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#212121",
+    "pai": "carro"
+   },
+   {
+    "id": "carro_roda2",
+    "forma": "cilindro",
+    "tam": [
+     0.008,
+     0.005
+    ],
+    "pos": [
+     -0.016,
+     -0.007,
+     -0.016
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#212121",
+    "pai": "carro"
+   },
+   {
+    "id": "carro_roda3",
+    "forma": "cilindro",
+    "tam": [
+     0.008,
+     0.005
+    ],
+    "pos": [
+     0.016,
+     -0.007,
+     -0.016
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#212121",
+    "pai": "carro"
+   },
+   {
+    "id": "rampa_e",
+    "forma": "cilindro",
+    "tam": [
+     0.04,
+     0.3065
+    ],
+    "pos": [
+     -0.405,
+     0.1575,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     -151.76
+    ],
+    "cor": "#3E2723",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "cotovelo_e",
+    "forma": "esfera",
+    "tam": [
+     0.04
+    ],
+    "pos": [
+     -0.27,
+     0.085,
+     0.06
+    ],
+    "cor": "#3E2723",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "buraco1",
+    "forma": "cilindro",
+    "tam": [
+     0.04,
+     0.54
+    ],
+    "pos": [
+     0,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     -90
+    ],
+    "cor": "#3E2723",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "rampa_d",
+    "forma": "cilindro",
+    "tam": [
+     0.04,
+     0.3065
+    ],
+    "pos": [
+     0.405,
+     0.1575,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     -61.76
+    ],
+    "cor": "#3E2723",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "rampa_d2",
+    "forma": "cilindro",
+    "tam": [
+     0.04,
+     0.3065
+    ],
+    "pos": [
+     0.405,
+     0.1575,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     -61.76
+    ],
+    "cor": "#3E2723",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "cotovelo_d",
+    "forma": "esfera",
+    "tam": [
+     0.04
+    ],
+    "pos": [
+     0.27,
+     0.085,
+     0.06
+    ],
+    "cor": "#3E2723",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "cotovelo_d2",
+    "forma": "esfera",
+    "tam": [
+     0.04
+    ],
+    "pos": [
+     0.27,
+     0.085,
+     0.06
+    ],
+    "cor": "#3E2723",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "agua_e",
+    "forma": "cilindro",
+    "tam": [
+     0.0368,
+     0.27
+    ],
+    "pos": [
+     -0.135,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#29B6F6",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "agua_d",
+    "forma": "cilindro",
+    "tam": [
+     0.0368,
+     0.27
+    ],
+    "pos": [
+     0.135,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     -90
+    ],
+    "cor": "#29B6F6",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "bloco0",
+    "forma": "esfera",
+    "tam": [
+     0.014
+    ],
+    "pos": [
+     -0.09,
+     0.111,
+     0.06
+    ],
+    "cor": "#795548",
+    "oculta": true
+   },
+   {
+    "id": "bloco1",
+    "forma": "esfera",
+    "tam": [
+     0.017
+    ],
+    "pos": [
+     -0.03,
+     0.108,
+     0.06
+    ],
+    "cor": "#795548",
+    "oculta": true
+   },
+   {
+    "id": "bloco2",
+    "forma": "esfera",
+    "tam": [
+     0.013
+    ],
+    "pos": [
+     0.03,
+     0.112,
+     0.06
+    ],
+    "cor": "#795548",
+    "oculta": true
+   },
+   {
+    "id": "bloco3",
+    "forma": "esfera",
+    "tam": [
+     0.016
+    ],
+    "pos": [
+     0.08,
+     0.109,
+     0.06
+    ],
+    "cor": "#795548",
+    "oculta": true
+   },
+   {
+    "id": "bloco4",
+    "forma": "esfera",
+    "tam": [
+     0.012
+    ],
+    "pos": [
+     0.13,
+     0.113,
+     0.06
+    ],
+    "cor": "#795548",
+    "oculta": true
+   },
+   {
+    "id": "queda0",
+    "forma": "esfera",
+    "tam": [
+     0.012
+    ],
+    "pos": [
+     -0.24,
+     0.113,
+     0.06
+    ],
+    "cor": "#795548",
+    "oculta": true
+   },
+   {
+    "id": "queda1",
+    "forma": "esfera",
+    "tam": [
+     0.015
+    ],
+    "pos": [
+     -0.2,
+     0.11,
+     0.06
+    ],
+    "cor": "#795548",
+    "oculta": true
+   },
+   {
+    "id": "queda2",
+    "forma": "esfera",
+    "tam": [
+     0.012
+    ],
+    "pos": [
+     -0.16,
+     0.113,
+     0.06
+    ],
+    "cor": "#795548",
+    "oculta": true
+   },
+   {
+    "id": "cavador",
+    "forma": "capsula",
+    "tam": [
+     0.006,
+     0.016
+    ],
+    "pos": [
+     -0.52,
+     0.1993,
+     0.06
+    ],
+    "cor": "#FFB74D",
+    "oculta": true
+   },
+   {
+    "id": "cavador_cabeca",
+    "forma": "esfera",
+    "tam": [
+     0.0075
+    ],
+    "pos": [
+     0,
+     0.017,
+     0
+    ],
+    "cor": "#FFE0B2",
+    "pai": "cavador"
+   },
+   {
+    "id": "cavador_capacete",
+    "forma": "esfera",
+    "tam": [
+     0.006
+    ],
+    "pos": [
+     0,
+     0.022,
+     0
+    ],
+    "cor": "#FFCA28",
+    "pai": "cavador"
+   },
+   {
+    "id": "escudo",
+    "forma": "cilindro",
+    "tam": [
+     0.047,
+     0.07
+    ],
+    "pos": [
+     -0.233,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     -90
+    ],
+    "cor": "#78909C",
+    "oculta": true
+   },
+   {
+    "id": "escudo_borda",
+    "forma": "toro",
+    "tam": [
+     0.047,
+     0.005
+    ],
+    "pos": [
+     0,
+     0.031000000000000003,
+     0
+    ],
+    "cor": "#FFCA28",
+    "pai": "escudo",
+    "sem_contorno": true
+   },
+   {
+    "id": "roda",
+    "forma": "engrenagem",
+    "tam": [
+     0.046,
+     0.012,
+     14
+    ],
+    "pos": [
+     0,
+     0.042,
+     0
+    ],
+    "cor": "#FFB300",
+    "pai": "escudo",
+    "oculta": true
+   },
+   {
+    "id": "lama",
+    "forma": "cilindro",
+    "tam": [
+     0.05,
+     0.022
+    ],
+    "pos": [
+     0,
+     0.059000000000000004,
+     0
+    ],
+    "cor": "#8D5524",
+    "pai": "escudo",
+    "oculta": true,
+    "opacidade": 0.9
+   },
+   {
+    "id": "cavador2",
+    "forma": "capsula",
+    "tam": [
+     0.006,
+     0.016
+    ],
+    "pos": [
+     0,
+     0.043000000000000003,
+     0.012
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#FFB74D",
+    "pai": "escudo",
+    "oculta": true
+   },
+   {
+    "id": "cavador2_cabeca",
+    "forma": "esfera",
+    "tam": [
+     0.0075
+    ],
+    "pos": [
+     0,
+     0.017,
+     0
+    ],
+    "cor": "#FFE0B2",
+    "pai": "cavador2"
+   },
+   {
+    "id": "cavador2_pa",
+    "forma": "caixa",
+    "tam": [
+     0.003,
+     0.02,
+     0.003
+    ],
+    "pos": [
+     0.008,
+     0.01,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     -30
+    ],
+    "cor": "#8D6E63",
+    "pai": "cavador2",
+    "sem_contorno": true
+   },
+   {
+    "id": "anel0",
+    "forma": "toro",
+    "tam": [
+     0.043,
+     0.0065
+    ],
+    "pos": [
+     -0.258,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "anel1",
+    "forma": "toro",
+    "tam": [
+     0.043,
+     0.0065
+    ],
+    "pos": [
+     -0.2365,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "anel2",
+    "forma": "toro",
+    "tam": [
+     0.043,
+     0.0065
+    ],
+    "pos": [
+     -0.215,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "anel3",
+    "forma": "toro",
+    "tam": [
+     0.043,
+     0.0065
+    ],
+    "pos": [
+     -0.1935,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "anel4",
+    "forma": "toro",
+    "tam": [
+     0.043,
+     0.0065
+    ],
+    "pos": [
+     -0.172,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "anel5",
+    "forma": "toro",
+    "tam": [
+     0.043,
+     0.0065
+    ],
+    "pos": [
+     -0.1505,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "anel6",
+    "forma": "toro",
+    "tam": [
+     0.043,
+     0.0065
+    ],
+    "pos": [
+     -0.129,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "anel7",
+    "forma": "toro",
+    "tam": [
+     0.043,
+     0.0065
+    ],
+    "pos": [
+     -0.1075,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "anel8",
+    "forma": "toro",
+    "tam": [
+     0.043,
+     0.0065
+    ],
+    "pos": [
+     -0.086,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "anel9",
+    "forma": "toro",
+    "tam": [
+     0.043,
+     0.0065
+    ],
+    "pos": [
+     -0.0645,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "anel10",
+    "forma": "toro",
+    "tam": [
+     0.043,
+     0.0065
+    ],
+    "pos": [
+     -0.043,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "anel11",
+    "forma": "toro",
+    "tam": [
+     0.043,
+     0.0065
+    ],
+    "pos": [
+     -0.0215,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "anel12",
+    "forma": "toro",
+    "tam": [
+     0.043,
+     0.0065
+    ],
+    "pos": [
+     0.0,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "anel13",
+    "forma": "toro",
+    "tam": [
+     0.043,
+     0.0065
+    ],
+    "pos": [
+     0.0215,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "anel14",
+    "forma": "toro",
+    "tam": [
+     0.043,
+     0.0065
+    ],
+    "pos": [
+     0.043,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "anel15",
+    "forma": "toro",
+    "tam": [
+     0.043,
+     0.0065
+    ],
+    "pos": [
+     0.0645,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "anel16",
+    "forma": "toro",
+    "tam": [
+     0.043,
+     0.0065
+    ],
+    "pos": [
+     0.086,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "anel17",
+    "forma": "toro",
+    "tam": [
+     0.043,
+     0.0065
+    ],
+    "pos": [
+     0.1075,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "anel18",
+    "forma": "toro",
+    "tam": [
+     0.043,
+     0.0065
+    ],
+    "pos": [
+     0.129,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "anel19",
+    "forma": "toro",
+    "tam": [
+     0.043,
+     0.0065
+    ],
+    "pos": [
+     0.1505,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "anel20",
+    "forma": "toro",
+    "tam": [
+     0.043,
+     0.0065
+    ],
+    "pos": [
+     0.172,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "anel21",
+    "forma": "toro",
+    "tam": [
+     0.043,
+     0.0065
+    ],
+    "pos": [
+     0.1935,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "anel22",
+    "forma": "toro",
+    "tam": [
+     0.043,
+     0.0065
+    ],
+    "pos": [
+     0.215,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "anel23",
+    "forma": "toro",
+    "tam": [
+     0.043,
+     0.0065
+    ],
+    "pos": [
+     0.2365,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "anel24",
+    "forma": "toro",
+    "tam": [
+     0.043,
+     0.0065
+    ],
+    "pos": [
+     0.258,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "anel25",
+    "forma": "toro",
+    "tam": [
+     0.043,
+     0.0065
+    ],
+    "pos": [
+     0.2795,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "andar0",
+    "forma": "caixa",
+    "tam": [
+     0.06,
+     0.027,
+     0.06
+    ],
+    "pos": [
+     0.3,
+     0.2855,
+     -0.1
+    ],
+    "cor": "#FFE082",
+    "oculta": true
+   },
+   {
+    "id": "andar0_janela",
+    "forma": "caixa",
+    "tam": [
+     0.044,
+     0.01,
+     0.002
+    ],
+    "pos": [
+     0,
+     0,
+     0.031
+    ],
+    "cor": "#4FC3F7",
+    "pai": "andar0",
+    "sem_contorno": true
+   },
+   {
+    "id": "andar1",
+    "forma": "caixa",
+    "tam": [
+     0.06,
+     0.027,
+     0.06
+    ],
+    "pos": [
+     0.3,
+     0.3135,
+     -0.1
+    ],
+    "cor": "#FFCA28",
+    "oculta": true
+   },
+   {
+    "id": "andar1_janela",
+    "forma": "caixa",
+    "tam": [
+     0.044,
+     0.01,
+     0.002
+    ],
+    "pos": [
+     0,
+     0,
+     0.031
+    ],
+    "cor": "#4FC3F7",
+    "pai": "andar1",
+    "sem_contorno": true
+   },
+   {
+    "id": "andar2",
+    "forma": "caixa",
+    "tam": [
+     0.06,
+     0.027,
+     0.06
+    ],
+    "pos": [
+     0.3,
+     0.3415,
+     -0.1
+    ],
+    "cor": "#FFE082",
+    "oculta": true
+   },
+   {
+    "id": "andar2_janela",
+    "forma": "caixa",
+    "tam": [
+     0.044,
+     0.01,
+     0.002
+    ],
+    "pos": [
+     0,
+     0,
+     0.031
+    ],
+    "cor": "#4FC3F7",
+    "pai": "andar2",
+    "sem_contorno": true
+   },
+   {
+    "id": "andar3",
+    "forma": "caixa",
+    "tam": [
+     0.06,
+     0.027,
+     0.06
+    ],
+    "pos": [
+     0.3,
+     0.3695,
+     -0.1
+    ],
+    "cor": "#FFCA28",
+    "oculta": true
+   },
+   {
+    "id": "andar3_janela",
+    "forma": "caixa",
+    "tam": [
+     0.044,
+     0.01,
+     0.002
+    ],
+    "pos": [
+     0,
+     0,
+     0.031
+    ],
+    "cor": "#4FC3F7",
+    "pai": "andar3",
+    "sem_contorno": true
+   },
+   {
+    "id": "andar4",
+    "forma": "caixa",
+    "tam": [
+     0.06,
+     0.027,
+     0.06
+    ],
+    "pos": [
+     0.3,
+     0.3975,
+     -0.1
+    ],
+    "cor": "#FFE082",
+    "oculta": true
+   },
+   {
+    "id": "andar4_janela",
+    "forma": "caixa",
+    "tam": [
+     0.044,
+     0.01,
+     0.002
+    ],
+    "pos": [
+     0,
+     0,
+     0.031
+    ],
+    "cor": "#4FC3F7",
+    "pai": "andar4",
+    "sem_contorno": true
+   },
+   {
+    "id": "roda_gigante",
+    "forma": "engrenagem",
+    "tam": [
+     0.088,
+     0.022,
+     16
+    ],
+    "pos": [
+     0.455,
+     0.364,
+     -0.1
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#FFB300",
+    "oculta": true
+   },
+   {
+    "id": "seta_rio0",
+    "forma": "seta",
+    "tam": [
+     0.07,
+     0.006
+    ],
+    "pos": [
+     -0.035,
+     0.215,
+     0.21200000000000002
+    ],
+    "giro": [
+     0,
+     0,
+     180
+    ],
+    "cor": "#FF3B30",
+    "oculta": true
+   },
+   {
+    "id": "seta_lama0",
+    "forma": "seta",
+    "tam": [
+     0.05,
+     0.006
+    ],
+    "pos": [
+     -0.023000000000000003,
+     0.15,
+     0.21200000000000002
+    ],
+    "cor": "#FFA000",
+    "oculta": true
+   },
+   {
+    "id": "seta_rio1",
+    "forma": "seta",
+    "tam": [
+     0.07,
+     0.006
+    ],
+    "pos": [
+     0.03,
+     0.215,
+     0.21200000000000002
+    ],
+    "giro": [
+     0,
+     0,
+     180
+    ],
+    "cor": "#FF3B30",
+    "oculta": true
+   },
+   {
+    "id": "seta_lama1",
+    "forma": "seta",
+    "tam": [
+     0.05,
+     0.006
+    ],
+    "pos": [
+     0.041999999999999996,
+     0.15,
+     0.21200000000000002
+    ],
+    "cor": "#FFA000",
+    "oculta": true
+   },
+   {
+    "id": "seta_rio2",
+    "forma": "seta",
+    "tam": [
+     0.07,
+     0.006
+    ],
+    "pos": [
+     0.095,
+     0.215,
+     0.21200000000000002
+    ],
+    "giro": [
+     0,
+     0,
+     180
+    ],
+    "cor": "#FF3B30",
+    "oculta": true
+   },
+   {
+    "id": "seta_lama2",
+    "forma": "seta",
+    "tam": [
+     0.05,
+     0.006
+    ],
+    "pos": [
+     0.107,
+     0.15,
+     0.21200000000000002
+    ],
+    "cor": "#FFA000",
+    "oculta": true
+   },
+   {
+    "id": "agua3",
+    "forma": "cilindro",
+    "tam": [
+     0.0368,
+     0.25
+    ],
+    "pos": [
+     -0.145,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#29B6F6",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "fumaca_tunel",
+    "forma": "cilindro",
+    "tam": [
+     0.034,
+     0.54
+    ],
+    "pos": [
+     0,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     -90
+    ],
+    "cor": "#9E9E9E",
+    "oculta": true,
+    "opacidade": 0.7,
+    "sem_contorno": true
+   },
+   {
+    "id": "vent0",
+    "forma": "cilindro",
+    "tam": [
+     0.009,
+     0.03
+    ],
+    "pos": [
+     -0.17,
+     0.10900000000000001,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     -90
+    ],
+    "cor": "#455A64",
+    "oculta": true
+   },
+   {
+    "id": "vent0_helice",
+    "forma": "engrenagem",
+    "tam": [
+     0.008,
+     0.003,
+     6
+    ],
+    "pos": [
+     0,
+     0.017,
+     0
+    ],
+    "cor": "#B0BEC5",
+    "pai": "vent0",
+    "sem_contorno": true
+   },
+   {
+    "id": "vent1",
+    "forma": "cilindro",
+    "tam": [
+     0.009,
+     0.03
+    ],
+    "pos": [
+     0.0,
+     0.10900000000000001,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     -90
+    ],
+    "cor": "#455A64",
+    "oculta": true
+   },
+   {
+    "id": "vent1_helice",
+    "forma": "engrenagem",
+    "tam": [
+     0.008,
+     0.003,
+     6
+    ],
+    "pos": [
+     0,
+     0.017,
+     0
+    ],
+    "cor": "#B0BEC5",
+    "pai": "vent1",
+    "sem_contorno": true
+   },
+   {
+    "id": "vent2",
+    "forma": "cilindro",
+    "tam": [
+     0.009,
+     0.03
+    ],
+    "pos": [
+     0.17,
+     0.10900000000000001,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     -90
+    ],
+    "cor": "#455A64",
+    "oculta": true
+   },
+   {
+    "id": "vent2_helice",
+    "forma": "engrenagem",
+    "tam": [
+     0.008,
+     0.003,
+     6
+    ],
+    "pos": [
+     0,
+     0.017,
+     0
+    ],
+    "cor": "#B0BEC5",
+    "pai": "vent2",
+    "sem_contorno": true
+   },
+   {
+    "id": "ca",
+    "forma": "caixa",
+    "tam": [
+     0.032,
+     0.01,
+     0.018
+    ],
+    "pos": [
+     -0.5,
+     0.1765,
+     0.06
+    ],
+    "cor": "#E53935",
+    "oculta": true,
+    "giro": [
+     0,
+     0,
+     -28.24
+    ]
+   },
+   {
+    "id": "ca_cabine",
+    "forma": "caixa",
+    "tam": [
+     0.016,
+     0.008,
+     0.0162
+    ],
+    "pos": [
+     0.0019,
+     0.0085,
+     0
+    ],
+    "cor": "#B3E5FC",
+    "pai": "ca"
+   },
+   {
+    "id": "cb",
+    "forma": "caixa",
+    "tam": [
+     0.032,
+     0.01,
+     0.018
+    ],
+    "pos": [
+     -0.5,
+     0.1765,
+     0.06
+    ],
+    "cor": "#1E88E5",
+    "oculta": true,
+    "giro": [
+     0,
+     0,
+     -28.24
+    ]
+   },
+   {
+    "id": "cb_cabine",
+    "forma": "caixa",
+    "tam": [
+     0.016,
+     0.008,
+     0.0162
+    ],
+    "pos": [
+     0.0019,
+     0.0085,
+     0
+    ],
+    "cor": "#B3E5FC",
+    "pai": "cb"
+   },
+   {
+    "id": "cc",
+    "forma": "caixa",
+    "tam": [
+     0.032,
+     0.01,
+     0.018
+    ],
+    "pos": [
+     -0.5,
+     0.1765,
+     0.06
+    ],
+    "cor": "#FDD835",
+    "oculta": true,
+    "giro": [
+     0,
+     0,
+     -28.24
+    ]
+   },
+   {
+    "id": "cc_cabine",
+    "forma": "caixa",
+    "tam": [
+     0.016,
+     0.008,
+     0.0162
+    ],
+    "pos": [
+     0.0019,
+     0.0085,
+     0
+    ],
+    "cor": "#B3E5FC",
+    "pai": "cc"
+   },
+   {
+    "id": "cd",
+    "forma": "caixa",
+    "tam": [
+     0.032,
+     0.01,
+     0.018
+    ],
+    "pos": [
+     -0.5,
+     0.1765,
+     0.06
+    ],
+    "cor": "#43A047",
+    "oculta": true,
+    "giro": [
+     0,
+     0,
+     -28.24
+    ]
+   },
+   {
+    "id": "cd_cabine",
+    "forma": "caixa",
+    "tam": [
+     0.016,
+     0.008,
+     0.0162
+    ],
+    "pos": [
+     0.0019,
+     0.0085,
+     0
+    ],
+    "cor": "#B3E5FC",
+    "pai": "cd"
+   },
+   {
+    "id": "ce",
+    "forma": "caixa",
+    "tam": [
+     0.032,
+     0.01,
+     0.018
+    ],
+    "pos": [
+     -0.5,
+     0.1765,
+     0.06
+    ],
+    "cor": "#E53935",
+    "oculta": true,
+    "giro": [
+     0,
+     0,
+     -28.24
+    ]
+   },
+   {
+    "id": "ce_cabine",
+    "forma": "caixa",
+    "tam": [
+     0.016,
+     0.008,
+     0.0162
+    ],
+    "pos": [
+     0.0019,
+     0.0085,
+     0
+    ],
+    "cor": "#B3E5FC",
+    "pai": "ce"
+   },
+   {
+    "id": "b2a",
+    "forma": "cilindro",
+    "tam": [
+     0.04,
+     0.032
+    ],
+    "pos": [
+     -0.254,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     -90
+    ],
+    "cor": "#3E2723",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "b2b",
+    "forma": "cilindro",
+    "tam": [
+     0.04,
+     0.08
+    ],
+    "pos": [
+     -0.198,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     -90
+    ],
+    "cor": "#3E2723",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "empurra",
+    "forma": "seta",
+    "tam": [
+     0.05,
+     0.005
+    ],
+    "pos": [
+     -0.19,
+     0.085,
+     0.112
+    ],
+    "giro": [
+     0,
+     0,
+     -90
+    ],
+    "cor": "#FFA000",
+    "oculta": true
+   },
+   {
+    "id": "b2e",
+    "forma": "cilindro",
+    "tam": [
+     0.04,
+     0.03
+    ],
+    "pos": [
+     -0.143,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     -90
+    ],
+    "cor": "#3E2723",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "b2c",
+    "forma": "cilindro",
+    "tam": [
+     0.04,
+     0.11
+    ],
+    "pos": [
+     -0.073,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     -90
+    ],
+    "cor": "#3E2723",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "b2d",
+    "forma": "cilindro",
+    "tam": [
+     0.04,
+     0.288
+    ],
+    "pos": [
+     0.126,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     -90
+    ],
+    "cor": "#3E2723",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "nicho",
+    "forma": "cilindro",
+    "tam": [
+     0.04,
+     0.09
+    ],
+    "pos": [
+     0.315,
+     0.085,
+     0.06
+    ],
+    "giro": [
+     0,
+     0,
+     -90
+    ],
+    "cor": "#3E2723",
+    "oculta": true,
+    "sem_contorno": true
+   }
+  ]
+ },
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "tito",
+   "texto": "Um rio no caminho, e nenhuma ponte. Dá para passar uma estrada POR BAIXO dele?",
+   "tom": "surpreso"
+  },
+  {
+   "id": "f2",
+   "quem": "tito",
+   "texto": "Se você cavar um buraco na margem e seguir cavando por baixo do rio, sai do outro LADO."
+  },
+  {
+   "id": "f3",
+   "quem": "tito",
+   "texto": "MAS a terra molhada DESMORONA, e o rio inteiro entra no buraco.",
+   "tom": "tenso"
+  },
+  {
+   "id": "f4",
+   "quem": "tito",
+   "texto": "Então, você empurra na frente um ESCUDO, um tubo de aço que segura a terra enquanto você cava.",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f5",
+   "quem": "tito",
+   "texto": "SÓ QUE o escudo anda, e o buraco que fica para trás começa a CAIR."
+  },
+  {
+   "id": "f6",
+   "quem": "tito",
+   "texto": "Então, você monta atrás dele ANÉIS de concreto, pedaço por pedaço, e eles viram a parede do túnel.",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f7",
+   "quem": "tito",
+   "texto": "E o escudo se empurra nesses anéis para andar para a FRENTE."
+  },
+  {
+   "id": "f8",
+   "quem": "tito",
+   "texto": "MAS cavando na pá, o primeiro túnel debaixo de um rio levou DEZOITO anos."
+  },
+  {
+   "id": "f9",
+   "quem": "tito",
+   "texto": "Então, você põe na frente uma roda cheia de dentes, que gira e mói a terra: é o TATUZÃO.",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f10",
+   "quem": "tito",
+   "texto": "Tem tatuzão mais alto que um prédio de cinco ANDARES.",
+   "tom": "surpreso"
+  },
+  {
+   "id": "f11",
+   "quem": "tito",
+   "texto": "SÓ QUE lá embaixo, o rio aperta a terra com tanta força que a frente pode ESTOURAR.",
+   "tom": "tenso"
+  },
+  {
+   "id": "f12",
+   "quem": "tito",
+   "texto": "Então, a máquina enche a frente com uma LAMA pesada, que empurra de volta com a mesma força.",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f13",
+   "quem": "tito",
+   "texto": "MAS com os carros passando, o túnel fechado fica cheio de FUMAÇA."
+  },
+  {
+   "id": "f14",
+   "quem": "tito",
+   "texto": "Então, você põe no teto VENTILADORES gigantes, que empurram a fumaça para fora.",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f15",
+   "quem": "tito",
+   "texto": "E quando acaba, tem tatuzão que nem sai: tirar dá trabalho demais, e ele fica enterrado lá EMBAIXO.",
+   "tom": "surpreso",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f16",
+   "quem": "tito",
+   "texto": "Parabéns! Você construiu um túnel debaixo d'água: uma estrada que passa POR BAIXO do rio.",
+   "tom": "feliz"
+  }
+ ],
+ "chamada": {
+  "pergunta": "E o concreto? Ele é forte sozinho mesmo?",
+  "texto": "Comenta",
+  "destaque": "CONCRETO"
+ },
+ "postagem": {
+  "titulo": "Como funciona um túnel debaixo d'água? O tatuzão",
+  "descricao": "Como funciona um túnel debaixo d'água (túnel subaquático) por dentro: escudo, anéis de concreto, tatuzão (máquina de cavar túnel), lama que segura a pressão do rio e ventiladores. E por que tem tatuzão que fica enterrado no fim da obra.",
+  "hashtags": [
+   "comofunciona",
+   "tunel",
+   "engenharia",
+   "curiosidades"
+  ],
+  "comentario": "Eu achava que o tatuzão saía inteiro no fim da obra. Tem uns que ficam enterrados lá embaixo! Você sabia?",
+  "capa": "f11:estourar+0.5"
+ },
+ "cenas": [
+  {
+   "id": "construcao",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "desconfiado"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "tunel",
+     "em": "pedestal"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "bolhas",
+     "em": [
+      0.02,
+      0.06
+     ],
+     "alt": 1.236,
+     "raio": 0.07,
+     "altura": 0.07,
+     "quantas": 14,
+     "aparece": "f3:desmorona",
+     "some": "f4"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "bolhas",
+     "em": [
+      0.07,
+      0.08
+     ],
+     "alt": 1.236,
+     "raio": 0.05,
+     "altura": 0.07,
+     "quantas": 14,
+     "aparece": "f11:estourar",
+     "some": "f12"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "fumaca",
+     "em": [
+      -0.55,
+      0.06
+     ],
+     "alt": 1.27,
+     "raio": 0.025,
+     "altura": 0.12,
+     "quantas": 10,
+     "aparece": "f13:cheio",
+     "some": "f14:empurram"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "fumaca",
+     "em": [
+      0.56,
+      0.06
+     ],
+     "alt": 1.27,
+     "raio": 0.025,
+     "altura": 0.14,
+     "quantas": 12,
+     "aparece": "f14:empurram",
+     "some": "f15:sai"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "confete",
+     "em": [
+      0,
+      0
+     ],
+     "alt": 1.5,
+     "raio": 1.4,
+     "aparece": "f16:parabens"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f8:dezoito",
+     "ate": "f8:fim+0.6",
+     "grande": "# anos",
+     "contar": [
+      0,
+      18
+     ],
+     "pequeno": "o primeiro túnel debaixo de um rio, em Londres"
+    },
+    {
+     "de": "f10:alto",
+     "ate": "f10:fim+0.4",
+     "grande": "# m",
+     "contar": [
+      0,
+      17
+     ],
+     "pequeno": "de altura: um dos maiores tatuzões do mundo"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "tunel",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 10,
+     "velocidade": 0.35,
+     "intensidade": 0.45,
+     "de": "inicio",
+     "ate": "f2",
+     "caminho": [
+      [
+       -0.08,
+       0.24,
+       -0.19
+      ],
+      [
+       -0.08,
+       0.24,
+       0.19
+      ]
+     ]
+    },
+    {
+     "peca": "tunel",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 10,
+     "velocidade": 0.35,
+     "intensidade": 0.45,
+     "de": "inicio",
+     "ate": "f2",
+     "caminho": [
+      [
+       0.12,
+       0.24,
+       -0.19
+      ],
+      [
+       0.12,
+       0.24,
+       0.19
+      ]
+     ]
+    },
+    {
+     "peca": "barco",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0,
+      0.26
+     ],
+     "de": "inicio",
+     "ate": "f2:margem"
+    },
+    {
+     "peca": "barco",
+     "faz": "tremer",
+     "intensidade": 0.08,
+     "de": "inicio",
+     "ate": "f2:margem"
+    },
+    {
+     "peca": "carro",
+     "faz": "tremer",
+     "intensidade": 0.25,
+     "de": "inicio",
+     "ate": "f1:fim"
+    },
+    {
+     "peca": "rampa_e",
+     "faz": "crescer",
+     "de": "f2:cavar",
+     "ate": "f2:margem+0.3"
+    },
+    {
+     "peca": "cotovelo_e",
+     "faz": "aparecer",
+     "de": "f2:margem+0.3"
+    },
+    {
+     "peca": "buraco1",
+     "faz": "crescer",
+     "de": "f2:seguir",
+     "ate": "f2:rio+0.2"
+    },
+    {
+     "peca": "cotovelo_d",
+     "faz": "aparecer",
+     "de": "f2:rio+0.2"
+    },
+    {
+     "peca": "rampa_d",
+     "faz": "crescer",
+     "de": "f2:sai",
+     "ate": "f2:lado"
+    },
+    {
+     "peca": "cavador",
+     "faz": "aparecer",
+     "de": "f2:cavar"
+    },
+    {
+     "peca": "cavador",
+     "faz": "mover",
+     "desloc": [
+      0.25,
+      -0.1343,
+      0
+     ],
+     "de": "f2:cavar",
+     "ate": "f2:margem+0.3"
+    },
+    {
+     "peca": "cavador",
+     "faz": "mover",
+     "desloc": [
+      0.54,
+      0,
+      0
+     ],
+     "de": "f2:seguir",
+     "ate": "f2:rio+0.2"
+    },
+    {
+     "peca": "cavador",
+     "faz": "mover",
+     "desloc": [
+      0.25,
+      0.1343,
+      0
+     ],
+     "de": "f2:sai",
+     "ate": "f2:lado"
+    },
+    {
+     "peca": "cavador",
+     "faz": "mover",
+     "desloc": [
+      0.04,
+      0.0867,
+      -0.03
+     ],
+     "de": "f2:lado",
+     "ate": "f2:lado+0.35"
+    },
+    {
+     "peca": "cavador",
+     "faz": "tremer",
+     "intensidade": 0.3,
+     "de": "f3:entra",
+     "ate": "f3:fim"
+    },
+    {
+     "peca": "bloco0",
+     "faz": "aparecer",
+     "de": "f3:desmorona+0.0"
+    },
+    {
+     "peca": "bloco0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.048,
+      0
+     ],
+     "de": "f3:desmorona+0.0",
+     "ate": "f3:desmorona+0.35"
+    },
+    {
+     "peca": "bloco1",
+     "faz": "aparecer",
+     "de": "f3:desmorona+0.05"
+    },
+    {
+     "peca": "bloco1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.042,
+      0
+     ],
+     "de": "f3:desmorona+0.05",
+     "ate": "f3:desmorona+0.4"
+    },
+    {
+     "peca": "bloco2",
+     "faz": "aparecer",
+     "de": "f3:desmorona+0.1"
+    },
+    {
+     "peca": "bloco2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.05,
+      0
+     ],
+     "de": "f3:desmorona+0.1",
+     "ate": "f3:desmorona+0.45"
+    },
+    {
+     "peca": "bloco3",
+     "faz": "aparecer",
+     "de": "f3:desmorona+0.15"
+    },
+    {
+     "peca": "bloco3",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.044,
+      0
+     ],
+     "de": "f3:desmorona+0.15",
+     "ate": "f3:desmorona+0.5"
+    },
+    {
+     "peca": "bloco4",
+     "faz": "aparecer",
+     "de": "f3:desmorona+0.2"
+    },
+    {
+     "peca": "bloco4",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.052,
+      0
+     ],
+     "de": "f3:desmorona+0.2",
+     "ate": "f3:desmorona+0.55"
+    },
+    {
+     "peca": "rio",
+     "faz": "tremer",
+     "intensidade": 0.25,
+     "de": "f3:desmorona",
+     "ate": "f3:fim"
+    },
+    {
+     "peca": "tunel",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 12,
+     "velocidade": 0.9,
+     "intensidade": 0.55,
+     "de": "f3:rio",
+     "ate": "f3:fim+0.3",
+     "caminho": [
+      [
+       -0.02,
+       0.19,
+       0.06
+      ],
+      [
+       -0.02,
+       0.125,
+       0.06
+      ],
+      [
+       -0.13999999999999999,
+       0.085,
+       0.06
+      ]
+     ]
+    },
+    {
+     "peca": "tunel",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 12,
+     "velocidade": 0.9,
+     "intensidade": 0.55,
+     "de": "f3:rio",
+     "ate": "f3:fim+0.3",
+     "caminho": [
+      [
+       0.06,
+       0.19,
+       0.06
+      ],
+      [
+       0.06,
+       0.125,
+       0.06
+      ],
+      [
+       0.18,
+       0.085,
+       0.06
+      ]
+     ]
+    },
+    {
+     "peca": "agua_e",
+     "faz": "crescer",
+     "de": "f3:entra",
+     "ate": "f3:buraco+0.6"
+    },
+    {
+     "peca": "agua_d",
+     "faz": "crescer",
+     "de": "f3:entra",
+     "ate": "f3:buraco+0.6"
+    },
+    {
+     "peca": "buraco1",
+     "faz": "sumir",
+     "de": "f4"
+    },
+    {
+     "peca": "rampa_d",
+     "faz": "sumir",
+     "de": "f4"
+    },
+    {
+     "peca": "cotovelo_d",
+     "faz": "sumir",
+     "de": "f4"
+    },
+    {
+     "peca": "agua_e",
+     "faz": "sumir",
+     "de": "f4"
+    },
+    {
+     "peca": "agua_d",
+     "faz": "sumir",
+     "de": "f4"
+    },
+    {
+     "peca": "cavador",
+     "faz": "sumir",
+     "de": "f4"
+    },
+    {
+     "peca": "bloco0",
+     "faz": "sumir",
+     "de": "f4"
+    },
+    {
+     "peca": "bloco1",
+     "faz": "sumir",
+     "de": "f4"
+    },
+    {
+     "peca": "bloco2",
+     "faz": "sumir",
+     "de": "f4"
+    },
+    {
+     "peca": "bloco3",
+     "faz": "sumir",
+     "de": "f4"
+    },
+    {
+     "peca": "bloco4",
+     "faz": "sumir",
+     "de": "f4"
+    },
+    {
+     "peca": "escudo",
+     "faz": "aparecer",
+     "de": "f4:escudo"
+    },
+    {
+     "peca": "escudo",
+     "faz": "mover",
+     "desloc": [
+      0.03,
+      0,
+      0
+     ],
+     "de": "f4:cava",
+     "ate": "f4:fim+0.2"
+    },
+    {
+     "peca": "b2a",
+     "faz": "crescer",
+     "de": "f4:cava",
+     "ate": "f4:fim+0.2"
+    },
+    {
+     "peca": "escudo",
+     "faz": "tremer",
+     "intensidade": 0.12,
+     "de": "f4:cava",
+     "ate": "f4:fim"
+    },
+    {
+     "peca": "escudo",
+     "faz": "mover",
+     "desloc": [
+      0.08,
+      0,
+      0
+     ],
+     "de": "f5:anda",
+     "ate": "f5:tras"
+    },
+    {
+     "peca": "b2b",
+     "faz": "crescer",
+     "de": "f5:anda",
+     "ate": "f5:tras"
+    },
+    {
+     "peca": "queda0",
+     "faz": "aparecer",
+     "de": "f5:cair+0.0"
+    },
+    {
+     "peca": "queda0",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.052,
+      0
+     ],
+     "de": "f5:cair+0.0",
+     "ate": "f5:cair+0.3"
+    },
+    {
+     "peca": "queda1",
+     "faz": "aparecer",
+     "de": "f5:cair+0.08"
+    },
+    {
+     "peca": "queda1",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.046,
+      0
+     ],
+     "de": "f5:cair+0.08",
+     "ate": "f5:cair+0.38"
+    },
+    {
+     "peca": "queda2",
+     "faz": "aparecer",
+     "de": "f5:cair+0.16"
+    },
+    {
+     "peca": "queda2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.052,
+      0
+     ],
+     "de": "f5:cair+0.16",
+     "ate": "f5:cair+0.46"
+    },
+    {
+     "peca": "margem_e_frente",
+     "faz": "tremer",
+     "intensidade": 0.3,
+     "de": "f5:cair",
+     "ate": "f5:fim+0.3"
+    },
+    {
+     "peca": "grama_e",
+     "faz": "tremer",
+     "intensidade": 0.3,
+     "de": "f5:cair",
+     "ate": "f5:fim+0.3"
+    },
+    {
+     "peca": "queda0",
+     "faz": "sumir",
+     "de": "f6:monta"
+    },
+    {
+     "peca": "queda1",
+     "faz": "sumir",
+     "de": "f6:monta"
+    },
+    {
+     "peca": "queda2",
+     "faz": "sumir",
+     "de": "f6:monta"
+    },
+    {
+     "peca": "anel0",
+     "faz": "aparecer",
+     "de": "f6:aneis+0.0"
+    },
+    {
+     "peca": "anel1",
+     "faz": "aparecer",
+     "de": "f6:aneis+0.24"
+    },
+    {
+     "peca": "anel2",
+     "faz": "aparecer",
+     "de": "f6:aneis+0.48"
+    },
+    {
+     "peca": "anel3",
+     "faz": "aparecer",
+     "de": "f6:aneis+0.72"
+    },
+    {
+     "peca": "anel4",
+     "faz": "aparecer",
+     "de": "f6:aneis+0.96"
+    },
+    {
+     "peca": "empurra",
+     "faz": "mover",
+     "desloc": [
+      0.03,
+      0,
+      0
+     ],
+     "de": "f7:andar",
+     "ate": "f7:frente+0.3"
+    },
+    {
+     "peca": "empurra",
+     "faz": "aparecer",
+     "de": "f7:empurra"
+    },
+    {
+     "peca": "empurra",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "f7:empurra",
+     "ate": "f7:fim"
+    },
+    {
+     "peca": "empurra",
+     "faz": "sumir",
+     "de": "f7:fim+0.2"
+    },
+    {
+     "peca": "anel3",
+     "faz": "pulsar",
+     "intensidade": 0.7,
+     "de": "f7:aneis",
+     "ate": "f7:frente"
+    },
+    {
+     "peca": "anel4",
+     "faz": "pulsar",
+     "intensidade": 0.7,
+     "de": "f7:aneis",
+     "ate": "f7:frente"
+    },
+    {
+     "peca": "escudo",
+     "faz": "mover",
+     "desloc": [
+      0.03,
+      0,
+      0
+     ],
+     "de": "f7:andar",
+     "ate": "f7:frente+0.3"
+    },
+    {
+     "peca": "b2e",
+     "faz": "crescer",
+     "de": "f7:andar",
+     "ate": "f7:frente+0.3"
+    },
+    {
+     "peca": "anel5",
+     "faz": "aparecer",
+     "de": "f7:frente+0.3"
+    },
+    {
+     "peca": "cavador2",
+     "faz": "aparecer",
+     "de": "f8"
+    },
+    {
+     "peca": "cavador2",
+     "faz": "tremer",
+     "intensidade": 0.6,
+     "de": "f8",
+     "ate": "f8:fim+0.3"
+    },
+    {
+     "peca": "cavador2",
+     "faz": "sumir",
+     "de": "f9:roda"
+    },
+    {
+     "peca": "roda",
+     "faz": "aparecer",
+     "de": "f9:roda"
+    },
+    {
+     "peca": "roda",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 1.4,
+     "de": "f9:gira",
+     "ate": "f11:estourar"
+    },
+    {
+     "peca": "escudo",
+     "faz": "tremer",
+     "intensidade": 0.1,
+     "de": "f9:gira",
+     "ate": "f10:fim"
+    },
+    {
+     "peca": "escudo",
+     "faz": "mover",
+     "desloc": [
+      0.11,
+      0,
+      0
+     ],
+     "de": "f9:moi",
+     "ate": "f10:fim"
+    },
+    {
+     "peca": "b2c",
+     "faz": "crescer",
+     "de": "f9:moi",
+     "ate": "f10:fim"
+    },
+    {
+     "peca": "anel6",
+     "faz": "aparecer",
+     "de": "f9:moi+0.45"
+    },
+    {
+     "peca": "anel7",
+     "faz": "aparecer",
+     "de": "f9:moi+0.9"
+    },
+    {
+     "peca": "anel8",
+     "faz": "aparecer",
+     "de": "f9:moi+1.35"
+    },
+    {
+     "peca": "anel9",
+     "faz": "aparecer",
+     "de": "f9:moi+1.8"
+    },
+    {
+     "peca": "anel10",
+     "faz": "aparecer",
+     "de": "f9:moi+2.25"
+    },
+    {
+     "peca": "andar0",
+     "faz": "crescer",
+     "de": "f10:predio+0.0",
+     "ate": "f10:predio+0.25"
+    },
+    {
+     "peca": "andar1",
+     "faz": "crescer",
+     "de": "f10:predio+0.12",
+     "ate": "f10:predio+0.37"
+    },
+    {
+     "peca": "andar2",
+     "faz": "crescer",
+     "de": "f10:predio+0.24",
+     "ate": "f10:predio+0.49"
+    },
+    {
+     "peca": "andar3",
+     "faz": "crescer",
+     "de": "f10:predio+0.36",
+     "ate": "f10:predio+0.61"
+    },
+    {
+     "peca": "andar4",
+     "faz": "crescer",
+     "de": "f10:predio+0.48",
+     "ate": "f10:predio+0.73"
+    },
+    {
+     "peca": "roda_gigante",
+     "faz": "aparecer",
+     "de": "f10:alto"
+    },
+    {
+     "peca": "roda_gigante",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 0.3,
+     "de": "f10:alto",
+     "ate": "f11"
+    },
+    {
+     "peca": "andar0",
+     "faz": "sumir",
+     "de": "f11"
+    },
+    {
+     "peca": "andar1",
+     "faz": "sumir",
+     "de": "f11"
+    },
+    {
+     "peca": "andar2",
+     "faz": "sumir",
+     "de": "f11"
+    },
+    {
+     "peca": "andar3",
+     "faz": "sumir",
+     "de": "f11"
+    },
+    {
+     "peca": "andar4",
+     "faz": "sumir",
+     "de": "f11"
+    },
+    {
+     "peca": "roda_gigante",
+     "faz": "sumir",
+     "de": "f11"
+    },
+    {
+     "peca": "seta_rio0",
+     "faz": "aparecer",
+     "de": "f11:aperta+0.0"
+    },
+    {
+     "peca": "seta_rio0",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "f11:aperta",
+     "ate": "f12:forca"
+    },
+    {
+     "peca": "seta_rio1",
+     "faz": "aparecer",
+     "de": "f11:aperta+0.1"
+    },
+    {
+     "peca": "seta_rio1",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "f11:aperta",
+     "ate": "f12:forca"
+    },
+    {
+     "peca": "seta_rio2",
+     "faz": "aparecer",
+     "de": "f11:aperta+0.2"
+    },
+    {
+     "peca": "seta_rio2",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "f11:aperta",
+     "ate": "f12:forca"
+    },
+    {
+     "peca": "escudo",
+     "faz": "tremer",
+     "intensidade": 0.25,
+     "de": "f11:forca",
+     "ate": "f11:estourar+0.6"
+    },
+    {
+     "peca": "tunel",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 16,
+     "velocidade": 1.1,
+     "intensidade": 0.6,
+     "de": "f11:estourar",
+     "ate": "f12",
+     "caminho": [
+      [
+       0.07,
+       0.19,
+       0.06
+      ],
+      [
+       0.07,
+       0.10500000000000001,
+       0.06
+      ],
+      [
+       0.03,
+       0.085,
+       0.06
+      ],
+      [
+       -0.25,
+       0.07500000000000001,
+       0.06
+      ]
+     ]
+    },
+    {
+     "peca": "agua3",
+     "faz": "crescer",
+     "de": "f11:estourar",
+     "ate": "f11:fim+0.8"
+    },
+    {
+     "peca": "agua3",
+     "faz": "sumir",
+     "de": "f12"
+    },
+    {
+     "peca": "lama",
+     "faz": "aparecer",
+     "de": "f12:lama"
+    },
+    {
+     "peca": "lama",
+     "faz": "pulsar",
+     "intensidade": 0.6,
+     "de": "f12:empurra",
+     "ate": "f12:forca"
+    },
+    {
+     "peca": "seta_lama0",
+     "faz": "aparecer",
+     "de": "f12:empurra+0.0"
+    },
+    {
+     "peca": "seta_lama0",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "f12:empurra",
+     "ate": "f12:forca"
+    },
+    {
+     "peca": "seta_lama1",
+     "faz": "aparecer",
+     "de": "f12:empurra+0.1"
+    },
+    {
+     "peca": "seta_lama1",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "f12:empurra",
+     "ate": "f12:forca"
+    },
+    {
+     "peca": "seta_lama2",
+     "faz": "aparecer",
+     "de": "f12:empurra+0.2"
+    },
+    {
+     "peca": "seta_lama2",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "f12:empurra",
+     "ate": "f12:forca"
+    },
+    {
+     "peca": "seta_rio0",
+     "faz": "sumir",
+     "de": "f12:fim+0.3"
+    },
+    {
+     "peca": "seta_rio1",
+     "faz": "sumir",
+     "de": "f12:fim+0.3"
+    },
+    {
+     "peca": "seta_rio2",
+     "faz": "sumir",
+     "de": "f12:fim+0.3"
+    },
+    {
+     "peca": "seta_lama0",
+     "faz": "sumir",
+     "de": "f12:fim+0.3"
+    },
+    {
+     "peca": "seta_lama1",
+     "faz": "sumir",
+     "de": "f12:fim+0.3"
+    },
+    {
+     "peca": "seta_lama2",
+     "faz": "sumir",
+     "de": "f12:fim+0.3"
+    },
+    {
+     "peca": "roda",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 2.0,
+     "de": "f12:forca",
+     "ate": "f13"
+    },
+    {
+     "peca": "escudo",
+     "faz": "mover",
+     "desloc": [
+      0.288,
+      0,
+      0
+     ],
+     "de": "f12:forca",
+     "ate": "f12:fim+0.6"
+    },
+    {
+     "peca": "b2d",
+     "faz": "crescer",
+     "de": "f12:forca",
+     "ate": "f12:fim+0.6"
+    },
+    {
+     "peca": "anel11",
+     "faz": "aparecer",
+     "de": "f12:forca+0.11"
+    },
+    {
+     "peca": "anel12",
+     "faz": "aparecer",
+     "de": "f12:forca+0.22"
+    },
+    {
+     "peca": "anel13",
+     "faz": "aparecer",
+     "de": "f12:forca+0.33"
+    },
+    {
+     "peca": "anel14",
+     "faz": "aparecer",
+     "de": "f12:forca+0.44"
+    },
+    {
+     "peca": "anel15",
+     "faz": "aparecer",
+     "de": "f12:forca+0.55"
+    },
+    {
+     "peca": "anel16",
+     "faz": "aparecer",
+     "de": "f12:forca+0.66"
+    },
+    {
+     "peca": "anel17",
+     "faz": "aparecer",
+     "de": "f12:forca+0.77"
+    },
+    {
+     "peca": "anel18",
+     "faz": "aparecer",
+     "de": "f12:forca+0.88"
+    },
+    {
+     "peca": "anel19",
+     "faz": "aparecer",
+     "de": "f12:forca+0.99"
+    },
+    {
+     "peca": "anel20",
+     "faz": "aparecer",
+     "de": "f12:forca+1.1"
+    },
+    {
+     "peca": "anel21",
+     "faz": "aparecer",
+     "de": "f12:forca+1.21"
+    },
+    {
+     "peca": "anel22",
+     "faz": "aparecer",
+     "de": "f12:forca+1.32"
+    },
+    {
+     "peca": "anel23",
+     "faz": "aparecer",
+     "de": "f12:forca+1.43"
+    },
+    {
+     "peca": "anel24",
+     "faz": "aparecer",
+     "de": "f12:forca+1.54"
+    },
+    {
+     "peca": "escudo",
+     "faz": "mover",
+     "desloc": [
+      0.09,
+      0,
+      0
+     ],
+     "de": "f13",
+     "ate": "f13+0.3"
+    },
+    {
+     "peca": "nicho",
+     "faz": "crescer",
+     "de": "f13",
+     "ate": "f13+0.3"
+    },
+    {
+     "peca": "rampa_d2",
+     "faz": "aparecer",
+     "de": "f13+0.3"
+    },
+    {
+     "peca": "cotovelo_d2",
+     "faz": "aparecer",
+     "de": "f13+0.3"
+    },
+    {
+     "peca": "ca",
+     "faz": "aparecer",
+     "de": "f13:carros+0.0"
+    },
+    {
+     "peca": "ca",
+     "faz": "mover",
+     "desloc": [
+      0.23,
+      -0.1235,
+      0
+     ],
+     "de": "f13:carros+0.0",
+     "ate": "f13:carros+0.7"
+    },
+    {
+     "peca": "ca",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": 28.24,
+     "de": "f13:carros+0.58",
+     "ate": "f13:carros+0.78"
+    },
+    {
+     "peca": "ca",
+     "faz": "mover",
+     "desloc": [
+      0.54,
+      0,
+      0
+     ],
+     "de": "f13:carros+0.7",
+     "ate": "f13:carros+4.1"
+    },
+    {
+     "peca": "ca",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": 28.24,
+     "de": "f13:carros+4.02",
+     "ate": "f13:carros+4.22"
+    },
+    {
+     "peca": "ca",
+     "faz": "mover",
+     "desloc": [
+      0.23,
+      0.1235,
+      0
+     ],
+     "de": "f13:carros+4.1",
+     "ate": "f13:carros+4.8"
+    },
+    {
+     "peca": "ca",
+     "faz": "sumir",
+     "de": "f13:carros+4.8"
+    },
+    {
+     "peca": "cb",
+     "faz": "aparecer",
+     "de": "f13:carros+1.3"
+    },
+    {
+     "peca": "cb",
+     "faz": "mover",
+     "desloc": [
+      0.23,
+      -0.1235,
+      0
+     ],
+     "de": "f13:carros+1.3",
+     "ate": "f13:carros+2.0"
+    },
+    {
+     "peca": "cb",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": 28.24,
+     "de": "f13:carros+1.88",
+     "ate": "f13:carros+2.08"
+    },
+    {
+     "peca": "cb",
+     "faz": "mover",
+     "desloc": [
+      0.54,
+      0,
+      0
+     ],
+     "de": "f13:carros+2.0",
+     "ate": "f13:carros+5.6"
+    },
+    {
+     "peca": "cb",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": 28.24,
+     "de": "f13:carros+5.52",
+     "ate": "f13:carros+5.72"
+    },
+    {
+     "peca": "cb",
+     "faz": "mover",
+     "desloc": [
+      0.23,
+      0.1235,
+      0
+     ],
+     "de": "f13:carros+5.6",
+     "ate": "f13:carros+6.3"
+    },
+    {
+     "peca": "cb",
+     "faz": "sumir",
+     "de": "f13:carros+6.3"
+    },
+    {
+     "peca": "cc",
+     "faz": "aparecer",
+     "de": "f14:ventiladores+0.0"
+    },
+    {
+     "peca": "cc",
+     "faz": "mover",
+     "desloc": [
+      0.23,
+      -0.1235,
+      0
+     ],
+     "de": "f14:ventiladores+0.0",
+     "ate": "f14:ventiladores+0.7"
+    },
+    {
+     "peca": "cc",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": 28.24,
+     "de": "f14:ventiladores+0.58",
+     "ate": "f14:ventiladores+0.78"
+    },
+    {
+     "peca": "cc",
+     "faz": "mover",
+     "desloc": [
+      0.54,
+      0,
+      0
+     ],
+     "de": "f14:ventiladores+0.7",
+     "ate": "f14:ventiladores+3.3"
+    },
+    {
+     "peca": "cc",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": 28.24,
+     "de": "f14:ventiladores+3.22",
+     "ate": "f14:ventiladores+3.42"
+    },
+    {
+     "peca": "cc",
+     "faz": "mover",
+     "desloc": [
+      0.23,
+      0.1235,
+      0
+     ],
+     "de": "f14:ventiladores+3.3",
+     "ate": "f14:ventiladores+4.0"
+    },
+    {
+     "peca": "cc",
+     "faz": "sumir",
+     "de": "f14:ventiladores+4.0"
+    },
+    {
+     "peca": "cd",
+     "faz": "aparecer",
+     "de": "f16+0.0"
+    },
+    {
+     "peca": "cd",
+     "faz": "mover",
+     "desloc": [
+      0.23,
+      -0.1235,
+      0
+     ],
+     "de": "f16+0.0",
+     "ate": "f16+0.7"
+    },
+    {
+     "peca": "cd",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": 28.24,
+     "de": "f16+0.58",
+     "ate": "f16+0.78"
+    },
+    {
+     "peca": "cd",
+     "faz": "mover",
+     "desloc": [
+      0.54,
+      0,
+      0
+     ],
+     "de": "f16+0.7",
+     "ate": "f16+3.1"
+    },
+    {
+     "peca": "cd",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": 28.24,
+     "de": "f16+3.02",
+     "ate": "f16+3.22"
+    },
+    {
+     "peca": "cd",
+     "faz": "mover",
+     "desloc": [
+      0.23,
+      0.1235,
+      0
+     ],
+     "de": "f16+3.1",
+     "ate": "f16+3.8"
+    },
+    {
+     "peca": "cd",
+     "faz": "sumir",
+     "de": "f16+3.8"
+    },
+    {
+     "peca": "ce",
+     "faz": "aparecer",
+     "de": "f16+1.2"
+    },
+    {
+     "peca": "ce",
+     "faz": "mover",
+     "desloc": [
+      0.23,
+      -0.1235,
+      0
+     ],
+     "de": "f16+1.2",
+     "ate": "f16+1.9"
+    },
+    {
+     "peca": "ce",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": 28.24,
+     "de": "f16+1.78",
+     "ate": "f16+1.98"
+    },
+    {
+     "peca": "ce",
+     "faz": "mover",
+     "desloc": [
+      0.54,
+      0,
+      0
+     ],
+     "de": "f16+1.9",
+     "ate": "f16+4.3"
+    },
+    {
+     "peca": "ce",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": 28.24,
+     "de": "f16+4.22",
+     "ate": "f16+4.42"
+    },
+    {
+     "peca": "ce",
+     "faz": "mover",
+     "desloc": [
+      0.23,
+      0.1235,
+      0
+     ],
+     "de": "f16+4.3",
+     "ate": "f16+5.0"
+    },
+    {
+     "peca": "ce",
+     "faz": "sumir",
+     "de": "f16+5.0"
+    },
+    {
+     "peca": "fumaca_tunel",
+     "faz": "crescer",
+     "de": "f13:cheio",
+     "ate": "f13:fumaca+0.8"
+    },
+    {
+     "peca": "fumaca_tunel",
+     "faz": "tremer",
+     "intensidade": 0.1,
+     "de": "f13:fumaca",
+     "ate": "f14:empurram"
+    },
+    {
+     "peca": "vent0",
+     "faz": "aparecer",
+     "de": "f14:ventiladores+0.0"
+    },
+    {
+     "peca": "vent0_helice",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 3,
+     "de": "f14:ventiladores+0.0",
+     "ate": "f16:fim+2"
+    },
+    {
+     "peca": "vent1",
+     "faz": "aparecer",
+     "de": "f14:ventiladores+0.15"
+    },
+    {
+     "peca": "vent1_helice",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 3,
+     "de": "f14:ventiladores+0.15",
+     "ate": "f16:fim+2"
+    },
+    {
+     "peca": "vent2",
+     "faz": "aparecer",
+     "de": "f14:ventiladores+0.3"
+    },
+    {
+     "peca": "vent2_helice",
+     "faz": "girar",
+     "eixo": "y",
+     "voltas": 3,
+     "de": "f14:ventiladores+0.3",
+     "ate": "f16:fim+2"
+    },
+    {
+     "peca": "tunel",
+     "faz": "fluxo",
+     "tipo": "ar",
+     "quantidade": 12,
+     "velocidade": 0.6,
+     "intensidade": 0.4,
+     "de": "f14:empurram",
+     "ate": "f15:sai",
+     "caminho": [
+      [
+       -0.25,
+       0.097,
+       0.06
+      ],
+      [
+       0.27,
+       0.097,
+       0.06
+      ],
+      [
+       0.42,
+       0.16555555555555557,
+       0.06
+      ],
+      [
+       0.56,
+       0.29000000000000004,
+       0.06
+      ]
+     ]
+    },
+    {
+     "peca": "fumaca_tunel",
+     "faz": "sumir",
+     "de": "f14:fora"
+    },
+    {
+     "peca": "escudo",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": -28,
+     "de": "f15:enterrado",
+     "ate": "f15:embaixo"
+    },
+    {
+     "peca": "escudo",
+     "faz": "mover",
+     "desloc": [
+      0.035,
+      -0.035,
+      0
+     ],
+     "de": "f15:enterrado",
+     "ate": "f15:embaixo+0.3"
+    },
+    {
+     "peca": "nicho",
+     "faz": "sumir",
+     "de": "f15:embaixo"
+    },
+    {
+     "peca": "escudo",
+     "faz": "pulsar",
+     "intensidade": 0.6,
+     "de": "f15:embaixo",
+     "ate": "f15:fim+0.3"
+    },
+    {
+     "peca": "barco",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0,
+      -0.24
+     ],
+     "de": "f15:fim",
+     "ate": "f16:fim"
+    },
+    {
+     "peca": "tunel",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 10,
+     "velocidade": 0.35,
+     "intensidade": 0.45,
+     "de": "f16",
+     "ate": "f16:fim+2",
+     "caminho": [
+      [
+       -0.08,
+       0.24,
+       -0.19
+      ],
+      [
+       -0.08,
+       0.24,
+       0.19
+      ]
+     ]
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "desconfiado",
+     "de": "inicio"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f1:estrada-0.3"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "rampa_e",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f2:cavar"
+    },
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "desconfiado",
+     "de": "f3"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "maquete",
+     "expressao": "surpreso",
+     "de": "f3:entra"
+    },
+    {
+     "quem": "tito",
+     "faz": "maos_na_cabeca",
+     "olhar": "camera",
+     "expressao": "medo",
+     "de": "f3:buraco",
+     "ate": "f4"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "escudo",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f4:escudo"
+    },
+    {
+     "quem": "tito",
+     "faz": "bracos_cruzados",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f5",
+     "ate": "f5:cair"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "maquete",
+     "expressao": "nervoso",
+     "de": "f5:cair"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "anel3",
+     "olhar": "maquete",
+     "expressao": "determinado",
+     "de": "f6:aneis"
+    },
+    {
+     "quem": "tito",
+     "faz": "bracos_cruzados",
+     "olhar": "camera",
+     "expressao": "cansado",
+     "de": "f8",
+     "ate": "f9"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "escudo",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f9:roda"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f10"
+    },
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "desconfiado",
+     "de": "f11"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "nervoso",
+     "de": "f11:forca"
+    },
+    {
+     "quem": "tito",
+     "faz": "maos_na_cabeca",
+     "olhar": "camera",
+     "expressao": "medo",
+     "de": "f11:estourar",
+     "ate": "f12"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "escudo",
+     "olhar": "maquete",
+     "expressao": "determinado",
+     "de": "f12:lama"
+    },
+    {
+     "quem": "tito",
+     "faz": "bracos_cruzados",
+     "olhar": "camera",
+     "expressao": "serio",
+     "de": "f13",
+     "ate": "f14"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "vent1",
+     "olhar": "maquete",
+     "expressao": "aliviado",
+     "de": "f14:ventiladores"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "surpreso",
+     "de": "f15"
+    },
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f15:fim+0.1"
+    },
+    {
+     "quem": "tito",
+     "faz": "acenar",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f16:parabens"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "camera": [
+      0.424,
+      1.743,
+      1.287
+     ],
+     "alvo": [
+      -0.08,
+      1.2,
+      0.04
+     ],
+     "movimento": "arco",
+     "intensidade": 0.35
+    },
+    {
+     "de": "f1:estrada-0.3",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f2",
+     "tipo": "detalhe",
+     "camera": [
+      -0.056,
+      1.334,
+      0.997
+     ],
+     "alvo": [
+      -0.36,
+      1.16,
+      0.06
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f2:seguir",
+     "tipo": "detalhe",
+     "camera": [
+      0.216,
+      1.286,
+      1.077
+     ],
+     "alvo": [
+      0.0,
+      1.14,
+      0.06
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.25
+    },
+    {
+     "de": "f2:sai",
+     "tipo": "detalhe",
+     "camera": [
+      0.746,
+      1.388,
+      0.967
+     ],
+     "alvo": [
+      0.38,
+      1.18,
+      0.06
+     ],
+     "movimento": "arco",
+     "intensidade": -0.25
+    },
+    {
+     "de": "f3",
+     "tipo": "detalhe",
+     "camera": [
+      0.216,
+      1.286,
+      1.077
+     ],
+     "alvo": [
+      0.0,
+      1.14,
+      0.06
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f3:entra",
+     "tipo": "detalhe",
+     "camera": [
+      -0.111,
+      1.176,
+      0.85
+     ],
+     "alvo": [
+      0.0,
+      1.12,
+      0.06
+     ],
+     "movimento": "tremer"
+    },
+    {
+     "de": "f3:buraco+0.3",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f4",
+     "tipo": "detalhe",
+     "camera": [
+      0.053,
+      1.235,
+      0.578
+     ],
+     "alvo": [
+      -0.223,
+      1.11,
+      0.06
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f5",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f5:buraco",
+     "tipo": "detalhe",
+     "camera": [
+      0.038,
+      1.19,
+      0.657
+     ],
+     "alvo": [
+      -0.203,
+      1.1,
+      0.06
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f6",
+     "tipo": "detalhe",
+     "camera": [
+      0.141,
+      1.245,
+      0.537
+     ],
+     "alvo": [
+      -0.193,
+      1.1,
+      0.06
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f6:parede",
+     "tipo": "detalhe",
+     "camera": [
+      -0.056,
+      1.334,
+      0.997
+     ],
+     "alvo": [
+      -0.36,
+      1.16,
+      0.06
+     ],
+     "movimento": "travelling",
+     "intensidade": -0.25
+    },
+    {
+     "de": "f7",
+     "tipo": "detalhe",
+     "camera": [
+      -0.021,
+      1.187,
+      0.528
+     ],
+     "alvo": [
+      -0.173,
+      1.1,
+      0.06
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f8",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f8:primeiro",
+     "tipo": "detalhe",
+     "camera": [
+      0.17,
+      1.163,
+      0.446
+     ],
+     "alvo": [
+      -0.053,
+      1.1,
+      0.06
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f9",
+     "tipo": "detalhe",
+     "camera": [
+      0.33,
+      1.256,
+      0.621
+     ],
+     "alvo": [
+      -0.063,
+      1.11,
+      0.06
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f9:moi",
+     "tipo": "detalhe",
+     "camera": [
+      0.168,
+      1.245,
+      0.921
+     ],
+     "alvo": [
+      -0.063,
+      1.12,
+      0.06
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.25
+    },
+    {
+     "de": "f10",
+     "tipo": "detalhe",
+     "camera": [
+      0.565,
+      1.47,
+      0.723
+     ],
+     "alvo": [
+      0.39,
+      1.352,
+      -0.1
+     ],
+     "movimento": "arco",
+     "intensidade": 0.25,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f11",
+     "tipo": "detalhe",
+     "camera": [
+      0.138,
+      1.232,
+      0.868
+     ],
+     "alvo": [
+      0.03,
+      1.15,
+      0.1
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f11:estourar",
+     "tipo": "detalhe",
+     "camera": [
+      0.312,
+      1.26,
+      0.749
+     ],
+     "alvo": [
+      0.0,
+      1.13,
+      0.08
+     ],
+     "movimento": "tremer"
+    },
+    {
+     "de": "f11:estourar+1.0",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "dolly_zoom",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f12",
+     "tipo": "detalhe",
+     "camera": [
+      0.138,
+      1.232,
+      0.868
+     ],
+     "alvo": [
+      0.03,
+      1.15,
+      0.1
+     ],
+     "movimento": "arco",
+     "intensidade": 0.25,
+     "transicao": "zoom"
+    },
+    {
+     "de": "f12:forca",
+     "tipo": "detalhe",
+     "camera": [
+      0.428,
+      1.584,
+      2.485
+     ],
+     "alvo": [
+      0.0,
+      1.15,
+      0.06
+     ],
+     "movimento": "travelling",
+     "intensidade": 0.2
+    },
+    {
+     "de": "f13",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f13:passando",
+     "tipo": "detalhe",
+     "camera": [
+      0.345,
+      1.392,
+      1.446
+     ],
+     "alvo": [
+      0.0,
+      1.14,
+      0.06
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f14",
+     "tipo": "detalhe",
+     "camera": [
+      0.23,
+      1.188,
+      0.769
+     ],
+     "alvo": [
+      0.0,
+      1.11,
+      0.06
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f14:empurram",
+     "tipo": "detalhe",
+     "camera": [
+      0.746,
+      1.388,
+      0.967
+     ],
+     "alvo": [
+      0.38,
+      1.18,
+      0.06
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f15",
+     "tipo": "detalhe",
+     "camera": [
+      0.592,
+      1.143,
+      0.601
+     ],
+     "alvo": [
+      0.34,
+      1.08,
+      0.06
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f16",
+     "tipo": "aberto",
+     "camera": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "alvo": [
+      -0.9,
+      1.5,
+      0.3
+     ],
+     "movimento": "arco",
+     "intensidade": 0.5
+    }
+   ],
+   "sons": [
+    {
+     "de": "inicio",
+     "som": "agua",
+     "volume": 0.4
+    },
+    {
+     "de": "f1:ponte",
+     "som": "buzina",
+     "volume": 0.55
+    },
+    {
+     "de": "f2:cavar",
+     "som": "clique",
+     "volume": 0.5
+    },
+    {
+     "de": "f2:seguir",
+     "som": "engrenagem",
+     "volume": 0.35
+    },
+    {
+     "de": "f2:lado",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f3:terra",
+     "som": "tensao_sobe",
+     "volume": 0.45
+    },
+    {
+     "de": "f3:desmorona",
+     "som": "impacto",
+     "volume": 0.8
+    },
+    {
+     "de": "f3:entra",
+     "som": "agua",
+     "volume": 0.9
+    },
+    {
+     "de": "f4:escudo",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f4:cava",
+     "som": "engrenagem",
+     "volume": 0.4
+    },
+    {
+     "de": "f5:tras",
+     "som": "tensao_sobe",
+     "volume": 0.4
+    },
+    {
+     "de": "f5:cair",
+     "som": "queda",
+     "volume": 0.7
+    },
+    {
+     "de": "f6:aneis",
+     "som": "clique",
+     "volume": 0.6
+    },
+    {
+     "de": "f6:parede",
+     "som": "ding",
+     "volume": 0.6
+    },
+    {
+     "de": "f7:empurra",
+     "som": "engrenagem",
+     "volume": 0.5
+    },
+    {
+     "de": "f7:frente",
+     "som": "clique",
+     "volume": 0.5
+    },
+    {
+     "de": "f8:pa",
+     "som": "clique",
+     "volume": 0.4
+    },
+    {
+     "de": "f8:dezoito",
+     "som": "ding",
+     "volume": 0.6
+    },
+    {
+     "de": "f9:roda",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f9:gira",
+     "som": "engrenagem",
+     "volume": 0.6
+    },
+    {
+     "de": "f9:tatuzao",
+     "som": "ding",
+     "volume": 0.7
+    },
+    {
+     "de": "f10:alto",
+     "som": "pop",
+     "volume": 0.7
+    },
+    {
+     "de": "f10:andares",
+     "som": "ding",
+     "volume": 0.6
+    },
+    {
+     "de": "f11:aperta",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f11:estourar",
+     "som": "impacto",
+     "volume": 1.0
+    },
+    {
+     "de": "f11:estourar",
+     "som": "agua",
+     "volume": 0.9
+    },
+    {
+     "de": "f12:lama",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f12:forca",
+     "som": "engrenagem",
+     "volume": 0.5
+    },
+    {
+     "de": "f13:carros",
+     "som": "buzina",
+     "volume": 0.4
+    },
+    {
+     "de": "f13:fumaca",
+     "som": "tensao_sobe",
+     "volume": 0.4
+    },
+    {
+     "de": "f14:ventiladores",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f14:empurram",
+     "som": "sopro",
+     "volume": 0.6
+    },
+    {
+     "de": "f15:enterrado",
+     "som": "queda",
+     "volume": 0.6
+    },
+    {
+     "de": "f15:embaixo",
+     "som": "impacto",
+     "volume": 0.5
+    },
+    {
+     "de": "f16:parabens",
+     "som": "ding",
+     "volume": 0.9
+    },
+    {
+     "de": "f16:rio",
+     "som": "buzina",
+     "volume": 0.45
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f2:lado",
+     "ate": "f2:fim+0.3",
+     "efeito": "circular",
+     "alvo": "cavador"
+    },
+    {
+     "de": "f3:desmorona",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f3:entra",
+     "efeito": "tremor",
+     "ate": "f3:entra+0.6",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f4:escudo",
+     "ate": "f4:cava",
+     "efeito": "circular",
+     "alvo": "escudo"
+    },
+    {
+     "de": "f5:cair",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f6:aneis+0.4",
+     "ate": "f6:parede",
+     "efeito": "circular",
+     "alvo": "anel2"
+    },
+    {
+     "de": "f9:roda",
+     "ate": "f9:gira",
+     "efeito": "circular",
+     "alvo": "roda"
+    },
+    {
+     "de": "f11:estourar",
+     "efeito": "flash"
+    },
+    {
+     "de": "f11:estourar",
+     "ate": "f11:estourar+1.0",
+     "efeito": "tremor",
+     "intensidade": 0.6
+    },
+    {
+     "de": "f11:estourar",
+     "ate": "f11:estourar+1.0",
+     "efeito": "letreiro",
+     "texto": "VAZOU!",
+     "cor": "#FF3B30",
+     "altura": 0.2
+    },
+    {
+     "de": "f11:estourar",
+     "ate": "f11:estourar+1.0",
+     "efeito": "linhas",
+     "cor": "#FFE14A"
+    },
+    {
+     "de": "f12:lama",
+     "ate": "f12:empurra",
+     "efeito": "destacar",
+     "alvo": "lama"
+    },
+    {
+     "de": "f13:fumaca",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f14:ventiladores",
+     "ate": "f14:empurram",
+     "efeito": "circular",
+     "alvo": "vent1"
+    },
+    {
+     "de": "f15:embaixo",
+     "ate": "f15:fim+0.3",
+     "efeito": "circular",
+     "alvo": "escudo"
+    },
+    {
+     "de": "f16:parabens",
+     "ate": "f16:fim+0.6",
+     "efeito": "linhas",
+     "intensidade": 0.6
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "agua_d",
+     "texto": "Inundou!",
+     "de": "f3:buraco",
+     "ate": "f3:fim+0.4",
+     "cor": "#FF8A65"
+    },
+    {
+     "alvo": "escudo",
+     "texto": "Escudo",
+     "de": "f4:escudo",
+     "ate": "f4:fim+0.2"
+    },
+    {
+     "alvo": "queda1",
+     "texto": "Caiu!",
+     "de": "f5:cair+0.2",
+     "ate": "f5:fim+0.3",
+     "cor": "#FF8A65"
+    },
+    {
+     "alvo": "anel2",
+     "texto": "Anéis",
+     "de": "f6:aneis+0.4",
+     "ate": "f6:fim+0.2"
+    },
+    {
+     "alvo": "roda",
+     "texto": "Dentes",
+     "de": "f9:dentes",
+     "ate": "f9:tatuzao"
+    },
+    {
+     "alvo": "escudo",
+     "texto": "Tatuzão",
+     "de": "f9:tatuzao",
+     "ate": "f9:fim+0.3"
+    },
+    {
+     "alvo": "andar4",
+     "texto": "5 andares",
+     "de": "f10:cinco",
+     "ate": "f10:fim+0.3"
+    },
+    {
+     "alvo": "seta_rio1",
+     "texto": "Pressão",
+     "de": "f11:aperta+0.3",
+     "ate": "f11:estourar",
+     "cor": "#FF8A65"
+    },
+    {
+     "alvo": "lama",
+     "texto": "Lama",
+     "de": "f12:lama",
+     "ate": "f12:forca"
+    },
+    {
+     "alvo": "fumaca_tunel",
+     "texto": "Fumaça",
+     "de": "f13:fumaca",
+     "ate": "f13:fim+0.3",
+     "cor": "#FF8A65"
+    },
+    {
+     "alvo": "vent1",
+     "texto": "Ventiladores",
+     "de": "f14:ventiladores",
+     "ate": "f14:fim+0.2"
+    },
+    {
+     "alvo": "escudo",
+     "texto": "Enterrado!",
+     "de": "f15:embaixo",
+     "ate": "f15:fim+0.3"
+    }
+   ]
+  }
+ ]
+}

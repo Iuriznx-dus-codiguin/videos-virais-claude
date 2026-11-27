@@ -1,0 +1,3169 @@
+{
+ "serie": "como-funciona",
+ "parte": 37,
+ "titulo": "O jardineiro que deixou o concreto forte",
+ "musica": "curiosidade",
+ "personagens": {
+  "monier": {
+   "nome": "Joseph Monier",
+   "papel": "jardineiro francês; em 1867, em Paris, patenteou vasos e tinas de concreto com uma rede de ferro por dentro, porque os de concreto puro rachavam; não fala",
+   "visual": {
+    "altura": 1,
+    "corpo": "#558B2F",
+    "cabeca": "#F5D6C0",
+    "olhos": "redondos",
+    "sobrancelhas": "grossas",
+    "acessorios": [
+     {
+      "tipo": "cabelo_curto",
+      "cor": "#4E342E"
+     },
+     {
+      "tipo": "bigode",
+      "cor": "#4E342E"
+     },
+     {
+      "tipo": "colete",
+      "cor": "#8D6E63"
+     }
+    ]
+   }
+  }
+ },
+ "modelos": {
+  "viga_pura": [
+   {
+    "id": "apoio_e",
+    "forma": "caixa",
+    "tam": [
+     0.07,
+     0.12,
+     0.14
+    ],
+    "pos": [
+     -0.25,
+     0.06,
+     0
+    ],
+    "cor": "#546E7A"
+   },
+   {
+    "id": "apoio_d",
+    "forma": "caixa",
+    "tam": [
+     0.07,
+     0.12,
+     0.14
+    ],
+    "pos": [
+     0.25,
+     0.06,
+     0
+    ],
+    "cor": "#546E7A"
+   },
+   {
+    "id": "base",
+    "forma": "caixa",
+    "tam": [
+     0.72,
+     0.012,
+     0.2
+    ],
+    "pos": [
+     0,
+     0.006,
+     0
+    ],
+    "cor": "#37474F"
+   },
+   {
+    "id": "piv_e",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     -0.215,
+     0.12,
+     0
+    ],
+    "cor": "#B0BEC5",
+    "sem_contorno": true
+   },
+   {
+    "id": "meia_e",
+    "forma": "caixa",
+    "tam": [
+     0.298,
+     0.07,
+     0.1
+    ],
+    "pos": [
+     0.065,
+     0.035,
+     0
+    ],
+    "cor": "#B0BEC5",
+    "pai": "piv_e"
+   },
+   {
+    "id": "piv_d",
+    "forma": "esfera",
+    "tam": [
+     0.003
+    ],
+    "pos": [
+     0.215,
+     0.12,
+     0
+    ],
+    "cor": "#B0BEC5",
+    "sem_contorno": true
+   },
+   {
+    "id": "meia_d",
+    "forma": "caixa",
+    "tam": [
+     0.298,
+     0.07,
+     0.1
+    ],
+    "pos": [
+     -0.065,
+     0.035,
+     0
+    ],
+    "cor": "#B0BEC5",
+    "pai": "piv_d"
+   },
+   {
+    "id": "trinca0",
+    "forma": "caixa",
+    "tam": [
+     0.006,
+     0.049,
+     0.002
+    ],
+    "pos": [
+     0.002,
+     0.1445,
+     0.052000000000000005
+    ],
+    "cor": "#263238",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "peso",
+    "forma": "caixa",
+    "tam": [
+     0.09,
+     0.07,
+     0.08
+    ],
+    "pos": [
+     0,
+     0.42,
+     0
+    ],
+    "cor": "#424242"
+   },
+   {
+    "id": "peso_alca",
+    "forma": "toro",
+    "tam": [
+     0.022,
+     0.006
+    ],
+    "pos": [
+     0,
+     0.046,
+     0
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#616161",
+    "pai": "peso"
+   },
+   {
+    "id": "peso_faixa",
+    "forma": "caixa",
+    "tam": [
+     0.092,
+     0.012,
+     0.082
+    ],
+    "pos": [
+     0,
+     0.0,
+     0
+    ],
+    "cor": "#FFCA28",
+    "pai": "peso",
+    "sem_contorno": true
+   }
+  ],
+  "vasos_1867": [
+   {
+    "id": "tabua",
+    "forma": "caixa",
+    "tam": [
+     0.2,
+     0.008,
+     0.09
+    ],
+    "pos": [
+     0,
+     0.004,
+     0
+    ],
+    "cor": "#6D4C41"
+   },
+   {
+    "id": "vaso1",
+    "forma": "cilindro",
+    "tam": [
+     0.04,
+     0.075,
+     0.03
+    ],
+    "pos": [
+     -0.05,
+     0.0455,
+     0
+    ],
+    "cor": "#B0BEC5"
+   },
+   {
+    "id": "vaso1_terra",
+    "forma": "cilindro",
+    "tam": [
+     0.036,
+     0.006
+    ],
+    "pos": [
+     0,
+     0.035,
+     0
+    ],
+    "cor": "#4E342E",
+    "pai": "vaso1"
+   },
+   {
+    "id": "vaso1_caule",
+    "forma": "cilindro",
+    "tam": [
+     0.003,
+     0.03
+    ],
+    "pos": [
+     0,
+     0.05,
+     0
+    ],
+    "cor": "#558B2F",
+    "pai": "vaso1"
+   },
+   {
+    "id": "vaso1_folhas",
+    "forma": "esfera",
+    "tam": [
+     0.024
+    ],
+    "pos": [
+     0,
+     0.072,
+     0
+    ],
+    "cor": "#43A047",
+    "pai": "vaso1"
+   },
+   {
+    "id": "vaso1_flor",
+    "forma": "esfera",
+    "tam": [
+     0.009
+    ],
+    "pos": [
+     0.012,
+     0.085,
+     0.012
+    ],
+    "cor": "#E91E63",
+    "pai": "vaso1"
+   },
+   {
+    "id": "trinca0",
+    "forma": "caixa",
+    "tam": [
+     0.0035,
+     0.03,
+     0.002
+    ],
+    "pos": [
+     -0.046,
+     0.03,
+     0.0365
+    ],
+    "giro": [
+     0,
+     0,
+     12
+    ],
+    "cor": "#263238",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "trinca1",
+    "forma": "caixa",
+    "tam": [
+     0.0035,
+     0.028,
+     0.002
+    ],
+    "pos": [
+     -0.054000000000000006,
+     0.058,
+     0.0365
+    ],
+    "giro": [
+     0,
+     0,
+     -20
+    ],
+    "cor": "#263238",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "trinca2",
+    "forma": "caixa",
+    "tam": [
+     0.0035,
+     0.02,
+     0.002
+    ],
+    "pos": [
+     -0.04,
+     0.075,
+     0.0365
+    ],
+    "giro": [
+     0,
+     0,
+     25
+    ],
+    "cor": "#263238",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "caco",
+    "forma": "caixa",
+    "tam": [
+     0.022,
+     0.018,
+     0.008
+    ],
+    "pos": [
+     -0.028,
+     0.07,
+     0.03
+    ],
+    "giro": [
+     0,
+     20,
+     15
+    ],
+    "cor": "#B0BEC5"
+   },
+   {
+    "id": "aro0",
+    "forma": "toro",
+    "tam": [
+     0.031,
+     0.0022
+    ],
+    "pos": [
+     0.055,
+     0.016,
+     0
+    ],
+    "cor": "#5D4037",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "aro1",
+    "forma": "toro",
+    "tam": [
+     0.035,
+     0.0022
+    ],
+    "pos": [
+     0.055,
+     0.042,
+     0
+    ],
+    "cor": "#5D4037",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "aro2",
+    "forma": "toro",
+    "tam": [
+     0.039,
+     0.0022
+    ],
+    "pos": [
+     0.055,
+     0.068,
+     0
+    ],
+    "cor": "#5D4037",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "haste0",
+    "forma": "cilindro",
+    "tam": [
+     0.0018,
+     0.07
+    ],
+    "pos": [
+     0.09,
+     0.044,
+     0.0
+    ],
+    "giro": [
+     0.0,
+     0,
+     -4.5837
+    ],
+    "cor": "#5D4037",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "haste1",
+    "forma": "cilindro",
+    "tam": [
+     0.0018,
+     0.07
+    ],
+    "pos": [
+     0.0797,
+     0.044,
+     0.0247
+    ],
+    "giro": [
+     3.2411,
+     0,
+     -3.2411
+    ],
+    "cor": "#5D4037",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "haste2",
+    "forma": "cilindro",
+    "tam": [
+     0.0018,
+     0.07
+    ],
+    "pos": [
+     0.055,
+     0.044,
+     0.035
+    ],
+    "giro": [
+     4.5837,
+     0,
+     -0.0
+    ],
+    "cor": "#5D4037",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "haste3",
+    "forma": "cilindro",
+    "tam": [
+     0.0018,
+     0.07
+    ],
+    "pos": [
+     0.0303,
+     0.044,
+     0.0247
+    ],
+    "giro": [
+     3.2411,
+     0,
+     3.2411
+    ],
+    "cor": "#5D4037",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "haste4",
+    "forma": "cilindro",
+    "tam": [
+     0.0018,
+     0.07
+    ],
+    "pos": [
+     0.02,
+     0.044,
+     0.0
+    ],
+    "giro": [
+     0.0,
+     0,
+     4.5837
+    ],
+    "cor": "#5D4037",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "haste5",
+    "forma": "cilindro",
+    "tam": [
+     0.0018,
+     0.07
+    ],
+    "pos": [
+     0.0303,
+     0.044,
+     -0.0247
+    ],
+    "giro": [
+     -3.2411,
+     0,
+     3.2411
+    ],
+    "cor": "#5D4037",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "haste6",
+    "forma": "cilindro",
+    "tam": [
+     0.0018,
+     0.07
+    ],
+    "pos": [
+     0.055,
+     0.044,
+     -0.035
+    ],
+    "giro": [
+     -4.5837,
+     0,
+     0.0
+    ],
+    "cor": "#5D4037",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "haste7",
+    "forma": "cilindro",
+    "tam": [
+     0.0018,
+     0.07
+    ],
+    "pos": [
+     0.0797,
+     0.044,
+     -0.0247
+    ],
+    "giro": [
+     -3.2411,
+     0,
+     -3.2411
+    ],
+    "cor": "#5D4037",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "vaso2",
+    "forma": "cilindro",
+    "tam": [
+     0.04,
+     0.075,
+     0.03
+    ],
+    "pos": [
+     0.055,
+     0.0455,
+     0
+    ],
+    "cor": "#B0BEC5",
+    "oculta": true,
+    "opacidade": 0.3
+   },
+   {
+    "id": "vaso2_terra",
+    "forma": "cilindro",
+    "tam": [
+     0.036,
+     0.006
+    ],
+    "pos": [
+     0,
+     0.035,
+     0
+    ],
+    "cor": "#4E342E",
+    "pai": "vaso2"
+   },
+   {
+    "id": "vaso2_caule",
+    "forma": "cilindro",
+    "tam": [
+     0.003,
+     0.03
+    ],
+    "pos": [
+     0,
+     0.05,
+     0
+    ],
+    "cor": "#558B2F",
+    "pai": "vaso2"
+   },
+   {
+    "id": "vaso2_folhas",
+    "forma": "esfera",
+    "tam": [
+     0.024
+    ],
+    "pos": [
+     0,
+     0.072,
+     0
+    ],
+    "cor": "#43A047",
+    "pai": "vaso2"
+   },
+   {
+    "id": "vaso2_flor",
+    "forma": "esfera",
+    "tam": [
+     0.009
+    ],
+    "pos": [
+     0.012,
+     0.085,
+     0.012
+    ],
+    "cor": "#E91E63",
+    "pai": "vaso2"
+   }
+  ],
+  "concreto_viga": [
+   {
+    "id": "apoio_e",
+    "forma": "caixa",
+    "tam": [
+     0.07,
+     0.12,
+     0.14
+    ],
+    "pos": [
+     -0.25,
+     0.06,
+     0
+    ],
+    "cor": "#546E7A"
+   },
+   {
+    "id": "apoio_d",
+    "forma": "caixa",
+    "tam": [
+     0.07,
+     0.12,
+     0.14
+    ],
+    "pos": [
+     0.25,
+     0.06,
+     0
+    ],
+    "cor": "#546E7A"
+   },
+   {
+    "id": "base",
+    "forma": "caixa",
+    "tam": [
+     0.72,
+     0.012,
+     0.2
+    ],
+    "pos": [
+     0,
+     0.006,
+     0
+    ],
+    "cor": "#37474F"
+   },
+   {
+    "id": "viga",
+    "forma": "caixa",
+    "tam": [
+     0.6,
+     0.07,
+     0.1
+    ],
+    "pos": [
+     0,
+     0.155,
+     0
+    ],
+    "cor": "#B0BEC5"
+   },
+   {
+    "id": "peso2",
+    "forma": "caixa",
+    "tam": [
+     0.09,
+     0.07,
+     0.08
+    ],
+    "pos": [
+     0,
+     0.42,
+     0
+    ],
+    "cor": "#424242"
+   },
+   {
+    "id": "peso2_alca",
+    "forma": "toro",
+    "tam": [
+     0.022,
+     0.006
+    ],
+    "pos": [
+     0,
+     0.046,
+     0
+    ],
+    "giro": [
+     90,
+     0,
+     0
+    ],
+    "cor": "#616161",
+    "pai": "peso2"
+   },
+   {
+    "id": "peso2_faixa",
+    "forma": "caixa",
+    "tam": [
+     0.092,
+     0.012,
+     0.082
+    ],
+    "pos": [
+     0,
+     0.0,
+     0
+    ],
+    "cor": "#FFCA28",
+    "pai": "peso2",
+    "sem_contorno": true
+   },
+   {
+    "id": "aperta_e",
+    "forma": "seta",
+    "tam": [
+     0.075,
+     0.006
+    ],
+    "pos": [
+     -0.12,
+     0.176,
+     0.062
+    ],
+    "giro": [
+     0,
+     0,
+     -90
+    ],
+    "cor": "#29B6F6",
+    "oculta": true
+   },
+   {
+    "id": "estica_e",
+    "forma": "seta",
+    "tam": [
+     0.075,
+     0.006
+    ],
+    "pos": [
+     -0.12,
+     0.134,
+     0.062
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#FF3B30",
+    "oculta": true
+   },
+   {
+    "id": "aperta_d",
+    "forma": "seta",
+    "tam": [
+     0.075,
+     0.006
+    ],
+    "pos": [
+     0.12,
+     0.176,
+     0.062
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#29B6F6",
+    "oculta": true
+   },
+   {
+    "id": "estica_d",
+    "forma": "seta",
+    "tam": [
+     0.075,
+     0.006
+    ],
+    "pos": [
+     0.12,
+     0.134,
+     0.062
+    ],
+    "giro": [
+     0,
+     0,
+     -90
+    ],
+    "cor": "#FF3B30",
+    "oculta": true
+   },
+   {
+    "id": "trinca_baixo",
+    "forma": "caixa",
+    "tam": [
+     0.006,
+     0.038500000000000006,
+     0.002
+    ],
+    "pos": [
+     0.004,
+     0.13924999999999998,
+     0.053000000000000005
+    ],
+    "cor": "#263238",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "medo0",
+    "forma": "caixa",
+    "tam": [
+     0.005,
+     0.042,
+     0.002
+    ],
+    "pos": [
+     -0.17,
+     0.155,
+     0.053000000000000005
+    ],
+    "giro": [
+     0,
+     0,
+     18
+    ],
+    "cor": "#D32F2F",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "medo1",
+    "forma": "caixa",
+    "tam": [
+     0.005,
+     0.042,
+     0.002
+    ],
+    "pos": [
+     -0.05,
+     0.155,
+     0.053000000000000005
+    ],
+    "giro": [
+     0,
+     0,
+     -14
+    ],
+    "cor": "#D32F2F",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "medo2",
+    "forma": "caixa",
+    "tam": [
+     0.005,
+     0.042,
+     0.002
+    ],
+    "pos": [
+     0.08,
+     0.155,
+     0.053000000000000005
+    ],
+    "giro": [
+     0,
+     0,
+     22
+    ],
+    "cor": "#D32F2F",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "medo3",
+    "forma": "caixa",
+    "tam": [
+     0.005,
+     0.042,
+     0.002
+    ],
+    "pos": [
+     0.19,
+     0.155,
+     0.053000000000000005
+    ],
+    "giro": [
+     0,
+     0,
+     -16
+    ],
+    "cor": "#D32F2F",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "barra0",
+    "forma": "cilindro",
+    "tam": [
+     0.0045,
+     0.57
+    ],
+    "pos": [
+     0,
+     0.134,
+     0.028
+    ],
+    "giro": [
+     0,
+     0,
+     -90
+    ],
+    "cor": "#E64A19",
+    "oculta": true
+   },
+   {
+    "id": "barra1",
+    "forma": "cilindro",
+    "tam": [
+     0.0045,
+     0.57
+    ],
+    "pos": [
+     0,
+     0.134,
+     -0.028
+    ],
+    "giro": [
+     0,
+     0,
+     -90
+    ],
+    "cor": "#E64A19",
+    "oculta": true
+   },
+   {
+    "id": "estribo0",
+    "forma": "toro",
+    "tam": [
+     0.034,
+     0.002
+    ],
+    "pos": [
+     -0.25,
+     0.155,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#BF360C",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "estribo1",
+    "forma": "toro",
+    "tam": [
+     0.034,
+     0.002
+    ],
+    "pos": [
+     -0.15,
+     0.155,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#BF360C",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "estribo2",
+    "forma": "toro",
+    "tam": [
+     0.034,
+     0.002
+    ],
+    "pos": [
+     -0.05,
+     0.155,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#BF360C",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "estribo3",
+    "forma": "toro",
+    "tam": [
+     0.034,
+     0.002
+    ],
+    "pos": [
+     0.05,
+     0.155,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#BF360C",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "estribo4",
+    "forma": "toro",
+    "tam": [
+     0.034,
+     0.002
+    ],
+    "pos": [
+     0.15,
+     0.155,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#BF360C",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "estribo5",
+    "forma": "toro",
+    "tam": [
+     0.034,
+     0.002
+    ],
+    "pos": [
+     0.25,
+     0.155,
+     0
+    ],
+    "giro": [
+     0,
+     0,
+     90
+    ],
+    "cor": "#BF360C",
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "barra_cima0",
+    "forma": "cilindro",
+    "tam": [
+     0.003,
+     0.57
+    ],
+    "pos": [
+     0,
+     0.178,
+     0.026
+    ],
+    "giro": [
+     0,
+     0,
+     -90
+    ],
+    "cor": "#E64A19",
+    "oculta": true
+   },
+   {
+    "id": "barra_cima1",
+    "forma": "cilindro",
+    "tam": [
+     0.003,
+     0.57
+    ],
+    "pos": [
+     0,
+     0.178,
+     -0.026
+    ],
+    "giro": [
+     0,
+     0,
+     -90
+    ],
+    "cor": "#E64A19",
+    "oculta": true
+   },
+   {
+    "id": "cristo",
+    "forma": "caixa",
+    "tam": [
+     0.05,
+     0.08,
+     0.05
+    ],
+    "pos": [
+     0.0,
+     0.052,
+     -0.075
+    ],
+    "cor": "#CFD8DC",
+    "oculta": true
+   },
+   {
+    "id": "cristo_corpo",
+    "forma": "caixa",
+    "tam": [
+     0.03,
+     0.13,
+     0.024
+    ],
+    "pos": [
+     0,
+     0.105,
+     0
+    ],
+    "cor": "#ECEFF1",
+    "pai": "cristo"
+   },
+   {
+    "id": "cristo_bracos",
+    "forma": "caixa",
+    "tam": [
+     0.14,
+     0.018,
+     0.02
+    ],
+    "pos": [
+     0,
+     0.15,
+     0
+    ],
+    "cor": "#ECEFF1",
+    "pai": "cristo"
+   },
+   {
+    "id": "cristo_cabeca",
+    "forma": "esfera",
+    "tam": [
+     0.013
+    ],
+    "pos": [
+     0,
+     0.183,
+     0
+    ],
+    "cor": "#ECEFF1",
+    "pai": "cristo"
+   },
+   {
+    "id": "sol",
+    "forma": "esfera",
+    "tam": [
+     0.045
+    ],
+    "pos": [
+     -0.2,
+     0.42,
+     -0.05
+    ],
+    "cor": "#FFD54F",
+    "brilho": 1.2,
+    "oculta": true
+   },
+   {
+    "id": "estica_aco",
+    "forma": "seta",
+    "tam": [
+     0.12,
+     0.006
+    ],
+    "pos": [
+     0.22,
+     0.134,
+     0.066
+    ],
+    "giro": [
+     0,
+     0,
+     -90
+    ],
+    "cor": "#FF7043",
+    "oculta": true
+   },
+   {
+    "id": "estica_conc",
+    "forma": "seta",
+    "tam": [
+     0.12,
+     0.006
+    ],
+    "pos": [
+     0.22,
+     0.21,
+     0.066
+    ],
+    "giro": [
+     0,
+     0,
+     -90
+    ],
+    "cor": "#90A4AE",
+    "oculta": true
+   },
+   {
+    "id": "ferrugem",
+    "forma": "cilindro",
+    "tam": [
+     0.011,
+     0.14
+    ],
+    "pos": [
+     0.06,
+     0.134,
+     0.028
+    ],
+    "giro": [
+     0,
+     0,
+     -90
+    ],
+    "cor": "#8D3B1A",
+    "oculta": true
+   },
+   {
+    "id": "lasca",
+    "forma": "caixa",
+    "tam": [
+     0.12,
+     0.018,
+     0.03
+    ],
+    "pos": [
+     0.06,
+     0.129,
+     0.036000000000000004
+    ],
+    "cor": "#B0BEC5",
+    "oculta": true
+   },
+   {
+    "id": "camada",
+    "forma": "caixa",
+    "tam": [
+     0.59,
+     0.022,
+     0.10400000000000001
+    ],
+    "pos": [
+     0,
+     0.131,
+     0
+    ],
+    "cor": "#4FC3F7",
+    "opacidade": 0.35,
+    "oculta": true,
+    "sem_contorno": true
+   },
+   {
+    "id": "vasinho",
+    "forma": "cilindro",
+    "tam": [
+     0.028,
+     0.05,
+     0.021
+    ],
+    "pos": [
+     0.18,
+     0.215,
+     0
+    ],
+    "cor": "#B0BEC5",
+    "oculta": true
+   },
+   {
+    "id": "vasinho_folhas",
+    "forma": "esfera",
+    "tam": [
+     0.022
+    ],
+    "pos": [
+     0,
+     0.042,
+     0
+    ],
+    "cor": "#43A047",
+    "pai": "vasinho"
+   },
+   {
+    "id": "vasinho_flor",
+    "forma": "esfera",
+    "tam": [
+     0.008
+    ],
+    "pos": [
+     0.01,
+     0.055,
+     0.01
+    ],
+    "cor": "#E91E63",
+    "pai": "vasinho"
+   }
+  ]
+ },
+ "falas": [
+  {
+   "id": "f1",
+   "quem": "tito",
+   "texto": "Concreto não é tão forte quanto parece: uma viga só de concreto QUEBRA assim.",
+   "tom": "surpreso"
+  },
+  {
+   "id": "f2",
+   "quem": "tito",
+   "texto": "Em 1867, em Paris, um JARDINEIRO fazia vasos de planta de concreto.",
+   "off": true
+  },
+  {
+   "id": "f3",
+   "quem": "tito",
+   "texto": "MAS os vasos grandes viviam RACHANDO, e quebravam na hora de carregar.",
+   "off": true,
+   "tom": "tenso"
+  },
+  {
+   "id": "f4",
+   "quem": "tito",
+   "texto": "Então ele enfiou uma rede de FERRO dentro do concreto. E o vaso parou de rachar.",
+   "off": true,
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f5",
+   "quem": "tito",
+   "texto": "Olha a viga por dentro. Com peso em cima, a parte de cima fica APERTADA, e o concreto aguenta bem."
+  },
+  {
+   "id": "f6",
+   "quem": "tito",
+   "texto": "MAS a parte de baixo fica ESTICADA, e esticando, o concreto aguenta umas dez vezes menos.",
+   "tom": "tenso"
+  },
+  {
+   "id": "f7",
+   "quem": "tito",
+   "texto": "Por isso, a rede virou barras de AÇO, bem embaixo, onde a viga estica.",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f8",
+   "quem": "tito",
+   "texto": "O concreto segura o aperto, e o aço segura o puxão. Juntos, viram concreto ARMADO.",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f9",
+   "quem": "tito",
+   "texto": "É por isso que toda obra tem aquela FERRAGEM pronta antes de o concreto chegar."
+  },
+  {
+   "id": "f10",
+   "quem": "tito",
+   "texto": "MAS os engenheiros diziam: no sol, o ferro estica e racha o concreto por DENTRO.",
+   "tom": "tenso"
+  },
+  {
+   "id": "f11",
+   "quem": "tito",
+   "texto": "E não racha! Aço e concreto esticam quase IGUAL com o calor, e o jardineiro passou anos provando isso.",
+   "tom": "feliz",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f12",
+   "quem": "tito",
+   "texto": "MAS se a água chega no aço, ele enferruja, INCHA, e estoura o concreto.",
+   "tom": "tenso"
+  },
+  {
+   "id": "f13",
+   "quem": "tito",
+   "texto": "Por isso as barras ficam escondidas lá dentro, com uns dedos de concreto em VOLTA.",
+   "pausa_depois": 0.3
+  },
+  {
+   "id": "f14",
+   "quem": "tito",
+   "texto": "Hoje ele segura prédios e pontes no mundo inteiro, e até o Cristo Redentor é de concreto ARMADO.",
+   "tom": "surpreso",
+   "pausa_depois": 0.2
+  },
+  {
+   "id": "f15",
+   "quem": "tito",
+   "texto": "E tudo isso começou num vaso de PLANTA.",
+   "tom": "feliz"
+  }
+ ],
+ "chamada": {
+  "pergunta": "E agora, topa construir um guindaste?",
+  "texto": "Comenta",
+  "destaque": "GUINDASTE"
+ },
+ "postagem": {
+  "titulo": "Como funciona o concreto armado? Um jardineiro inventou",
+  "descricao": "Como funciona o concreto armado por dentro: o concreto aguenta o aperto, as barras de aço (a ferragem) aguentam o puxão. E a história do jardineiro Joseph Monier, que inventou tudo com um vaso de planta em 1867.",
+  "hashtags": [
+   "comofunciona",
+   "concreto",
+   "engenharia",
+   "construcao",
+   "curiosidades"
+  ],
+  "comentario": "Eu achava que concreto era forte sozinho. Sem o aço, uma viga quebra fácil! Você sabia?",
+  "capa": "f1:quebra+0.4"
+ },
+ "cenas": [
+  {
+   "id": "gancho",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "desconfiado"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "viga_pura",
+     "em": "pedestal"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "fumaca",
+     "em": [
+      0,
+      0.02
+     ],
+     "alt": 1.13,
+     "raio": 0.06,
+     "altura": 0.12,
+     "quantas": 10,
+     "aparece": "f1:quebra",
+     "some": "f2"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "peso",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.195,
+      0
+     ],
+     "de": "inicio",
+     "ate": "inicio+0.45"
+    },
+    {
+     "peca": "piv_e",
+     "faz": "tremer",
+     "intensidade": 0.15,
+     "de": "inicio+0.45",
+     "ate": "f1:quebra"
+    },
+    {
+     "peca": "piv_d",
+     "faz": "tremer",
+     "intensidade": 0.15,
+     "de": "inicio+0.45",
+     "ate": "f1:quebra"
+    },
+    {
+     "peca": "trinca0",
+     "faz": "crescer",
+     "de": "f1:viga",
+     "ate": "f1:quebra"
+    },
+    {
+     "peca": "trinca0",
+     "faz": "sumir",
+     "de": "f1:quebra"
+    },
+    {
+     "peca": "piv_e",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": -24,
+     "de": "f1:quebra",
+     "ate": "f1:quebra+0.3"
+    },
+    {
+     "peca": "piv_d",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": 24,
+     "de": "f1:quebra",
+     "ate": "f1:quebra+0.3"
+    },
+    {
+     "peca": "peso",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.095,
+      0
+     ],
+     "de": "f1:quebra",
+     "ate": "f1:quebra+0.3"
+    },
+    {
+     "peca": "peso",
+     "faz": "tremer",
+     "intensidade": 0.3,
+     "de": "f1:quebra+0.3",
+     "ate": "f1:fim+0.4"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "desconfiado",
+     "de": "inicio"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "maquete",
+     "expressao": "surpreso",
+     "de": "f1:quebra"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "detalhe",
+     "camera": [
+      0.312,
+      1.459,
+      0.96
+     ],
+     "alvo": [
+      0.0,
+      1.17,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.35
+    },
+    {
+     "de": "f1:quebra+0.6",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    }
+   ],
+   "sons": [
+    {
+     "de": "inicio+0.45",
+     "som": "impacto",
+     "volume": 0.6
+    },
+    {
+     "de": "f1:viga",
+     "som": "tensao_sobe",
+     "volume": 0.45
+    },
+    {
+     "de": "f1:quebra",
+     "som": "impacto",
+     "volume": 1.0
+    },
+    {
+     "de": "f1:quebra",
+     "som": "queda",
+     "volume": 0.7
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f1:quebra",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f1:quebra",
+     "ate": "f1:quebra+0.5",
+     "efeito": "tremor",
+     "intensidade": 0.5
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "meia_d",
+     "texto": "Só concreto",
+     "de": "inicio+0.6",
+     "ate": "f1:quebra"
+    }
+   ]
+  },
+  {
+   "id": "paris_1867",
+   "cenario": "oficina",
+   "ambiente": "oficina",
+   "filtro": "sepia",
+   "de": "f2",
+   "personagens": {
+    "monier": {
+     "em": [
+      -1.0,
+      -0.3
+     ],
+     "olhando": [
+      1.2,
+      2.2,
+      3.0
+     ],
+     "expressao": "serio"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "vasos_1867",
+     "em": [
+      0,
+      -1.05
+     ],
+     "alt": 0.92,
+     "escala": 1.5
+    },
+    {
+     "tipo": "particulas",
+     "particula": "fumaca",
+     "em": [
+      -0.075,
+      -1.05
+     ],
+     "alt": 1.0,
+     "raio": 0.04,
+     "altura": 0.12,
+     "quantas": 8,
+     "aparece": "f3:quebravam",
+     "some": "f4"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f2:1867",
+     "ate": "f2:vasos",
+     "grande": "1867",
+     "pequeno": "Joseph Monier, jardineiro · Paris, França"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "vaso1",
+     "faz": "tremer",
+     "intensidade": 0.3,
+     "de": "f3:rachando",
+     "ate": "f3:carregar"
+    },
+    {
+     "peca": "caco",
+     "faz": "mover",
+     "desloc": [
+      0.02,
+      -0.07,
+      0.03
+     ],
+     "de": "f3:quebravam",
+     "ate": "f3:quebravam+0.35"
+    },
+    {
+     "peca": "caco",
+     "faz": "girar_para",
+     "eixo": "z",
+     "angulo": -70,
+     "de": "f3:quebravam",
+     "ate": "f3:quebravam+0.35"
+    },
+    {
+     "peca": "trinca0",
+     "faz": "crescer",
+     "de": "f3:rachando+0.0",
+     "ate": "f3:rachando+0.25"
+    },
+    {
+     "peca": "trinca1",
+     "faz": "crescer",
+     "de": "f3:rachando+0.18",
+     "ate": "f3:rachando+0.43"
+    },
+    {
+     "peca": "trinca2",
+     "faz": "crescer",
+     "de": "f3:rachando+0.36",
+     "ate": "f3:rachando+0.61"
+    },
+    {
+     "peca": "aro0",
+     "faz": "aparecer",
+     "de": "f4:rede+0.0"
+    },
+    {
+     "peca": "aro1",
+     "faz": "aparecer",
+     "de": "f4:rede+0.12"
+    },
+    {
+     "peca": "aro2",
+     "faz": "aparecer",
+     "de": "f4:rede+0.24"
+    },
+    {
+     "peca": "haste0",
+     "faz": "aparecer",
+     "de": "f4:ferro+0.0"
+    },
+    {
+     "peca": "haste1",
+     "faz": "aparecer",
+     "de": "f4:ferro+0.06"
+    },
+    {
+     "peca": "haste2",
+     "faz": "aparecer",
+     "de": "f4:ferro+0.12"
+    },
+    {
+     "peca": "haste3",
+     "faz": "aparecer",
+     "de": "f4:ferro+0.18"
+    },
+    {
+     "peca": "haste4",
+     "faz": "aparecer",
+     "de": "f4:ferro+0.24"
+    },
+    {
+     "peca": "haste5",
+     "faz": "aparecer",
+     "de": "f4:ferro+0.3"
+    },
+    {
+     "peca": "haste6",
+     "faz": "aparecer",
+     "de": "f4:ferro+0.36"
+    },
+    {
+     "peca": "haste7",
+     "faz": "aparecer",
+     "de": "f4:ferro+0.42"
+    },
+    {
+     "peca": "vaso2",
+     "faz": "aparecer",
+     "de": "f4:concreto"
+    },
+    {
+     "peca": "vaso2",
+     "faz": "transparente",
+     "opacidade": 1,
+     "de": "f4:parou",
+     "ate": "f4:parou+0.5"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "monier",
+     "faz": "virar",
+     "para": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f2"
+    },
+    {
+     "quem": "monier",
+     "faz": "estender_mao",
+     "para": "vasos_1867",
+     "olhar": "vasos_1867",
+     "expressao": "feliz",
+     "de": "f2:vasos"
+    },
+    {
+     "quem": "monier",
+     "olhar": "vasos_1867",
+     "expressao": "serio",
+     "de": "f3"
+    },
+    {
+     "quem": "monier",
+     "faz": "virar",
+     "para": [
+      0.3,
+      2.85,
+      2.2
+     ],
+     "olhar": "camera",
+     "expressao": "triste",
+     "de": "f3:quebravam"
+    },
+    {
+     "quem": "monier",
+     "faz": "estender_mao",
+     "para": "vasos_1867",
+     "olhar": "vasos_1867",
+     "expressao": "determinado",
+     "de": "f4:rede"
+    },
+    {
+     "quem": "monier",
+     "faz": "virar",
+     "para": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f4:parou-0.3"
+    },
+    {
+     "quem": "monier",
+     "faz": "acenar",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f4:rachar"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "camera": [
+      0.9,
+      2.85,
+      3.9
+     ],
+     "alvo": [
+      -0.4,
+      2.2,
+      -0.7
+     ],
+     "movimento": "arco",
+     "intensidade": 0.6,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f2:jardineiro",
+     "tipo": "medio",
+     "camera": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "alvo": "monier",
+     "movimento": "travelling",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f2:vasos",
+     "tipo": "detalhe",
+     "camera": [
+      0.03,
+      1.1,
+      -0.42
+     ],
+     "alvo": [
+      0.0,
+      0.995,
+      -1.05
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f3",
+     "tipo": "detalhe",
+     "camera": [
+      -0.045,
+      1.055,
+      -0.57
+     ],
+     "alvo": [
+      -0.075,
+      0.995,
+      -1.05
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f3:quebravam",
+     "tipo": "close",
+     "camera": [
+      0.3,
+      2.85,
+      2.2
+     ],
+     "alvo": "monier",
+     "movimento": "zoom_rapido"
+    },
+    {
+     "de": "f4",
+     "tipo": "detalhe",
+     "camera": [
+      0.105,
+      1.055,
+      -0.6
+     ],
+     "alvo": [
+      0.083,
+      0.988,
+      -1.05
+     ],
+     "movimento": "arco",
+     "intensidade": -0.4
+    },
+    {
+     "de": "f4:parou",
+     "tipo": "medio",
+     "camera": [
+      0.45,
+      2.75,
+      3.3
+     ],
+     "alvo": "monier",
+     "movimento": "travelling",
+     "intensidade": -0.3
+    }
+   ],
+   "sons": [
+    {
+     "de": "f2:1867",
+     "som": "pop",
+     "volume": 0.6
+    },
+    {
+     "de": "f2:vasos",
+     "som": "clique",
+     "volume": 0.5
+    },
+    {
+     "de": "f3:mas",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f3:rachando",
+     "som": "chiado",
+     "volume": 0.5
+    },
+    {
+     "de": "f3:quebravam",
+     "som": "queda",
+     "volume": 0.7
+    },
+    {
+     "de": "f3:quebravam",
+     "som": "impacto",
+     "volume": 0.6
+    },
+    {
+     "de": "f4:ferro",
+     "som": "clique",
+     "volume": 0.6
+    },
+    {
+     "de": "f4:parou",
+     "som": "ding",
+     "volume": 0.7
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f2:vasos",
+     "ate": "f2:fim",
+     "efeito": "circular",
+     "alvo": "vaso1"
+    },
+    {
+     "de": "f3:quebravam",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f3:quebravam",
+     "ate": "f3:quebravam+0.4",
+     "efeito": "tremor",
+     "intensidade": 0.4
+    },
+    {
+     "de": "f4:ferro",
+     "ate": "f4:concreto",
+     "efeito": "circular",
+     "alvo": "aro1"
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "vaso1",
+     "texto": "Vaso",
+     "de": "f2:vasos",
+     "ate": "f2:fim"
+    },
+    {
+     "alvo": "trinca1",
+     "texto": "Rachou!",
+     "de": "f3:rachando+0.3",
+     "ate": "f3:fim",
+     "cor": "#FF8A65"
+    },
+    {
+     "alvo": "aro2",
+     "texto": "Ferro",
+     "de": "f4:ferro",
+     "ate": "f4:parou"
+    }
+   ]
+  },
+  {
+   "id": "por_dentro",
+   "cenario": "estudio",
+   "ambiente": "estudio",
+   "filtro": "vivo",
+   "de": "f5",
+   "personagens": {
+    "tito": {
+     "em": "apresentador",
+     "olhando": "maquete",
+     "expressao": "feliz"
+    }
+   },
+   "objetos": [
+    {
+     "tipo": "maquete",
+     "modelo": "concreto_viga",
+     "em": "pedestal"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "fumaca",
+     "em": [
+      0.06,
+      0.06
+     ],
+     "alt": 1.11,
+     "raio": 0.04,
+     "altura": 0.08,
+     "quantas": 8,
+     "aparece": "f12:estoura",
+     "some": "f13"
+    },
+    {
+     "tipo": "particulas",
+     "particula": "confete",
+     "em": [
+      0,
+      0
+     ],
+     "alt": 1.5,
+     "raio": 1.4,
+     "aparece": "f15:planta"
+    }
+   ],
+   "cartoes": [
+    {
+     "de": "f6:dez",
+     "ate": "f6:fim+0.3",
+     "grande": "# vezes",
+     "contar": [
+      0,
+      10
+     ],
+     "pequeno": "mais fraco quando esticado"
+    },
+    {
+     "de": "f8:juntos",
+     "ate": "f8:fim+0.5",
+     "grande": "CONCRETO AR­MADO",
+     "pequeno": "o concreto aguenta o aperto; o aço, o puxão"
+    }
+   ],
+   "animacoes": [
+    {
+     "peca": "viga",
+     "faz": "transparente",
+     "opacidade": 0.32,
+     "de": "f5:dentro",
+     "ate": "f5:dentro+0.5"
+    },
+    {
+     "peca": "peso2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.195,
+      0
+     ],
+     "de": "f5:peso",
+     "ate": "f5:peso+0.4"
+    },
+    {
+     "peca": "viga",
+     "faz": "tremer",
+     "intensidade": 0.12,
+     "de": "f5:peso+0.4",
+     "ate": "f7"
+    },
+    {
+     "peca": "aperta_e",
+     "faz": "aparecer",
+     "de": "f5:apertada"
+    },
+    {
+     "peca": "aperta_e",
+     "faz": "pulsar",
+     "intensidade": 0.8,
+     "de": "f5:apertada",
+     "ate": "f5:bem"
+    },
+    {
+     "peca": "aperta_e",
+     "faz": "sumir",
+     "de": "f8:aco+0.4"
+    },
+    {
+     "peca": "estica_e",
+     "faz": "aparecer",
+     "de": "f6:esticada"
+    },
+    {
+     "peca": "estica_e",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "f6:esticada",
+     "ate": "f7:aco"
+    },
+    {
+     "peca": "estica_e",
+     "faz": "sumir",
+     "de": "f8:aco+0.4"
+    },
+    {
+     "peca": "aperta_d",
+     "faz": "aparecer",
+     "de": "f5:apertada"
+    },
+    {
+     "peca": "aperta_d",
+     "faz": "pulsar",
+     "intensidade": 0.8,
+     "de": "f5:apertada",
+     "ate": "f5:bem"
+    },
+    {
+     "peca": "aperta_d",
+     "faz": "sumir",
+     "de": "f8:aco+0.4"
+    },
+    {
+     "peca": "estica_d",
+     "faz": "aparecer",
+     "de": "f6:esticada"
+    },
+    {
+     "peca": "estica_d",
+     "faz": "pulsar",
+     "intensidade": 1.0,
+     "de": "f6:esticada",
+     "ate": "f7:aco"
+    },
+    {
+     "peca": "estica_d",
+     "faz": "sumir",
+     "de": "f8:aco+0.4"
+    },
+    {
+     "peca": "trinca_baixo",
+     "faz": "crescer",
+     "de": "f6:concreto",
+     "ate": "f6:menos"
+    },
+    {
+     "peca": "trinca_baixo",
+     "faz": "sumir",
+     "de": "f7:barras"
+    },
+    {
+     "peca": "barra0",
+     "faz": "crescer",
+     "de": "f7:barras",
+     "ate": "f7:aco+0.3"
+    },
+    {
+     "peca": "barra1",
+     "faz": "crescer",
+     "de": "f7:barras+0.15",
+     "ate": "f7:aco+0.45"
+    },
+    {
+     "peca": "estribo0",
+     "faz": "aparecer",
+     "de": "f7:embaixo+0.0"
+    },
+    {
+     "peca": "estribo1",
+     "faz": "aparecer",
+     "de": "f7:embaixo+0.08"
+    },
+    {
+     "peca": "estribo2",
+     "faz": "aparecer",
+     "de": "f7:embaixo+0.16"
+    },
+    {
+     "peca": "estribo3",
+     "faz": "aparecer",
+     "de": "f7:embaixo+0.24"
+    },
+    {
+     "peca": "estribo4",
+     "faz": "aparecer",
+     "de": "f7:embaixo+0.32"
+    },
+    {
+     "peca": "estribo5",
+     "faz": "aparecer",
+     "de": "f7:embaixo+0.4"
+    },
+    {
+     "peca": "barra0",
+     "faz": "pulsar",
+     "intensidade": 0.7,
+     "de": "f8:aco",
+     "ate": "f8:puxao+0.3"
+    },
+    {
+     "peca": "barra0",
+     "faz": "pulsar",
+     "intensidade": 0.5,
+     "de": "f9:ferragem+0.5",
+     "ate": "f9:pronta+0.6"
+    },
+    {
+     "peca": "barra1",
+     "faz": "pulsar",
+     "intensidade": 0.5,
+     "de": "f9:ferragem+0.5",
+     "ate": "f9:pronta+0.6"
+    },
+    {
+     "peca": "barra1",
+     "faz": "pulsar",
+     "intensidade": 0.7,
+     "de": "f8:aco",
+     "ate": "f8:puxao+0.3"
+    },
+    {
+     "peca": "viga",
+     "faz": "transparente",
+     "opacidade": 0.06,
+     "de": "f9:ferragem-0.2",
+     "ate": "f9:ferragem+0.2"
+    },
+    {
+     "peca": "barra_cima0",
+     "faz": "crescer",
+     "de": "f9:ferragem",
+     "ate": "f9:ferragem+0.4"
+    },
+    {
+     "peca": "barra_cima1",
+     "faz": "crescer",
+     "de": "f9:ferragem+0.1",
+     "ate": "f9:ferragem+0.5"
+    },
+    {
+     "peca": "viga",
+     "faz": "transparente",
+     "opacidade": 0.32,
+     "de": "f9:concreto",
+     "ate": "f9:chegar"
+    },
+    {
+     "peca": "sol",
+     "faz": "aparecer",
+     "de": "f10:sol"
+    },
+    {
+     "peca": "sol",
+     "faz": "pulsar",
+     "intensidade": 0.8,
+     "de": "f10:sol",
+     "ate": "f11:calor"
+    },
+    {
+     "peca": "barra0",
+     "faz": "aquecer",
+     "intensidade": 0.7,
+     "de": "f10:ferro",
+     "ate": "f10:estica"
+    },
+    {
+     "peca": "barra1",
+     "faz": "aquecer",
+     "intensidade": 0.7,
+     "de": "f10:ferro",
+     "ate": "f10:estica"
+    },
+    {
+     "peca": "medo0",
+     "faz": "crescer",
+     "de": "f10:racha+0.0",
+     "ate": "f10:racha+0.2"
+    },
+    {
+     "peca": "medo1",
+     "faz": "crescer",
+     "de": "f10:racha+0.1",
+     "ate": "f10:racha+0.3"
+    },
+    {
+     "peca": "medo2",
+     "faz": "crescer",
+     "de": "f10:racha+0.2",
+     "ate": "f10:racha+0.4"
+    },
+    {
+     "peca": "medo3",
+     "faz": "crescer",
+     "de": "f10:racha+0.3",
+     "ate": "f10:racha+0.5"
+    },
+    {
+     "peca": "medo0",
+     "faz": "sumir",
+     "de": "f11:nao"
+    },
+    {
+     "peca": "medo1",
+     "faz": "sumir",
+     "de": "f11:nao"
+    },
+    {
+     "peca": "medo2",
+     "faz": "sumir",
+     "de": "f11:nao"
+    },
+    {
+     "peca": "medo3",
+     "faz": "sumir",
+     "de": "f11:nao"
+    },
+    {
+     "peca": "barra0",
+     "faz": "esfriar",
+     "de": "f11:nao",
+     "ate": "f11:igual"
+    },
+    {
+     "peca": "barra1",
+     "faz": "esfriar",
+     "de": "f11:nao",
+     "ate": "f11:igual"
+    },
+    {
+     "peca": "estica_aco",
+     "faz": "crescer",
+     "de": "f11:esticam",
+     "ate": "f11:igual"
+    },
+    {
+     "peca": "estica_conc",
+     "faz": "crescer",
+     "de": "f11:esticam",
+     "ate": "f11:igual"
+    },
+    {
+     "peca": "estica_aco",
+     "faz": "sumir",
+     "de": "f12"
+    },
+    {
+     "peca": "estica_conc",
+     "faz": "sumir",
+     "de": "f12"
+    },
+    {
+     "peca": "sol",
+     "faz": "sumir",
+     "de": "f12"
+    },
+    {
+     "peca": "concreto_viga",
+     "faz": "fluxo",
+     "tipo": "agua",
+     "quantidade": 8,
+     "velocidade": 0.8,
+     "intensidade": 0.35,
+     "de": "f12:agua",
+     "ate": "f12:incha",
+     "caminho": [
+      [
+       0.06,
+       0.27,
+       0.035
+      ],
+      [
+       0.06,
+       0.19,
+       0.032
+      ],
+      [
+       0.06,
+       0.14400000000000002,
+       0.028
+      ]
+     ]
+    },
+    {
+     "peca": "ferrugem",
+     "faz": "crescer",
+     "de": "f12:enferruja",
+     "ate": "f12:incha+0.3"
+    },
+    {
+     "peca": "lasca",
+     "faz": "aparecer",
+     "de": "f12:enferruja"
+    },
+    {
+     "peca": "lasca",
+     "faz": "mover",
+     "desloc": [
+      0.01,
+      -0.13,
+      0.05
+     ],
+     "de": "f12:estoura",
+     "ate": "f12:estoura+0.35"
+    },
+    {
+     "peca": "lasca",
+     "faz": "girar_para",
+     "eixo": "x",
+     "angulo": 40,
+     "de": "f12:estoura",
+     "ate": "f12:estoura+0.35"
+    },
+    {
+     "peca": "lasca",
+     "faz": "sumir",
+     "de": "f13"
+    },
+    {
+     "peca": "ferrugem",
+     "faz": "sumir",
+     "de": "f13"
+    },
+    {
+     "peca": "camada",
+     "faz": "aparecer",
+     "de": "f13:barras"
+    },
+    {
+     "peca": "camada",
+     "faz": "pulsar",
+     "intensidade": 0.6,
+     "de": "f13:dedos",
+     "ate": "f13:fim+0.3"
+    },
+    {
+     "peca": "camada",
+     "faz": "sumir",
+     "de": "f14"
+    },
+    {
+     "peca": "viga",
+     "faz": "transparente",
+     "opacidade": 1,
+     "de": "f14",
+     "ate": "f14+0.4"
+    },
+    {
+     "peca": "peso2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      0.12,
+      0
+     ],
+     "de": "f13:fim",
+     "ate": "f14"
+    },
+    {
+     "peca": "peso2",
+     "faz": "mover",
+     "desloc": [
+      0,
+      -0.12,
+      0
+     ],
+     "de": "f14:predios",
+     "ate": "f14:predios+0.3"
+    },
+    {
+     "peca": "viga",
+     "faz": "tremer",
+     "intensidade": 0.15,
+     "de": "f14:predios+0.3",
+     "ate": "f14:predios+0.8"
+    },
+    {
+     "peca": "cristo",
+     "faz": "aparecer",
+     "de": "f14:cristo"
+    },
+    {
+     "peca": "vasinho",
+     "faz": "aparecer",
+     "de": "f15:planta"
+    }
+   ],
+   "acoes": [
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "inicio"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "aperta_e",
+     "olhar": "maquete",
+     "expressao": "feliz",
+     "de": "f5:apertada"
+    },
+    {
+     "quem": "tito",
+     "faz": "bracos_cruzados",
+     "olhar": "camera",
+     "expressao": "desconfiado",
+     "de": "f6",
+     "ate": "f6:menos"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "barra0",
+     "olhar": "maquete",
+     "expressao": "determinado",
+     "de": "f7:barras"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f8"
+    },
+    {
+     "quem": "tito",
+     "olhar": "camera",
+     "expressao": "nervoso",
+     "de": "f10"
+    },
+    {
+     "quem": "tito",
+     "faz": "maos_na_cabeca",
+     "olhar": "camera",
+     "expressao": "medo",
+     "de": "f10:racha",
+     "ate": "f11"
+    },
+    {
+     "quem": "tito",
+     "faz": "acenar",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f11:nao"
+    },
+    {
+     "quem": "tito",
+     "olhar": "maquete",
+     "expressao": "desconfiado",
+     "de": "f12"
+    },
+    {
+     "quem": "tito",
+     "faz": "susto",
+     "olhar": "maquete",
+     "expressao": "surpreso",
+     "de": "f12:estoura"
+    },
+    {
+     "quem": "tito",
+     "faz": "apontar",
+     "para": "barra0",
+     "olhar": "maquete",
+     "expressao": "aliviado",
+     "de": "f13:barras"
+    },
+    {
+     "quem": "tito",
+     "faz": "virar",
+     "para": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f14:fim+0.1"
+    },
+    {
+     "quem": "tito",
+     "faz": "acenar",
+     "olhar": "camera",
+     "expressao": "feliz",
+     "de": "f15:planta"
+    }
+   ],
+   "planos": [
+    {
+     "de": "inicio",
+     "tipo": "aberto",
+     "camera": [
+      0.315,
+      1.424,
+      0.969
+     ],
+     "alvo": [
+      0.0,
+      1.17,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f5:apertada",
+     "tipo": "detalhe",
+     "camera": [
+      0.248,
+      1.315,
+      0.532
+     ],
+     "alvo": [
+      0.0,
+      1.19,
+      0.0
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f6",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "zoom_rapido",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f6:esticada",
+     "tipo": "detalhe",
+     "camera": [
+      0.154,
+      1.067,
+      0.576
+     ],
+     "alvo": [
+      0.0,
+      1.13,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f7",
+     "tipo": "detalhe",
+     "camera": [
+      0.173,
+      1.197,
+      0.474
+     ],
+     "alvo": [
+      -0.1,
+      1.14,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": -0.3,
+     "transicao": "varrer"
+    },
+    {
+     "de": "f8",
+     "tipo": "detalhe",
+     "camera": [
+      0.315,
+      1.424,
+      0.969
+     ],
+     "alvo": [
+      0.0,
+      1.17,
+      0.0
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f8:juntos",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": 0.3,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f9",
+     "tipo": "detalhe",
+     "camera": [
+      0.348,
+      1.436,
+      0.602
+     ],
+     "alvo": [
+      0.0,
+      1.155,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.35
+    },
+    {
+     "de": "f10",
+     "tipo": "detalhe",
+     "camera": [
+      0.162,
+      1.45,
+      0.902
+     ],
+     "alvo": [
+      -0.03,
+      1.22,
+      0.0
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f10:racha",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "dolly_zoom",
+     "transicao": "chicote"
+    },
+    {
+     "de": "f11",
+     "tipo": "detalhe",
+     "camera": [
+      0.401,
+      1.227,
+      0.496
+     ],
+     "alvo": [
+      0.17,
+      1.17,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3,
+     "transicao": "zoom"
+    },
+    {
+     "de": "f11:jardineiro",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "travelling",
+     "intensidade": -0.3,
+     "transicao": "chicote"
+    },
+    {
+     "de": "f12",
+     "tipo": "detalhe",
+     "camera": [
+      0.217,
+      1.169,
+      0.388
+     ],
+     "alvo": [
+      0.06,
+      1.14,
+      0.0
+     ],
+     "movimento": "aproximar"
+    },
+    {
+     "de": "f12:estoura",
+     "tipo": "detalhe",
+     "camera": [
+      0.154,
+      1.067,
+      0.576
+     ],
+     "alvo": [
+      0.0,
+      1.13,
+      0.0
+     ],
+     "movimento": "tremer"
+    },
+    {
+     "de": "f13",
+     "tipo": "detalhe",
+     "camera": [
+      0.299,
+      1.093,
+      0.518
+     ],
+     "alvo": [
+      0.0,
+      1.135,
+      0.0
+     ],
+     "movimento": "arco",
+     "intensidade": 0.3
+    },
+    {
+     "de": "f14",
+     "tipo": "aberto",
+     "camera": [
+      0.335,
+      1.368,
+      0.899
+     ],
+     "alvo": [
+      0.0,
+      1.16,
+      -0.02
+     ],
+     "movimento": "arco",
+     "intensidade": 0.4,
+     "transicao": "desfoque"
+    },
+    {
+     "de": "f15",
+     "tipo": "aberto",
+     "camera": [
+      -0.9,
+      2.0,
+      5.8
+     ],
+     "alvo": [
+      -0.9,
+      1.5,
+      0.3
+     ],
+     "movimento": "arco",
+     "intensidade": 0.5
+    }
+   ],
+   "sons": [
+    {
+     "de": "f5:peso+0.4",
+     "som": "impacto",
+     "volume": 0.5
+    },
+    {
+     "de": "f5:apertada",
+     "som": "pop",
+     "volume": 0.6
+    },
+    {
+     "de": "f6:esticada",
+     "som": "tensao_sobe",
+     "volume": 0.5
+    },
+    {
+     "de": "f6:concreto",
+     "som": "chiado",
+     "volume": 0.5
+    },
+    {
+     "de": "f7:barras",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f7:aco",
+     "som": "ding",
+     "volume": 0.6
+    },
+    {
+     "de": "f8:armado",
+     "som": "ding",
+     "volume": 0.8
+    },
+    {
+     "de": "f10:sol",
+     "som": "pop",
+     "volume": 0.5
+    },
+    {
+     "de": "f10:racha",
+     "som": "tensao_sobe",
+     "volume": 0.6
+    },
+    {
+     "de": "f10:dentro",
+     "som": "impacto",
+     "volume": 0.6
+    },
+    {
+     "de": "f11:nao",
+     "som": "ding",
+     "volume": 0.8
+    },
+    {
+     "de": "f12:agua",
+     "som": "agua",
+     "volume": 0.5
+    },
+    {
+     "de": "f12:incha",
+     "som": "tensao_sobe",
+     "volume": 0.45
+    },
+    {
+     "de": "f12:estoura",
+     "som": "impacto",
+     "volume": 0.9
+    },
+    {
+     "de": "f13:barras",
+     "som": "clique",
+     "volume": 0.6
+    },
+    {
+     "de": "f13:volta",
+     "som": "ding",
+     "volume": 0.6
+    },
+    {
+     "de": "f14:predios+0.3",
+     "som": "impacto",
+     "volume": 0.6
+    },
+    {
+     "de": "f14:cristo",
+     "som": "pop",
+     "volume": 0.8
+    },
+    {
+     "de": "f15:planta",
+     "som": "pop",
+     "volume": 0.8
+    }
+   ],
+   "efeitos": [
+    {
+     "de": "f6:concreto",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f7:aco",
+     "ate": "f7:fim+0.2",
+     "efeito": "circular",
+     "alvo": "barra0"
+    },
+    {
+     "de": "f10:dentro",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f11:igual",
+     "ate": "f11:jardineiro",
+     "efeito": "destacar",
+     "alvo": "barra0"
+    },
+    {
+     "de": "f12:estoura",
+     "efeito": "zoom_soco"
+    },
+    {
+     "de": "f12:estoura",
+     "ate": "f12:estoura+0.4",
+     "efeito": "tremor",
+     "intensidade": 0.5
+    },
+    {
+     "de": "f13:dedos",
+     "ate": "f13:fim+0.2",
+     "efeito": "circular",
+     "alvo": "camada"
+    },
+    {
+     "de": "f15:planta",
+     "ate": "f15:fim+0.6",
+     "efeito": "linhas",
+     "intensidade": 0.6
+    }
+   ],
+   "rotulos": [
+    {
+     "alvo": "aperta_d",
+     "texto": "Apertado",
+     "de": "f5:apertada",
+     "ate": "f5:fim+0.2"
+    },
+    {
+     "alvo": "estica_d",
+     "texto": "Esticado",
+     "de": "f6:esticada",
+     "ate": "f6:fim+0.2",
+     "cor": "#FF8A65"
+    },
+    {
+     "alvo": "barra0",
+     "texto": "Aço",
+     "de": "f7:aco",
+     "ate": "f7:fim+0.2"
+    },
+    {
+     "alvo": "estica_aco",
+     "texto": "Aço",
+     "de": "f11:esticam",
+     "ate": "f11:jardineiro"
+    },
+    {
+     "alvo": "estica_conc",
+     "texto": "Concreto",
+     "de": "f11:esticam",
+     "ate": "f11:jardineiro"
+    },
+    {
+     "alvo": "ferrugem",
+     "texto": "Ferrugem",
+     "de": "f12:enferruja",
+     "ate": "f12:fim"
+    },
+    {
+     "alvo": "camada",
+     "texto": "Proteção",
+     "de": "f13:dedos",
+     "ate": "f13:fim+0.2"
+    },
+    {
+     "alvo": "cristo_cabeca",
+     "texto": "Cristo Redentor",
+     "de": "f14:cristo",
+     "ate": "f14:fim+0.2"
+    },
+    {
+     "alvo": "barra_cima0",
+     "texto": "Ferragem",
+     "de": "f9:ferragem+0.3",
+     "ate": "f9:fim"
+    }
+   ]
+  }
+ ]
+}
