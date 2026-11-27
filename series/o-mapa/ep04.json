@@ -1,0 +1,1949 @@
+{
+  "serie": "o-mapa",
+  "parte": 4,
+  "titulo": "O farol",
+  "musica": "misterio",
+  "falas": [
+    {
+      "id": "f1",
+      "quem": "nico",
+      "off": true,
+      "texto": "Se quem te trouxe pra ilha mentiu pra você, não fuja. Suba no FAROL.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f2",
+      "quem": "nico",
+      "off": true,
+      "texto": "Porque o enigma do mapa aponta pra lá."
+    },
+    {
+      "id": "f3",
+      "quem": "nico",
+      "off": true,
+      "texto": "Mas só se você chegar antes do primeiro SOL.",
+      "tom": "serio"
+    },
+    {
+      "id": "f4",
+      "quem": "nico",
+      "off": true,
+      "texto": "Eu e minha irmã Duda caçamos ouro de um mapa de 1962."
+    },
+    {
+      "id": "f5",
+      "quem": "nico",
+      "off": true,
+      "texto": "E o Seu Jonas nunca contou que já morou aqui.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f6",
+      "quem": "nico",
+      "off": true,
+      "texto": "Então a gente finge que dorme. Às quatro, sai de fininho."
+    },
+    {
+      "id": "f7",
+      "quem": "nico",
+      "off": true,
+      "texto": "Meu primeiro instinto é pegar o barco dele e fugir."
+    },
+    {
+      "id": "f8",
+      "quem": "nico",
+      "off": true,
+      "texto": "Não. Eu tenho quinze anos. Só sei pilotar bicicleta.",
+      "tom": "serio"
+    },
+    {
+      "id": "f9",
+      "quem": "nico",
+      "off": true,
+      "texto": "Quatro e dez. O sol nasce às cinco e doze.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f10",
+      "quem": "duda",
+      "texto": "Luz que gira só tem uma. O FAROL."
+    },
+    {
+      "id": "f11",
+      "quem": "nico",
+      "off": true,
+      "texto": "Cento e vinte degraus no escuro."
+    },
+    {
+      "id": "f12",
+      "quem": "nico",
+      "off": true,
+      "texto": "Só que lá em cima tem uma luz ACESA.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f13",
+      "quem": "marina",
+      "texto": "Demoraram. A menina lê enigma muito ALTO.",
+      "tom": "serio"
+    },
+    {
+      "id": "f14",
+      "quem": "nico",
+      "off": true,
+      "texto": "A Marina Caveira. Sozinha com a gente, no alto do farol.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f15",
+      "quem": "marina",
+      "texto": "Todo mundo diz que o faroleiro roubou o ouro."
+    },
+    {
+      "id": "f16",
+      "quem": "marina",
+      "texto": "Ele era meu AVÔ. E não roubou nada.",
+      "tom": "serio"
+    },
+    {
+      "id": "f17",
+      "quem": "nico",
+      "off": true,
+      "texto": "Em 1962, o Aurélio salvou o ouro de um barco de ladrões."
+    },
+    {
+      "id": "f18",
+      "quem": "nico",
+      "off": true,
+      "texto": "Às cinco e doze, o primeiro sol bate na lente."
+    },
+    {
+      "id": "f19",
+      "quem": "nico",
+      "off": true,
+      "texto": "E o reflexo cai bem na figueira."
+    },
+    {
+      "id": "f20",
+      "quem": "duda",
+      "texto": "O ouro tá embaixo de onde a gente DORMIU."
+    },
+    {
+      "id": "f21",
+      "quem": "nico",
+      "off": true,
+      "texto": "Então a gente marca a árvore no mapa e respira."
+    },
+    {
+      "id": "f22",
+      "quem": "nico",
+      "off": true,
+      "texto": "Pela primeira vez, a gente tá um passo na frente.",
+      "tom": "aliviado"
+    },
+    {
+      "id": "f23",
+      "quem": "duda",
+      "texto": "E o barco dos ladrões? Qual era?"
+    },
+    {
+      "id": "f24",
+      "quem": "marina",
+      "texto": "Chamava TUBARÃO.",
+      "tom": "serio"
+    },
+    {
+      "id": "f25",
+      "quem": "nico",
+      "off": true,
+      "texto": "O do Seu Jonas é o Tubarão DOIS.",
+      "tom": "tenso"
+    }
+  ],
+  "cenas": [
+    {
+      "id": "gancho",
+      "cenario": "ilhota_farol",
+      "luz": "noite",
+      "ambiente": "mar",
+      "de": "inicio",
+      "personagens": {
+        "nico": {
+          "em": [
+            2.6,
+            10.6
+          ],
+          "olhando": [
+            0.4,
+            9.0,
+            -6.0
+          ],
+          "expressao": "nervoso"
+        },
+        "duda": {
+          "em": [
+            3.4,
+            9.6
+          ],
+          "olhando": [
+            -0.2,
+            9.0,
+            -6.0
+          ],
+          "expressao": "determinado"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "farol",
+          "em": "farol",
+          "ilhota": false,
+          "modo": "apagado"
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            3,
+            17
+          ],
+          "giro": 90,
+          "luzes": false,
+          "caixas": false
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "inicio",
+          "ate": "f2",
+          "texto": "QUEM TE TROUXE *MENTIU*"
+        },
+        {
+          "de": "f2",
+          "ate": "f3",
+          "texto": "O ENIGMA *APONTA PRO FAROL*"
+        },
+        {
+          "de": "f3",
+          "texto": "ANTES DO *PRIMEIRO SOL*"
+        }
+      ],
+      "insercoes": [
+        {
+          "de": "f2:enigma",
+          "ate": "f2:fim+0.2",
+          "tipo": "bilhete",
+          "titulo": "RISCADO NA PAREDE",
+          "linhas": [
+            "A. 1962",
+            "Onde a luz gira,",
+            "espere o primeiro sol."
+          ]
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "duda",
+          "faz": "correr",
+          "para": [
+            -0.5,
+            3.2
+          ],
+          "de": "inicio",
+          "velocidade": 0.45
+        },
+        {
+          "quem": "nico",
+          "faz": "correr",
+          "para": [
+            0.9,
+            3.7
+          ],
+          "de": "inicio+0.2",
+          "velocidade": 0.45
+        }
+      ],
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "geral",
+          "alvo": [
+            1.4,
+            3.2,
+            4.0
+          ],
+          "camera": [
+            -8.5,
+            4.6,
+            21.0
+          ],
+          "movimento": "arco",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f1:Suba",
+          "tipo": "aberto",
+          "alvo": [
+            0,
+            12.5,
+            -4
+          ],
+          "camera": [
+            1.6,
+            1.3,
+            9.5
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f3",
+          "tipo": "close",
+          "alvo": "duda",
+          "camera": [
+            -0.15,
+            2.1,
+            0.32
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "f1:FAROL",
+          "ate": "f1:FAROL+0.6",
+          "efeito": "linhas"
+        }
+      ],
+      "sons": [
+        {
+          "de": "f1:FAROL",
+          "som": "impacto",
+          "volume": 0.3
+        },
+        {
+          "de": "f3:SOL",
+          "som": "tensao_sobe",
+          "volume": 0.2
+        }
+      ]
+    },
+    {
+      "id": "esconderijo",
+      "cenario": "raizes",
+      "luz": "noite",
+      "ambiente": "noite",
+      "de": "f4",
+      "personagens": {
+        "nico": {
+          "em": [
+            -0.55,
+            0.05
+          ],
+          "olhando": [
+            1.0,
+            1.0,
+            1.8
+          ],
+          "expressao": "nervoso",
+          "escala": 0.75
+        },
+        "duda": {
+          "em": [
+            -1.75,
+            -0.55
+          ],
+          "olhando": [
+            0.6,
+            1.0,
+            1.6
+          ],
+          "expressao": "desconfiado",
+          "escala": 0.75
+        },
+        "jonas": {
+          "em": [
+            1.6,
+            0.45
+          ],
+          "olhando": [
+            -0.6,
+            1.0,
+            0.6
+          ],
+          "expressao": "feliz",
+          "escala": 0.75,
+          "olhos_fechados": true
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "riscos",
+          "em": [
+            0.15,
+            -1.88
+          ],
+          "quantos": 214
+        },
+        {
+          "tipo": "feixe_luz",
+          "de": [
+            0.3,
+            2.6,
+            3.4
+          ],
+          "em": [
+            0.0,
+            0.2
+          ],
+          "alt": 0.6,
+          "largura": 1.3,
+          "intensidade": 0.18,
+          "cor": "#BFD4FF"
+        }
+      ],
+      "rotulos": [
+        {
+          "alvo": "nico",
+          "texto": "NICO · 15 ANOS",
+          "de": "f4+0.2",
+          "ate": "f4:Duda"
+        },
+        {
+          "alvo": "duda",
+          "texto": "DUDA · 11 ANOS",
+          "de": "f4:Duda+0.1",
+          "ate": "f4:fim+0.2"
+        },
+        {
+          "alvo": "jonas",
+          "texto": "SEU JONAS · PESCADOR",
+          "de": "f5:Jonas",
+          "ate": "f5:morou"
+        }
+      ],
+      "insercoes": [
+        {
+          "de": "f5:morou",
+          "ate": "f5:fim+0.3",
+          "tipo": "bilhete",
+          "titulo": "RISCADO NA PAREDE",
+          "linhas": [
+            "||||  ||||  ||||  ||",
+            "JONAS 1985"
+          ]
+        }
+      ],
+      "relogio": {
+        "de": "f6:quatro",
+        "hora": "04:00"
+      },
+      "manchetes": [
+        {
+          "de": "f4",
+          "ate": "f5",
+          "texto": "*40 BARRAS* DE OURO DE 1962"
+        },
+        {
+          "de": "f5",
+          "ate": "f6",
+          "texto": "ELE JÁ *MOROU AQUI*"
+        },
+        {
+          "de": "f6",
+          "texto": "SAIR *SEM ACORDAR ELE*"
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "nico",
+          "faz": "sentar",
+          "de": "inicio"
+        },
+        {
+          "quem": "duda",
+          "faz": "sentar",
+          "de": "inicio"
+        },
+        {
+          "quem": "jonas",
+          "faz": "sentar",
+          "de": "inicio"
+        },
+        {
+          "quem": "nico",
+          "faz": "levantar",
+          "de": "f6:quatro"
+        },
+        {
+          "quem": "duda",
+          "faz": "levantar",
+          "de": "f6:quatro+0.2"
+        },
+        {
+          "quem": "duda",
+          "faz": "andar",
+          "para": [
+            -1.2,
+            1.6
+          ],
+          "de": "f6:fininho",
+          "velocidade": 0.5
+        },
+        {
+          "quem": "nico",
+          "faz": "andar",
+          "para": [
+            -0.2,
+            1.7
+          ],
+          "de": "f6:fininho+0.2",
+          "velocidade": 0.5
+        }
+      ],
+      "planos": [
+        {
+          "de": "f4",
+          "tipo": "medio",
+          "alvo": "nico",
+          "camera": [
+            -0.38,
+            1.0,
+            1.84
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.2,
+          "transicao": "desfoque"
+        },
+        {
+          "de": "f4:Duda",
+          "tipo": "close",
+          "alvo": "duda",
+          "camera": [
+            -0.22,
+            1.0,
+            1.17
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f5",
+          "tipo": "close",
+          "alvo": "jonas",
+          "camera": [
+            -0.71,
+            1.15,
+            1.11
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.15
+        },
+        {
+          "de": "f6",
+          "tipo": "medio",
+          "alvo": "nico",
+          "camera": [
+            -0.38,
+            1.0,
+            1.84
+          ],
+          "movimento": "travelling",
+          "intensidade": -0.2
+        },
+        {
+          "de": "f6:fininho",
+          "tipo": "close",
+          "alvo": "jonas",
+          "camera": [
+            -0.71,
+            1.15,
+            1.11
+          ],
+          "movimento": "fixo"
+        }
+      ],
+      "sons": [
+        {
+          "de": "f5:Jonas",
+          "som": "tensao_sobe",
+          "volume": 0.2
+        }
+      ]
+    },
+    {
+      "id": "cais",
+      "cenario": "ilhota_farol",
+      "luz": "noite",
+      "ambiente": "mar",
+      "de": "f7",
+      "filtro": "frio",
+      "personagens": {
+        "nico": {
+          "em": [
+            1.6,
+            9.4
+          ],
+          "olhando": [
+            3.0,
+            2.0,
+            17.0
+          ],
+          "expressao": "determinado"
+        },
+        "duda": {
+          "em": [
+            0.2,
+            8.6
+          ],
+          "olhando": [
+            2.3,
+            2.4,
+            11.2
+          ],
+          "expressao": "desconfiado"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "farol",
+          "em": "farol",
+          "ilhota": false,
+          "modo": "apagado"
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            3,
+            17
+          ],
+          "giro": 90,
+          "luzes": false,
+          "caixas": false
+        }
+      ],
+      "relogio": {
+        "de": "f9",
+        "hora": "04:10"
+      },
+      "manchetes": [
+        {
+          "de": "f7",
+          "ate": "f8",
+          "texto": "FUGIR *NO BARCO DELE*?"
+        },
+        {
+          "de": "f8",
+          "ate": "f9",
+          "texto": "*NÃO*: NEM SEI LIGAR"
+        },
+        {
+          "de": "f9",
+          "ate": "f10",
+          "texto": "O SOL NASCE *ÀS 5H12*"
+        },
+        {
+          "de": "f10",
+          "ate": "f11",
+          "texto": "ONDE A LUZ GIRA: *O FAROL*"
+        }
+      ],
+      "cartoes": [
+        {
+          "de": "f11",
+          "ate": "f11:fim+0.3",
+          "grande": "# DEGRAUS",
+          "contar": [
+            1,
+            120
+          ]
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "nico",
+          "faz": "andar",
+          "para": [
+            2.3,
+            11.2
+          ],
+          "de": "f7:pegar",
+          "velocidade": 0.8
+        },
+        {
+          "quem": "duda",
+          "faz": "puxar",
+          "para": [
+            2.2,
+            1.6,
+            11.0
+          ],
+          "de": "f8"
+        },
+        {
+          "quem": "nico",
+          "faz": "virar",
+          "para": [
+            0.2,
+            1.6,
+            8.6
+          ],
+          "de": "f8+0.3"
+        },
+        {
+          "quem": "nico",
+          "expressao": "nervoso",
+          "de": "f8"
+        },
+        {
+          "quem": "nico",
+          "expressao": "feliz",
+          "de": "f8:bicicleta"
+        },
+        {
+          "quem": "duda",
+          "faz": "virar",
+          "para": [
+            0,
+            6,
+            -4
+          ],
+          "de": "f9"
+        },
+        {
+          "quem": "nico",
+          "faz": "virar",
+          "para": [
+            0,
+            6,
+            -4
+          ],
+          "de": "f9+0.3"
+        },
+        {
+          "quem": "duda",
+          "faz": "apontar",
+          "para": [
+            0,
+            12,
+            -4
+          ],
+          "de": "f10:FAROL-0.3"
+        },
+        {
+          "quem": "duda",
+          "expressao": "determinado",
+          "de": "f10"
+        },
+        {
+          "quem": "duda",
+          "faz": "correr",
+          "para": [
+            -0.4,
+            -1.2
+          ],
+          "de": "f11",
+          "velocidade": 0.5
+        },
+        {
+          "quem": "nico",
+          "faz": "correr",
+          "para": [
+            0.5,
+            -1.0
+          ],
+          "de": "f11+0.2",
+          "velocidade": 0.5
+        }
+      ],
+      "planos": [
+        {
+          "de": "f7",
+          "tipo": "medio",
+          "alvo": "nico",
+          "camera": [
+            -2.6,
+            2.6,
+            10.6
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.25,
+          "transicao": "chicote"
+        },
+        {
+          "de": "f8+0.5",
+          "tipo": "close",
+          "alvo": "nico",
+          "camera": [
+            -0.6,
+            2.5,
+            10.42
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f9",
+          "tipo": "aberto",
+          "alvo": [
+            0.6,
+            5.0,
+            -2.0
+          ],
+          "camera": [
+            7.0,
+            2.3,
+            14.5
+          ],
+          "movimento": "arco",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f10",
+          "tipo": "close",
+          "alvo": "duda",
+          "camera": [
+            0.76,
+            2.1,
+            5.75
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f11",
+          "tipo": "aberto",
+          "alvo": [
+            0,
+            6.0,
+            -4.0
+          ],
+          "camera": [
+            2.4,
+            1.1,
+            4.6
+          ],
+          "movimento": "subir",
+          "intensidade": 0.3
+        }
+      ],
+      "sons": [
+        {
+          "de": "f8:bicicleta",
+          "som": "pop",
+          "volume": 0.25
+        },
+        {
+          "de": "f10:FAROL",
+          "som": "impacto",
+          "volume": 0.25
+        }
+      ]
+    },
+    {
+      "id": "luz",
+      "cenario": "ilhota_farol",
+      "luz": "noite",
+      "ambiente": "mar",
+      "de": "f12",
+      "filtro": "frio",
+      "personagens": {},
+      "objetos": [
+        {
+          "tipo": "farol",
+          "em": "farol",
+          "ilhota": false,
+          "modo": "apagado"
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            3,
+            17
+          ],
+          "giro": 90,
+          "luzes": false,
+          "caixas": false
+        },
+        {
+          "tipo": "feixe_luz",
+          "de": [
+            0.6,
+            12.6,
+            -3.3
+          ],
+          "em": [
+            5.0,
+            4.0
+          ],
+          "alt": 6.0,
+          "largura": 1.4,
+          "intensidade": 0.45,
+          "cor": "#FFE9B8",
+          "aparece": "f12:luz"
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f12",
+          "texto": "TEM ALGUÉM *LÁ EM CIMA*"
+        }
+      ],
+      "planos": [
+        {
+          "de": "f12",
+          "tipo": "geral",
+          "alvo": [
+            0,
+            11.5,
+            -4.0
+          ],
+          "camera": [
+            -7.0,
+            2.4,
+            12.0
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.25,
+          "transicao": "zoom"
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "f12:ACESA",
+          "ate": "f12:ACESA+0.6",
+          "efeito": "linhas"
+        }
+      ],
+      "sons": [
+        {
+          "de": "f12:ACESA",
+          "som": "susto",
+          "volume": 0.35
+        }
+      ]
+    },
+    {
+      "id": "marina",
+      "cenario": "sala_farol",
+      "luz": "noite",
+      "ambiente": "noite",
+      "de": "f13",
+      "personagens": {
+        "marina": {
+          "em": [
+            1.35,
+            1.5
+          ],
+          "olhando": [
+            -1.55,
+            1.0,
+            0.75
+          ],
+          "expressao": "serio",
+          "escala": 0.6,
+          "segura": "lanterna"
+        },
+        "nico": {
+          "em": [
+            -2.45,
+            0.95
+          ],
+          "olhando": [
+            1.35,
+            1.4,
+            1.5
+          ],
+          "expressao": "medo",
+          "escala": 0.6
+        },
+        "duda": {
+          "em": [
+            -2.5,
+            0.15
+          ],
+          "olhando": [
+            1.35,
+            1.4,
+            1.5
+          ],
+          "expressao": "medo",
+          "escala": 0.6
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "luz_farol",
+          "em": "lente",
+          "modo": "apagada"
+        }
+      ],
+      "rotulos": [
+        {
+          "alvo": "marina",
+          "texto": "MARINA CAVEIRA",
+          "de": "f13+0.3",
+          "ate": "f13:fim+0.2",
+          "altura": 0.72
+        }
+      ],
+      "insercoes": [
+        {
+          "de": "f15:faroleiro",
+          "ate": "f15:fim+0.3",
+          "tipo": "bilhete",
+          "titulo": "JORNAL DA VILA · 1962",
+          "linhas": [
+            "FAROLEIRO ROUBA",
+            "O OURO DO SANTA CLARA",
+            "40 barras somem no mar"
+          ]
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f13",
+          "ate": "f14",
+          "texto": "ELA *JÁ ESTAVA LÁ*"
+        },
+        {
+          "de": "f14",
+          "ate": "f15",
+          "texto": "SOZINHOS COM A *MARINA CAVEIRA*"
+        },
+        {
+          "de": "f15",
+          "ate": "f16",
+          "texto": "O FAROLEIRO *ROUBOU O OURO*?"
+        },
+        {
+          "de": "f16",
+          "texto": "O FAROLEIRO ERA *AVÔ DELA*",
+          "cor": "#2FD27A"
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "marina",
+          "faz": "erguer",
+          "para": [
+            -2.0,
+            1.2,
+            0.6
+          ],
+          "de": "inicio"
+        },
+        {
+          "quem": "marina",
+          "faz": "acender",
+          "de": "inicio"
+        },
+        {
+          "quem": "nico",
+          "faz": "andar",
+          "para": [
+            -1.55,
+            1.25
+          ],
+          "de": "inicio",
+          "velocidade": 0.6
+        },
+        {
+          "quem": "duda",
+          "faz": "andar",
+          "para": [
+            -1.6,
+            0.3
+          ],
+          "de": "inicio+0.2",
+          "velocidade": 0.6
+        },
+        {
+          "quem": "marina",
+          "expressao": "triste",
+          "de": "f15"
+        },
+        {
+          "quem": "marina",
+          "expressao": "determinado",
+          "de": "f16"
+        },
+        {
+          "quem": "duda",
+          "expressao": "surpreso",
+          "de": "f16:AVÔ"
+        },
+        {
+          "quem": "nico",
+          "expressao": "surpreso",
+          "de": "f16:AVÔ"
+        }
+      ],
+      "planos": [
+        {
+          "de": "f13",
+          "tipo": "medio",
+          "alvo": "marina",
+          "camera": [
+            -0.69,
+            1.5,
+            1.02
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f14",
+          "tipo": "close",
+          "alvo": "nico",
+          "camera": [
+            0.24,
+            1.5,
+            1.4
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f15",
+          "tipo": "close",
+          "alvo": "marina",
+          "camera": [
+            -0.35,
+            1.55,
+            1.1
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.15
+        },
+        {
+          "de": "f16:AVÔ",
+          "tipo": "close",
+          "alvo": "duda",
+          "camera": [
+            -0.03,
+            1.2,
+            0.94
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f16:nada",
+          "tipo": "close",
+          "alvo": "marina",
+          "camera": [
+            -0.35,
+            1.55,
+            1.1
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.15
+        }
+      ],
+      "sons": [
+        {
+          "de": "f13:ALTO",
+          "som": "pop",
+          "volume": 0.2
+        },
+        {
+          "de": "f16:AVÔ",
+          "som": "impacto",
+          "volume": 0.3
+        }
+      ]
+    },
+    {
+      "id": "lembranca",
+      "cenario": "ilhota_farol",
+      "luz": "noite",
+      "ambiente": "mar",
+      "de": "f17",
+      "filtro": "sepia",
+      "personagens": {
+        "aurelio": {
+          "em": [
+            2.7,
+            10.5
+          ],
+          "olhando": [
+            0.0,
+            1.5,
+            -4.0
+          ],
+          "expressao": "determinado",
+          "segura": "pacote"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "farol",
+          "em": "farol",
+          "ilhota": false,
+          "modo": "apagado"
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            -16,
+            30
+          ],
+          "giro": 35,
+          "luzes": true,
+          "caixas": true
+        },
+        {
+          "tipo": "barras_ouro",
+          "em": [
+            3.4,
+            12.2
+          ],
+          "giro": 20
+        },
+        {
+          "tipo": "feixe_luz",
+          "de": [
+            -12.0,
+            2.6,
+            27.0
+          ],
+          "em": [
+            1.0,
+            6.0
+          ],
+          "alt": 0.0,
+          "largura": 2.2,
+          "intensidade": 0.3,
+          "cor": "#FFF2C4",
+          "varrer": 25
+        }
+      ],
+      "rotulos": [
+        {
+          "alvo": "aurelio",
+          "texto": "AURÉLIO · FAROLEIRO",
+          "de": "f17:Aurélio",
+          "ate": "f17:fim",
+          "altura": 0.72
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f17",
+          "texto": "1962: ELE *SALVOU O OURO*",
+          "cor": "#2FD27A"
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "aurelio",
+          "faz": "andar",
+          "para": [
+            0.4,
+            1.0
+          ],
+          "de": "inicio",
+          "velocidade": 1.0
+        },
+        {
+          "quem": "aurelio",
+          "faz": "virar",
+          "para": [
+            -12.0,
+            2.0,
+            26.0
+          ],
+          "de": "f17:barco"
+        },
+        {
+          "quem": "aurelio",
+          "expressao": "medo",
+          "de": "f17:barco"
+        }
+      ],
+      "planos": [
+        {
+          "de": "f17",
+          "tipo": "aberto",
+          "alvo": "aurelio",
+          "camera": [
+            -6.0,
+            2.6,
+            9.0
+          ],
+          "movimento": "acompanhar",
+          "intensidade": 0.25,
+          "transicao": "desfoque"
+        },
+        {
+          "de": "f17:barco",
+          "tipo": "close",
+          "alvo": "aurelio",
+          "camera": [
+            -0.32,
+            2.6,
+            7.7
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.2
+        }
+      ],
+      "sons": [
+        {
+          "de": "f17:ladrões",
+          "som": "tensao_sobe",
+          "volume": 0.25
+        }
+      ]
+    },
+    {
+      "id": "sol",
+      "cenario": "sala_farol",
+      "luz": "por_do_sol",
+      "ambiente": "mar",
+      "de": "f18",
+      "filtro": "quente",
+      "personagens": {},
+      "objetos": [
+        {
+          "tipo": "luz_farol",
+          "em": "lente",
+          "modo": "apagada"
+        },
+        {
+          "tipo": "feixe_luz",
+          "de": [
+            -5.0,
+            3.6,
+            7.5
+          ],
+          "em": [
+            0.0,
+            0.0
+          ],
+          "alt": 1.5,
+          "largura": 0.6,
+          "intensidade": 0.45,
+          "cor": "#FFD9A0",
+          "aparece": "f18:sol"
+        },
+        {
+          "tipo": "feixe_luz",
+          "de": [
+            0.0,
+            1.5,
+            0.0
+          ],
+          "em": [
+            7.0,
+            14.0
+          ],
+          "alt": -2.0,
+          "largura": 0.9,
+          "intensidade": 0.4,
+          "cor": "#FFE9B8",
+          "aparece": "f18:lente"
+        }
+      ],
+      "relogio": {
+        "de": "f18",
+        "hora": "05:12"
+      },
+      "manchetes": [
+        {
+          "de": "f18",
+          "texto": "5H12: *O PRIMEIRO SOL*"
+        }
+      ],
+      "planos": [
+        {
+          "de": "f18",
+          "tipo": "detalhe",
+          "alvo": [
+            0,
+            1.6,
+            0
+          ],
+          "camera": [
+            -1.5,
+            1.9,
+            -0.6
+          ],
+          "movimento": "arco",
+          "intensidade": 0.15,
+          "transicao": "desfoque"
+        }
+      ],
+      "sons": [
+        {
+          "de": "f18:lente",
+          "som": "ding",
+          "volume": 0.3
+        }
+      ]
+    },
+    {
+      "id": "reflexo",
+      "cenario": "selva",
+      "luz": "por_do_sol",
+      "ambiente": "selva",
+      "de": "f19",
+      "personagens": {},
+      "objetos": [
+        {
+          "tipo": "feixe_luz",
+          "de": [
+            -2.0,
+            16.0,
+            6.0
+          ],
+          "em": [
+            -6.4,
+            -3.6
+          ],
+          "alt": 0.5,
+          "largura": 1.8,
+          "intensidade": 0.45,
+          "cor": "#FFE9B8"
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f19",
+          "texto": "O REFLEXO *APONTA A FIGUEIRA*"
+        }
+      ],
+      "planos": [
+        {
+          "de": "f19",
+          "tipo": "aberto",
+          "alvo": [
+            -6.6,
+            2.2,
+            -4.4
+          ],
+          "camera": [
+            -0.8,
+            3.4,
+            2.4
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.25,
+          "transicao": "chicote"
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "f19:figueira-0.2",
+          "ate": "f19:fim+0.2",
+          "efeito": "circular",
+          "alvo": [
+            -6.4,
+            1.0,
+            -3.6
+          ]
+        }
+      ]
+    },
+    {
+      "id": "janela",
+      "cenario": "sala_farol",
+      "luz": "por_do_sol",
+      "ambiente": "mar",
+      "de": "f20",
+      "filtro": "quente",
+      "personagens": {
+        "marina": {
+          "em": [
+            0.9,
+            1.45
+          ],
+          "olhando": [
+            0.4,
+            1.0,
+            12.0
+          ],
+          "expressao": "feliz",
+          "escala": 0.6
+        },
+        "nico": {
+          "em": [
+            0.0,
+            1.8
+          ],
+          "olhando": [
+            0.4,
+            1.0,
+            12.0
+          ],
+          "expressao": "feliz",
+          "escala": 0.6
+        },
+        "duda": {
+          "em": [
+            -0.9,
+            1.55
+          ],
+          "olhando": [
+            0.4,
+            1.0,
+            12.0
+          ],
+          "expressao": "surpreso",
+          "escala": 0.6
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "luz_farol",
+          "em": "lente",
+          "modo": "apagada"
+        },
+        {
+          "tipo": "feixe_luz",
+          "de": [
+            -5.0,
+            3.6,
+            7.5
+          ],
+          "em": [
+            0.0,
+            0.0
+          ],
+          "alt": 1.5,
+          "largura": 0.6,
+          "intensidade": 0.4,
+          "cor": "#FFD9A0"
+        }
+      ],
+      "relogio": {
+        "de": "f20",
+        "hora": "05:13"
+      },
+      "insercoes": [
+        {
+          "de": "f21:árvore",
+          "ate": "f21:fim+0.2",
+          "tipo": "bilhete",
+          "titulo": "O MAPA",
+          "linhas": [
+            "FAROL  ->  300 passos",
+            "X  a árvore que chora",
+            "(debaixo das raízes)"
+          ]
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f20",
+          "ate": "f21",
+          "texto": "O OURO ESTÁ *DEBAIXO DA CAMA*"
+        },
+        {
+          "de": "f21",
+          "ate": "f22",
+          "texto": "*X* NA FIGUEIRA"
+        },
+        {
+          "de": "f22",
+          "texto": "UM PASSO *NA FRENTE*",
+          "cor": "#2FD27A"
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "duda",
+          "faz": "maos_na_cabeca",
+          "de": "f20:DORMIU"
+        },
+        {
+          "quem": "duda",
+          "expressao": "feliz",
+          "de": "f22"
+        },
+        {
+          "quem": "nico",
+          "expressao": "aliviado",
+          "de": "f21"
+        }
+      ],
+      "planos": [
+        {
+          "de": "f20",
+          "tipo": "close",
+          "alvo": "duda",
+          "camera": [
+            -0.95,
+            1.2,
+            3.35
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.15
+        },
+        {
+          "de": "f20:DORMIU",
+          "tipo": "close",
+          "alvo": "duda",
+          "camera": [
+            -0.95,
+            1.2,
+            3.35
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f21",
+          "tipo": "close",
+          "alvo": "nico",
+          "camera": [
+            0.0,
+            1.5,
+            3.5
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.15
+        },
+        {
+          "de": "f22",
+          "tipo": "aberto",
+          "alvo": [
+            0.0,
+            1.3,
+            1.6
+          ],
+          "camera": [
+            0.05,
+            1.7,
+            6.0
+          ],
+          "movimento": "arco",
+          "intensidade": 0.12
+        }
+      ],
+      "sons": [
+        {
+          "de": "f20:DORMIU",
+          "som": "pop",
+          "volume": 0.2
+        }
+      ]
+    },
+    {
+      "id": "virada",
+      "cenario": "sala_farol",
+      "luz": "por_do_sol",
+      "ambiente": "mar",
+      "de": "f23",
+      "filtro": "dramatico",
+      "personagens": {
+        "marina": {
+          "em": [
+            0.9,
+            1.45
+          ],
+          "olhando": [
+            -0.9,
+            1.2,
+            1.55
+          ],
+          "expressao": "serio",
+          "escala": 0.6
+        },
+        "nico": {
+          "em": [
+            0.0,
+            1.8
+          ],
+          "olhando": [
+            0.4,
+            1.0,
+            12.0
+          ],
+          "expressao": "aliviado",
+          "escala": 0.6
+        },
+        "duda": {
+          "em": [
+            -0.9,
+            1.55
+          ],
+          "olhando": [
+            0.9,
+            1.5,
+            1.45
+          ],
+          "expressao": "desconfiado",
+          "escala": 0.6
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "luz_farol",
+          "em": "lente",
+          "modo": "apagada"
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f23",
+          "ate": "f24",
+          "texto": "E O BARCO *DOS LADRÕES*?"
+        },
+        {
+          "de": "f24",
+          "texto": "\"*TUBARÃO*\""
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "nico",
+          "expressao": "medo",
+          "de": "f25"
+        },
+        {
+          "quem": "duda",
+          "expressao": "medo",
+          "de": "f24:TUBARÃO"
+        }
+      ],
+      "planos": [
+        {
+          "de": "f23",
+          "tipo": "close",
+          "alvo": "duda",
+          "camera": [
+            0.29,
+            1.2,
+            1.02
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.15
+        },
+        {
+          "de": "f24",
+          "tipo": "close",
+          "alvo": "marina",
+          "camera": [
+            -0.92,
+            1.55,
+            0.76
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f25",
+          "tipo": "close",
+          "alvo": "nico",
+          "camera": [
+            0.0,
+            1.5,
+            3.5
+          ],
+          "movimento": "dolly_zoom",
+          "intensidade": 0.8,
+          "transicao": "zoom"
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "f23",
+          "ate": "fim",
+          "efeito": "barras"
+        }
+      ],
+      "sons": [
+        {
+          "de": "f24:TUBARÃO",
+          "som": "tensao_sobe",
+          "volume": 0.3
+        }
+      ]
+    },
+    {
+      "id": "barco",
+      "cenario": "ilhota_farol",
+      "luz": "por_do_sol",
+      "ambiente": "mar",
+      "de": "f25:Tubarão",
+      "filtro": "dramatico",
+      "personagens": {},
+      "objetos": [
+        {
+          "tipo": "farol",
+          "em": "farol",
+          "ilhota": false,
+          "modo": "apagado"
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            3,
+            17
+          ],
+          "giro": 90,
+          "luzes": false,
+          "caixas": false
+        }
+      ],
+      "rotulos": [
+        {
+          "alvo": [
+            3.0,
+            3.6,
+            17.0
+          ],
+          "texto": "TUBARÃO II",
+          "de": "f25:Tubarão+0.1",
+          "ate": "f25:fim+0.3",
+          "cor": "#FF6B5A"
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f25:Tubarão",
+          "texto": "O BARCO DELE: *TUBARÃO II*"
+        }
+      ],
+      "planos": [
+        {
+          "de": "f25:Tubarão",
+          "tipo": "medio",
+          "alvo": [
+            3.0,
+            2.4,
+            17.0
+          ],
+          "camera": [
+            -6.0,
+            3.4,
+            13.0
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.25
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "f25:Tubarão",
+          "ate": "fim",
+          "efeito": "barras"
+        },
+        {
+          "de": "f25:DOIS",
+          "ate": "f25:fim+0.3",
+          "efeito": "circular",
+          "alvo": [
+            3.0,
+            2.2,
+            17.0
+          ]
+        }
+      ],
+      "sons": [
+        {
+          "de": "f25:DOIS",
+          "som": "impacto",
+          "volume": 0.45
+        }
+      ]
+    },
+    {
+      "id": "final",
+      "cenario": "sala_farol",
+      "luz": "por_do_sol",
+      "ambiente": "mar",
+      "de": "f25:fim+0.3",
+      "filtro": "dramatico",
+      "personagens": {
+        "marina": {
+          "em": [
+            0.9,
+            1.45
+          ],
+          "olhando": [
+            -0.9,
+            1.2,
+            1.55
+          ],
+          "expressao": "serio",
+          "escala": 0.6
+        },
+        "nico": {
+          "em": [
+            0.0,
+            1.8
+          ],
+          "olhando": [
+            0.4,
+            1.0,
+            12.0
+          ],
+          "expressao": "medo",
+          "escala": 0.6
+        },
+        "duda": {
+          "em": [
+            -0.9,
+            1.55
+          ],
+          "olhando": [
+            0.9,
+            1.5,
+            1.45
+          ],
+          "expressao": "medo",
+          "escala": 0.6
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "luz_farol",
+          "em": "lente",
+          "modo": "apagada"
+        }
+      ],
+      "planos": [
+        {
+          "de": "f25:fim+0.3",
+          "tipo": "close",
+          "alvo": "nico",
+          "lado": "frente",
+          "camera": [
+            0.0,
+            1.5,
+            3.5
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.15
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "f25:fim+0.3",
+          "ate": "fim",
+          "efeito": "barras"
+        }
+      ]
+    }
+  ],
+  "chamada": {
+    "pergunta": "Confiava na Marina ou no Seu Jonas?",
+    "texto": "COMENTA",
+    "destaque": "PARTE 5"
+  },
+  "postagem": {
+    "titulo": "Subimos num farol abandonado às 4 da manhã",
+    "descricao": "Dois irmãos seguem um mapa de 1962 atrás de 40 barras de ouro numa ilha deserta. Às 4 da manhã, no alto do farol abandonado, alguém já esperava por eles.",
+    "hashtags": [
+      "farol",
+      "tesouro",
+      "aventura",
+      "animacao"
+    ],
+    "comentario": "Eu confiava na Marina: ela esperou a gente e contou tudo. E você, confiava em quem?",
+    "capa": "f10:FAROL+0.3"
+  }
+}

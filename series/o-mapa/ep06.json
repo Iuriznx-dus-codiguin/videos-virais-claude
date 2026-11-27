@@ -1,0 +1,1532 @@
+{
+  "serie": "o-mapa",
+  "parte": 6,
+  "titulo": "A troca",
+  "musica": "tensao",
+  "falas": [
+    {
+      "id": "f1",
+      "quem": "nico",
+      "off": true,
+      "texto": "Se um ladrão mandar você encher o barco dele de ouro, não tenha PRESSA.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f2",
+      "quem": "nico",
+      "off": true,
+      "texto": "Porque o mar pode fazer o serviço por você."
+    },
+    {
+      "id": "f3",
+      "quem": "nico",
+      "off": true,
+      "texto": "Mas só se você acertar a hora no MINUTO.",
+      "tom": "serio"
+    },
+    {
+      "id": "f4",
+      "quem": "nico",
+      "off": true,
+      "texto": "Eu e minha irmã Duda achamos quarenta barras de ouro de 1962."
+    },
+    {
+      "id": "f5",
+      "quem": "nico",
+      "off": true,
+      "texto": "E o Seu Jonas quer tudo no barco dele até as cinco.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f6",
+      "quem": "nico",
+      "off": true,
+      "texto": "Meu primeiro instinto é esconder o ouro e esperar a tempestade."
+    },
+    {
+      "id": "f7",
+      "quem": "nico",
+      "off": true,
+      "texto": "Não. Depois dela, é uma semana sem barco. Com duas garrafas de água.",
+      "tom": "serio"
+    },
+    {
+      "id": "f8",
+      "quem": "nico",
+      "off": true,
+      "texto": "Quatro da tarde. Duas horas pra tempestade.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f9",
+      "quem": "duda",
+      "texto": "A maré baixa às cinco e quarenta. Olha o RECIFE."
+    },
+    {
+      "id": "f10",
+      "quem": "nico",
+      "off": true,
+      "texto": "Na maré baixa, um recife aparece bem na frente do cais."
+    },
+    {
+      "id": "f11",
+      "quem": "nico",
+      "off": true,
+      "texto": "Com meia tonelada de ouro, o barco dele encalha."
+    },
+    {
+      "id": "f12",
+      "quem": "marina",
+      "texto": "Marinha, aqui é a Marina. Ilha das Gaivotas. Câmbio."
+    },
+    {
+      "id": "f13",
+      "quem": "nico",
+      "off": true,
+      "texto": "Então a gente enrola. Uma barra de cada vez."
+    },
+    {
+      "id": "f14",
+      "quem": "nico",
+      "off": true,
+      "texto": "A Marina conta as barras. E erra de propósito."
+    },
+    {
+      "id": "f15",
+      "quem": "marina",
+      "texto": "Trinta e um... trinta e dois... perdi a CONTA."
+    },
+    {
+      "id": "f16",
+      "quem": "jonas",
+      "texto": "Conta de novo, Caveira! E rápido!",
+      "tom": "bravo"
+    },
+    {
+      "id": "f17",
+      "quem": "nico",
+      "texto": "E eu achando que era ruim de matemática."
+    },
+    {
+      "id": "f18",
+      "quem": "nico",
+      "off": true,
+      "texto": "Cinco e trinta e oito. O barco sai carregado.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f19",
+      "quem": "nico",
+      "off": true,
+      "texto": "Direto pro recife."
+    },
+    {
+      "id": "f20",
+      "quem": "duda",
+      "texto": "Mais dois MINUTOS."
+    },
+    {
+      "id": "f21",
+      "quem": "nico",
+      "off": true,
+      "texto": "Pela primeira vez, o mar tá do nosso lado.",
+      "tom": "aliviado"
+    },
+    {
+      "id": "f22",
+      "quem": "nico",
+      "off": true,
+      "texto": "Só que, no último segundo, o barco vira.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f23",
+      "quem": "jonas",
+      "texto": "Eu nasci nesse mar, MENINA!",
+      "tom": "grito"
+    }
+  ],
+  "cenas": [
+    {
+      "id": "gancho",
+      "cenario": "ilhota_farol",
+      "luz": "entardecer",
+      "ambiente": "mar",
+      "de": "inicio",
+      "filtro": "frio",
+      "personagens": {
+        "nico": {
+          "em": [
+            0.2,
+            7.0
+          ],
+          "olhando": [
+            3.0,
+            2.6,
+            12.4
+          ],
+          "expressao": "nervoso",
+          "segura": "pacote"
+        },
+        "duda": {
+          "em": [
+            2.4,
+            8.9
+          ],
+          "olhando": [
+            3.0,
+            2.6,
+            12.4
+          ],
+          "expressao": "determinado"
+        },
+        "marina": {
+          "em": [
+            4.2,
+            9.4
+          ],
+          "olhando": [
+            3.0,
+            2.6,
+            12.4
+          ],
+          "expressao": "serio",
+          "segura": "radio"
+        },
+        "jonas": {
+          "em": [
+            3.0,
+            12.4
+          ],
+          "olhando": [
+            2.4,
+            2.2,
+            8.9
+          ],
+          "expressao": "serio"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "farol",
+          "em": "farol",
+          "ilhota": false,
+          "modo": "apagado"
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            3,
+            17
+          ],
+          "giro": 90,
+          "luzes": true,
+          "caixas": false
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "inicio",
+          "ate": "f2",
+          "texto": "OURO NO *BARCO DO LADRÃO*"
+        },
+        {
+          "de": "f2",
+          "ate": "f3",
+          "texto": "O MAR *TRABALHA PRA VOCÊ*"
+        },
+        {
+          "de": "f3",
+          "texto": "*NO MINUTO* CERTO"
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "nico",
+          "faz": "andar",
+          "para": [
+            1.2,
+            9.6
+          ],
+          "de": "inicio",
+          "velocidade": 0.5
+        },
+        {
+          "quem": "jonas",
+          "faz": "bracos_cruzados",
+          "de": "inicio"
+        },
+        {
+          "quem": "jonas",
+          "faz": "virar",
+          "para": [
+            -6.0,
+            2.0,
+            30.0
+          ],
+          "de": "f2"
+        },
+        {
+          "quem": "jonas",
+          "expressao": "feliz",
+          "de": "f2:mar"
+        }
+      ],
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "geral",
+          "alvo": [
+            2.6,
+            2.2,
+            11.0
+          ],
+          "camera": [
+            -7.5,
+            4.2,
+            20.0
+          ],
+          "movimento": "arco",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f2",
+          "tipo": "close",
+          "alvo": "jonas",
+          "camera": [
+            0.0,
+            2.9,
+            13.2
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.15
+        },
+        {
+          "de": "f3",
+          "tipo": "close",
+          "alvo": "duda",
+          "camera": [
+            1.83,
+            2.0,
+            11.74
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.2
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "inicio",
+          "ate": "fim",
+          "efeito": "vinheta",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f1:PRESSA",
+          "ate": "f1:PRESSA+0.6",
+          "efeito": "linhas"
+        }
+      ],
+      "sons": [
+        {
+          "de": "inicio",
+          "som": "trovao",
+          "volume": 0.25
+        },
+        {
+          "de": "f1:PRESSA",
+          "som": "impacto",
+          "volume": 0.3
+        }
+      ]
+    },
+    {
+      "id": "prazo",
+      "cenario": "ilhota_farol",
+      "luz": "entardecer",
+      "ambiente": "mar",
+      "de": "f4",
+      "filtro": "frio",
+      "personagens": {
+        "nico": {
+          "em": [
+            1.2,
+            9.6
+          ],
+          "olhando": [
+            3.0,
+            2.6,
+            12.4
+          ],
+          "expressao": "nervoso",
+          "segura": "pacote"
+        },
+        "duda": {
+          "em": [
+            2.4,
+            8.9
+          ],
+          "olhando": [
+            3.0,
+            2.6,
+            12.4
+          ],
+          "expressao": "determinado"
+        },
+        "marina": {
+          "em": [
+            4.2,
+            9.4
+          ],
+          "olhando": [
+            3.0,
+            2.6,
+            12.4
+          ],
+          "expressao": "serio",
+          "segura": "radio"
+        },
+        "jonas": {
+          "em": [
+            3.0,
+            12.4
+          ],
+          "olhando": [
+            2.4,
+            2.2,
+            8.9
+          ],
+          "expressao": "serio"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "farol",
+          "em": "farol",
+          "ilhota": false,
+          "modo": "apagado"
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            3,
+            17
+          ],
+          "giro": 90,
+          "luzes": true,
+          "caixas": false
+        },
+        {
+          "tipo": "garrafa",
+          "em": [
+            0.2,
+            8.0
+          ],
+          "quantas": 2
+        }
+      ],
+      "rotulos": [
+        {
+          "alvo": "nico",
+          "texto": "NICO · 15 ANOS",
+          "de": "f4+0.2",
+          "ate": "f4:Duda"
+        },
+        {
+          "alvo": "duda",
+          "texto": "DUDA · 11 ANOS",
+          "de": "f4:Duda+0.1",
+          "ate": "f4:fim+0.2"
+        },
+        {
+          "alvo": "jonas",
+          "texto": "SEU JONAS · TUBARÃO II",
+          "de": "f5:Jonas",
+          "ate": "f5:fim+0.2",
+          "altura": 0.72
+        }
+      ],
+      "relogio": {
+        "de": "f8",
+        "hora": "16:00"
+      },
+      "manchetes": [
+        {
+          "de": "f4",
+          "ate": "f5",
+          "texto": "*40 BARRAS* DE OURO DE 1962"
+        },
+        {
+          "de": "f5",
+          "ate": "f6",
+          "texto": "TUDO NO BARCO *ATÉ AS 5*"
+        },
+        {
+          "de": "f6",
+          "ate": "f7",
+          "texto": "ESCONDER *E ESPERAR*?"
+        },
+        {
+          "de": "f7",
+          "ate": "f8",
+          "texto": "*NÃO*: UMA SEMANA SEM BARCO"
+        },
+        {
+          "de": "f8",
+          "texto": "*2 HORAS* PRA TEMPESTADE"
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "jonas",
+          "faz": "bracos_cruzados",
+          "de": "inicio"
+        },
+        {
+          "quem": "nico",
+          "expressao": "medo",
+          "de": "f7"
+        }
+      ],
+      "planos": [
+        {
+          "de": "f4",
+          "tipo": "close",
+          "alvo": "nico",
+          "camera": [
+            3.71,
+            2.6,
+            11.25
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f4:Duda",
+          "tipo": "close",
+          "alvo": "duda",
+          "camera": [
+            1.83,
+            2.0,
+            11.74
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f5",
+          "tipo": "medio",
+          "alvo": "jonas",
+          "camera": [
+            3.4,
+            3.0,
+            8.02
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f6",
+          "tipo": "close",
+          "alvo": "nico",
+          "camera": [
+            3.71,
+            2.6,
+            11.25
+          ],
+          "movimento": "travelling",
+          "intensidade": -0.2
+        },
+        {
+          "de": "f7:garrafas",
+          "tipo": "detalhe",
+          "alvo": [
+            0.2,
+            0.4,
+            8.0
+          ],
+          "camera": [
+            -1.6,
+            1.3,
+            9.6
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f8",
+          "tipo": "aberto",
+          "alvo": [
+            2.9,
+            3.0,
+            10.9
+          ],
+          "camera": [
+            -8.0,
+            3.0,
+            12.6
+          ],
+          "movimento": "arco",
+          "intensidade": 0.2
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "inicio",
+          "ate": "fim",
+          "efeito": "vinheta",
+          "intensidade": 0.3
+        }
+      ],
+      "sons": [
+        {
+          "de": "f8",
+          "som": "trovao",
+          "volume": 0.3
+        }
+      ]
+    },
+    {
+      "id": "mare",
+      "cenario": "ilhota_farol",
+      "luz": "entardecer",
+      "ambiente": "mar",
+      "de": "f9",
+      "filtro": "frio",
+      "personagens": {
+        "nico": {
+          "em": [
+            1.2,
+            9.6
+          ],
+          "olhando": [
+            3.0,
+            2.6,
+            12.4
+          ],
+          "expressao": "nervoso",
+          "segura": "pacote"
+        },
+        "duda": {
+          "em": [
+            2.4,
+            8.9
+          ],
+          "olhando": [
+            3.0,
+            2.6,
+            12.4
+          ],
+          "expressao": "determinado"
+        },
+        "marina": {
+          "em": [
+            4.2,
+            9.4
+          ],
+          "olhando": [
+            3.0,
+            2.6,
+            12.4
+          ],
+          "expressao": "serio",
+          "segura": "radio"
+        },
+        "jonas": {
+          "em": [
+            3.0,
+            12.4
+          ],
+          "olhando": [
+            2.4,
+            2.2,
+            8.9
+          ],
+          "expressao": "serio"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "farol",
+          "em": "farol",
+          "ilhota": false,
+          "modo": "apagado"
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            3,
+            17
+          ],
+          "giro": 90,
+          "luzes": true,
+          "caixas": false
+        }
+      ],
+      "insercoes": [
+        {
+          "de": "f9:baixa",
+          "ate": "f9:fim+0.3",
+          "tipo": "bilhete",
+          "titulo": "TÁBUA DAS MARÉS · DOMINGO",
+          "linhas": [
+            "17:40  maré baixa  0,2 m",
+            "recife DENTE aparece",
+            "na frente do cais"
+          ]
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f9",
+          "texto": "MARÉ BAIXA *ÀS 17H40*"
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "duda",
+          "faz": "apontar",
+          "para": [
+            -4.0,
+            0.5,
+            26.0
+          ],
+          "de": "f9:RECIFE-0.4"
+        }
+      ],
+      "planos": [
+        {
+          "de": "f9",
+          "tipo": "close",
+          "alvo": "duda",
+          "camera": [
+            1.83,
+            2.0,
+            11.74
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2,
+          "transicao": "chicote"
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "inicio",
+          "ate": "fim",
+          "efeito": "vinheta",
+          "intensidade": 0.3
+        }
+      ]
+    },
+    {
+      "id": "recife",
+      "cenario": "mirante",
+      "luz": "entardecer",
+      "ambiente": "mar",
+      "de": "f10",
+      "filtro": "frio",
+      "personagens": {},
+      "objetos": [
+        {
+          "tipo": "farol",
+          "em": [
+            -16,
+            85
+          ],
+          "escala": 1.3,
+          "alt": -35,
+          "modo": "apagado"
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            9,
+            56
+          ],
+          "giro": 90,
+          "alt": -35,
+          "luzes": true,
+          "caixas": false
+        }
+      ],
+      "rotulos": [
+        {
+          "alvo": [
+            3.0,
+            -35.0,
+            66.0
+          ],
+          "texto": "RECIFE DENTE",
+          "de": "f10:recife",
+          "ate": "f11:fim",
+          "cor": "#FF6B5A"
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f10",
+          "ate": "f11",
+          "texto": "UM RECIFE *NA FRENTE DO CAIS*"
+        },
+        {
+          "de": "f11",
+          "texto": "MEIA TONELADA = *ENCALHA*"
+        }
+      ],
+      "planos": [
+        {
+          "de": "f10",
+          "tipo": "geral",
+          "alvo": [
+            -3,
+            -28,
+            66
+          ],
+          "camera": [
+            1.0,
+            2.3,
+            0.8
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2,
+          "transicao": "zoom"
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "f10:recife",
+          "ate": "f11:fim",
+          "efeito": "circular",
+          "alvo": [
+            3.0,
+            -35.0,
+            66.0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "enrolar",
+      "cenario": "ilhota_farol",
+      "luz": "entardecer",
+      "ambiente": "mar",
+      "de": "f12",
+      "filtro": "frio",
+      "personagens": {
+        "nico": {
+          "em": [
+            1.2,
+            9.6
+          ],
+          "olhando": [
+            3.0,
+            2.6,
+            12.4
+          ],
+          "expressao": "nervoso",
+          "segura": "pacote"
+        },
+        "duda": {
+          "em": [
+            2.4,
+            8.9
+          ],
+          "olhando": [
+            3.0,
+            2.6,
+            12.4
+          ],
+          "expressao": "determinado"
+        },
+        "marina": {
+          "em": [
+            4.2,
+            9.4
+          ],
+          "olhando": [
+            3.0,
+            2.6,
+            12.4
+          ],
+          "expressao": "serio",
+          "segura": "radio"
+        },
+        "jonas": {
+          "em": [
+            3.0,
+            12.4
+          ],
+          "olhando": [
+            2.4,
+            2.2,
+            8.9
+          ],
+          "expressao": "serio"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "farol",
+          "em": "farol",
+          "ilhota": false,
+          "modo": "apagado"
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            3,
+            17
+          ],
+          "giro": 90,
+          "luzes": true,
+          "caixas": false
+        },
+        {
+          "tipo": "barras_ouro",
+          "em": [
+            1.8,
+            10.8
+          ],
+          "giro": 30
+        }
+      ],
+      "insercoes": [
+        {
+          "de": "f12",
+          "ate": "f12:fim+0.2",
+          "tipo": "radio",
+          "titulo": "RÁDIO DA MARINA",
+          "quem": "marina"
+        }
+      ],
+      "cartoes": [
+        {
+          "de": "f15",
+          "ate": "f15:CONTA",
+          "grande": "# BARRAS",
+          "contar": [
+            31,
+            32
+          ]
+        }
+      ],
+      "relogio": {
+        "de": "f13",
+        "hora": "16:50",
+        "ate_hora": "17:20"
+      },
+      "manchetes": [
+        {
+          "de": "f12",
+          "ate": "f13",
+          "texto": "CHAMANDO *A MARINHA*"
+        },
+        {
+          "de": "f13",
+          "ate": "f14",
+          "texto": "UMA BARRA *DE CADA VEZ*"
+        },
+        {
+          "de": "f14",
+          "ate": "f15",
+          "texto": "ERRAR *DE PROPÓSITO*"
+        },
+        {
+          "de": "f16",
+          "texto": "\"*CONTA DE NOVO!*\""
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "marina",
+          "faz": "erguer",
+          "para": [
+            4.3,
+            3.0,
+            11.2
+          ],
+          "de": "f12"
+        },
+        {
+          "quem": "marina",
+          "faz": "acender",
+          "de": "f12"
+        },
+        {
+          "quem": "marina",
+          "expressao": "nervoso",
+          "de": "f15"
+        },
+        {
+          "quem": "jonas",
+          "expressao": "bravo",
+          "de": "f16"
+        },
+        {
+          "quem": "jonas",
+          "faz": "apontar",
+          "para": [
+            4.2,
+            2.0,
+            9.4
+          ],
+          "de": "f16"
+        },
+        {
+          "quem": "nico",
+          "expressao": "feliz",
+          "de": "f17"
+        }
+      ],
+      "planos": [
+        {
+          "de": "f12",
+          "tipo": "close",
+          "alvo": "marina",
+          "camera": [
+            4.32,
+            2.9,
+            12.4
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.15,
+          "transicao": "chicote"
+        },
+        {
+          "de": "f13",
+          "tipo": "aberto",
+          "alvo": [
+            2.8,
+            2.0,
+            10.8
+          ],
+          "camera": [
+            -5.5,
+            3.0,
+            17.0
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.25
+        },
+        {
+          "de": "f14",
+          "tipo": "medio",
+          "alvo": "marina",
+          "camera": [
+            4.32,
+            2.9,
+            12.4
+          ],
+          "movimento": "travelling",
+          "intensidade": -0.15
+        },
+        {
+          "de": "f15",
+          "tipo": "close",
+          "alvo": "marina",
+          "camera": [
+            4.32,
+            2.9,
+            12.4
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f16",
+          "tipo": "close",
+          "alvo": "jonas",
+          "camera": [
+            0.38,
+            2.9,
+            10.74
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f17",
+          "tipo": "close",
+          "alvo": "nico",
+          "camera": [
+            3.71,
+            2.6,
+            11.25
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.15
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "inicio",
+          "ate": "fim",
+          "efeito": "vinheta",
+          "intensidade": 0.3
+        }
+      ],
+      "sons": [
+        {
+          "de": "f12",
+          "som": "chiado",
+          "volume": 0.25
+        },
+        {
+          "de": "f16:rápido",
+          "som": "trovao",
+          "volume": 0.25
+        },
+        {
+          "de": "f17:matemática",
+          "som": "pop",
+          "volume": 0.2
+        }
+      ]
+    },
+    {
+      "id": "saida",
+      "cenario": "mirante",
+      "luz": "entardecer",
+      "ambiente": "mar",
+      "de": "f18",
+      "filtro": "frio",
+      "personagens": {},
+      "objetos": [
+        {
+          "tipo": "farol",
+          "em": [
+            -16,
+            85
+          ],
+          "escala": 1.3,
+          "alt": -35,
+          "modo": "apagado"
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            9,
+            56
+          ],
+          "giro": 90,
+          "alt": -35,
+          "luzes": true,
+          "caixas": true,
+          "some": "f18:sai"
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            6,
+            61
+          ],
+          "giro": 115,
+          "alt": -35,
+          "luzes": true,
+          "caixas": true,
+          "aparece": "f18:sai",
+          "some": "f19"
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            4,
+            64
+          ],
+          "giro": 125,
+          "alt": -35,
+          "luzes": true,
+          "caixas": true,
+          "aparece": "f19"
+        }
+      ],
+      "relogio": {
+        "de": "f18",
+        "hora": "17:38"
+      },
+      "rotulos": [
+        {
+          "alvo": [
+            3.0,
+            -35.0,
+            66.0
+          ],
+          "texto": "RECIFE DENTE",
+          "de": "f19",
+          "ate": "f19:fim+0.3",
+          "cor": "#FF6B5A"
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f18",
+          "ate": "f19",
+          "texto": "O BARCO SAI *CARREGADO*"
+        },
+        {
+          "de": "f19",
+          "texto": "DIRETO *PRO RECIFE*"
+        }
+      ],
+      "planos": [
+        {
+          "de": "f18",
+          "tipo": "geral",
+          "alvo": [
+            -3,
+            -28,
+            66
+          ],
+          "camera": [
+            1.0,
+            2.3,
+            0.8
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.2,
+          "transicao": "desfoque"
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "f19",
+          "ate": "f19:fim+0.3",
+          "efeito": "circular",
+          "alvo": [
+            3.0,
+            -35.0,
+            66.0
+          ]
+        }
+      ],
+      "sons": [
+        {
+          "de": "f18",
+          "som": "trovao",
+          "volume": 0.25
+        }
+      ]
+    },
+    {
+      "id": "espera",
+      "cenario": "ilhota_farol",
+      "luz": "entardecer",
+      "ambiente": "mar",
+      "de": "f20",
+      "filtro": "quente",
+      "personagens": {
+        "nico": {
+          "em": [
+            1.6,
+            12.6
+          ],
+          "olhando": [
+            -4.0,
+            1.5,
+            26.0
+          ],
+          "expressao": "nervoso"
+        },
+        "duda": {
+          "em": [
+            3.0,
+            12.8
+          ],
+          "olhando": [
+            -4.0,
+            1.5,
+            26.0
+          ],
+          "expressao": "determinado"
+        },
+        "marina": {
+          "em": [
+            4.4,
+            12.4
+          ],
+          "olhando": [
+            -4.0,
+            1.5,
+            26.0
+          ],
+          "expressao": "nervoso",
+          "segura": "radio"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "farol",
+          "em": "farol",
+          "ilhota": false,
+          "modo": "apagado"
+        }
+      ],
+      "relogio": {
+        "de": "f20",
+        "hora": "17:38",
+        "ate_hora": "17:40"
+      },
+      "manchetes": [
+        {
+          "de": "f20",
+          "ate": "f21",
+          "texto": "*MAIS 2 MINUTOS*"
+        },
+        {
+          "de": "f21",
+          "texto": "O MAR *DO NOSSO LADO*",
+          "cor": "#2FD27A"
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "nico",
+          "expressao": "aliviado",
+          "de": "f21"
+        },
+        {
+          "quem": "duda",
+          "expressao": "feliz",
+          "de": "f21"
+        }
+      ],
+      "planos": [
+        {
+          "de": "f20",
+          "tipo": "close",
+          "alvo": "duda",
+          "camera": [
+            2.2,
+            2.0,
+            15.6
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f21",
+          "tipo": "aberto",
+          "alvo": [
+            3.0,
+            2.0,
+            12.6
+          ],
+          "camera": [
+            0.6,
+            2.8,
+            20.5
+          ],
+          "movimento": "arco",
+          "intensidade": 0.15
+        }
+      ]
+    },
+    {
+      "id": "vira",
+      "cenario": "mirante",
+      "luz": "entardecer",
+      "ambiente": "mar",
+      "de": "f22",
+      "filtro": "dramatico",
+      "personagens": {},
+      "objetos": [
+        {
+          "tipo": "farol",
+          "em": [
+            -16,
+            85
+          ],
+          "escala": 1.3,
+          "alt": -35,
+          "modo": "apagado"
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            4,
+            64
+          ],
+          "giro": 125,
+          "alt": -35,
+          "luzes": true,
+          "caixas": true,
+          "some": "f22:vira"
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            1,
+            66
+          ],
+          "giro": 200,
+          "alt": -35,
+          "luzes": true,
+          "caixas": true,
+          "aparece": "f22:vira"
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f22",
+          "texto": "*O BARCO VIRA*"
+        }
+      ],
+      "planos": [
+        {
+          "de": "f22",
+          "tipo": "geral",
+          "alvo": [
+            -3,
+            -28,
+            66
+          ],
+          "camera": [
+            1.0,
+            2.3,
+            0.8
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.25,
+          "transicao": "zoom"
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "f22",
+          "ate": "fim",
+          "efeito": "barras"
+        }
+      ],
+      "sons": [
+        {
+          "de": "f22:vira",
+          "som": "impacto",
+          "volume": 0.4
+        }
+      ]
+    },
+    {
+      "id": "aceno",
+      "cenario": "ilhota_farol",
+      "luz": "entardecer",
+      "ambiente": "mar",
+      "de": "f23",
+      "filtro": "dramatico",
+      "personagens": {
+        "jonas": {
+          "em": [
+            -3.0,
+            24.0
+          ],
+          "olhando": [
+            2.0,
+            2.4,
+            13.0
+          ],
+          "expressao": "feliz"
+        },
+        "nico": {
+          "em": [
+            1.6,
+            12.6
+          ],
+          "olhando": [
+            -3.0,
+            2.4,
+            24.0
+          ],
+          "expressao": "medo"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "farol",
+          "em": "farol",
+          "ilhota": false,
+          "modo": "apagado"
+        },
+        {
+          "tipo": "barco",
+          "em": [
+            -4.2,
+            25.5
+          ],
+          "giro": 160,
+          "luzes": true,
+          "caixas": true
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f23",
+          "texto": "\"EU NASCI *NESSE MAR*\""
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "jonas",
+          "faz": "acenar",
+          "de": "f23"
+        }
+      ],
+      "planos": [
+        {
+          "de": "f23",
+          "tipo": "close",
+          "alvo": "jonas",
+          "camera": [
+            -1.6,
+            2.6,
+            21.4
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f23:fim+0.3",
+          "tipo": "close",
+          "alvo": "nico",
+          "lado": "frente",
+          "camera": [
+            0.4,
+            2.6,
+            15.3
+          ],
+          "movimento": "dolly_zoom",
+          "intensidade": 0.8
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "f23",
+          "ate": "fim",
+          "efeito": "barras"
+        }
+      ],
+      "sons": [
+        {
+          "de": "f23:MENINA",
+          "som": "trovao",
+          "volume": 0.35
+        }
+      ]
+    }
+  ],
+  "chamada": {
+    "pergunta": "A Duda errou a conta ou ele sabia do plano?",
+    "texto": "COMENTA",
+    "destaque": "PARTE 7"
+  },
+  "postagem": {
+    "titulo": "Enganamos um ladrão com a maré numa ilha deserta",
+    "descricao": "Dois irmãos acharam 40 barras de ouro de 1962 numa ilha deserta, e o pescador que trouxe eles quer tudo no barco até as cinco. O plano: deixar a maré baixa fazer o serviço.",
+    "hashtags": [
+      "mare",
+      "tesouro",
+      "aventura",
+      "animacao"
+    ],
+    "comentario": "Pra mim ele sabia do recife desde o começo. E você: a Duda errou ou ele sabia?",
+    "capa": "f9:RECIFE+0.3"
+  }
+}
