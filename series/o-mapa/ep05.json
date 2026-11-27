@@ -599,19 +599,19 @@
         },
         {
           "de": "f10",
-          "tipo": "medio",
+          "tipo": "close",
           "alvo": "duda",
           "camera": [
-            3.4,
-            2.2,
-            -1.2
+            2.66,
+            2.0,
+            1.52
           ],
           "movimento": "acompanhar",
           "intensidade": 0.2,
           "transicao": "chicote"
         },
         {
-          "de": "f10:propósito-0.4",
+          "de": "f10:Seu",
           "tipo": "medio",
           "alvo": [
             1.2,
