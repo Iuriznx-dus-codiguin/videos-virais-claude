@@ -6,6 +6,22 @@
  "modelos": {
   "tunel": [
    {
+    "id": "chao_vidro",
+    "forma": "caixa",
+    "tam": [
+     1.2,
+     0.004,
+     0.2
+    ],
+    "pos": [
+     0,
+     0.002,
+     0.1
+    ],
+    "cor": "#6D4C41",
+    "sem_contorno": true
+   },
+   {
     "id": "terra_tras",
     "forma": "caixa",
     "tam": [
@@ -18,7 +34,7 @@
      0.08,
      -0.1
     ],
-    "cor": "#6D4C41"
+    "cor": "#A1887F"
    },
    {
     "id": "terra_frente",
@@ -33,8 +49,8 @@
      0.08,
      0.1
     ],
-    "cor": "#A1887F",
-    "opacidade": 0.32
+    "cor": "#D7CCC8",
+    "opacidade": 0.16
    },
    {
     "id": "margem_e_tras",
@@ -49,7 +65,7 @@
      0.21000000000000002,
      -0.1
     ],
-    "cor": "#6D4C41"
+    "cor": "#A1887F"
    },
    {
     "id": "margem_e_frente",
@@ -64,8 +80,8 @@
      0.21000000000000002,
      0.1
     ],
-    "cor": "#A1887F",
-    "opacidade": 0.32
+    "cor": "#D7CCC8",
+    "opacidade": 0.16
    },
    {
     "id": "grama_e",
@@ -126,7 +142,7 @@
      0.21000000000000002,
      -0.1
     ],
-    "cor": "#6D4C41"
+    "cor": "#A1887F"
    },
    {
     "id": "margem_d_frente",
@@ -141,8 +157,8 @@
      0.21000000000000002,
      0.1
     ],
-    "cor": "#A1887F",
-    "opacidade": 0.32
+    "cor": "#D7CCC8",
+    "opacidade": 0.16
    },
    {
     "id": "grama_d",
@@ -494,7 +510,7 @@
      0,
      -151.76
     ],
-    "cor": "#3E2723",
+    "cor": "#1C1410",
     "oculta": true,
     "sem_contorno": true
    },
@@ -509,7 +525,7 @@
      0.085,
      0.06
     ],
-    "cor": "#3E2723",
+    "cor": "#1C1410",
     "oculta": true,
     "sem_contorno": true
    },
@@ -530,7 +546,7 @@
      0,
      -90
     ],
-    "cor": "#3E2723",
+    "cor": "#1C1410",
     "oculta": true,
     "sem_contorno": true
    },
@@ -551,7 +567,7 @@
      0,
      -61.76
     ],
-    "cor": "#3E2723",
+    "cor": "#1C1410",
     "oculta": true,
     "sem_contorno": true
    },
@@ -572,7 +588,7 @@
      0,
      -61.76
     ],
-    "cor": "#3E2723",
+    "cor": "#1C1410",
     "oculta": true,
     "sem_contorno": true
    },
@@ -587,7 +603,7 @@
      0.085,
      0.06
     ],
-    "cor": "#3E2723",
+    "cor": "#1C1410",
     "oculta": true,
     "sem_contorno": true
    },
@@ -602,7 +618,7 @@
      0.085,
      0.06
     ],
-    "cor": "#3E2723",
+    "cor": "#1C1410",
     "oculta": true,
     "sem_contorno": true
    },
@@ -659,7 +675,7 @@
      0.111,
      0.06
     ],
-    "cor": "#795548",
+    "cor": "#BCAAA4",
     "oculta": true
    },
    {
@@ -673,7 +689,7 @@
      0.108,
      0.06
     ],
-    "cor": "#795548",
+    "cor": "#BCAAA4",
     "oculta": true
    },
    {
@@ -687,7 +703,7 @@
      0.112,
      0.06
     ],
-    "cor": "#795548",
+    "cor": "#BCAAA4",
     "oculta": true
    },
    {
@@ -701,7 +717,7 @@
      0.109,
      0.06
     ],
-    "cor": "#795548",
+    "cor": "#BCAAA4",
     "oculta": true
    },
    {
@@ -715,7 +731,7 @@
      0.113,
      0.06
     ],
-    "cor": "#795548",
+    "cor": "#BCAAA4",
     "oculta": true
    },
    {
@@ -729,7 +745,7 @@
      0.113,
      0.06
     ],
-    "cor": "#795548",
+    "cor": "#BCAAA4",
     "oculta": true
    },
    {
@@ -743,7 +759,7 @@
      0.11,
      0.06
     ],
-    "cor": "#795548",
+    "cor": "#BCAAA4",
     "oculta": true
    },
    {
@@ -757,7 +773,7 @@
      0.113,
      0.06
     ],
-    "cor": "#795548",
+    "cor": "#BCAAA4",
     "oculta": true
    },
    {
@@ -1666,12 +1682,12 @@
     "id": "seta_rio0",
     "forma": "seta",
     "tam": [
-     0.07,
-     0.006
+     0.05,
+     0.0045
     ],
     "pos": [
      -0.035,
-     0.215,
+     0.205,
      0.21200000000000002
     ],
     "giro": [
@@ -1686,12 +1702,12 @@
     "id": "seta_lama0",
     "forma": "seta",
     "tam": [
-     0.05,
-     0.006
+     0.04,
+     0.0045
     ],
     "pos": [
-     -0.023000000000000003,
-     0.15,
+     -0.021000000000000005,
+     0.145,
      0.21200000000000002
     ],
     "cor": "#FFA000",
@@ -1701,12 +1717,12 @@
     "id": "seta_rio1",
     "forma": "seta",
     "tam": [
-     0.07,
-     0.006
+     0.05,
+     0.0045
     ],
     "pos": [
      0.03,
-     0.215,
+     0.205,
      0.21200000000000002
     ],
     "giro": [
@@ -1721,12 +1737,12 @@
     "id": "seta_lama1",
     "forma": "seta",
     "tam": [
-     0.05,
-     0.006
+     0.04,
+     0.0045
     ],
     "pos": [
-     0.041999999999999996,
-     0.15,
+     0.044,
+     0.145,
      0.21200000000000002
     ],
     "cor": "#FFA000",
@@ -1736,12 +1752,12 @@
     "id": "seta_rio2",
     "forma": "seta",
     "tam": [
-     0.07,
-     0.006
+     0.05,
+     0.0045
     ],
     "pos": [
      0.095,
-     0.215,
+     0.205,
      0.21200000000000002
     ],
     "giro": [
@@ -1756,12 +1772,12 @@
     "id": "seta_lama2",
     "forma": "seta",
     "tam": [
-     0.05,
-     0.006
+     0.04,
+     0.0045
     ],
     "pos": [
-     0.107,
-     0.15,
+     0.109,
+     0.145,
      0.21200000000000002
     ],
     "cor": "#FFA000",
@@ -2123,7 +2139,7 @@
      0,
      -90
     ],
-    "cor": "#3E2723",
+    "cor": "#1C1410",
     "oculta": true,
     "sem_contorno": true
    },
@@ -2144,7 +2160,7 @@
      0,
      -90
     ],
-    "cor": "#3E2723",
+    "cor": "#1C1410",
     "oculta": true,
     "sem_contorno": true
    },
@@ -2185,7 +2201,7 @@
      0,
      -90
     ],
-    "cor": "#3E2723",
+    "cor": "#1C1410",
     "oculta": true,
     "sem_contorno": true
    },
@@ -2206,7 +2222,7 @@
      0,
      -90
     ],
-    "cor": "#3E2723",
+    "cor": "#1C1410",
     "oculta": true,
     "sem_contorno": true
    },
@@ -2227,7 +2243,7 @@
      0,
      -90
     ],
-    "cor": "#3E2723",
+    "cor": "#1C1410",
     "oculta": true,
     "sem_contorno": true
    },
@@ -2248,7 +2264,7 @@
      0,
      -90
     ],
-    "cor": "#3E2723",
+    "cor": "#1C1410",
     "oculta": true,
     "sem_contorno": true
    }
@@ -2315,7 +2331,8 @@
    "id": "f11",
    "quem": "tito",
    "texto": "SÓ QUE lá embaixo, o rio aperta a terra com tanta força que a frente pode ESTOURAR.",
-   "tom": "tenso"
+   "tom": "tenso",
+   "pausa_depois": 0.7
   },
   {
    "id": "f12",
@@ -4105,14 +4122,14 @@
      "de": "inicio",
      "tipo": "detalhe",
      "camera": [
-      0.424,
-      1.743,
-      1.287
+      0.294,
+      1.553,
+      1.036
      ],
      "alvo": [
-      -0.08,
-      1.2,
-      0.04
+      -0.1,
+      1.17,
+      0.06
      ],
      "movimento": "arco",
      "intensidade": 0.35
@@ -4386,6 +4403,14 @@
      "movimento": "aproximar"
     },
     {
+     "de": "f11:forca",
+     "tipo": "medio",
+     "alvo": "tito",
+     "lado": "tres_quartos_direita",
+     "movimento": "dolly_zoom",
+     "transicao": "chicote"
+    },
+    {
      "de": "f11:estourar",
      "tipo": "detalhe",
      "camera": [
@@ -4399,14 +4424,6 @@
       0.08
      ],
      "movimento": "tremer"
-    },
-    {
-     "de": "f11:estourar+1.0",
-     "tipo": "medio",
-     "alvo": "tito",
-     "lado": "tres_quartos_direita",
-     "movimento": "dolly_zoom",
-     "transicao": "chicote"
     },
     {
      "de": "f12",
@@ -4757,13 +4774,13 @@
     },
     {
      "de": "f11:estourar",
-     "ate": "f11:estourar+1.0",
+     "ate": "f11:estourar+0.8",
      "efeito": "tremor",
      "intensidade": 0.6
     },
     {
      "de": "f11:estourar",
-     "ate": "f11:estourar+1.0",
+     "ate": "f11:estourar+0.8",
      "efeito": "letreiro",
      "texto": "VAZOU!",
      "cor": "#FF3B30",
@@ -4771,7 +4788,7 @@
     },
     {
      "de": "f11:estourar",
-     "ate": "f11:estourar+1.0",
+     "ate": "f11:estourar+0.8",
      "efeito": "linhas",
      "cor": "#FFE14A"
     },

@@ -88,7 +88,7 @@
      0.12,
      0
     ],
-    "cor": "#B0BEC5",
+    "cor": "#90A4AE",
     "sem_contorno": true
    },
    {
@@ -104,7 +104,7 @@
      0.035,
      0
     ],
-    "cor": "#B0BEC5",
+    "cor": "#90A4AE",
     "pai": "piv_e"
    },
    {
@@ -118,7 +118,7 @@
      0.12,
      0
     ],
-    "cor": "#B0BEC5",
+    "cor": "#90A4AE",
     "sem_contorno": true
    },
    {
@@ -134,7 +134,7 @@
      0.035,
      0
     ],
-    "cor": "#B0BEC5",
+    "cor": "#90A4AE",
     "pai": "piv_d"
    },
    {
@@ -733,7 +733,7 @@
      0.155,
      0
     ],
-    "cor": "#B0BEC5"
+    "cor": "#607D8B"
    },
    {
     "id": "peso2",
@@ -1328,7 +1328,7 @@
      0.129,
      0.036000000000000004
     ],
-    "cor": "#B0BEC5",
+    "cor": "#90A4AE",
     "oculta": true
    },
    {
@@ -1633,9 +1633,9 @@
      "de": "inicio",
      "tipo": "detalhe",
      "camera": [
-      0.312,
-      1.459,
-      0.96
+      0.461,
+      1.387,
+      1.141
      ],
      "alvo": [
       0.0,
@@ -2109,7 +2109,7 @@
      "alvo": "trinca1",
      "texto": "Rachou!",
      "de": "f3:rachando+0.3",
-     "ate": "f3:fim",
+     "ate": "f3:quebravam",
      "cor": "#FF8A65"
     },
     {
@@ -2187,7 +2187,7 @@
     {
      "peca": "viga",
      "faz": "transparente",
-     "opacidade": 0.32,
+     "opacidade": 0.5,
      "de": "f5:dentro",
      "ate": "f5:dentro+0.5"
     },
@@ -2380,7 +2380,7 @@
     {
      "peca": "viga",
      "faz": "transparente",
-     "opacidade": 0.32,
+     "opacidade": 0.5,
      "de": "f9:concreto",
      "ate": "f9:chegar"
     },
@@ -2745,13 +2745,13 @@
      "de": "f5:apertada",
      "tipo": "detalhe",
      "camera": [
-      0.248,
-      1.315,
-      0.532
+      0.318,
+      1.121,
+      0.786
      ],
      "alvo": [
       0.0,
-      1.19,
+      1.18,
       0.0
      ],
      "movimento": "aproximar"
@@ -2768,13 +2768,13 @@
      "de": "f6:esticada",
      "tipo": "detalhe",
      "camera": [
-      0.154,
-      1.067,
-      0.576
+      0.176,
+      1.184,
+      0.83
      ],
      "alvo": [
       0.0,
-      1.13,
+      1.14,
       0.0
      ],
      "movimento": "arco",
@@ -2905,13 +2905,13 @@
      "de": "f12:estoura",
      "tipo": "detalhe",
      "camera": [
-      0.154,
-      1.067,
-      0.576
+      0.176,
+      1.184,
+      0.83
      ],
      "alvo": [
       0.0,
-      1.13,
+      1.14,
       0.0
      ],
      "movimento": "tremer"
