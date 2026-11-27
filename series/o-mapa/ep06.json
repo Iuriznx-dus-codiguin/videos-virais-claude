@@ -47,7 +47,7 @@
       "id": "f7",
       "quem": "nico",
       "off": true,
-      "texto": "Não. Depois dela, é uma semana sem barco. Com duas garrafas de água.",
+      "texto": "Não. Aí ele passa a tempestade aqui. Com a gente.",
       "tom": "serio"
     },
     {
@@ -469,7 +469,7 @@
         {
           "de": "f7",
           "ate": "f8",
-          "texto": "*NÃO*: UMA SEMANA SEM BARCO"
+          "texto": "*NÃO*: ELE FICA COM A GENTE"
         },
         {
           "de": "f8",
@@ -538,17 +538,13 @@
           "intensidade": -0.2
         },
         {
-          "de": "f7:garrafas",
-          "tipo": "detalhe",
-          "alvo": [
-            0.2,
-            0.4,
-            8.0
-          ],
+          "de": "f7:gente",
+          "tipo": "medio",
+          "alvo": "jonas",
           "camera": [
-            -1.6,
-            1.3,
-            9.6
+            3.4,
+            3.0,
+            8.02
           ],
           "movimento": "zoom_rapido",
           "intensidade": 0.2

@@ -848,7 +848,12 @@
         {
           "quem": "duda",
           "expressao": "feliz",
-          "de": "f15"
+          "de": "f15",
+          "olhar": [
+            -1.9,
+            1.9,
+            -0.3
+          ]
         },
         {
           "quem": "nico",
@@ -904,11 +909,11 @@
           "intensidade": 0.2
         },
         {
-          "de": "f15",
+          "de": "f16",
           "tipo": "detalhe",
           "alvo": [
             -3.2,
-            0.5,
+            0.3,
             -0.4
           ],
           "camera": [
@@ -918,7 +923,8 @@
           ],
           "movimento": "aproximar",
           "intensidade": 0.25,
-          "transicao": "zoom"
+          "transicao": "zoom",
+          "tamanho": 0.8
         },
         {
           "de": "f17",
@@ -945,18 +951,7 @@
           "intensidade": 0.15
         }
       ],
-      "efeitos": [
-        {
-          "de": "f15",
-          "ate": "f16:fim",
-          "efeito": "destacar",
-          "alvo": [
-            -3.2,
-            0.5,
-            -0.4
-          ]
-        }
-      ],
+      "efeitos": [],
       "sons": [
         {
           "de": "f14:MADEIRA",
