@@ -626,7 +626,8 @@
     "ventilação"
    ],
    "gancho": "Para cavar debaixo de um rio, a máquina monta a parede enquanto cava.",
-   "status": "roteiro"
+   "status": "produzido",
+   "dia": "2026-11-28"
   },
   {
    "n": 37,
