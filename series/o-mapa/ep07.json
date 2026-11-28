@@ -768,57 +768,11 @@
       "manchetes": [
         {
           "de": "f10",
-          "ate": "f10:fim+0.3",
           "texto": "O FAROL *DO AVÔ DELA*",
           "cor": "#2FD27A"
-        },
-        {
-          "de": "f10:fim+0.3",
-          "texto": "*120 DEGRAUS*"
         }
       ],
-      "acoes": [
-        {
-          "quem": "marina",
-          "faz": "apontar",
-          "para": [
-            0,
-            12,
-            -4
-          ],
-          "de": "f10:farol-0.3"
-        },
-        {
-          "quem": "duda",
-          "faz": "correr",
-          "para": [
-            -0.4,
-            -1.2
-          ],
-          "de": "f10:fim+0.2",
-          "velocidade": 0.5
-        },
-        {
-          "quem": "nico",
-          "faz": "correr",
-          "para": [
-            0.5,
-            -1
-          ],
-          "de": "f10:fim+0.35",
-          "velocidade": 0.5
-        },
-        {
-          "quem": "marina",
-          "faz": "correr",
-          "para": [
-            1.2,
-            -0.6
-          ],
-          "de": "f10:fim+0.5",
-          "velocidade": 0.5
-        }
-      ],
+      "acoes": [],
       "planos": [
         {
           "de": "f10",
@@ -832,22 +786,6 @@
           "movimento": "zoom_rapido",
           "intensidade": 0.2,
           "transicao": "chicote"
-        },
-        {
-          "de": "f10:fim+0.2",
-          "tipo": "aberto",
-          "alvo": [
-            0,
-            6,
-            -4
-          ],
-          "camera": [
-            3.8,
-            1.2,
-            4.2
-          ],
-          "movimento": "subir",
-          "intensidade": 0.3
         }
       ],
       "efeitos": [
@@ -1754,9 +1692,9 @@
             41
           ],
           "camera": [
-            1,
-            2.3,
-            0.8
+            4.0,
+            3.0,
+            5.0
           ],
           "movimento": "zoom_rapido",
           "intensidade": 0.2
