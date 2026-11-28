@@ -1,0 +1,881 @@
+{
+  "serie": "voo-vazio",
+  "parte": 1,
+  "titulo": "Assento 31C",
+  "musica": "misterio",
+  "falas": [
+    {
+      "id": "f1",
+      "quem": "narradora",
+      "off": true,
+      "texto": "Se você acordar num avião em pleno voo e todo mundo tiver sumido, não chame ninguém.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f2",
+      "quem": "narradora",
+      "off": true,
+      "texto": "Voo 2207, de Manaus para São Paulo. Você tem dezesseis anos e viaja sozinha pela primeira vez."
+    },
+    {
+      "id": "f3",
+      "quem": "narradora",
+      "off": true,
+      "texto": "Meia-noite e doze, você acorda no assento trinta e um C.",
+      "tom": "serio"
+    },
+    {
+      "id": "f4",
+      "quem": "narradora",
+      "off": true,
+      "texto": "Cento e quarenta e cinco bancos. E todos VAZIOS.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f5",
+      "quem": "narradora",
+      "off": true,
+      "texto": "Em cada banco, um celular aceso. Bolsas abertas. Cintos soltos."
+    },
+    {
+      "id": "f6",
+      "quem": "sofia",
+      "texto": "Oi? Tem alguém aí?",
+      "tom": "nervoso"
+    },
+    {
+      "id": "f7",
+      "quem": "narradora",
+      "off": true,
+      "texto": "Seu primeiro instinto é correr até a frente e chamar a comissária."
+    },
+    {
+      "id": "f8",
+      "quem": "narradora",
+      "off": true,
+      "texto": "Não. Na sua bandeja tem um bilhete. Letra de mulher.",
+      "tom": "serio"
+    },
+    {
+      "id": "f9",
+      "quem": "narradora",
+      "off": true,
+      "texto": "Regra um: não vá até a frente.",
+      "tom": "serio"
+    },
+    {
+      "id": "f10",
+      "quem": "narradora",
+      "off": true,
+      "texto": "Regra dois: não atenda nenhum celular.",
+      "tom": "serio"
+    },
+    {
+      "id": "f11",
+      "quem": "narradora",
+      "off": true,
+      "texto": "Regra três: se chamarem o seu nome, não RESPONDA.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f12",
+      "quem": "narradora",
+      "off": true,
+      "texto": "Embaixo, só uma letra: V."
+    },
+    {
+      "id": "f13",
+      "quem": "narradora",
+      "off": true,
+      "texto": "A boa notícia é que alguém está pilotando."
+    },
+    {
+      "id": "f14",
+      "quem": "narradora",
+      "off": true,
+      "texto": "A má notícia é o que ele fala no alto-falante.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f15",
+      "quem": "breno",
+      "off": true,
+      "texto": "Senhores passageiros, permaneçam sentados.",
+      "tom": "interfone"
+    },
+    {
+      "id": "f16",
+      "quem": "narradora",
+      "off": true,
+      "texto": "Ele está falando com cento e quarenta e cinco bancos vazios.",
+      "tom": "tenso"
+    },
+    {
+      "id": "f17",
+      "quem": "narradora",
+      "off": true,
+      "texto": "Lá na frente, atrás da cortina, uma lanterna acende. E apaga."
+    },
+    {
+      "id": "f18",
+      "quem": "narradora",
+      "off": true,
+      "texto": "Você se encolhe no banco, apaga a luzinha e prende a respiração."
+    },
+    {
+      "id": "f19",
+      "quem": "narradora",
+      "off": true,
+      "texto": "Pelo menos ninguém sabe que você está aqui.",
+      "tom": "aliviado"
+    },
+    {
+      "id": "f20",
+      "quem": "breno",
+      "off": true,
+      "texto": "Passageira do trinta e um C. Aperte o botão de chamada.",
+      "tom": "interfone"
+    },
+    {
+      "id": "f21",
+      "quem": "narradora",
+      "off": true,
+      "texto": "Ele sabe exatamente onde você ESTÁ.",
+      "tom": "tenso"
+    }
+  ],
+  "cenas": [
+    {
+      "id": "gancho",
+      "cenario": "cabine",
+      "luz": "noite",
+      "de": "inicio",
+      "filtro": "frio",
+      "personagens": {
+        "sofia": {
+          "em": [
+            -0.62,
+            0.15
+          ],
+          "olhando": [
+            -0.62,
+            1.0,
+            6.0
+          ],
+          "expressao": "nervoso",
+          "escala": 0.55,
+          "pose": "sentado_banco",
+          "olhos_fechados": true
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "feixe_luz",
+          "de": [
+            0.25,
+            1.7,
+            12.2
+          ],
+          "em": [
+            0.0,
+            10.4
+          ],
+          "alt": 0.2,
+          "largura": 0.7,
+          "intensidade": 0.3,
+          "cor": "#FFF2C4",
+          "aparece": "f1:pleno",
+          "some": "f1:sumido"
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "inicio",
+          "ate": "f2",
+          "texto": "TODO MUNDO *SUMIU*"
+        }
+      ],
+      "acoes": [],
+      "planos": [
+        {
+          "de": "inicio",
+          "tipo": "geral",
+          "alvo": [
+            -0.3,
+            0.6,
+            0.6
+          ],
+          "camera": [
+            0.0,
+            1.95,
+            5.2
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.25
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "f1:sumido",
+          "ate": "f1:sumido+0.6",
+          "efeito": "linhas"
+        }
+      ],
+      "sons": [
+        {
+          "de": "inicio",
+          "som": "turbulencia",
+          "volume": 0.2
+        },
+        {
+          "de": "f1:sumido",
+          "som": "impacto",
+          "volume": 0.3
+        }
+      ]
+    },
+    {
+      "id": "voo",
+      "cenario": "cabine",
+      "luz": "noite",
+      "de": "f2",
+      "filtro": "frio",
+      "personagens": {
+        "sofia": {
+          "em": [
+            -0.62,
+            0.15
+          ],
+          "olhando": [
+            -0.62,
+            1.0,
+            6.0
+          ],
+          "expressao": "nervoso",
+          "escala": 0.55,
+          "pose": "sentado_banco",
+          "olhos_fechados": true
+        }
+      },
+      "manchetes": [
+        {
+          "de": "f2",
+          "texto": "VOO 2207 · *MANAUS → SP*"
+        }
+      ],
+      "planos": [
+        {
+          "de": "f2",
+          "tipo": "medio",
+          "alvo": "sofia",
+          "camera": [
+            0.25,
+            1.45,
+            2.4
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.2,
+          "transicao": "zoom"
+        }
+      ]
+    },
+    {
+      "id": "acorda",
+      "cenario": "cabine",
+      "luz": "noite",
+      "de": "f3",
+      "filtro": "frio",
+      "personagens": {
+        "sofia": {
+          "em": [
+            -0.62,
+            0.15
+          ],
+          "olhando": [
+            -0.62,
+            1.0,
+            6.0
+          ],
+          "expressao": "nervoso",
+          "escala": 0.55,
+          "pose": "sentado_banco",
+          "olhos_fechados": true
+        }
+      },
+      "rotulos": [
+        {
+          "alvo": "sofia",
+          "texto": "VOCÊ · SOFIA, 16",
+          "de": "f3+0.2",
+          "ate": "f3:assento"
+        }
+      ],
+      "relogio": {
+        "de": "f3",
+        "hora": "00:12"
+      },
+      "manchetes": [
+        {
+          "de": "f3:assento",
+          "ate": "f4",
+          "texto": "ASSENTO *31C*"
+        },
+        {
+          "de": "f4",
+          "ate": "f6",
+          "texto": "145 BANCOS *VAZIOS*"
+        },
+        {
+          "de": "f6",
+          "texto": "*CHAMAR* ALGUÉM?"
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "sofia",
+          "faz": "abrir_olhos",
+          "de": "f3:acorda"
+        },
+        {
+          "quem": "sofia",
+          "expressao": "surpreso",
+          "de": "f4"
+        },
+        {
+          "quem": "sofia",
+          "faz": "olhar_em_volta",
+          "de": "f5"
+        },
+        {
+          "quem": "sofia",
+          "expressao": "medo",
+          "de": "f6"
+        }
+      ],
+      "planos": [
+        {
+          "de": "f3",
+          "tipo": "close",
+          "alvo": "sofia",
+          "camera": [
+            0.18,
+            1.3,
+            1.45
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2,
+          "transicao": "desfoque"
+        },
+        {
+          "de": "f4",
+          "tipo": "geral",
+          "alvo": [
+            0.0,
+            0.6,
+            6.0
+          ],
+          "camera": [
+            0.2,
+            1.55,
+            -5.5
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f5",
+          "tipo": "detalhe",
+          "alvo": [
+            0.62,
+            0.55,
+            2.05
+          ],
+          "camera": [
+            0.1,
+            1.15,
+            3.1
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f6",
+          "tipo": "close",
+          "alvo": "sofia",
+          "camera": [
+            0.18,
+            1.3,
+            1.45
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.2
+        }
+      ],
+      "sons": [
+        {
+          "de": "f4:VAZIOS",
+          "som": "tensao_sobe",
+          "volume": 0.25
+        }
+      ]
+    },
+    {
+      "id": "regras",
+      "cenario": "cabine",
+      "luz": "noite",
+      "de": "f7",
+      "filtro": "frio",
+      "personagens": {
+        "sofia": {
+          "em": [
+            -0.62,
+            0.15
+          ],
+          "olhando": [
+            -0.62,
+            1.0,
+            6.0
+          ],
+          "expressao": "medo",
+          "escala": 0.55,
+          "pose": "sentado_banco"
+        }
+      },
+      "insercoes": [
+        {
+          "de": "f8:bilhete",
+          "ate": "f9:fim+0.2",
+          "tipo": "bilhete",
+          "titulo": "NA SUA BANDEJA",
+          "linhas": [
+            "1. Não vá até a frente."
+          ]
+        },
+        {
+          "de": "f10",
+          "ate": "f11:fim+0.2",
+          "tipo": "bilhete",
+          "titulo": "NA SUA BANDEJA",
+          "linhas": [
+            "1. Não vá até a frente.",
+            "2. Não atenda nenhum celular.",
+            "3. Se chamarem seu nome,",
+            "    não responda.",
+            "— V."
+          ]
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f7",
+          "ate": "f8",
+          "texto": "CORRER *PRA FRENTE*?"
+        },
+        {
+          "de": "f8",
+          "ate": "f10",
+          "texto": "REGRA 1 — *NÃO VÁ À FRENTE*"
+        },
+        {
+          "de": "f10",
+          "ate": "f11",
+          "texto": "REGRA 2 — *NÃO ATENDA*"
+        },
+        {
+          "de": "f11",
+          "ate": "f12",
+          "texto": "REGRA 3 — *NÃO RESPONDA*"
+        },
+        {
+          "de": "f12",
+          "texto": "ASSINADO: *V.*"
+        }
+      ],
+      "planos": [
+        {
+          "de": "f7",
+          "tipo": "geral",
+          "alvo": [
+            0.0,
+            1.0,
+            11.0
+          ],
+          "camera": [
+            0.15,
+            1.3,
+            1.0
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.25,
+          "transicao": "chicote"
+        },
+        {
+          "de": "f8",
+          "tipo": "close",
+          "alvo": "sofia",
+          "camera": [
+            0.18,
+            1.3,
+            1.45
+          ],
+          "movimento": "zoom_rapido",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f12",
+          "tipo": "medio",
+          "alvo": "sofia",
+          "camera": [
+            0.25,
+            1.45,
+            2.4
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        }
+      ],
+      "sons": [
+        {
+          "de": "f8:Não",
+          "som": "impacto",
+          "volume": 0.25
+        }
+      ]
+    },
+    {
+      "id": "voz",
+      "cenario": "cabine",
+      "luz": "noite",
+      "de": "f13",
+      "filtro": "frio",
+      "personagens": {
+        "sofia": {
+          "em": [
+            -0.62,
+            0.15
+          ],
+          "olhando": [
+            -0.62,
+            1.0,
+            6.0
+          ],
+          "expressao": "desconfiado",
+          "escala": 0.55,
+          "pose": "sentado_banco"
+        }
+      },
+      "insercoes": [
+        {
+          "de": "f15",
+          "ate": "f15:fim+0.2",
+          "tipo": "radio",
+          "titulo": "ALTO-FALANTE · CABINE",
+          "quem": "breno"
+        }
+      ],
+      "relogio": {
+        "de": "f13",
+        "hora": "00:15"
+      },
+      "manchetes": [
+        {
+          "de": "f13",
+          "ate": "f14",
+          "texto": "ALGUÉM *ESTÁ PILOTANDO*",
+          "cor": "#2FD27A"
+        },
+        {
+          "de": "f14",
+          "ate": "f16",
+          "texto": "A *VOZ* NO ALTO-FALANTE"
+        },
+        {
+          "de": "f16",
+          "texto": "FALANDO COM *BANCOS VAZIOS*"
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "sofia",
+          "faz": "olhar_em_volta",
+          "de": "f16"
+        }
+      ],
+      "planos": [
+        {
+          "de": "f13",
+          "tipo": "geral",
+          "alvo": [
+            0.0,
+            1.1,
+            12.0
+          ],
+          "camera": [
+            -0.1,
+            1.4,
+            2.2
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f14",
+          "tipo": "close",
+          "alvo": "sofia",
+          "camera": [
+            0.18,
+            1.3,
+            1.45
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f16",
+          "tipo": "geral",
+          "alvo": [
+            0.0,
+            0.6,
+            6.0
+          ],
+          "camera": [
+            0.2,
+            1.55,
+            -5.5
+          ],
+          "movimento": "travelling",
+          "intensidade": 0.25
+        }
+      ],
+      "sons": [
+        {
+          "de": "f15",
+          "som": "chiado",
+          "volume": 0.2
+        }
+      ]
+    },
+    {
+      "id": "lanterna",
+      "cenario": "cabine",
+      "luz": "noite",
+      "de": "f17",
+      "filtro": "frio",
+      "personagens": {
+        "sofia": {
+          "em": [
+            -0.62,
+            0.15
+          ],
+          "olhando": [
+            -0.62,
+            1.0,
+            6.0
+          ],
+          "expressao": "medo",
+          "escala": 0.55,
+          "pose": "sentado_banco"
+        }
+      },
+      "objetos": [
+        {
+          "tipo": "feixe_luz",
+          "de": [
+            0.25,
+            1.7,
+            12.2
+          ],
+          "em": [
+            0.0,
+            10.4
+          ],
+          "alt": 0.2,
+          "largura": 0.7,
+          "intensidade": 0.3,
+          "cor": "#FFF2C4",
+          "aparece": "f17:acende",
+          "some": "f17:apaga"
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f17",
+          "ate": "f18",
+          "texto": "UMA *LANTERNA* LÁ NA FRENTE"
+        },
+        {
+          "de": "f18",
+          "texto": "NINGUÉM *SABE DE VOCÊ*",
+          "cor": "#2FD27A"
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "sofia",
+          "faz": "medo",
+          "de": "f18"
+        },
+        {
+          "quem": "sofia",
+          "expressao": "aliviado",
+          "de": "f19"
+        }
+      ],
+      "planos": [
+        {
+          "de": "f17",
+          "tipo": "detalhe",
+          "alvo": [
+            0.0,
+            1.2,
+            11.0
+          ],
+          "camera": [
+            -0.25,
+            1.25,
+            1.2
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.3
+        },
+        {
+          "de": "f18",
+          "tipo": "medio",
+          "alvo": "sofia",
+          "camera": [
+            0.25,
+            1.45,
+            2.4
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.15
+        }
+      ],
+      "sons": [
+        {
+          "de": "f17:acende",
+          "som": "clique",
+          "volume": 0.3
+        }
+      ]
+    },
+    {
+      "id": "virada",
+      "cenario": "cabine",
+      "luz": "noite",
+      "de": "f20",
+      "filtro": "dramatico",
+      "personagens": {
+        "sofia": {
+          "em": [
+            -0.62,
+            0.15
+          ],
+          "olhando": [
+            -0.62,
+            1.0,
+            6.0
+          ],
+          "expressao": "medo",
+          "escala": 0.55,
+          "pose": "sentado_banco"
+        }
+      },
+      "insercoes": [
+        {
+          "de": "f20",
+          "ate": "f20:fim+0.1",
+          "tipo": "radio",
+          "titulo": "ALTO-FALANTE · CABINE",
+          "quem": "breno"
+        }
+      ],
+      "manchetes": [
+        {
+          "de": "f20",
+          "texto": "\"PASSAGEIRA DO *31C*\""
+        }
+      ],
+      "acoes": [
+        {
+          "quem": "sofia",
+          "faz": "susto",
+          "de": "f21"
+        }
+      ],
+      "planos": [
+        {
+          "de": "f20",
+          "tipo": "geral",
+          "alvo": [
+            -0.4,
+            0.6,
+            0.2
+          ],
+          "camera": [
+            0.0,
+            1.95,
+            5.2
+          ],
+          "movimento": "aproximar",
+          "intensidade": 0.2
+        },
+        {
+          "de": "f21",
+          "tipo": "close",
+          "alvo": "sofia",
+          "lado": "frente",
+          "camera": [
+            0.18,
+            1.3,
+            1.45
+          ],
+          "movimento": "dolly_zoom",
+          "intensidade": 0.8,
+          "transicao": "zoom"
+        }
+      ],
+      "efeitos": [
+        {
+          "de": "f20",
+          "ate": "fim",
+          "efeito": "barras"
+        },
+        {
+          "de": "f21:ESTÁ",
+          "ate": "f21:ESTÁ+0.6",
+          "efeito": "linhas"
+        }
+      ],
+      "sons": [
+        {
+          "de": "f20",
+          "som": "ding",
+          "volume": 0.3
+        },
+        {
+          "de": "f21:ESTÁ",
+          "som": "impacto",
+          "volume": 0.4
+        }
+      ]
+    }
+  ],
+  "chamada": {
+    "pergunta": "Você apertaria o botão ou ficaria quieta?",
+    "texto": "COMENTA",
+    "destaque": "PARTE 2"
+  },
+  "postagem": {
+    "titulo": "Acordei sozinha num avião em pleno voo",
+    "descricao": "Você tem 16 anos, viaja sozinha e acorda à meia-noite num avião em pleno voo. Os outros 145 bancos estão vazios, com os celulares acesos, e na sua bandeja tem um bilhete com 3 regras.",
+    "hashtags": [
+      "aviao",
+      "misterio",
+      "suspense",
+      "animacao"
+    ],
+    "comentario": "Eu ficaria quietinha, igual o bilhete mandou. E você: apertava o botão ou ficava quieta?",
+    "capa": "f4:VAZIOS+0.3"
+  }
+}

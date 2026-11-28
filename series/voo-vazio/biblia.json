@@ -1,0 +1,174 @@
+{
+ "serie": "voo-vazio",
+ "titulo": "VOO VAZIO",
+ "genero": "mistério/suspense (regras e contradição)",
+ "partes": 7,
+ "rotulo_parte": "PARTE",
+ "sinopse": "Você é a Sofia, 16 anos, voando sozinha de Manaus para São Paulo. Meia-noite e doze, você acorda no assento 31C de um avião em pleno voo e os outros 145 bancos estão vazios, com os celulares acesos. Na bandeja, um bilhete com 3 regras. Sete partes, da meia-noite até o pouso às 3h47.",
+ "narrador": "narradora",
+ "personagens": {
+  "narradora": {
+   "nome": "Narradora",
+   "papel": "voz em off que conta a história falando com quem assiste: VOCÊ é a Sofia",
+   "personalidade": "direta, tensa, com opinião; fala como quem conta um causo de suspense pra uma amiga",
+   "voz": {
+    "descricao": "mulher brasileira de uns 30 anos, voz firme e cheia de energia, de narradora de vídeo de suspense",
+    "instruct": "female, young adult, moderate pitch",
+    "amostra": "Imagine que você acorda num avião, no meio da noite, e não tem mais ninguém. Só os celulares acesos.",
+    "realce": true
+   },
+   "visual": {
+    "corpo": "#2B3A67",
+    "cabeca": "#F2EEE6",
+    "olhos": "redondos",
+    "sobrancelhas": "finas"
+   },
+   "cor_legenda": "#FFD60A"
+  },
+  "sofia": {
+   "nome": "Você",
+   "papel": "a protagonista (Sofia, 16 anos), viajando sozinha de Manaus para São Paulo para morar com o pai; dormiu de fone no banheiro do fundo e ficou no avião",
+   "personalidade": "esperta, medrosa no começo, teimosa; descobre que é corajosa",
+   "voz": {
+    "descricao": "menina brasileira de 16 anos, voz baixa e assustada, que vai ficando firme",
+    "instruct": "female, teenager, moderate pitch"
+   },
+   "visual": {
+    "altura": 0.84,
+    "corpo": "#8E5BD9",
+    "cabeca": "#E9C9A8",
+    "olhos": "redondos",
+    "sobrancelhas": "finas",
+    "cilios": true,
+    "bochechas": "#F4A7A3",
+    "acessorios": [
+     {
+      "tipo": "rabo_de_cavalo",
+      "cor": "#2A1A12"
+     },
+     {
+      "tipo": "mochila",
+      "cor": "#F4C430"
+     }
+    ]
+   },
+   "cor_legenda": "#C9A7FF"
+  },
+  "vera": {
+   "nome": "Vera",
+   "papel": "comissária-chefe do voo 2207 (45 anos), a 'V.' do bilhete: voltou para buscar o 31C e ficou presa no avião; escondida no armário da cozinha do fundo (aparece na parte 3)",
+   "personalidade": "calma, prática, protetora; fala baixo e rápido",
+   "voz": {
+    "descricao": "mulher brasileira de 45 anos, voz calma e firme de comissária de bordo",
+    "instruct": "female, middle-aged, moderate pitch"
+   },
+   "visual": {
+    "altura": 0.96,
+    "corpo": "#1F3A6B",
+    "cabeca": "#C99A76",
+    "olhos": "ovais",
+    "sobrancelhas": "finas",
+    "cilios": true,
+    "acessorios": [
+     {
+      "tipo": "lenco",
+      "cor": "#D63030"
+     },
+     {
+      "tipo": "rabo_de_cavalo",
+      "cor": "#3A2418"
+     }
+    ]
+   },
+   "cor_legenda": "#7CF0C8"
+  },
+  "breno": {
+   "nome": "Breno",
+   "papel": "copiloto do voo 2207 (40 anos): tocou o alarme de incêndio falso, largou todo mundo na floresta e decolou com o avião vazio para vendê-lo fora do país; fala pelo alto-falante e pelo interfone da cabine",
+   "personalidade": "calmo, educado, frio; nunca grita",
+   "voz": {
+    "descricao": "homem brasileiro de 40 anos, voz grave e calma de piloto no alto-falante",
+    "instruct": "male, middle-aged, low pitch"
+   },
+   "etiqueta": "ALTO-FALANTE · CABINE",
+   "visual": {
+    "altura": 1.0,
+    "corpo": "#EDEDF2",
+    "cabeca": "#D9A882",
+    "olhos": "sonolentos",
+    "sobrancelhas": "grossas",
+    "acessorios": [
+     {
+      "tipo": "bone",
+      "cor": "#1A2238"
+     },
+     {
+      "tipo": "bigode",
+      "cor": "#2A1A12"
+     }
+    ]
+   },
+   "cor_legenda": "#7CC4FF"
+  },
+  "diego": {
+   "nome": "Diego",
+   "papel": "o passageiro do 12A (30 anos), cúmplice do Breno: embarcou sem mala, se escondeu no banheiro da frente e anda pelo corredor recolhendo os celulares; vulto de capuz até a parte 5",
+   "personalidade": "silencioso, desconfiado, impaciente",
+   "voz": {
+    "descricao": "homem brasileiro de 30 anos, voz grave e seca",
+    "instruct": "male, young adult, low pitch"
+   },
+   "visual": {
+    "altura": 1.0,
+    "corpo": "#2B2B2B",
+    "cabeca": "#3A2E28",
+    "olhos": "ovais",
+    "sobrancelhas": "grossas",
+    "acessorios": [
+     {
+      "tipo": "capuz",
+      "cor": "#1A1A1A"
+     }
+    ]
+   },
+   "cor_legenda": "#9AE66E"
+  },
+  "rui": {
+   "nome": "Comandante Rui",
+   "papel": "comandante do voo 2207 (60 anos): desceu para olhar o motor e ficou em terra com os passageiros; fala com você por mensagem no celular (aparece de corpo inteiro só na parte 7)",
+   "personalidade": "experiente, tranquilo, decidido",
+   "voz": {
+    "descricao": "homem brasileiro de 60 anos, voz grave e tranquila",
+    "instruct": "male, elderly, low pitch"
+   },
+   "etiqueta": "CELULAR · COMANDANTE RUI",
+   "visual": {
+    "altura": 1.0,
+    "corpo": "#EDEDF2",
+    "cabeca": "#D9A882",
+    "olhos": "ovais",
+    "sobrancelhas": "grossas",
+    "acessorios": [
+     {
+      "tipo": "bone",
+      "cor": "#1A2238"
+     },
+     {
+      "tipo": "bigode",
+      "cor": "#ECECEC"
+     }
+    ]
+   },
+   "cor_legenda": "#FFB36B"
+  }
+ },
+ "fatos": [
+  "Voo 2207, Manaus para São Paulo, sábado à noite: 146 passageiros. Você (Sofia, 16) viaja sozinha, no assento 31C, para morar com o pai em São Paulo.",
+  "23h40: alarme de incêndio falso; o avião pousa numa pista de garimpo abandonada na floresta e todo mundo desce correndo, deixando celulares, bolsas e malas. O avião decola de novo, vazio. (Só revelado na parte 2.)",
+  "O bilhete na bandeja do 31C, assinado 'V.': 1. Não vá até a frente. 2. Não atenda nenhum celular. 3. Se chamarem o seu nome, não responda."
+ ],
+ "ganchos_abertos": [
+  "Quem escreveu o bilhete?",
+  "Quem está pilotando o avião, e como ele sabe que o 31C está ocupado?"
+ ]
+}
