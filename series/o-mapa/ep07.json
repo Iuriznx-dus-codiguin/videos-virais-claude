@@ -83,7 +83,8 @@
       "id": "f13",
       "quem": "nico",
       "off": true,
-      "texto": "E o farol do seu Aurélio acende. Pela primeira vez desde 1962."
+      "texto": "E o farol do seu Aurélio acende. Pela primeira vez desde 1962.",
+      "semente": 103
     },
     {
       "id": "f14",
@@ -131,7 +132,8 @@
       "id": "f21",
       "quem": "nico",
       "off": true,
-      "texto": "E o jornal finalmente limpa o nome do seu Aurélio."
+      "texto": "E o jornal finalmente limpa o nome do seu Aurélio.",
+      "semente": 103
     },
     {
       "id": "f22",
@@ -162,7 +164,7 @@
           ],
           "olhando": [
             -4.2,
-            2.0,
+            2,
             25.5
           ],
           "expressao": "nervoso"
@@ -170,11 +172,11 @@
         "duda": {
           "em": [
             2.4,
-            12.0
+            12
           ],
           "olhando": [
             -4.2,
-            2.0,
+            2,
             25.5
           ],
           "expressao": "determinado",
@@ -187,7 +189,7 @@
           ],
           "olhando": [
             -4.2,
-            2.0,
+            2,
             25.5
           ],
           "expressao": "serio",
@@ -195,13 +197,13 @@
         },
         "jonas": {
           "em": [
-            -3.0,
-            24.0
+            -3,
+            24
           ],
           "olhando": [
-            2.0,
+            2,
             2.4,
-            13.0
+            13
           ],
           "expressao": "feliz"
         }
@@ -227,12 +229,12 @@
           "tipo": "feixe_luz",
           "de": [
             2.3,
-            2.0,
+            2,
             12.6
           ],
           "em": [
             -1.5,
-            21.0
+            21
           ],
           "alt": 0.6,
           "largura": 1.4,
@@ -266,9 +268,9 @@
           "quem": "duda",
           "faz": "erguer",
           "para": [
-            -3.0,
+            -3,
             2.2,
-            24.0
+            24
           ],
           "de": "inicio+0.3"
         },
@@ -283,12 +285,12 @@
           "de": "inicio",
           "tipo": "geral",
           "alvo": [
-            0.0,
+            0,
             1.6,
-            17.0
+            17
           ],
           "camera": [
-            8.0,
+            8,
             6.5,
             1.5
           ],
@@ -301,7 +303,7 @@
           "alvo": "duda",
           "camera": [
             2.14,
-            2.0,
+            2,
             14.89
           ],
           "movimento": "aproximar",
@@ -318,7 +320,7 @@
           "camera": [
             1.6,
             1.3,
-            9.0
+            9
           ],
           "movimento": "zoom_rapido",
           "intensidade": 0.2
@@ -384,7 +386,7 @@
           ],
           "olhando": [
             -4.2,
-            2.0,
+            2,
             25.5
           ],
           "expressao": "nervoso"
@@ -392,11 +394,11 @@
         "duda": {
           "em": [
             2.4,
-            12.0
+            12
           ],
           "olhando": [
             -4.2,
-            2.0,
+            2,
             25.5
           ],
           "expressao": "determinado",
@@ -409,7 +411,7 @@
           ],
           "olhando": [
             -4.2,
-            2.0,
+            2,
             25.5
           ],
           "expressao": "serio",
@@ -417,13 +419,13 @@
         },
         "jonas": {
           "em": [
-            -3.0,
-            24.0
+            -3,
+            24
           ],
           "olhando": [
-            2.0,
+            2,
             2.4,
-            13.0
+            13
           ],
           "expressao": "feliz"
         }
@@ -439,12 +441,12 @@
           "tipo": "feixe_luz",
           "de": [
             2.3,
-            2.0,
+            2,
             12.6
           ],
           "em": [
             -1.5,
-            21.0
+            21
           ],
           "alt": 0.6,
           "largura": 1.4,
@@ -535,9 +537,9 @@
           "quem": "duda",
           "faz": "erguer",
           "para": [
-            -3.0,
+            -3,
             2.2,
-            24.0
+            24
           ],
           "de": "inicio+0.2"
         },
@@ -587,7 +589,7 @@
           "camera": [
             -1.2,
             2.9,
-            20.0
+            20
           ],
           "movimento": "zoom_rapido",
           "intensidade": 0.2
@@ -609,12 +611,12 @@
           "tipo": "aberto",
           "alvo": [
             2.8,
-            2.0,
+            2,
             11.6
           ],
           "camera": [
             -5.5,
-            3.0,
+            3,
             17.5
           ],
           "movimento": "travelling",
@@ -625,13 +627,13 @@
           "tipo": "geral",
           "alvo": [
             -4.2,
-            2.0,
+            2,
             25.5
           ],
           "camera": [
             2.4,
             3.2,
-            14.0
+            14
           ],
           "movimento": "aproximar",
           "intensidade": 0.2
@@ -701,7 +703,7 @@
           ],
           "olhando": [
             -4.2,
-            2.0,
+            2,
             25.5
           ],
           "expressao": "nervoso"
@@ -709,11 +711,11 @@
         "duda": {
           "em": [
             2.4,
-            12.0
+            12
           ],
           "olhando": [
             -4.2,
-            2.0,
+            2,
             25.5
           ],
           "expressao": "determinado",
@@ -734,13 +736,13 @@
         },
         "jonas": {
           "em": [
-            -3.0,
-            24.0
+            -3,
+            24
           ],
           "olhando": [
-            2.0,
+            2,
             2.4,
-            13.0
+            13
           ],
           "expressao": "feliz"
         }
@@ -801,7 +803,7 @@
           "faz": "correr",
           "para": [
             0.5,
-            -1.0
+            -1
           ],
           "de": "f10:fim+0.35",
           "velocidade": 0.5
@@ -836,8 +838,8 @@
           "tipo": "aberto",
           "alvo": [
             0,
-            6.0,
-            -4.0
+            6,
+            -4
           ],
           "camera": [
             3.8,
@@ -889,9 +891,9 @@
             1.55
           ],
           "olhando": [
-            0.0,
+            0,
             1.3,
-            0.0
+            0
           ],
           "expressao": "determinado",
           "escala": 0.6,
@@ -903,9 +905,9 @@
             1.45
           ],
           "olhando": [
-            0.0,
-            1.0,
-            14.0
+            0,
+            1,
+            14
           ],
           "expressao": "serio",
           "escala": 0.6
@@ -916,9 +918,9 @@
             0.35
           ],
           "olhando": [
-            0.0,
-            1.0,
-            14.0
+            0,
+            1,
+            14
           ],
           "expressao": "nervoso",
           "escala": 0.6
@@ -970,9 +972,9 @@
           "quem": "duda",
           "faz": "largar",
           "para": [
-            0.0,
+            0,
             1.3,
-            0.0
+            0
           ],
           "de": "f12:LANTERNA"
         },
@@ -980,9 +982,9 @@
           "quem": "duda",
           "faz": "virar",
           "para": [
-            0.0,
-            1.0,
-            14.0
+            0,
+            1,
+            14
           ],
           "de": "f13"
         },
@@ -1008,8 +1010,8 @@
           "tipo": "aberto",
           "alvo": [
             0.08,
-            1.0,
-            1.0
+            1,
+            1
           ],
           "camera": [
             0.08,
@@ -1037,8 +1039,8 @@
           "tipo": "aberto",
           "alvo": [
             0.08,
-            1.0,
-            1.0
+            1,
+            1
           ],
           "camera": [
             0.08,
@@ -1120,12 +1122,12 @@
           "alvo": [
             0,
             8.5,
-            -4.0
+            -4
           ],
           "camera": [
-            -9.0,
-            4.0,
-            20.0
+            -9,
+            4,
+            20
           ],
           "movimento": "arco",
           "intensidade": 0.25,
@@ -1173,9 +1175,9 @@
             1.55
           ],
           "olhando": [
-            0.0,
-            1.0,
-            14.0
+            0,
+            1,
+            14
           ],
           "expressao": "determinado",
           "escala": 0.6
@@ -1186,9 +1188,9 @@
             1.45
           ],
           "olhando": [
-            0.0,
+            0,
             1.3,
-            0.0
+            0
           ],
           "expressao": "determinado",
           "escala": 0.6
@@ -1199,9 +1201,9 @@
             0.35
           ],
           "olhando": [
-            0.0,
-            1.0,
-            14.0
+            0,
+            1,
+            14
           ],
           "expressao": "feliz",
           "escala": 0.6
@@ -1248,8 +1250,8 @@
           "tipo": "aberto",
           "alvo": [
             0.08,
-            1.0,
-            1.0
+            1,
+            1
           ],
           "camera": [
             0.08,
@@ -1308,7 +1310,7 @@
           "tipo": "feixe_luz",
           "de": [
             -16,
-            -17.0,
+            -17,
             85
           ],
           "em": [
@@ -1316,7 +1318,7 @@
             68
           ],
           "alt": -34,
-          "largura": 4.0,
+          "largura": 4,
           "intensidade": 0.55,
           "cor": "#FFF2C4",
           "aparece": "f14:mar"
@@ -1338,7 +1340,7 @@
             66
           ],
           "camera": [
-            1.0,
+            1,
             2.3,
             0.8
           ],
@@ -1370,9 +1372,9 @@
             1.55
           ],
           "olhando": [
-            0.0,
-            1.0,
-            14.0
+            0,
+            1,
+            14
           ],
           "expressao": "surpreso",
           "escala": 0.6
@@ -1383,9 +1385,9 @@
             1.45
           ],
           "olhando": [
-            0.0,
-            1.0,
-            14.0
+            0,
+            1,
+            14
           ],
           "expressao": "serio",
           "escala": 0.6
@@ -1396,9 +1398,9 @@
             0.35
           ],
           "olhando": [
-            0.0,
-            1.0,
-            14.0
+            0,
+            1,
+            14
           ],
           "expressao": "surpreso",
           "escala": 0.6
@@ -1422,9 +1424,9 @@
           "quem": "duda",
           "faz": "apontar",
           "para": [
-            -4.0,
-            1.0,
-            14.0
+            -4,
+            1,
+            14
           ],
           "de": "f15"
         }
@@ -1480,13 +1482,13 @@
       "personagens": {
         "jonas": {
           "em": [
-            -3.0,
-            24.0
+            -3,
+            24
           ],
           "olhando": [
-            0.0,
-            12.0,
-            -4.0
+            0,
+            12,
+            -4
           ],
           "expressao": "bravo"
         }
@@ -1511,13 +1513,13 @@
         {
           "tipo": "feixe_luz",
           "de": [
-            0.0,
+            0,
             15.3,
-            -4.0
+            -4
           ],
           "em": [
-            -3.0,
-            24.0
+            -3,
+            24
           ],
           "alt": 2.6,
           "largura": 1.8,
@@ -1549,8 +1551,8 @@
           "alvo": "jonas",
           "camera": [
             -1.4,
-            3.0,
-            21.0
+            3,
+            21
           ],
           "movimento": "dolly_zoom",
           "intensidade": 0.75,
@@ -1624,7 +1626,7 @@
           "tipo": "feixe_luz",
           "de": [
             -16,
-            -17.0,
+            -17,
             85
           ],
           "em": [
@@ -1632,7 +1634,7 @@
             63
           ],
           "alt": -34,
-          "largura": 4.0,
+          "largura": 4,
           "intensidade": 0.6,
           "cor": "#FFF2C4",
           "some": "f17:direto"
@@ -1641,7 +1643,7 @@
           "tipo": "feixe_luz",
           "de": [
             -16,
-            -17.0,
+            -17,
             85
           ],
           "em": [
@@ -1649,7 +1651,7 @@
             52
           ],
           "alt": -34,
-          "largura": 4.0,
+          "largura": 4,
           "intensidade": 0.6,
           "cor": "#FFF2C4",
           "aparece": "f17:direto",
@@ -1659,7 +1661,7 @@
           "tipo": "feixe_luz",
           "de": [
             -16,
-            -17.0,
+            -17,
             85
           ],
           "em": [
@@ -1667,7 +1669,7 @@
             41
           ],
           "alt": -34,
-          "largura": 4.0,
+          "largura": 4,
           "intensidade": 0.6,
           "cor": "#FFF2C4",
           "aparece": "f18"
@@ -1689,7 +1691,7 @@
           "tipo": "barco",
           "em": [
             10.5,
-            41.0
+            41
           ],
           "giro": 96,
           "alt": -35.5,
@@ -1705,9 +1707,9 @@
       "rotulos": [
         {
           "alvo": [
-            10.0,
-            -35.0,
-            36.0
+            10,
+            -35,
+            36
           ],
           "texto": "BANCO DE AREIA",
           "de": "f17:banco",
@@ -1736,7 +1738,7 @@
             56
           ],
           "camera": [
-            1.0,
+            1,
             2.3,
             0.8
           ],
@@ -1748,11 +1750,11 @@
           "tipo": "detalhe",
           "alvo": [
             10.5,
-            -34.0,
-            41.0
+            -34,
+            41
           ],
           "camera": [
-            1.0,
+            1,
             2.3,
             0.8
           ],
@@ -1805,9 +1807,9 @@
             1.55
           ],
           "olhando": [
-            0.0,
-            1.0,
-            14.0
+            0,
+            1,
+            14
           ],
           "expressao": "feliz",
           "escala": 0.6
@@ -1818,9 +1820,9 @@
             1.45
           ],
           "olhando": [
-            0.0,
-            1.0,
-            14.0
+            0,
+            1,
+            14
           ],
           "expressao": "feliz",
           "escala": 0.6
@@ -1831,9 +1833,9 @@
             0.35
           ],
           "olhando": [
-            0.0,
-            1.0,
-            14.0
+            0,
+            1,
+            14
           ],
           "expressao": "feliz",
           "escala": 0.6
@@ -1859,7 +1861,7 @@
           "faz": "virar",
           "para": [
             -0.6,
-            1.0,
+            1,
             1.55
           ],
           "de": "f19:Com"
@@ -1917,7 +1919,7 @@
           "tipo": "barco",
           "em": [
             10.5,
-            41.0
+            41
           ],
           "giro": 96,
           "alt": -35.5,
@@ -1928,7 +1930,7 @@
           "tipo": "feixe_luz",
           "de": [
             -16,
-            -17.0,
+            -17,
             85
           ],
           "em": [
@@ -1936,7 +1938,7 @@
             41
           ],
           "alt": -34,
-          "largura": 4.0,
+          "largura": 4,
           "intensidade": 0.55,
           "cor": "#FFF2C4"
         },
@@ -1969,7 +1971,7 @@
             48
           ],
           "camera": [
-            1.0,
+            1,
             2.3,
             0.8
           ],
@@ -2003,13 +2005,13 @@
       "personagens": {
         "jonas": {
           "em": [
-            3.0,
+            3,
             12.2
           ],
           "olhando": [
-            1.0,
+            1,
             0.6,
-            9.0
+            9
           ],
           "expressao": "triste"
         }
@@ -2120,9 +2122,9 @@
             -0.4
           ],
           "olhando": [
-            2.0,
-            2.0,
-            8.0
+            2,
+            2,
+            8
           ],
           "expressao": "feliz"
         }
@@ -2161,7 +2163,7 @@
           "tipo": "aberto",
           "alvo": [
             0.6,
-            4.0,
+            4,
             -2.5
           ],
           "camera": [
@@ -2185,13 +2187,13 @@
       "personagens": {
         "nico": {
           "em": [
-            1.0,
+            1,
             10.6
           ],
           "olhando": [
-            -1.0,
+            -1,
             1.4,
-            30.0
+            30
           ],
           "expressao": "feliz",
           "segura": "garrafa"
@@ -2202,9 +2204,9 @@
             10.2
           ],
           "olhando": [
-            -1.0,
+            -1,
             1.4,
-            30.0
+            30
           ],
           "expressao": "feliz"
         }
@@ -2252,7 +2254,7 @@
           "para": [
             0.6,
             1.5,
-            13.0
+            13
           ],
           "de": "f22:devolvo"
         }
@@ -2275,13 +2277,13 @@
           "de": "f23",
           "tipo": "detalhe",
           "alvo": [
-            -14.0,
-            9.0,
-            72.0
+            -14,
+            9,
+            72
           ],
           "camera": [
             -1.5,
-            2.0,
+            2,
             13.5
           ],
           "movimento": "aproximar",
