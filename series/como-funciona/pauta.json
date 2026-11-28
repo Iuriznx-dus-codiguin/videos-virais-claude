@@ -661,7 +661,8 @@
     "como ele sobe sozinho"
    ],
    "gancho": "O guindaste do prédio constrói o próprio pedaço para subir.",
-   "status": "roteiro"
+   "status": "produzido",
+   "dia": "2026-11-29"
   },
   {
    "n": 39,
