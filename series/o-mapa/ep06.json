@@ -413,7 +413,7 @@
             17
           ],
           "giro": 90,
-          "luzes": true,
+          "luzes": false,
           "caixas": false
         },
         {
@@ -452,7 +452,7 @@
       },
       "manchetes": [
         {
-          "de": "f4",
+          "de": "f4:quarenta",
           "ate": "f5",
           "texto": "*40 BARRAS* DE OURO DE 1962"
         },
@@ -655,7 +655,7 @@
             17
           ],
           "giro": 90,
-          "luzes": true,
+          "luzes": false,
           "caixas": false
         }
       ],
@@ -874,7 +874,7 @@
             17
           ],
           "giro": 90,
-          "luzes": true,
+          "luzes": false,
           "caixas": false
         },
         {
@@ -935,16 +935,6 @@
       "acoes": [
         {
           "quem": "marina",
-          "faz": "erguer",
-          "para": [
-            4.3,
-            3.0,
-            11.2
-          ],
-          "de": "f12"
-        },
-        {
-          "quem": "marina",
           "faz": "acender",
           "de": "f12"
         },
@@ -956,16 +946,6 @@
         {
           "quem": "jonas",
           "expressao": "bravo",
-          "de": "f16"
-        },
-        {
-          "quem": "jonas",
-          "faz": "apontar",
-          "para": [
-            4.2,
-            2.0,
-            9.4
-          ],
           "de": "f16"
         },
         {
@@ -1030,15 +1010,15 @@
         },
         {
           "de": "f16",
-          "tipo": "close",
+          "tipo": "medio",
           "alvo": "jonas",
           "camera": [
-            0.38,
-            2.9,
-            10.74
+            3.4,
+            3.0,
+            8.02
           ],
           "movimento": "zoom_rapido",
-          "intensidade": 0.2
+          "intensidade": 0.15
         },
         {
           "de": "f17",
